@@ -9,7 +9,6 @@ This is The React repository for Avartar AI project.
 ## Contributing
 - Clone your own repository, run `git clone "https://github.com/workshopapps/avatarai.web.git"`
 
-Add remote upstream using the command `git remote add upstream "https://github.com/workshopapps/avatarai.web.git"`
 
 - run: `git fetch` - You must fetch from the dev branch before or after checkout<br/>
 - run: `git merge dev` - Merge updates from upstream<br/>
