@@ -1,7 +1,4 @@
 <h1 align="center">avatarai.web</h1></br>
-<p align="center">
-  <a href="https://android-arsenal.com/api?level=24"><img alt="API" src="https://img.shields.io/badge/API-24%2B-brightgreen.svg?style=flat"/></a>
-</p>
 
 ## Overview
 This is The React repository for Avartar AI project.
