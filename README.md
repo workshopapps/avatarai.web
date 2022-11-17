@@ -11,8 +11,8 @@ This is The React repository for Avartar AI project.
 
 Add remote upstream using the command `git remote add upstream "https://github.com/workshopapps/avatarai.web.git"`
 
-- run: `git fetch upstream` - You must fetch from the dev branch before or after checkout<br/>
-- run: `git merge upstream/dev` - Merge updates from upstream<br/>
+- run: `git fetch` - You must fetch from the dev branch before or after checkout<br/>
+- run: `git merge dev` - Merge updates from upstream<br/>
 - `git checkout -b feat/user-login` - You are in the feat/user-login branch now<br/>
 To push to github;<br/>
 - `git add .`<br/>
