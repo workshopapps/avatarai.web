@@ -15,15 +15,43 @@ npm run storybook
 - Create your components inside your named directory under the `./src/components/` directory.
 - Create a story with the naming convention `MyComponent.stories.jsx` in the `./src/stories/` folder.
 - In your story stories.jsx file, export a default object like shown below 👇🏾
-- Make sure to add your folder name in the title of the story so that it groups your components well under one folder.
 
 ```javascript
 import MyComponent from "../components/my-folder/MyComponent"
 
 export default = {
   title: "my-folder/MyComponent",
-  component: <MyComponent>
+  component: MyComponent;
 }
 ```
 
+- Make sure to add your folder name in the title of the story so that it groups your components well under one folder.
 - If your component has variations, ensure you've appropriately added the variants of your component in the stories.jsx file.
+- Here's a simple example of how you can add variants of your component. In the example below, 
+
+```javascript
+import MyComponent from "../components/my-folder/MyComponent"
+
+export default = {
+  title: "my-folder/MyComponent",
+  component: MyComponent;
+};
+
+// create the story template
+const MyComponentStory = (args) => <MyComponent {...args} />;
+
+// these creates Primary and Secondary variants of MyComponent
+export const Primary = MyComponentStory.bind({});
+export const Secondary = MyComponentStory.bind({});
+
+// the following lines define the args being passed into MyComponent in the respective variations
+Primary.args = {
+  text: "Click Me",
+  type: "primary",
+};
+
+Secondary.args = {
+  text: "Click Me",
+  type: "secondary",
+};
+```
