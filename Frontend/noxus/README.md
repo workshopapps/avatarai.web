@@ -1,3 +1,8 @@
+# GETTING STARTED WITH THE PROJECT
+
+1. [Setting up Storybook](#setting-up-storybook)
+2. [Testing with Jest](#testing-with-jest)
+
 ## SETTING UP STORYBOOK
 
 Please make sure you familiarize yourself with Storybook by checking the [official docs](https://storybook.js.org/docs/react/get-started/introduction)
