@@ -8,7 +8,9 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-postcss",
-    "storybook-css-modules-preset"
+    "storybook-css-modules-preset",
+    "@storybook/addon-viewport",
+    "@storybook/addon-a11y"
   ],
   "framework": "@storybook/react",
   "core": {
