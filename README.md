@@ -9,14 +9,14 @@ This is The React repository for Avartar AI project.
 
 - run: `git fetch` - You must fetch from the dev branch before or after checkout<br/>
 - run: `git merge dev` - Merge updates from remote branch<br/>
-- `git checkout -b feat/user-login` - You are in the feat/user-login branch now<br/>
+- `git checkout -b feat/user-login` - You are in the ft-user-login branch now where you implement the new feature<br/>
 To push to github;<br/>
 - `git add .`<br/>
-- `git commit -m "feat: implemented user login"`<br/>
-- `git push origin feat/user-login` - note how it ends with a branch. <br/>
+- `git commit -m "ft: implemented user login"`<br/>
+- `git push origin ft-user-login` - note how it ends with a branch. <br/>
 
 ### Commit Message Format: `chore`, `feature`, `bug`
-For a feature: `git commit -m "feat: implemented user log-in"`<br/>
+For a feature: `git commit -m "ft: implemented user log-in"`<br/>
 For a bug: `git commit -m "bug: fixed inconsistency in log in screen"`<br/>
 For a chore: `git commit -m "chore: updated read me to include API endpoints"`<br/>
 
