@@ -1,0 +1,17 @@
+.button {
+  padding: 0.8rem 1rem;
+  border-radius: 0.2rem;
+  width: 100px;
+  text-align: center;
+}
+
+.button-primary {
+  background-color: purple;
+  color: white;
+}
+
+.button-secondary {
+  background: white;
+  color: purple;
+  border: 1px solid purple;
+}
