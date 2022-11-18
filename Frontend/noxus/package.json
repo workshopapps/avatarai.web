@@ -13,8 +13,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "start-storybook -p 6006",
-    "build": "build-storybook"
+    "storybook": "start-storybook -p 6006",
+    "storybook-build": "build-storybook"
   },
   "eslintConfig": {
     "extends": [
