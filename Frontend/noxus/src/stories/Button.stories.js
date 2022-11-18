@@ -1,6 +1,7 @@
 import Button from "../components/Button";
 
 export default {
+  // The title of your story should take the format of <Your Folder Name>/<Component Name>.
   title: "Akuya/Button",
   component: Button,
   argTypes: {
