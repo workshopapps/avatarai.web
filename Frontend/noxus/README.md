@@ -1,5 +1,7 @@
 # GETTING STARTED WITH THE PROJECT
 
+## TABLE OF CONTENTS
+
 1. [Setting up Storybook](#setting-up-storybook)
 2. [Testing with Jest](#testing-with-jest)
 
