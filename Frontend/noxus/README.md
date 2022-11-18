@@ -21,15 +21,22 @@ import MyComponent from "../components/my-folder/MyComponent"
 
 export default = {
   title: "my-folder/MyComponent",
-  component: MyComponent;
+  component: MyComponent,
+  // the following lines configure how arguements are intepreted by storybook.
+  argTypes: {
+    type: {
+      options: ["primary", "secondary"],
+      control: { type: "radio" },
+    },
 }
 ```
 
 - Make sure to add your folder name in the title of the story so that it groups your components well under one folder.
 - If your component has variations, ensure you've appropriately added the variants of your component in the stories.jsx file.
-- Here's a simple example of how you can add variants of your component. In the example below, 
+- Here's a simple example of how you can add variants of your component. In the example below, the component has to variants, Primary and Secondary.
 
 ```javascript
+// import your component
 import MyComponent from "../components/my-folder/MyComponent"
 
 export default = {
@@ -44,7 +51,7 @@ const MyComponentStory = (args) => <MyComponent {...args} />;
 export const Primary = MyComponentStory.bind({});
 export const Secondary = MyComponentStory.bind({});
 
-// the following lines define the args being passed into MyComponent in the respective variations
+// define the args being passed into MyComponent in the respective variations
 Primary.args = {
   text: "Click Me",
   type: "primary",
