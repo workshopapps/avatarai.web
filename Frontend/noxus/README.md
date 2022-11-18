@@ -40,7 +40,7 @@ export default = {
   argTypes: {
     type: {
       options: ["primary", "secondary"],
-      :x
+      control: { type: "radio" },
     },
   },
 };
