@@ -63,3 +63,34 @@ Secondary.args = {
   type: "secondary",
 };
 ```
+
+## TESTING WITH JEST
+
+- We will be using Jest for component testing in this project.
+- Create a test file in the same folder your component and name it using the convention `MyComponent.test.jsx`
+- Here's a sample of a test file.
+
+```javascript
+// import libraries necessary for testing
+import { fireEvent, render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
+
+// import your component
+import Counter from "./Conter";
+
+// wrap in a test block
+test("button increments", () => {
+  // render the component in a virtual dom
+  render(<Counter />);
+
+  // select and define the elements needed for the test
+  const count = screen.getByTestId("count");
+  const increment = screen.getByTestId("increment");
+
+  // interact with the elements. in this case a click is simulated
+  fireEvent.click(increment);
+
+  // assert the expected result from the interaction above
+  expect(count).toHaveTextContent("1");
+});
+```
