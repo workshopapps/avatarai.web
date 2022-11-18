@@ -94,3 +94,9 @@ test("button increments", () => {
   expect(count).toHaveTextContent("1");
 });
 ```
+
+- To run the unit tests, run the following command
+
+```
+npm test
+```
