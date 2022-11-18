@@ -22,12 +22,6 @@ import MyComponent from "../components/my-folder/MyComponent"
 export default = {
   title: "my-folder/MyComponent",
   component: MyComponent,
-  // the following lines configure how arguements are intepreted by storybook.
-  argTypes: {
-    type: {
-      options: ["primary", "secondary"],
-      control: { type: "radio" },
-    },
 }
 ```
 
@@ -41,7 +35,14 @@ import MyComponent from "../components/my-folder/MyComponent"
 
 export default = {
   title: "my-folder/MyComponent",
-  component: MyComponent;
+  component: MyComponent,
+   // the following lines configure how arguements are intepreted by storybook.
+  argTypes: {
+    type: {
+      options: ["primary", "secondary"],
+      :x
+    },
+  },
 };
 
 // create the story template
