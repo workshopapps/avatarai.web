@@ -12,15 +12,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-<<<<<<< HEAD
     "storybook": "start-storybook -p 6006",
     "storybook-build": "build-storybook"
-=======
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
->>>>>>> Dev
   },
   "eslintConfig": {
     "extends": [
