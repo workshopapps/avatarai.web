@@ -1,0 +1,33 @@
+.frame-eye {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 481px) {
+  .frame-eye {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+    position: absolute;
+    width: 80%;
+
+    background: #ffffff;
+    border: 1px solid #f7f7f7;
+    box-shadow: 0px 2px 20px rgba(197, 197, 197, 0.1);
+    border-radius: 8px;
+  }
+}
+.male-female-eye {
+  display: flex;
+  flex-direction: row;
+}
+.link-eye {
+  width: 179px;
+  height: 56px;
+  background: #8b70e9;
+  border-radius: 8px;
+}
+.link-eye text {
+  align-items: center;
+  justify-content: center;
+}

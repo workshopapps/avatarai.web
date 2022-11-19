@@ -1,0 +1,11 @@
+.desktop-eye {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  background: #fafafa;
+}
+.welcome-eye {
+  height: 248px;
+  justify-content: center;
+}
