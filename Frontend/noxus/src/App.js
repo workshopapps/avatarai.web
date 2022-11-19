@@ -1,8 +1,10 @@
+
 import "./App.css";
 
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import Pricing from "./components/pricingPage/Pricing";
+
 
 function App() {
   <Router>
