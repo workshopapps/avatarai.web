@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from photo_upload_api import photo_router
 from retrieve_user_avatars_api import user_avatars_router
+from user_api import user_router
 
 # 👇 FastAPI INSTANCE
 app = FastAPI()
@@ -29,3 +30,4 @@ async def start():
 
 app.include_router(photo_router)
 app.include_router(user_avatars_router)
+app.include_router(user_router)

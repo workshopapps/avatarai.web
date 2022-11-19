@@ -49,10 +49,15 @@ async def add_photo(files: list[UploadFile] = File(...), email: str = Form(defau
         images_url.append(uploaded_file_url)
         images_filename.append(file.filename)
 
-    photo = {"email": email, "photo_class":photo_class, "photo_urls": images_url, "photo_name": images_filename}
+    photo = {
+        "email": email,
+        "photo_class":photo_class,
+        "photo_urls": images_url,
+        "photo_name": images_filename
+    }
     new_photo = await db["avatar_pictures"].insert_one(photo)
         
     created_photo = await db["avatar_pictures"].find_one({"_id": new_photo.inserted_id})
     created_photo = json.loads(json_util.dumps(created_photo))
         
-    return JSONResponse(status_code=status.HTTP_201_CREATED, content=created_photo)
+    return JSONResponse(status_code=status.HTTP_201_CREATED, content = created_photo)

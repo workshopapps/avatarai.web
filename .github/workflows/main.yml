@@ -4,12 +4,8 @@ on:
   # Triggers the workflow on push or pull request events but only for the Dev branch
   push:
     branches: [ dev ]
-    paths-ignore:
-      - '**.md'
-  pull_request:
-    branches: [ dev ]
-    paths-ignore:
-      - '**.md'
+#   pull_request:
+#     branches: [ dev ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -17,15 +13,14 @@ on:
 jobs:
   build-frontend:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 'Frontend/noxus'
 
     strategy:
       matrix:
         node-version: [16.x]
     
-    defaults:
-      run:
-        working-directory: Frontend/noxus
-
     steps:
       - name: pulls code from github repo
         uses: actions/checkout@v2
@@ -35,21 +30,20 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
 
       - name: Install dependencies
         run: |
           pwd
           npm i
           npm run build --if-present
-          npm test
-          
+        env:
+          CI: false
 
+        
+          
   build-backend:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
     
     defaults:
       run:
@@ -59,10 +53,10 @@ jobs:
       - name: pulls code from github repo
         uses: actions/checkout@v2
 
-      - name: Set up Python 3.10
+      - name: Set up Python 3.9
         uses: actions/setup-python@v3
         with:
-          python-version: "3.10"
+          python-version: "3.9"
           cache: 'pip'
 
       - name: Install dependencies

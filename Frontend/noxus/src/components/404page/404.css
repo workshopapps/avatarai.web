@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+*{
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.bat-error-main{
+    display: flex;
+    padding: 7vh 3rem;
+    padding-bottom: 0;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+
+}
+.bat-error-content{
+    display: block;
+    height: unset;
+}
+.bat-error-content h3{
+    font-weight: 700;
+    font-size: 23px;
+}
+.bat-error-content p{
+    font-size: 12px;
+    font-weight: 400;
+    color: #78777B;
+}
+.bat-home-btn{
+    padding: 0.5rem 1.5rem;
+    background-color: #8B70E9;
+    color: white;
+    font-weight: 700;
+    font-size: 12px;
+    border-radius: 5px;
+    /* margin-top: 5vh; */
+    /* display: block; */
+    /* position: relative; */
+    /* top: 70vh; */
+}
+.bat-error-img{
+    
+}
+#bat-btn-one{
+    display: none;
+}
+#bat-btn-two{
+    display: inline-block;
+}
+.bat-error-main img{
+    width: 100%;
+    padding: 10vh 0;
+    height: auto;
+}
+
+@media only screen and (min-width: 481px) {
+   
+    .bat-error-content p{
+        font-size: 14px;
+        width: 60%;
+        margin: 0 auto;
+    }
+
+}
+@media only screen and (min-width: 769px) {
+    .bat-error-main{
+        /* display: grid;
+        grid-template-columns: 50% 50%; */
+        /* flex-direction: row; */
+        text-align: unset;
+        padding: 1vh 4rem;
+        padding-top:10vh ;
+    }
+    .bat-error-content{
+        width: 50%;
+    }
+    .bat-error-content h3{
+        font-weight: 700;
+        font-size: 42px;
+    }
+    .bat-error-img{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding-top:  2rem ;
+        
+
+    }
+    .bat-error-content p{
+        font-size: 17px;
+        font-weight: 400;
+        color: #78777B;
+        width: unset;
+    }
+    .bat-error-main img{
+        
+        width: 60%;
+        /* height: 65vh; */
+        padding:  0;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .bat-error-main{
+        padding: 10vh 7rem;
+    }
+    .bat-error-content{
+        width: 60%;
+    }
+    .bat-error-content h3{
+        font-weight: 700;
+        font-size: 60px;
+    }
+    .bat-error-content p{
+        font-size: 15px;
+        width: 60%;
+        margin: unset;
+        font-weight: 400;
+        color: #78777B;
+    }
+    .bat-error-main img{
+        position: relative;
+        top: -100px;
+        width: 50%;
+        /* height: 100%; */
+        padding:  0;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .bat-error-main img{
+        position: relative;
+        top: -130px;
+        width: 50%;
+
+        /* height: 100%; */
+        padding:  0;
+    }
+}
