@@ -1,13 +1,10 @@
 import logo from './logo.svg';
-import PaymentFlow12 from './components/paymentFlow-1.2/paymentFlow1.2';
 import './App.css';
-import PaymentFlow11 from './components/paymentFlow-1.1/paymentFlow1.1';
-import { useState } from 'react';
 
 function App() {
   return (
     <div className="App">
-      {/* <header className="App-header">
+      <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -20,7 +17,7 @@ function App() {
         >
           Learn React
         </a>
-      </header> */}
+      </header>
     </div>
   );
 }
