@@ -11,8 +11,8 @@ function PaymentFlow11(){
                         <p>pay<span className='text-2xl text-violet-500'> $14</span></p>
                     </div>
                 </div>
-                <div className='mt-10 text-center'>
-                    <p>Please enter your 4-digit card pin to authorize this process</p>
+                <div className='mt-10 text-center v-center'>
+                    <p className='w-10/12'>Please enter your 4-digit card pin to authorize this process</p>
                     <form className='cbk mt-7'>
                         <input type='number' max='2'/>
                         <input type='number'/>
@@ -21,6 +21,7 @@ function PaymentFlow11(){
                     </form>
                     <button className='mt-8 mb-10 text-violet-500'>Cancel</button>
                 </div>
+                <button className='text-violet-500 mt-5 hidden max-[768px]:inline close'><img src='cancel.svg'  className='inline'/>Cancel Payment</button>
             </div>
         </div>
     )

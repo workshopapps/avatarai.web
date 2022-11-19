@@ -28,3 +28,24 @@
     outline: none;
     border-color: rgb(139 92 246);   
 }
+p{
+    margin: auto;
+}
+@media screen and (max-width: 768px) {
+    .cbk .modal{
+        height: 100vh;
+        max-height: 100vh;
+        margin-top: 0px;
+        border-radius: 0px;
+    }
+    .v-center{
+        margin-top: 125px;
+    }
+    .authorize{
+        width: 80vw;
+        max-width: 400px;
+    }
+    .close{
+        margin-top: 150px;
+    }
+}
