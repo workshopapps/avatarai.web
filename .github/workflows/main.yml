@@ -6,7 +6,7 @@ on:
     branches: [ dev ]
     paths-ignore:
       - '**.md'
-  pull request:
+  pull_request:
     branches: [ dev ]
     paths-ignore:
       - '**.md'
