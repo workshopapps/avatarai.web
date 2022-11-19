@@ -1,10 +1,10 @@
 import './App.css';
-import Hero from './components/TTILP/Hero'
+import Ttilp from './components/TTILP/Ttilp'
 
 function App() {
   return (
     <div className="App">
-      <Hero />
+      <Ttilp />
     </div>
   );
 }

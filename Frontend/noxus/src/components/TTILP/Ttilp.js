@@ -6,7 +6,7 @@ import Hero_img from './img/heroimg2.png';
 import Button from './Button';
 
 
-function Hero() {
+export default function Ttilp() {
   return (
     <div className='vic'>
 
@@ -33,5 +33,3 @@ function Hero() {
     </div>
   )
 }
-
-export default Hero
