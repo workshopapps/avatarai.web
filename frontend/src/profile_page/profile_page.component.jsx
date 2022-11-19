@@ -1,4 +1,5 @@
 import avatar from "../assets/Avatar.svg";
+import State_options from "./state_options.component";
 
 import { useState } from "react";
 const defaultFields = {
@@ -9,7 +10,57 @@ const defaultFields = {
   password: "",
   location: "",
 };
-const profile_page = () => {
+const all_state_object = [
+  { name: "Abia" },
+  { name: "Adamawa" },
+  { name: "Akwa Ibom" },
+  { name: "Anambra" },
+  { name: "Bauchi" },
+  { name: "Bayelsa" },
+  { name: "Benue" },
+  { name: "Borno" },
+  { name: "Cross River" },
+  { name: "Delta" },
+  { name: "Ebonyi" },
+  { name: "Edo" },
+  { name: "Ekiti" },
+  { name: "Enugu" },
+  { name: "FCT - Abuja" },
+  { name: "Gombe" },
+  { name: "Imo" },
+  { name: "Jigawa" },
+  { name: "Kaduna" },
+  { name: "Kano" },
+  { name: "Katsina" },
+  { name: "Kebbi" },
+  { name: "Kogi" },
+  { name: "Kwara" },
+  { name: "Lagos" },
+  { name: "Nasarawa" },
+  { name: "Niger" },
+  { name: "Ogun" },
+  { name: "Ondo" },
+  { name: "Osun" },
+  { name: "Oyo" },
+  { name: "Plateau" },
+  { name: "Rivers" },
+  { name: "Sokoto" },
+  { name: "Taraba" },
+  { name: "Yobe" },
+  { name: "Zamfara" },
+];
+const options = [
+  { value: "flavor", label: "flavor" },
+  { value: "yummy", label: "yummy" },
+  { value: "red", label: "red" },
+  { value: "green", label: "green" },
+  { value: "yellow", label: "yellow" },
+];
+
+const Profile_page = () => {
+  const handlechange = (e) => {
+    console.log(e.target);
+  };
   // state for editing or not editing
   const [editing, setEditing] = useState(false);
   const change_editing_status = (e) => {
@@ -24,7 +75,7 @@ const profile_page = () => {
     const { name, value } = e.target;
     setFormFields({ ...formFields, [name]: value });
   };
-  const save_details_details = () => {
+  const save_details = () => {
     if (!firstName.trim() || !/[^a-zA-Z]/.test(firstName)) {
       alert("firstName must contain only letters");
     }
@@ -73,16 +124,9 @@ const profile_page = () => {
       name: "mobileNuber",
       value: mobileNumber,
     },
-    {
-      label: "Location",
-      placeholder: "Abuja,Nigeria",
-      type: "text",
-      name: "location",
-      value: location,
-    },
   ];
   return (
-    <div className="w-[95%] md:w-[90%] lg:w-[80%] m-auto">
+    <div className="w-[95%] md:w-[90%] lg:w-[80%] m-auto ">
       <h3 className="font-semibold">Your Profile</h3>
       <p className="text-[#949494]">See your personal information</p>
       <div className="bg-white">
@@ -118,6 +162,7 @@ const profile_page = () => {
                         </div>
                       );
                     })}
+                    <State_options></State_options>
                   </div>
                   <label>Email Address</label>
                   <br />
@@ -178,6 +223,7 @@ const profile_page = () => {
                         </div>
                       );
                     })}
+                    <State_options></State_options>
                   </div>
                   <label>Email Address</label>
                   <br />
@@ -220,4 +266,4 @@ const profile_page = () => {
   );
 };
 
-export default profile_page;
+export default Profile_page;
