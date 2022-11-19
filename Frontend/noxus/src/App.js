@@ -1,7 +1,7 @@
-import  { Route, Routes } from "react-router-dom";
+import  { Route, Routes, BrowserRouter, Router } from "react-router-dom";
 import React from 'react';
 import Four404  from './components/404page/404';
-import { Router } from "react-router-dom";
+
 
 // import PaymentFlow12 from './components/paymentFlow-1.2/paymentFlow1.2';
 // import './App.css';
