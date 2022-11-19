@@ -1,6 +1,6 @@
-import './paymentflow1.css'
+import './paymentflow1.1.css'
 
-function PaymentFlow1(){
+function PaymentFlow11(){
     return(
         <div className="cbk fixed w-screen h-screen modal-overlay">
             <div className='cbk bg-white modal p-6 rounded-md'>
@@ -25,4 +25,4 @@ function PaymentFlow1(){
         </div>
     )
 }
-export default PaymentFlow1
+export default PaymentFlow11
