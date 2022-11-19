@@ -4,12 +4,14 @@ import "./aboutUs.css";
 import Banner from "./img/aboutBg.png";
 import PolygonLeft from "./img/polygonLeft.png";
 import PolygonRight from "./img/polygonRight.png";
+import Navbar from "../landingPage/Navbar/Navbar";
 
 import { WHY_US, TEAM } from "./data";
 
 const AboutUs = () => {
     return (
         <main>
+            <Navbar />
             <section className="dja_banner_section">
                 <div className="dja_container">
                     <div className="dja_banner_img">

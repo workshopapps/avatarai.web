@@ -30,6 +30,9 @@ import Opt_sec from '../src/components/sign-up/sign-up_sec';
 import Opt_thi from '../src/components/sign-up/sign-up_thi';
 import Opt_for from '../src/components/sign-up/sign-up_for';
 import Opt_fi from './components/sign-up/sign-up_fi';
+import Aboutus from './components/aboutus/AboutUs';
+// import Pricing from './components/'
+import FAQ from './components/faq/index'
 
 
 
@@ -44,8 +47,9 @@ export default function App() {
           <Route path ="/Opt_thi" element={<Opt_thi /> } /> 
           <Route path ="/Opt_fi" element={<Opt_fi /> } />
 
-      
-          
+        {/* About Us */}
+          <Route path ="/Aboutus" element={<Aboutus /> } />
+          <Route path ="/FAQ" element={<FAQ /> } />
           
          
         </Routes>
