@@ -14,6 +14,8 @@ import Opt_thi from "../src/components/sign-up/sign-up_thi";
 import Opt_for from "../src/components/sign-up/sign-up_for";
 import Opt_wel from "../src/components/sign-up/sign-up_fi";
 import Welcome from "../src/components/createAvatar/Welcome";
+import Preview from "./components/generatedAvatars/Preview";
+import { Route } from "react-router-dom";
 function App() {
   return (
     <Router>
@@ -25,6 +27,7 @@ function App() {
         <Route path="/opt_fo" element={<Opt_for />} />
         <Route path="/" element={<Opt_wel />} />
         <Route path="/create-avatar" element={<Welcome />} />
+        <Route path="/generated-avatars" element={<Preview />} />
       </Routes>
     </Router>
   );
