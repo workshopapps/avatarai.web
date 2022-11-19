@@ -39,7 +39,7 @@ jobs:
       - name: Install dependencies
         run: |
           pwd
-          npm ci
+          npm i
           npm run build --if-present
         env:
           CI: false
