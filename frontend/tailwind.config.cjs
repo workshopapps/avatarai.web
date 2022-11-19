@@ -7,6 +7,7 @@ module.exports = {
         nunito: ["Nunito"],
         "nunito-sans": ["Nunito Sans"],
         jakarta: ["'Plus Jakarta Sans'"],
+        inter: ["Inter"],
       },
     },
   },
