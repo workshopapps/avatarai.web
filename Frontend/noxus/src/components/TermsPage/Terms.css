@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 .bat-terms-main header{
-    background-image: url(C:\Users\Headmaster\Desktop\avatarai.web\Frontend\noxus\src\assets\images\Term2.png);
+    background-image: url(../../assets/images/Term2.png);
     height: 15rem;
     background-repeat: no-repeat;
     width: 100%;
