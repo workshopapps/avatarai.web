@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import './paymentflow1.1.css'
 
+
 function PaymentFlow11(props){
     useEffect(()=>{displayModal(props.display)}, [props.display])
     
@@ -28,7 +29,7 @@ function PaymentFlow11(props){
                     </form>
                     <button className='mt-8 mb-10 text-violet-500' onClick={() => {displayModal('none')}} data-testid='cancel-btn'>Cancel</button>
                 </div>
-                <button className='text-violet-500 mt-5 hidden max-[768px]:inline close' onClick={() => {displayModal('none')}} data-testid='cancel-btn'><img src='cancel.svg'  className='inline'/>Cancel Payment</button>
+               <button className='text-violet-500 mt-5 hidden max-[768px]:inline close' onClick={() => {displayModal('none')}} data-testid='cancel-btn'><img src='cancel.svg'  className='inline'/>Cancel Payment</button> 
             </div>
     </div>
   )
