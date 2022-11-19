@@ -1,18 +1,11 @@
-import { useState } from "react";
+import QuestionCard from "./QuestionCard";
+import faqContent from "./questions";
 
 const Faq = () => {
-  const [hidden, setHidden] = useState(() => true);
-
-  const handleClick = () => {
-    setHidden((prev) => !prev);
-  };
-
-  const data = Array(8).fill(1);
-
   return (
     <>
       {/* Hero Section */}
-      <section className="flex flex-col gap-[20px] items-center p-[24px] bg-cover bg-center bg-[url('https://s3-alpha-sig.figma.com/img/67ae/db4d/827320a8065271b507f5f40f95906d6f?Expires=1669593600&Signature=X4aMQMssyYHb-msSCgO1FT9ym4FF2B4sfej9jUoMVFYCZpXlL2ddPbMc5Ux1o0-NSqyzonzG72MT8RUVhZYVClWFKNXCcGeB8wB-p5UcuIEYdoJIYsNP1NJMZDD7u5oQDvFZs-ouRQELoH7f4Hsr2Ll~I2Adt6fUb~XgMq7V4Uwbgd4rgs8uscstYij7P938JgYmsK3nIGTgfVY9Um38aRUTQTkzigdfInmFRsi0oQwNKhvNnSloyNy-1xLP3EDl6G~~a3DkcAw2eaL4vEEgu3kdwVKCB6mKIM1XJKcYYppVlCwuGGseQvDCHoIq~m16qrguQKKUR~E2t-ONhxsQug__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA')]">
+      <section className="flex flex-col gap-[20px] items-center p-[24px] md:p-[94px] bg-cover bg-center bg-[url('https://s3-alpha-sig.figma.com/img/67ae/db4d/827320a8065271b507f5f40f95906d6f?Expires=1669593600&Signature=X4aMQMssyYHb-msSCgO1FT9ym4FF2B4sfej9jUoMVFYCZpXlL2ddPbMc5Ux1o0-NSqyzonzG72MT8RUVhZYVClWFKNXCcGeB8wB-p5UcuIEYdoJIYsNP1NJMZDD7u5oQDvFZs-ouRQELoH7f4Hsr2Ll~I2Adt6fUb~XgMq7V4Uwbgd4rgs8uscstYij7P938JgYmsK3nIGTgfVY9Um38aRUTQTkzigdfInmFRsi0oQwNKhvNnSloyNy-1xLP3EDl6G~~a3DkcAw2eaL4vEEgu3kdwVKCB6mKIM1XJKcYYppVlCwuGGseQvDCHoIq~m16qrguQKKUR~E2t-ONhxsQug__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA')]">
         <header className="flex flex-col gap-[8px] text-[20px] items-center font-nunito text-white">
           <h1 className="font-bold md:text-[32px]">
             Frequently Asked Questions
@@ -27,30 +20,9 @@ const Faq = () => {
         {/* FAQs and Contact Us Toggle */}
         <div className="h-[52px] w-full max-w-[290px] bg-[#8B70E9] rounded"></div>
         {/* Expandable cards Section */}
-        <div className="w-full flex flex-col md:gap-[24px]">
-          {data.map((_, i) => (
-            <div
-              key={i}
-              className=" flex flex-col gap-[8px] py-[24px] md:px-[20px] border-b md:border md:rounded"
-            >
-              {/* Card Heading and Symbol */}
-              <div onClick={handleClick} className="flex justify-between ">
-                <h2 className="w-[260px] md:w-full text-[20px] font-medium">
-                  What are digital avatars used for?
-                </h2>
-                <p className="text-[32px] font-bold">{hidden ? "+" : "-"}</p>
-              </div>
-              {/* Card Description */}
-              <p
-                className={`${
-                  hidden ? "hidden" : "block"
-                } w-[260px] md:w-full max-w-[800px]`}
-              >
-                Digital avatars can serve a number of purposes, including
-                representing a person, an online friend, a brand, or an
-                influencer.
-              </p>
-            </div>
+        <div className="w-full md:max-w-[1000px] md:shadow-2xl md:rounded flex flex-col md:gap-[24px] md:p-[48px]">
+          {faqContent.map((question, i) => (
+            <QuestionCard question={question} index={i} />
           ))}
         </div>
         {/* Get in Touch Section */}
@@ -66,7 +38,7 @@ const Faq = () => {
       </section>
 
       {/* Newsletter Subscription Section */}
-      <section className="flex flex-col gap-[24px] bg-[#F9F9FB] py-[40px] px-[24px]">
+      <section className="flex flex-col md:flex-row md:items-center md:justify-around gap-[24px] bg-[#F9F9FB] py-[40px] md:py-[48px] px-[24px]">
         <div className="flex flex-col gap-[24px]">
           <img src="/tapart.svg" height={`40px`} width={`40px`} />
           <div className="flex flex-col gap-[8px]">
