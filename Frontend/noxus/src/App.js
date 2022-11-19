@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import About from "./components/landing-page/about/About";
+import Benefits from "./components/landing-page/benefits/Benefits";
+import Cta from "./components/landing-page/cta/Cta";
+import Footer from "./components/landing-page/footer/Footer";
+import Header from "./components/landing-page/header/header/Header";
+import Main from "./components/landing-page/main/Main";
+import SocialProof from "./components/landing-page/socialproof/SocialProof";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+return(
+  <div>
+    <Header />
+    <Main />
+    <Cta />
+    <Benefits />
+    <SocialProof />
+    <About/>
+    < Footer />
+  </div>
+)
 }
 
 export default App;

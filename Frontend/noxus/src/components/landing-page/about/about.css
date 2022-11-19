@@ -1,0 +1,71 @@
+.about__content-ony{
+    display: flex;
+}
+
+.about__title-ony{
+    font-size: 67px;
+    text-align: center;
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+}
+
+.about__description-ony{
+    width: 471px;
+}
+
+.about__image-ony{
+    width: 70%;
+    margin-left: 3rem;
+    padding-left: 3rem;
+}
+
+.about__support__title-ony{
+    width: 373px;
+    font-size: 25px;
+    color: #8B70E9;
+}
+
+.about__image__title-ony{
+    padding-left: 6rem;
+    font-size: 16px;
+}
+
+.about__courses-ony{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+.about__courses__description-ony{
+    width: 362px;
+}
+
+.about__courses__description2-ony{
+    width: 360px;
+}
+
+.about__courses__description3-ony{
+    width: 341px;
+}
+
+.aboutus__title-ony{
+    width: 471px;
+    padding-left: 6rem;
+    padding-bottom: 1.5rem;
+}
+
+.courses__title-ony{
+    padding-left: 6rem;
+    padding-top: 3rem;
+    padding-bottom: .7rem;
+    color: #8B70E9;
+    font-size: 25px;
+}
+
+.about__cta-ony{
+    font-size: 67px;
+    
+    width: 834px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 7rem 0;
+}

@@ -1,0 +1,57 @@
+.benefits__description-ony{
+    display: flex;
+    margin-left: 3rem;
+    padding-left: 3rem;
+    
+    
+}
+
+.benefits__title-ony{
+    font-size: 67px;
+    text-align: center;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+}
+
+.first__benefit-ony{
+    width: 471px;
+    padding-bottom: 3rem;
+}
+.second__av-ony{
+    position: absolute;
+    top: 350%;
+    left: 53%;
+    margin-left: 8rem;
+    width: 250px;
+
+}
+.av1-ony{
+    position: absolute;
+    top: 370%;
+    left: 61%;
+    z-index: -1;
+    margin-left: 8rem;
+    width: 250px;
+}
+.benefits__images-ony{
+    margin-left: 8rem;
+    width: 250px;
+}
+.features__ony p{
+    width: 262px;
+    
+}
+
+.features__ony{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding-top: 3rem;
+}
+
+
+.features__title-ony{
+    text-align: center;
+    font-size: 67px;
+    padding-top: 10rem;
+}

@@ -1,0 +1,45 @@
+.cta__images-ony{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    
+    
+}
+
+.cta__section-pic-ony{
+    width: 20%;
+    height: 20%;
+    
+}
+.side___ony{
+    height: 18rem;
+}
+.cta__title-ony{
+    font-size: 67px;
+    text-align: center;
+    padding-top: 5rem;
+    padding-bottom: 3.5rem;
+}
+
+.cta__support-description-ony{
+    width: 457px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #605E65;
+}
+
+.cta__support-title-ony{
+  margin-left: 28rem;
+  font-size: 25px;
+  color: #8B70E9;
+  padding: .8rem 0;
+}
+
+@media(max-width: 380px){
+    .cta__title-ony{
+        font-size: 24px;
+        text-align: center;
+        margin-top: 3.5rem;
+        padding-bottom: 3.5rem;
+    }
+}
