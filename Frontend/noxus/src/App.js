@@ -1,13 +1,19 @@
 import "./App.css";
 
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+
 import Pricing from "./components/pricingPage/Pricing";
 
 function App() {
-  return (
+  <Router>
+    return (
     <div className="App">
-      <Pricing />
+      <Routes>
+        <Route path="/pricing-page" element={<Pricing />} />
+      </Routes>
     </div>
-  );
+    );
+  </Router>;
 }
 
 export default App;
