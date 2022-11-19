@@ -11,7 +11,7 @@ const FaqHero = () => {
           <p className="">Type keyword to find answer</p>
         </div>
         <div className="bg-[#8B70E9] h-full flex items-center font-nunito text-white rounded px-[40px] py-[8px]">
-          <span>FAQ's</span>
+          <span>Search</span>
         </div>
       </div>
     </section>
