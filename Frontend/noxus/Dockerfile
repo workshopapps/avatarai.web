@@ -1,6 +1,6 @@
 FROM node:16-alpine
 WORKDIR frontend
-COPY ./Frontend .
+COPY ./Frontend/noxus .
 RUN npm i
 RUN npm run build
 ENV NODE_ENV production
