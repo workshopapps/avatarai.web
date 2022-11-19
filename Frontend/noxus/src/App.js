@@ -1,6 +1,8 @@
+
 import "./App.css";
 
 import Pricing from "./components/pricingPage/Pricing";
+
 
 function App() {
   return (
