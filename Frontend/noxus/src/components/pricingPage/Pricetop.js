@@ -9,10 +9,10 @@ export default function Pricetop() {
           CHECK OUT PRICING PLANS
         </h3>
 
-        <h1 className="text-2xl px-8 break2:text-4xl font-Jakarta font-bold">
+        <h1 className="text-2xl p-8 break2:text-4xl font-Jakarta font-bold">
           Pick a plan and create your AI generated Avatars
         </h1>
-        <p className="w-5/6 mx-auto text-sm font-Nunito py-4">
+        <p className="w-5/6 break2:w-46rem mb-8 mx-auto text-sm font-Nunito py-4">
           We will train the model, render your avatars and post-process them.
           We'll send you and email with a link to 100+ different AI avatars of
           your face when it's done
