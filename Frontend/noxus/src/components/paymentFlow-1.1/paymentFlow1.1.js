@@ -30,7 +30,7 @@ function PaymentFlow11(props){
                 </div>
                 <button className='text-violet-500 mt-5 hidden max-[768px]:inline close' onClick={() => {displayModal('none')}} data-testid='cancel-btn'><img src='cancel.svg'  className='inline'/>Cancel Payment</button>
             </div>
-        </div>
-    )
+    </div>
+  )
 }
 export default PaymentFlow11
