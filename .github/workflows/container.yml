@@ -73,8 +73,8 @@ jobs:
     runs-on: ubuntu-latest
 
     defaults:
-    run:
-      working-directory: Frontend/noxus
+      run:
+        working-directory: Frontend/noxus
 
     steps:
       - uses: actions/checkout@v2
