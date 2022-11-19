@@ -38,7 +38,6 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd Frontend/noxus
           pwd
           npm i
           npm run build --if-present
