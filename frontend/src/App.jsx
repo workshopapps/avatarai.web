@@ -1,10 +1,7 @@
-import Faq from "./components/faq";
-
 function App() {
   return (
     <>
-      {/* <div>App Running ...</div>; */}
-      <Faq />
+      <div>App Running ...</div>
     </>
   );
 }
