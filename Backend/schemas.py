@@ -65,3 +65,23 @@ class UpdateAvatarModel(BaseModel):
                 #'is_deleted': False  
             }
         }
+
+#User data model
+class User(BaseModel):
+    first_name:str
+    last_name : str
+    email:str
+    password: str
+    #is_deleted:bool
+
+    class Config:
+        schema_extra = {
+            'example': {
+                
+                "first_name": "John",
+                "last_name": "Doe",
+                "email":"johndoe@gmail.com",
+                "password": "I_can't_think_of_a_password",
+                #"is_deleted": False                
+            }
+        }
