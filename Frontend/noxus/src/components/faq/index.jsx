@@ -14,32 +14,38 @@ const Faq = () => {
       {/* Hero Section */}
       <section className="flex flex-col gap-[20px] items-center p-[24px] bg-cover bg-center bg-[url('https://s3-alpha-sig.figma.com/img/67ae/db4d/827320a8065271b507f5f40f95906d6f?Expires=1669593600&Signature=X4aMQMssyYHb-msSCgO1FT9ym4FF2B4sfej9jUoMVFYCZpXlL2ddPbMc5Ux1o0-NSqyzonzG72MT8RUVhZYVClWFKNXCcGeB8wB-p5UcuIEYdoJIYsNP1NJMZDD7u5oQDvFZs-ouRQELoH7f4Hsr2Ll~I2Adt6fUb~XgMq7V4Uwbgd4rgs8uscstYij7P938JgYmsK3nIGTgfVY9Um38aRUTQTkzigdfInmFRsi0oQwNKhvNnSloyNy-1xLP3EDl6G~~a3DkcAw2eaL4vEEgu3kdwVKCB6mKIM1XJKcYYppVlCwuGGseQvDCHoIq~m16qrguQKKUR~E2t-ONhxsQug__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA')]">
         <header className="flex flex-col gap-[8px] text-[20px] items-center font-nunito text-white">
-          <h1 className="font-bold ">Frequently Asked Questions</h1>
+          <h1 className="font-bold md:text-[32px]">
+            Frequently Asked Questions
+          </h1>
           <p>Have questions? We are here to help.</p>
         </header>
-        <div className="h-[52px] w-full bg-white rounded"></div>
+        <div className="h-[52px] w-full max-w-[512px] bg-white rounded"></div>
       </section>
 
       {/* Details Section */}
       <section className="font-nunito flex flex-col items-center px-[24px] py-[80px] gap-[94px]">
         {/* FAQs and Contact Us Toggle */}
-        <div className="h-[52px] w-full bg-[#8B70E9] rounded"></div>
+        <div className="h-[52px] w-full max-w-[290px] bg-[#8B70E9] rounded"></div>
         {/* Expandable cards Section */}
-        <div className="w-full">
+        <div className="w-full flex flex-col md:gap-[24px]">
           {data.map((_, i) => (
             <div
               key={i}
-              className=" flex flex-col gap-[8px] py-[24px] border-b"
+              className=" flex flex-col gap-[8px] py-[24px] md:px-[20px] border-b md:border md:rounded"
             >
               {/* Card Heading and Symbol */}
               <div onClick={handleClick} className="flex justify-between ">
-                <h2 className="w-[260px] text-[20px] font-medium">
+                <h2 className="w-[260px] md:w-full text-[20px] font-medium">
                   What are digital avatars used for?
                 </h2>
                 <p className="text-[32px] font-bold">{hidden ? "+" : "-"}</p>
               </div>
               {/* Card Description */}
-              <p className={`${hidden ? "hidden" : "block"} w-[260px]`}>
+              <p
+                className={`${
+                  hidden ? "hidden" : "block"
+                } w-[260px] md:w-full max-w-[800px]`}
+              >
                 Digital avatars can serve a number of purposes, including
                 representing a person, an online friend, a brand, or an
                 influencer.
