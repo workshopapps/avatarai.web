@@ -14,11 +14,11 @@ const Navbar = () => {
   return (
     <Fragment>
     <nav className="flex justify-between items-center lg:px-20 md:px-10 py-5">
-     { navToggle ?
+   
        <img src={logo} alt="" className="w-10 hidden md:block" />
-      : <img src={menu} alt="" className="md:hidden mx-10" onClick={navHandler} />
-     }
-      <ul className="md:flex justify-between items-center gap-10 hidden">
+      <img src={menu} alt="" className="md:hidden mx-10" onClick={navHandler} />
+    
+      <ul className="md:flex justify-between items-center gap-5 lg:gap-10 hidden">
       <li className="p-2  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
            <Link to='/home'> Home</Link>
           </li>
