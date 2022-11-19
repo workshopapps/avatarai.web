@@ -1,10 +1,9 @@
-import ApiPage from "./components/api-page/ApiPage"
 
 function App() {
   return (
     <div>
 
-      <ApiPage/>
+      App loading...
 
     </div>
   )
