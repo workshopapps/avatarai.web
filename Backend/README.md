@@ -9,3 +9,6 @@
 
 ## install all requirements using
 ` pip install -r requirements.txt `
+
+## create a .env file and add
+` MONGODB_URL="mongodb+srv://<username>:<password>@<url>/<db>?retryWrites=true&w=majority"`
