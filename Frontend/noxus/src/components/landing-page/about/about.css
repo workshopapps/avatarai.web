@@ -69,3 +69,56 @@
     margin: 0 auto;
     padding: 7rem 0;
 }
+
+@media(max-width: 380px){
+    .about__title-ony{
+        font-size: 24px;
+        text-align: center;
+        padding-top: 6rem;
+        padding-bottom: 2rem;
+        font-weight: 700;
+    }
+    .about__content-ony{
+        display: flex;
+        flex-direction: column;
+    }
+
+.about__description-ony{
+    width: 331px;
+    text-align: center;
+}
+.about__image-ony{
+    width: 90%;
+    margin-left: 0rem;
+    padding-left: 0rem;
+   margin: 0 auto;
+}
+.about__support__title-ony{
+    width: 263px;
+    font-size: 16px;
+    color: #8B70E9;
+    text-align: center;
+    margin: 0 auto;
+}
+.courses__title-ony{
+    padding-left: 2rem;
+    padding-top: 2rem;
+    padding-bottom: .7rem;
+    color: #8B70E9;
+    font-size: 16px;
+    
+}
+.aboutus__title-ony{
+    width: 471px;
+    padding-left: 2rem;
+    padding-bottom: 1.5rem;
+}
+.about__cta-ony{
+    font-size: 24px;
+    
+    width: 315px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 3rem 0;
+}
+}

@@ -19,7 +19,7 @@ const Footer = () => {
           placeholder="Enter your Email Address"
           className="input__text-ony"
         />
-        <p>
+        <p className="input__subscribe-ony">
           By subscribing you agree to accept newsletters and Emails from us.
         </p>
       </div>
@@ -29,6 +29,7 @@ const Footer = () => {
   <h4>Noxus</h4>
   <p className="noxus__description-ony">Noxus is your webapp for creating Artificial Intelligent Avatars, we also offer courses on avatar generation</p>
 </div>
+
 <div>
   <h3 className="footer__mini__title-ony">Resources</h3>
   <p className="footer__mini__description-ony">Careers</p>
@@ -43,6 +44,8 @@ const Footer = () => {
   <p className="footer__mini__description-ony">Events</p>
   
 </div>
+
+
 
 <div >
   <h3 className="footer__mini__title-ony">Help</h3>

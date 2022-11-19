@@ -15,7 +15,7 @@ const Benefits = () => {
         </p>
 
         <h3>Convert images to avatars.</h3>
-        <p className="first__benefit-ony">
+        <p className="second__benefit-ony">
           Our advanced machine learning tool allows us to convert your beautiful
           images to whatever you want it to be. Its totally on us to make it
           happen
@@ -23,7 +23,7 @@ const Benefits = () => {
 
         <h3 >Voila! It’s your avatar</h3>
          
-        <p className="first__benefit-ony">  Your avatars are pixel clear and can be used absolutely anywhere you
+        <p className="third__benefit-ony">  Your avatars are pixel clear and can be used absolutely anywhere you
           choose.</p>
         {" "}
         
@@ -31,7 +31,7 @@ const Benefits = () => {
        
 
         <div className="benefits__images-ony">
-          <img src="./images/av2.png" />
+          <img className="av2-ony" src="./images/av2.png" />
           <img className="second__av-ony" src="./images/av4.png" />
           <img className="av1-ony" src="./images/av1.png" />
         </div>

@@ -11,7 +11,7 @@ return(
   <div>
     <Header />
     <Main />
-    <Cta />
+    <Cta /> 
     <Benefits />
     <SocialProof />
     <About/>

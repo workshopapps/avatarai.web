@@ -31,3 +31,47 @@
     padding-top: 6rem;
     padding-bottom: 2rem;
 }
+.aii-ony{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    height: 390px;
+}
+@media(max-width: 380px){
+    .socialproof__title-ony{
+        font-size: 24px;
+        text-align: center;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        width: 313px;
+    }
+    .ai___img-ony{
+        width: 150px;
+        height: 201px;
+
+       
+    }
+    .second__ai-ony img{
+        width: 150px;
+        height: 201px;
+        
+       
+    }
+    .ai__ony{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: .2rem;
+        
+    }
+    .aii-ony{
+        display: flex;
+        gap: .2rem;
+    }
+    .second__ai-ony{
+        display: flex;
+     
+        gap: .2rem;
+    }
+    
+}

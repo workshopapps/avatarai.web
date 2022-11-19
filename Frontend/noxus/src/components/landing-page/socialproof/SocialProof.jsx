@@ -7,10 +7,12 @@ const SocialProof = () => {
         <h2 className='socialproof__title-ony'>Explore avatars created by users</h2>
         <div className='ai__ony'>
         
-          <img className='ai___img-ony' src='./images/ai5.png'/>
+        <div className='aii-ony'>
+        <img className='ai___img-ony' src='./images/ai5.png'/>
           <img className='ai___img-ony' src='./images/a3.png'/>
           <img className='ai___img-ony' src='./images/ai2.png'/>
           <img className='ai___img-ony' src='./images/ai4.png'/>
+        </div>
           
           <div className='second__ai-ony' >
             <img src='./images/ava3.png'/>

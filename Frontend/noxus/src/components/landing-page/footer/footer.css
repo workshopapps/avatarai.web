@@ -53,3 +53,33 @@
     padding: .8rem 0;
     margin-top: 1rem;
 }
+
+@media(max-width: 380px){
+    .footer__content-ony{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5rem;
+        background: #F9F9FB;
+        padding: 2rem 0;
+    }
+    .footer__title-ony{
+        width: 327px;
+        font-size: 16px;
+    }
+    .input__text-ony{
+        margin-left: 1rem;
+    }
+    .footer__items-ony{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 4rem;
+       
+    }
+
+   
+  
+}

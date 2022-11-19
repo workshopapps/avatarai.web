@@ -40,6 +40,39 @@
         font-size: 24px;
         text-align: center;
         margin-top: 3.5rem;
-        padding-bottom: 3.5rem;
+        padding-bottom: 2rem;
     }
+    .cta__images-ony{
+        display: flex;
+        flex-direction: row;
+        width: 150px;
+        gap: .3rem;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        
+        
+    }
+    .cta__section-pic-ony{
+        width: 75%;
+        height: 20%;
+       
+        
+    }
+    .side___ony{
+        display: none;
+    }
+    .cta__support-description-ony{
+        width: 327px;
+        font-size: 16px;
+        color: #605E65;
+        
+    }
+    .cta__support-title-ony{
+        margin-left: 0rem;
+        font-size: 24px;
+        color: #8B70E9;
+        padding: .8rem 0;
+        text-align: center;
+      }
 }
