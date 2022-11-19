@@ -40,7 +40,6 @@ async def retrieve_user_avatars(user_id: int) -> dict:
     response_model=UserAvatarModel,
 )
 async def save_user_avatars(users_avatars: UserAvatarModel = Body(...)):
-    
     users_avatars = jsonable_encoder(users_avatars)
     new_avatars = await db["avatars"].insert_one(users_avatars)
     created_avatars = await db["avatars"].find_one(
