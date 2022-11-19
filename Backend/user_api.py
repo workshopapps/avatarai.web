@@ -20,8 +20,11 @@ def get_password_hash(password):
 user_router = APIRouter()
 user_list= []
 
-@user_router.post("/api/user" response_model= User      )
-async def create_user(raw_user : User):
+
+
+@user_router.post("/api/user", response_model=User)
+async def create_user(raw_user: User):
+
     user = {
          
         "first_name": raw_user.first_name,
@@ -35,10 +38,10 @@ async def create_user(raw_user : User):
     password_hash = get_password_hash(raw_user.password)
 
     user["password"] = password_hash
-    print(user)
     new_user = await db['user'].insert_one(user)
-    #create_user= await db.user.findOne({"_id": new_user.inserted_id})
+    create_user= await db.user.find_one({"_id": new_user.inserted_id})
+    create_user["_id"] = str(create_user["_id"])
     return JSONResponse(
         status_code=status.HTTP_201_CREATED,
-        content=user
+        content=create_user
     )
