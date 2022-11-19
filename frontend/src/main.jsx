@@ -4,6 +4,7 @@ import App from "./App";
 import Logo from "./components/chat/Logo";
 import NavigationFooter from "./components/chat/NavigationFooter";
 import NavigationLink from "./components/chat/NavigationLink";
+import MessageEdit from "./components/chat/MessageEdit";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -16,6 +17,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         username={`Akuya Ekorot`}
         email={`akuyaekorot@gmail.com`}
       />
+      <MessageEdit />
     </>
   </React.StrictMode>
 );
