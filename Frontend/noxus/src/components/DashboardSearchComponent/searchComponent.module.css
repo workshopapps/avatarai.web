@@ -36,6 +36,25 @@
   border: none;
   outline: none;
 }
+
+
+@keyframes onGoingSpeech {
+  0%{
+    scale: 0.9 0.9;
+  }
+  25%{
+    scale: 1 1;
+  }
+  50%{
+    scale: 1.1 1.1;
+  }
+  75%{
+    scale: 1 1;
+  }
+  100%{
+    scale: 0.9 0.9;
+  }
+}
 .search, .microphone{
   width: 3.84%;
   height: 35.71%;
@@ -45,13 +64,23 @@
   background-size: contain;
   position: absolute;
 }
+.search:active, .microphone:active{
+  border: none;
+}
 .search{
   left: 4.79%;
   top: 31.25%;
 }
+.ongoingSpeech{
+  animation-name: onGoingSpeech;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
 .microphone{
   top: 32.14%;
   right: 5.47%;
+  transition: 1s;
 }
 @media screen and (max-width: 400px) {
   .form, .searchInput{

@@ -1,5 +1,6 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
+import useSpeechRecognition from "./hooks/useSpeechRecognition"
 
 import style from './searchComponent.module.css'
 
@@ -10,6 +11,12 @@ import microphone from './assets/microphone.svg'
 export default function SearchComponent () {
 
   const [searchValue, setSearchValue] = useState('')
+  const {recognition, speech} = useSpeechRecognition()
+  
+  useEffect(()=>{
+    setSearchValue(speech)
+  },[speech])
+  
 
   const handleSubmit = () => {
     return (e) => {
@@ -33,11 +40,21 @@ export default function SearchComponent () {
         style={{
           backgroundImage: `url(${search})`,
         }}
+        onClick={()=>recognition.stop()}
       ></button>
       <button
         className={style.microphone}
         style={{
           backgroundImage: `url(${microphone})`,
+        }}
+        onClick={()=>{
+          const m = document.querySelector(`.${style.microphone}`)
+          m.classList.add(style.ongoingSpeech)
+          recognition.start()
+          setTimeout(()=>{
+            m.classList.remove(style.ongoingSpeech)
+            recognition.stop()
+          }, 5000)
         }}
       ></button>
     </form>
