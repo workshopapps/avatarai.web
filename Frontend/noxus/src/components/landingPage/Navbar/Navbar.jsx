@@ -18,7 +18,7 @@ const Navbar = () => {
        <img src={logo} alt="" className="w-10 hidden md:block" />
       <img src={menu} alt="" className="md:hidden mx-10" onClick={navHandler} />
     
-      <ul className="md:flex justify-between items-center gap-5 lg:gap-10 hidden">
+      <ul className="md:flex justify-between items-center gap-5 lg:gap-10 hidden cursor-pointer">
       <li className="p-2  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
            <Link to='/home'> Home</Link>
           </li>
@@ -36,11 +36,11 @@ const Navbar = () => {
           </li>
       </ul>
       <div className="space-x-6 hidden md:block">
-        <Button className=" bg-white border-purple-700 text-purple hover:bg-purple  hover:text-white ">
+        <Button className=" bg-white border-purple text-purple  ">
           Log in
         </Button>
 
-        <Button className="text-white bg-purple">Sign up</Button>
+        <Button className="text-white border-purple bg-purple ">Sign up</Button>
       </div>
     </nav>
 

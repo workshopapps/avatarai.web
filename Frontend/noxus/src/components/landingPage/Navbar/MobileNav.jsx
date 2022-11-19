@@ -6,10 +6,10 @@ import logo from "../../../assets/images/logos.png";
 
 const MobileNav = () => {
   return (
-    <div className="bg-white w-[261px] fixed absolute top-0 left-0">
+    <div className="bg-white w-[261px] h-screen fixed absolute top-0 left-0 ">
       <nav className="flex flex-col justify-center  items-start gap-y-20 md:hidden p-10 ">
         <img src={logo} alt="" />
-        <ul className=" flex flex-col justify-between items-start gap-10 ">
+        <ul className=" flex flex-col justify-between items-start gap-10 cursor-pointer ">
           <li className="p-2  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
            <Link to='/nome'> Home</Link>
           </li>

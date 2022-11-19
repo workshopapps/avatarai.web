@@ -27,4 +27,4 @@ function PaymentFlow12(){
         </div>
     )
 }
-export default PaymentFlow12
+export default PaymentFlow12;
