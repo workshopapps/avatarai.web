@@ -15,3 +15,5 @@ services:
         command: uvicorn api:app --host 0.0.0.0 --port 8000
         ports:
             - "8000:8000"
+        environment:
+            MONGODB_URL: "mongodb+srv://hng_test:Hi1hPyMiSPpbBbhg@cluster0.owcahdq.mongodb.net/test?retryWrites=true&w=majority"
