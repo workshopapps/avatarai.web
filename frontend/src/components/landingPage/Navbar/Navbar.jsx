@@ -13,7 +13,7 @@ const Navbar = () => {
       <ul className="md:flex justify-between items-center gap-10 hidden">
       <Link to='/'><li className="p-2  border-opacity-0 hover:border-opacity-100 hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">Home</li></Link>
         <Link to='/Aboutus'><li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">About Us</li></Link>
-        <Link to=''><li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">Pricing</li></Link>
+        <Link to='/Pricing'><li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">Pricing</li></Link>
         <Link to=''><li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">Contact Us</li></Link>
         <Link to='/FAQ'><li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">FAQs</li></Link>
       </ul>
