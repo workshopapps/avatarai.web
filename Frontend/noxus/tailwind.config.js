@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         nunito: ["Nunito"],
+        jakarta: ["'Plus Jakarta Sans'"],
       },
     },
   },
