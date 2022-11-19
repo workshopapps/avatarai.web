@@ -5,12 +5,12 @@
     box-sizing: border-box;
 }
 .bat-terms-main header{
-    background-image: url(placeholder.jpg);
-    height: 12rem;
+    background-image: url(C:\Users\Headmaster\Desktop\avatarai.web\Frontend\noxus\src\assets\images\Term2.png);
+    height: 15rem;
     background-repeat: no-repeat;
-    /* width: 100%; */
-    background-attachment: fixed;
-    background-position: 50%;
+    width: 100%;
+    background-attachment: scroll;
+    background-position: center ;
     background-size: cover;
     text-align: center;
     color: white;
@@ -19,7 +19,7 @@
 }
 .header-overlay{
     background-color: rgba(0, 0, 0, 0.5);
-    height: 12rem;
+    height: 15rem;
     width: 100%;
     position: absolute;
     top: 0%;
@@ -28,7 +28,7 @@
     position: relative;
     z-index: 1;
     color: white;
-    padding: 3rem 0;
+    padding: 4rem 0;
 }
 .header-content h2 {
     font-size: 20px;
@@ -66,6 +66,15 @@ li{
     li{
         font-size: 12px;
     }
+    .header-content h2 {
+        font-size: 28px;
+        font-weight: 600;
+    }
+    .header-content p {
+        width: 60%;
+        font-size: 16px;
+        margin: 0 auto;
+    }
 
 }
 @media only screen and (min-width: 769px) {
@@ -82,6 +91,10 @@ li{
     main h4{
         font-size: 18px;
     }
+    .header-content h2 {
+        font-size: 34px;
+        font-weight: 600;
+    }
 }
 @media only screen and (min-width: 1024px) {
     main{
@@ -96,6 +109,15 @@ li{
     }
     main h4{
         font-size: 20px;
+    }
+    .header-content h2 {
+        font-size: 40px;
+        font-weight: 600;
+    }
+    .header-content p {
+        width: 30%;
+        font-size: 16px;
+        margin: 0 auto;
     }
     
 }
@@ -112,5 +134,17 @@ li{
     }
     main h4{
         font-size: 22px;
+    }
+    .header-content h2 {
+        font-size: 48px;
+        font-weight: 600;
+    }
+    .header-content p {
+        width: 30%;
+        font-size: 16px;
+        margin: 0 auto;
+    }
+    .header-content{
+        padding: 2rem;
     }
 }
