@@ -16,13 +16,13 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      # - name: Build and push Backend
-      #   uses: docker/build-push-action@v3
-      #   with:
-      #     context: .
-      #     file: ./Backend/Dockerfile
-      #     push: true
-      #     tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
+      - name: Build and push Backend
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Backend/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
 
       # - name: Build and push Frontend
       #   uses: docker/build-push-action@v3
@@ -40,6 +40,6 @@ jobs:
           ssh -i id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} '
           sudo su
           cd /home/noxus
-          docker compose pull
-          docker compose up -d --build frontend
-          docker compose up -d --build backend && exit'
+          sudo docker compose pull
+          sudo docker compose up -d --build frontend
+          sudo docker compose up -d --build backend && exit'
