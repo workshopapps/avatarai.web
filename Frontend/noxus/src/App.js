@@ -28,16 +28,16 @@
 
 // export default App;
 
-
-import './App.css';
-import Ttilp from './components/TTILP/Ttilp'
 import "./App.css";
-
+// import Ttilp from "./components/TTILP/Ttilp";
+import "./App.css";
+import Faq from "./components/faq";
 
 function App() {
   return (
     <div className="App">
-      <Ttilp />
+      <Faq />
+      {/* <Ttilp /> */}
     </div>
   );
 }
