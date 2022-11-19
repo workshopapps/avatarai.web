@@ -1,70 +1,109 @@
-# Getting Started with Create React App
+# GETTING STARTED WITH THE PROJECT
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## TABLE OF CONTENTS
 
-## Available Scripts
+1. [Setting up Storybook](#setting-up-storybook)
+2. [Testing with Jest](#testing-with-jest)
 
-In the project directory, you can run:
+## SETTING UP STORYBOOK
 
-### `npm start`
+Please make sure you familiarize yourself with Storybook by checking the [official docs](https://storybook.js.org/docs/react/get-started/introduction)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Installing and running Storybook locally
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+To start Storybook locally run the following command. Your local address will be shown in the terminal.
 
-### `npm test`
+```bash
+npm run storybook
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Creating component stories with Storybook
 
-### `npm run build`
+- Create your components inside your named directory under the `./src/components/` directory.
+- Create a story with the naming convention `MyComponent.stories.jsx` in the `./src/stories/` folder.
+- In your story stories.jsx file, export a default object like shown below 👇🏾
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+import MyComponent from "../components/my-folder/MyComponent"
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+export default = {
+  title: "my-folder/MyComponent",
+  component: MyComponent,
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Make sure to add your folder name in the title of the story so that it groups your components well under one folder.
+- If your component has variations, ensure you've appropriately added the variants of your component in the stories.jsx file.
+- Here's a simple example of how you can add variants of your component. In the example below, the component has to variants, Primary and Secondary.
 
-### `npm run eject`
+```javascript
+// import your component
+import MyComponent from "../components/my-folder/MyComponent"
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+export default = {
+  title: "my-folder/MyComponent",
+  component: MyComponent,
+   // the following lines configure how arguements are intepreted by storybook.
+  argTypes: {
+    type: {
+      options: ["primary", "secondary"],
+      control: { type: "radio" },
+    },
+  },
+};
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+// create the story template
+const MyComponentStory = (args) => <MyComponent {...args} />;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+// these creates Primary and Secondary variants of MyComponent
+export const Primary = MyComponentStory.bind({});
+export const Secondary = MyComponentStory.bind({});
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+// define the args being passed into MyComponent in the respective variations
+Primary.args = {
+  text: "Click Me",
+  type: "primary",
+};
 
-## Learn More
+Secondary.args = {
+  text: "Click Me",
+  type: "secondary",
+};
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## TESTING WITH JEST
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- We will be using Jest for component testing in this project.
+- Create a test file in the same folder your component and name it using the convention `MyComponent.test.jsx`
+- Here's a sample of a test file.
 
-### Code Splitting
+```javascript
+// import libraries necessary for testing
+import { fireEvent, render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom/extend-expect";
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+// import your component
+import Counter from "./Conter";
 
-### Analyzing the Bundle Size
+// wrap in a test block
+test("button increments", () => {
+  // render the component in a virtual dom
+  render(<Counter />);
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+  // select and define the elements needed for the test
+  const count = screen.getByTestId("count");
+  const increment = screen.getByTestId("increment");
 
-### Making a Progressive Web App
+  // interact with the elements. in this case a click is simulated
+  fireEvent.click(increment);
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  // assert the expected result from the interaction above
+  expect(count).toHaveTextContent("1");
+});
+```
 
-### Advanced Configuration
+- To run the unit tests, run the following command
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+npm test
+```
