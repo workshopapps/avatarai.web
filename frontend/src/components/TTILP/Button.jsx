@@ -4,7 +4,7 @@ function Button() {
   return (
 
     // link to signup page should go here
-    <a href='https://google.com'
+    <a href='/signupfirst'
     >
       <button className='vic_button'>
         
