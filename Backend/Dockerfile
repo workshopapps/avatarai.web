@@ -4,7 +4,7 @@ WORKDIR code
 
 COPY ./Backend/requirements.txt .
 
-RUN pip install -r ./Backend/requirements.txt
+RUN pip install -r requirements.txt
 
 COPY ./Backend .
 

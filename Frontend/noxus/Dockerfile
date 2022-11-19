@@ -1,5 +1,5 @@
 FROM node:16-alpine
-WORKDIR /frontend
+WORKDIR frontend
 COPY ./Frontend .
 RUN npm i
 RUN npm run build
