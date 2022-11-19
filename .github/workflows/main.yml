@@ -23,10 +23,11 @@ jobs:
         node-version: [16.x]
     
     steps:
-      - run: |
-          cd Frontend/noxus
       - name: pulls code from github repo
         uses: actions/checkout@v2
+        
+      - run: |
+          cd Frontend/noxus
 
       - name: setup a node environment
         uses: actions/setup-node@v2
