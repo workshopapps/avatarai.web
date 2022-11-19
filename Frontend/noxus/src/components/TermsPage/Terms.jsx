@@ -8,7 +8,7 @@ import Terms from './Terms.png'
         <header>
             <div className="header-content">
                 <h2>Terms and Conditions</h2>
-                <p>Welcome to Noxus we are committed to protecting your privacy</p>
+                <p>Welcome to Noxus we are committed to portecting your privacy</p>
             </div>
         </header>
         <div className="header-overlay"></div>
