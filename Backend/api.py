@@ -1,8 +1,4 @@
 from fastapi import FastAPI
-import uvicorn
-from pydantic import BaseModel
-from typing import List
-from schemas import AvatarModel
 from photo_upload_api import photo_router
 from retrieve_user_avatars_api import user_avatars_router
 
@@ -29,7 +25,7 @@ app.add_middleware(
 async def start():
     return {"Message":"Welcome to Noxus Avatar AI"}
 
-
+# include api endpoints
 
 app.include_router(photo_router)
 app.include_router(user_avatars_router)
