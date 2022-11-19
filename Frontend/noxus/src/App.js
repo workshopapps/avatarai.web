@@ -1,13 +1,11 @@
-import logo from './logo.svg'
+import React from 'react'
+import Navbar from './components/landingPage/Navbar/Navbar'
 import './App.css'
-import Errorpage from './components/404page/404.jsx'
-import TermsPage from './components/TermsPage/Terms.jsx'
+import Ttilp from './components/TTILP/Ttilp'
+import './App.css'
+
 function App() {
-  return (
-    <div className='App'>
-      <TermsPage />
-    </div>
-  )
+  return <Navbar />
 }
 
 export default App
