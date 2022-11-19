@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 
 .form{
-  max-width: 584px;
-  width: 87.2%;
+  min-width: 327px;
+  width: 40.56%;
   height: 56px;
   box-sizing: border-box;
 }
@@ -64,8 +64,9 @@
   background-size: contain;
   position: absolute;
 }
-.search:active, .microphone:active{
+.search:active, .search:focus, .microphone:focus, .microphone:active{
   border: none;
+  outline: none;
 }
 .search{
   left: 4.79%;
@@ -82,7 +83,7 @@
   right: 5.47%;
   transition: 1s;
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 480px) {
   .form, .searchInput{
     height: 43px;
     font-size: 14px;

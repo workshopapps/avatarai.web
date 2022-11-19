@@ -26,7 +26,9 @@ export default function SearchComponent () {
   }
 
   return (
-    <form onSubmit={handleSubmit()} className={style.form}>
+    <form onSubmit={handleSubmit()} className={style.form}
+    data-testid='form'
+    >
       <input
         type="text"
         name="search"
