@@ -1,5 +1,6 @@
 import Intro from './Main';
 import Subscribe from './Subscribe';
+import Footer from './Footer';
 
 const Main = () => {
     return (
@@ -98,6 +99,7 @@ const Main = () => {
                 </div>
             </div>
             <Subscribe />
+            <Footer />
         </div>
      );
 }
