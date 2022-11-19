@@ -33,7 +33,7 @@ jobs:
       #     tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
 
       
-      - name: Deploy Frontend
+      - name: Deploy Apps
         run: |
           echo "${{ secrets.SSH_KEY }}" > id_rsa
           sudo chmod 600 id_rsa
@@ -42,4 +42,5 @@ jobs:
           cd /home/noxus
           sudo docker compose pull
           sudo docker compose up -d --build frontend
-          sudo docker compose up -d --build backend && exit'
+          sudo docker compose up -d --build backend 
+          sudo docker system prune -af && exit'
