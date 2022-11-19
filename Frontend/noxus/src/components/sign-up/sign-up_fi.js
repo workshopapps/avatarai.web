@@ -7,7 +7,9 @@ export default function SignUp_fi(){
 
     return(
         <div className='first_opt'>
-            <img className='logo_opt' src={logo_opt} alt='logo.png' />
+            <div className="nav_opt">
+            <img className='logo_opt logo_opt_2' src={logo_opt} alt='logo.png' />
+            </div>
             <img className='mail_opt' src={tick_opt} alt='tick.png' />
             <div className='bb_opt'>
                 <div className='ch___opt'>Weldone, Tolu </div>
@@ -15,8 +17,8 @@ export default function SignUp_fi(){
             </div>
             <div className='li_opt'>Your account has been created successfully</div>
 
-            <div>
-                <button className='mybutton_opt' id='mybutton_opt' >Complete Your Account Setup</button>
+            <div className="button_div_opt">
+                <button className='mybutton_opt' id='mybutton_opt' >Proceed to Dashboard</button>
             </div>
 
         </div>

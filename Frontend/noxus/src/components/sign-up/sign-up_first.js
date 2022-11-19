@@ -27,14 +27,20 @@ export default function SignUp_first (){
     const [show_s, setShow_s] = useState(true);
     const [show, setShow] = useState(true);
     return(
+        <div className="house_opt">
+            <div className="nav_opt">
+                <img className='logo_opt' src={logo_opt} alt='logo.png' />
+                <div className="all_opt">Already have an account?<span className='col_opt'> Log in here</span></div>
+
+            </div>
     <div className='first_opt'>
-            <img className='logo_opt' src={logo_opt} alt='logo.png' />
+            
             <div className='get_opt'>Get Started With A Free Account</div>
             <div className='gett_opt'>Sign Up to get your AI-generated avatars</div>
             <div className='motion_opt'>
                 <div className='one'></div>
                 <div className='two'></div>
-                <div className='two'></div>
+                <div className='three'></div>
             </div>
             <div className='provide_opt'>Please provide your name and e-mail</div>
 
@@ -52,8 +58,7 @@ export default function SignUp_first (){
                             <span className="checkmark"/>
                         </label>
                         <button onClick={()=> setShow(!show)} disabled={show_s} className='mybutton_opt' id='mybutton_opt'>Continue</button>
-                        <div className="all_opt">Already have an account?<span className='col_opt'> Log in here</span>
-                        </div>
+                        
                     </div>
                 }
 
@@ -74,12 +79,13 @@ export default function SignUp_first (){
                         <a href='#/opt_s'>
                             <button disabled={state.disabled} className='mybutton_opt' id='mybutton_opt' type ='submit'>Continue</button>
                         </a>
-                        <div className="all_opt">Already have an account?<span className='col_opt'> Log in here</span></div>
+                        
                     </div>
                 }
 
 
             </form>
+        </div>
         </div>
     )
 }

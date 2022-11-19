@@ -17,7 +17,7 @@ function App() {
             <Route path ="/opt_s" element={<Opt_sec/>} />
             <Route path ="/opt_t" element={<Opt_thi/>} />
             <Route path ="/opt_fo" element={<Opt_for/>} />
-            <Route path ="/welcome" element={<Opt_wel/>} />
+            <Route path ="/" element={<Opt_wel/>} />
 
         </Routes>
       </Router>

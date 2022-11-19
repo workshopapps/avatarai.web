@@ -25,7 +25,9 @@ export default function SignUp_for (){
     }
     return(
         <div className='first_opt'>
-            <img className='logo_opt' src={logo_opt} alt='logo.png' />
+              <div className="nav_opt">
+            <img className='logo_opt logo_opt_2' src={logo_opt} alt='logo.png' />
+            </div>
             <div className='get_opt'>Get Started With A Free Account</div>
             <div className='gett_opt'>Sign Up to get your AI-generated avatars</div>
             <div className='motion_opt'>
