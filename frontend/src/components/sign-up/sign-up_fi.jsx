@@ -1,8 +1,8 @@
 import React from "react";
-import logo_opt from '../../images/sign_up/logo.png';
-import tick_opt from '../../images/sign_up/tick-circle.png';
+import logo_opt from './images/sign_up/logo.png';
+import tick_opt from './images/sign_up/tick-circle.png';
 import './signup.css';
-import clap from '../../images/sign_up/clap.png';
+import clap from './images/sign_up/clap.png';
 export default function SignUp_fi(){
 
     return(

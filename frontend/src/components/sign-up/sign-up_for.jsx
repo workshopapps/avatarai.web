@@ -1,6 +1,6 @@
 import React from "react";
-import logo_opt from '../../images/sign_up/logo.png';
-import info_opt from '../../images/sign_up/info_outline.png';
+import logo_opt from './images/sign_up/logo.png';
+import info_opt from './images/sign_up/info_outline.png';
 import './signup.css';
 let handleclick;
 let state;
@@ -46,7 +46,9 @@ export default function SignUp_for (){
                     <input id='myinput_opt' placeholder='https://www.twitter.com/username' type='text' required /><br/>
                     <label>Instagram</label><br/>
                     <input id='myinput_opt' placeholder='https://www.instagram.com/username' type='text' required /><br/>
-                    <button className='mybutton_opt' id='mybutton_opt' type='submit'>Continue</button>
+                    <a href='/Opt_fi'>
+                        <button className='mybutton_opt' id='mybutton_opt' type='submit' 
+                        >Continue</button></a>
                 </div>
 
             </form>
