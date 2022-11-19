@@ -7,6 +7,7 @@ import NavigationLink from "./components/chat/NavigationLink";
 import MessageEdit from "./components/chat/MessageEdit";
 import "./index.css";
 import MessageEditSection from "./components/chat/MessageEditSection";
+import MessagePreview from "./components/chat/MessagePreview";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -22,6 +23,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <div className="w-[438px]">
         <MessageEditSection />
       </div>
+      <MessagePreview
+        name={`Martins`}
+        message={`can you help me apply this foundation in tomorrow's show?`}
+        time={`49 mins`}
+      />
     </>
   </React.StrictMode>
 );
