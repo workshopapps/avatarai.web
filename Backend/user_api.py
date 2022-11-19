@@ -20,9 +20,7 @@ def get_password_hash(password):
 user_router = APIRouter()
 user_list= []
 
-@user_router.post("/api/user"
-response_model= User,
-)
+@user_router.post("/api/user" response_model= User      )
 async def create_user(raw_user : User):
     user = {
          
