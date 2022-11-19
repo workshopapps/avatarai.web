@@ -16,7 +16,7 @@ const AboutUs = () => {
                         <img src={Banner} alt="Noxus" />
                     </div>
                     <div id="banner_title">
-                        <h1>About Us</h1>
+                        <h1>About <span>Us</span></h1>
                     </div>
                 </div>
                 <div className="dja_overlay"></div>
@@ -33,24 +33,24 @@ const AboutUs = () => {
             <section className="dja_story_section">
                 <div className="dja_container">
                     <h2 className="dja_title">Our Story</h2>
-                    <div>
+                    <div className="dja_story_text_wrap">
                         <p>Noxus was founded by a team of creatives in November 2022, this team was founded in the year 2022 during the most powerful internship in the world (HNG). What brought the team together was a spark of ideas, and an idea to help online users to have enough physical privacy on any online forum.</p>
                         <p>Having known that AI Art has been a thing for years, the team taught "maybe we can create a software that can generate multiple images of themselves in multiple environments and different backgrounds" and the rest is history.</p>
                         <p>Now online users get to protect their physical identity on any social platform , get to create physical characters that look like them, improve their user experience , and help them to maintain anonymity in a virtual environment. <br/>"Physical Appearance Privacy Is Crucial, And Noxus Is Making It Possible."<br/> Team Tape.</p>
                     </div>
                 </div>
-                <div>
+                <div className="dja_story_design_wrap" id="dja_design_1">
                     <img src={PolygonLeft} alt="story"/>
                 </div>
-                <div>
+                <div className="dja_story_design_wrap" id="dja_design_2">
                     <img src={PolygonRight} alt="story"/>
                 </div>
             </section>
 
-            <section className="dja_why_us_section">
+            <section className="dja_why_section">
                 <div className="dja_container">
                     <h2 className="dja_title">Why Us?</h2>
-                    <div>
+                    <div className="dja_why_ctn">
                         {
                             WHY_US.map(item => <WhyUsCard title={item.title} content={item.content}/>)
                         }
@@ -61,7 +61,7 @@ const AboutUs = () => {
             <section className="dja_team_section">
                 <div className="dja_container">
                     <h2 className="dja_title">Our Team</h2>
-                    <div>
+                    <div className="dja_team_ctn">
                         {
                             TEAM.map((item, i) => <TeamMemberCard name={item.name} index={i} role={item.role}/>)
                         }
