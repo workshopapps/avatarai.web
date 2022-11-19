@@ -1,6 +1,9 @@
+import React from 'react'
 import logo from './logo.svg';
 import PaymentFlow12 from './components/paymentFlow-1.2/paymentFlow1.2';
 import './App.css';
+import Navbar from './components/landingPage/Navbar/Navbar'
+import Ttilp from './components/TTILP/Ttilp'
 import PaymentFlow11 from './components/paymentFlow-1.1/paymentFlow1.1';
 import { useState } from 'react';
 
@@ -25,4 +28,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

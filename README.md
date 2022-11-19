@@ -1,3 +1,5 @@
+![CI/CD](https://github.com/workshopapps/avatarai.web/workflows/noxus/badge.svg)
+
 <h1 align="center">avatarai.web</h1></br>
 
 ## Overview
