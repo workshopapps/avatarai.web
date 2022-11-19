@@ -8,7 +8,6 @@ function Pricing() {
   return (
     <section className="overflow-x-hidden">
       <Pricetop />
-
       <TotalPriceCards />
       <Sponsors />
       <Faq />

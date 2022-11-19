@@ -2,10 +2,24 @@ import React, { useState } from "react";
 
 export const Faq = () => {
   const [questions, setQuestions] = useState([
-    { title: "Title of the question", comment: "the answers to the questions" },
-    { title: "Title of the question", comment: "the answers to the questions" },
-    { title: "Title of the question", comment: "the answers to the questions" },
-    { title: "Title of the question", comment: "the answers to the questions" },
+    {
+      title:
+        "Do I need to upload a picture with a human face to generate avatars?",
+      comment:
+        "Digital avatars can serve a number of purposes including representing a person, an online friend, a brand, or an influencer",
+    },
+    {
+      title: "Can you create avatars directly from your camera",
+      comment: "the answers to the questions",
+    },
+    {
+      title: "Can you create avatars directly from your camera",
+      comment: "the answers to the questions",
+    },
+    {
+      title: "Can you create avatars directly from your camera",
+      comment: "the answers to the questions",
+    },
   ]);
 
   const [toggle, setToggle] = useState(false);
@@ -32,7 +46,7 @@ export const Faq = () => {
               onClick={() => click(index)}
               key={index}
               className="rounded-lg border-first  p-3 mb-3 flex justify-between">
-              <p>{question.title}</p>
+              <p className="font-bold">{question.title}</p>
               <p
                 className="text-lg cursor-pointer"
                 onClick={() => setToggle(!toggle)}>
@@ -40,9 +54,9 @@ export const Faq = () => {
               </p>
             </div>
             {toggle === index ? (
-              <div className="rounded-lg border-first mb-5 p-4 ">
+              <div className="rounded-lg border-first mb-5 p-4 border-vnc_hr ">
                 <div className="flex justify-between">
-                  <p>{question.title}</p>
+                  <p className="font-bold">{question.title}</p>
                   <p className="text-lg " onClick={() => setToggle(toggle)}>
                     -
                   </p>
@@ -52,6 +66,10 @@ export const Faq = () => {
             ) : null}
           </div>
         ))}
+      </div>
+
+      <div className="text-center text-vnc_hr underline py-5">
+        <a href="#"> View more FAQ</a>
       </div>
     </section>
   );

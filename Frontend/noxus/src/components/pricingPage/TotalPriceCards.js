@@ -1,3 +1,5 @@
+import { Feature } from "./Feature";
+import PriceCardTwo from "./PriceCardTwo";
 import PriceCards from "./PriceCards";
 import React from "react";
 
@@ -13,25 +15,30 @@ function TotalPriceCards() {
         <PriceCards
           title="Basic"
           amount="$14"
-          top="4.5rem"
           background="rgba(77, 56, 153, 1)"
           text="white"
+          feature=<Feature />
+          space="5rem"
         />
-        <PriceCards
+        <PriceCardTwo
           title="Standard"
           amount="$23"
-          top="5.5rem"
+          top="0"
           background="white"
           text="rgba(77, 56, 153, 1)"
           bg="rgba(77, 56, 153, 1)"
           font="white"
+          feature=<Feature />
+          feature2=<Feature />
         />
+
         <PriceCards
           title="Premium"
           amount="$42"
-          top="4.5rem"
           background="rgba(77, 56, 153, 1)"
           text="white"
+          space="5rem"
+          feature=<Feature />
         />
       </div>
     </div>
