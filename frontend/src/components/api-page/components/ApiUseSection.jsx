@@ -1,8 +1,10 @@
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import useCase1 from '../images/usecase1.svg';
 import useCase2 from '../images/usecase2.svg';
 import useCase3 from '../images/usecase3.svg';
 import useCase4 from '../images/usecase4.svg';
+import pencil from '../images/pencil.svg';
+import styleDemo from '../images/style-demo.svg';
 
 const useCases = [
 	{
@@ -45,14 +47,14 @@ const ApiUseSection = () => {
 				<div className=" flex flex-col md:flex-row md:justify-between gap-10 mt-10">
 					<div className="max-w-[423px]">
 						<div className="mb-[24px]">
-							<img src="../images/pencil.svg" alt="pencil" className="mb-[6px]" />
+							<img src={pencil} alt="pencil" className="mb-[6px]" />
 							<p className="text-[#333333] text-base font-bold mb-[6px]">Create a sandbox account</p>
 							<p className="text-[#605E65]">
 								test our service using your sandbox account and customize our API using your persoanla brand colours
 							</p>
 						</div>
 						<div className=" mb-[24px]">
-							<img src="../images/pencil.svg" alt="pencil" className="mb-[6px]" />
+							<img src={pencil} alt="pencil" className="mb-[6px]" />
 							<p className="text-[#333333] text-base font-bold mb-[6px]">Quick set up</p>
 							<p className="text-[#605E65]">
 								An outstanding developer experience is guaranteed with clear coding examples and comprehensive API
@@ -60,7 +62,7 @@ const ApiUseSection = () => {
 							</p>
 						</div>
 						<div className="">
-							<img src="../images/pencil.svg" alt="pencil" className="mb-[6px]" />
+							<img src={pencil} alt="pencil" className="mb-[6px]" />
 							<p className="text-[#333333] text-base font-bold mb-[6px]">Upload Images!</p>
 							<p className="text-[#605E65]">
 								Upload a maximum of ten images in our system and watch it generate avatars with wonderful scenes that
@@ -70,7 +72,7 @@ const ApiUseSection = () => {
 					</div>
 
 					<div className="max-w-[780px]">
-						<img src="../images/style-demo.svg" alt="Style demo" className="" />
+						<img src={styleDemo} alt="Style demo" className="" />
 					</div>
 				</div>
 
@@ -92,9 +94,9 @@ const ApiUseSection = () => {
 										className="absolute right-[30px] md:right-[55px] bottom-[30px] w-[80px] md:w-auto"
 									/>
 
-									<Link to="#" className="text-[18px] underline text-[#333333]">
+									<a href="#" className="text-[18px] underline text-[#333333]">
 										Learn more
-									</Link>
+									</a>
 								</div>
 							);
 						})}

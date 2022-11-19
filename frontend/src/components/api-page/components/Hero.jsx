@@ -1,9 +1,11 @@
+import hero from '../images/hero.svg';
+
 const Hero = () => {
 	return (
 		<div className="w-full">
 			<div
 				style={{
-					background: 'linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/hero.svg)',
+					background: `linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${hero})`,
 					backgroundRepeat: 'no-repeat',
 					backgroundPosition: 'center',
 					backgroundSize: 'cover',
