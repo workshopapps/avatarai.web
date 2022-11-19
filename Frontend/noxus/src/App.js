@@ -1,7 +1,3 @@
-import { Route, Routes } from "react-router-dom";
-import CoursePage from "./components/courses/CoursePage";
-import Navbar from "./components/courses/Navbar";
-import CourseDetail from "./components/courses/CourseDetail";
 
 function App() {
   return (
