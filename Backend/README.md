@@ -11,5 +11,3 @@
 `source env/bin/activate`
 
 ## install all requirements using
-
-`pip install -r requirements.txt`
