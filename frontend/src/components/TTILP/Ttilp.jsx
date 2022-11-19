@@ -9,6 +9,7 @@ import Navbar from "../landingPage/Navbar/Navbar";
 import QuestionSection from "./../faq/QuestionSection";
 import FaqNewsletter from "./../faq/FaqNewsletter";
 
+
 export default function Ttilp() {
   return (
     <div className="vic">

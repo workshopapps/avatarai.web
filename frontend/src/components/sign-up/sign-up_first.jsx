@@ -1,8 +1,9 @@
 import React from "react";
-import logo_opt from '../../images/sign_up/logo.png';
-import info_opt from '../../images/sign_up/info_outline.png';
+import logo_opt from './images/sign_up/logo.png';
+import info_opt from './images/sign_up/info_outline.png';
 import './signup.css';
 import {useState} from "react";
+import { Link } from 'react-router-dom';
 let handleclick;
 let state;
 
@@ -76,9 +77,9 @@ export default function SignUp_first (){
                             <img className='info_opt' src={info_opt} alt='info.png'/>
                             <div className='info__opt' >Both passwords must match</div>
                         </div>
-                        <a href='#/opt_s'>
-                            <button disabled={state.disabled} className='mybutton_opt' id='mybutton_opt' type ='submit'>Continue</button>
-                        </a>
+                        <Link to="/Opt_sec">
+                            <button  className='mybutton_opt' id='mybutton_opt' type ='submit'>Continue</button>
+                        </Link>
                         
                     </div>
                 }
