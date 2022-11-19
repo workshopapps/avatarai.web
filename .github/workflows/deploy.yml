@@ -24,13 +24,13 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
 
-      # - name: Build and push Frontend
-      #   uses: docker/build-push-action@v3
-      #   with:
-      #     context: .
-      #     file: ./Frontend/noxus/Dockerfile
-      #     push: true
-      #     tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
+      - name: Build and push Frontend
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./Frontend/noxus/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
 
       
       - name: Deploy Apps
