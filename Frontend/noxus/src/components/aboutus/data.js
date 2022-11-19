@@ -1,22 +1,33 @@
-const TEAM = [
+export const TEAM = [
     {
         name: "Name Surname",
         role: "Product designer",
-        img: "./img/member1.png"
     },
     {
         name: "Name Surname",
         role: "Product designer",
-        img: "./img/member2.png"
     },
     {
         name: "Name Surname",
         role: "Product designer",
-        img: "./img/member3.png"
     },
     {
         name: "Name Surname",
         role: "Product designer",
-        img: "./img/member4.png"
     },
+]
+
+export const WHY_US = [
+    {
+        title: "Fun background",
+        content: "Noxus has hundreds of backgrounds, so you can generate fun images"
+    },
+    {
+        title: "Affordable Prices",
+        content: "After exhausting your free trial, you can unlock your access to many more images and backgrounds!",
+    },
+    {
+        title: "HD Images",
+        content: "Your AI-generated images would be high resolution and can also be shared with friends."
+    }
 ]
