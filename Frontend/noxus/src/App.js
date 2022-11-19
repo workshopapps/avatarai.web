@@ -29,6 +29,11 @@ function App() {
         </Routes>
       </Router>
   );
+import React from "react";
+import ReadArticle from "./components/read article/ReadArticle";
+
+function App() {
+  return <ReadArticle />;
 }
 
 
