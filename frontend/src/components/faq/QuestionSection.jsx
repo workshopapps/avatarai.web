@@ -10,7 +10,7 @@ const QuestionSection = () => {
         <div className="bg-[#8B70E9] h-full flex items-center font-nunito font-bold text-white rounded px-[40px] py-[8px]">
           <span>FAQ's</span>
         </div>
-        <div className="h-full flex items-center justify-center font-nunito font-bold grow text-[#8B70E9] rounded py-[8px]">
+        <div className="h-full flex items-center justify-center font-nunito font-bold grow text-[#848484] rounded py-[8px]">
           <span>Contact Us</span>
         </div>
       </div>
