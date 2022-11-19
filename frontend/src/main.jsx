@@ -6,6 +6,7 @@ import NavigationFooter from "./components/chat/NavigationFooter";
 import NavigationLink from "./components/chat/NavigationLink";
 import MessageEdit from "./components/chat/MessageEdit";
 import "./index.css";
+import MessageEditSection from "./components/chat/MessageEditSection";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -18,6 +19,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         email={`akuyaekorot@gmail.com`}
       />
       <MessageEdit />
+      <div className="w-[438px]">
+        <MessageEditSection />
+      </div>
     </>
   </React.StrictMode>
 );
