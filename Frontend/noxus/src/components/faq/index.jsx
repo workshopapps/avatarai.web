@@ -8,7 +8,6 @@ const Faq = () => {
     <>
       <FaqHero />
       <QuestionSection />
-      <FaqGetInTouch />
       <FaqNewsletter />
     </>
   );

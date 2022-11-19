@@ -1,5 +1,6 @@
 import faqContent from "./questions";
 import QuestionCard from "./QuestionCard";
+import FaqGetInTouch from "./FaqGetInTouch";
 
 const QuestionSection = () => {
   return (
@@ -12,6 +13,7 @@ const QuestionSection = () => {
           <QuestionCard question={question} index={i} />
         ))}
       </div>
+      <FaqGetInTouch />
     </section>
   );
 };
