@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import logo from './logo.svg';
 import './App.css';
 
@@ -20,6 +21,13 @@ function App() {
       </header>
     </div>
   );
+=======
+import React from "react";
+import ReadArticle from "./components/read article/ReadArticle";
+
+function App() {
+  return <ReadArticle />;
+>>>>>>> Stashed changes
 }
 
 export default App;
