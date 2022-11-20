@@ -48,14 +48,11 @@ const Navbar = () => {
             <Link to="/FAQ">FAQs</Link>
           </li>
         </ul>
-        <div className="space-x-6 hidden lg:flex">
-          <button
-            className="inline-flex justify-center items-center px-8 py-3  border border-purple  
-          rounded-[8px] font-semibold text-md text-purple bg-white transition ease-in-out duration-150 border-purple text-purple w-full"
-          >
-            <Link to="/Login"> Log in</Link>
-
-          </button>
+        <div className="space-x-6 hidden md:block">
+          <Button className=" border-purple text-purple bg-white ">
+            <Link to="/login">  Log in</Link>
+          
+          </Button>
 
           <Button className="text-white border-purple bg-purple ">
             <Link to="/Signupfirst"> Sign up </Link>

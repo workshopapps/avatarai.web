@@ -37,7 +37,7 @@ const Login = ({props}) => {
             </span>
        <p className="text-purple"><Link to="/forgot_password">Forgot Password</Link></p>
           </div>
-          <Button className="w-full">Log in</Button>
+          <Button className="w-full bg-purple text-white">Log in</Button>
         </form>
         <p className="text-center py-5">Dont have an account? <a href="sign-up" className="text-purple">Sign Up</a></p>
       </div>
