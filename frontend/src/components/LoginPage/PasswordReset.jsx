@@ -11,7 +11,7 @@ const PasswordReset = () => {
     <p className='text-xl'>Your password has been successfully reset click below to log in </p>
     </div>
     
-      <Button className="w-full md:w-[28rem]">Continue</Button>
+      <Button className="w-full md:w-[28rem] bg-purple text-white">Continue</Button>
       
       
 
