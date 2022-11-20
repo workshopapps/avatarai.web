@@ -23,7 +23,7 @@ const FaqNewsletter = () => {
               placeholder="Enter your email address"
             />
           </div>
-          <div className="bg-[#8B70E9] h-full relative flex items-center font-nunito text-white rounded px-[20px] py-[8px]">
+          <div className="cursor-pointer bg-[#8B70E9] h-full relative flex items-center font-nunito text-white rounded px-[20px] py-[8px]">
             <span>Subscribe</span>
           </div>
         </div>
