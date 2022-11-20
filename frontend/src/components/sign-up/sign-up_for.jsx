@@ -1,6 +1,7 @@
 import React from "react";
 import logo_opt from './images/sign_up/logo.png';
 import info_opt from './images/sign_up/info_outline.png';
+import { Link } from "react-router-dom";
 import './signup.css';
 let handleclick;
 let state;
@@ -31,9 +32,9 @@ export default function SignUp_for (){
             <div className='get_opt'>Get Started With A Free Account</div>
             <div className='gett_opt'>Sign Up to get your AI-generated avatars</div>
             <div className='motion_opt'>
-                <div className='one'></div>
-                <div className='one'></div>
-                <div className='one'></div>
+                <div className='one' id='full_bg'></div>
+                <div className='two' id='full_bg'></div>
+                <div className='three' id='full_bg'></div>
             </div>
             <div className='provide__opt'>Create username and submit links to share posts on social accounts</div>
             <form id='myform_opt' method='post'>
@@ -46,9 +47,14 @@ export default function SignUp_for (){
                     <input id='myinput_opt' placeholder='https://www.twitter.com/username' type='text' required /><br/>
                     <label>Instagram</label><br/>
                     <input id='myinput_opt' placeholder='https://www.instagram.com/username' type='text' required /><br/>
-                    <a href='/Opt_fi'>
-                        <button className='mybutton_opt' id='mybutton_opt' type='submit' 
-                        >Continue</button></a>
+                     {/* <Link to='/Opt_fi'> */}
+                      <Link  to='/Opt_fi'>
+                        <button className='mybutton_opt' id='mybutton_opt' type='submit'>  
+                    Continue
+                            
+                            </button></Link> 
+                            {/* </Link> */}
+                        
                 </div>
 
             </form>

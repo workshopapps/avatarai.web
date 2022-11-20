@@ -2,7 +2,16 @@
 
 .house_opt {
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 45px;
+}
+
+#full_bg {
+    background-color: #8B70E9;
+}
+
+.div_ {
+    width: 100%;
+    height: 100%;
 }
 
 .houset_opt {
