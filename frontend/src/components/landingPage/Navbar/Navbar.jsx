@@ -5,6 +5,9 @@ import menu from "../img/menu.png";
 
 // import logo from "../../../assets/images/logos.png";
 // import menu from "../../../assets/images/menu.png";
+import logo from "./../img/logo.png";
+import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -12,21 +15,31 @@ const Navbar = () => {
       <img src={logo} alt="" className="w-10 hidden md:block" />
       <img src={menu} alt="" className="md:hidden mx-10" />
       <ul className="md:flex justify-between items-center gap-10 hidden">
-        <li className="p-2  border-opacity-0 hover:border-opacity-100 hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
-          Home
-        </li>
-        <li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
-          About Us
-        </li>
-        <li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
-          Pricing
-        </li>
-        <li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
-          Contact Us
-        </li>
-        <li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
-          FAQs
-        </li>
+        <Link to="/">
+          <li className="p-2  border-opacity-0 hover:border-opacity-100 hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
+            Home
+          </li>
+        </Link>
+        <Link to="/Aboutus">
+          <li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
+            About Us
+          </li>
+        </Link>
+        <Link to="/Pricing">
+          <li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
+            Pricing
+          </li>
+        </Link>
+        <Link to="">
+          <li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
+            Contact Us
+          </li>
+        </Link>
+        <Link to="/FAQ">
+          <li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
+            FAQs
+          </li>
+        </Link>
       </ul>
       <div className="space-x-6 hidden md:block">
         <Button className=" bg-white border-purple-700 text-purple-600 ">

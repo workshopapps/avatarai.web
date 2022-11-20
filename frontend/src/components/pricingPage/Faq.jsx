@@ -47,6 +47,7 @@ export const Faq = () => {
               key={index}
               className="rounded-lg vnc_border p-3 mb-3 flex justify-between">
               <p className="font-semibold">{question.title}</p>
+
               <p
                 className="text-lg cursor-pointer"
                 onClick={() => setToggle(!toggle)}>
@@ -57,10 +58,12 @@ export const Faq = () => {
               <div className="rounded-lg vnc_border1 mb-5 p-4  ">
                 <div className="flex justify-between">
                   <p className="font-bold font-nunito">{question.title}</p>
+
                   <p className="text-lg " onClick={() => setToggle(toggle)}>
                     -
                   </p>
                 </div>
+
                 <p className="font-jakarta">{question.comment}</p>
               </div>
             ) : null}

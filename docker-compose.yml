@@ -1,0 +1,19 @@
+version: "3"
+   
+services:
+    frontend:
+        image: tapeart/frontend:latest
+        container_name: frontend
+        ports:
+          -  3030:5173
+        depends_on: 
+          - backend  
+
+    backend:
+        image: tapeart/backend:latest
+        container_name: backend
+        command: uvicorn api:app --host 0.0.0.0 --port 8000
+        ports:
+            - 8000:8000
+        environment:
+            MONGODB_URL: "mongodb+srv://hng_test:Hi1hPyMiSPpbBbhg@cluster0.owcahdq.mongodb.net/test?retryWrites=true&w=majority"

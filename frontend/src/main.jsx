@@ -1,6 +1,5 @@
 import "./index.css";
 
-import AnotherThing from "./AnotherThing";
 import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom/client";

@@ -5,7 +5,7 @@ export default function Pricetop() {
   return (
     <>
       <div className="text-center mt-8 ">
-        <h3 className="vnc_pricing font-nunito text-sm px-6 font-Nunito text-vnc_green text">
+        <h3 className="vnc_pricing font-nunito text-sm px-6  text">
           CHECK OUT PRICING PLANS
         </h3>
 
