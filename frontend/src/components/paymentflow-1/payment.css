@@ -252,8 +252,32 @@ label{
         display: none;
     }
     @media only screen and (max-width: 768px){
+        .overlay{
+            /* display: block !important; */
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0px;
+            /* z-index: 1; */
+            background-color: rgba(107, 107, 107, 0.466);
+        }
+        .Dan-total div{
+            font-weight: bold !important;
+            margin-top: 10px;
+        }
         .dan-payment-left{
-            visibility: hidden;
+            display: none;
+            position: fixed;
+            background-color: rgb(255, 255, 255);
+            width: 100vw;
+            left: 0px;
+            top: 0px;
+            padding: 30px;
+            height: fit-content;
+            animation: drop 1s;
+        }
+        .dan-offer1, .dan-basic, .dan-sub{
+            display: none;
         }
         .dan-payment-container{
             margin-bottom: 20%;
@@ -261,9 +285,11 @@ label{
         .dan-payment-right{
             display: flex;
             justify-content: center;
-            width: 100%;
-            margin-right: 20%;
-            margin-left: auto;
+            width: 80%;
+            /* margin-right: 20%;
+            margin-left: auto; */
+            margin: auto;
+            /* margin-right: 7%; */
             padding-top: 9%;
         }
         .dan-details h1{
@@ -320,7 +346,9 @@ label{
             display: flex;
             flex-direction: column;
             height: 100%;
-            width: 70vw;  
+            width: 100%;  
+            margin: auto;
+            margin-left: 25%;
         }
         .dan-price{
             gap:7%;
@@ -344,4 +372,17 @@ label{
             font-size: 13px;
         }
     }     
+    }
+    #cbk-drop{
+        display: none;
+    }
+    @keyframes drop {
+        0%{
+            top: -500px;
+            opacity: 0;
+        }
+        100%{
+            top: 0px;
+            opacity: 1;
+        }
     }

@@ -69,10 +69,14 @@ export default function App() {
           <Route path ="/Opt_thi" element={<Opt_thi /> } /> 
           <Route path ="/Opt_for" element={<Opt_for /> } />
           <Route path ="/Opt_fi" element={<Opt_fi /> } />
+<<<<<<< HEAD
+      
+=======
 
           {/* Navbar components */}
           <Route path ="/Aboutus" element={<Aboutus /> } />
           <Route path ="/FAQ" element={<FAQ /> } />
+>>>>>>> 2a0ed959f06da72de4e511bdf7f9ea090d37b1b0
           
           {/* Terms and conditions */}
           <Route path ="/Terms" element={<Terms /> } />

@@ -1,8 +1,15 @@
 import React, {useState} from 'react';
-import '../paymentflow/styles/payment.css';
+import PaymentFlow12 from '../paymentFlow-1.2/paymentFlow1.2';
+import PaymentFlow11 from '../paymentFlow-1.1/paymentFlow1.1';
+import Logo from './images/logo.svg'
+import Close from './images/close-drop.svg'
+import './payment.css';
 
 
 const Payment = ()=>{
+    let [flow1, toogleFlow1] = useState('none')
+    let [flow2, toogleFlow2] = useState('none')
+
     const[Email, setEmail]=useState('')
     const[CardNumber, setcardnumber]=useState('')
     const[Expirationdate, setexpirationdate]=useState('')
@@ -19,10 +26,27 @@ const Payment = ()=>{
         console.log(Email,CardNumber,Expirationdate,Cvv,Cardname)
     }
 
+    function resetFlow1(){
+        toogleFlow1('none')
+    }
+    function resetFlow2(display){
+        toogleFlow2(display)
+    }
+    
+    function dropdown(display, next){
+        document.querySelectorAll('.drop').forEach(elm => {
+            elm.style.display = display
+        })
+        document.getElementById('cbk-drop').style.display = next
+    }
+
     return(
         <div>
+            <PaymentFlow11 display={flow1} resetFlow1={resetFlow1} resetFlow2={resetFlow2}/>
+            <PaymentFlow12 display={flow2} resetFlow2={resetFlow2}/>
+            <div className='overlay hidden drop'></div>
             <div className='dan-payment-container'>
-                <div className='dan-payment-left'>
+                <div className='dan-payment-left drop'>
                     <div className='dan-basic'>
                         <p>Subscribe to Basic</p>
                         <div className='price'>
@@ -41,9 +65,22 @@ const Payment = ()=>{
                     <div className='dan-offer1'>
                         <p>Access to create 600 avatars</p>
                     </div>
+                    <div id='cbk-drop' className='cbk-drop drop'>
+                        <div className='flex w-full justify-between'>
+                            <img src={Logo} />
+                            <button onClick={()=>{dropdown('none', 'block')}}>Close<img className='inline mb-1' src={Close} /></button>
+                        </div>
+                        <div className='flex w-full justify-between mt-5 mb-10'>
+                            <div>
+                                <p className='font-semibold'>Standard</p>
+                                <p>Billed monthly</p>
+                                <p>Access to create 600 <br/> Avatars</p>
+                            </div>
+                            <p className='text-2xl font-semibold'>$14</p>
+                        </div>
+                    </div>
                     <p className='dan-art'>4K avatars are 4096x4096. AI can have random results and may include artistic nudes, erotic or otherwise shocking images, if you do not want that and are sensitive, we recommend you to NOT use this site!</p>
-                    
-
+                
                     <div className='Dan-total'>
                         <div className='Dan-total-sub'class='flex justify-between w-[100%] pt-[5%]'>
                         <p >Subtotal</p>
@@ -52,7 +89,7 @@ const Payment = ()=>{
 
                         <div className='Dan-total-today'class='flex justify-between w-[100%] pt-[2%]'>
                             <div><p>Total due today</p></div>
-                            <div><p class='font-[500] text-[20px]'>$14</p ></div>
+                            <div><p class='font-[500] text-[20px]'>$14</p></div>
                         </div>
                     </div>
                 </div>
@@ -67,7 +104,7 @@ const Payment = ()=>{
                             <p>Per Month</p>
                         </div>
                         <div className='dan-view-details'>
-                            <p>View details</p>
+                            <button className='text-violet-500' onClick={() => {dropdown('block', 'block')}}>View details</button>
                         </div>
                     </div>
                     <div className='dan-details'>
@@ -361,7 +398,7 @@ const Payment = ()=>{
                             <input type='checkbox'/>
                             <p class='text-[#919191;] '>Save card details</p>
                         </div>
-                        <button className='btn'>Subscribe</button>
+                        <button className='btn' onClick={() => toogleFlow1('block')}>Subscribe</button>
                     </form>
                     <div className='dan-confirmation'>
                         <p>By confirming your subscription, you allow Generated Media, Inc. to charge your
