@@ -49,18 +49,10 @@ const all_state_object = [
   { name: "Yobe" },
   { name: "Zamfara" },
 ];
-const options = [
-  { value: "flavor", label: "flavor" },
-  { value: "yummy", label: "yummy" },
-  { value: "red", label: "red" },
-  { value: "green", label: "green" },
-  { value: "yellow", label: "yellow" },
-];
+
 
 const Profile_page = () => {
-  const handlechange = (e) => {
-    console.log(e.target);
-  };
+  
   // state for editing or not editing
   const [editing, setEditing] = useState(false);
   const change_editing_status = (e) => {
@@ -78,9 +70,11 @@ const Profile_page = () => {
   const save_details = () => {
     if (!firstName.trim() || !/[^a-zA-Z]/.test(firstName)) {
       alert("firstName must contain only letters");
+       return
     }
     if (!lastName.trim() || !/[^a-zA-Z]/.test(lastName)) {
       alert("lastName must contain only letters");
+     return
     }
     if (
       !new RegExp(
@@ -88,6 +82,7 @@ const Profile_page = () => {
       ).test(email)
     ) {
       alert("Enter a valid email address");
+        return
     }
     if (
       !new RegExp(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/).test(password)
@@ -95,9 +90,11 @@ const Profile_page = () => {
       alert(
         "Password should contains atleast 8 charaters and containing uppercase,lowercase and numbers"
       );
+      return
     }
     if (!mobileNumber.trim()) {
       alert("please input mobile number");
+     return
     }
     change_editing_status();
   };
