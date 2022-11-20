@@ -31,6 +31,7 @@ import ForgetPassword from './components/LoginPage/ForgotPassword';
 import CheckEmail from './components/LoginPage/CheckEmail';
 import ResetPassword from './components/LoginPage/ResetPassword';
 import Chat from './components/chat/ChatPage';
+import LandingPage from './components/landing-page/LandingPageC';
 
 export default function App() {
   return (
@@ -47,6 +48,10 @@ export default function App() {
           you can find the path to your page in the links below
           DO NOT EDIT ANYTHING HERE JUST COPY THE PATH TO YOUR PAGE
            */}
+
+
+        {/*  Landing Page */}
+        <Route path="/LandingPage" element={<LandingPage />} exact />
 
         {/* Text to image landing page */}
         <Route path="/" element={<Ttilp />} exact />
