@@ -1,6 +1,7 @@
 import React from 'react';
 import lock from "../../assets/images/lock.png";
 import Button from '../landingPage/Button/Button';
+import { Link } from 'react-router-dom';
 
 const ResetPassword = () => {
   return (
@@ -26,7 +27,7 @@ const ResetPassword = () => {
           className="border p-3 w-full md:w-[28rem] my-1 rounded-lg outline-none"
         />
       </div>
-      <Button className="w-full md:w-[28rem] bg-purple text-white">Reset Password</Button>
+      <Button className="w-full md:w-[28rem] bg-purple text-white"> <Link to="/ResetPassword">Reset Password</Link></Button>
       
 
 </div>
