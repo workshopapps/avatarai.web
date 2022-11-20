@@ -1,10 +1,12 @@
 import Intro from './Main';
 import Subscribe from './Subscribe';
 import Footer from './Footer';
+import Navbar from './Navbar';
 
 const Main = () => {
     return (
         <div>
+            <Navbar />
             <Intro />
             <p>Careers at Nexus</p>
             <div className="flex">
