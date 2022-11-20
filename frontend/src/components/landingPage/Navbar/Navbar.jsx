@@ -48,7 +48,7 @@ const Navbar = () => {
             <Link to="/FAQ">FAQs</Link>
           </li>
         </ul>
-        <div className="space-x-6 hidden md:block">
+        <div className="space-x-6 hidden lg:block">
           <Button className=" border-purple text-purple bg-white ">
             <Link to="/login">  Log in</Link>
           
