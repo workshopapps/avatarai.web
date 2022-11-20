@@ -11,7 +11,7 @@ const defaultFields = {
   location: "",
 };
 
-const Profile_page = () => {
+const Profile = () => {
   // state for editing or not editing
   const [editing, setEditing] = useState(false);
   const change_editing_status = (e) => {
@@ -222,4 +222,4 @@ const Profile_page = () => {
   );
 };
 
-export default Profile_page;
+export default Profile;
