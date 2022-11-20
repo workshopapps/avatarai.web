@@ -35,7 +35,7 @@ const Login = ({props}) => {
             <input type="checkbox" name="" id="" />
             <span>Remenber</span>
             </span>
-       <p className="text-purple"><Link to="/forgot_password">Forgot Password</Link></p>
+       <p className="text-purple"><Link to="/ForgetPassword">Forgot Password</Link></p>
           </div>
           <Button className="w-full bg-purple text-white">Log in</Button>
         </form>
