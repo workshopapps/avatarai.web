@@ -21,7 +21,7 @@ const ChatSideBar = () => {
           );
         })}
       </div>
-      <div className="justify-self-end">
+      <div className="mt-auto">
         <NavigationFooter
           username={`Akuya Ekorot`}
           email={`akuyaekorot@gmail.com`}

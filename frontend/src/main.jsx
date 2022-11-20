@@ -10,6 +10,7 @@ import MessageEditSection from "./components/chat/MessageEditSection";
 import MessagePreview from "./components/chat/MessagePreview";
 import SendMessage from "./components/chat/SendMessage";
 import ChatSideBar from "./components/chat/ChatSideBar";
+import ChatPage from "./components/chat/ChatPage";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -32,6 +33,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       />
       <SendMessage />
       <ChatSideBar />
+      <ChatPage />
     </>
   </React.StrictMode>
 );
