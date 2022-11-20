@@ -28,15 +28,10 @@ function PaymentFlow12(props){
                         <input type='number' data-testid='input'/>
                         <input type='number' data-testid='input'/>
                         <input type='number' data-testid='input'/><br/>
-<<<<<<< HEAD:frontend/src/components/paymentFlow-1.2/paymentFlow1.2.jsx
-                        <p className='hidden mt-10 w-9/12 max-[768px]:block'>A token should be sent to you within two minutes</p>
-                        <button className='bg-violet-500 text-white w-1/2 p-2 rounded-md mt-7 mb-5 authorize'>Authorize</button>
-=======
                         <p className='hidden mt-5 w-9/12 max-[768px]:block'>A token should be sent to you within two minutes</p>
                         <Link to='/Paymentauth'>
                             <button className='bg-violet-500 text-white w-1/2 p-2 rounded-md mt-7 mb-5 authorize'>Authorize</button>
-                            </Link>
->>>>>>> 2a0ed959f06da72de4e511bdf7f9ea090d37b1b0:frontend/src/components/paymentFlow-1.2/paymentFlow1.2.js
+                        </Link>
                     </form>
                     <p className='max-[768px]:hidden'>A token should be sent to you within two minutes</p>
                     <button className='mt-6 mb-10 text-violet-500 max-[768px]:mt-4' data-testid='cancel-btn' onClick={() => {props.resetFlow2('none')}}>Cancel</button>
