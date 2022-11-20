@@ -1,6 +1,7 @@
 import React from 'react'
 import moc from "../../assets/images/moc.png";
 import Button from '../landingPage/Button/Button';
+import { Link } from 'react-router-dom';
 const CheckEmail = () => {
   return (
     <div className='flex flex-col justify-center items-center gap-y-5 mt-10  px-10  h-screen '>
@@ -10,7 +11,7 @@ const CheckEmail = () => {
     <p className='text-xl'>We sent a password reset link to Ibrahimabasiye1@gmail.com</p>
     </div>
     
-      <Button className="w-full md:w-[28rem]">Check mail app</Button>
+      <Button className="w-full md:w-[28rem] bg-purple text-white"><Link to="/SetPassword">Check mail app</Link>Check mail app</Button>
       
       
 
