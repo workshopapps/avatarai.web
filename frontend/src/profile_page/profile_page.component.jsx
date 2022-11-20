@@ -135,7 +135,7 @@ const Profile_page = () => {
             <img
               src={avatar}
               alt="profile image"
-              className=" w-[40%] md:w-[100%]"
+              className=" w-[15%] md:w-[15%]"
             />
             <div>
               <h3 className="font-semibold">Baki Hanma</h3>
