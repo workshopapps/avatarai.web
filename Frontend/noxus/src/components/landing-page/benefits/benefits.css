@@ -142,4 +142,8 @@
         padding-top: 3rem;
        
     }
+    .benefits__images-ony{
+        margin-left: 0rem;
+        width: 150px;
+    }
 }

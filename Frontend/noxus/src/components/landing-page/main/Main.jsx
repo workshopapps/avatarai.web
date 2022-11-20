@@ -18,7 +18,7 @@ const Main = () => {
         </div>{" "}
         
         <div className="main__second__ai-ony">
-          <h3 className="image__title-ony">Run the show</h3>
+          <h3 className="image__title-ony image__description3-ony">Run the show</h3>
           <p className="image__description2-ony">
             Have access to many templates and scenes to create mindblowing
             AI-generated arts. The ball is in your court, be Michael Jordan with

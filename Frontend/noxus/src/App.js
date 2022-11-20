@@ -6,10 +6,11 @@ import Header from "./components/landing-page/header/header/Header";
 import Main from "./components/landing-page/main/Main";
 import SocialProof from "./components/landing-page/socialproof/SocialProof";
 
+
 function App() {
 return(
   <div>
-    <Header />
+    <Header  />
     <Main />
     <Cta /> 
     <Benefits />
