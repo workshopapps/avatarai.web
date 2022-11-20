@@ -1,6 +1,6 @@
 import React from 'react'
 import './Terms.css'
-import Terms from './Terms.png'
+import Terms from './Term2.png'
 import Navbar from "../landingPage/Navbar/Navbar";
 
  const TermsPage = () => {
