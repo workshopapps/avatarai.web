@@ -3,6 +3,7 @@ import Pricetop from "./Pricetop";
 import React from "react";
 import Sponsors from "./Sponsors";
 import TotalPriceCards from "./TotalPriceCards";
+import Footer from "../Footerpage/Footer";
 
 function Pricing() {
   return (
@@ -11,6 +12,7 @@ function Pricing() {
       <TotalPriceCards />
       <Sponsors />
       <Faq />
+      <Footer />
     </section>
   );
 }
