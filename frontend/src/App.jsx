@@ -1,15 +1,3 @@
-// function App() {
-//   return (
-//     <div>
-
-//       App Running ...
-
-//     </div>
-//   )
-// }
-
-// export default App
-
 import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 import React from "react";
 import Four404 from "./components/404page/404";
@@ -34,33 +22,38 @@ import Payment from "./components/paymentFlow-1.2/paymentFlow1.2";
 import Avatar from "./components/createAvatar/Welcome";
 import Courses from "./components/courses/CoursePage";
 import CourseDetail from "./components/courses/CourseDetail";
-import Login from "./components/LoginPage/Login";
-import ForgotPassword from "./components/LoginPage/ForgotPassword";
-import CheckEmail from "./components/LoginPage/CheckEmail";
-import ResetPassword from "./components/LoginPage/ResetPassword";
-import PasswordReset from "./components/LoginPage/PasswordReset";
+import Profile from "./components/profile_page/profile_page.component";
+import ReadArticle from "./components/read article/ReadArticle";
+import ApiPage from './components/api-page/ApiPage';
+import Login from './components/LoginPage/Login';
+import Chat from './components/chat/ChatPage'
 
 export default function App() {
   return (
     <Router>
       <Routes>
+        {/*
+          !!!IMPORTANT INFORMATION
+          !!!IMPORTANT INFORMATION
+          !!!IMPORTANT INFORMATION
+          !!!IMPORTANT INFORMATION
+          !!!IMPORTANT INFORMATION
+          add the path on your page to the live link so yoU can submit 
+          e.g. http://noxus.hng.tech/example
+          you can find the path to your page in the links below
+          DO NOT EDIT ANYTHING HERE JUST COPY THE PATH TO YOUR PAGE
+           */}
+
         {/* Text to image landing page */}
         <Route path="/" element={<Ttilp />} exact />
+        <Route path="/ttilp" element={<Ttilp />} exact />
 
         {/* Signup components */}
         <Route path="/signupfirst/" element={<Opt_first />} />
         <Route path="/Opt_sec" element={<Opt_sec />} />
         <Route path="/Opt_thi" element={<Opt_thi />} />
+        <Route path="/Opt_for" element={<Opt_for />} />
         <Route path="/Opt_fi" element={<Opt_fi />} />
-
-        {/* login components */}
-        <Route path="/login" element={<Login />} />
-        <Route path ="/forgot_password" element={<ForgotPassword/>} />
-        <Route path ="/check_email" element={<CheckEmail/>} />
-        <Route path ="/reset_password" element={<ResetPassword />} />
-        <Route path ="/password_reset" element={<PasswordReset/>} />
-
-        
 
         {/* Navbar components */}
         <Route path="/Aboutus" element={<Aboutus />} />
@@ -76,8 +69,16 @@ export default function App() {
         {/* Pricing Component */}
         <Route path="/Pricing" element={<Pricing />} />
 
+
+        {/* Course Page */}
+        <Route path ="/Courses" element={<Courses /> } />
+        <Route path ="/details/:detailId" element={<CourseDetail /> } />
+        <Route path="/Avatar" element={<Avatar />} />
+          
+
         {/* Dashboard component */}
         <Route path="/Avatar" element={<Avatar />} />
+
 
         {/* 404 Page */}
         <Route path="/Four404" element={<Four404 />} />
@@ -85,13 +86,25 @@ export default function App() {
         {/* Course Page */}
         <Route path="/Courses" element={<Courses />} />
         {/* <Route path ="/CourseDetail" element={<CourseDetail /> } /> */}
+
+        {/* Profile Page */}
+        <Route path="/Profile" element={<Profile />} />
+
+        {/* Readarticle Page */}
+        <Route path="/Readarticle" element={<ReadArticle />} />
+
+        {/* ApiPage */}
+        <Route path="/ApiPage" element={<ApiPage />} />
+
+        {/* login */}
+        <Route path="/Login" element={<Login />} />
+
+        {/* chat */}
+        <Route path="/Chat" element={<Chat />} />
+
+
+
       </Routes>
     </Router>
   );
 }
-// import React from "react";
-// import ReadArticle from "./components/read article/ReadArticle";
-
-// function App() {
-//   return <ReadArticle />;
-// }
