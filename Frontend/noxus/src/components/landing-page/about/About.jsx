@@ -25,21 +25,21 @@ const About = () => {
      <div className="about__courses-ony">
      <div>
         <img src="./images/more1.png" className="img-ony" />
-        <h3>Understanding the basics of AI</h3>
+        <h3 className="about__course__title-ony">Understanding the basics of AI</h3>
         <p className="about__courses__description-ony">Join Emily Pratt as she extensively explains the fundamentals and the cores of artificial intelligence</p>
      </div>
      <div>
      <img src="./images/more2.png" className="img-ony"  />
-     <h3>Beginner’s guide to generative AI</h3>
+     <h3 className="about__course__title-ony">Beginner’s guide to generative AI</h3>
      <p className="about__courses__description2-ony">Phoebe Drowy teaches what are generative AI are and how it works</p>
      </div>
      <div>
      <img src="./images/more3.png" className="img-ony"  />
-     <h3>Do you get machine learning yet?</h3>
+     <h3 className="about__course__title-ony">Do you get machine learning yet?</h3>
      <p className="about__courses__description3-ony">machine learning can be a difficult concept do understand, but Jen Yu breaks it down here properly</p>
      </div>
      </div>
-     <h1 className="about__cta-ony">Start generating amazing AI avatars for yourself</h1>
+     <h1 className="about__cta-ony">Start generating amazing <span className="aiii-ony">AI avatars</span> for yourself</h1>
     </div>
   );
 };

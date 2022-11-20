@@ -37,6 +37,13 @@
     margin-left: 4rem;
 }
 
+.image__title-ony{
+
+    color: #8B70E9;
+    font-size: 25px;
+    font-weight: 700;
+}
+
 @media(max-width: 380px){
     .main__title-ony{
         font-size: 24px;

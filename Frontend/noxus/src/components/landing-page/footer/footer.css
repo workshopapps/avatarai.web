@@ -72,6 +72,18 @@
     color: rgba(33, 37, 41, 0.6);
 }
 
+.so-ony{
+    display: none;
+}
+
+.contact-ony{
+    width: 120px;
+    height: 0px;
+}
+.cont-ony{
+    display: none;
+}
+
 @media(max-width: 380px){
     .footer__content-ony{
         display: flex;
@@ -83,7 +95,7 @@
         padding: 2rem 0;
     }
     .footer__title-ony{
-        width: 327px;
+        width: 100%;
         font-size: 16px;
         font-weight: 700;
         padding: 1rem 0;
@@ -119,5 +131,41 @@
    .input__text-ony{
     border: 1px solid rgba(33, 37, 41, 0.6);
     padding: .5rem .6rem;
+}
+.social__icons-ony{
+    display: flex;
+    justify-content: center;
+  
+    padding-left: 0rem;
+    padding-top: .6rem;
+    
+ }
+
+ .so-ony{
+    display: block;
+   
+    
+}
+.socials-ony{
+    display: none;
+}
+
+.contact-ony{
+    width: 120px;
+    height: 0px;
+    display: none;
+}
+.cont-ony{
+    display: block;
+}
+.con-ony{
+    display: none;
+}
+.ss__icons-ony{
+    margin-top: 2rem ;
+    padding-right: 6rem;
+    width: 200px;
+  
+ 
 }
 }

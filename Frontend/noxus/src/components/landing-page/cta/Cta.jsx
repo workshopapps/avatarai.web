@@ -4,7 +4,7 @@ import './cta.css'
 const Cta = () => {
   return (
     <div>
-  <h2 className='cta__title-ony' >Choose your scenery</h2>
+  <h2 className='cta__title-ony' >Choose your <span className='aiii-ony'>scenery</span></h2>
   <div className='cta__images-ony'>
     <img className='side___ony' src='./images/Frame75.png' alt='call to action '/>
     <img className='cta__section-pic-ony' src='./images/Frame76.png' alt='call to action '/>

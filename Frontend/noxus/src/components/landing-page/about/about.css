@@ -69,13 +69,16 @@
 
 .about__cta-ony{
     font-size: 67px;
-    
+    font-weight: 700;
     width: 834px;
     text-align: center;
     margin: 0 auto;
     padding: 7rem 0;
 }
-
+.about__course__title-ony{
+    font-size: 20px;
+    font-weight: 700;
+}
 @media(max-width: 380px){
     .about__title-ony{
         font-size: 24px;

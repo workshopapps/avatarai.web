@@ -11,8 +11,13 @@
     text-align: center;
     padding-top: 6rem;
     padding-bottom: 2rem;
+    font-weight: 700;
 }
 
+.aiiii-ony{
+    font-size: 25px;
+    color: #8B70E9;
+}
 .first__benefit-ony{
     width: 471px;
     padding-bottom: 3rem;
