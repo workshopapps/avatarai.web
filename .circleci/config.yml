@@ -34,3 +34,11 @@ jobs:
       - save_cache:
           paths: [backend/dependencies]
           key: backend-build
+          
+          
+          
+workflows:
+  default:
+    jobs:
+      - build-frontend
+      - build-backend
