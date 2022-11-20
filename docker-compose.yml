@@ -16,4 +16,4 @@ services:
         ports:
             - 8000:8000
         environment:
-            MONGODB_URL: "mongodb+srv://hng_test:Hi1hPyMiSPpbBbhg@cluster0.owcahdq.mongodb.net/test?retryWrites=true&w=majority"
+            MONGODB_URL: {{ secrets.MONGO_URL }}
