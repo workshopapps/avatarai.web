@@ -1,7 +1,7 @@
 import React from 'react'
 import './404.css'
 import error from './error.png'
-
+import { Link } from 'react-router-dom'
  const Page404 = () => {
   return (
     <div className='bat-error-main'>
@@ -10,9 +10,9 @@ import error from './error.png'
             <p>Ah, the dreaded 404. Let’s get you back on track 
                 head back to the homepage!
             </p>
-            <button id='bat-btn-one' className="bat-home-btn">
+            <Link to='/' id='bat-btn-one' className="bat-home-btn">
                 Go home
-            </button>
+            </Link>
         </div>
         <div className="bat-error-img">
             <img src={error} alt="" />
