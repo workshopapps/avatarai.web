@@ -1,6 +1,6 @@
 import React from 'react'
 import './Terms.css'
-import Terms from './Terms.png'
+import Terms from './Term2.png'
 import Navbar from "../landingPage/Navbar/Navbar";
 
  const TermsPage = () => {
@@ -12,8 +12,8 @@ import Navbar from "../landingPage/Navbar/Navbar";
                 <h2>Terms and Conditions</h2>
                 <p>Welcome to Noxus we are committed to portecting your privacy</p>
             </div>
+            <div className="header-overlay"></div>
         </header>
-        <div className="header-overlay"></div>
         <main>
             <div className="bat-term-one">
                 <h4>Privacy policy</h4>

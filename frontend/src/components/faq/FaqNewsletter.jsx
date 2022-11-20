@@ -14,7 +14,19 @@ const FaqNewsletter = () => {
         </div>
       </div>
       <div className="flex flex-col gap-[16px]">
-        <div className="h-[52px] w-full bg-[#8B70E9] rounded"></div>
+        <div className="border border-[#403E46] flex items-center md:gap-4 gap-1 justify-between p-[5px] h-[52px] w-full max-w-[512px] bg-white rounded">
+          <div className="h-full flex md:gap-[8px] gap-1 items-center font-nunito grow text-[#848484] rounded py-[8px] md:pl-[12px] pl-2">
+            <img src="/sms.svg" />
+            <input
+              type={`text`}
+              className="grow outline-none"
+              placeholder="Enter your email address"
+            />
+          </div>
+          <div className="cursor-pointer bg-[#8B70E9] h-full relative flex items-center font-nunito text-white rounded px-[20px] py-[8px]">
+            <span>Subscribe</span>
+          </div>
+        </div>
         <p className="text-[#AFB6B6] text-sm">
           By subscribing you agree to accept newsletter and Emails from us.
         </p>

@@ -2,6 +2,7 @@ import FaqHero from "./FaqHero";
 import FaqNewsletter from "./FaqNewsletter";
 import QuestionSection from "./QuestionSection";
 import Navbar from "../landingPage/Navbar/Navbar";
+import Footer from "../Footerpage/Footer";
 
 const Faq = () => {
   return (
@@ -10,6 +11,7 @@ const Faq = () => {
       <FaqHero />
       <QuestionSection />
       <FaqNewsletter />
+      <Footer />
     </>
   );
 };

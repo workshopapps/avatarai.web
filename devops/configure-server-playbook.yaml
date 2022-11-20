@@ -1,0 +1,86 @@
+- hosts: HNG_servers
+  become: true
+  tasks:
+    # Update repository cache
+    - name: Apt Update
+      apt: 
+        update_cache: true
+
+    # Install server dependencies
+    - name: Install packages
+      apt:
+        state: present
+        name: ['git', 'ca-certificates', 'curl', 'gnupg', 'lsb-release' ]
+
+    # Install docker
+    - name: Make keyring directory
+      file:
+        state: directory
+        path: /etc/apt/keyrings
+
+    - name: Get docker keyring
+      shell: 
+        cmd: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg --yes
+        warn: false
+
+    - name: Add docker package repository 
+      shell:
+        cmd: echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+    - name: Make docker keyring readable
+      command:
+        cmd: chmod a+r /etc/apt/keyrings/docker.gpg
+        warn: false
+
+    - name: Apt Update
+      apt: 
+        update_cache: true
+
+    - name: Install docker
+      apt: 
+        name: ['docker-ce', 'docker-ce-cli', 'containerd.io', 'docker-compose-plugin']
+        state: present
+    
+    - name: Install docker
+      command: chown ubuntu /usr/bin/docker
+          
+    # # Clone project
+    - name: Delete cloned directory
+      file:
+        state: absent
+        path: /home/noxus/
+    
+    - name: Create application working directory
+      file:
+        path: /home/noxus
+        state: directory
+
+    # Transfer Docker compose file
+    - name: Copy docker-compose file
+      template:
+        src: files/docker-compose.yaml
+        dest: /home/noxus/docker-compose.yaml
+
+    # Setup NGINX
+    - name: Install nginx
+      apt:
+        state: present
+        name: nginx
+
+    - name: Copy nginx reverse-proxy configuration
+      template:
+        src:  files/nginx.conf
+        dest: /etc/nginx/sites-available/noxus.conf
+
+    - name: Unlink default template
+      command: unlink /etc/nginx/sites-enabled/default
+
+    - name: Enable NGINX reverse-proxy configuration
+      command:
+        cmd: ln -s /etc/nginx/sites-available/noxus.conf /etc/nginx/sites-enabled/
+        warn: false
+
+    - name: Restart NGINX
+      service:
+        name: nginx
+        state: reloaded
