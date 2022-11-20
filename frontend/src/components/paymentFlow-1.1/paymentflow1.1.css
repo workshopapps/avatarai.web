@@ -1,5 +1,5 @@
 .modal-overlay{
-    background-color: #333333;
+    background-color: #33333370;
 }
 .cbk .modal{
     width: 100vw;
@@ -28,8 +28,12 @@
     outline: none;
     border-color: rgb(139 92 246);   
 }
-p{
+.cbk p{
     margin: auto;
+}
+.cbk form{
+    margin: auto;
+    margin-top: 30px;
 }
 @media screen and (max-width: 768px) {
     .cbk .modal{
@@ -38,14 +42,19 @@ p{
         margin-top: 0px;
         border-radius: 0px;
     }
-    .v-center{
+    .cbk .v-center{
         margin-top: 125px;
     }
-    .authorize{
-        width: 80vw;
+    .cbk .authorize{
+        width: 70vw;
+        margin: auto;
+        margin-top: 25px;
         max-width: 400px;
     }
-    .close{
+    .cbk .close{
+        margin: auto;
+        display: block;
         margin-top: 150px;
+        /* background-color: #333333; */
     }
 }

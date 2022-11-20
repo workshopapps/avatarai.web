@@ -1,7 +1,7 @@
 import React from "react";
 import Facebook from "./Images/brandfacebook.png";
 import Instagram from "./Images/igvec2.png";
-import Twitter from "./Images/path.png";
+import Twitter from "./Images/Path.png";
 import call from "./Images/call.png";
 import mail from "./Images/mail.png";
 import "./footer.css";
@@ -9,7 +9,7 @@ import "./footer.css";
 export default function Footer() {
   return (
     <>
-      <footer className="text-center lg:text-left bg-gray-100 text-gray-600">
+      <footer className="text-center lg:text-left bg-gray-100 text-gray-600 w-[100vw]">
         <div className="flex justify-center items-center lg:justify-between p-6 border-b border-gray-300">
           <div className="mx-6 py-10 text-center md:text-left">
             <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

@@ -1,52 +1,62 @@
-import Button from "../Button/Button";
-import React from "react";
-import menu from "../img/menu.png";
-
-// import logo from "../../../assets/images/logos.png";
-// import menu from "../../../assets/images/menu.png";
-import logo from "./../img/logo.png";
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../../../assets/images/tapart.png";
+import menu from "../../../assets/images/menu.png";
+import Button from "../Button/Button";
+import MobileNav from "./MobileNav";
 
 const Navbar = () => {
-  return (
-    <nav className="flex justify-between items-center lg:px-20 md:px-10 py-5">
-      <img src={logo} alt="" className="w-10 hidden md:block" />
-      {/* <img src={menu} alt="" className="md:hidden mx-10" /> */}
-      <ul className="md:flex justify-between items-center gap-10 hidden">
-        <Link to="/">
-          <li className="p-2  border-opacity-0 hover:border-opacity-100 hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
-            Home
-          </li>
-        </Link>
-        <Link to="/Aboutus">
-          <li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
-            About Us
-          </li>
-        </Link>
-        <Link to="/Pricing">
-          <li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
-            Pricing
-          </li>
-        </Link>
-        <Link to="">
-          <li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
-            Contact Us
-          </li>
-        </Link>
-        <Link to="/FAQ">
-          <li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
-            FAQs
-          </li>
-        </Link>
-      </ul>
-      <div className="space-x-6 hidden md:block">
-        <Button className=" bg-white border-purple-700 text-purple-600 ">
-          Log in
-        </Button>
+  const [navToggle, setNavToggle] = useState(false);
 
-        <Button className="text-white bg-purple-600">Sign up</Button>
-      </div>
-    </nav>
+  const navHandler = () => {
+    setNavToggle((navToggle) => !navToggle);
+  };
+  const navClose = () => {
+    setNavToggle(false);
+  };
+  return (
+    <Fragment>
+      <nav className="flex justify-between items-center lg:px-20 md:px-8 py-5">
+        <img src={logo} alt="" className="w-10 hidden md:block" />
+        <img
+          src={menu}
+          alt=""
+          className="md:hidden mx-10"
+          onClick={navHandler}
+        />
+
+        <ul className="md:flex justify-between items-center gap-2  lg:gap-10 hidden cursor-pointer clamp">
+          <li className="p-2  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
+            <Link to="/"> Home</Link>
+          </li>
+          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
+            <Link to="/Aboutus">About Us</Link>
+          </li>
+          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
+            <Link to="/Pricing">Pricing</Link>
+          </li>
+          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
+            <Link to="/contact-us">Contact Us</Link>
+          </li>
+          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
+            <Link to="/FAQ">FAQs</Link>
+          </li>
+        </ul>
+        <div className="space-x-6 hidden md:block">
+          <button
+            className="inline-flex justify-center items-center px-4 py-2  border border-purple  
+          rounded-[8px] font-semibold text-md text-purple bg-white transition ease-in-out duration-150 border-purple text-purple w-full">
+            <Link to="/Login"> Log in</Link>
+          </button>
+
+          <Button className="text-white border-purple bg-purple ">
+            <Link to="/Signupfirst"> Sign up </Link>
+          </Button>
+        </div>
+      </nav>
+
+      {navToggle && <MobileNav navClose={navClose} />}
+    </Fragment>
   );
 };
 

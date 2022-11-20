@@ -1,5 +1,5 @@
 .modal-overlay{
-    background-color: #333333;
+    background-color: #33333370;
 }
 .cbk .modal{
     width: 100vw;
@@ -44,5 +44,8 @@ p{
     .authorize{
         width: 80vw;
         max-width: 400px;
+    }
+    .cbk form p{
+        margin-top: 20px;
     }
 }
