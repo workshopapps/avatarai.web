@@ -38,19 +38,36 @@ import Payment from './components/paymentFlow-1.2/paymentFlow1.2'
 import Avatar from './components/createAvatar/Welcome'
 import Courses from './components/courses/CoursePage'
 import CourseDetail from './components/courses/CourseDetail'
+import Profile from './profile_page/profile_page.component'
+
 
 export default function App() {
   return (
       <Router>
         <Routes>
 
+          {/*
+          !!!IMPORTANT INFORMATION
+          !!!IMPORTANT INFORMATION
+          !!!IMPORTANT INFORMATION
+          !!!IMPORTANT INFORMATION
+          !!!IMPORTANT INFORMATION
+          
+          add the path on your page to the live link so yoU can submit 
+          e.g. http://noxus.hng.tech/example
+          you can find the path to your page in the links below
+          DO NOT EDIT ANYTHING HERE JUST COPY THE PATH TO YOUR PAGE
+           */}
+
           {/* Text to image landing page */}
           <Route path ="/" element={<Ttilp /> } exact />
+          <Route path ="/ttilp" element={<Ttilp /> } exact />
 
           {/* Signup components */}
           <Route path ="/signupfirst/" element={<Opt_first /> } />
           <Route path ="/Opt_sec" element={<Opt_sec /> } />
           <Route path ="/Opt_thi" element={<Opt_thi /> } /> 
+          <Route path ="/Opt_for" element={<Opt_for /> } />
           <Route path ="/Opt_fi" element={<Opt_fi /> } />
 
           {/* Navbar components */}
@@ -76,6 +93,9 @@ export default function App() {
           {/* Course Page */}
           <Route path ="/Courses" element={<Courses /> } />
           {/* <Route path ="/CourseDetail" element={<CourseDetail /> } /> */}
+
+          {/* Profile Page */}
+          <Route path ="/Profile" element={<Profile /> } />
 
 
 
