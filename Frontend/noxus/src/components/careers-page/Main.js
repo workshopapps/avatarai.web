@@ -82,39 +82,45 @@ const Main = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex">
-                <div class="">
-                    <h1>Perks & Benefits</h1>
-                    <div>
-                        <div>
-                            <span></span>
-                            <h2>Worklife balance</h2>
-                            <p>We offer an open vacation policy with a recommended 4-weeks per year. Recharge whenever you need to.</p>
+            <div>
+                <div class="flex flex-col justify-evenly">
+                    <div className="text-left ml-[12%]">
+                        <h1 className="font-bold text-2xl mb-10">Perks & Benefits</h1>
+                    </div>
+                    <div className="flex flex-row justify-evenly">
+                        <div className="text-left">
+                            <div>
+                                <span></span>
+                                <h2 className="font-medium text-l mb-3">Worklife balance</h2>
+                                <p className="text-sm text-[#5A5A5A] mb-9">We offer an open vacation policy with a recommended 4-weeks per <br />year. Recharge whenever you need to.</p>
+                            </div>
+                            <div>
+                                <span></span>
+                                <h2 className="font-medium text-l mb-3">Health care package</h2>
+                                <p className="text-sm text-[#5A5A5A] mb-9">We care about your well-being and offer dental and vision benefits for <br />you and your family. No stress on health expenses.</p>
+                            </div>
+                            <div>
+                                <span></span>
+                                <h2 className="font-medium text-l mb-3">Worklife balance</h2>
+                                <p className="text-sm text-[#5A5A5A] mb-9">We help you grow in your career with ongoing mentorship, and send <br />you to events so you can build your network.</p>
+                            </div>
                         </div>
-                        <div>
-                            <span></span>
-                            <h2>Health care package</h2>
-                            <p>We care about your well-being and offer dental and vision benefits for you and your family. No stress on health expenses.</p>
-                        </div>
-                        <div>
-                            <span></span>
-                            <h2>Worklife balance</h2>
-                            <p>We help you grow in your career with ongoing mentorship, and send you to events so you can build your network.</p>
-                        </div>
-                        <div>
-                            <span></span>
-                            <h2>Worklife balance</h2>
-                            <p>We help you grow in your career with ongoing mentorship, and send you to events so you can build your network.</p>
-                        </div>
-                        <div>
-                            <span></span>
-                            <h2>Health care package</h2>
-                            <p>We care about your well-being and offer dental and vision benefits for you and your family. No stress on health expenses.</p>
-                        </div>
-                        <div>
-                            <span></span>
-                            <h2>Worklife balance</h2>
-                            <p>We help you grow in your career with ongoing mentorship, and send you to events so you can build your network.</p>
+                        <div className="text-left">
+                            <div>
+                                <span></span>
+                                <h2 className="font-medium text-l mb-3">Worklife balance</h2>
+                                <p className="text-sm text-[#5A5A5A] mb-9">We offer an open vacation policy with a recommended 4-weeks per <br />year. Recharge whenever you need to.</p>
+                            </div>
+                            <div>
+                                <span></span>
+                                <h2 className="font-medium text-l mb-3">Health care package</h2>
+                                <p className="text-sm text-[#5A5A5A] mb-9">We care about your well-being and offer dental and vision benefits for <br />you and your family. No stress on health expenses.</p>
+                            </div>
+                            <div>
+                                <span></span>
+                                <h2 className="font-medium text-l mb-3">Worklife balance</h2>
+                                <p className="text-sm text-[#5A5A5A] mb-9">We help you grow in your career with ongoing mentorship, and send <br />you to events so you can build your network.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
