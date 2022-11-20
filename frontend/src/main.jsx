@@ -9,6 +9,7 @@ import "./index.css";
 import MessageEditSection from "./components/chat/MessageEditSection";
 import MessagePreview from "./components/chat/MessagePreview";
 import SendMessage from "./components/chat/SendMessage";
+import ChatSideBar from "./components/chat/ChatSideBar";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -30,6 +31,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         time={`49 mins`}
       />
       <SendMessage />
+      <ChatSideBar />
     </>
   </React.StrictMode>
 );
