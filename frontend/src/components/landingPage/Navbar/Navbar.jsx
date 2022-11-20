@@ -1,30 +1,61 @@
-import React from "react";
-// import logo from "../../../assets/images/logos.png";
-// import menu from "../../../assets/images/menu.png";
-import logo from './../img/logo.png'
-import Button from "../Button/Button";
+import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../../../assets/images/logos.png";
+import menu from "../../../assets/images/menu.png";
+import Button from "../Button/Button";
+import MobileNav from "./MobileNav";
 
 const Navbar = () => {
-  return (
-    <nav className="flex justify-between items-center lg:px-20 md:px-10 py-5">
-      <img src={logo} alt="" className="w-10 hidden md:block" />
-      {/* <img src={menu} alt="" className="md:hidden mx-10" /> */}
-      <ul className="md:flex justify-between items-center gap-10 hidden">
-      <Link to='/'><li className="p-2  border-opacity-0 hover:border-opacity-100 hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">Home</li></Link>
-        <Link to='/Aboutus'><li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">About Us</li></Link>
-        <Link to='/Pricing'><li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">Pricing</li></Link>
-        <Link to=''><li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">Contact Us</li></Link>
-        <Link to='/FAQ'><li className="p-2 border-b hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">FAQs</li></Link>
-      </ul>
-      <div className="space-x-6 hidden md:block">
-        <Button className=" bg-white border-purple-700 text-purple-600 ">
-          Log in
-        </Button>
+  const [navToggle, setNavToggle] = useState(false);
 
-        <Button className="text-white bg-purple-600">Sign up</Button>
-      </div>
-    </nav>
+  const navHandler = () => {
+    setNavToggle((navToggle) => !navToggle);
+  };
+  const navClose = () => {
+    setNavToggle(false);
+  };
+  return (
+    <Fragment>
+      <nav className="flex justify-between items-center lg:px-20 md:px-8 py-5">
+        <img src={logo} alt="" className="w-10 hidden md:block" />
+        <img
+          src={menu}
+          alt=""
+          className="md:hidden mx-10"
+          onClick={navHandler}
+        />
+
+        <ul className="md:flex justify-between items-center gap-5 lg:gap-10 hidden cursor-pointer">
+          <li className="p-2  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
+            <Link to="/home"> Home</Link>
+          </li>
+          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
+            <Link to="/about-us">About Us</Link>
+          </li>
+          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
+            <Link to="/pricing">Pricing</Link>
+          </li>
+          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
+            <Link to="/contact-us">Contact Us</Link>
+          </li>
+          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
+            <Link to="/faqs">FAQs</Link>
+          </li>
+        </ul>
+        <div className="space-x-6 hidden md:block">
+          <Button className=" bg-white border-purple text-white  ">
+            <Link to="/login">  Log in</Link>
+          
+          </Button>
+
+          <Button className="text-white border-purple bg-purple ">
+            Sign up
+          </Button>
+        </div>
+      </nav>
+
+      {navToggle && <MobileNav navClose={navClose}/>}
+    </Fragment>
   );
 };
 

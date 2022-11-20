@@ -38,6 +38,8 @@ import Payment from './components/paymentFlow-1.2/paymentFlow1.2'
 import Avatar from './components/createAvatar/Welcome'
 import Courses from './components/courses/CoursePage'
 import CourseDetail from './components/courses/CourseDetail'
+import Login from "./components/LoginPage/Login";
+
 
 export default function App() {
   return (
@@ -52,6 +54,9 @@ export default function App() {
           <Route path ="/Opt_sec" element={<Opt_sec /> } />
           <Route path ="/Opt_thi" element={<Opt_thi /> } /> 
           <Route path ="/Opt_fi" element={<Opt_fi /> } />
+
+          <Route path ="/login" element={ <Login/>} />
+         
 
           {/* Navbar components */}
           <Route path ="/Aboutus" element={<Aboutus /> } />
