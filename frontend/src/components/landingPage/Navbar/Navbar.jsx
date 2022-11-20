@@ -1,6 +1,5 @@
 import Button from "../Button/Button";
 import React from "react";
-import logo from "./../img/logo.png";
 import menu from "../img/menu.png";
 
 // import logo from "../../../assets/images/logos.png";
@@ -13,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="flex justify-between items-center lg:px-20 md:px-10 py-5">
       <img src={logo} alt="" className="w-10 hidden md:block" />
-      <img src={menu} alt="" className="md:hidden mx-10" />
+      {/* <img src={menu} alt="" className="md:hidden mx-10" /> */}
       <ul className="md:flex justify-between items-center gap-10 hidden">
         <Link to="/">
           <li className="p-2  border-opacity-0 hover:border-opacity-100 hover:text-purple-500 hover:border-b-purple-500 active:border-b-purple-500 active:text-purple-500">
