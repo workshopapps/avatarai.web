@@ -18,7 +18,7 @@ const ForgotPassword = () => {
               className="border p-3 w-full md:w-[28rem] my-1 rounded-lg outline-none"
             />
           </div>
-          <Button className="w-full md:w-[28rem]">Log in</Button>
+          <Button className="w-full md:w-[28rem] bg-purple text-white">Log in</Button>
           
 
     </div>
