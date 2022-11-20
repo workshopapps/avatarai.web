@@ -41,14 +41,14 @@ const Navbar = () => {
           <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
             <Link to="/Pricing">Pricing</Link>
           </li>
-          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
+          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
             <Link to="/contact-us">Contact Us</Link>
           </li>
           <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
             <Link to="/FAQ">FAQs</Link>
           </li>
         </ul>
-        <div className="space-x-6 hidden md:block">
+        <div className="space-x-6 hidden lg:block">
           <Button className=" border-purple text-purple bg-white ">
             <Link to="/login">  Log in</Link>
           
