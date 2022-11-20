@@ -4,7 +4,7 @@ import CTA from './cta/Cta';
 import Benefits from './benefits/Benefits';
 import About from './about/About';
 import Social from './socialproof/SocialProof';
-import Header from './header/Header';
+import Header from './header/header/Header';
 
 
 function LandingPageC() {
