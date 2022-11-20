@@ -2,6 +2,7 @@
 //import Subscribe from './Subscribe';
 //import Footer from './Footer';
 //import Navbar from './Navbar';
+import img from './images/tapart2.png';
 
 const Main = () => {
     return (
@@ -78,7 +79,7 @@ const Main = () => {
                         </p>
                     </div>
                     <div>
-                        <img src="../careers-page/images/tapart2.png" alt="background logo" />
+                        <img src={img} alt="background logo" />
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@ import logo from './images/tapart2.png'
 
 const Subscribe = () => {
     return (
-        <div className='bg-grayy flex justify-between items-center px-5 lg:px-20 py-4 gap-5 mt-16 mb-14'>
+        <div className='bg-gray-400 flex justify-between items-center px-5 lg:px-20 py-4 gap-5 mt-16 mb-14'>
             <div>
                 <img src={logo} alt="small-logo" />
                 <h2>Subscribe to our newsletter for info for new avatar scenes, blogs and updates</h2>
