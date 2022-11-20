@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import logo from "../../../assets/images/logos.png";
+import close from "../../../assets/images/close.png";
 
 
 
@@ -37,7 +38,11 @@ const MobileNav = ({navClose}) => {
 
           <Button className="text-white bg-purple w-full "><Link to="/Signupfirst"> Sign up </Link></Button>
         </div>
+        
       </nav>
+      <div className="absolute top-10 right-10">
+      <img src={close} alt="" onClick={navClose} className=""/>
+      </div>
     </div>
   );
 };
