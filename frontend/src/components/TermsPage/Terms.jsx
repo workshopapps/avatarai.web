@@ -1,10 +1,12 @@
 import React from 'react'
 import './Terms.css'
 import Terms from './Terms.png'
+import Navbar from "../landingPage/Navbar/Navbar";
 
  const TermsPage = () => {
   return (
     <div className='bat-terms-main'>
+        <Navbar />
         <header>
             <div className="header-content">
                 <h2>Terms and Conditions</h2>

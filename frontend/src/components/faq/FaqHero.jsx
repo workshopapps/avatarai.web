@@ -5,7 +5,15 @@ const FaqHero = () => {
         <h1 className="font-bold md:text-[32px]">Frequently Asked Questions</h1>
         <p>Have questions? We are here to help.</p>
       </header>
-      <div className="h-[52px] w-full max-w-[512px] bg-white rounded"></div>
+      <div className="flex items-center gap-4 justify-between p-[5px] h-[52px] w-full max-w-[512px] bg-white rounded">
+        <div className="h-full flex gap-[8px] items-center font-nunito grow text-[#848484] rounded py-[8px] pl-[18px]">
+          <img src="/magnifying-glass.svg" />
+          <p className="">Type keyword to find answer</p>
+        </div>
+        <div className="bg-[#8B70E9] h-full flex items-center font-nunito text-white rounded px-[40px] py-[8px]">
+          <span>Search</span>
+        </div>
+      </div>
     </section>
   );
 };
