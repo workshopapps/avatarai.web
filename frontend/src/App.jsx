@@ -24,6 +24,8 @@ import Courses from "./components/courses/CoursePage";
 import CourseDetail from "./components/courses/CourseDetail";
 import Profile from "./components/profile_page/profile_page.component";
 import ReadArticle from "./components/read article/ReadArticle";
+import ApiPage from './components/api-page/ApiPage';
+import Login from './components/LoginPage/Login';
 
 export default function App() {
   return (
@@ -66,8 +68,16 @@ export default function App() {
         {/* Pricing Component */}
         <Route path="/Pricing" element={<Pricing />} />
 
+
+        {/* Course Page */}
+        <Route path ="/Courses" element={<Courses /> } />
+        <Route path ="/details/:detailId" element={<CourseDetail /> } />
+        <Route path="/Avatar" element={<Avatar />} />
+          
+
         {/* Dashboard component */}
         <Route path="/Avatar" element={<Avatar />} />
+
 
         {/* 404 Page */}
         <Route path="/Four404" element={<Four404 />} />
@@ -81,6 +91,14 @@ export default function App() {
 
         {/* Readarticle Page */}
         <Route path="/Readarticle" element={<ReadArticle />} />
+
+        {/* ApiPage */}
+        <Route path="/ApiPage" element={<ApiPage />} />
+
+        {/* login */}
+        <Route path="/Login" element={<Login />} />
+
+
       </Routes>
     </Router>
   );
