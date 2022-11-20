@@ -5,7 +5,6 @@ import menu from "../img/menu.png";
 // import logo from "../../../assets/images/logos.png";
 // import menu from "../../../assets/images/menu.png";
 import logo from "./../img/logo.png";
-import Button from "../Button/Button";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
