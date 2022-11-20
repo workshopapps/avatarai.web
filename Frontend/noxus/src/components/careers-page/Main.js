@@ -7,8 +7,8 @@ const Main = () => {
     return (
         <div>
             <p className="text-center text-3xl font-semibold mt-3">Careers at Nexus</p>
-            <div className="flex">
-                <div id="first-div" className="justify-center flex flex-row">
+            <div className="flex justify-center flex-row">
+                <div id="first-div" className="">
                     <div>
                         <p>TECH DEPARTMENT</p>
                         <h2>Senior software developer</h2>
