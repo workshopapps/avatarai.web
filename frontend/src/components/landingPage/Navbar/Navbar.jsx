@@ -17,15 +17,19 @@ const Navbar = () => {
   return (
     <Fragment>
       <nav className="flex justify-between items-center lg:px-20 md:px-8 py-5">
-        <Link to='/'><img src={logo} alt="" className="w-10 hidden md:block" /></Link>
-        <img
-          src={menu}
-          alt=""
-          className="md:hidden mx-10"
-          onClick={navHandler}
-        />
+        <div>
+          <Link to="/">
+            <img src={logo} alt="" className="w-10 hidden lg:block" />
+          </Link>
+          <img
+            src={menu}
+            alt=""
+            className="lg:hidden mx-10"
+            onClick={navHandler}
+          />
+        </div>
 
-        <ul className="md:flex justify-between items-center gap-2  lg:gap-10 hidden cursor-pointer clamp">
+        <ul className="lg:flex justify-between items-center gap-2  lg:gap-10 hidden cursor-pointer mr-[70px]">
           <li className="p-2  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
             <Link to="/"> Home</Link>
           </li>
@@ -42,13 +46,13 @@ const Navbar = () => {
             <Link to="/FAQ">FAQs</Link>
           </li>
         </ul>
-        <div className="space-x-6 hidden md:block">
-        <button className="inline-flex justify-center items-center px-8 py-3  border border-purple  
-          rounded-[8px] font-semibold text-md text-purple bg-white transition ease-in-out duration-150 border-purple text-purple w-full" >
-          <Link to="/Login">  Log in</Link>
+        <div className="space-x-6 hidden lg:flex">
+          <button
+            className="inline-flex justify-center items-center px-8 py-3  border border-purple  
+          rounded-[8px] font-semibold text-md text-purple bg-white transition ease-in-out duration-150 border-purple text-purple w-full"
+          >
+            <Link to="/Login"> Log in</Link>
           </button>
-          
-          
 
           <Button className="text-white border-purple bg-purple ">
             <Link to="/Signupfirst"> Sign up </Link>
@@ -56,7 +60,7 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {navToggle && <MobileNav navClose={navClose}/>}
+      {navToggle && <MobileNav navClose={navClose} />}
     </Fragment>
   );
 };
