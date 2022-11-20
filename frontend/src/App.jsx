@@ -91,7 +91,7 @@ export default function App() {
 
           {/* Course Page */}
           <Route path ="/Courses" element={<Courses /> } />
-          {/* <Route path ="/CourseDetail" element={<CourseDetail /> } /> */}
+          <Route path ="/details/:detailId" element={<CourseDetail /> } />
 
           {/* Profile Page */}
           <Route path ="/Profile" element={<Profile /> } />
