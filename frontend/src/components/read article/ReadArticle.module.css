@@ -8,6 +8,7 @@
 
 .container {
   font-family: "Plus Jakarta Sans", sans-serif;
+  padding: 0 !important;
 }
 
 .articleHeader {
