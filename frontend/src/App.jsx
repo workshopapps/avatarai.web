@@ -18,7 +18,7 @@ import Four404  from './components/404page/404';
 
 // import PaymentFlow12 from './components/paymentFlow-1.2/paymentFlow1.2';
 // import './App.css';
-import Ttilp from './components/TTILP/Ttilp'
+import Ttilp from './components/TTILP/Ttilp';
 // import PaymentFlow11 from './components/paymentFlow-1.1/paymentFlow1.1';
 
 
@@ -30,15 +30,15 @@ import Opt_thi from '../src/components/sign-up/sign-up_thi';
 import Opt_for from '../src/components/sign-up/sign-up_for';
 import Opt_fi from './components/sign-up/sign-up_fi';
 import Aboutus from './components/aboutus/AboutUs';
-import Pricing from './components/pricingPage/Pricing'
-import FAQ from './components/faq/index'
-import Terms from './components/TermsPage/Terms'
-import Paymentauth from './components/paymentFlow-1.1/paymentFlow1.1'
-import Payment from './components/paymentFlow-1.2/paymentFlow1.2'
-import Avatar from './components/createAvatar/Welcome'
-import Courses from './components/courses/CoursePage'
-import CourseDetail from './components/courses/CourseDetail'
-import Profile from './profile_page/profile_page.component'
+import Pricing from './components/pricingPage/Pricing';
+import FAQ from './components/faq/index';
+import Terms from './components/TermsPage/Terms';
+import Paymentauth from './components/paymentFlow-1.1/paymentFlow1.1';
+import Payment from './components/paymentFlow-1.2/paymentFlow1.2';
+import Avatar from './components/createAvatar/Welcome';
+import Courses from './components/courses/CoursePage';
+import CourseDetail from './components/courses/CourseDetail';
+import Profile from './profile_page/profile_page.component';
 
 
 export default function App() {
@@ -52,7 +52,7 @@ export default function App() {
           !!!IMPORTANT INFORMATION
           !!!IMPORTANT INFORMATION
           !!!IMPORTANT INFORMATION
-          
+
           add the path on your page to the live link so yoU can submit 
           e.g. http://noxus.hng.tech/example
           you can find the path to your page in the links below
