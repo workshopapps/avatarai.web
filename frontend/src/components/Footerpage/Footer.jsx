@@ -1,7 +1,7 @@
 import React from "react";
 import Facebook from "./Images/brandfacebook.png";
 import Instagram from "./Images/igvec2.png";
-import Twitter from "./Images/path.png";
+import Twitter from "./Images/Path.png";
 import call from "./Images/call.png";
 import mail from "./Images/mail.png";
 import "./footer.css";
