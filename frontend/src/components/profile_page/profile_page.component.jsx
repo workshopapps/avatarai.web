@@ -1,4 +1,4 @@
-import avatar from "../assets/Avatar.svg";
+import avatar from "../../assets/Avatar.svg";
 import State_options from "./state_options.component";
 
 import { useState } from "react";
@@ -10,49 +10,8 @@ const defaultFields = {
   password: "",
   location: "",
 };
-const all_state_object = [
-  { name: "Abia" },
-  { name: "Adamawa" },
-  { name: "Akwa Ibom" },
-  { name: "Anambra" },
-  { name: "Bauchi" },
-  { name: "Bayelsa" },
-  { name: "Benue" },
-  { name: "Borno" },
-  { name: "Cross River" },
-  { name: "Delta" },
-  { name: "Ebonyi" },
-  { name: "Edo" },
-  { name: "Ekiti" },
-  { name: "Enugu" },
-  { name: "FCT - Abuja" },
-  { name: "Gombe" },
-  { name: "Imo" },
-  { name: "Jigawa" },
-  { name: "Kaduna" },
-  { name: "Kano" },
-  { name: "Katsina" },
-  { name: "Kebbi" },
-  { name: "Kogi" },
-  { name: "Kwara" },
-  { name: "Lagos" },
-  { name: "Nasarawa" },
-  { name: "Niger" },
-  { name: "Ogun" },
-  { name: "Ondo" },
-  { name: "Osun" },
-  { name: "Oyo" },
-  { name: "Plateau" },
-  { name: "Rivers" },
-  { name: "Sokoto" },
-  { name: "Taraba" },
-  { name: "Yobe" },
-  { name: "Zamfara" },
-];
-
 
 const Profile_page = () => {
-  
   // state for editing or not editing
   const [editing, setEditing] = useState(false);
   const change_editing_status = (e) => {
@@ -70,11 +29,11 @@ const Profile_page = () => {
   const save_details = () => {
     if (!firstName.trim() || !/[^a-zA-Z]/.test(firstName)) {
       alert("firstName must contain only letters");
-       return
+      return;
     }
     if (!lastName.trim() || !/[^a-zA-Z]/.test(lastName)) {
       alert("lastName must contain only letters");
-     return
+      return;
     }
     if (
       !new RegExp(
@@ -82,7 +41,7 @@ const Profile_page = () => {
       ).test(email)
     ) {
       alert("Enter a valid email address");
-        return
+      return;
     }
     if (
       !new RegExp(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/).test(password)
@@ -90,11 +49,11 @@ const Profile_page = () => {
       alert(
         "Password should contains atleast 8 charaters and containing uppercase,lowercase and numbers"
       );
-      return
+      return;
     }
     if (!mobileNumber.trim()) {
       alert("please input mobile number");
-     return
+      return;
     }
     change_editing_status();
   };
@@ -132,7 +91,7 @@ const Profile_page = () => {
             <img
               src={avatar}
               alt="profile image"
-              className=" w-[40%] md:w-[100%]"
+              className=" w-[15%] md:w-[15%]"
             />
             <div>
               <h3 className="font-semibold">Baki Hanma</h3>
