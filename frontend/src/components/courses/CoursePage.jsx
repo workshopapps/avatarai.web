@@ -1,4 +1,5 @@
 import React from "react";
+import './courses.css';
 import img1 from "../courses/images/completed.png";
 import img2 from "../courses/images/earned.png";
 import img3 from "../courses/images/progress.png";
@@ -16,7 +17,7 @@ import Lines from "../courses/images/lines.png";
 import L75 from "../courses/images/75.png";
 import L40 from "../courses/images/40.png";
 import L58 from "../courses/images/58.png";
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import Lock from "../courses/images/lock.png";
 
 const CoursePage = () => {

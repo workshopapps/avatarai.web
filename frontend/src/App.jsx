@@ -73,6 +73,8 @@ export default function App() {
         {/* Course Page */}
         <Route path ="/Courses" element={<Courses /> } />
         <Route path ="/details/:detailId" element={<CourseDetail /> } />
+
+        {/* Avatar */}
         <Route path="/Avatar" element={<Avatar />} />
           
 

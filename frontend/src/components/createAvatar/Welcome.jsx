@@ -13,7 +13,7 @@ function Welcome() {
           <p id="number">2</p>
           <h2>Upload your Pictures</h2>
           <p id="upload-text">
-            You have to upload a 10 pictures of you in different scenario
+            You have to upload 10 pictures of you in different scenarios
           </p>
           <p id="add-pictures">
             Choose pictures from file <br /> (PNG or JPEG)
