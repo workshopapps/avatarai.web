@@ -8,6 +8,7 @@
     box-sizing: border-box;
 }
 
-.clamp {
+
+/* .clamp {
     font-size: clamp (1px, 3vw, 8px)
-}
+} */
