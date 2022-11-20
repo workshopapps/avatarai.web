@@ -1,5 +1,6 @@
 .about__content-ony{
     display: flex;
+    align-items: center;
 }
 
 .about__title-ony{
@@ -7,10 +8,15 @@
     text-align: center;
     padding-top: 10rem;
     padding-bottom: 2rem;
+    font-weight: 700;
+}
+.aiii-ony{
+    color: #8B70E9;
 }
 
 .about__description-ony{
     width: 471px;
+    color: #212529;
 }
 
 .about__image-ony{
@@ -109,7 +115,7 @@
     
 }
 .aboutus__title-ony{
-    width: 471px;
+    width: 100%;
     padding-left: 2rem;
     padding-bottom: 1.5rem;
 }
@@ -121,4 +127,26 @@
     margin: 0 auto;
     padding: 3rem 0;
 }
+.about__courses-ony{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   padding-left: 1rem;
+    gap: 2rem;
+  
+}
+
+.img-ony{
+    width: 60%;
+   
+}
+.about__courses__description2-ony{
+    width: 331px;
+}
+
+.about__courses__description3-ony{
+    width: 331px;
+}
+
+
 }

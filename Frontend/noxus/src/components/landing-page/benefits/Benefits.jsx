@@ -36,7 +36,7 @@ const Benefits = () => {
           <img className="av1-ony" src="./images/av1.png" />
         </div>
       </div>
-      <h3 className="features__title-ony">Exciting features for you</h3>
+      <h3 className="features__title-ony"><span className="aiii-ony">Exciting </span>features for you</h3>
       <div className="features__ony">
       <div>
         <h4>Image to avatar</h4>

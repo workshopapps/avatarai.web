@@ -4,7 +4,7 @@ import "./main.css";
 const Main = () => {
   return (
     <div>
-      <h2 className="main__title-ony">Absolute freedom to create</h2>
+      <h2 className="main__title-ony">Absolute freedom to <span className="aiii-ony">create</span> </h2>
       <div className="main__section-ony">
         <div className="main__content-ony">
           <img className="a2-ony" src="./images/a2.png" alt="first ai" />

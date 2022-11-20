@@ -6,9 +6,14 @@
     background: #F9F9FB;
     padding: 2rem 0;
 }
-
+.footer__item-ony{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
 .input__text-ony{
-    border: 1px solid #403E46;
+    border: 1px solid rgba(33, 37, 41, 0.6);
+    padding: .8rem .7rem;
 }
 
 .footer__title-ony{
@@ -25,6 +30,7 @@
 }
 .noxus__description-ony{
     width: 513px;
+    color: rgba(33, 37, 41, 0.6);
 }
 
 .footer__mini__title-ony{
@@ -35,6 +41,8 @@
 .footer__mini__description-ony{
     font-size: 15px;
     font-family: 400;
+    color: rgba(33, 37, 41, 0.6);
+   
 }
 .last__footer-ony{
     display: flex;
@@ -54,32 +62,62 @@
     margin-top: 1rem;
 }
 
+.input__subscribe-ony{
+    font-size: 14px;
+    color: rgba(33, 37, 41, 0.6);
+    padding-top: .5rem;
+}
+.footer__support-title-ony{
+    font-size: 14px;
+    color: rgba(33, 37, 41, 0.6);
+}
+
 @media(max-width: 380px){
     .footer__content-ony{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 5rem;
+        gap: 2rem;
         background: #F9F9FB;
         padding: 2rem 0;
     }
     .footer__title-ony{
         width: 327px;
         font-size: 16px;
+        font-weight: 700;
+        padding: 1rem 0;
     }
     .input__text-ony{
-        margin-left: 1rem;
+        margin-left: .5rem;
+        
+    }
+    .input__subscribe-ony{
+        font-size: 14px;
+        color: rgba(33, 37, 41, 0.6);
+        padding-top: .5rem;
+        padding-left: .5rem;
     }
     .footer__items-ony{
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        grid-template-rows: 100px 100px 100px;
         justify-content: center;
+        padding-left: 1rem;
         margin-top: 1rem;
         gap: 4rem;
        
     }
 
-   
-  
+    .noxus__description-ony{
+        width: 327px;
+        color: rgba(33, 37, 41, 0.6);
+    }
+   .grid-ony{
+    margin-top: 20rem;
+   }
+   .input__text-ony{
+    border: 1px solid rgba(33, 37, 41, 0.6);
+    padding: .5rem .6rem;
+}
 }

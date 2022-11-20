@@ -4,7 +4,7 @@ import "./about.css";
 const About = () => {
   return (
     <div>
-      <h2 className="about__title-ony">Learn more about AI</h2>
+      <h2 className="about__title-ony">Learn more about <span className="aiii-ony">AI</span></h2>
       <div className="about__content-ony">
       <div >
         <img className="about__image-ony" src="./images/more.png" />
@@ -24,17 +24,17 @@ const About = () => {
      <p className="aboutus__title-ony">Some of the most in demand courses we have at bloom. You might want to check them out</p>
      <div className="about__courses-ony">
      <div>
-        <img src="./images/more1.png" />
+        <img src="./images/more1.png" className="img-ony" />
         <h3>Understanding the basics of AI</h3>
         <p className="about__courses__description-ony">Join Emily Pratt as she extensively explains the fundamentals and the cores of artificial intelligence</p>
      </div>
      <div>
-     <img src="./images/more2.png" />
+     <img src="./images/more2.png" className="img-ony"  />
      <h3>Beginner’s guide to generative AI</h3>
      <p className="about__courses__description2-ony">Phoebe Drowy teaches what are generative AI are and how it works</p>
      </div>
      <div>
-     <img src="./images/more3.png" />
+     <img src="./images/more3.png" className="img-ony"  />
      <h3>Do you get machine learning yet?</h3>
      <p className="about__courses__description3-ony">machine learning can be a difficult concept do understand, but Jen Yu breaks it down here properly</p>
      </div>

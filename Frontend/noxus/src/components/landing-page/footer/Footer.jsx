@@ -11,7 +11,7 @@ const Footer = () => {
           Subscribe to our newsletter for info for new avatar scenes, blogs and
           updates
         </h3>
-        <p>We’d send a confirmation email to you</p>
+        <p className="footer__support-title-ony">We’d send a confirmation email to you</p>
       </div>
       <div>
         <input
@@ -26,18 +26,18 @@ const Footer = () => {
     </div>
     <div className="footer__items-ony">
     <div>
-  <h4>Noxus</h4>
+  <h4 className="footer__mini__title-ony">Noxus</h4>
   <p className="noxus__description-ony">Noxus is your webapp for creating Artificial Intelligent Avatars, we also offer courses on avatar generation</p>
 </div>
 
-<div>
-  <h3 className="footer__mini__title-ony">Resources</h3>
+<div className="footer__item-ony">
+  <h3 className="footer__mini__title-ony grid-ony">Resources</h3>
   <p className="footer__mini__description-ony">Careers</p>
   <p className="footer__mini__description-ony">Blog</p>
   <p className="footer__mini__description-ony">Reviews</p>
   <p className="footer__mini__description-ony">API integration</p>
 </div>
-<div>
+<div className="footer__item-ony">
   <h3 className="footer__mini__title-ony">Company</h3>
   <p className="footer__mini__description-ony">Contact Us</p>
   <p className="footer__mini__description-ony">About Us</p>
@@ -47,7 +47,7 @@ const Footer = () => {
 
 
 
-<div >
+<div className="footer__item-ony" >
   <h3 className="footer__mini__title-ony">Help</h3>
   <p className="footer__mini__description-ony">FAQs</p>
   <p className="footer__mini__description-ony">Terms & Policy</p>
