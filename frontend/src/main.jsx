@@ -8,6 +8,7 @@ import MessageEdit from "./components/chat/MessageEdit";
 import "./index.css";
 import MessageEditSection from "./components/chat/MessageEditSection";
 import MessagePreview from "./components/chat/MessagePreview";
+import SendMessage from "./components/chat/SendMessage";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -28,6 +29,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         message={`can you help me apply this foundation in tomorrow's show?`}
         time={`49 mins`}
       />
+      <SendMessage />
     </>
   </React.StrictMode>
 );
