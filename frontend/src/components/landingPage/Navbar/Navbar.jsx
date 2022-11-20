@@ -43,7 +43,7 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="space-x-6 hidden md:block">
-          <Button className=" bg-white border-purple text-purple  ">
+          <Button className=" border-purple text-purple bg-white ">
             <Link to="/login">  Log in</Link>
           
           </Button>
