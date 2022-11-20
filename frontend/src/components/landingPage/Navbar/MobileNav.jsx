@@ -41,7 +41,7 @@ const MobileNav = ({navClose}) => {
         
       </nav>
       <div className="absolute top-10 right-10">
-      <img src={close} alt="" onClick={navClose} className=""/>
+      <img src={close} alt="" onClick={navClose} className="text-purple"/>
       </div>
     </div>
   );
