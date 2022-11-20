@@ -7,7 +7,7 @@ const Main = () => {
     return (
         <div>
             <p className="text-center text-3xl font-semibold mt-3 mb-8">Careers at Nexus</p>
-            <div className="flex flex-row justify-evenly">
+            <div className="flex flex-row justify-evenly mb-20">
                 <div id="first-div">
                     <div className="flex flex-row space-x-10 mb-6 items-center justify-between">
                         <div className="text-left">
@@ -61,24 +61,24 @@ const Main = () => {
                     </div>
                 </div>
                 <div id="second-div" className="text-right">
-                    <p>We Are Hiring</p>
+                    <p className="text-xs font-semibold text-emerald-500 mb-4">We Are Hiring</p>
                     <div>
-                        <h2>Pick a plan and create your AI generated Avatars</h2>
+                        <h2 className="text-xl font-bold mb-5">Pick a plan and create your AI <br/>generated Avatars</h2>
                     </div>
-                    <div>
-                        <p>Our vision to make it easier for people to be able to envision and see<br/>
+                    <div className="text-sm text-[#5A5A5A]">
+                        <p className="mb-5">Our vision to make it easier for people to be able to envision and see<br/>
                             themselves in the different ways they can imagine one Avatar at a<br/>
                             time. We build our customers a world-class avatar systems their users<br/>
                             deserve.
                         </p>
-                        <p>
+                        <p className="mb-4">
                             Noxus help users create an avatar they can use across many virtual<br/>
                             experiences and give developers an easy-to-use tool for building<br/>
                             avatar-based experiences.<br/>
                         </p>
                     </div>
                     <div>
-                        <img src="../images/tapart2.png" alt="background logo" />
+                        <img src="../careers-page/images/tapart2.png" alt="background logo" />
                     </div>
                 </div>
             </div>
