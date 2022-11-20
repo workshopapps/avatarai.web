@@ -14,6 +14,7 @@ export default function PriceCardTwo({
   return (
     <section
       style={{ "background-color": bg, color: font }}
+
       className=" flex flex-col  justify-between vnc_card font-Nunito rounded-lg border-vnc_line border-first w-80 break2:w-80 lg:w-96 p-4">
       <div className="py-7">
         <h2 className=" md:mt-2 mb-5 text-lg">{title}</h2>
@@ -22,17 +23,20 @@ export default function PriceCardTwo({
           <p>/month</p>
         </div>
         <p className="py-4">
+
           All can have random results and may include artistic nudes, erotic or
           otherwise shocking images, if you do not want that and are sensitive,
           we recommend you to NOT use the site!
         </p>
         <div>{feature}</div>
         <div>{feature2}</div>
+
         <hr className="border-1 vnc_hr" />
         <div className="py-2">
           <span>4k avatars</span> 4096x4096
         </div>
         <hr className="border-1 vnc_hr" />
+
         <div>{feature}</div>
         <div>{feature2}</div>
       </div>
