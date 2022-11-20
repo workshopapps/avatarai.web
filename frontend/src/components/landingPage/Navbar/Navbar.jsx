@@ -49,7 +49,7 @@ const Navbar = () => {
           </Button>
 
           <Button className="text-white border-purple bg-purple ">
-            Sign up
+            <Link to="/Signupfirst"> Sign up </Link>
           </Button>
         </div>
       </nav>
