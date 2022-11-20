@@ -8,6 +8,7 @@ import Navbar from "../landingPage/Navbar/Navbar";
 // import Faq from './../faq/index'
 import QuestionSection from "./../faq/QuestionSection";
 import FaqNewsletter from "./../faq/FaqNewsletter";
+import Footer from "../Footerpage/Footer";
 
 
 export default function Ttilp() {
@@ -34,6 +35,7 @@ export default function Ttilp() {
       <Creative />
       <QuestionSection />
       <FaqNewsletter />
+      <Footer />
       {/* <Faq /> */}
     </div>
   );

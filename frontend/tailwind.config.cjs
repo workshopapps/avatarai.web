@@ -6,8 +6,10 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                nunito: ["Nunito"],
-                jakarta: ["'Plus Jakarta Sans'"],
+        nunito: ["Nunito"],
+        "nunito-sans": ["Nunito Sans"],
+        jakarta: ["'Plus Jakarta Sans'"],
+        inter: ["Inter"],
             },
             colors: {
                 'purple': "#8B70E9",
@@ -16,3 +18,4 @@ module.exports = {
     },
     plugins: [],
 }
+

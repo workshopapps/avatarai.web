@@ -88,7 +88,7 @@ a {
 
 .vic_get_started p {
     font-weight: 400;
-    font-size: 0.9em;
+    font-size: 1.2em;
     line-height: 1.2em;
     color: #DBDBDB;
 }
@@ -99,7 +99,7 @@ a {
 }
 
 .vic_how h2 {
-    font-size: 1.5em;
+    font-size: 1.7em;
     font-weight: 600;
     line-height: 1.1em;
     margin-top: 0.5em;
@@ -121,7 +121,7 @@ a {
 }
 
 .vic_get_started h3 {
-    font-size: 1.25em;
+    font-size: 1.5em;
     font-weight: 600;
     padding: 0.6em;
 }
@@ -223,7 +223,7 @@ a {
     }
 
     .vic_get_started li {
-        max-width: 230px;
+        max-width: 2322px;
     }
 
     .vic_get_started ul div {
@@ -320,7 +320,7 @@ a {
     }
 
     .vic_mid_section h2 {
-        font-size: 2em;
+        font-size: 2.1em;
     }
 
     .vic_mid_start h3 {
@@ -405,7 +405,7 @@ a {
     
     .vic_get_started p {
         font-weight: 400;
-        font-size: 1em;
+        font-size: 1.2em;
         line-height: 1.4em;
         color: #DBDBDB;
     }
@@ -416,12 +416,12 @@ a {
     }
     
     .vic_how h2 {
-        font-size: 2em;
+        font-size: 2.4em;
     }
     
     
     .vic_get_started h3 {
-        font-size: 1.5em;
+        font-size: 1.6em;
         line-height: 1.2em;
     }
 

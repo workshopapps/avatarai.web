@@ -5,12 +5,16 @@ const FaqHero = () => {
         <h1 className="font-bold md:text-[32px]">Frequently Asked Questions</h1>
         <p>Have questions? We are here to help.</p>
       </header>
-      <div className="flex items-center gap-4 justify-between p-[5px] h-[52px] w-full max-w-[512px] bg-white rounded">
-        <div className="h-full flex gap-[8px] items-center font-nunito grow text-[#848484] rounded py-[8px] pl-[18px]">
+      <div className="flex items-center md:gap-4 gap-1 justify-between p-[5px] h-[52px] w-full max-w-[512px] bg-white rounded">
+        <div className="h-full flex md:gap-[8px] gap-1 items-center font-nunito grow text-[#848484] rounded py-[8px] md:pl-[18px] pl-2">
           <img src="/magnifying-glass.svg" />
-          <p className="">Type keyword to find answer</p>
+          <input
+            type={`text`}
+            className="grow outline-none"
+            placeholder="Type keyword to find answer"
+          />
         </div>
-        <div className="bg-[#8B70E9] h-full flex items-center font-nunito text-white rounded px-[40px] py-[8px]">
+        <div className="cursor-pointer bg-[#8B70E9] h-full flex items-center font-nunito text-white rounded px-[20px] py-[8px]">
           <span>Search</span>
         </div>
       </div>
