@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../../assets/images/logos.png";
+import logo from "../../../assets/images/tapart.png";
 import menu from "../../../assets/images/menu.png";
 import Button from "../Button/Button";
 import MobileNav from "./MobileNav";
@@ -25,17 +25,17 @@ const Navbar = () => {
           onClick={navHandler}
         />
 
-        <ul className="md:flex justify-between items-center gap-5 lg:gap-10 hidden cursor-pointer">
+        <ul className="md:flex justify-between items-center gap-2  lg:gap-10 hidden cursor-pointer clamp">
           <li className="p-2  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
             <Link to="/home"> Home</Link>
           </li>
-          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
+          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
             <Link to="/about-us">About Us</Link>
           </li>
-          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
+          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
             <Link to="/pricing">Pricing</Link>
           </li>
-          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
+          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
             <Link to="/contact-us">Contact Us</Link>
           </li>
           <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
@@ -43,7 +43,7 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="space-x-6 hidden md:block">
-          <Button className=" bg-white border-purple text-white  ">
+          <Button className=" bg-white border-purple text-purple  ">
             <Link to="/login">  Log in</Link>
           
           </Button>
