@@ -26,6 +26,7 @@ import Profile from "./components/profile_page/profile_page.component";
 import ReadArticle from "./components/read article/ReadArticle";
 import ApiPage from './components/api-page/ApiPage';
 import Login from './components/LoginPage/Login';
+import Chat from './components/chat/ChatPage'
 
 export default function App() {
   return (
@@ -97,6 +98,10 @@ export default function App() {
 
         {/* login */}
         <Route path="/Login" element={<Login />} />
+
+        {/* chat */}
+        <Route path="/Chat" element={<Chat />} />
+
 
 
       </Routes>
