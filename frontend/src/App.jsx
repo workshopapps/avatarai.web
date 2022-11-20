@@ -29,7 +29,6 @@ import Opt_sec from '../src/components/sign-up/sign-up_sec';
 import Opt_thi from '../src/components/sign-up/sign-up_thi';
 import Opt_for from '../src/components/sign-up/sign-up_for';
 import Opt_fi from './components/sign-up/sign-up_fi';
-import Payment from "./components/paymentflow-1/payment";
 
 
 
@@ -43,7 +42,6 @@ export default function App() {
           <Route path ="/Opt_sec" element={<Opt_sec /> } />
           <Route path ="/Opt_thi" element={<Opt_thi /> } /> 
           <Route path ="/Opt_fi" element={<Opt_fi /> } />
-          <Route exact path ="/payment" element={<Payment/>}/>
       
           
           
