@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <Fragment>
       <nav className="flex justify-between items-center lg:px-20 md:px-8 py-5">
-        <img src={logo} alt="" className="w-10 hidden md:block" />
+        <Link to='/'><img src={logo} alt="" className="w-10 hidden md:block" /></Link>
         <img
           src={menu}
           alt=""
@@ -43,10 +43,12 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="space-x-6 hidden md:block">
-          <Button className=" bg-white border-purple text-purple  ">
-            <Link to="/Login">  Log in</Link>
+        <button className="inline-flex justify-center items-center px-8 py-3  border border-purple  
+          rounded-[8px] font-semibold text-md text-purple bg-white transition ease-in-out duration-150 border-purple text-purple w-full" >
+          <Link to="/Login">  Log in</Link>
+          </button>
           
-          </Button>
+          
 
           <Button className="text-white border-purple bg-purple ">
             <Link to="/Signupfirst"> Sign up </Link>

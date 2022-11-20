@@ -26,7 +26,11 @@ import Profile from "./components/profile_page/profile_page.component";
 import ReadArticle from "./components/read article/ReadArticle";
 import ApiPage from './components/api-page/ApiPage';
 import Login from './components/LoginPage/Login';
-import Chat from './components/chat/ChatPage'
+import SetPassword from './components/LoginPage/PasswordReset';
+import ForgetPassword from './components/LoginPage/ForgotPassword';
+import CheckEmail from './components/LoginPage/CheckEmail';
+import ResetPassword from './components/LoginPage/ResetPassword';
+import Chat from './components/chat/ChatPage';
 
 export default function App() {
   return (
@@ -100,6 +104,12 @@ export default function App() {
 
         {/* login */}
         <Route path="/Login" element={<Login />} />
+        <Route path="/ResetPassword" element={<ResetPassword />} />
+        <Route path="/SetPassword" element={<SetPassword />} />
+        <Route path="/ForgetPassword" element={<ForgetPassword />} />
+        <Route path="/CheckEmail" element={<CheckEmail />} />
+
+
 
         {/* chat */}
         <Route path="/Chat" element={<Chat />} />
