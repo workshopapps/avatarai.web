@@ -6,6 +6,8 @@
 }
 .create-avatar h1 {
   margin-bottom: 0.25rem;
+  font-weight: 700;
+  font-size: 2rem;
 }
 .create-avatar p {
   line-height: 150%;
@@ -75,7 +77,10 @@
   margin-top: 3rem;
   cursor: pointer;
 }
-
+.create-avatar .upload-block span {
+  font-size: 2rem;
+  color: #8b70e9;
+}
 @media screen and (max-width: 650px) {
   .create-avatar {
     padding: 3rem 1rem;
