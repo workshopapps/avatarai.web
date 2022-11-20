@@ -38,7 +38,7 @@ import Payment from './components/paymentFlow-1.2/paymentFlow1.2';
 import Avatar from './components/createAvatar/Welcome';
 import Courses from './components/courses/CoursePage';
 import CourseDetail from './components/courses/CourseDetail';
-import Profile from './profile_page/profile_page.component';
+import Profile from './components/profile_page/profile_page.component';
 
 
 export default function App() {
