@@ -1,16 +1,14 @@
-import Intro from './Main';
-import Subscribe from './Subscribe';
-import Footer from './Footer';
-import Navbar from './Navbar';
+//import Intro from './Main';
+//import Subscribe from './Subscribe';
+//import Footer from './Footer';
+//import Navbar from './Navbar';
 
 const Main = () => {
     return (
         <div>
-            <Navbar />
-            <Intro />
-            <p>Careers at Nexus</p>
+            <p className="text-center text-3xl font-semibold mt-3">Careers at Nexus</p>
             <div className="flex">
-                <div class="first-div">
+                <div id="first-div" className="justify-center flex flex-row">
                     <div>
                         <p>TECH DEPARTMENT</p>
                         <h2>Senior software developer</h2>
@@ -100,8 +98,6 @@ const Main = () => {
                     </div>
                 </div>
             </div>
-            <Subscribe />
-            <Footer />
         </div>
      );
 }
