@@ -32,7 +32,7 @@ import CheckEmail from './components/LoginPage/CheckEmail';
 import ResetPassword from './components/LoginPage/ResetPassword';
 import Chat from './components/chat/ChatPage';
 import LandingPage from './components/landing-page/LandingPageC';
-import CareerPage from './components/careers-page/careerPage'
+import CareerPage from './components/careers-page/careerPage';
 
 export default function App() {
   return (
