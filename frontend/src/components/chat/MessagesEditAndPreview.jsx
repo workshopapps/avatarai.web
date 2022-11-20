@@ -8,7 +8,7 @@ const MessagesEditAndPreview = () => {
   return (
     <div className="border-r border-purple-200">
       <MessageEditSection />
-      <div className="flex flex-col border-t border-purple-200">
+      <div className="flex flex-col py-6 gap-6 border-t border-purple-200">
         {messages.map((m) => {
           return (
             <MessagePreview
