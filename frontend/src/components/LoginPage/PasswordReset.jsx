@@ -1,6 +1,7 @@
 import React from 'react'
 import loc from "../../assets/images/loc.png";
 import Button from '../landingPage/Button/Button';
+import { Link } from 'react-router-dom';
 
 const PasswordReset = () => {
   return (
@@ -11,7 +12,7 @@ const PasswordReset = () => {
     <p className='text-xl'>Your password has been successfully reset click below to log in </p>
     </div>
     
-      <Button className="w-full md:w-[28rem] bg-purple text-white">Continue</Button>
+      <Button className="w-full md:w-[28rem] bg-purple text-white"><Link to="/SetPassword">Continue</Link></Button>
       
       
 
