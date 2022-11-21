@@ -15,11 +15,11 @@ function PriceCards({
   return (
     <section
       style={{ "background-color": bg, color: font }}
-      className=" flex flex-col  vnc_card justify-between  font-nunito rounded-lg border-vnc_line border-first w-80 break2:w-80 lg:w-96 p-4">
+      className=" flex flex-col  vnc_card justify-between  font-Nunito rounded-lg border-vnc_line border-first w-80 break2:w-80 lg:w-96 p-4">
       <div className="py-8 vnc_cover">
-        <h2 className=" md:mt-20 mb-4 font-nunito text-lg">{title}</h2>
+        <h2 className=" md:mt-20 mb-4 text-lg">{title}</h2>
         <div className="flex py-1 gap-2 items-center">
-          <h1 className="text-5xl font-bold font-jakarta">{amount}</h1>
+          <h1 className="text-5xl font-bold font-Jakarta">{amount}</h1>
           <p>/month</p>
         </div>
         <p className=" py-4">
