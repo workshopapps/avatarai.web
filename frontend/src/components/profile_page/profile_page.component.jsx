@@ -1,6 +1,5 @@
 import avatar from "../../assets/Avatar.svg";
 import State_options from "./state_options.component";
-import './proflie.css'
 
 import { useState } from "react";
 const defaultFields = {
@@ -83,7 +82,7 @@ const Profile = () => {
     },
   ];
   return (
-    <div className="w-[95%] md:w-[90%] lg:w-[80%] m-auto Muh">
+    <div className="w-[95%] md:w-[90%] lg:w-[80%] m-auto ">
       <h3 className="font-semibold">Your Profile</h3>
       <p className="text-[#949494]">See your personal information</p>
       <div className="bg-white">
@@ -105,21 +104,89 @@ const Profile = () => {
               <>
                 <fieldset>
                   <div className="flex flex-wrap">
-                    {half_display_inputs.map((input) => {
-                      return (
-                        <div className="flex-[100%] md:flex-[47%] mr-0">
-                          <label>{input.label}</label>
-                          <br />
-                          <input
-                            type={input.type}
-                            placeholder={input.placeholder}
-                            onChange={change_formField}
-                            className=" w-[100%] md:w-[97%]   border  outline-[none] p-[1.5rem] mb-[1.5rem]"
-                          />
-                        </div>
-                      );
-                    })}
-                    <State_options></State_options>
+                    <div className="flex-[100%] md:flex-[50%] md:pr-[-1rem]">
+                      <label>First Name</label>
+                      <br />
+                      <input
+                        type="text"
+                        placeholder="Sandra"
+                        name="firstName"
+                        value={firstName}
+                        onChange={change_formField}
+                        className=" w-[100%] md:w-[96%]   border  outline-[none] p-[1.5rem] mb-[1.5rem]"
+                      />
+                    </div>
+                    <div className="flex-[100%] md:flex-[50%] ">
+                      <label>Last Name</label>
+                      <br />
+                      <input
+                        type="text"
+                        placeholder="Triss"
+                        name="LastName"
+                        value={lastName}
+                        onChange={change_formField}
+                        className=" w-[100%] md:w-[100%]   border  outline-[none] p-[1.5rem] mb-[1.5rem]"
+                      />
+                    </div>
+                    <div className="flex-[100%] md:flex-[50%]  ">
+                      <label>Mobile number</label>
+                      <br />
+                      <input
+                        placeholder="+2349078985443"
+                        type="tel"
+                        name="mobileNuber"
+                        value={mobileNumber}
+                        onChange={change_formField}
+                        className=" w-[100%] md:w-[96%]   border  outline-[none] p-[1.5rem] mb-[1.5rem]"
+                      />
+                    </div>
+                    <div className="flex-[100%] md:flex-[50%] ">
+                      <label>Location</label>
+                      <br />
+                      <select
+                        id="state"
+                        name="state"
+                        className=" w-[100%] md:w-[100%]   border  outline-[none] p-[1.5rem] mb-[1.5rem]"
+                      >
+                        <option value="Abia">Abia</option>
+                        <option value="Adamawa">Adamawa</option>
+                        <option value="Akwa Ibom">Akwa Ibom</option>
+                        <option value="Anambra">Anambra</option>
+                        <option value="Bauchi">Bauchi</option>
+                        <option value="Bayelsa">Bayelsa</option>
+                        <option value="Benue">Benue</option>
+                        <option value="Borno">Borno</option>
+                        <option value="Cross River">Cross River</option>
+                        <option value="Delta">Delta</option>
+                        <option value="Ebonyi">Ebonyi</option>
+                        <option value="Edo">Edo</option>
+                        <option value="Ekiti">Ekiti</option>
+                        <option value="Enugu">Enugu</option>
+                        <option value="FCT - Abuja">FCT - Abuja</option>
+                        <option value="Gombe">Gombe</option>
+                        <option value="Imo">Imo</option>
+                        <option value="Jigawa">Jigawa</option>
+                        <option value="Kaduna">Kaduna</option>
+                        <option value="Kano">Kano</option>
+                        <option value="Katsina">Katsina</option>
+                        <option value="Kebbi">Kebbi</option>
+                        <option value="Kogi">Kogi</option>
+                        <option value="Kwara">Kwara</option>
+                        <option value="Lagos">Lagos</option>
+                        <option value="Nasarawa">Nasarawa</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Ogun">Ogun</option>
+                        <option value="Ondo">Ondo</option>
+                        <option value="Osun">Osun</option>
+                        <option value="Oyo">Oyo</option>
+                        <option value="Plateau">Plateau</option>
+                        <option value="Rivers">Rivers</option>
+                        <option value="Sokoto">Sokoto</option>
+                        <option value="Taraba">Taraba</option>
+                        <option value="Yobe">Yobe</option>
+                        <option value="Zamfara">Zamfara</option>
+                      </select>
+                    </div>
                   </div>
                   <label>Email Address</label>
                   <br />
@@ -146,7 +213,7 @@ const Profile = () => {
                 <div className="flex justify-between md:justify-around">
                   <button
                     onClick={change_editing_status}
-                    className="border border-[#22125A] p-[1.5rem] px-[3.5rem]
+                    className="border border-[#22125A] p-[1.5rem] px-[2rem] md:px-[3.5rem]
                   mt-[1.5rem] text-[#22125A] rounded-[8px]
               "
                   >
@@ -154,7 +221,7 @@ const Profile = () => {
                   </button>
                   <button
                     onClick={save_details}
-                    className="bg-[#22125A] p-[1.5rem]  px-[3.5rem] text-[white]
+                    className="bg-[#22125A] p-[1.5rem]  px-[2rem] md:px-[3.5rem] text-[white]
                   mt-[1.5rem] rounded-[8px]
               "
                   >
@@ -166,21 +233,89 @@ const Profile = () => {
               <>
                 <fieldset disabled="disabled">
                   <div className="flex flex-wrap">
-                    {half_display_inputs.map((input) => {
-                      return (
-                        <div className="flex-[100%] md:flex-[47%] justify-between">
-                          <label>{input.label}</label>
-                          <br />
-                          <input
-                            type={input.type}
-                            placeholder={input.placeholder}
-                            onChange={change_formField}
-                            className=" w-[100%] md:w-[97%]   border  outline-[none] p-[1.5rem] mb-[1.5rem]"
-                          />
-                        </div>
-                      );
-                    })}
-                    <State_options></State_options>
+                    <div className="flex-[100%] md:flex-[50%] md:pr-[-1rem]">
+                      <label>First Name</label>
+                      <br />
+                      <input
+                        type="text"
+                        placeholder="Sandra"
+                        name="firstName"
+                        value={firstName}
+                        onChange={change_formField}
+                        className=" w-[100%] md:w-[96%]   border  outline-[none] p-[1.5rem] mb-[1.5rem]"
+                      />
+                    </div>
+                    <div className="flex-[100%] md:flex-[50%] ">
+                      <label>Last Name</label>
+                      <br />
+                      <input
+                        type="text"
+                        placeholder="Triss"
+                        name="LastName"
+                        value={lastName}
+                        onChange={change_formField}
+                        className=" w-[100%] md:w-[100%]   border  outline-[none] p-[1.5rem] mb-[1.5rem]"
+                      />
+                    </div>
+                    <div className="flex-[100%] md:flex-[50%]  ">
+                      <label>Mobile number</label>
+                      <br />
+                      <input
+                        placeholder="+2349078985443"
+                        type="tel"
+                        name="mobileNuber"
+                        value={mobileNumber}
+                        onChange={change_formField}
+                        className=" w-[100%] md:w-[96%]   border  outline-[none] p-[1.5rem] mb-[1.5rem]"
+                      />
+                    </div>
+                    <div className="flex-[100%] md:flex-[50%] ">
+                      <label>Location</label>
+                      <br />
+                      <select
+                        id="state"
+                        name="state"
+                        className=" w-[100%] md:w-[100%]   border  outline-[none] p-[1.5rem] mb-[1.5rem]"
+                      >
+                        <option value="Abia">Abia</option>
+                        <option value="Adamawa">Adamawa</option>
+                        <option value="Akwa Ibom">Akwa Ibom</option>
+                        <option value="Anambra">Anambra</option>
+                        <option value="Bauchi">Bauchi</option>
+                        <option value="Bayelsa">Bayelsa</option>
+                        <option value="Benue">Benue</option>
+                        <option value="Borno">Borno</option>
+                        <option value="Cross River">Cross River</option>
+                        <option value="Delta">Delta</option>
+                        <option value="Ebonyi">Ebonyi</option>
+                        <option value="Edo">Edo</option>
+                        <option value="Ekiti">Ekiti</option>
+                        <option value="Enugu">Enugu</option>
+                        <option value="FCT - Abuja">FCT - Abuja</option>
+                        <option value="Gombe">Gombe</option>
+                        <option value="Imo">Imo</option>
+                        <option value="Jigawa">Jigawa</option>
+                        <option value="Kaduna">Kaduna</option>
+                        <option value="Kano">Kano</option>
+                        <option value="Katsina">Katsina</option>
+                        <option value="Kebbi">Kebbi</option>
+                        <option value="Kogi">Kogi</option>
+                        <option value="Kwara">Kwara</option>
+                        <option value="Lagos">Lagos</option>
+                        <option value="Nasarawa">Nasarawa</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Ogun">Ogun</option>
+                        <option value="Ondo">Ondo</option>
+                        <option value="Osun">Osun</option>
+                        <option value="Oyo">Oyo</option>
+                        <option value="Plateau">Plateau</option>
+                        <option value="Rivers">Rivers</option>
+                        <option value="Sokoto">Sokoto</option>
+                        <option value="Taraba">Taraba</option>
+                        <option value="Yobe">Yobe</option>
+                        <option value="Zamfara">Zamfara</option>
+                      </select>
+                    </div>
                   </div>
                   <label>Email Address</label>
                   <br />
@@ -224,3 +359,4 @@ const Profile = () => {
 };
 
 export default Profile;
+               
