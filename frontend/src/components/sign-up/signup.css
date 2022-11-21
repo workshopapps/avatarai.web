@@ -254,6 +254,10 @@
     color: #FFFFFF;
     margin: auto;
 }
+.mybutton_opt:enabled:hover {
+    background: #4D3899;
+}
+
 .mybutton_opt:enabled{
     padding: 12px 26px;
     gap: 8px;

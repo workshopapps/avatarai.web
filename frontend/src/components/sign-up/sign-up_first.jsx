@@ -111,16 +111,16 @@ export default function SignUp_first (){
                     {  show &&
                         <div>
                             <label>First name</label><br/>
-                            <input id='myinput_opt' placeholder='John' type='text' required/><br/>
+                            <input id='myinput_opt' placeholder='John' type='text' required /><br/>
                             <label>Last name</label><br/>
-                            <input id='myinput_op' placeholder='Doe' type='text' required/><br/>
+                            <input id='myinput_op' placeholder='Doe' type='text' required /><br/>
                             <label>Email</label><br/>
-                            <input id='myinput_o' placeholder='name@example.com' type='email' required/><br/>
+                            <input id='myinput_o' placeholder='name@example.com' type='email' required /><br/>
                             <label className="container_opt" id="cap"><span className='note_opt'>I agree to the terms & service and privacy policy</span>
                                 <input type="checkbox" id='check_opt'onClick={()=> setShow_s(!show_s)} required/>
                                 <span className="checkmark"/>
                             </label>
-                            <button onClick={()=> setShow(!show)} disabled={show_s} className='mybutton_opt' id='mybutton_opt'>Continue</button>
+                            <button onClick={()=> setShow(!show)} type='submit' disabled={show_s} className='mybutton_opt' id='mybutton_opt'>Continue</button>
 
                         </div>
                     }
