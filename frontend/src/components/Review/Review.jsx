@@ -18,7 +18,6 @@ export default function Review() {
 
   const handleRating = (i) => {
     if (rating === i + 1) {
-      console.log("clxi");
       setRating(0);
     } else {
       setRating(i + 1);
@@ -134,7 +133,7 @@ function ReviewMessages({ details }) {
           <div
             className={styles.reviewerAvatar}
             aria-label="reviewer display"
-            styles={{
+            style={{
               backgroundImage: `url(${details.image})`,
             }}
           ></div>

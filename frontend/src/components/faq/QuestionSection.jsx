@@ -8,7 +8,7 @@ const QuestionSection = () => {
       {/* FAQs and Contact Us Toggle */}
       <div className="flex items-center gap-4 justify-between p-[5px] h-[52px] w-full max-w-[290px] bg-[#F6F6FF] border border-[#CFD6FF] rounded">
         <div className="cursor-pointer bg-[#8B70E9] h-full flex items-center font-nunito font-bold text-white rounded px-[40px] py-[8px]">
-          <span>FAQ's</span>
+          <span className="text-white">FAQ's</span>
         </div>
         <div className="cursor-pointer h-full flex items-center justify-center font-nunito font-bold grow text-[#848484] rounded py-[8px]">
           <span>Contact Us</span>

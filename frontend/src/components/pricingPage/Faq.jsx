@@ -9,15 +9,16 @@ export const Faq = () => {
         "Digital avatars can serve a number of purposes including representing a person, an online friend, a brand, or an influencer",
     },
     {
-      title: "Can you create avatars directly from your camera",
-      comment: "the answers to the questions",
+      title: "What are digital avatars used for?",
+      comment:
+        "Digital avatars can serve a number of purposes, including representing a person, an online friend, a brand, or an influencer.",
     },
     {
       title: "Can you create avatars directly from your camera",
       comment: "the answers to the questions",
     },
     {
-      title: "Can you create avatars directly from your camera",
+      title: "Can I Choose the background for my avatar?",
       comment: "the answers to the questions",
     },
   ]);
@@ -33,8 +34,8 @@ export const Faq = () => {
   return (
     <section className="">
       <div className="text-center ">
-        <h1 className="text-5xl p-8 mt-4  font-Jakarta font-bold">FAQS</h1>
-        <p className="py-6 w-5/6 mx-auto font-Nunito text-center">
+        <h1 className="text-5xl p-8 mt-4  font-jakarta font-bold">FAQS</h1>
+        <p className="py-6 w-5/6 mx-auto font-nunito text-center">
           Have any questions? Here are answers to some of them
         </p>
       </div>
@@ -45,8 +46,9 @@ export const Faq = () => {
             <div
               onClick={() => click(index)}
               key={index}
-              className="rounded-lg border-first  p-3 mb-3 flex justify-between">
-              <p className="font-bold">{question.title}</p>
+              className="rounded-lg vnc_border p-3 mb-3 flex justify-between">
+              <p className="font-semibold">{question.title}</p>
+
               <p
                 className="text-lg cursor-pointer"
                 onClick={() => setToggle(!toggle)}>
@@ -54,21 +56,23 @@ export const Faq = () => {
               </p>
             </div>
             {toggle === index ? (
-              <div className="rounded-lg border-first mb-5 p-4 border-vnc_hr ">
+              <div className="rounded-lg vnc_border1 mb-5 p-4  ">
                 <div className="flex justify-between">
-                  <p className="font-bold">{question.title}</p>
+                  <p className="font-bold font-nunito">{question.title}</p>
+
                   <p className="text-lg " onClick={() => setToggle(toggle)}>
                     -
                   </p>
                 </div>
-                <p className="font-Jakarta">{question.comment}</p>
+
+                <p className="font-jakarta">{question.comment}</p>
               </div>
             ) : null}
           </div>
         ))}
       </div>
 
-      <div className="text-center text-vnc_hr underline py-5">
+      <div className="text-center vnc_view underline py-5">
         <a href="#"> View more FAQ</a>
       </div>
     </section>
