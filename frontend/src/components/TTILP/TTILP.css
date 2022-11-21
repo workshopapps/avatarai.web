@@ -88,7 +88,7 @@ a {
 
 .vic_get_started p {
     font-weight: 400;
-    font-size: 1.2em;
+    font-size: 1.5em;
     line-height: 1.2em;
     color: #DBDBDB;
 }
@@ -98,18 +98,19 @@ a {
     margin-bottom:2em;
 }
 
-.vic_how h2 {
-    font-size: 1.7em;
+#h2 {
+    font-size: em;
     font-weight: 600;
     line-height: 1.1em;
     margin-top: 0.5em;
+    color: white;
 }
 
 .vic_get_started ul {
     display: grid;
 }
 
-.vic_get_started li {
+#li {
     display: flex;
     flex-direction: column;
     margin-top: 1em;
@@ -118,16 +119,20 @@ a {
 .vic_get_started li div {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    width: 100%;
 }
 
-.vic_get_started h3 {
-    font-size: 1.5em;
+#h3 {
+    font-size: 1.7em;
     font-weight: 600;
     padding: 0.6em;
+    padding-left: 0px;
+    color: white;
 }
 
 .vic_get_started ul img {
-    width: 1.5em;
+    width: 2.2em;
 }
 
 
