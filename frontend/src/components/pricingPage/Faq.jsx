@@ -9,15 +9,16 @@ export const Faq = () => {
         "Digital avatars can serve a number of purposes including representing a person, an online friend, a brand, or an influencer",
     },
     {
-      title: "Can you create avatars directly from your camera",
-      comment: "the answers to the questions",
+      title: "What are digital avatars used for?",
+      comment:
+        "Digital avatars can serve a number of purposes, including representing a person, an online friend, a brand, or an influencer.",
     },
     {
       title: "Can you create avatars directly from your camera",
       comment: "the answers to the questions",
     },
     {
-      title: "Can you create avatars directly from your camera",
+      title: "Can I Choose the background for my avatar?",
       comment: "the answers to the questions",
     },
   ]);
