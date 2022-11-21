@@ -5,7 +5,7 @@ const Button = ({ type = "submit", className = "", children }) => {
     <button
       type={type}
       className={
-        `inline-flex justify-center items-center px-8 py-3  border border-purple  rounded-[8px] font-semibold text-md text-white bg-purple
+        `inline-flex justify-center items-center px-8 py-3 border   rounded-[8px] font-semibold text-md 
          transition ease-in-out duration-150 ` +
         className
       }

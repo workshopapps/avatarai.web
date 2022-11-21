@@ -1,9 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react'
 import lock from "../../assets/images/lock.png";
 import Button from '../landingPage/Button/Button';
+import { Link } from 'react-router-dom';
 
 const ResetPassword = () => {
+
+
+  const textHandler = (e) => {
+    setText(e.target.value);
+  }
   return (
+
     <div className='flex flex-col justify-center items-center gap-y-5 mt-10  px-10  h-screen '>
     <img src={lock} alt="" />
     <div className='w-full md:w-[28rem] text-center'>
@@ -16,6 +23,8 @@ const ResetPassword = () => {
           type="Password"
           placeholder="Password"
           className="border p-3 w-full md:w-[28rem] my-1 rounded-lg outline-none"
+          onChange={textHandler}
+          required
         />
       </div>
       <div className="flex flex-col w-full md:w-[28rem]">
@@ -24,9 +33,11 @@ const ResetPassword = () => {
           type="Password"
           placeholder="Password"
           className="border p-3 w-full md:w-[28rem] my-1 rounded-lg outline-none"
+          required
+          
         />
       </div>
-      <Button className="w-full md:w-[28rem]">Reset Password</Button>
+      <Button className="w-full md:w-[28rem] bg-purple-500 text-white"> <Link to="/SetPassword">Reset Password</Link></Button>
       
 
 </div>

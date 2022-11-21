@@ -29,7 +29,7 @@ const Navbar = () => {
           />
         </div>
 
-        <ul className="lg:flex justify-between items-center gap-2  lg:gap-10 hidden cursor-pointer mr-[70px]">
+        <ul className="lg:flex justify-between items-center gap-2  lg:gap-5 hidden cursor-pointer ">
           <li className="p-2  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
             <Link to="/"> Home</Link>
           </li>
@@ -39,21 +39,19 @@ const Navbar = () => {
           <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
             <Link to="/Pricing">Pricing</Link>
           </li>
-          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
+          <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
             <Link to="/contact-us">Contact Us</Link>
           </li>
           <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
             <Link to="/FAQ">FAQs</Link>
           </li>
         </ul>
-        <div className="space-x-6 hidden lg:flex">
-          <button
-            className="inline-flex justify-center items-center px-8 py-3  border border-purple  
-          rounded-[8px] font-semibold text-md text-purple bg-white transition ease-in-out duration-150 border-purple text-purple w-full">
-            <Link to="/Login"> Log in</Link>
-          </button>
+        <div className="space-x-6 hidden lg:block">
+          <Button className=" border-purple-500 text-purple-500 bg-white ">
+            <Link to="/login"> Log in</Link>
+          </Button>
 
-          <Button className="text-white border-purple bg-purple ">
+          <Button className="text-white border-purple-500 bg-purple-500 ">
             <Link to="/Signupfirst"> Sign up </Link>
           </Button>
         </div>
