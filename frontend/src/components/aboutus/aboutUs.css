@@ -11,6 +11,10 @@
     font-family: 'Nunito', sans-serif;
 }
 
+.dja_container h1, h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
 .dja_container p {
     line-height: 147%;
 }
