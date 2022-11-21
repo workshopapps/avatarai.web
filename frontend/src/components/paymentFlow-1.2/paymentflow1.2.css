@@ -41,6 +41,9 @@ p{
     .v-center{
         margin-top: 125px;
     }
+    .v-center2{
+        margin-top: 100px !important;
+    }
     .authorize{
         width: 80vw;
         max-width: 400px;
