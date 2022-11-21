@@ -161,8 +161,7 @@ export default function SignUp_first (){
                                 <button  className='mybutton_opt' id='mybutton_opt' type ='submit'>Continue</button>
                             </Link>
 
-                        </div>
-
+                     
                             <button  className='mybutton_opt' id='mybutton_opt' type ='submit'>Continue</button>
                     </div>
                 }
