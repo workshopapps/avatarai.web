@@ -6,6 +6,9 @@ import About from './about/About';
 import Social from './socialproof/SocialProof';
 import Header from './header/header/Header';
 import Navbar from "../landingPage/Navbar/Navbar";
+import QuestionSection from "../faq/QuestionSection.jsx";
+import FaqNewsletter from "../faq/FaqNewsletter.jsx";
+import Footer from "../Footerpage/Footer.jsx";
 
 
 function LandingPageC() {
@@ -18,7 +21,9 @@ function LandingPageC() {
         <Benefits />
         <Social />
       <About />
-      
+        <QuestionSection />
+        <FaqNewsletter />
+        <Footer />
      
       
       
