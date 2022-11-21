@@ -35,6 +35,7 @@ import ResetPassword from "./components/LoginPage/ResetPassword";
 import Chat from "./components/chat/ChatPage";
 import LandingPage from "./components/landing-page/LandingPageC";
 import Preview from "./components/generatedAvatars/Preview";
+import LoadingImages from "./components/createAvatar/LoadingImages";
 
 // import CareerPage from './components/careers-page/careerPage';
 
@@ -85,7 +86,7 @@ export default function App() {
         {/* Course Page */}
 
         {/* Avatar */}
-        <Route path="/Avatar" element={<Avatar />} />
+        <Route path="/Avatar" element={<LoadingImages />} />
         {/*  Generate Avatar*/}
         <Route path="/GenerateAvatar" element={<Preview />} />
         <Route path="/Courses" element={<Courses />} />

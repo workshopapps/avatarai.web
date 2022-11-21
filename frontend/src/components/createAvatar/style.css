@@ -93,7 +93,10 @@
   margin-top: 3rem;
   cursor: pointer;
 }
-.create-avatar .upload-block span {
+.create-avatar .upload-block .bottom-text {
+  margin-top: 8rem;
+}
+.create-avatar .upload-block .bottom-text span {
   font-size: 2rem;
   color: #8b70e9;
 }
