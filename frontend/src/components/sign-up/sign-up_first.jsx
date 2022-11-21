@@ -3,7 +3,7 @@ import logo_opt from './images/sign_up/logo.png';
 import info_opt from './images/sign_up/info_outline.png';
 import './signup.css';
 import {useState} from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 let handleclick;
 let state;
 
@@ -25,6 +25,14 @@ export default function SignUp_first (){
         }
 
     }
+    const navigate = useNavigate();
+
+    const handleSubmit = event => {
+        event.preventDefault();
+
+        // 👇️ redirect to /contacts
+        navigate('/Opt_sec');
+    };
     const [show_s, setShow_s] = useState(true);
     const [show, setShow] = useState(true);
     return(
@@ -45,7 +53,7 @@ export default function SignUp_first (){
             </div>
             <div className='provide_opt'>Please provide your name and e-mail</div>
 
-            <form id='myform_opt' method='post'>
+            <form id='myform_opt' onSubmit={handleSubmit} method='post'>
                 {  show &&
                     <div>
                         <label>First name</label><br/>
@@ -77,10 +85,7 @@ export default function SignUp_first (){
                             <img className='info_opt' src={info_opt} alt='info.png'/>
                             <div className='info__opt' >Both passwords must match</div>
                         </div>
-                        <Link to="/Opt_sec">
                             <button  className='mybutton_opt' id='mybutton_opt' type ='submit'>Continue</button>
-                        </Link>
-                        
                     </div>
                 }
 

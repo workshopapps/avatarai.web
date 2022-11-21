@@ -120,7 +120,7 @@ export default function App() {
         <Route path="/Chat" element={<Chat />} />
 
         {/* Career Page */}
-//         <Route path="/CareerPage" element={<CareerPage />} />
+        {/* <Route path="/CareerPage" element={<CareerPage />} />*/}
 
 
 
