@@ -7,10 +7,12 @@ import PolygonRight from "./img/polygonRight.png";
 import Navbar from "../landingPage/Navbar/Navbar";
 
 import { WHY_US, TEAM } from "./data";
+import { Fragment } from "react";
 
 const AboutUs = () => {
     return (
-        <main>
+        <Fragment>
+    
             <Navbar />
             <section className="dja_banner_section">
                 <div className="dja_container">
@@ -70,7 +72,8 @@ const AboutUs = () => {
                     </div>
                 </div>
             </section>
-        </main>
+   
+        </Fragment>
     )
 }
 
