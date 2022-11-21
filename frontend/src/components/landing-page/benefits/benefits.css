@@ -32,7 +32,7 @@
 }
 .second__av-ony{
     position: absolute;
-    top: 350%;
+    top: 370%;
     left: 53%;
     margin-left: 8rem;
     width: 250px;
@@ -40,7 +40,7 @@
 }
 .av1-ony{
     position: absolute;
-    top: 370%;
+    top: 380%;
     left: 61%;
     z-index: -1;
     margin-left: 8rem;
@@ -92,7 +92,7 @@
         top: 423%;
         left: 23%;
         margin-left: 0rem;
-        width: 150px;
+        width: 140px;
     
     }
     .av1-ony{
@@ -101,7 +101,7 @@
         left: 45%;
         z-index: -1;
         margin-left: 0rem;
-        width: 150px;
+        width: 140px;
     }
     .first__benefit-ony{
         width: 292px;
@@ -123,7 +123,7 @@
     }
     .av2-ony{
         position: absolute;
-        left: 0%;
+        left: 5%;
         width: 150px;
         
     }

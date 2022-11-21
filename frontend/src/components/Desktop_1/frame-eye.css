@@ -70,6 +70,8 @@
   height: 40px;
   background: #8b70e9;
   border-radius: 8px;
+  text-align: center;
+  color: white;
 }
 .gender {
   margin: 5%;
