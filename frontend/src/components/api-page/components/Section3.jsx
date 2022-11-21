@@ -8,16 +8,16 @@ const Section3 = () => {
 		<div>
 			<div className="w-full py-20 bg-[#F4F5F6]">
 				<div className="max-w-[1240px] mx-auto px-5 flex flex-col justify-center">
-					<h4 className="text-[#333333] text-[2rem] font-bold mb-[2rem] text-center">
-						All you need to generate and <br /> integrate. All in one place
+					<h4 className="text-[#333333] text-[1.5rem] md:text-[2rem] font-bold mb-[2rem] text-center">
+						All you need to generate and integrate. All in one place
 					</h4>
 					<p className="text-[#605E65] text-base text-center mb-[2rem]">
 						Noxus APIs make it easy to integrate and generate custom illustrations into your app or website.
 					</p>
 					<img src={code} alt="" />
 					<div className="flex justify-center">
-						<button className="btn px-[26px] py-[12px] outline-none normal-case border border-[#8B70E9] rounded-lg bg-[#ffffff] text-[#8B70E9] mt-[49px]">
-							API free trial
+						<button style={{border: "1px solid"}} className="px-[26px] py-[12px] outline-none normal-case border border-[#8B70E9] rounded-lg bg-[#ffffff] text-[#8B70E9] mt-[49px]">
+							View all features
 						</button>
 					</div>
 				</div>
@@ -44,7 +44,7 @@ const Section3 = () => {
 									your avatars.
 								</p>
 								<div className="flex justify-center">
-									<button className="btn px-[26px] py-[12px] outline-none normal-case border border-[#333333] rounded-lg bg-[#333333] text-[#ffffff] mt-[2rem] md:mt-[70px]">
+									<button className="px-[26px] py-[12px] outline-none normal-case border border-[#333333] rounded-lg bg-[#333333] text-[#ffffff] mt-[2rem] md:mt-[70px]">
 										Create sandbox account
 									</button>
 								</div>
