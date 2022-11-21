@@ -15,27 +15,25 @@ function PriceCards({
   return (
     <section
       style={{ "background-color": bg, color: font }}
-      className=" flex flex-col  justify-between h-auto break1:h-card font-Nunito rounded-lg border-vnc_line border-first w-80 break2:w-80 lg:w-96 p-4">
-      <div className="py-8">
-        <h2 className=" break1:mt-20 mt-4 mb-2 break1:mb-5 text-lg">{title}</h2>
+      className=" flex flex-col  vnc_card justify-between  font-Nunito rounded-lg border-vnc_line border-first w-80 break2:w-80 lg:w-96 p-4">
+      <div className="py-8 vnc_cover">
+        <h2 className=" md:mt-20 mb-4 text-lg">{title}</h2>
         <div className="flex py-1 gap-2 items-center">
-          <h1 className="break1:text-5xl text-lg font-bold font-Jakarta">
-            {amount}
-          </h1>
+          <h1 className="text-5xl font-bold font-Jakarta">{amount}</h1>
           <p>/month</p>
         </div>
-        <p className="py-1 break1:py-4">
+        <p className=" py-4">
           All can have random results and may include artistic nudes, erotic or
           otherwise shocking images, if you do not want that and are sensitive,
           we recommend you to NOT use the site!
         </p>
         <div>{feature}</div>
         <div>{feature2}</div>
-        <hr className="border-1 border-vnc_hr" />
+        <hr className=" vnc_hr" />
         <div className="py-2">
           <span>4k avatars</span> 4096x4096
         </div>
-        <hr className="border-1 border-vnc_hr" />
+        <hr className="vnc_hr" />
         <div>{feature}</div>
         <div>{feature2}</div>
       </div>

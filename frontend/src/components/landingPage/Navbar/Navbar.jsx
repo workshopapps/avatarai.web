@@ -17,7 +17,6 @@ const Navbar = () => {
   return (
     <Fragment>
       <nav className="flex justify-between items-center lg:px-20 md:px-8 py-5">
-
         <div>
           <Link to="/">
             <img src={logo} alt="" className="w-10 hidden lg:block" />
@@ -29,7 +28,6 @@ const Navbar = () => {
             onClick={navHandler}
           />
         </div>
-
 
         <ul className="lg:flex justify-between items-center gap-2  lg:gap-5 hidden cursor-pointer ">
           <li className="p-2  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
@@ -50,8 +48,7 @@ const Navbar = () => {
         </ul>
         <div className="space-x-6 hidden lg:block">
           <Button className=" border-purple-500 text-purple-500 bg-white ">
-            <Link to="/login">  Log in</Link>
-          
+            <Link to="/login"> Log in</Link>
           </Button>
 
           <Button className="text-white border-purple-500 bg-purple-500 ">
