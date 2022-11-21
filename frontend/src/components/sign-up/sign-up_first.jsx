@@ -146,10 +146,6 @@ export default function SignUp_first (){
                             <div className='tt'>
                                 {error.confirmPassword && <div className='info__opt' > <img className='info_opt' src={info_opt} alt='info.png'/> {error.confirmPassword}</div> }
                             </div>
-                            <Link to="/Opt_sec">
-                                <button  className='mybutton_opt' id='mybutton_opt' type ='submit'>Continue</button>
-                            </Link>
-
 
                             <button  className='mybutton_opt' id='mybutton_opt' type ='submit'>Continue</button>
                         </div>
