@@ -18,7 +18,7 @@ import Pricing from "./components/pricingPage/Pricing";
 import FAQ from "./components/faq/index";
 import Terms from "./components/TermsPage/Terms";
 import Paymentauth from "./components/paymentFlow-1.1/paymentFlow1.1";
-import Payment from "./components/paymentFlow-1.2/paymentFlow1.2";
+import Payment from "./components/paymentflow-1/payment";
 import Avatar from "./components/createAvatar/Welcome";
 import Courses from "./components/courses/CoursePage";
 import CourseDetail from "./components/courses/CourseDetail";
