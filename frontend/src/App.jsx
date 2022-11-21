@@ -123,6 +123,7 @@ export default function App() {
         {/* Career Page */}
         {/* <Route path="/CareerPage" element={<CareerPage />} />*/}
 
+
         {/* desktop_1 */}
         <Route path='/Dashboard' element={<DesktopEye />} />
       </Routes>
