@@ -40,28 +40,29 @@
     .cta__title-ony{
         font-size: 24px;
         text-align: center;
-        margin-top: 15rem;
+        margin-top: 10rem;
         padding-bottom: 2rem;
     }
     .cta__images-ony{
         display: flex;
         flex-direction: row;
-        width: 150px;
+        width: 340px;
         gap: .3rem;
         justify-content: center;
         align-items: center;
         margin: 0 auto;
+        overflow-x: scroll;
         
         
     }
     .cta__section-pic-ony{
-        width: 65%;
-        height: 20%;
+        width: 100px;
+        height: 100px;
        
         
     }
     .side___ony{
-        display: none;
+     height: 100px;
     }
     .cta__support-description-ony{
         width: 300px;
