@@ -93,11 +93,21 @@
   margin-top: 3rem;
   cursor: pointer;
 }
-.create-avatar .upload-block span {
+.create-avatar .upload-block .bottom-text {
+  margin-top: 8rem;
+}
+.create-avatar .upload-block .bottom-text span {
   font-size: 2rem;
   color: #8b70e9;
 }
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 775px) {
+  .desktop-2 {
+    display: flex;
+    flex-direction: column;
+  }
+  .desktop-2 .sidebar-eye-web {
+    display: none;
+  }
   .create-avatar {
     padding: 3rem 1rem;
   }

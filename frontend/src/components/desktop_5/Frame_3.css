@@ -1,0 +1,111 @@
+.frame_3_bpc {
+    box-sizing: border-box;
+    width: 975px;
+    height: 675px;
+    position: absolute;
+    top: 277px;
+    left: 417px;
+    border: 1px solid #F7F7F7;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0px 2px 20px rgba(197, 197, 197, 0.1);
+}
+.Gen_AV_bpc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 4px;
+    position: absolute;
+    width: 365px;
+    height: 78px;
+    left: 305px;
+    top: 80px;
+}
+.Gen_AV_bpc h1 {
+    width: 273px;
+    height: 44px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 44px;
+    letter-spacing: 0.01em;
+    color: #333333;
+}
+.Gen_AV_bpc p {
+    width: 365px;
+    height: 30px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    color: #6C6C6C;
+}
+.Gen_AVL_bpc {
+    width: 118px;
+    height: 118px;
+    position: absolute;
+    left: 429px;
+    top: 278px;
+}
+.frame_3_bpc span {
+    width: 182px;
+    height: 30px;
+    position: absolute;
+    top: 516px;
+    left: 397px;
+    font-family: 'Nunito';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    color: #6C6C6C;
+}
+@media (max-width: 400px) {
+    .frame_3_bpc {
+        width: 327px;
+        height: 520px;
+        left: 24px;
+        top: 264px;
+    }
+    .frame_3_bpc span {
+        width: 146px;
+        height: 21px;
+        left: 91px;
+        top: 337px;
+        font-size: 16px;
+        line-height: 130%;
+    }
+    .Gen_AVL_bpc {
+        width: 66px;
+        height: 68px;
+        left: 130px;
+        top: 189px;
+    }
+    .Gen_AV_bpc {
+        align-items: center;
+    width: 253px;
+    height: 46px;
+    left: 37px;
+    top: 54px;
+    }
+    .Gen_AV_bpc h1 {
+        width: 157px;
+    height: 21px;
+    font-size: 18px;
+    line-height: 117%;
+    letter-spacing: -0.01em;
+    color: #1C1C1C;
+    }
+    .Gen_AV_bpc p {
+        width: 253px;
+        height: 21px;
+        font-weight: 400;
+        font-size: 14px;
+        text-align: center;
+        color: #6C6C6C;
+    }
+}
