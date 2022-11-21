@@ -1,0 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700&display=swap");
+
+.create-avatar .upload-block .right div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 5rem;
+}
+.create-avatar .upload-block .right button {
+  margin-top: 6rem;
+}
