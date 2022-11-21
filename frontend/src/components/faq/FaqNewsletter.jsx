@@ -4,7 +4,10 @@ const FaqNewsletter = () => {
       <div className="flex flex-col gap-[24px]">
         <img src="/tapart.svg" height={`40px`} width={`40px`} />
         <div className="flex flex-col gap-[8px]">
-          <p className="text-[#201F23] font-jakarta font-bold">
+          <p
+            data-testid="subscribe"
+            className="text-[#201F23] font-jakarta font-bold"
+          >
             Subscribe to our newsletter for info for new avatar scenes, blogs
             and updates
           </p>
