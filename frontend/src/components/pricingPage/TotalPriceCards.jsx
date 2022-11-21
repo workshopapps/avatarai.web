@@ -27,8 +27,8 @@ function TotalPriceCards() {
           text="rgba(77, 56, 153, 1)"
           bg="rgba(77, 56, 153, 1)"
           font="white"
-          feature={<Feature />}
-          feature2={<Feature />}
+          feature={<Feature color="white" />}
+          feature2={<Feature color="white" />}
         />
 
         <PriceCards

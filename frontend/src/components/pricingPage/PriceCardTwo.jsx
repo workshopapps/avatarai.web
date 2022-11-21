@@ -21,22 +21,22 @@ export default function PriceCardTwo({
           <h1 className="text-5xl font-bold text-white font-jakarta">
             {amount}
           </h1>
-          <p>/month</p>
+          <p className="text-white">/month</p>
         </div>
         <p className="py-4 text-white">
           All can have random results and may include artistic nudes, erotic or
           otherwise shocking images, if you do not want that and are sensitive,
           we recommend you to NOT use the site!
         </p>
-        <div className="text-white">{feature}</div>
-        <div className="text-white">{feature2}</div>
+        <div>{feature}</div>
+        <div>{feature2}</div>
         <hr className="border-1 vnc_hr" />
         <div className="py-2 text-white">
-          <span>4k avatars</span> 4096x4096
+          <span className="text-white">4k avatars</span> 4096x4096
         </div>
         <hr className="border-1 vnc_hr" />
-        <div className="text-white">{feature}</div>
-        <div className="text-white">{feature2}</div>
+        <div>{feature}</div>
+        <div>{feature2}</div>
       </div>
       <BuyPriceBtn background={background} text={text} />
     </section>

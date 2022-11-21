@@ -1,10 +1,10 @@
 import React from "react";
 
-export const Feature = () => {
+export const Feature = ({ color }) => {
   return (
     <div>
-      <div className="py-2">
-        <span>600 pictures</span> just for you
+      <div style={{ color: color }} className="py-2">
+        <span style={{ color: color }}>600 pictures</span> just for you
       </div>
     </div>
   );
