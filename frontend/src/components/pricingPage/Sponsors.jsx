@@ -52,7 +52,7 @@ const Sponsors = () => {
   ]);
   return (
     <section className="mt-8">
-      <div className="text-center font-nunito py-6 vnc_text w-3/5 mx-auto">
+      <div className="text-center font-nunito py-6 vnc_text w-4/6 mx-auto">
         Trusted by millions of folks around the world who use our platform for
         avatar integration, knowledge development and for fun.
       </div>
