@@ -34,6 +34,7 @@ import CheckEmail from "./components/LoginPage/CheckEmail";
 import ResetPassword from "./components/LoginPage/ResetPassword";
 import Chat from "./components/chat/ChatPage";
 import LandingPage from "./components/landing-page/LandingPageC";
+import Preview from "./components/generatedAvatars/Preview";
 
 // import CareerPage from './components/careers-page/careerPage';
 
@@ -85,7 +86,8 @@ export default function App() {
 
         {/* Avatar */}
         <Route path="/Avatar" element={<Avatar />} />
-
+        {/*  Generate Avatar*/}
+        <Route path="/GenerateAvatar" element={<Preview />} />
         <Route path="/Courses" element={<Courses />} />
         <Route path="/details/:detailId" element={<CourseDetail />} />
 
