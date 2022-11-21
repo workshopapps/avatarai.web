@@ -37,9 +37,9 @@ const Login = ({props}) => {
             <input type="checkbox" name="" id="" />
             <span>Remenber</span>
             </span>
-       <p className="text-purple"><Link to="/ForgetPassword">Forgot Password</Link></p>
+       <p className="text-purple-500"><Link to="/ForgetPassword">Forgot Password</Link></p>
           </div>
-          <Button className="w-full bg-purple text-white">Log in</Button>
+          <Button className="w-full bg-purple-500 text-white">Log in</Button>
         </form>
         <p className="text-center py-5">Dont have an account? <a href="sign-up" className="text-purple">Sign Up</a></p>
       </div>

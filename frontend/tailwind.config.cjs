@@ -4,18 +4,19 @@ module.exports = {
         "./src/**/*.{js,jsx,ts,tsx}",
     ],
     theme: {
+
         extend: {
             fontFamily: {
-        nunito: ["Nunito"],
-        "nunito-sans": ["Nunito Sans"],
-        jakarta: ["'Plus Jakarta Sans'"],
-        inter: ["Inter"],
+                nunito: ["Nunito"],
+                "nunito-sans": ["Nunito Sans"],
+                jakarta: ["'Plus Jakarta Sans'"],
+                inter: ["Inter"],
             },
-            colors: {
-                'purple': "#8B70E9",
-            },
+            // colors: {
+            //     'purple': "#8B70E9",
+
+            // },
         },
     },
     plugins: [],
 }
-

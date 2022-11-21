@@ -30,18 +30,18 @@ const MobileNav = ({navClose}) => {
           </li>
         </ul>
         <div className=" w-full flex flex-col items-start justify-start gap-y-10" >
-          <button className="inline-flex justify-center items-center px-8 py-3  border border-purple  
-          rounded-[8px] font-semibold text-md text-purple bg-white transition ease-in-out duration-150  w-full" >
+          <button className="inline-flex justify-center items-center px-8 py-3  border border-purple-500  
+          rounded-[8px] font-semibold text-md text-purple-500 bg-white transition ease-in-out duration-150  w-full" >
           <Link to="/Login">  Log in</Link>
           </button>
         
 
-          <Button className="text-white bg-purple w-full "><Link to="/Signupfirst"> Sign up </Link></Button>
+          <Button className="text-white bg-purple-500 w-full "><Link to="/Signupfirst"> Sign up </Link></Button>
         </div>
         
       </nav>
       <div className="absolute top-10 right-10">
-      <img src={close} alt="" onClick={navClose} className="text-purple"/>
+      <img src={close} alt="" onClick={navClose} className="text-purple-500"/>
       </div>
     </div>
   );

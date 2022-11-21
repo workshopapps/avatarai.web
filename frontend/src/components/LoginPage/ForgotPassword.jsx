@@ -22,7 +22,7 @@ const ForgotPassword = () => {
           className="border p-3 w-full md:w-[28rem] my-1 rounded-lg outline-none"
         />
       </form>
-      <Button className="w-full md:w-[28rem] bg-purple text-white">
+      <Button className="w-full md:w-[28rem] bg-purple-500 text-white">
         <Link to="/CheckEmail">Log in</Link>
       </Button>
     </div>
