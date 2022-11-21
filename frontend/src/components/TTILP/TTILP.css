@@ -133,6 +133,7 @@ a {
 
 .vic_get_started ul img {
     width: 2.2em;
+    margin-right: 1em;
 }
 
 
@@ -218,6 +219,13 @@ a {
 
 
 
+@media (max-width:481px) {
+    .vic_get_started h3 {
+        padding-left: 0.6px;
+    }
+}
+
+
 
 
 @media (min-width: 481px){
@@ -238,6 +246,7 @@ a {
 
     .vic_get_started h3 {
         padding: 0.5em 0em;
+           padding-left: 0px;
     }
 
     .vic_mid_section img {
