@@ -24,9 +24,10 @@ import Courses from "./components/courses/CoursePage";
 import CourseDetail from "./components/courses/CourseDetail";
 import Profile from "./components/profile_page/profile_page.component";
 import ReadArticle from "./components/read article/ReadArticle";
-import ApiPage from './components/api-page/ApiPage';
-import Login from './components/LoginPage/Login';
-import Chat from './components/chat/ChatPage'
+import ApiPage from "./components/api-page/ApiPage";
+import Login from "./components/LoginPage/Login";
+import Chat from "./components/chat/ChatPage";
+import DesktopEye from "./components/Desktop_1/DesktopEye";
 
 export default function App() {
   return (
@@ -45,65 +46,62 @@ export default function App() {
            */}
 
         {/* Text to image landing page */}
-        <Route path="/" element={<Ttilp />} exact />
-        <Route path="/ttilp" element={<Ttilp />} exact />
+        <Route path='/' element={<Ttilp />} exact />
+        <Route path='/ttilp' element={<Ttilp />} exact />
 
         {/* Signup components */}
-        <Route path="/signupfirst/" element={<Opt_first />} />
-        <Route path="/Opt_sec" element={<Opt_sec />} />
-        <Route path="/Opt_thi" element={<Opt_thi />} />
-        <Route path="/Opt_for" element={<Opt_for />} />
-        <Route path="/Opt_fi" element={<Opt_fi />} />
+        <Route path='/signupfirst/' element={<Opt_first />} />
+        <Route path='/Opt_sec' element={<Opt_sec />} />
+        <Route path='/Opt_thi' element={<Opt_thi />} />
+        <Route path='/Opt_for' element={<Opt_for />} />
+        <Route path='/Opt_fi' element={<Opt_fi />} />
 
         {/* Navbar components */}
-        <Route path="/Aboutus" element={<Aboutus />} />
-        <Route path="/FAQ" element={<FAQ />} />
+        <Route path='/Aboutus' element={<Aboutus />} />
+        <Route path='/FAQ' element={<FAQ />} />
 
         {/* Terms and conditions */}
-        <Route path="/Terms" element={<Terms />} />
+        <Route path='/Terms' element={<Terms />} />
 
         {/* Payment modals */}
-        <Route path="/Payment" element={<Payment />} />
-        <Route path="/Paymentauth" element={<Paymentauth />} />
+        <Route path='/Payment' element={<Payment />} />
+        <Route path='/Paymentauth' element={<Paymentauth />} />
 
         {/* Pricing Component */}
-        <Route path="/Pricing" element={<Pricing />} />
-
+        <Route path='/Pricing' element={<Pricing />} />
 
         {/* Course Page */}
-        <Route path ="/Courses" element={<Courses /> } />
-        <Route path ="/details/:detailId" element={<CourseDetail /> } />
-        <Route path="/Avatar" element={<Avatar />} />
-          
+        <Route path='/Courses' element={<Courses />} />
+        <Route path='/details/:detailId' element={<CourseDetail />} />
+        <Route path='/Avatar' element={<Avatar />} />
 
         {/* Dashboard component */}
-        <Route path="/Avatar" element={<Avatar />} />
-
+        <Route path='/Avatar' element={<Avatar />} />
 
         {/* 404 Page */}
-        <Route path="/Four404" element={<Four404 />} />
+        <Route path='/Four404' element={<Four404 />} />
 
         {/* Course Page */}
-        <Route path="/Courses" element={<Courses />} />
+        <Route path='/Courses' element={<Courses />} />
         {/* <Route path ="/CourseDetail" element={<CourseDetail /> } /> */}
 
         {/* Profile Page */}
-        <Route path="/Profile" element={<Profile />} />
+        <Route path='/Profile' element={<Profile />} />
 
         {/* Readarticle Page */}
-        <Route path="/Readarticle" element={<ReadArticle />} />
+        <Route path='/Readarticle' element={<ReadArticle />} />
 
         {/* ApiPage */}
-        <Route path="/ApiPage" element={<ApiPage />} />
+        <Route path='/ApiPage' element={<ApiPage />} />
 
         {/* login */}
-        <Route path="/Login" element={<Login />} />
+        <Route path='/Login' element={<Login />} />
 
         {/* chat */}
-        <Route path="/Chat" element={<Chat />} />
+        <Route path='/Chat' element={<Chat />} />
 
-
-
+        {/* desktop_1 */}
+        <Route path='/Dashboard' element={<DesktopEye />} />
       </Routes>
     </Router>
   );
