@@ -20,6 +20,7 @@ const Login = ({props}) => {
               type="text"
               placeholder="Email address"
               className="border p-3 w-full my-1 rounded-lg outline-none"
+              required
             />
           </div>
           <div>
@@ -28,6 +29,7 @@ const Login = ({props}) => {
               type="text"
               placeholder="Password"
               className="border p-3 w-full my-1 rounded-lg outline-none"
+              required
             />
           </div>
           <div className="flex justify-between outline-none">
