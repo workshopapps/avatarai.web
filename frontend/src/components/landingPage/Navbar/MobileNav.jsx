@@ -11,7 +11,7 @@ const MobileNav = ({navClose}) => {
   return (
 
     <div className="bg-white w-[261px]   fixed top-0 left-0 lg:hidden z-20 h-full ">
-      <nav className="flex flex-col justify-center  items-start gap-y-10 lg:hidden px-10  h-full  bg-white z-30 absolute -top-20">
+      <nav className="flex flex-col justify-center  items-start gap-y-10 lg:hidden px-10 pb-10  h-full  bg-white z-30 absolute -top-10">
 
         <Link to='/'><img src={logo} alt="" /></Link>
         <ul className=" flex flex-col justify-between items-start gap-5 cursor-pointer ">
