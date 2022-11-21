@@ -5,7 +5,7 @@ const FaqHero = () => {
         <h1 className="text-white font-bold md:text-[32px]">
           Frequently Asked Questions
         </h1>
-        <p>Have questions? We are here to help.</p>
+        <p className="text-white">Have questions? We are here to help.</p>
       </header>
       <div className="flex items-center md:gap-4 gap-1 justify-between p-[5px] h-[52px] w-full max-w-[512px] bg-white rounded">
         <div className="h-full flex md:gap-[8px] gap-1 items-center font-nunito grow text-[#848484] rounded py-[8px] md:pl-[18px] pl-2">
@@ -17,7 +17,7 @@ const FaqHero = () => {
           />
         </div>
         <div className="cursor-pointer bg-[#8B70E9] h-full flex items-center font-nunito text-white rounded px-[20px] py-[8px]">
-          <span>Search</span>
+          <span className="text-white">Search</span>
         </div>
       </div>
     </section>

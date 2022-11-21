@@ -24,7 +24,7 @@ const FaqNewsletter = () => {
             />
           </div>
           <div className="cursor-pointer bg-[#8B70E9] h-full relative flex items-center font-nunito text-white rounded px-[20px] py-[8px]">
-            <span>Subscribe</span>
+            <span className="text-white">Subscribe</span>
           </div>
         </div>
         <p className="text-[#AFB6B6] text-sm">
