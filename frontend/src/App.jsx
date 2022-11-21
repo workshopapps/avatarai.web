@@ -59,8 +59,8 @@ export default function App() {
 
 
         {/* Text to image landing page */}
-        <Route path='/' element={<Ttilp />} exact />
-        <Route path='/ttilp' element={<Ttilp />} exact />
+        <Route path="/" element={<LandingPage />} exact />
+        <Route path="/ttilp" element={<Ttilp />} exact />
 
         {/* Signup components */}
         <Route path='/signupfirst/' element={<Opt_first />} />
