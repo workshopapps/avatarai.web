@@ -7,9 +7,7 @@ function TotalPriceCards() {
   return (
     <div className=" relative mt-10 ">
       <div className="absolute md:block hidden text-vnc_btn  -top-3 left-0 right-0 text-center">
-        <p className="bg-vnc_popular p-2 rounded-lg w-fit mx-auto">
-          Most Popular
-        </p>
+        <p className="vnc_popular p-2 rounded-lg w-fit mx-auto">Most Popular</p>
       </div>
       <div className="flex flex-col md:flex-row justify-center items-center mt-4 gap-3">
         <PriceCards
@@ -19,6 +17,7 @@ function TotalPriceCards() {
           text="white"
           feature={<Feature />}
           space="5rem"
+          bg="white"
         />
         <PriceCardTwo
           title="Standard"
@@ -28,8 +27,8 @@ function TotalPriceCards() {
           text="rgba(77, 56, 153, 1)"
           bg="rgba(77, 56, 153, 1)"
           font="white"
-          feature={<Feature />}
-          feature2={<Feature />}
+          feature={<Feature color="white" />}
+          feature2={<Feature color="white" />}
         />
 
         <PriceCards
@@ -38,7 +37,8 @@ function TotalPriceCards() {
           background="rgba(77, 56, 153, 1)"
           text="white"
           space="5rem"
-          feature={<Feature />}
+          bg="white"
+          feature=<Feature />
         />
       </div>
     </div>

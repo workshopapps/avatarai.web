@@ -309,6 +309,7 @@ label{
         }
         .dan-subscribe p{
             color: #595959;
+            text-align: center;
         }
         .dan-price,
         .dan-price p{
@@ -375,6 +376,11 @@ label{
     }
     #cbk-drop{
         display: none;
+    }
+    .cbk-rot{
+        rotate: 180deg;
+        position: relative;
+        z-index: -10;
     }
     @keyframes drop {
         0%{

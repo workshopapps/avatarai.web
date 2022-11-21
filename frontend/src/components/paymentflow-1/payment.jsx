@@ -44,7 +44,7 @@ const Payment = ()=>{
         <div>
             <PaymentFlow11 display={flow1} resetFlow1={resetFlow1} resetFlow2={resetFlow2}/>
             <PaymentFlow12 display={flow2} resetFlow2={resetFlow2}/>
-            <div className='overlay hidden drop'></div>
+            <div className='overlay hidden drop' onClick={()=>{dropdown('none', 'block')}}></div>
             <div className='dan-payment-container'>
                 <div className='dan-payment-left drop'>
                     <div className='dan-basic'>
@@ -104,7 +104,7 @@ const Payment = ()=>{
                             <p>Per Month</p>
                         </div>
                         <div className='dan-view-details'>
-                            <button className='text-violet-500' onClick={() => {dropdown('block', 'block')}}>View details</button>
+                            <button className='text-violet-500' onClick={() => {dropdown('block', 'block')}}>View details <img className='inline cbk-rot' src={Close}/></button>
                         </div>
                     </div>
                     <div className='dan-details'>

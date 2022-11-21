@@ -23,17 +23,17 @@ const About = () => {
      <h3 className="courses__title-ony">Top courses on Noxus</h3>
      <p className="aboutus__title-ony">Some of the most in demand courses we have at bloom. You might want to check them out</p>
      <div className="about__courses-ony">
-     <div>
+     <div className="tre-ony">
         <img src="./images/more1.png" className="img-ony" />
         <h3 className="about__course__title-ony">Understanding the basics of AI</h3>
         <p className="about__courses__description-ony">Join Emily Pratt as she extensively explains the fundamentals and the cores of artificial intelligence</p>
      </div>
-     <div>
+     <div  className="tre-ony">
      <img src="./images/more2.png" className="img-ony"  />
      <h3 className="about__course__title-ony">Beginner’s guide to generative AI</h3>
      <p className="about__courses__description2-ony">Phoebe Drowy teaches what are generative AI are and how it works</p>
      </div>
-     <div>
+     <div  className="tre-ony">
      <img src="./images/more3.png" className="img-ony"  />
      <h3 className="about__course__title-ony">Do you get machine learning yet?</h3>
      <p className="about__courses__description3-ony">machine learning can be a difficult concept do understand, but Jen Yu breaks it down here properly</p>
