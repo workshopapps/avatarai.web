@@ -93,11 +93,12 @@
     }
 
 .about__description-ony{
-    width: 331px;
+    width: 70%;
     text-align: center;
+    margin: 0 auto;
 }
 .about__image-ony{
-    width: 90%;
+    width: 70%;
     margin-left: 0rem;
     padding-left: 0rem;
    margin: 0 auto;
@@ -118,7 +119,7 @@
     
 }
 .aboutus__title-ony{
-    width: 100%;
+    width: 80%;
     padding-left: 2rem;
     padding-bottom: 1.5rem;
 }
@@ -131,12 +132,14 @@
     padding: 3rem 0;
 }
 .about__courses-ony{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-   padding-left: 1rem;
-    gap: 2rem;
+    overflow-x: scroll;
+    
+   
+    
   
+}
+.tre-ony{
+    display: inline-block;
 }
 
 .img-ony{
