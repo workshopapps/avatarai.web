@@ -38,8 +38,8 @@ import LandingPage from "./components/landing-page/LandingPageC";
 import Desktop4 from "./components/desktop_4/Desktop4";
 import Desktop5 from "./components/desktop_5/Desktop5";
 import Desktop6 from "./components/desktop_6/Desktop6";
-import Preview from './components/generatedAvatars/Preview';
-
+import Preview from "./components/generatedAvatars/Preview";
+import LoadingImages from "./components/createAvatar/LoadingImages";
 
 // import CareerPage from './components/careers-page/careerPage';
 
@@ -89,10 +89,15 @@ export default function App() {
 
         {/* Course Page */}
 
-        {/* Avatar */}
+        {/* Desktop 2 (when the create-avatar link is being clicked from the sidebar)*/}
         <Route path="/Avatar" element={<Avatar />} />
-        {/*  Generate Avatar*/}
+
+        {/* Desktop 3 */}
+        <Route path="/Dashboard_3" element={<LoadingImages />} />
+
+        {/* Desktop 4  (Generate Avatar)*/}
         <Route path="/GenerateAvatar" element={<Preview />} />
+
         <Route path="/Courses" element={<Courses />} />
         <Route path="/details/:detailId" element={<CourseDetail />} />
 
