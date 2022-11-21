@@ -93,7 +93,7 @@ export default function App() {
         <Route path="/Avatar" element={<Avatar />} />
 
         {/* Desktop 3 */}
-        <Route path="/Dashboard_3" element={<LoadingImages />} />
+        <Route path="/LoadingImages" element={<LoadingImages />} />
 
         {/* Desktop 4  (Generate Avatar)*/}
         <Route path="/GenerateAvatar" element={<Preview />} />
