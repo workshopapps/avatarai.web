@@ -24,10 +24,17 @@ import Courses from "./components/courses/CoursePage";
 import CourseDetail from "./components/courses/CourseDetail";
 import Profile from "./components/profile_page/profile_page.component";
 import ReadArticle from "./components/read article/ReadArticle";
+
+import DesktopEye from "./components/Desktop_1/DesktopEye";
 import ApiPage from "./components/api-page/ApiPage";
 import Login from "./components/LoginPage/Login";
+import SetPassword from "./components/LoginPage/PasswordReset";
+import ForgetPassword from "./components/LoginPage/ForgotPassword";
+import CheckEmail from "./components/LoginPage/CheckEmail";
+import ResetPassword from "./components/LoginPage/ResetPassword";
 import Chat from "./components/chat/ChatPage";
-import DesktopEye from "./components/Desktop_1/DesktopEye";
+import LandingPage from "./components/landing-page/LandingPageC";
+// import CareerPage from './components/careers-page/careerPage';
 
 export default function App() {
   return (
@@ -44,6 +51,9 @@ export default function App() {
           you can find the path to your page in the links below
           DO NOT EDIT ANYTHING HERE JUST COPY THE PATH TO YOUR PAGE
            */}
+
+        {/*  Landing Page */}
+        <Route path='/LandingPage' element={<LandingPage />} exact />
 
         {/* Text to image landing page */}
         <Route path='/' element={<Ttilp />} exact />
@@ -71,9 +81,9 @@ export default function App() {
         <Route path='/Pricing' element={<Pricing />} />
 
         {/* Course Page */}
+
         <Route path='/Courses' element={<Courses />} />
         <Route path='/details/:detailId' element={<CourseDetail />} />
-        <Route path='/Avatar' element={<Avatar />} />
 
         {/* Dashboard component */}
         <Route path='/Avatar' element={<Avatar />} />
@@ -95,10 +105,18 @@ export default function App() {
         <Route path='/ApiPage' element={<ApiPage />} />
 
         {/* login */}
+
         <Route path='/Login' element={<Login />} />
+        <Route path='/ResetPassword' element={<ResetPassword />} />
+        <Route path='/SetPassword' element={<SetPassword />} />
+        <Route path='/ForgetPassword' element={<ForgetPassword />} />
+        <Route path='/CheckEmail' element={<CheckEmail />} />
 
         {/* chat */}
         <Route path='/Chat' element={<Chat />} />
+
+        {/* Career Page */}
+        {/* <Route path="/CareerPage" element={<CareerPage />} />*/}
 
         {/* desktop_1 */}
         <Route path='/Dashboard' element={<DesktopEye />} />

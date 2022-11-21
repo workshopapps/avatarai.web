@@ -16,9 +16,9 @@ import { Link } from 'react-router-dom'
         </div>
         <div className="bat-error-img">
             <img src={error} alt="" />
-            <button id='bat-btn-two' className="bat-home-btn">
+            <Link to='/' id='bat-btn-two' className="bat-home-btn">
                 Go home
-            </button>
+            </Link>
         </div>
     </div>
   )

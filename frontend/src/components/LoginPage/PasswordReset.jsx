@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useState} from 'react'
 import loc from "../../assets/images/loc.png";
 import Button from '../landingPage/Button/Button';
+import { Link } from 'react-router-dom';
 
 const PasswordReset = () => {
+
+
   return (
     <div className='flex flex-col justify-center items-center gap-y-5 mt-10  px-10  h-screen '>
     <img src={loc} alt="" />
@@ -11,7 +14,7 @@ const PasswordReset = () => {
     <p className='text-xl'>Your password has been successfully reset click below to log in </p>
     </div>
     
-      <Button className="w-full md:w-[28rem]">Continue</Button>
+      <Button className="w-full md:w-[28rem] bg-purple-500 text-white"><Link to="/SetPassword">Continue</Link></Button>
       
       
 
