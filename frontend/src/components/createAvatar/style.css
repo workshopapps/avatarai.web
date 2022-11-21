@@ -1,13 +1,28 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700&display=swap");
+.desktop-2 {
+  display: flex;
+  flex-direction: row;
+}
+.desktop-2 .sidebar-eye-web {
+  padding: 2rem;
+}
+.desktop-2 .sidebar-eye-web li {
+  width: 15rem;
+}
+.desktop-2 .sidebar-eye-web nav li {
+  margin-top: 1rem;
+}
 .create-avatar {
   background: #f7f7f7;
   font-family: "Nunito", sans-serif;
   padding: 3rem;
+  width: 100%;
 }
 .create-avatar h1 {
   margin-bottom: 0.25rem;
   font-weight: 700;
   font-size: 2rem;
+  margin-top: 2rem;
 }
 .create-avatar p {
   line-height: 150%;
