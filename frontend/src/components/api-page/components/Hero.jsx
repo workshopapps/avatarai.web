@@ -22,7 +22,7 @@ const Hero = () => {
 						<p className="text-[#ffffff] text-[16px] mb-[32px]">
 							Noxus APIs make it easy to integrate and generate custom illustrations into your app or website.
 						</p>
-						<button className="btn px-[26px] py-[12px] outline-none normal-case border-none rounded-lg bg-[#8B70E9] text-[#ffffff]">
+						<button className="px-[26px] py-[12px] outline-none normal-case border-none rounded-lg bg-[#8B70E9] text-[#ffffff]">
 							API free trial
 						</button>
 					</div>
