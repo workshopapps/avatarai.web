@@ -1,15 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
 
-.form{
-  min-width: 327px;
-  width: 40.56%;
-  height: 56px;
+*{
   box-sizing: border-box;
 }
-
-
 .form{
+  width: 40.56%;
+  min-width: 200px;
+  height: 56px;
+  box-sizing: border-box;
   position: relative;
+  margin: 5px;
+}
+@media screen and (max-width:780px) {
+  .form{
+    width: 60%;
+  }
 }
 .searchInput{
   border-radius: 9px;
@@ -25,6 +30,7 @@
   line-height: 25px;
   font-size: 18px;
 }
+
 .searchInput::placeholder{
   color: #949494;
   font-family: 'Nunito Sans';
@@ -33,7 +39,6 @@
   font-size: 18px;
 }
 .searchInput:focus{
-  border: none;
   outline: none;
 }
 
@@ -87,9 +92,16 @@
   .form, .searchInput{
     height: 43px;
     font-size: 14px;
+    max-width: 100%;
   }
   .searchInput::placeholder{
     font-size: 14px;
   }
+}
 
+
+button{
+  outline: none;
+  border: none;
+  background-color: transparent;
 }

@@ -89,7 +89,7 @@
 }
 .nameInput,
 .emailInput {
-  height: 34px;
+  height: 64px;
   display: flex;
   align-items: center;
   padding: 10px;
@@ -429,6 +429,7 @@ label.checkbox {
   .nameInput,
   .emailInput {
     border-radius: 4px;
+    height: 56px;
   }
   .textarea::placeholder,
   .nameInput::placeholder,

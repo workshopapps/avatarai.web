@@ -82,6 +82,7 @@
     position: relative;
 }
 .main__second__ai-ony{
+    display: flex;
 
 }
 
@@ -93,19 +94,18 @@
     position: absolute;
     bottom: 0;
     top: 250%;
-    margin: 5rem 0;
+    margin-top: 4rem;
     
     
 }
 .image__description3-ony{
     width: 300px;
-    font-size: 20px;
+    font-size: 25spx;
     line-height: 20px;
     padding: 1rem 0;
-    position: absolute;
-    bottom: 0;
-    top: 241%;
-  margin: 5rem 0;
+  position: absolute;
+  top: 250%;
+  margin-top: 1rem;
     
     
 }

@@ -1,3 +1,7 @@
+#dja_main {
+    padding: 0;
+}
+
 .dja_container {
     width: 90%;
     max-width: 1200px;
@@ -5,6 +9,10 @@
     color: #333333;
     padding: 0;
     font-family: 'Nunito', sans-serif;
+}
+
+.dja_container h1, h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .dja_container p {
@@ -41,9 +49,12 @@
     z-index: 3;
     display: grid;
     place-items: center;
-    color: #fff;
     font-size: 24px;
     font-weight: 500;
+}
+
+#banner_title > h1 {
+    color: #fff;
 }
 #banner_title h1 span {
     color: #D1C6F6;
