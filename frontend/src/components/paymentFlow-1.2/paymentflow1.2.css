@@ -52,3 +52,20 @@ p{
         margin-top: 20px;
     }
 }
+@media screen and (max-width: 400px) {
+    .cbk input{
+        width: 45px;
+        height: 45px;
+        padding: 10px;
+        margin: 0px 8px 5px 8px;
+    }
+    .v-center{
+        margin-top: 125px;
+    }
+    .v-center2{
+        margin-top: 100px !important;
+    }
+    .close{
+        margin-top: 90px !important;
+    }
+}
