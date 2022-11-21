@@ -3,6 +3,9 @@
   display: flex;
   flex-direction: row;
 }
+.desktop-2 .mobile-nav {
+  display: none;
+}
 .desktop-2 .sidebar-eye-web {
   padding: 2rem;
 }
@@ -105,6 +108,15 @@
     display: flex;
     flex-direction: column;
   }
+  .desktop-2 .mobile-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #f7f7f7;
+    padding: 1rem;
+    cursor: pointer;
+  }
+
   .desktop-2 .sidebar-eye-web {
     display: none;
   }

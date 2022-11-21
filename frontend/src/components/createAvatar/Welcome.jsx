@@ -4,10 +4,17 @@ import Header from "./Header";
 import "./style.css";
 import SearchComponent from "../DashboardSearchComponent/SearchComponent";
 import SidebarEye from "../Desktop_1/SidebarEye";
+import MobileLogo from "./images/mobileLogo.svg";
+import Menu from "./images/menu.svg";
 
 function Upload() {
   return (
     <div className="desktop-2">
+      <div className="mobile-nav">
+        <img src={Menu} alt="menu" />
+        <img src={MobileLogo} alt="logo" />
+        <div></div>
+      </div>
       <div>
         <SidebarEye />
       </div>
