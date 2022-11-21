@@ -4,17 +4,17 @@ import Heroimg from "./img/heroimg.png";
 import Creative from "./Creative";
 import Hero_img from "./img/heroimg2.png";
 import Button from "./Button";
-import Navbar from "../landingPage/Navbar/Navbar";
-// import Faq from './../faq/index'
+// import Navbar from "../landingPage/Navbar/Navbar";
+import Faq from './../faq/index'
 import QuestionSection from "./../faq/QuestionSection";
 import FaqNewsletter from "./../faq/FaqNewsletter";
-import Footer from "../Footerpage/Footer";
+// import Footer from "../Footerpage/Footer";
 
 
 export default function Ttilp() {
   return (
     <div className="vic">
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="vic_hero">
         <div className="vic_hero_text">
           <h1> Generate Eye catchy images with just your words </h1>
@@ -35,7 +35,7 @@ export default function Ttilp() {
       <Creative />
       <QuestionSection />
       <FaqNewsletter />
-      <Footer />
+      {/* <Footer /> */}
       {/* <Faq /> */}
     </div>
   );
