@@ -5,6 +5,7 @@ const SocialProof = () => {
   return (
     <div>
         <h2 className='socialproof__title-ony'><span className='aiii-ony'>Explore</span> avatars created by users</h2>
+        
         <div className='ai__ony'>
         
         <div className='aii-ony'>

@@ -132,12 +132,14 @@
     padding: 3rem 0;
 }
 .about__courses-ony{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-   padding-left: 1rem;
-    gap: 2rem;
+    overflow-x: scroll;
+    
+   
+    
   
+}
+.tre-ony{
+    display: inline-block;
 }
 
 .img-ony{

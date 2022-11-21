@@ -3,6 +3,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 1rem;
+  
 }
 
 
@@ -38,6 +39,7 @@
     gap: 1rem;
     width: 100%;
     justify-content: center;
+   
 }
 @media(max-width: 380px){
     .socialproof__title-ony{
@@ -63,14 +65,22 @@
     }
    
     .aii-ony{
-        display: flex;
-        gap: .5rem;
+       overflow-x: scroll;
+       
        
     }
     
     .second__ai-ony{
         display: flex;
-       
+     
         gap: .5rem;
+    }
+    .ai__ony{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        
+      
     }
 }
