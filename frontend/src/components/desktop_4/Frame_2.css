@@ -1,0 +1,158 @@
+.frame_2_bpc {
+    box-sizing: border-box;
+    width: 975px;
+    height: 675px;
+    position: absolute;
+    top: 277px;
+    left: 417px;
+    border: 1px solid #F7F7F7;
+    background: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0px 2px 20px rgba(197, 197, 197, 0.1);
+}
+.frame_2_bpc h1 {
+    width: 322px;
+    height: 44px;
+    position: absolute;
+    top: 132px;
+    left: 327px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 44px;
+    letter-spacing: 0.01em;
+    color: #333333;
+}
+.G_11_bpc {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 41px;
+    left: 56px;
+}
+.G_4_bpc {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 48px;
+    left: 470px;
+}
+.frame_35_bpc {
+    width: 203.11px;
+    height: 213px;
+    border-radius: 10.7px;
+    position: absolute;
+    top: 256px;
+    left: 386px;
+    background: #EBEBEB;
+}
+.frame_36_bpc {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+    gap: 307px;
+    width: 379px;
+    height: 36px;
+    position: absolute;
+    top: 345px;
+    left: 298px;
+}
+.img_1_bpc {
+    width: 36px;
+    height: 36px;
+}
+.img_2_bpc {
+    width: 36px;
+    height: 36px;
+}
+.AV_btn_bpc {
+    width: 210px;
+    height: 56px;
+    position: absolute;
+    top: 571px;
+    left: 383px;
+    background: #8B70E9;
+    border-radius: 8px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.AV_btn_bpc Link {
+    width: 180px;
+    height: 56px;
+    font-family: 'Nunito Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    color: #FFFFFF;
+}
+@media (max-width: 400px) {
+    .frame_2_bpc {
+        width: 327px;
+        height: 520px;
+        left: 24px;
+        top: 264px;
+    }
+    .frame_2_bpc h1 {
+        width: 168px;
+        height: 21px;
+        top: 84px;
+        left: 80px;
+        gap: 6px;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 117%;
+        letter-spacing: -0.01em;
+        color: #1C1C1C;
+    }
+    .G_11_bpc {
+        width: 16px;
+        height: 16px;
+        top: 36px;
+        left: 26px;
+    }
+    .G_4_bpc {
+        width: 24px;
+        height: 24px;
+        left: 151px;
+        top: 32px;
+    }
+    .frame_35_bpc {
+        width: 140px;
+        height: 148px;
+        left: 93px;
+        top: 167px;
+        border-radius: 12px;
+    }
+    .frame_36_bpc {
+        width: 275px;
+        height: 24px;
+        left: 26px;
+        top: 229px;
+        gap: 227px;
+    }
+    .AV_btn_bpc {
+        width: 153px;
+        height: 32px;
+        left: 87px;
+        top: 402px;
+    }
+    .img_1_bpc {
+        width: 24px;
+        height: 24px;
+    }
+    .img_2_bpc {
+        width: 24px;
+        height: 24px;
+    }
+    .AV_btn_bpc a {
+        width: 137px;
+        height: 32px;
+        font-size: 14px;
+        line-height: 24px;
+    }
+}

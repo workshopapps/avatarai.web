@@ -34,7 +34,11 @@ import CheckEmail from "./components/LoginPage/CheckEmail";
 import ResetPassword from "./components/LoginPage/ResetPassword";
 import Chat from "./components/chat/ChatPage";
 import LandingPage from "./components/landing-page/LandingPageC";
-import Preview from "./components/generatedAvatars/Preview";
+
+import Desktop4 from "./components/desktop_4/Desktop4";
+import Desktop5 from "./components/desktop_5/Desktop5";
+import Desktop6 from "./components/desktop_6/Desktop6";
+
 
 // import CareerPage from './components/careers-page/careerPage';
 
@@ -123,6 +127,15 @@ export default function App() {
 
         {/* desktop_1 */}
         <Route path="/Dashboard" element={<DesktopEye />} />
+
+        {/* desktop_4 */}
+        <Route path="/Dashboard_4" element={<Desktop4 />} />
+
+        {/* desktop_5 */}
+        <Route path="/Dashboard_5" element={<Desktop5 />} />
+
+        {/* desktop_6 */}
+        <Route path="/Dashboard_6" element={<Desktop6 />} />
       </Routes>
     </Router>
   );
