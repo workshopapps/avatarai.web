@@ -31,7 +31,7 @@ export default function SignUp_first (){
         <div className="house_opt">
             <div className="nav_opt">
                 <img className='logo_opt' src={logo_opt} alt='logo.png' />
-                <div className="all_opt">Already have an account?<span className='col_opt'> Log in here</span></div>
+                <div className="all_opt">Already have an account?<span className='col_opt'> <a href="\Login">Log in here</a></span></div>
 
             </div>
     <div className='first_opt'>
