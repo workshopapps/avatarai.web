@@ -13,11 +13,15 @@ function LandingPageC() {
     <div>
         <Navbar />
         <Header />
+        <Main />
+        <CTA />
+        <Benefits />
+        <Social />
       <About />
-      <Benefits />
-      <CTA />
-      <Main />
-      <Social />
+      
+     
+      
+      
     </div>
   )
 }

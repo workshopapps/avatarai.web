@@ -92,7 +92,7 @@
         top: 423%;
         left: 23%;
         margin-left: 0rem;
-        width: 150px;
+        width: 140px;
     
     }
     .av1-ony{
@@ -101,7 +101,7 @@
         left: 45%;
         z-index: -1;
         margin-left: 0rem;
-        width: 150px;
+        width: 140px;
     }
     .first__benefit-ony{
         width: 292px;
@@ -123,7 +123,7 @@
     }
     .av2-ony{
         position: absolute;
-        left: 0%;
+        left: 5%;
         width: 150px;
         
     }
