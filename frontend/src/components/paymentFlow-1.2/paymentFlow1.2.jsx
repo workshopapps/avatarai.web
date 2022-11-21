@@ -21,7 +21,7 @@ function PaymentFlow12(props){
                         <p>pay<span className='text-2xl text-violet-500'> $14</span></p>
                     </div>
                 </div>
-                <div className='mt-10 text-center v-center'>
+                <div className='mt-10 text-center v-center2'>
                     <p className='max-[768px]:w-10/12'>Kindly enter the OPT sent to 234814***1378</p>
                     <form className='cbk mt-7' id='cardopt-form'>
                         <input type='number' data-testid='input'/>
