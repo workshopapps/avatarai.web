@@ -34,7 +34,7 @@ const ApiUseSection = () => {
 		<div className="w-full py-20">
 			<div className="max-w-[1240px] mx-auto px-5">
 				<div className="flex flex-col md:flex-row gap-5 md:justify-between">
-					<h2 className="text-[#333333] text-[2rem] font-bold max-w-[595px]">
+					<h2 className="text-[#333333] text-[1.5rem] md:text-[2rem] font-bold max-w-[595px]">
 						Utilize our API and customize avatars suitable for use anywhere and anytime
 					</h2>
 					<p className="text-[#605E65] font-medium text-base max-w-[495px]">
@@ -77,7 +77,9 @@ const ApiUseSection = () => {
 				</div>
 
 				<div className="pt-[133px]">
-					<h3 className="text-[#333333] text-center font-bold text-[2rem] mb-[65px]">Use cases for our API</h3>
+					<h3 className="text-[#333333] text-center font-bold text-[1.5rem] md:text-[2rem] mb-[65px]">
+						Use cases for our API
+					</h3>
 					<div className="grid grid-cols-12 gap-3">
 						{useCases.map((item, i) => {
 							return (
