@@ -89,7 +89,7 @@
     }
     .second__av-ony{
         position: absolute;
-        top: 423%;
+        top: 433%;
         left: 23%;
         margin-left: 0rem;
         width: 140px;
@@ -97,7 +97,7 @@
     }
     .av1-ony{
         position: absolute;
-        top: 430%;
+        top: 440%;
         left: 45%;
         z-index: -1;
         margin-left: 0rem;
@@ -130,7 +130,7 @@
     .features__title-ony{
         text-align: center;
         font-size: 24px;
-        padding-top: 23rem;
+        padding-top: 18rem;
         
     }
     .features__ony{
