@@ -1,0 +1,431 @@
+
+
+.house_opt {
+    position: relative;
+    padding-bottom: 45px;
+}
+
+#full_bg {
+    background-color: #8B70E9;
+}
+
+.div_ {
+    width: 100%;
+    height: 100%;
+}
+
+.houset_opt {
+    display: flex;
+    justify-content: center;
+    align-self: center; 
+}
+
+.logo_opt{
+    width: 40px;
+    height: 40px;
+    margin: 64px auto 16px;
+}
+
+.logo_opt_2 {
+    width: 60px;
+    height: auto;
+}
+
+
+.first_opt{
+    font-family: 'Nunito', serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+
+.first__opt {
+    width: 95%;
+    max-width: 900px;
+    display: grid;
+    place-items: center;
+    margin: auto;
+
+}
+
+.get_opt{
+    font-family: 'Plus Jakarta Sans', serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: clamp(20px, 3vw, 50px);
+    line-height: 130%;
+    color: #09080B;
+    margin-bottom: 6px;
+    width: 93%;
+}
+.gett_opt{
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(16px, 3vw, 18px);
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #2B292F;
+    margin-bottom: 27px;
+    width: 93%;
+}
+.motion_opt{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+.motion_opt .one, .two, .three{
+    width: 72px;
+    height: 4px;
+    background: #8B70E9;
+    border-radius: 4px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+     margin-right: 14px;
+}
+.motion_opt .two{
+    margin: 0px 32px;
+
+}
+
+.two, .three{
+    background: #F3F0FF;
+}
+
+
+
+.provide_opt{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #020303;
+    margin-bottom: 16px;
+}
+.provide__opt{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #020303;
+    margin: auto auto 16px;
+    width: 87%;
+}
+.motion_opt label{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333333;
+}
+#myform_opt{
+    /*padding-right: 6%;*/
+    /* padding-left: 6%; */
+    text-align: left;
+    width: 93%;
+    max-width: 650px;
+    /* align-self: center; */
+}
+#myinput_opt{
+    padding: 12px 16px;
+    gap: 7px;
+    width: 100%;
+    
+    height: 48px;
+    margin-bottom: 16px;
+    background: #FFFFFF;
+    border: 0.5px solid #605E65;
+    border-radius: 4px;
+}
+#myinput_op{
+    padding: 12px 16px;
+    gap: 7px;
+    width: 100%;
+
+    height: 48px;
+    margin-bottom: 16px;
+    background: #FFFFFF;
+    border: 0.5px solid #605E65;
+    border-radius: 4px;
+}
+#myinput_o{
+    padding: 12px 16px;
+    gap: 7px;
+    width: 100%;
+
+    height: 48px;
+    margin-bottom: 16px;
+    background: #FFFFFF;
+    border: 0.5px solid #605E65;
+    border-radius: 4px;
+}
+.container_opt {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container_opt input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background: #FFFFFF;
+    border: 1px solid #D0D5DD;
+    border-radius: 6px;
+}
+
+/* On mouse-over, add a grey background color */
+/*.container:hover input ~ .checkmark {*/
+/*  background-color: #ccc;*/
+/*}*/
+
+/* When the checkbox is checked, add a blue background */
+.container_opt input:checked ~ .checkmark {
+    background: white;
+    border: 1px solid #1570EF;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container_opt input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container_opt .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid #1570EF;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.note_opt{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #14191F;
+}
+.mybutton_opt:disabled{
+    padding: 12px 26px;
+    gap: 8px;
+    width: 100%;
+    
+    height: 46px;
+    background: #AFB6B6;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 18px;
+    color: #FFFFFF;
+    margin: auto;
+}
+.mybutton_opt:enabled:hover {
+    background: #4D3899;
+}
+
+.mybutton_opt:enabled{
+    padding: 12px 26px;
+    gap: 8px;
+    width: 100%; 
+    height: 46px;
+    background: #8B70E9;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 18px;
+    font-size: 16px;
+    color: #FFFFFF;
+    margin:auto;
+    max-width: 650px;
+}
+.all_opt{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #020303;
+    text-align: center;
+    
+}
+.col_opt{
+    color: #455EE0;
+ }
+.info_opt{
+    margin-top: 3px;
+    margin-right: 8px;
+    width: 14px;
+    height: 14px;
+}
+.info__opt{
+    display: flex;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #888888;
+}
+.tt{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 16px;
+}
+.mail_opt{
+    width: 160px;
+    height: 160px;
+    margin: 64px auto 16px;
+}
+.ch_opt{
+    font-style: normal;
+    font-weight: 600;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 44px;
+    letter-spacing: 0.01em;
+    color: #020303;
+    text-align: center;
+    margin-bottom: 8px;
+}
+.li_opt{
+    
+    width: 90%;
+    max-width: 900px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(16px, 3vw, 24px);
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: rgba(9, 8, 11, 0.8);
+    margin: auto auto 16px;
+}
+.ch__opt{
+    width: 277px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 44px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    margin: auto auto 32px;
+    color: #020303;
+    display: grid;
+    place-items: center;
+}
+.ch___opt{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 44px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    margin-top: auto;
+    color: #020303;
+}
+.clap_opt{
+    width: 32px;
+    height: 32px;
+    margin-left: 16px;
+}
+.bb_opt{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#--opt {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button_div_opt {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .nav_opt {
+        width: 90%;
+        max-width: 900px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 30px auto 60px;
+
+    }
+
+    .logo_opt{
+        width: 9%;
+        height: auto;
+        margin: 0px;
+        
+    }
+
+    
+
+    .all_opt{
+        position: relative;
+        text-align: right;
+    }
+
+    .mail_opt{
+        width: 250px;
+        height: auto;
+        margin: 64px auto 16px;
+    }
+
+    .houset_opt {
+       height: 100vh;
+    }
+
+    .li_opt{ 
+        margin: 30px;
+    }
+
+    .logo_opt_2 {
+        /* margin-right: auto; */
+    }
+}

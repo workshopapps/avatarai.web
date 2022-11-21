@@ -1,0 +1,506 @@
+
+.vic {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0 auto;
+    position: relative;
+}
+.vic_hero {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    max-width: 1200px;
+}
+
+.vic_hero h1 {
+    font-size: 1.5em;
+    font-weight: 600; 
+    line-height: 1.2em;
+    color: #8B70E9;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+
+.vic_hero p {
+    margin-bottom: 30px;
+    color: #778888;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9em;
+}
+
+.vic_button {
+    width: 90%;
+    background: #8B70E9;
+    border-radius: 8px;
+    padding: 0.7em;
+    color: white;
+    font-size: 0.8em;
+    max-width: 200px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.vic_button:hover {
+    background: #4D3899;
+}
+
+
+a {
+    width: 100%;
+}
+
+
+.imageone {
+    margin: 30px 0px;
+}
+
+.imagetwo {
+    display: none;
+    /* max-width: 400px; */
+}
+
+
+
+
+
+
+
+
+
+
+.vic_get {
+    background:#4D3899;
+    padding: 6em 0em;
+    color: white;
+    width: 100vw;
+}
+
+.vic_get_started {
+    font-family: 'Nunito', sans-serif;
+    margin: auto;
+    width: 90%; 
+    max-width: 1200px;
+}
+
+.vic_get_started p {
+    font-weight: 400;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    color: #DBDBDB;
+}
+
+.vic_how {
+    text-align: center;
+    margin-bottom:2em;
+}
+
+#h2 {
+    font-size: em;
+    font-weight: 600;
+    line-height: 1.1em;
+    margin-top: 0.5em;
+    color: white;
+}
+
+.vic_get_started ul {
+    display: grid;
+}
+
+#li {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+}
+
+.vic_get_started li div {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+#h3 {
+    font-size: 1.7em;
+    font-weight: 600;
+    padding: 0.6em;
+    padding-left: 0px;
+    color: white;
+}
+
+.vic_get_started ul img {
+    width: 2.2em;
+    margin-right: 1em;
+}
+
+
+
+
+
+
+
+
+
+.vic_mid_section {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.vic_mid {
+    text-align: center;
+    
+    margin: 0 auto;
+}
+
+.vic_mid p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9em;
+}
+
+.vic_mid_section h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1.2em;
+}
+
+.vic_mid_section span {
+    color: #8B70E9
+    ;
+}
+
+.vic_mid_section p {
+    color: #778888;
+    line-height: 1.5em;
+    margin: 1.2em 0em;
+}
+
+.vic_mid_section img {
+    margin-top: 20px;
+}
+
+.vic_creative {
+    background: #F1EDFE;
+    margin: 120px 0px; 
+    padding: 70px 0px;
+    max-width: 1200px;
+    border-radius: 20px;
+}
+
+.vic_mid_start {
+    display: grid;
+    place-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+.vic_mid_start h3 {
+    font-size: 1.25em;
+    font-weight: 600;
+    margin-top: 1.75em;
+    line-height: 1.2em;
+}
+
+.vic_mid_start p {
+    margin-top: 1em;
+   margin-bottom: 2em;
+}
+
+
+
+
+
+
+
+@media (max-width:481px) {
+    .vic_get_started h3 {
+        padding-left: 0.6px;
+    }
+}
+
+
+
+
+@media (min-width: 481px){
+    .vic_get_started ul {
+      grid-template-columns: auto auto;
+      grid-column-gap: 15%;
+      grid-row-gap: 15%;
+    }
+
+    .vic_get_started li {
+        max-width: 2322px;
+    }
+
+    .vic_get_started ul div {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .vic_get_started h3 {
+        padding: 0.5em 0em;
+           padding-left: 0px;
+    }
+
+    .vic_mid_section img {
+        width: 50%;
+    }
+    
+}
+
+
+
+
+
+
+
+
+@media (min-width: 768px) {
+
+    .vic_button {
+        max-width: 300px;
+        padding: 0.7em;
+        width: 90%;
+        background: #8B70E9;
+        color: white;
+        font-size: 1em;
+    }
+
+    .vic_hero {
+        flex-direction: row;
+        margin-top: 50px;
+        margin-bottom: 100px;
+        justify-content: space-between;
+        width: 90%;
+    }
+
+    .vic_hero_text {
+       padding-right: 2em;
+        max-width: 650px;
+        justify-content: space-between;
+        text-align:left;
+        margin-bottom: 3em;
+    }
+
+    .vic_hero_img_div {
+        width: 100%;
+    }
+
+    .imageone {
+        display: none;
+    }
+    
+    .imagetwo {
+        display: block;
+        width: 90%;
+        max-width: 325px;
+        margin-left: auto;
+    }
+
+    .vic_hero h1 {
+        font-size: 2.2em;
+        font-weight: 700; 
+        line-height: 1.3em;
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }
+
+    .vic_hero p {
+        font-size: 1.5em;
+    }
+
+    .vic_mid_section {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        /* margin: 50px; */
+        text-align: left;
+        /* width: 100%; */
+    }
+
+    #two {
+        flex-direction: row-reverse;
+    }
+
+    .br {
+        width: 20%;
+    }
+
+    .vic_mid_section h2 {
+        font-size: 2.1em;
+    }
+
+    .vic_mid_start h3 {
+        font-size: 2em;
+        font-weight: 700;
+    }
+    
+    .vic_mid_start p {
+        font-size: 1em;
+        margin-top: 1em;
+       margin-bottom: 2em;
+    }
+}
+
+
+@media (min-width: 850px) {
+
+    .vic_hero_text h1 {
+        font-size: 2.5em;
+        
+    }
+
+    .imagetwo {
+        max-width: 380px;
+    }
+}
+
+
+
+
+
+@media (min-width: 1024px) {
+
+    .vic_hero_text h1 {
+        font-size: 3em;
+        
+    }
+
+    .imagetwo {
+        max-width: 100%;
+    }
+
+    .vic_hero p {
+        width: 80%;
+        margin-bottom: 3em;
+    }
+
+   
+    .vic_button {
+        max-width: 400px;
+        padding: 0.7em;
+        width: 90%;
+       
+    }
+
+    .vic_get_started {
+        margin: 0.3em auto;
+        width: 90%; 
+        max-width: 1200px;
+    }
+
+    .vic_get_started ul {
+        grid-template-columns: auto auto auto auto;
+        grid-column-gap: 5%;
+        grid-row-gap: 15%;
+        margin-top: 5em;
+        
+      }
+
+     
+
+    .vic_mid_section img {
+        width: 50%;
+
+    }
+
+    .vic_get_started ul img {
+        width: auto;
+        margin-bottom: 1em;
+    }
+   
+    
+    .vic_get_started p {
+        font-weight: 400;
+        font-size: 1.2em;
+        line-height: 1.4em;
+        color: #DBDBDB;
+    }
+    
+    .vic_how {
+        text-align: center;
+        margin-bottom:2em;
+    }
+    
+    .vic_how h2 {
+        font-size: 2.4em;
+    }
+    
+    
+    .vic_get_started h3 {
+        /* font-size: 1.6em; */
+        line-height: 1.2em;
+    }
+
+    .vic_mid_section h2 {
+        font-size: 2.75em;
+        max-width: 400px;
+    }
+    
+    
+    .vic_mid_section p {
+        font-size: 1.5em;
+        max-width: 620px;
+    }
+
+    .br {
+        width: 10%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1200px) {
+
+    
+    .vic_hero h1 {
+        font-size: 4.1em;
+        font-weight: 700; 
+        line-height: 1.2em;
+        
+
+    }    
+
+    .vic_mid_section h2 {
+        font-size: 3.2em;
+        max-width: 440px;
+    }
+  
+    .vic_mid {
+        max-width: 1200px; 
+        margin: 0 auto;  
+       }
+}
+
+
+
+
+
+@media (min-width: 1400px) {
+    .vic_mid {
+     max-width: 1200px; 
+     margin: 0 auto;  
+    }
+
+  .vic_mid_section {
+        margin: 0px;
+       width: 100%;
+}
+
+}
+

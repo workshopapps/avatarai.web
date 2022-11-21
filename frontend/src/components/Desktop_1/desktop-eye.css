@@ -1,0 +1,5 @@
+.desktop-eye-main {
+  display: flex;
+  flex-direction: row;
+  background: #fafafa;
+}
