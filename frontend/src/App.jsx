@@ -25,6 +25,7 @@ import CourseDetail from "./components/courses/CourseDetail";
 import Profile from "./components/profile_page/profile_page.component";
 import ReadArticle from "./components/read article/ReadArticle";
 
+
 import DesktopEye from "./components/Desktop_1/DesktopEye";
 import ApiPage from "./components/api-page/ApiPage";
 import Login from "./components/LoginPage/Login";
@@ -34,6 +35,7 @@ import CheckEmail from "./components/LoginPage/CheckEmail";
 import ResetPassword from "./components/LoginPage/ResetPassword";
 import Chat from "./components/chat/ChatPage";
 import LandingPage from "./components/landing-page/LandingPageC";
+
 // import CareerPage from './components/careers-page/careerPage';
 
 export default function App() {
@@ -54,6 +56,7 @@ export default function App() {
 
         {/*  Landing Page */}
         <Route path='/LandingPage' element={<LandingPage />} exact />
+
 
         {/* Text to image landing page */}
         <Route path='/' element={<Ttilp />} exact />
@@ -82,11 +85,13 @@ export default function App() {
 
         {/* Course Page */}
 
+
+        {/* Avatar */}
+        <Route path="/Avatar" element={<Avatar />} />
+
+
         <Route path='/Courses' element={<Courses />} />
         <Route path='/details/:detailId' element={<CourseDetail />} />
-
-        {/* Dashboard component */}
-        <Route path='/Avatar' element={<Avatar />} />
 
         {/* 404 Page */}
         <Route path='/Four404' element={<Four404 />} />
