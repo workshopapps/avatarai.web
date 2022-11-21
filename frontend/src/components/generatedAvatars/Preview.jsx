@@ -9,10 +9,17 @@ import "../createAvatar/style.css";
 import Header from "../createAvatar/Header";
 import SearchComponent from "../DashboardSearchComponent/SearchComponent";
 import SidebarEye from "../Desktop_1/SidebarEye";
+import Menu from "../createAvatar/images/menu.svg";
+import MobileLogo from "../createAvatar/images/mobileLogo.svg";
 
 function Preview() {
   return (
     <div className="desktop-2">
+      <div className="mobile-nav">
+        <img src={Menu} alt="menu" />
+        <img src={MobileLogo} alt="logo" />
+        <div></div>
+      </div>
       <div>
         <SidebarEye />
       </div>
