@@ -7,6 +7,7 @@ import PolygonRight from "./img/polygonRight.png";
 import Navbar from "../landingPage/Navbar/Navbar";
 
 import { WHY_US, TEAM } from "./data";
+import Footer from "../Footerpage/Footer";
 
 const AboutUs = () => {
     return (
@@ -72,6 +73,7 @@ const AboutUs = () => {
                     </div>
                 </section>
             </main>
+            <Footer />
         </>
     )
 }
