@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
-import logo from "../../../assets/images/tapart.png";
+import logo from "../../../assets/images/logos.png";
 import close from "../../../assets/images/close.png";
 
 
@@ -9,8 +9,8 @@ import close from "../../../assets/images/close.png";
 const MobileNav = ({navClose}) => {
 
   return (
-    <div className="bg-white w-[261px] h-screen  fixed top-0 left-0 lg:hidden z-20 h-full">
-      <nav className="flex flex-col justify-center  items-start gap-y-10 lg:hidden p-10  h-full bg-white z-30 absolute top-10">
+    <div className="bg-white w-[261px] h-screen  fixed top-0 left-0 lg:hidden  ">
+      <nav className="flex flex-col justify-center  items-start gap-y-10 lg:hidden p-10 py-20 h-full ">
         <Link to='/'><img src={logo} alt="" /></Link>
         <ul className=" flex flex-col justify-between items-start gap-10 cursor-pointer ">
           <li onClick={navClose}  className="p-2  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
