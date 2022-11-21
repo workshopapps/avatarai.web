@@ -49,12 +49,12 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="space-x-6 hidden lg:block">
-          <Button className=" border-purple text-purple bg-white ">
+          <Button className=" border-purple-500 text-purple-500 bg-white ">
             <Link to="/login">  Log in</Link>
           
           </Button>
 
-          <Button className="text-white border-purple bg-purple ">
+          <Button className="text-white border-purple-500 bg-purple-500 ">
             <Link to="/Signupfirst"> Sign up </Link>
           </Button>
         </div>

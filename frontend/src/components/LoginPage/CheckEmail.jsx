@@ -11,7 +11,7 @@ const CheckEmail = () => {
     <p className='text-xl'>We sent a password reset link to Ibrahimabasiye1@gmail.com</p>
     </div>
     
-      <Button className="w-full md:w-[28rem] bg-purple text-white"><a href="malito:">Check mail app</a></Button>
+      <Button className="w-full md:w-[28rem] bg-purple-500 text-white"><a href="malito:">Check mail app</a></Button>
       
       
 
