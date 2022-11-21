@@ -134,17 +134,6 @@ export default function SignUp_first (){
                     </div>
                 }
 
-                { !show &&
-                    <div>
-                        <label>Password</label><br/>
-                        <input id='myinput_opt' placeholder='Choose Password' type='password' required /><br/>
-                        <div className='tt'>
-                            <img className='info_opt' src={info_opt} alt='info.png'/>
-                            <div className='info__opt' >Must be 8 characters long</div>
-
-                        </div>
-                    }
-
                     { !show &&
                         <div>
                             <label>Password</label><br/>
@@ -161,14 +150,13 @@ export default function SignUp_first (){
                                 <button  className='mybutton_opt' id='mybutton_opt' type ='submit'>Continue</button>
                             </Link>
 
-                        </div>
-
                             <button  className='mybutton_opt' id='mybutton_opt' type ='submit'>Continue</button>
                     </div>
+
                 }
 
 
-                </form>
+                    </form>
             </div>
         </div>
     )
