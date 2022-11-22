@@ -29,11 +29,13 @@
     width: 373px;
     font-size: 25px;
     color: #8B70E9;
+    font-weight: 700;
 }
 
 .about__image__title-ony{
     padding-left: 6rem;
     font-size: 16px;
+    font-weight: 600;
 }
 
 .about__courses-ony{
@@ -57,6 +59,7 @@
     width: 471px;
     padding-left: 6rem;
     padding-bottom: 1.5rem;
+    font-weight: 700;
 }
 
 .courses__title-ony{
@@ -65,6 +68,7 @@
     padding-bottom: .7rem;
     color: #8B70E9;
     font-size: 25px;
+    font-weight: 700;
 }
 
 .about__cta-ony{
@@ -85,7 +89,7 @@
         text-align: center;
         padding-top: 6rem;
         padding-bottom: 2rem;
-        font-weight: 700;
+        
     }
     .about__content-ony{
         display: flex;
@@ -93,9 +97,10 @@
     }
 
 .about__description-ony{
-    width: 70%;
+    width: 285px;
     text-align: center;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    font-weight: 400;
 }
 .about__image-ony{
     width: 70%;
@@ -147,12 +152,24 @@
    
 }
 .about__courses__description2-ony{
-    width: 331px;
+    width: 285px;
 }
 
 .about__courses__description3-ony{
-    width: 331px;
+    width: 285px;
+}
+.about__course__title-ony{
+    font-size: 16px;
+    font-weight: 700;
+    width: 225px;
 }
 
-
+.tree-ony{
+    margin-left: 45rem;
+}
+.about__image__title-ony{
+    /* padding-left: 6rem; */
+    font-size: 16px;
+    font-weight: 600;
+}
 }

@@ -23,7 +23,7 @@ const About = () => {
      <h3 className="courses__title-ony">Top courses on Noxus</h3>
      <p className="aboutus__title-ony">Some of the most in demand courses we have at bloom. You might want to check them out</p>
      <div className="about__courses-ony">
-     <div className="tre-ony">
+     <div className="tree-ony">
         <img src="./images/more1.png" className="img-ony" />
         <h3 className="about__course__title-ony">Understanding the basics of AI</h3>
         <p className="about__courses__description-ony">Join Emily Pratt as she extensively explains the fundamentals and the cores of artificial intelligence</p>

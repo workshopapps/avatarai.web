@@ -33,7 +33,8 @@
   margin-left: 28rem;
   font-size: 25px;
   color: #8B70E9;
-  padding: .8rem 0;
+  padding: .8rem 0;font-weight: 700;
+
 }
 
 @media(max-width: 380px){
