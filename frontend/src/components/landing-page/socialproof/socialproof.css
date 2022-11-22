@@ -9,23 +9,21 @@
 
 
 
+
 .second__ai-ony{
     display: flex;
-   
+   width: 100%;
     gap: 1rem;
 }
 
 .ai___img-ony{
-    width: 24%;
-    height: 390px;
+    width: 350px;
+    height: 469px;
    
 }
 
-.second__ai-ony img{
-    width: 300px;
-    height: 400px;
- 
-}
+
+
 
 .socialproof__title-ony{
     font-size: 67px;
@@ -45,9 +43,8 @@
     .socialproof__title-ony{
         font-size: 24px;
         text-align: center;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        width: 313px;
+       padding: 2rem 0;
+        width: 100%;
     }
     .ai___img-ony{
         width: 20%;
@@ -64,11 +61,7 @@
        
     }
    
-    .aii-ony{
-       overflow-x: scroll;
-       
-       
-    }
+   
     
     .second__ai-ony{
         display: flex;

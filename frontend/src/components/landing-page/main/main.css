@@ -83,30 +83,28 @@
 }
 .main__second__ai-ony{
     display: flex;
+    flex-direction: column-reverse;
 
 }
 
 .image__description2-ony{
-    width: 300px;
+    bottom: 0;
+    top: 250%;
+    margin-top: 6rem;
+        width: 300px;
     font-size: 16px;
     line-height: 25px;
     padding: .2rem 0;
     position: absolute;
-    bottom: 0;
-    top: 250%;
-    margin-top: 4rem;
+  
     
     
 }
-.image__description3-ony{
-    width: 300px;
+.image__title-ony{
+
+    color: #8B70E9;
     font-size: 25px;
-    line-height: 20px;
-    padding: 1rem 0;
-  position: absolute;
-  top: 250%;
-  margin-top: 1rem;
-    
-    
+    font-weight: 700;
 }
+
 }
