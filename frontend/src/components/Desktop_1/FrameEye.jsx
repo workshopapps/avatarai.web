@@ -4,6 +4,7 @@ import male_icon from "./male_icon.png";
 import female_icon from "./female_icon.png";
 import { Link } from "react-router-dom";
 import SearchComponent from "../DashboardSearchComponent/SearchComponent";
+import Frame_1 from "../desktop_4/Frame_1";
 
 const FrameEye = () => {
   return (
@@ -11,7 +12,7 @@ const FrameEye = () => {
       <div className='search-eye'>
         <SearchComponent />
       </div>
-      <div className='welcome-eye'></div>
+      <div className='welcome-eye'>{/* <Frame_1 /> */}</div>
       <div className='gender-select-eye'>
         <div className='one-icon'>
           <img src={oneicon} alt='One Icon' />
