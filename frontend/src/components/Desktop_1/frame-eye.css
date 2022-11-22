@@ -19,7 +19,7 @@
 }
 .welcome-eye {
   width: 95%;
-  /* height: 20%; */
+  height: 100%;
   /* border: 2px green solid; */
 }
 .gender-select-eye {
@@ -75,4 +75,19 @@
 }
 .gender {
   margin: 5%;
+}
+
+@media (max-width: 400px) {
+  .frame-eye-main {
+    box-sizing: border-box;
+
+    /* position: absolute; */
+    width: 327px;
+    height: 520px;
+    /* left: 24px;
+    top: 270px; */
+  }
+  .welcome-eye {
+    display: none;
+  }
 }
