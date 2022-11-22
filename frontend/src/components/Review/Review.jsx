@@ -4,7 +4,7 @@ import { fakeReviewData } from "./fakeData";
 import good from "./assets/good.png";
 import emptyStar from "./assets/emptyStar.png";
 import goldStar from "./assets/goldStar.png";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export default function Review() {
   const [rating, setRating] = useState(0);
@@ -38,7 +38,10 @@ export default function Review() {
   const arr = ["", "", "", "", ""];
 
   return (
-    <div className={styles.review}>
+    <div className={styles.review}
+    style={{
+      'overflow':  `${showPopup?'hidden':'auto'}`
+    }}>
       {showPopup && <Popup setShowPopup={setShowPopup} />}
       <header className={styles.reviewheader}>
         <h2>Leave a review</h2>
@@ -106,9 +109,10 @@ export default function Review() {
         <button
           disabled={!disabled}
           type="submit"
-          className={`${styles.submit} ${
-            !disabled ? styles.disabled : styles.enabled
-          }`}
+          className={styles.submit}
+          style={{
+            backgroundColor: `${disabled ? "#8b70e9" : "#a28dee"}`,
+          }}
         >
           Submit your review
         </button>
@@ -165,25 +169,32 @@ function ReviewMessages({ details }) {
 }
 
 function Popup({ setShowPopup }) {
+  const popRef = useRef();
+
+  useEffect(() => {
+    popRef.current.scrollIntoView();
+  }, [popRef.current]);
   return (
     <div className={styles.cover}>
-      <div className={styles.popup} aria-label="form submit successful">
-        <div className={styles.imageBG}>
-          <div
-            className={styles.image}
-            style={{
-              backgroundImage: `url(${good})`,
-            }}
-            aria-label="check mark"
-          ></div>
-        </div>
-        <h5>Form submitted successfully</h5>
-        <p>
-          Thanks for sharing your feedback ideads and suggestions from the
-          community help us to constantly improve the Tapeart EXPERIENCE
-        </p>
-        <div className={styles.popupBtn}>
-          <button onClick={() => setShowPopup(false)}>ok</button>
+      <div className={styles.scroll} ref={popRef}>
+        <div className={styles.popup} aria-label="form submit successful">
+          <div className={styles.imageBG}>
+            <div
+              className={styles.image}
+              style={{
+                backgroundImage: `url(${good})`,
+              }}
+              aria-label="check mark"
+            ></div>
+          </div>
+          <h5>Form submitted successfully</h5>
+          <p>
+            Thanks for sharing your feedback ideas and suggestions from the
+            community help us to constantly improve the Tapeart EXPERIENCE
+          </p>
+          <div className={styles.popupBtn}>
+            <button onClick={() => setShowPopup(false)}>ok</button>
+          </div>
         </div>
       </div>
     </div>
