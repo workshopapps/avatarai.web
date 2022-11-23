@@ -41,6 +41,7 @@ import Desktop6 from "./components/desktop_6/Desktop6";
 import Preview from "./components/generatedAvatars/Preview";
 import LoadingImages from "./components/createAvatar/LoadingImages";
 import Review from "./components/Review/Review";
+import Desktop3 from "./components/Desktop_3/Desktop3";
 
 // import CareerPage from './components/careers-page/careerPage';
 
@@ -134,6 +135,9 @@ export default function App() {
 
         {/* desktop_1 */}
         <Route path="/Dashboard" element={<DesktopEye />} />
+
+        {/* desktop_3 */}
+        <Route path="/Dashboard_3" element={<Desktop3 />} />
 
         {/* desktop_4 */}
         <Route path="/Dashboard_4" element={<Desktop4 />} />
