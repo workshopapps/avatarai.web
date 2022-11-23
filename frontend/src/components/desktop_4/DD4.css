@@ -30,12 +30,15 @@
 
 
 
-.vic_1, .vic_2 {
+.vic_1, .vic_2, .vic_left, .vic_right {
     cursor: pointer;
 }
 
-.vic_1:hover, .vic_2:hover {
+.vic_1:hover, .vic_2:hover .vic_left:hover, .vic_right:hover {
+    filter: blur(0.5px);
+    width: 50px;
     
+  
 }
 
 .vic_3 {
@@ -66,12 +69,9 @@
     display: grid;
     place-items: center;
     margin: 2em;
+    border-radius: 10.7848px;
 }
 
-
-.vic_her {
-    
-}
 
 .vic_left, .vic_right {
     width: 7%;

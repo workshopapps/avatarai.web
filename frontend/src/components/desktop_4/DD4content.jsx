@@ -39,14 +39,14 @@ useEffect(() => {
         <input type='file' 
         accept="image/*"
         onChange={(event) => {
-            const file = event.target.files[0];
+            const file = event.target.files;
             if(file && file.type.substr(0, 5) === "image") {
                 setImage(file);
             } else {
                 setImage(null);
             }
             }
-        } />
+        } multiple/>
 
         <h3>Preview your Images</h3>
         <div className='vic_img_and_direction'>
