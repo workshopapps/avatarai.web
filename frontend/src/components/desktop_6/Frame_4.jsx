@@ -41,12 +41,12 @@ const Frame_4 = () => {
                 </div>
             </div>
                 <div className='opt_q'>
-                    <Link to="#">
+                    <Link className='link_opt' to="#">
                     <button className="btn1_bpc">
                         Share
                     </button>
                     </Link>
-                    <Link href="#">
+                    <Link className='link_opt' href="#">
                     <button className="btn2_bpc">
                         Download
                     </button>
