@@ -5,8 +5,9 @@ import Pricetop from "./Pricetop";
 import React from "react";
 import Sponsors from "./Sponsors";
 import TotalPriceCards from "./TotalPriceCards";
-import Footer from "../Footerpage/Footer";
+// import Footer from "../Footerpage/Footer";
 import Navbar from "../landingPage/Navbar/Navbar";
+import Foooter from "../footer/Foooter";
 
 function Pricing() {
   return (
@@ -16,7 +17,8 @@ function Pricing() {
       <TotalPriceCards />
       <Sponsors />
       <Faq />
-      <Footer />
+      {/* <Footer /> */}
+      <Foooter />
     </section>
   );
 }

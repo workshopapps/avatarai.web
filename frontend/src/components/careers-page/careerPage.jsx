@@ -2,8 +2,9 @@
 import Intro from './Intro';
 import Main from './Main';
 import Subscribe from './Subscribe';
-import Footer from "../Footerpage/Footer";
+// import Footer from "../Footerpage/Footer";
 import Navbar from "../landingPage/Navbar/Navbar";
+import Foooter from '../footer/Foooter';
 
 
 const CareerPage = () => {
@@ -13,7 +14,8 @@ const CareerPage = () => {
             <Intro />
             <Main />
             <Subscribe />
-            <Footer />
+            {/* <Footer /> */}
+            <Foooter />
         </div>
      );
 }
