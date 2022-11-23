@@ -2,14 +2,18 @@ import React from 'react';
 import './dashboardcomp.css';
 import Mic from './img/mic.svg';
 import Arrow from './img/arrowdown.svg';
+import Search from'./img/search.png';
 
-export default function Dashboardcomp() {
+export default function Dashboardcomp(props) {
   return (
     <div className='vic_dash_bg'>
         <div className='vic_dash_inner_div'>
             <div className='vic_dash_header'>
-                <input type='text' placeholder='Search collections' className='vic_dash_input' /> 
-                
+                <div className='vic_dash_input_div'>
+                    <img src={Search} className="vic_search" />
+                   <input type='text' placeholder='Search collections' className='vic_dash_input' /> 
+                   <img src={Mic} className='vic_mic'/>
+                </div>
                 <div className='vic_dash_translate'>
                     <p >English</p> 
                     <img src={Arrow} onClick='' />
@@ -21,7 +25,9 @@ export default function Dashboardcomp() {
                 <h2 className='vic_dash_h2'>Welcome</h2>
                 <p className='vic_dash_p'>Let's create your Avatars.</p>
             </div>
-            <div className='vic_dash_content'></div>
+            <div className='vic_dash_content'>
+                {props.content}
+            </div>
         </div>
       
     </div>

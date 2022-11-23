@@ -21,11 +21,45 @@
 }
 
 .vic_dash_input_div {
-    
+    border: 1px solid #DBDBDB;
+    border-radius: 8px;
+    padding: 0.8em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.vic_dash_input_div:active {
-    border: 2px solid rgba(197, 197, 197, 0.1);
+.vic_dash_input_div:hover{
+    outline: 2px solid rgba(197, 197, 197, 0.1);
+}
+
+.vic_dash_input_div:focus{
+    outline: 2px solid rgba(197, 197, 197, 0.1);
+}
+
+.vic_dash_input:focus {
+    outline: none;
+}
+
+.vic_dash_input {
+    width: 90%;
+    max-width: 580px;
+    background-color: #FAFAFA;
+    text-indent: 1em;
+}
+
+
+.vic_mic {
+    justify-self: flex-end;
+    width: 18px;
+}
+
+.vic_mic:hover, .vic_search:hover {
+    /* width: 100%; */
+    filter:blur(0.5px);
+    width: 20px;
+    cursor: pointer;
 }
 
 .vic_dash_header {
@@ -35,17 +69,7 @@
     width: 100%;
 }
 
-.vic_dash_input {
-    border: 1px solid #DBDBDB;
-    border-radius: 8px;
-    padding: 0.8em;
-    width: 100%;
-    max-width: 580px;
-    background: url('./img/search.png'), url('./img/mic.svg') no-repeat left center;
-    background-position:  1em center, 95% center;
-    background-repeat: no-repeat, no-repeat;
-    text-indent: 2em;
-}
+
 
 .vic_dash_input::placeholder {
     font-size: 0.875em;
