@@ -1,93 +1,69 @@
-.frame-eye-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* justify-content: space-between; */
-  /* width: 369px; */
-  width: 75.8%;
-  min-height: 1024px;
-  height: 100%;
-  left: 0px;
-  top: 0px;
-  /* border: 2px blue solid; */
-  background: #fafafa;
+.vnc-main {
+
+  display: grid;
+  place-content: center;
+  padding: 1rem;
+  height: inherit;
+
 }
-.search-eye {
-  width: 95%;
-  /* height: 20%; */
-  /* border: 2px green solid; */
-}
-.welcome-eye {
-  width: 95%;
-  height: 100%;
-  /* border: 2px green solid; */
-}
-.gender-select-eye {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 95%;
-  /* border: 2px black solid; */
-  background-color: white;
-}
-.one-icon {
-  margin: 2% auto;
-}
-.gender-eye {
-  display: flex;
+
+.vnc-icon {
   margin: 0 auto;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  /* border: 2px black solid; */
-}
-.gender-eye h1 {
-  font-size: large;
-  font-weight: bold;
+  padding-top: 2rem;
+
 }
 
-.gender-eye h2 {
-  font-size: medium;
-  /* font-weight: bold;
-} */
-}
-.male-female-eye {
-  width: 100%;
+.vnc-gender {
+
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 2% auto;
+  gap: 4rem;
+
 }
 
-.link-eye {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2% auto;
-  width: 20%;
-  height: 40px;
-  background: #8b70e9;
-  border-radius: 8px;
+.vnc-text {
   text-align: center;
+  padding: 2rem 0;
+}
+
+.vnc-text h2 {
+  font-weight: 600;
+  font-size: clamp(.7rem, 3vw, 1.4rem);
+}
+
+.vnc-text p {
+  font-size: small;
+}
+
+.vnc-male,
+.vnc-female {
+
+  padding: 0 3rem 2rem;
+  border-radius: 16px;
+  text-align: center;
+  background-color: #FCFAFF;
+  width: 160px;
+  height: 172px;
+
+}
+
+.vnc-male:hover,
+.vnc-female:hover {
+  border: 1px solid #8B70E9;
+}
+
+
+.vnc-male p,
+.vnc-female p {
+  padding: 1rem 0;
+}
+
+.vnc_proceed {
+  text-align: center;
+  margin: 3rem auto;
+  background-color: #8B70E9;
   color: white;
-}
-.gender {
-  margin: 5%;
-}
+  padding: .5rem 2rem;
+  border-radius: 8px;
+  width: fit-content;
 
-@media (max-width: 400px) {
-  .frame-eye-main {
-    box-sizing: border-box;
-
-    /* position: absolute; */
-    width: 327px;
-    height: 520px;
-    /* left: 24px;
-    top: 270px; */
-  }
-  .welcome-eye {
-    display: none;
-  }
 }
