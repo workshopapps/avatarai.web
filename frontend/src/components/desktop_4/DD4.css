@@ -58,11 +58,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3em 2em;
+    padding: 2em 2em;
 }
 
+.vic_image_preview_div {
+    width: clamp(300px, 3vw, 500px);
+    display: grid;
+    place-items: center;
+    margin: 2em;
+}
+
+
 .vic_her {
-    padding: 0em 2em 3em;
+    
 }
 
 .vic_left, .vic_right {
