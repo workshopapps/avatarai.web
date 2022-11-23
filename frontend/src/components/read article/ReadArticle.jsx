@@ -3,7 +3,8 @@ import styles from "./ReadArticle.module.css";
 import ArticleHeader from "./ArticleHeader";
 import ArticleBody from "./ArticleBody";
 import RelatedArticle from "./RelatedArticle";
-import Footer from "../Footerpage/Footer";
+// import Footer from "../Footerpage/Footer";
+import Foooter from '../footer/Foooter'
 import Navbar from "../landingPage/Navbar/Navbar";
 import ReadArticleNewsletter from "./ReadArticleNewsletter";
 const ReadArticle = () => {
@@ -14,7 +15,8 @@ const ReadArticle = () => {
       <ArticleBody />
       <RelatedArticle />
       <ReadArticleNewsletter />
-      <Footer />
+      {/* <Footer /> */}
+      <Foooter />
     </main>
   );
 };
