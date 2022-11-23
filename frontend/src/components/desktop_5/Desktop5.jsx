@@ -1,11 +1,10 @@
-import Frame_1 from "../desktop_4/Frame_1";
-import Frame_3 from "./Frame_3";
+import Content from "./Content";
+import Background from "../DASHBOARD_COMPONENT/dashboardcomp";
 
 const Desktop5 = () => {
   return (
     <div>
-      <Frame_1 />
-      <Frame_3 />
+      <Background content={<Content />} />
     </div>
   );
 };
