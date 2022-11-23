@@ -20,7 +20,7 @@ function LandingPageC() {
         <Main />
         <CTA />
         <Benefits />
-        <Social />
+        {/*<Social />*/}
       <About />
         <QuestionSection />
         <FaqNewsletter />
