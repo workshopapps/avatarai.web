@@ -4,6 +4,7 @@ import logo from "../../../assets/images/tapart.png";
 import menu from "../../../assets/images/menu.png";
 import Button from "../Button/Button";
 import MobileNav from "./MobileNav";
+import './nav.css'
 
 const Navbar = () => {
   const [navToggle, setNavToggle] = useState(false);
@@ -16,20 +17,25 @@ const Navbar = () => {
   };
   return (
     <Fragment>
-      <nav className="flex justify-between items-center lg:px-20 md:px-8 py-5">
+      <nav className="flex justify-between items-center lg:px-20 md:px-8 py-5 cbk-ds-nav">
         <div>
           <Link to="/">
             <img src={logo} alt="" className="w-10 hidden lg:block" />
           </Link>
-          <img
-            src={menu}
-            alt=""
-            className="lg:hidden mx-10"
-            onClick={navHandler}
-          />
+          <div className="flex justify-between cbk-mobile-board lg:hidden pr-3">
+            <img
+              src={menu}
+              alt=""
+              className=" mx-5 my-1"
+              onClick={navHandler}
+            />
+            <Button className="text-white border-purple-500 bg-purple-500 cbk-login-btn">
+            <Link to="/Signupfirst"> Create Sandbox </Link>
+          </Button>
+          </div>
         </div>
 
-        <ul className="lg:flex justify-between items-center gap-2  lg:gap-5 hidden cursor-pointer ">
+        <ul className="lg:flex justify-between items-center gap-2  lg:gap-5 hidden cursor-pointer w-1/2 cbk-links">
           <li className="p-2  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
             <Link to="/"> Home</Link>
           </li>
@@ -47,16 +53,15 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="space-x-6 hidden lg:block">
-          <Button className=" border-purple-500 text-purple-500 bg-white ">
+          <Button className=" border-purple-500 text-purple-500 bg-white  cbk-login-btn ">
             <Link to="/login"> Log in</Link>
           </Button>
 
-          <Button className="text-white border-purple-500 bg-purple-500 ">
-            <Link to="/Signupfirst"> Sign up </Link>
+          <Button className="text-white border-purple-500 bg-purple-500 cbk-login-btn ">
+            <Link to="/Signupfirst"> Create Sandbox </Link>
           </Button>
         </div>
       </nav>
-
       {navToggle && <MobileNav navClose={navClose} />}
     </Fragment>
   );
