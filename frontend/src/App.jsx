@@ -7,8 +7,6 @@ import Chat from "./components/chat/ChatPage";
 
 import LandingPage from "./components/landing-page/LandingPageC";
 
-
-
 import CheckEmail from "./components/LoginPage/CheckEmail";
 import CourseDetail from "./components/courses/CourseDetail";
 import Courses from "./components/courses/CoursePage";
@@ -38,12 +36,6 @@ import React from "react";
 import ReadArticle from "./components/read article/ReadArticle";
 import ResetPassword from "./components/LoginPage/ResetPassword";
 
-
-
-
-
-
-
 import Review from "./components/Review/Review";
 import SetPassword from "./components/LoginPage/PasswordReset";
 import Terms from "./components/TermsPage/Terms";
@@ -57,8 +49,6 @@ import Ttilp from "./components/TTILP/Ttilp";
 // import React from "react";
 
 // import CareerPage from './components/careers-page/careerPage';
-
-
 
 export default function App() {
   return (
