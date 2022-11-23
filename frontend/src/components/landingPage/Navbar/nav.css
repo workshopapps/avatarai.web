@@ -28,11 +28,19 @@
 @media screen and (max-width: 1198px) {
     .cbk-login-btn{
         padding: 10px !important;
-        margin-right: -5px !important;
+        /* margin-right: -5px !important; */
+        margin-right: 2rem;
     }
     .cbk-links{
         width: 60% !important;
     }
+}
+@media screen and (max-width: 600px) {
+    .cbk-login-btn{
+       
+        margin-right: 1rem;
+    }
+   
 }
 @keyframes nav{
     0%{
