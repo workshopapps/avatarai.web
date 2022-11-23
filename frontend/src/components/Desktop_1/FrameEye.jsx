@@ -8,6 +8,7 @@ import male_icon from "./male.svg";
 import one_icon from "./oneicon.png";
 import { useState } from "react";
 
+
 const FrameEye = () => {
   const [toggle, setToggle] = useState(false);
   const click = (index) => {
@@ -16,9 +17,11 @@ const FrameEye = () => {
   };
 
   return (
+
     <div className="vnc-main">
       <div className="vnc-icon">
         <img src={one_icon} alt="" />
+
       </div>
       <div className="vnc-text">
         <h2 className="text-nunito">Choose your Gender</h2>
