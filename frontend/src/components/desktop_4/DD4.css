@@ -30,12 +30,15 @@
 
 
 
-.vic_1, .vic_2 {
+.vic_1, .vic_2, .vic_left, .vic_right {
     cursor: pointer;
 }
 
-.vic_1:hover, .vic_2:hover {
+.vic_1:hover, .vic_2:hover .vic_left:hover, .vic_right:hover {
+    filter: blur(0.5px);
+    width: 50px;
     
+  
 }
 
 .vic_3 {
@@ -58,12 +61,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3em 2em;
+    padding: 2em 2em;
 }
 
-.vic_her {
-    padding: 0em 2em 3em;
+.vic_image_preview_div {
+    width: clamp(300px, 3vw, 500px);
+    display: grid;
+    place-items: center;
+    margin: 2em;
+    border-radius: 10.7848px;
 }
+
 
 .vic_left, .vic_right {
     width: 7%;

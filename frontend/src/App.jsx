@@ -4,17 +4,23 @@ import Aboutus from "./components/aboutus/AboutUs";
 import ApiPage from "./components/api-page/ApiPage";
 import Avatar from "./components/createAvatar/Welcome";
 import Chat from "./components/chat/ChatPage";
+
+import LandingPage from "./components/landing-page/LandingPageC";
+
+
+
 import CheckEmail from "./components/LoginPage/CheckEmail";
 import CourseDetail from "./components/courses/CourseDetail";
 import Courses from "./components/courses/CoursePage";
-import Desktop4 from "./components/desktop_4/Desktop4";
+import Desktop4 from "./components/desktop_4/DD4";
+
 import Desktop5 from "./components/desktop_5/Desktop5";
 import Desktop6 from "./components/desktop_6/Desktop6";
 import DesktopEye from "./components/Desktop_1/DesktopEye";
 import FAQ from "./components/faq/index";
 import ForgetPassword from "./components/LoginPage/ForgotPassword";
 import Four404 from "./components/404page/404";
-import LandingPage from "./components/landing-page/LandingPageC";
+
 import LoadingImages from "./components/createAvatar/LoadingImages";
 import Login from "./components/LoginPage/Login";
 import Opt_fi from "./components/sign-up/sign-up_fi";
@@ -30,6 +36,13 @@ import Profile from "./components/profile_page/profile_page.component";
 import React from "react";
 import ReadArticle from "./components/read article/ReadArticle";
 import ResetPassword from "./components/LoginPage/ResetPassword";
+
+
+
+
+
+
+
 import Review from "./components/Review/Review";
 import SetPassword from "./components/LoginPage/PasswordReset";
 import Terms from "./components/TermsPage/Terms";
