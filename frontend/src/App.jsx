@@ -35,7 +35,7 @@ import ResetPassword from "./components/LoginPage/ResetPassword";
 import Chat from "./components/chat/ChatPage";
 import LandingPage from "./components/landing-page/LandingPageC";
 
-import Desktop4 from "./components/desktop_4/Desktop4";
+import Desktop4 from "./components/desktop_4/DD4";
 import Desktop5 from "./components/desktop_5/Desktop5";
 import Desktop6 from "./components/desktop_6/Desktop6";
 import Preview from "./components/generatedAvatars/Preview";
