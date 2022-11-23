@@ -62,7 +62,7 @@
 }
 
 .vic_her {
-    padding: 0em 2em 0em;
+    padding: 0em 2em 3em;
 }
 
 .vic_left, .vic_right {
@@ -70,10 +70,6 @@
     max-width: 35px;
 }
 
-#vic_dash_button {
-    width: 200px;
-    background-color: #8B70E9;
-}
 
 @media (min-width: 768px) {
 

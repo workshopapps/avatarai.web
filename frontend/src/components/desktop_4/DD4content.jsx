@@ -30,7 +30,7 @@ function DD4content() {
             </div>
             <img src={right} className='vic_right'/>
         </div>
-        <Button id='vic_dash_button'
+        <Button className='bg-purple-500 w-100 w-lg-120 text-white'
         children='Generate Avatar'
         />
       
