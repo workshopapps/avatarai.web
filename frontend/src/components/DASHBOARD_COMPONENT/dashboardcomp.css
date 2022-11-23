@@ -32,12 +32,10 @@
 }
 
 .vic_dash_input_div:hover{
-    outline: 2px solid rgba(197, 197, 197, 0.1);
+    outline: 2px solid rgba(187, 21, 151, 0.181);
 }
 
-.vic_dash_input_div:focus{
-    outline: 2px solid rgba(197, 197, 197, 0.1);
-}
+
 
 .vic_dash_input:focus {
     outline: none;
@@ -48,8 +46,8 @@
     max-width: 580px;
     background-color: #FAFAFA;
     text-indent: 1em;
+    border: none;
 }
-
 
 .vic_mic {
     justify-self: flex-end;

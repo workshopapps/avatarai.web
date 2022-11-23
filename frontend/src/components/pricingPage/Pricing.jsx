@@ -15,7 +15,7 @@ function Pricing() {
       <Navbar />
       <Pricetop />
       <TotalPriceCards />
-      <Sponsors />
+      {/*<Sponsors />*/}
       <Faq />
       {/* <Footer /> */}
       <Foooter />

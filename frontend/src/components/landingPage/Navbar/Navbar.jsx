@@ -17,12 +17,12 @@ const Navbar = () => {
   };
   return (
     <Fragment>
-      <nav className="flex justify-between items-center lg:px-20 md:px-8 py-5 cbk-ds-nav">
+      <nav className="flex justify-between items-center max-w-[100%]  lg:px-16   py-5 cbk-ds-nav">
         <div>
           <Link to="/">
             <img src={logo} alt="" className="w-10 hidden lg:block" />
           </Link>
-          <div className="flex justify-between cbk-mobile-board lg:hidden pr-3">
+          <div className="flex justify-between cbk-mobile-board  lg:hidden pr-3">
             <img
               src={menu}
               alt=""
