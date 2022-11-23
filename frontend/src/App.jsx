@@ -13,8 +13,8 @@ import CheckEmail from "./components/LoginPage/CheckEmail";
 import CourseDetail from "./components/courses/CourseDetail";
 import Courses from "./components/courses/CoursePage";
 import Desktop4 from "./components/desktop_4/DD4";
-
-import Desktop5 from "./components/desktop_5/Desktop5";
+import Desktop5 from "./components/desktop_2/DD2";
+import Desktop2 from "./components/desktop_5/Desktop5";
 import Desktop6 from "./components/desktop_6/Desktop6";
 import DesktopEye from "./components/Desktop_1/DesktopEye";
 import FAQ from "./components/faq/index";
@@ -148,10 +148,12 @@ export default function App() {
         {/* <Route path="/CareerPage" element={<CareerPage />} />*/}
 
         {/* desktop_1 */}
-        <Route path="/Dashboard" element={<DesktopEye />} />
+        <Route path="/Dashboard_1" element={<DesktopEye />} />
+
+        <Route path="/Dashboard_2" element={<Desktop2 />} />
 
         {/* desktop_4 */}
-        <Route path="/Dashboard_4" element={<Desktop4 />} />
+        <Route path="/Dashboard" element={<Desktop4 />} />
 
         {/* desktop_5 */}
         <Route path="/Dashboard_5" element={<Desktop5 />} />
