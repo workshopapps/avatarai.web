@@ -4,6 +4,9 @@
     justify-content: center;
     align-items: center;
 }
+body{
+    overflow-x: hidden;
+}
 
 .a2-ony{
     width: 60%;
@@ -11,7 +14,8 @@
 }
 
 .a1-ony{
-    width: 55%;
+    width: 100%;
+    padding-right: 48px;
 }
 
 .image__description-ony{
@@ -19,12 +23,11 @@
     font-size: 16px;
     line-height: 30px;
 }
-.image__description2-ony{
-    width: 471px;
+.image__description2-ony {
+    width: 452px;
     font-size: 16px;
     line-height: 30px;
 }
-
 .main__title-ony{
     font-size: 64px;
     text-align: center;
@@ -82,7 +85,7 @@
     position: relative;
 }
 .main__second__ai-ony{
-    display: flex;
+    display: block;
     flex-direction: column-reverse;
 
 }
