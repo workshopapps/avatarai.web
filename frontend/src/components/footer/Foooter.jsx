@@ -2,7 +2,7 @@ import React from "react";
 import Mail from "./Images/call.png";
 import Call from "./Images/mail.png";
 import Facebook from "./Images/brandfacebook.png";
-import Twitter from "./Images/path.png";
+import Twitter from "./Images/Path.png";
 import Insta from "./Images/brandi.png";
 import Copy from "./Images/copyright.png";
 
