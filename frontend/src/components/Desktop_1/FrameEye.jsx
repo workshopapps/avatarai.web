@@ -6,11 +6,12 @@ import { Link } from "react-router-dom";
 import SearchComponent from "../DashboardSearchComponent/SearchComponent";
 import Frame_1 from "../desktop_4/Frame_1";
 
+
 const FrameEye = () => {
   return (
     <div className='frame-eye-main'>
       <div className='search-eye'>
-        <SearchComponent />
+          <SearchComponent />
       </div>
       <div className='welcome-eye'>{/* <Frame_1 /> */}</div>
       <div className='gender-select-eye'>

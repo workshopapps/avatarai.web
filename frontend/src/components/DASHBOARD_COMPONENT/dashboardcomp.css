@@ -46,8 +46,8 @@
     max-width: 580px;
     background-color: #FAFAFA;
     text-indent: 1em;
+    border: none;
 }
-
 
 .vic_mic {
     justify-self: flex-end;

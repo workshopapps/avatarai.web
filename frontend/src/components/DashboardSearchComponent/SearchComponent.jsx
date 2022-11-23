@@ -39,26 +39,29 @@ export default function SearchComponent () {
         onChange={({ target }) => setSearchValue(target.value)}
         />
       <button type="submit" className={style.search}
-        style={{
-          backgroundImage: `url(${search})`,
-        }}
-        onClick={()=>recognition.stop()}
-      ></button>
+    style={{
+      backgroundImage: `url(${search})`,
+    }}
+    onClick={() => recognition.stop()}
+    />
       <button
-        className={style.microphone}
-        style={{
-          backgroundImage: `url(${microphone})`,
-        }}
-        onClick={()=>{
-          const m = document.querySelector(`.${style.microphone}`)
-          m.classList.add(style.ongoingSpeech)
-          recognition.start()
-          setTimeout(()=>{
-            m.classList.remove(style.ongoingSpeech)
-            recognition.stop()
-          }, 5000)
-        }}
-      ></button>
+    className={style.microphone}
+    style={{
+      backgroundImage: `url(${microphone})`,
+    }}
+    onClick={() => {
+
+
+      const m = document.querySelector(`.${style.microphone}`)
+
+      m.classList.add(style.ongoingSpeech)
+      recognition.start()
+      setTimeout(() => {
+        m.classList.remove(style.ongoingSpeech)
+        recognition.stop()
+      }, 5000)
+    }}
+    />
     </form>
   );
 }
