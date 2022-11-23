@@ -36,14 +36,13 @@ import Profile from "./components/profile_page/profile_page.component";
 import React from "react";
 import ReadArticle from "./components/read article/ReadArticle";
 import ResetPassword from "./components/LoginPage/ResetPassword";
-import Chat from "./components/chat/ChatPage";
-import LandingPage from "./components/landing-page/LandingPageC";
 
-import Desktop4 from "./components/desktop_4/DD4";
-import Desktop5 from "./components/desktop_5/Desktop5";
-import Desktop6 from "./components/desktop_6/Desktop6";
-import Preview from "./components/generatedAvatars/Preview";
-import LoadingImages from "./components/createAvatar/LoadingImages";
+
+
+
+
+
+
 import Review from "./components/Review/Review";
 import SetPassword from "./components/LoginPage/PasswordReset";
 import Terms from "./components/TermsPage/Terms";
