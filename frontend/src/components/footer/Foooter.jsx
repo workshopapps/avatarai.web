@@ -15,9 +15,9 @@ const Foooter = () => {
           <div>
             <div className="flex justify-between gap-5">
             <div className="text-[#201F23]">
-              <h1 className="font-bold">Noxus</h1>
+              <h1 className="font-bold">Avart</h1>
               <p className="font-medium mt-3 max-w-[508px]">
-                Noxus is your webapp for creating Artificial Intelligent
+                Avart is your webapp for creating Artificial Intelligent
                 Avatars, we also offer courses on avatar generation.
               </p>
             </div>
@@ -66,7 +66,7 @@ const Foooter = () => {
               <div className="flex gap-x-[5rem] text-[#2B292F]">
                 <p className="text-sm flex items-center gap-3">
                   <img src={Mail} alt="/" />
-                  <a href="/"> Noxus@gmail.com</a>
+                  <a href="/"> Avart@gmail.com</a>
                 </p>
                 <p className="text-sm flex items-center gap-3">
                   <img src={Call} alt="/" />
@@ -90,7 +90,7 @@ const Foooter = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <p className="font-bold text-[#fff]">Noxus</p>
+          <p className="font-bold text-[#fff]">Avart</p>
         </div>
       </div>
 
@@ -99,9 +99,9 @@ const Foooter = () => {
         <div className="w-full bg-[#FFFFFF] px-5 py-5">
           <div className="flex flex-col">
             <div className="text-[#201F23]">
-              <h1 className="font-bold">Noxus</h1>
+              <h1 className="font-bold">Avart</h1>
               <p className="font-medium mt-3">
-                Noxus is your webapp for creating Artificial Intelligent
+                Avart is your webapp for creating Artificial Intelligent
                 Avatars, we also offer courses on avatar generation.
               </p>
             </div>
@@ -147,7 +147,7 @@ const Foooter = () => {
                 <p className="font-semibold text-xl">Socials</p>
                 <p className="text-sm flex items-center gap-3">
                   <img src={Mail} alt="/" />
-                  <a href="/"> Noxus@gmail.com</a>
+                  <a href="/"> Avart@gmail.com</a>
                 </p>
                 <p className="text-sm flex items-center gap-3">
                   <img src={Call} alt="/" />
@@ -172,7 +172,7 @@ const Foooter = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <p className="font-bold text-[#fff]">Noxus</p>
+          <p className="font-bold text-[#fff]">Avart</p>
         </div>
       </div>
     </section>
