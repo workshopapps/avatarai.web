@@ -39,7 +39,7 @@ const FrameEye = () => {
       </div>
 
       <div className="vnc_proceed">
-        <Link to="/Dashboard_2">Proceed</Link>
+        <Link to="/Dashboard_4">Proceed</Link>
       </div>
     </div>
   );

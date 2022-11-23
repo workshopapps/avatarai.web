@@ -3,7 +3,7 @@ import "./DD2.css";
 import arrowRightMobile from "./arrow-right-mobile.svg";
 import arrowRightDesktop from "./arrow-right-desktop.svg";
 import { v4 as uuidv4 } from "uuid";
-import axios from "axios";
+// import axios from "axios";
 const ImageUpload = () => {
   const [size, setSize] = useState(window.innerWidth);
   const [imageUpload, setImageUpload] = useState({ file: null });
