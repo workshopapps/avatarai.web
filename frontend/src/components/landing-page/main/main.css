@@ -1,13 +1,23 @@
 .main__section-ony{
-    display: flex;
+    padding: 2rem 3rem;
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    gap: 2%;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    height: auto;
+}
+.main-ony{
+    height: auto;
 }
 body{
     overflow-x: hidden;
 }
-
+.main__section-ony div{
+    /* width: 100%;
+    height: 100%; */
+}
 .a2-ony{
     width: 60%;
    
@@ -15,18 +25,18 @@ body{
 
 .a1-ony{
     width: 100%;
-    padding-right: 48px;
+    padding-bottom: 8px;
 }
 
 .image__description-ony{
-    width: 471px;
+    width: 90%;
     font-size: 16px;
     line-height: 30px;
 }
 .image__description2-ony {
-    width: 452px;
-    font-size: 16px;
-    line-height: 30px;
+    width: 100%;
+    font-size: 12px;
+    /* line-height: 30px; */
 }
 .main__title-ony{
     font-size: 64px;
@@ -41,19 +51,112 @@ body{
 }
 
 .image__title-ony{
-
     color: #8B70E9;
     font-size: 25px;
     font-weight: 700;
 }
+.aiii-ony{
+    color: #8B70E9;
 
-@media(max-width: 380px){
+}
+@media only screen and (max-width: 1200px) {
+    .main__section-ony{
+        padding: 0 2rem;
+    }    
+    .main__title-ony{
+        font-size: 54px;
+        text-align: center;
+        padding-top: 3.5rem;
+        padding-bottom: 2.5rem;
+        font-weight: 600;
+    }
+    .image__title-ony{
+        width: 100%;
+        font-size: 20px;
+        /* line-height: 30px; */
+    }
+    .image__description2-ony {
+        width: 100%;
+        font-size: 10px;
+        line-height: 1.5;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .main__title-ony{
+        font-size: 44px;
+    }
+    
+    .image__title-ony{
+        font-size: 14px;
+        margin-bottom: 5px;
+        /* width: 75%; */
+    }
+    .image__title-ony{
+        width: 100%;
+        font-size: 18px;
+        line-height: 1;
+    }
+
+}
+@media only screen and (max-width: 769px) {
+    .main__title-ony{
+        font-size: 38px;
+        /* width: 80%; */
+    }
+    .image__description2-ony {
+        font-size: 10px;
+        /* width: 90%; */
+    }
+    .main__section-ony{
+        /* text-align: center; */
+        padding: 2rem 3rem;
+        display: grid;
+        grid-template-columns: 47% 47%;
+        gap: 6%;
+        flex-direction: row;
+        justify-content: space-between;
+        place-items: center;
+    }
+}
+@media only screen and (max-width: 560px) {
+    .main__section-ony{
+        padding:  2rem;
+    }    
+
+    .main__title-ony{
+        font-size: 30px;
+        /* width: 95%; */
+        padding-bottom: 0;
+    }
+    .image__title-ony{
+        width: 100%;
+        font-size: 18px;
+        line-height: 1;
+        padding-left: 0.5rem;
+    }
+    .main__section-ony{
+        padding: 2rem 1rem;
+        display: grid;
+        grid-template-columns: 100%;
+        gap: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .image__description2-ony{
+        font-size: 12px;
+        padding-left: 0.5rem;
+    }
+}
+
+@media(max-width: 400px){
+    
     .main__title-ony{
         font-size: 24px;
         text-align: center;
         padding-top: 2rem;
-        padding-bottom: 2rem;
-        width: 236px;
+        padding-bottom:0;
+        /* width: 236px; */
         margin: 0 auto;
     }
     .main__section-ony{
@@ -61,6 +164,19 @@ body{
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .main__section-ony div{
+        margin-bottom: 1rem;
+    }
+    .image__description2-ony{
+        /* bottom: 0;
+        top: 250%; */
+        /* margin-top: 6rem; */
+            width: 300px;
+        font-size: 10px;
+        /* line-height: 25px; */
+        padding: .2rem 0;
+        /* position: absolute;      */
     }
 
 .image__description-ony{
@@ -90,7 +206,7 @@ body{
 
 }
 
-.image__description2-ony{
+/* .image__description2-ony{
     bottom: 0;
     top: 250%;
     margin-top: 6rem;
@@ -108,6 +224,6 @@ body{
     color: #8B70E9;
     font-size: 25px;
     font-weight: 700;
-}
+} */
 
 }
