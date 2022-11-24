@@ -6,7 +6,6 @@ import {useState} from "react";
 import { Link, useNavigate } from 'react-router-dom';
 
 let state;
-let mee;
 export default function SignUp_first (){
 
     state = {
@@ -122,11 +121,11 @@ export default function SignUp_first (){
 
             <form id='myform_opt' onSubmit={handleSubmit} method='post'>
                     <div style={{display: show? 'block' : 'none'}}>
-                        <label>First name</label><br/>
+                        <label htmlFor="myinput_op">First name</label><br/>
                         <input id='myinput_op' placeholder='John' type='text' required/><br/>
-                        <label>Last name</label><br/>
+                        <label htmlFor="myinput_o">Last name</label><br/>
                         <input id='myinput_o' placeholder='Doe' type='text' required/><br/>
-                        <label>Email</label><br/>
+                        <label htmlFor="myinput_opt">Email</label><br/>
                         <input id='myinput_opt' placeholder='name@example.com' type='email' required/><br/>
                         <label className="container_opt" id="cap"><span className='note_opt'>I agree to the terms & service and privacy policy</span>
                             <input type="checkbox" id='check_opt'onClick={()=> setShow_s(!show_s)} required/>
@@ -144,12 +143,12 @@ export default function SignUp_first (){
                                 {error.password && <div className='info__opt' > <img className='info_opt' src={info_opt} alt='info.png'/>{error.password}</div> }
                             </div>
                             <label>Confirm Password</label><br/>
-                            <input id='myinput_opt' name='confirmPassword' value={input.confirmPassword} onChange={onInputChange} onBlur={validateInput} placeholder='Choose your password' type='password' required /><br/>
+                            <input id='myinput_opt' role="Opt_pass" name='confirmPassword' value={input.confirmPassword} onChange={onInputChange} onBlur={validateInput} placeholder='Choose your password' type='password' required /><br/>
                             <div className='tt'>
                                 {error.confirmPassword && <div className='info__opt' > <img className='info_opt' src={info_opt} alt='info.png'/> {error.confirmPassword}</div> }
                             </div>
 
-                            <button  className='mybutton_opt' id='mybutton_opt' type ='submit'>Continue</button>
+                            <button role="Opt_submit"  className='mybutton_opt' id='mybutton_opt' type ='submit'>Continue</button>
                         </div>
 
                     }
