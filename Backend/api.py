@@ -22,6 +22,7 @@ app.add_middleware(
 # =================================================================
 
 
+
 @app.get('/')
 async def start():
     return {"Message":"Welcome to Noxus Avatar AI"}
