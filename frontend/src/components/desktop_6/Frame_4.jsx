@@ -1,6 +1,6 @@
 import "./Frame_4.css";
 import Group_6 from "./Group_6.png";
-import Frame_0 from "../../../public/Frame_0.png";
+import Frame_0 from "../../../public/images/Frame_0.png";
 import Img from "./image.jsx"
 
 import {Link} from "react-router-dom";

@@ -109,7 +109,7 @@ export default function App() {
         <Route path="/details/:detailId" element={<CourseDetail />} />
 
         {/* 404 Page */}
-        <Route path="*" element={<Four404 />} />
+        <Route path="/Four404" element={<Four404 />} />
 
         {/* Course Page */}
         <Route path="/Courses" element={<Courses />} />

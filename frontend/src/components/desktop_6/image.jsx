@@ -1,4 +1,4 @@
-import Frame_0 from "../../../public/Frame_0.png";
+import Frame_0 from "../../../public/images/Frame_0.png";
 
 
 export default function Img (props){
