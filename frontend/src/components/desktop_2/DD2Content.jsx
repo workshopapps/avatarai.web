@@ -4,6 +4,11 @@ import arrowRightMobile from "./arrow-right-mobile.svg";
 import arrowRightDesktop from "./arrow-right-desktop.svg";
 import { v4 as uuidv4 } from "uuid";
 // import axios from "axios";
+
+
+
+
+
 const ImageUpload = () => {
   const [size, setSize] = useState(window.innerWidth);
   const [imageUpload, setImageUpload] = useState({ file: null });
@@ -13,7 +18,10 @@ const ImageUpload = () => {
   const handleFile = (e) => {
     let file = e.target.files;
     setImageUpload({ file: file });
+    const selectedFilesArray = Array.from(file)
+    console.log(selectedFilesArray)
   };
+ 
 
   const handleUpload = (e) => {
     let file = imageUpload;
@@ -44,7 +52,9 @@ const ImageUpload = () => {
   }, []);
 
   return (
-    <div className="aso-dd2-content-container">
+
+
+    (<div className="aso-dd2-content-container">
       <div className="aso-dd2-top">
         <div className="previous-page">
           {size < 760 ? (
@@ -78,8 +88,9 @@ const ImageUpload = () => {
           Upload
         </button>
       </form>
-    </div>
+    </div>) 
   );
 };
+
 
 export default ImageUpload;
