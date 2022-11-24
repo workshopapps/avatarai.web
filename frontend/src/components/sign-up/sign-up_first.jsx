@@ -4,15 +4,15 @@ import info_opt from './images/sign_up/info_outline.png';
 import './signup.css';
 import {useState} from "react";
 import { Link, useNavigate } from 'react-router-dom';
-let handleclick;
-let state;
 
+let state;
+let mee;
 export default function SignUp_first (){
 
     state = {
         disabled:true
     }
-    handleclick = (e) => {
+    const handleclick = (e) => {
         if(e.target.checked && document.getElementById('myinput_opt').target.value !==""){
             this.setState({
                disabled: false
@@ -25,19 +25,24 @@ export default function SignUp_first (){
         }
 
     }
+
     const navigate = useNavigate();
 
     const handleSubmit = event => {
         event.preventDefault();
+         if(error.confirmPassword === ""){
+             navigate('/Opt_sec');
+        }
 
-        navigate('/Opt_sec');
     };
     const [show_s, setShow_s] = useState(true);
     const [show_s_, setShow_s_] = useState(true);
+
     const [show, setShow] = useState(true);
 
-
-
+    const click = event =>{
+        setShow(current => !current);
+    }
     const [input, setInput] = useState({
         password: '',
         confirmPassword: ''
@@ -56,7 +61,6 @@ export default function SignUp_first (){
         }));
         validateInput(e);
     }
-
     const validateInput = e => {
         let { name, value } = e.target;
         setError(prev => {
@@ -77,9 +81,9 @@ export default function SignUp_first (){
                 case "confirmPassword":
                     if (!value) {
                         stateObj[name] = "Please enter Confirm Password.";
-                    } else if (input.password && value !== input.password) {
+                    }
+                    else if (input.password && value !== input.password) {
                         stateObj[name] = "Password and Confirm Password does not match.";
-
                     }
                     break;
 
@@ -117,22 +121,20 @@ export default function SignUp_first (){
             <div className='provide_opt'>Please provide your name and e-mail</div>
 
             <form id='myform_opt' onSubmit={handleSubmit} method='post'>
-                {  show &&
-                    <div>
+                    <div style={{display: show? 'block' : 'none'}}>
                         <label>First name</label><br/>
-                        <input id='myinput_opt' placeholder='John' type='text' required/><br/>
+                        <input id='myinput_op' placeholder='John' type='text' required/><br/>
                         <label>Last name</label><br/>
-                        <input id='myinput_opt' placeholder='Doe' type='text' required/><br/>
+                        <input id='myinput_o' placeholder='Doe' type='text' required/><br/>
                         <label>Email</label><br/>
                         <input id='myinput_opt' placeholder='name@example.com' type='email' required/><br/>
                         <label className="container_opt" id="cap"><span className='note_opt'>I agree to the terms & service and privacy policy</span>
                             <input type="checkbox" id='check_opt'onClick={()=> setShow_s(!show_s)} required/>
                             <span className="checkmark"/>
                         </label>
-                        <button onClick={()=> setShow(!show)} disabled={show_s} className='mybutton_opt' id='mybutton_opt'>Continue</button>
-                        
+                        <button onClick={click} disabled={show_s} className='mybutton_opt' >Continue</button>
+
                     </div>
-                }
 
                     { !show &&
                         <div>
