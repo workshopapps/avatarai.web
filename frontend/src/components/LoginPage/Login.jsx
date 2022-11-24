@@ -15,18 +15,20 @@ const Login = ({props}) => {
         <h6 className="pb-5">Log in to have access to your account</h6>
         <form className="flex flex-col gap-y-5 ">
           <div className="flex flex-col w-full">
-            <label htmlFor="">Email</label>
+            <label htmlFor="email">Email</label>
             <input
               type="text"
+              id="email"
               placeholder="Email address"
               className="border p-3 w-full my-1 rounded-lg outline-none"
               required
             />
           </div>
           <div>
-            <label htmlFor="">Password</label>
+            <label htmlFor="password">Password</label>
             <input
               type="text"
+              id="password"
               placeholder="Password"
               className="border p-3 w-full my-1 rounded-lg outline-none"
               required
@@ -34,7 +36,7 @@ const Login = ({props}) => {
           </div>
           <div className="flex justify-between outline-none">
             <span className="space-x-3">
-            <input type="checkbox" name="" id="" />
+            <input type="checkbox" name="remember" id="remember" />
             <span>Remenber</span>
             </span>
        <p className="text-purple-500"><Link to="/ForgetPassword">Forgot Password</Link></p>
