@@ -139,7 +139,7 @@ export default function SignUp_first (){
                     { !show &&
                         <div>
                             <label>Password</label><br/>
-                            <input id='myinput_opt' name='password' placeholder='Choose Password' value={input.password} onChange={onInputChange} onBlur={validateInput} type='password' required /><br/>
+                            <input id='myinput_opt' name='password' placeholder='Choose Password' minLength="8" value={input.password} onChange={onInputChange} onBlur={validateInput} type='password' required /><br/>
                             <div className='tt'>
                                 {error.password && <div className='info__opt' > <img className='info_opt' src={info_opt} alt='info.png'/>{error.password}</div> }
                             </div>
