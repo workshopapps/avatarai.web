@@ -19,15 +19,16 @@ export const TEAM = [
 
 export const WHY_US = [
     {
-        title: "Fun background",
-        content: "Noxus has hundreds of backgrounds, so you can generate fun images"
+        title: "",
+        content: "create up to 10 avatars for free",
     },
     {
-        title: "Affordable Prices",
-        content: "After exhausting your free trial, you can unlock your access to many more images and backgrounds!",
+        title: "",
+        content: "Get standard and high definition avatars to use as profile pictures on social media"
     },
+    
     {
-        title: "HD Images",
+        title: "",
         content: "Your AI-generated images would be high resolution and can also be shared with friends."
     }
 ]
