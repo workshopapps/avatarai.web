@@ -38,7 +38,7 @@ jobs:
         run: |
           echo "${{ secrets.SSH_KEY }}" > id_rsa
           sudo chmod 600 id_rsa
-          ssh -i id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@44.201.246.61 '
+          ssh -i id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} '
           sudo su
           cd /home/noxus
           sudo docker compose pull
