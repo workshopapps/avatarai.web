@@ -82,3 +82,16 @@
 
     }
 }
+
+@media screen and (max-width: 850px) {
+    .vnc_cap {
+        flex-wrap: wrap;
+    }
+
+    .vnc_pop,
+    .vnc_popular {
+        display: hidden;
+        position: relative;
+        z-index: 0;
+    }
+}

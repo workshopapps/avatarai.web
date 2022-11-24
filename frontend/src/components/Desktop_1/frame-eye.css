@@ -7,6 +7,10 @@
 
 }
 
+.vnc-icon-image {
+  min-width: 2rem
+}
+
 .vnc-icon {
   margin: 0 auto;
   padding-top: 2rem;
@@ -17,7 +21,6 @@
 
   display: flex;
   gap: 4rem;
-
 }
 
 .vnc-text {
@@ -27,33 +30,34 @@
 
 .vnc-text h2 {
   font-weight: 600;
-  font-size: clamp(.7rem, 3vw, 1.4rem);
+  font-size: clamp(1rem, 4vw, 1.4rem);
 }
 
 .vnc-text p {
-  font-size: small;
+  font-size: clamp(12px, 3vw, 16px);
 }
 
-.vnc-male,
-.vnc-female {
+.vnc-selection {
 
-  padding: 0 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3rem 3rem;
   border-radius: 16px;
   text-align: center;
   background-color: #FCFAFF;
-  width: 160px;
-  height: 172px;
+  width: 100%;
+  max-width: calc(100%-2rem);
+  height: auto;
 
 }
 
-.vnc-male:hover,
-.vnc-female:hover {
+.vnc-selection.active {
   border: 1px solid #8B70E9;
 }
 
-
-.vnc-male p,
-.vnc-female p {
+.vnc-selection p {
   padding: 1rem 0;
 }
 
@@ -66,4 +70,14 @@
   border-radius: 8px;
   width: fit-content;
 
+}
+
+@media screen and (max-width:490px) {
+  .vnc-gender {
+    gap: 2rem;
+  }
+
+  .vnc-selection {
+    padding: 0 1.3rem 1.3rem;
+  }
 }
