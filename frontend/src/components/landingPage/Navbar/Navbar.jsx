@@ -30,7 +30,7 @@ const Navbar = () => {
               onClick={navHandler}
             />
             <Button className="text-white border-purple-500 bg-purple-500 cbk-login-btn">
-            <Link to="/Signupfirst"> Create Sandbox </Link>
+            <Link to="/Signupfirst"> Create avatars </Link>
           </Button>
           </div>
         </div>

@@ -1,13 +1,22 @@
 import "./Frame_4.css";
 import Group_6 from "./Group_6.png";
-import Frame_0 from "./Frame_0.png";
-import Frame_1 from "./Frame_1.png";
-import Frame_2 from "./Frame_2.png";
-import Frame_3 from "./Frame_3.png";
-import Arrow_0 from "./Arrow_0.png";
-import {Link} from "react-router-dom"
+import Frame_0 from "../../../public/Frame_0.png";
+import Img from "./image.jsx"
+
+import {Link} from "react-router-dom";
+import data from "./data.jsx"
 import back from "../DASHBOARD_COMPONENT/dashboardcomp.jsx";
 const Frame_4 = () => {
+    const avatar = data.map(item =>{
+        return (
+            <Img
+                // setup={item.setup} id={item.id} href={item.href}
+                // item={item}
+                {...item}
+            />
+        )
+
+    })
 
     return ( 
         <div className="opt_w">
@@ -15,30 +24,7 @@ const Frame_4 = () => {
             <div className="opt_f">Your Avatars are Ready</div>
             <div className="AV_im_bpc">
                 {/*<div className='opt_b'><img  onClick={handleClick} src={Arrow_0} /></div>*/}
-                <div className="opt_mm">
-                    <img className="img_bpc" src={Frame_0} />
-                </div>
-                <div className="opt_mm">
-                    <img className="img_bpc" src={Frame_0} />
-                </div>
-                <div className="opt_mm">
-                    <img className="img_bpc" src={Frame_0} />
-                </div>
-                <div className="opt_mm">
-                    <img className="img_bpc" src={Frame_0} />
-                </div>
-                <div className="opt_mm">
-                    <img className="img_bpc" src={Frame_0} />
-                </div>
-                <div className="opt_mm">
-                    <img className="img_bpc" src={Frame_0} />
-                </div>
-                <div className="opt_mm">
-                    <img className="img_bpc" src={Frame_0} />
-                </div>
-                <div className="opt_mm">
-                    <img className="img_bpc" src={Frame_0} />
-                </div>
+                {avatar}
             </div>
                 <div className='opt_q'>
                     <Link className='link_opt' to="#">
