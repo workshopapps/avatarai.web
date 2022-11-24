@@ -1,0 +1,78 @@
+
+.nav-menu {
+  width: 200px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  transition: 850ms;
+}
+
+.nav-menu.active {
+  left: 0;
+  transition: 350ms;
+}
+
+.icon-close, .icon-open{
+    transform: scale(2);
+}
+
+.icon-open{
+    position: absolute;
+   top: 0;
+   left: 0;
+   font-size: 30px;
+   transform: translate(50px, 50px);
+  
+}
+
+.icon-close{
+ position: absolute;
+ top: 0;
+ padding: 50px 0 0 70px;
+}
+
+.sidebar-eye-web {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  background: #ffffff;
+}
+
+.noxus-logo{
+  padding: 49px 0 69px 0;
+} 
+
+.sidebar-link{
+  text-decoration: none;
+  color: #6C6C6C;
+  font-size: 16px;
+}
+
+.sidebar-eye-web ul{
+    padding-right: 20px;
+}
+
+.sidebar-eye-web li {
+  color: #6C6C6C;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  padding-bottom: 31px;
+  margin-block: 0.2rem;
+  /* padding-block: 1.2rem; */
+  text-decoration: none;
+}
+
+@media (max-width: 1177px) {
+  .icon-open{
+    transform: translate(10px, 10px);
+  }
+}
