@@ -50,6 +50,6 @@ jobs:
           sudo su
           cd /home/noxus
           sudo docker compose pull
-          sudo docker compose up -d --build frontend:v2
+          sudo docker compose up -d --build frontend
           sudo docker compose up -d --build backend 
           sudo docker system prune -af && exit'
