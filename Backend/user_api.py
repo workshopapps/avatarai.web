@@ -3,12 +3,18 @@
 #################
 # IMPORTS
 #################
-from fastapi import APIRouter, status
+from fastapi import APIRouter, status, HTTPException, Depends
 from pydantic import BaseModel
 from schemas import User, Login
 from passlib.context import CryptContext
 from database import db
 from fastapi.responses import  Response, JSONResponse
+##############
+import os
+from datetime import datetime, timedelta
+from typing import Union, Any
+from jose import jwt
+from utility import *
 
 #######################
 #HASHING PASSWORD
@@ -74,10 +80,36 @@ async def login(login : Login):
     # }
     
     
-    user = await db["user"].find_one({ "email": login.email })
-    print(user)
+    user = await db["user"].find_one({ "email": login.email }, None)
+
+    if user is None:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Incorrect email or password"
+        )
+
     password_hash = str(user["password"])
-    #print(password_hash)
     plain_password= login.password
     value = verify_password(plain_password, password_hash)
-    print(value)
+    #print(value)
+
+
+    ####################
+    #Jwt token
+    ####################
+    if not verify_password(plain_password, password_hash):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Incorrect email or password"
+        )
+
+    response = {
+        "access_token": create_access_token(user['email']),
+    #     "refresh_token": create_refresh_token(str(user['email'])),
+    }
+
+
+   
+
+
+    

@@ -1,0 +1,79 @@
+.ai__ony{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+  
+}
+
+
+
+
+
+.second__ai-ony{
+    display: flex;
+   width: 100%;
+    gap: 1rem;
+}
+
+.ai___img-ony{
+    width: 350px;
+    height: 469px;
+   
+}
+
+
+
+
+.socialproof__title-ony{
+    font-size: 67px;
+    text-align: center;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    font-weight: 700;
+}
+.aii-ony{
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    justify-content: center;
+   
+}
+@media(max-width: 380px){
+    .socialproof__title-ony{
+        font-size: 24px;
+        text-align: center;
+       padding: 2rem 0;
+        width: 100%;
+    }
+    .ai___img-ony{
+        width: 20%;
+        height: 101px;
+       
+
+       
+    }
+    .second__ai-ony img{
+        width: 60px;
+        height: 95px;
+        
+        
+       
+    }
+   
+   
+    
+    .second__ai-ony{
+        display: flex;
+     
+        gap: .5rem;
+    }
+    .ai__ony{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 1rem;
+        
+      
+    }
+}

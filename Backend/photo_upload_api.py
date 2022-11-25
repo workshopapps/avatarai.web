@@ -7,6 +7,7 @@ from fastapi import Body, HTTPException, status
 from fastapi.responses import Response, JSONResponse
 from fastapi.encoders import jsonable_encoder
 import boto3
+import os
 from bson import json_util
 import json
 
@@ -15,8 +16,15 @@ photo_router = APIRouter()
 
 S3_BUCKET_NAME = "hngtest"
 
+client = boto3.client(
+    's3',
+    aws_access_key_id=os.environ["ACCESS_KEY"],
+    aws_secret_access_key=os.environ["SECRET_KEY"],
+)
 
-@photo_router.get("/api/get_photos", response_model= List[AvatarModel])
+
+
+@photo_router.get("/get_photos", response_model= List[AvatarModel])
 async def get_all_photos():
     all_photos = await db['avatar_pictures'].find().to_list(1000)
     #all_photos = json.loads(json_util.dumps(all_photos))
@@ -32,7 +40,7 @@ async def get_all_photos():
     return JSONResponse(status_code=status.HTTP_200_OK, content=avatar_model)
     
 
-@photo_router.post("/api/upload_photos", status_code=201,response_description="Add new Photo")
+@photo_router.post("/upload_photos", status_code=201,response_description="Add new Photo")
 async def add_photo(files: list[UploadFile] = File(...), email: str = Form(default="example@example.com"), photo_class: str = Form(default="man/woman")):
 
     # Upload file to AWS S3

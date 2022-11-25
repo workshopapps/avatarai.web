@@ -1,0 +1,130 @@
+
+
+.header__content-ony{
+   margin-top: 3rem;
+ 
+ 
+}
+
+.header__title-ony{
+    font-size: 64px;
+    line-height: 83px;
+    width: 960px;
+    text-align: center;
+    margin: 0 auto;
+    font-weight: 700;
+}
+
+.header__description-ony{
+    font-size: 16px;
+    text-align: center;
+    line-height: 26px;
+    width: 569px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #605E65;
+}
+
+.header__description2-ony{
+    text-align: center;
+    color: #212529;
+    width: 743px;
+    font-size: 20px;
+    margin: 0 auto;
+    margin-top: 6rem;
+    line-height: 27px;
+}
+
+.span__color-ony{
+    color: 
+    #8B70E9;
+}
+
+.tech__logos-ony{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    
+}
+
+.tech__logo-ony{
+    display: flex;
+}
+@media only screen and (max-width: 1200px) {
+    .header__title-ony{
+        font-size: 54px;
+        width: 75%;
+        line-height: 1.5;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .header__title-ony{
+        font-size: 44px;
+        width: 75%;
+    }
+}
+@media only screen and (max-width: 769px) {
+    .header__title-ony{
+        font-size: 38px;
+        width: 80%;
+    }
+    .header__description-ony{
+        font-size: 14px;
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 560px) {
+    .header__title-ony{
+        font-size: 30px;
+        width: 95%;
+    }
+}
+
+
+@media(max-width: 400px){
+    .header__title-ony{
+        font-size: 24px;
+        line-height: 24px;
+        width: 310px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .header__description-ony{
+        font-size: 12px;
+        text-align: center;
+        line-height: 1.5;
+        width: 310px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #605E65;
+        padding-top: 1rem;
+    }
+    .header__description2-ony{
+        text-align: center;
+        color: #212529;
+        width: 354px;
+        font-size: 16px;
+        margin: 0 auto;
+        margin-top: 4rem;
+        line-height: 27px;
+    }
+    .tech__logos-ony{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+        width: 70%;
+        margin: 0 auto;
+        
+    }
+    .tech__logo-ony{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

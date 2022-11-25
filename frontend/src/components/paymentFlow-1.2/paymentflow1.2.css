@@ -1,0 +1,71 @@
+.modal-overlay{
+    background-color: #33333370;
+}
+.cbk .modal{
+    width: 100vw;
+    max-width: 750px;
+    margin: auto;
+    margin-top: 100px;
+    color: #333333;
+}
+.cbk img{
+    width: 30px;
+    height: 30px;
+}
+.cbk input::-webkit-inner-spin-button{
+    -webkit-appearance: none; 
+}
+.cbk input{
+    border: 2px solid #ACACAC;
+    width: 50px;
+    height: 50px;
+    padding: 15px;
+    margin: 5px 10px 5px 10px;
+    border-radius: 5px;
+    -moz-appearance: textfield;
+}
+.cbk input:hover, .cbk input:focus{
+    outline: none;
+    border-color: rgb(139 92 246);   
+}
+p{
+    margin: auto;
+}
+@media screen and (max-width: 768px) {
+    .cbk .modal{
+        height: 100vh;
+        max-height: 100vh;
+        margin-top: 0px;
+        border-radius: 0px;
+    }
+    .v-center{
+        margin-top: 125px;
+    }
+    .v-center2{
+        margin-top: 100px !important;
+    }
+    .authorize{
+        width: 80vw;
+        max-width: 400px;
+    }
+    .cbk form p{
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .cbk input{
+        width: 45px;
+        height: 45px;
+        padding: 10px;
+        margin: 0px 8px 5px 8px;
+    }
+    .v-center{
+        margin-top: 125px;
+    }
+    .v-center2{
+        margin-top: 100px !important;
+    }
+    .close{
+        margin-top: 90px !important;
+    }
+}

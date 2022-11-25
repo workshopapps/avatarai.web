@@ -1,0 +1,32 @@
+.sidebar-eye-web {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 2% 5%;
+  gap: 2%;
+  /* width: 369px; */
+  width: 24.2%;
+  /* min-height: 1024px; */
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  /* border: 2px red solid; */
+  background: #ffffff;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  padding-block: 1.2rem;
+  margin-block: 0.2rem;
+  padding-block: 1.2rem;
+}
+
+@media (max-width: 400px) {
+  .sidebar-eye-web {
+    display: none;
+  }
+}

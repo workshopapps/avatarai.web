@@ -1,0 +1,150 @@
+.benefits__description-ony{
+    display: flex;
+    margin-left: 3rem;
+    padding-left: 3rem;
+    
+    
+}
+
+.benefits__title-ony{
+    font-size: 67px;
+    text-align: center;
+    padding-top: 6rem;
+    padding-bottom: 2rem;
+    font-weight: 700;
+}
+
+.aiiii-ony{
+    font-size: 25px;
+    color: #8B70E9;
+    font-weight: 700;
+}
+.first__benefit-ony{
+    width: 471px;
+    padding-bottom: 3rem;
+}
+.second__benefit-ony{
+    width: 471px;
+    padding-bottom: 3rem;
+}
+.third__benefit-ony{
+    width: 471px;
+    padding-bottom: 3rem;
+}
+.second__av-ony{
+    position: absolute;
+    top: 380%;
+    left: 53%;
+    margin-left: 8rem;
+    width: 250px;
+
+}
+.av1-ony{
+    position: absolute;
+    top: 390%;
+    left: 61%;
+    z-index: -1;
+    margin-left: 8rem;
+    width: 250px;
+}
+.benefits__images-ony{
+    margin-left: 8rem;
+    width: 250px;
+}
+.features__ony p{
+    width: 262px;
+    
+}
+
+.features__ony{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding-top: 3rem;
+}
+
+
+.features__title-ony{
+    text-align: center;
+    font-size: 67px;
+    padding-top: 10rem;
+    font-weight: 700;
+}
+
+@media(max-width: 380px){
+    .benefits__title-ony{
+        font-size: 24px;
+        text-align: center;
+        padding-top: 3rem;
+        padding-bottom: 2rem;
+    }
+    .benefits__description-ony{
+        display: flex;
+        flex-direction: column;
+        margin-left: 0rem;
+        padding-left: 0rem;
+        text-align: center;
+        font-size: 16px;
+        
+        
+    }
+    .second__av-ony{
+        position: absolute;
+        top: 453%;
+        left: 27%;
+        margin-left: 0rem;
+        width: 140px;
+    
+    }
+    .av1-ony{
+        position: absolute;
+        top: 460%;
+        left: 48%;
+        z-index: -1;
+        margin-left: 0rem;
+        width: 140px;
+    }
+    .first__benefit-ony{
+        width: 292px;
+        padding-bottom: 2rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .second__benefit-ony{
+        width: 323px;
+        padding-bottom: 2rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .third__benefit-ony{
+        width: 305px;
+        padding-bottom: 4rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+    .av2-ony{
+        position: absolute;
+        left: 5%;
+        width: 150px;
+        
+    }
+    .features__title-ony{
+        text-align: center;
+        font-size: 24px;
+        padding-top: 18rem;
+        
+    }
+    .features__ony{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        padding-top: 3rem;
+       
+    }
+    .benefits__images-ony{
+        margin-left: 0rem;
+        width: 150px;
+    }
+}

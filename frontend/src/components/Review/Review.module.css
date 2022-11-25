@@ -1,0 +1,509 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Plus+Jakarta+Sans&display=swap");
+
+.review::-webkit-scrollbar {
+  display: hidden;
+  width: 0px;
+}
+
+.review {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+}
+
+.reviewheader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 121.6px;
+}
+.reviewheader h2 {
+  font-family: "Plus Jakarta Sans";
+  width: 23.75%;
+  min-width: 420px;
+  font-weight: 700;
+  font-size: 48px;
+  overflow-x: hidden;
+  text-align: center;
+  margin-bottom: 70px;
+}
+.reviewheader p {
+  width: 100%;
+  font-family: "Nunito";
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 42px;
+}
+.starContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.star {
+  width: 32px;
+  background-size: contain;
+  height: 32px;
+  margin: 18px;
+  background-repeat: no-repeat;
+}
+.reviewForm {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  place-items: center;
+}
+.reviewForm label {
+  width: 83.47%;
+  font-family: "Nunito";
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: 32px;
+  display: flex;
+  flex-direction: column;
+}
+.textarea,
+.nameInput,
+.emailInput {
+  margin: 0;
+  padding: 0;
+  line-height: 23px;
+  border: 1px solid #656565;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 69px;
+}
+.textarea {
+  height: 255px;
+  font-size: 16px;
+  resize: none;
+}
+.textarea::placeholder,
+.nameInput::placeholder,
+.emailInput::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  height: 25px;
+  font-family: "Nunito";
+}
+.nameInput,
+.emailInput {
+  height: 64px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.submit{
+  width: 83.47%;
+  border-radius: 8px; 
+  font-size: 32px;
+  color: #fff;
+  font-family: "Nunito";
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  height: 76px;
+  border: none;
+  outline: none;
+}
+
+.enabled {
+  background-color: #8b70e9;
+}
+.disabled {
+  background-color: #a28dee;
+}
+.textareaLabel > .textarea {
+  margin-bottom: 0;
+}
+label.checkbox {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0;
+  align-items: center;
+
+  margin-bottom: 69px;
+}
+.checkbox > input {
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+}
+
+.checkbox > p {
+  color: #000;
+  font-weight: 400;
+  font-family: "Nunito";
+  font-size: 24px;
+  margin-top: 22px;
+  margin-left: 20px;
+  line-height: 32.74px;
+}
+/* review display styling */
+.reviewList {
+  display: flex;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 160px;
+  margin-bottom: 20px;
+}
+.reviewList h3{
+  margin: 0;
+  padding: 0;
+  font-family: 'Nunito';
+  font-weight: 700;
+  font-size: 32px;
+  margin-left: 33px;
+}
+.reviewsContainer {
+  width: 100%;
+  display: grid;
+  margin-top: 50px;
+  gap: 1%;
+  grid-template-columns: repeat(auto-fill, 387px);
+  place-items: center;
+  justify-content: center;
+}
+.singleReview {
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+  box-sizing: border-box;
+  padding: 5px;
+  border-radius: 8px;
+  margin: 5px;
+  width: 100%;
+  height: 288px;
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
+}
+.rating {
+  display: flex;
+}
+.rating .star {
+  width: 20px;
+  height: 20px;
+  margin-right: 18px;
+}
+.singleReviewHeader {
+  width: 70%;
+  height: 83px;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.name {
+  margin: 0;
+  padding: 0;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  grid-template-rows: 50% 50%;
+}
+.fullname {
+  font-weight: 500;
+  text-align: start;
+  width: 100%;
+  font-size: 16px;
+  color: #344054;
+  font-family: "Nunito";
+}
+.email {
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Nunito";
+  letter-spacing: 0.01em;
+  color: #667085;
+}
+
+.sRHContainer {
+  display: flex;
+  align-items: center;
+}
+.reviewerAvatar {
+  width: 48px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: 1px solid #3332;
+  border-radius: 8px;
+  margin-right: 3px;
+}
+.text {
+  width: 100%;
+  text-align: center;
+  font-family: "Nunito";
+  font-size: 24px;
+  text-align: center;
+  font-weight: 400;
+  color: #000;
+}
+.time {
+  font-family: "Nunito";
+  font-size: 16px;
+  color: #667085;
+  font-weight: 400;
+}
+
+/* Checkbox styling */
+
+.cspan {
+  position: absolute;
+  top: 25px;
+  left: 17px;
+  height: 24px;
+  width: 24px;
+  background-color: #eee;
+}
+
+.checkbox {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.cspan {
+  position: absolute;
+  top: 25px;
+  left: 17px;
+  height: 24px;
+  width: 24px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+.checkbox:hover input ~ .cspan {
+  background-color: transparent;
+  border: 1px solid #000;
+}
+
+.checkbox input:checked ~ .cspan {
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+.cspan:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox input:checked ~ .cspan:after {
+  display: block;
+}
+.checkbox .cspan:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* popup styling */
+.cover {
+  width: 100vw;
+  height: 100vh;
+  z-index: 5;
+  background-color: #eeee;
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.scroll{
+  width: 100vw;
+  height: 100vh;
+}
+.popup {
+  display: flex;
+  box-sizing: border-box;
+  padding: 24px 48px;
+  opacity: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+  width: 44.7%;
+  min-width: 375px;
+}
+.popup .image,
+.popup .imageBG {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+.imageBG {
+  background-color: #1c9d4faa;
+  display: relative;
+}
+.popup .image {
+  background-position: contain;
+  background-repeat: no-repeat;
+}
+.popup h5 {
+  font-family: "Nunito";
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+  margin-top: 16px;
+  padding: 0;
+  color: #020303;
+}
+.popup p {
+  font-family: "Nunito";
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 140%;
+  margin-top: 16px;
+  color: #afb6b6;
+}
+.popupBtn {
+  width: 100%;
+  display: flex;
+  margin-top: 32px;
+  justify-content: right;
+}
+.popupBtn button {
+  width: 86px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  background-color: #8b70e9;
+  border-radius: 8px;
+  font-family: "Nunito";
+}
+
+/* media queries */
+@media screen and (max-width: 480px) {
+  .reviewheader {
+    margin-bottom: 78px;
+  }
+  .reviewheader h2 {
+    font-size: 24px;
+    min-width: 200px;
+    margin-bottom: 24px;
+  }
+  .reviewheader p {
+    margin-bottom: 9px;
+    font-size: 16px;
+  }
+  .star {
+    width: 20px;
+    height: 20px;
+  }
+  .reviewForm label {
+    font-size: 24px;
+  }
+  .textarea {
+    border-radius: 4px;
+    height: 166px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .nameInput,
+  .emailInput {
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 16px;
+    height: 56px;
+  }
+  .textarea::placeholder,
+  .nameInput::placeholder,
+  .emailInput::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    font-family: "Nunito";
+  }
+  .center{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .submit{
+    width: 86.67%;
+    font-size: 24px;
+  }
+  .reviewsContainer{
+    width: 100%;
+    display: grid;
+    place-items: center;
+    
+    grid-template-columns: 100%;
+  }
+  .singleReview{
+    width: 86.93%;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  .rating .star{
+    width: 18px;
+    height: 17.1px;
+    margin: 0;
+    margin-right: 3px;
+  }
+  .fullname, .email, .text {
+    font-size: 16px;
+  }
+  .popup{
+    width: 90.6%;
+    box-sizing: border-box;
+    min-width: 270px;
+  }
+  .checkbox p{
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: 12px;
+  }
+  .cspan{
+    width: 18px;
+    height: 18px;
+    top: 19px;
+  }
+  .checkbox .cspan:after {
+    top: 2px;
+    left: 5px;
+  }
+}

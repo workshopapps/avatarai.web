@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700&display=swap");
+.desktop-2 {
+  display: flex;
+  flex-direction: row;
+}
+.desktop-2 .mobile-nav {
+  display: none;
+}
+.desktop-2 .sidebar-eye-web {
+  padding: 2rem;
+}
+.desktop-2 .sidebar-eye-web li {
+  width: 15rem;
+}
+.desktop-2 .sidebar-eye-web nav li {
+  margin-top: 1rem;
+}
+.create-avatar {
+  background: #f7f7f7;
+  font-family: "Nunito", sans-serif;
+  padding: 3rem;
+  width: 100%;
+}
+.create-avatar h1 {
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+.create-avatar p {
+  line-height: 150%;
+  color: #6c6c6c;
+  width: 20rem;
+  margin-top: 0.25rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+.create-avatar .upload-block {
+  height: 42rem;
+  width: auto;
+  position: relative;
+  background: #fff;
+  margin-top: 3.5rem;
+  border: 1px solid #f7f7f7;
+  box-shadow: 0px 2px 20px rgba(197, 197, 197, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.create-avatar .upload-block #arrow {
+  position: absolute;
+  left: 5rem;
+  top: 3rem;
+  border: 0.06rem solid #8648db;
+  border-radius: 50%;
+  padding: 0.2rem;
+}
+.create-avatar .upload-block .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 3rem;
+}
+.create-avatar .upload-block .right h2 {
+  margin-top: 2rem;
+  font-weight: 600;
+  font-size: 2rem;
+}
+.create-avatar .upload-block #number {
+  background: #8b70e9;
+  border-radius: 50%;
+  width: 2rem;
+  color: #fff;
+  height: 2rem;
+}
+.create-avatar .upload-block #add-pictures {
+  border: 0.15rem dashed #8b70e9;
+  color: #8b70e9;
+  padding: 2rem 5rem;
+  line-height: 130%;
+  font-weight: 600;
+  width: auto;
+  margin-top: 5rem;
+  cursor: pointer;
+}
+
+.create-avatar .upload-block button {
+  background: #8b70e9;
+  line-height: 32px;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 700;
+  padding: 0.06rem 2.5rem;
+  border: 1px solid #8b70e9;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+.create-avatar .upload-block .bottom-text {
+  margin-top: 8rem;
+}
+.create-avatar .upload-block .bottom-text span {
+  font-size: 2rem;
+  color: #8b70e9;
+}
+@media screen and (max-width: 775px) {
+  .desktop-2 {
+    display: flex;
+    flex-direction: column;
+  }
+  .desktop-2 .mobile-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: #f7f7f7;
+    padding: 1.2rem;
+    cursor: pointer;
+  }
+
+  .desktop-2 .sidebar-eye-web {
+    display: none;
+  }
+  .create-avatar {
+    padding: 3rem 1rem;
+  }
+  .create-avatar p {
+    width: auto;
+    font-size: 1.5rem;
+  }
+  .create-avatar .upload-block {
+    height: auto;
+    padding-bottom: 3rem;
+    width: auto;
+  }
+  .create-avatar .upload-block #upload-text {
+    padding: 0 0.5rem;
+  }
+  .create-avatar .upload-block #arrow {
+    position: absolute;
+    left: 2.5rem;
+    top: 3rem;
+    border: none;
+  }
+
+  .create-avatar .upload-block #add-pictures {
+    padding: 2rem auto;
+    width: auto;
+    margin: 5rem 1.5rem 0 1.5rem;
+  }
+
+  .create-avatar .upload-block button {
+    margin-top: 6rem;
+  }
+}

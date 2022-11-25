@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+*{
+  box-sizing: border-box;
+}
+.form, .searchInput{
+  width: 40.56vw;
+  min-width: 470px;
+  height: 56px;
+  max-height: 56px;
+  box-sizing: border-box;
+  position: relative;
+  margin: 5px;
+}
+@media screen and (max-width:780px) {
+  .form, .searchInput{
+    width: 60vw;
+    height: 56px;
+    font-size: 14px;
+  }
+}
+.searchInput{
+  border-radius: 9px;
+  border: 1px solid #dbdbdb;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  padding-left: 10.64%;
+  padding-right: 10.64%;
+  font-family: 'Nunito Sans';
+  color: black;
+  font-weight: 400;
+  line-height: 25px;
+  font-size: 18px;
+}
+
+.searchInput::placeholder{
+  color: #949494;
+  font-family: 'Nunito Sans';
+  line-height: 25px;
+  font-weight: 400;
+  font-size: 18px;
+}
+.searchInput:focus{
+  outline: none;
+}
+
+
+@keyframes onGoingSpeech {
+  0%{
+    scale: 0.9 0.9;
+  }
+  25%{
+    scale: 1 1;
+  }
+  50%{
+    scale: 1.1 1.1;
+  }
+  75%{
+    scale: 1 1;
+  }
+  100%{
+    scale: 0.9 0.9;
+  }
+}
+.search, .microphone{
+  width: 3.84%;
+  height: 35.71%;
+  min-width: 16px;
+  min-height: 16px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+}
+.search:active, .search:focus, .microphone:focus, .microphone:active{
+  border: none;
+  outline: none;
+}
+.search{
+  left: 4.79%;
+  top: 41.25%;
+}
+.ongoingSpeech{
+  animation-name: onGoingSpeech;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+.microphone{
+  top: 42.14%;
+  right: 4.49%;
+  transition: 1s;
+}
+@media screen and (max-width: 480px) {
+  .form, .searchInput{
+    height: 43px;
+    font-size: 12px;
+    width: 85vw;
+    min-width: 265px;
+    max-width: 85vw;
+  }
+  .searchInput::placeholder{
+    font-size: 12px;
+  }
+}
+
+
+button{
+  outline: none;
+  border: none;
+  background-color: transparent;
+}

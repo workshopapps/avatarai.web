@@ -1,0 +1,97 @@
+:root {
+    --green: rgba(59, 196, 137, 1);
+    --btn-color: rgba(139, 112, 233, 1);
+    --card-color: rgba(77, 56, 153, 1);
+    --sponsor: rgba(33, 37, 41, 0.6);
+    --bg-color: rgba(207, 214, 255, 1);
+    --text: #848484;
+    --line: rgba(123, 97, 255, 0.2);
+    --hr: rgba(143, 111, 254, 1);
+    --popular: rgba(247, 247, 247, 1);
+
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.vnc_pricing {
+    color: var(--green);
+
+}
+
+.vnc_price {
+    background-color: var(--bg-color);
+}
+
+.vnc_btn1 {
+    background-color: var(--btn-color);
+}
+
+.price-top {
+
+    background-image: url('./images/Ellipse113.png'), url('./images/Ellipse112.png');
+    background-size: 25rem, 25rem;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0% 0%, 100% 10%;
+
+}
+
+.vnc_card {
+    border: 1px solid var(--line);
+    height: 39rem;
+}
+
+.vnc_hr {
+    border: 1px solid var(--hr);
+}
+
+.vnc_popular {
+    background-color: var(--popular);
+}
+
+.vnc_text {
+    color: var(--text);
+}
+
+.vnc_border {
+    border: 1px solid var(--sponsor);
+}
+
+.vnc_border1 {
+    border: 1px solid var(--hr);
+}
+
+.vnc_view {
+    color: var(--btn-color);
+}
+
+@media screen and (max-width:752px) {
+    .vnc_cover {
+        padding: 0;
+        margin-bottom: 2rem;
+    }
+
+    .vnc_card {
+        height: auto;
+        margin: 0;
+
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .vnc_cap {
+        flex-wrap: wrap;
+    }
+
+    .vnc_pop,
+    .vnc_popular {
+        display: hidden;
+        position: relative;
+        z-index: 0;
+    }
+}

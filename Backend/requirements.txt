@@ -10,11 +10,13 @@ email-validator==1.1.2
 fastapi==0.62.0
 flake8==3.8.4
 h11==0.11.0
+httptools==0.5.0
 idna==2.10
 jmespath==1.0.1
 mccabe==0.6.1
 motor==3.1.1
 mypy-extensions==0.4.3
+passlib==1.7.4
 pathspec==0.8.1
 pycodestyle==2.6.0
 pydantic==1.10.2
@@ -23,6 +25,7 @@ pymongo==4.3.3
 python-dateutil==2.8.2
 python-dotenv==0.21.0
 python-multipart==0.0.5
+PyYAML==6.0
 regex==2020.11.13
 s3transfer==0.6.0
 six==1.16.0
@@ -32,4 +35,7 @@ toml==0.10.2
 typed-ast==1.5.4
 typing_extensions==4.4.0
 urllib3==1.26.12
-uvicorn==0.12.3
+uvicorn==0.19.0
+uvloop==0.17.0
+watchfiles==0.18.1
+websockets==10.4
