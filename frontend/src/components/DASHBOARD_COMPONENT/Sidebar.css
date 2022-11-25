@@ -15,7 +15,7 @@
   transition: 350ms;
 }
 
-.icon-close, .icon-open{
+.aso-icon-close, .icon-open{
     transform: scale(2);
 }
 
@@ -28,7 +28,11 @@
   
 }
 
-.icon-close{
+.aso-icon-close{
+  z-index: 90;
+  visibility: visible;
+  opacity: 1;
+  display: block;
  position: absolute;
  top: 0;
  padding: 50px 0 0 70px;

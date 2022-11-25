@@ -33,7 +33,7 @@ function Sidebar() {
               <img src={noxus} alt="noxus logo" className="noxus-logo" />
             </div>
             <li onClick={showSidebar}>
-              <AiOutlineCloseCircle className="icon-close" />
+              <AiOutlineCloseCircle className="aso-icon-close" />
             </li>
             <li>
               <AiOutlineIdcard className="icon" />
