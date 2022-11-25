@@ -63,7 +63,7 @@ export default function App() {
           !!!IMPORTANT INFORMATION
           !!!IMPORTANT INFORMATION
           add the path on your page to the live link so yoU can submit 
-          e.g. http://noxus.hng.tech/example
+          e.g. http://AvatarAI.hng.tech/example
           you can find the path to your page in the links below
           DO NOT EDIT ANYTHING HERE JUST COPY THE PATH TO YOUR PAGE
            */}

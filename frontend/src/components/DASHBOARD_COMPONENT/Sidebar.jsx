@@ -30,7 +30,7 @@ function Sidebar() {
         <div className="sidebar-eye-web">
           <ul>
             <div>
-              <img src={noxus} alt="noxus logo" className="noxus-logo" />
+              <img src={noxus} alt="AvatarAI logo" className="noxus-logo" />
               <li onClick={showSidebar} className="aso-icon-close">
                 <img src={close} alt="" />
               </li>
