@@ -3,8 +3,8 @@ import Navbar from "../landingPage/Navbar/Navbar";
 import "./style.css";
 import Cover from "./images/home.png";
 import Frame1 from "./images/fr.png";
-import Footer from "../Footerpage/Footer";
-import ReadArticleNewsletter from "../read article/ReadArticleNewsletter";
+import FaqNewsletter from "../faq/FaqNewsletter.jsx";
+import Footer from "../Footerpage/Footer.jsx";
 
 const GuidelinePage = () => {
   return (
@@ -32,8 +32,8 @@ const GuidelinePage = () => {
           </div>
         </div>
       </div>
+      <FaqNewsletter />
       <div className="footer">
-        <ReadArticleNewsletter />
         <Footer />
       </div>
     </div>
