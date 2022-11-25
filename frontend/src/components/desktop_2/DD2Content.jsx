@@ -13,6 +13,9 @@ import three from "../desktop_4/img/3.png";
 import left from "../desktop_4/img/arrowpleft.png";
 import right from "../desktop_4/img/arrowpright.png";
 import Her from "../desktop_4/img/her.png";
+import Background from './../DASHBOARD_COMPONENT/dashboardcomp';
+import Content from "../Desktop_3/Content";
+
 // import axios from "axios";
 
 
@@ -21,6 +24,8 @@ const ImageUpload = () => {
   const [selectedImages, setSelectedImages] = useState([]);
   const [size, setSize] = useState(window.innerWidth);
   const [imageUpload, setImageUpload] = useState({ file: null });
+  const [showAlertLink,setShowAlertLink] = useState(false)
+  const [ preview,setPreview] = useState(false)
 
   const labelText = `(PNG or JPEG)`;
 
@@ -34,6 +39,8 @@ const ImageUpload = () => {
 
     });
     setSelectedImages(imagesArray);
+    setShow(false)
+    setShowAlertLink(true)
   };
   
  
@@ -62,6 +69,21 @@ const ImageUpload = () => {
     setSize(window.innerWidth);
   };
 
+
+  useEffect(() => {
+    let timeout
+    if (showAlertLink) {
+      timeout = setTimeout(() =>{ 
+        setShowAlertLink(current => !current)
+        setPreview(true)
+      }, 5000);
+    }
+    return () => clearTimeout(timeout);
+  }, [showAlertLink]);
+
+
+
+
   useEffect(() => {
     window.addEventListener("resize", checkSize);
   }, []);
@@ -71,7 +93,7 @@ const ImageUpload = () => {
   }
   const isVisible = false;
   const [image, setImage] = useState();
-  const [preview, setPreview] = useState();
+  // const [preview, setPreview] = useState();
  
   return (
 
@@ -102,7 +124,7 @@ const ImageUpload = () => {
                 type="file"
                 name="file"
                 id="file"
-                onChange={handleFile} onClick={click}
+                onChange={handleFile}
             />
             <label htmlFor="file" className="aso-dd2-label">
               Choose pictures from file <br />
@@ -116,6 +138,12 @@ const ImageUpload = () => {
       </div>
       }
       {
+        showAlertLink &&      <div> 
+        {<Content />} 
+    </div>
+
+      }
+      {  preview &&
         <div className="vic_content">
           <div className="vic_img_div">
             <div>
@@ -133,7 +161,6 @@ const ImageUpload = () => {
 
             <img src={left} className="vic_left" />
             <div className="vic_image_preview_div">
-              {/* <img src={Her} className='vic_her' /> */}
 
                       {selectedImages &&
                       selectedImages.map((image, index) =>{
@@ -146,26 +173,11 @@ const ImageUpload = () => {
 
              : (
                   <img src={Her} className="vic_her" />
-              )}
+              )
             </div>
             <img src={right} className="vic_right" />
           </div>
           <div className="vic_div_div">
-            {/* <input
-          type="file"
-          className="vic_input_cls bg-purple-500"
-          accept="image/*"
-          onClick={!isVisible}
-          onChange={(event) => {
-            const file = event.target.files;
-            if (file && file.type.substr(0, 5) === "image") {
-              setImage(file);
-            } else {
-              setImage(null);
-            }
-          }}
-        /> */}
-            {/* <div className="vic_spacer"></div> */}
             <Link to="/Dashboard_6" className="vic_link">
               <Button
                   className="bg-purple-500 w-100 w-lg-120 text-white"
