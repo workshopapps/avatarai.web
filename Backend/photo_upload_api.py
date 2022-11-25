@@ -23,6 +23,7 @@ client = boto3.client(
 )
 
 
+
 @photo_router.get("/get_photos", response_model= List[AvatarModel])
 async def get_all_photos():
     all_photos = await db['avatar_pictures'].find().to_list(1000)

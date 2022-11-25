@@ -1,127 +1,120 @@
-.vic_dash_bg {
-    width: 100vw;
-    height: 100vh;
-    padding-top: 50px;
-    background-color: #FAFAFA;
-    color: #949494;
-    font-family: 'Nunito Sans';
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    overflow-x: hidden;
-
+.aso-dashboard-comp-main {
+  padding: 0 !important;
 }
 
+.vic_dash_bg {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 50px;
+  background-color: #fafafa;
+  color: #949494;
+  font-family: "Nunito Sans";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow-x: hidden;
+}
 
 .vic_dash_inner_div {
-     /* change this with to accommodate the navbar */
-    width: 90%;
-    height: 100vh;
-    margin: 0 auto;
-    max-width: 1000px;
+  /* change this with to accommodate the navbar */
+  width: 90%;
+  height: 100vh;
+  margin: 0 auto;
+  max-width: 1000px;
 }
 
 .vic_dash_input_div {
-    border: 1px solid #DBDBDB;
-    border-radius: 8px;
-    padding: 0.8em;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  border: 1px solid #dbdbdb;
+  border-radius: 8px;
+  padding: 0.8em;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.vic_dash_input_div:hover{
-    outline: 2px solid rgba(187, 21, 151, 0.181);
+.vic_dash_input_div:hover {
+  outline: 2px solid rgba(187, 21, 151, 0.181);
 }
-
-
 
 .vic_dash_input:focus {
-    outline: none;
+  outline: none;
 }
 
 .vic_dash_input {
-    width: 90%;
-    max-width: 580px;
-    background-color: #FAFAFA;
-    text-indent: 1em;
-    border: none;
+  width: 90%;
+  max-width: 580px;
+  background-color: #fafafa;
+  text-indent: 1em;
+  border: none;
 }
 
 .vic_mic {
-    justify-self: flex-end;
-    width: 18px;
+  justify-self: flex-end;
+  width: 18px;
 }
 
-.vic_mic:hover, .vic_search:hover {
-    /* width: 100%; */
-    filter:blur(0.5px);
-    width: 20px;
-    cursor: pointer;
+.vic_mic:hover,
+.vic_search:hover {
+  /* width: 100%; */
+  filter: blur(0.5px);
+  width: 20px;
+  cursor: pointer;
 }
 
 .vic_dash_header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-
-
 .vic_dash_input::placeholder {
-    font-size: 0.875em;
-    font-weight: 400;
+  font-size: 0.875em;
+  font-weight: 400;
 }
 
 .vic_dash_translate {
-    display: none;
-    cursor: pointer;
-    
+  display: none;
+  cursor: pointer;
 }
 
 .vic_dash_translate p {
-    margin: 0px;
-    margin-right: 1em;
-
+  margin: 0px;
+  margin-right: 1em;
 }
 
 .vic_dash_text_div {
-    margin: 2.5em 0em;
+  margin: 2.5em 0em;
 }
 
 .vic_dash_h2 {
-    color: #000000;
-    font-size: clamp(1.5em, 6vw, 2.5em);
-    font-weight: 600;
-
+  color: #000000;
+  font-size: clamp(1.5em, 6vw, 2.5em);
+  font-weight: 600;
 }
 
-
 .vic_dash_p {
-    font-size: clamp(0.875em, 2vw, 1.125em);
-    color: #949494;
+  font-size: clamp(0.875em, 2vw, 1.125em);
+  color: #949494;
 }
 
 .vic_dash_content {
-    background: white;
-    width: 100%;
-    height: 70vh;
-    max-height: 975px;
-    box-shadow: 0px 2px 20px rgba(197, 197, 197, 0.1);
+  background: white;
+  width: 100%;
+  height: 70vh;
+  max-height: 975px;
+  box-shadow: 0px 2px 20px rgba(197, 197, 197, 0.1);
 }
 
 @media (min-width: 768px) {
+  .vic_dash_input_div {
+    width: 60%;
+    max-width: 580px;
+  }
 
-    .vic_dash_input_div {
-        width: 60%;
-        max-width: 580px;
-    }
-
-    .vic_dash_translate {
-        display: flex;
-        justify-content: center;
-        
-    }
+  .vic_dash_translate {
+    display: flex;
+    justify-content: center;
+  }
 }

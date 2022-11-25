@@ -35,7 +35,7 @@ export default function SignUp_thi() {
         </div>
 
         <div className="button_div_opt">
-          <Link to="/Dashboard">
+          <Link to="/Opt_for">
             <button className="mybutton_opt" id="mybutton_opt">
               Complete Your Account Setup
             </button>

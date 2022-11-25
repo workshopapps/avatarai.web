@@ -6,10 +6,10 @@ import {
   AiOutlineUserAdd,
   AiOutlineSetting,
   AiOutlineMenu,
-  AiOutlineCloseCircle,
 } from "react-icons/ai";
 import { MdOutlineContactSupport } from "react-icons/md";
 import { CiChat2 } from "react-icons/ci";
+import close from "./img/fi_menu.svg";
 
 import noxus from "./img/noxus.png";
 import "./Sidebar.css";
@@ -31,10 +31,10 @@ function Sidebar() {
           <ul>
             <div>
               <img src={noxus} alt="noxus logo" className="noxus-logo" />
+              <li onClick={showSidebar} className="aso-icon-close">
+                <img src={close} alt="" />
+              </li>
             </div>
-            <li onClick={showSidebar}>
-              <AiOutlineCloseCircle className="aso-icon-close" />
-            </li>
             <li>
               <AiOutlineIdcard className="icon" />
               <Link to="/" className="sidebar-link">

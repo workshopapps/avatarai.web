@@ -3,6 +3,7 @@ import logo_opt from './images/sign_up/logo.png';
 import tick_opt from './images/sign_up/tick-circle.png';
 import './signup.css';
 import clap from './images/sign_up/clap.png';
+import {Link} from "react-router-dom";
 export default function SignUp_fi(){
 
     return(
@@ -18,7 +19,9 @@ export default function SignUp_fi(){
             <div className='li_opt'>Your account has been created successfully</div>
 
             <div className="button_div_opt">
-                <button className='mybutton_opt' id='mybutton_opt' >Proceed to Dashboard</button>
+                <Link to='/Dashboard'>
+                    <button className='mybutton_opt' id='mybutton_opt' >Proceed to Dashboard</button>
+                </Link>
             </div>
 
         </div>

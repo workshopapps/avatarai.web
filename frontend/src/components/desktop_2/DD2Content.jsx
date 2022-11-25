@@ -70,7 +70,7 @@ const ImageUpload = () => {
       timeout = setTimeout(() => {
         setShowAlertLink((current) => !current);
         setPreview(true);
-      }, 15000);
+      }, 5000);
     }
     return () => clearTimeout(timeout);
   }, [showAlertLink]);
@@ -94,13 +94,15 @@ const ImageUpload = () => {
           className="aso-dd2-content-container"
         >
           <div className="aso-dd2-top">
-            <div className="previous-page">
-              {size < 760 ? (
-                <img src={arrowRightMobile} alt="share icon" />
-              ) : (
-                <img src={arrowRightDesktop} alt="share icon" />
-              )}
-            </div>
+            <Link className="link" to="/Dashboard">
+              <div className="previous-page">
+                {size < 760 ? (
+                  <img src={arrowRightMobile} alt="share icon" />
+                ) : (
+                  <img src={arrowRightDesktop} alt="share icon" />
+                )}
+              </div>
+            </Link>
             <p>2</p>
           </div>
           <h1>Upload your Pictures</h1>
