@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './faqs.css'
 
 const QuestionCard = ({ question, index }) => {
   const [hidden, setHidden] = useState(() => true);
@@ -18,8 +19,8 @@ const QuestionCard = ({ question, index }) => {
         onClick={() => handleClick(index)}
         className={`flex justify-between `}
       >
-        <h2 className="md:w-full text-[20px] font-medium pr-3">{question.q}</h2>
-        <p className="text-[20px] font-bold">{hidden ? "+" : "-"}</p>
+        <h2 id="faqs" className="md:w-full text-[20px] font-medium pr-3">{question.q}</h2>
+        <p id="plus" className="text-[20px] font-bold">{hidden ? "+" : "-"}</p>
       </div>
       {/* Card Description */}
       <p

@@ -45,7 +45,8 @@
   text-align: center;
   line-height: 21px;
   padding-bottom: 62px;
-  margin: 0 !important;
+  margin: 0 auto!important;
+
 }
 
 .aso-dd2-form {
@@ -95,6 +96,7 @@
   .aso-dd2-content-container .aso-dd2-p {
     font-size: 20px;
     max-width: 356px;
+    text-align: center;
   }
 
   .aso-dd2-label {

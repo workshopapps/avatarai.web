@@ -58,7 +58,7 @@ const Navbar = () => {
           </Button>
 
           <Button className="text-white border-purple-500 bg-purple-500 cbk-login-btn ">
-            <Link to="/Signupfirst"> Create Sandbox </Link>
+            <Link to="/Signupfirst"> Sign up </Link>
           </Button>
         </div>
       </nav>

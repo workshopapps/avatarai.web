@@ -6,13 +6,10 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 let state;
-let mee;
-
 export default function SignUp_first() {
   state = {
     disabled: true,
   };
-
   const handleclick = (e) => {
     if (
       e.target.checked &&
@@ -36,15 +33,14 @@ export default function SignUp_first() {
       navigate("/Opt_sec");
     }
   };
-
   const [show_s, setShow_s] = useState(true);
   const [show_s_, setShow_s_] = useState(true);
+
   const [show, setShow] = useState(true);
 
   const click = (event) => {
     setShow((current) => !current);
   };
-
   const [input, setInput] = useState({
     password: "",
     confirmPassword: "",
@@ -63,7 +59,6 @@ export default function SignUp_first() {
     }));
     validateInput(e);
   };
-
   const validateInput = (e) => {
     let { name, value } = e.target;
     setError((prev) => {
@@ -124,15 +119,15 @@ export default function SignUp_first() {
 
         <form id="myform_opt" onSubmit={handleSubmit} method="post">
           <div style={{ display: show ? "block" : "none" }}>
-            <label>First name</label>
+            <label htmlFor="myinput_op">First name</label>
             <br />
             <input id="myinput_op" placeholder="John" type="text" required />
             <br />
-            <label>Last name</label>
+            <label htmlFor="myinput_o">Last name</label>
             <br />
             <input id="myinput_o" placeholder="Doe" type="text" required />
             <br />
-            <label>Email</label>
+            <label htmlFor="myinput_opt">Email</label>
             <br />
             <input
               id="myinput_opt"
@@ -166,6 +161,7 @@ export default function SignUp_first() {
                 id="myinput_opt"
                 name="password"
                 placeholder="Choose Password"
+                minLength="8"
                 value={input.password}
                 onChange={onInputChange}
                 onBlur={validateInput}
@@ -186,6 +182,7 @@ export default function SignUp_first() {
               <br />
               <input
                 id="myinput_opt"
+                role="Opt_pass"
                 name="confirmPassword"
                 value={input.confirmPassword}
                 onChange={onInputChange}
@@ -209,7 +206,12 @@ export default function SignUp_first() {
                 )}
               </div>
 
-              <button className="mybutton_opt" id="mybutton_opt" type="submit">
+              <button
+                role="Opt_submit"
+                className="mybutton_opt"
+                id="mybutton_opt"
+                type="submit"
+              >
                 Continue
               </button>
             </div>
