@@ -98,8 +98,6 @@ export default function App() {
 
         {/* Desktop 4  (Generate Avatar)*/}
         <Route path="/GenerateAvatar" element={<Preview />} />
-        {/* GuideLine page */}
-        <Route path="/guide" element={<GuidelinePage />} />
         <Route path="/Courses" element={<Courses />} />
         <Route path="/details/:detailId" element={<CourseDetail />} />
 
