@@ -20,6 +20,19 @@ const FrameEye = () => {
   ]);
 
   const [toggle, setToggle] = useState(false);
+  const [work, setWork] = useState(true);
+
+  const change = (e) => {
+    if (e) {
+      setWork((work) => {
+        false;
+      });
+    } else {
+      setWork((work) => {
+        true;
+      });
+    }
+  };
 
   return (
     <div className="vnc-main">
@@ -30,12 +43,15 @@ const FrameEye = () => {
         <h2 className="text-nunito">Choose your Gender</h2>
         <p className="text-nunito">Are you Male or Female</p>
       </div>
-      <form action=""  method="post">
+      <form action="" method="post">
         <div className="vnc-gender">
-          {list.map((e) => (
+          {list.map((e, index) => (
             <div
-              onClick={() => setToggle(e)}
-              key={e}
+              onClick={() => {
+                setToggle(e);
+                change(e);
+              }}
+              key={index}
               className={`vnc-selection ${e === toggle && "active"}`}
             >
               <p>{e.whatGender}</p>
@@ -43,12 +59,17 @@ const FrameEye = () => {
             </div>
           ))}
         </div>
-          <Link to="/Dashboard_2">
 
         <div className="vnc_proceed">
-                <input type="submit"  value="Proceed" />
-        </div>
+          <Link className="link" to="/Dashboard_2">
+            <input
+              className="input"
+              disabled={work}
+              type="submit"
+              value="Proceed"
+            />
           </Link>
+        </div>
       </form>
     </div>
   );
