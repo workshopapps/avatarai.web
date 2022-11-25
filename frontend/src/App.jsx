@@ -108,7 +108,6 @@ export default function App() {
         <Route path="/GenerateAvatar" element={<Preview />} />
         <Route path="/Courses" element={<Courses />} />
         <Route path="/details/:detailId" element={<CourseDetail />} />
-
         {/* 404 Page */}
         <Route path="/Four404" element={<Four404 />} />
 
