@@ -12,7 +12,6 @@ const ProgressIndicator = ({progress}) => {
             <div className="l l7"></div>
             <div className="l l8"></div>
             <div className="progress-dja">
-                <p>{progress && `${progress}%`}</p>
             </div>
         </div>
     )

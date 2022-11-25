@@ -3,7 +3,7 @@
   display: grid;
   place-content: center;
   padding: 1rem;
-  height: inherit;
+  background-color: white;
 
 }
 
@@ -60,6 +60,7 @@
 .vnc-selection p {
   padding: 1rem 0;
 }
+
 
 .vnc_proceed {
   text-align: center;

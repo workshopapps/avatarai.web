@@ -17,7 +17,7 @@ import Desktop3 from "./components/Desktop_3/Desktop3";
 import Desktop6 from "./components/desktop_6/Desktop6";
 import DesktopEye from "./components/Desktop_1/DesktopEye";
 import FAQ from "./components/faq/index";
-import ForgetPassword from "./components/LoginPage/ForgotPassword";
+import ForgotPassword from "./components/LoginPage/ForgotPassword";
 import Four404 from "./components/404page/404";
 
 import LoadingImages from "./components/createAvatar/LoadingImages";
@@ -34,10 +34,11 @@ import Pricing from "./components/pricingPage/Pricing";
 import Profile from "./components/profile_page/profile_page.component";
 import React from "react";
 import ReadArticle from "./components/read article/ReadArticle";
-import ResetPassword from "./components/LoginPage/ResetPassword";
 
 import Review from "./components/Review/Review";
 import SetPassword from "./components/LoginPage/PasswordReset";
+import ResetPassword from "./components/LoginPage/ResetPassword";
+import PasswordReset from "./components/LoginPage/PasswordReset";
 import Terms from "./components/TermsPage/Terms";
 import Ttilp from "./components/TTILP/Ttilp";
 
@@ -129,11 +130,12 @@ export default function App() {
 
         {/* login */}
 
-        <Route path="/Login" element={<Login />} />
-        <Route path="/ResetPassword" element={<ResetPassword />} />
-        <Route path="/SetPassword" element={<SetPassword />} />
-        <Route path="/ForgetPassword" element={<ForgetPassword />} />
-        <Route path="/CheckEmail" element={<CheckEmail />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/set-password" element={<SetPassword />} />
+        <Route path="password-reset" element={<PasswordReset />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/check-email" element={<CheckEmail />} />
 
         {/* chat */}
         <Route path="/Chat" element={<Chat />} />

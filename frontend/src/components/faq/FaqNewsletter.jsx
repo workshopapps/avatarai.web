@@ -1,3 +1,4 @@
+import './faqs.css'
 const FaqNewsletter = () => {
   return (
     <section className="flex flex-col md:flex-row md:items-center md:justify-around gap-[24px] bg-[#F9F9FB] py-[40px] md:py-[48px] px-[24px]">
@@ -16,19 +17,20 @@ const FaqNewsletter = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-[16px]">
-        <div className="border border-[#403E46] flex items-center md:gap-4 gap-1 justify-between p-[5px] h-[52px] w-full max-w-[512px] bg-white rounded">
-          <div className="h-full flex md:gap-[8px] gap-1 items-center font-nunito grow text-[#848484] rounded py-[8px] md:pl-[12px] pl-2">
+      <div className="flex flex-col gap-[16px]" >
+        <div  id="big-div" className="border border-[#403E46] flex items-center md:gap-4 gap-1 justify-between p-[5px] h-[52px] w-full max-w-[512px] bg-white rounded">
+          <div id='input' className="h-full flex md:gap-[8px] gap-1 items-center font-nunito grow text-[#848484] rounded py-[8px] md:pl-[12px] pl-2">
             <img src="/sms.svg" />
             <input
+
               type={`text`}
               className="grow outline-none"
               placeholder="Enter your email address"
             />
           </div>
-          <div className="cursor-pointer bg-[#8B70E9] h-full relative flex items-center font-nunito text-white rounded px-[20px] py-[8px]">
+          <button id="subscribe" className="cursor-pointer bg-[#8B70E9] h-full relative flex items-center font-nunito text-white rounded px-[20px] py-[8px]">
             <span className="text-white">Subscribe</span>
-          </div>
+          </button>
         </div>
         <p className="text-[#AFB6B6] text-sm">
           By subscribing you agree to accept newsletter and Emails from us.
