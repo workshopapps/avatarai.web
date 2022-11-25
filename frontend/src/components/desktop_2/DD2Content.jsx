@@ -159,23 +159,24 @@ const ImageUpload = () => {
 
           <div className="vic_img_and_direction">
 
-            <img src={left} className="vic_left" />
+            {/* <img src={left} className="vic_left" /> */}
             <div className="vic_image_preview_div">
 
                       {selectedImages &&
                       selectedImages.map((image, index) =>{
                         return(
-                            <div key={image}>
+                            <div key={image} className="vic_her_div">
                               <img src={image} className="vic_her" />
+                         
                             </div>
                         )
                       })}
 
-             : (
-                  <img src={Her} className="vic_her" />
-              )
+             {/* : ( */}
+                 
+              {/* ) */}
             </div>
-            <img src={right} className="vic_right" />
+            {/* <img src={right} className="vic_right" /> */}
           </div>
           <div className="vic_div_div">
             <Link to="/Dashboard_6" className="vic_link">

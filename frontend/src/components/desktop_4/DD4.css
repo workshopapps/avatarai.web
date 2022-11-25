@@ -76,6 +76,14 @@
     display: none;
 }
 
+
+.vic_her {
+    height: clamp(150px, 3vw, 500px);
+    width: auto;
+    margin: 20px;
+    margin-left: 0px;
+    border-radius: 10.7848px;
+}
 .vic_content h3 {
     color: #1C1C1C;
     font-size: clamp(1em, 3vw, 2em);
@@ -88,14 +96,16 @@
     justify-content: center;
     align-items: center;
     padding: 2em 2em;
+    width: 100%;
 }
 
 .vic_image_preview_div {
-    width: clamp(300px, 3vw, 500px);
-    display: grid;
+    width: clamp(350px, 3vw, 550px);
+    display:-webkit-inline-box;
+    overflow-x: scroll;
     place-items: center;
     margin: 2em;
-    border-radius: 10.7848px;
+    
 }
 
 
