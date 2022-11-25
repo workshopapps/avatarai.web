@@ -6,15 +6,15 @@ import Navbar from "../landingPage/Navbar/Navbar";
 
 const Login = ({ props }) => {
   return (
-    <div className="h-screen">
+    <div className="md:h-screen">
       <Navbar />
-      <div className="flex w-full h-full pl-[60px]">
-        <div className="flex flex-col gap-8 w-full justify-center px-[60px]">
-          <div className="flex flex-col gap-[10px]">
-            <h1 className="text-4xl font-semibold text-[#333333]">
+      <div className="flex flex-col-reverse gap-6 md:flex-row w-full h-full md:pl-[60px]">
+        <div className="flex flex-col gap-6 md:gap-8 w-full justify-center px-6 md:px-[60px]">
+          <div className="flex flex-col gap-1 md:gap-[10px]">
+            <h1 className="text-xl md:text-4xl font-semibold text-[#333333]">
               Welcome back
             </h1>
-            <p className="text-2xl font-medium text-[#333333]">
+            <p className="md:text-2xl font-medium text-[#333333]">
               Log in to have access to your account
             </p>
           </div>
@@ -46,39 +46,42 @@ const Login = ({ props }) => {
               </div>
             </div>
             <div className="flex justify-between items-center outline-none">
-              <div className="flex items-center gap-5">
+              <div className="flex items-center gap-2 md:gap-5">
                 <input
-                  className="h-[26px] w-[26px]"
+                  className="h-4 w-4 md:h-[26px] md:w-[26px]"
                   type="checkbox"
                   name="remember"
                   id="remember"
                 />
-                <span className="text-[#333333] text-[20px] font-medium">
+                <span className="text-[#333333] text-base md:text-[20px] font-medium">
                   Remember me
                 </span>
               </div>
-              <p className="text-[#8B70E9] text-[20px] font-medium">
+              <p className="text-[#8B70E9] text-base md:text-[20px] font-medium">
                 <Link to="/forgot-password">Forgot Password</Link>
               </p>
             </div>
             <Button className="w-full bg-[#8B70E9] text-white">Login</Button>
-            <p className="text-center text-[#333333] text-xl font-semibold">
+            <p className="text-center text-[#333333] text-base md:text-xl font-semibold">
               Dont have an account?{" "}
-              <a href="sign-up" className="text-[#8B70E9]">
+              <a
+                href="sign-up"
+                className="text-[#8B70E9] text-base md:text-xl font-semibold"
+              >
                 Sign Up
               </a>
             </p>
           </form>
         </div>
-        <div className="flex flex-col items-center justify-center gap-16 w-full">
-          <div className=" w-[305px]">
+        <div className="flex flex-col-reverse md:flex-col items-center justify-center gap-[18px] md:gap-16 w-full">
+          <div className="w-[128px] md:w-[305px]">
             <img
               src={log}
               alt=""
-              className="bg-white    rounded-full object-scale-down "
+              className="bg-white rounded-full object-scale-down "
             />
           </div>
-          <p className="text-[32px] font-semibold max-w-[547px] text-center text-[#333333]">
+          <p className="md:visible hidden text-[14px] md:text-[32px] font-semibold max-w-[228px] md:max-w-[547px] text-center text-[#333333]">
             Generate and customize AI Avatars just the way you like it!
           </p>
         </div>
