@@ -1,10 +1,10 @@
 .main__section-ony{
     padding: 2rem 3rem;
     display: grid;
-    grid-template-columns: 32% 32% 32%;
+    grid-template-columns: 30% 30% 30%;
     gap: 2%;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     height: auto;
 }
@@ -14,16 +14,11 @@
 body{
     overflow-x: hidden;
 }
-.main__section-ony div{
-    /* width: 100%;
-    height: 100%; */
-}
 .a2-ony{
-    width: 60%;
-   
+    width: 60%;  
 }
-
 .a1-ony{
+    max-width: 400px;
     width: 100%;
     padding-bottom: 8px;
 }
@@ -59,9 +54,11 @@ body{
     color: #8B70E9;
 
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1250px) {
     .main__section-ony{
         padding: 0 2rem;
+        grid-template-columns: 32% 32% 32%;
+
     }    
     .main__title-ony{
         font-size: 54px;
