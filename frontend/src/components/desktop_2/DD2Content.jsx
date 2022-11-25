@@ -87,8 +87,8 @@ const ImageUpload = () => {
   // const [preview, setPreview] = useState();
 
   return (
-    <div>
-      {
+    <div className="w-full h-full">
+      {!showAlertLink && !preview && (
         <div
           style={{ display: show ? "block" : "none" }}
           className="aso-dd2-content-container"
@@ -133,8 +133,14 @@ const ImageUpload = () => {
             </button>
           </form>
         </div>
-      }
-      {showAlertLink && <div>{<Content />}</div>}
+      )}
+      {showAlertLink && (
+        <div className="flex flex-col items-center w-full h-full justify-center">
+          <div className="grow">
+            <Content />
+          </div>
+        </div>
+      )}
       {preview && (
         <div className="vic_content">
           <div className="vic_img_div">
@@ -168,7 +174,7 @@ const ImageUpload = () => {
             {/* <img src={right} className="vic_right" /> */}
           </div>
           <div className="vic_div_div">
-            <Link to="/Dashboard_6" className="vic_link">
+            <Link to="/Dashboard_5" className="vic_link">
               <Button
                 className="bg-purple-500 w-100 w-lg-120 text-white"
                 children="Generate Avatar"
