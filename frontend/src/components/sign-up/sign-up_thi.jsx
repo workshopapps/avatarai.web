@@ -30,8 +30,7 @@ export default function SignUp_thi() {
         <img className="mail_opt" src={tick_opt} alt="tick.png" />
         <div className="ch__opt">E-mail verification successful</div>
         <div className="li_opt">
-          Your e-mail verification was successfully. You are very close to
-          completing your account setup.
+          Your e-mail verification was successfully. You are very close to completing your account setup.
         </div>
 
         <div className="button_div_opt">

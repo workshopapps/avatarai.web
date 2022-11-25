@@ -16,10 +16,10 @@ export default function Footer() {
               <div className="">
                 <h6 className="font-bold mb-4 text-[#2B292F]">
                   <img className="w-4 mr-3"></img>
-                  Noxus
+                  AvatarAI
                 </h6>
                 <p>
-                  Noxus is your webapp for creating Artificial Intelligent
+                  AvatarAI is your webapp for creating Artificial Intelligent
                   Avatars. We also offer courses on Avatar generation.
                 </p>
               </div>
@@ -89,7 +89,7 @@ export default function Footer() {
           <div className="mb-4 mr-12 lg:flex  ">
             <div className="flex mr-5">
               <img src={mail}></img>
-              <span>Noxus@gmail.com</span>
+              <span>AvatarAI@gmail.com</span>
             </div>
             <div className="flex">
               <img className="" src={call}></img>
@@ -110,7 +110,7 @@ export default function Footer() {
         </div>
 
         <div className="text-center p-6 bg-gray-200">
-          <span>© 2021 Noxus</span>
+          <span>© 2021 AvatarAI</span>
         </div>
       </footer>
     </>

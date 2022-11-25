@@ -12,7 +12,7 @@ const Section3 = () => {
 						All you need to generate and integrate. All in one place
 					</h4>
 					<p className="text-[#605E65] text-base text-center mb-[2rem]">
-						Noxus APIs make it easy to integrate and generate custom illustrations into your app or website.
+						AvatarAI APIs make it easy to integrate and generate custom illustrations into your app or website.
 					</p>
 					<img src={code} alt="" />
 					<div className="flex justify-center">
@@ -27,7 +27,7 @@ const Section3 = () => {
 				<div className="max-w-[1240px] mx-auto px-5 flex flex-col justify-center">
 					<h5 className="text-[#333333] text-[2rem] font-bold mb-[2rem] text-left">Ready to get started?</h5>
 					<p className="text-[#605E65] text-base text-left mb-[2rem]">
-						Noxus APIs make it easy to integrate and generate custom illustrations into your app or website.
+						AvatarAI APIs make it easy to integrate and generate custom illustrations into your app or website.
 					</p>
 
 					<div className="grid grid-cols-12 gap-3 md:h-[542px]">

@@ -136,7 +136,7 @@ export default function SignUp_first() {
               required
             />
             <br />
-            <label className="container_opt" id="cap">
+            <label htmlFor="check_opt" className="container_opt" id="cap">
               <span className="note_opt">
                 I agree to the terms & service and privacy policy
               </span>
