@@ -2,7 +2,7 @@ from passlib.context import CryptContext
 import os
 from datetime import datetime, timedelta
 from typing import Union, Any
-from jose import jwt
+#from jose import jwt
 
 ACCESS_TOKEN_EXPIRE_MINUTES = 30  # 30 minutes
 REFRESH_TOKEN_EXPIRE_MINUTES = 60 * 24 * 7 # 7 days

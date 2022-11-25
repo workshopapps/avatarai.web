@@ -108,9 +108,5 @@ async def login(login : Login):
    #en = create_access_token('thisofhoihiufhckjh'),
     #"refresh_token": create_refresh_token(str(user['email'])),
 
-    
-
-  
-    return token
 
     
