@@ -8,7 +8,8 @@ import Header from './header/header/Header';
 import Navbar from "../landingPage/Navbar/Navbar";
 import QuestionSection from "../faq/QuestionSection.jsx";
 import FaqNewsletter from "../faq/FaqNewsletter.jsx";
-import Footer from "../Footerpage/Footer.jsx";
+import Foooter from '../footer/Foooter';
+// import Footer from "../Footerpage/Footer.jsx";
 
 
 function LandingPageC() {
@@ -19,14 +20,12 @@ function LandingPageC() {
         <Main />
         <CTA />
         <Benefits />
-        <Social />
+        {/*<Social />*/}
       <About />
         <QuestionSection />
         <FaqNewsletter />
-        <Footer />
-     
-      
-      
+        {/* <Footer /> */}
+        <Foooter />
     </div>
   )
 }

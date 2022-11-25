@@ -2,7 +2,7 @@ import React from "react";
 import logo_opt from "./images/sign_up/logo.png";
 import tick_opt from "./images/sign_up/tick-circle.png";
 import "./signup.css";
-
+import {Link} from "react-router-dom";
 let handleclick;
 let state;
 
@@ -35,9 +35,11 @@ export default function SignUp_thi() {
         </div>
 
         <div className="button_div_opt">
-          <button className="mybutton_opt" id="mybutton_opt">
-            Complete Your Account Setup
-          </button>
+          <Link to="/Opt_for">
+            <button className="mybutton_opt" id="mybutton_opt">
+              Complete Your Account Setup
+            </button>
+          </Link>
         </div>
       </div>
     </div>

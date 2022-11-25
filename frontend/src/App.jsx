@@ -1,45 +1,54 @@
-import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
-import React from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+
+import Aboutus from "./components/aboutus/AboutUs";
+import ApiPage from "./components/api-page/ApiPage";
+import Avatar from "./components/createAvatar/Welcome";
+import Chat from "./components/chat/ChatPage";
+
+import LandingPage from "./components/landing-page/LandingPageC";
+
+import CheckEmail from "./components/LoginPage/CheckEmail";
+import CourseDetail from "./components/courses/CourseDetail";
+import Courses from "./components/courses/CoursePage";
+import Desktop4 from "./components/desktop_4/DD4";
+import Desktop2 from "./components/desktop_2/DD2";
+import Desktop5 from "./components/desktop_5/Desktop5";
+import Desktop3 from "./components/Desktop_3/Desktop3";
+import Desktop6 from "./components/desktop_6/Desktop6";
+import DesktopEye from "./components/Desktop_1/DesktopEye";
+import FAQ from "./components/faq/index";
+import ForgotPassword from "./components/LoginPage/ForgotPassword";
 import Four404 from "./components/404page/404";
 
+import LoadingImages from "./components/createAvatar/LoadingImages";
+import Login from "./components/LoginPage/Login";
+import Opt_fi from "./components/sign-up/sign-up_fi";
+import Opt_first from "../src/components/sign-up/sign-up_first";
+import Opt_for from "../src/components/sign-up/sign-up_for";
+import Opt_sec from "../src/components/sign-up/sign-up_sec";
+import Opt_thi from "../src/components/sign-up/sign-up_thi";
+import Payment from "./components/paymentflow-1/payment";
+import Paymentauth from "./components/paymentFlow-1.1/paymentFlow1.1";
+import Preview from "./components/generatedAvatars/Preview";
+import Pricing from "./components/pricingPage/Pricing";
+import Profile from "./components/profile_page/profile_page.component";
+import React from "react";
+import ReadArticle from "./components/read article/ReadArticle";
+
+import Review from "./components/Review/Review";
+import SetPassword from "./components/LoginPage/PasswordReset";
+import ResetPassword from "./components/LoginPage/ResetPassword";
+import PasswordReset from "./components/LoginPage/PasswordReset";
+import Terms from "./components/TermsPage/Terms";
+import Ttilp from "./components/TTILP/Ttilp";
+import DD2 from "./components/desktop_2/DD2";
+import Guidelines from "./components/guidelinePage/Guideline.jsx";
 // import PaymentFlow12 from './components/paymentFlow-1.2/paymentFlow1.2';
 // import './App.css';
-import Ttilp from "./components/TTILP/Ttilp";
+
 // import PaymentFlow11 from './components/paymentFlow-1.1/paymentFlow1.1';
 
 // import React from "react";
-import Opt_first from "../src/components/sign-up/sign-up_first";
-import Opt_sec from "../src/components/sign-up/sign-up_sec";
-import Opt_thi from "../src/components/sign-up/sign-up_thi";
-import Opt_for from "../src/components/sign-up/sign-up_for";
-import Opt_fi from "./components/sign-up/sign-up_fi";
-import Aboutus from "./components/aboutus/AboutUs";
-import Pricing from "./components/pricingPage/Pricing";
-import FAQ from "./components/faq/index";
-import Terms from "./components/TermsPage/Terms";
-import Paymentauth from "./components/paymentFlow-1.1/paymentFlow1.1";
-import Payment from "./components/paymentflow-1/payment";
-import Avatar from "./components/createAvatar/Welcome";
-import Courses from "./components/courses/CoursePage";
-import CourseDetail from "./components/courses/CourseDetail";
-import Profile from "./components/profile_page/profile_page.component";
-import ReadArticle from "./components/read article/ReadArticle";
-
-import DesktopEye from "./components/Desktop_1/DesktopEye";
-import ApiPage from "./components/api-page/ApiPage";
-import Login from "./components/LoginPage/Login";
-import SetPassword from "./components/LoginPage/PasswordReset";
-import ForgetPassword from "./components/LoginPage/ForgotPassword";
-import CheckEmail from "./components/LoginPage/CheckEmail";
-import ResetPassword from "./components/LoginPage/ResetPassword";
-import Chat from "./components/chat/ChatPage";
-import LandingPage from "./components/landing-page/LandingPageC";
-
-import Desktop4 from "./components/desktop_4/Desktop4";
-import Desktop5 from "./components/desktop_5/Desktop5";
-import Desktop6 from "./components/desktop_6/Desktop6";
-import Preview from "./components/generatedAvatars/Preview";
-import LoadingImages from "./components/createAvatar/LoadingImages";
 
 // import CareerPage from './components/careers-page/careerPage';
 
@@ -117,11 +126,12 @@ export default function App() {
 
         {/* login */}
 
-        <Route path="/Login" element={<Login />} />
-        <Route path="/ResetPassword" element={<ResetPassword />} />
-        <Route path="/SetPassword" element={<SetPassword />} />
-        <Route path="/ForgetPassword" element={<ForgetPassword />} />
-        <Route path="/CheckEmail" element={<CheckEmail />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/set-password" element={<SetPassword />} />
+        <Route path="password-reset" element={<PasswordReset />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/check-email" element={<CheckEmail />} />
 
         {/* chat */}
         <Route path="/Chat" element={<Chat />} />
@@ -132,6 +142,11 @@ export default function App() {
         {/* desktop_1 */}
         <Route path="/Dashboard" element={<DesktopEye />} />
 
+        <Route path="/Dashboard_2" element={<Desktop2 />} />
+
+        {/* desktop_3 */}
+        <Route path="/Dashboard_3" element={<Desktop3 />} />
+
         {/* desktop_4 */}
         <Route path="/Dashboard_4" element={<Desktop4 />} />
 
@@ -140,6 +155,13 @@ export default function App() {
 
         {/* desktop_6 */}
         <Route path="/Dashboard_6" element={<Desktop6 />} />
+        {/* Feedback page Review */}
+        <Route path="/Review" element={<Review />} />
+
+        {/* Feedback page Review */}
+        <Route path="/DD2" element={<DD2 />} />
+        {/* Guideline page */}
+        <Route path="/guidelines" element={<Guidelines />} />
       </Routes>
     </Router>
   );

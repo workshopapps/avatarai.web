@@ -1,78 +1,84 @@
-.frame-eye-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* justify-content: space-between; */
-  /* width: 369px; */
-  width: 75.8%;
-  min-height: 1024px;
-  height: 100%;
-  left: 0px;
-  top: 0px;
-  /* border: 2px blue solid; */
-  background: #fafafa;
-}
-.search-eye {
-  width: 95%;
-  /* height: 20%; */
-  /* border: 2px green solid; */
-}
-.welcome-eye {
-  width: 95%;
-  /* height: 20%; */
-  /* border: 2px green solid; */
-}
-.gender-select-eye {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 95%;
-  /* border: 2px black solid; */
+.vnc-main {
+
+  display: grid;
+  place-content: center;
+  padding: 1rem;
   background-color: white;
+
 }
-.one-icon {
-  margin: 2% auto;
+
+.vnc-icon-image {
+  min-width: 2rem
 }
-.gender-eye {
-  display: flex;
+
+.vnc-icon {
   margin: 0 auto;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  /* border: 2px black solid; */
-}
-.gender-eye h1 {
-  font-size: large;
-  font-weight: bold;
+  padding-top: 2rem;
+
 }
 
-.gender-eye h2 {
-  font-size: medium;
-  /* font-weight: bold;
-} */
-}
-.male-female-eye {
-  width: 100%;
+.vnc-gender {
+
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  margin: 2% auto;
+  gap: 4rem;
 }
 
-.link-eye {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2% auto;
-  width: 20%;
-  height: 40px;
-  background: #8b70e9;
-  border-radius: 8px;
+.vnc-text {
   text-align: center;
-  color: white;
+  padding: 2rem 0;
 }
-.gender {
-  margin: 5%;
+
+.vnc-text h2 {
+  font-weight: 600;
+  font-size: clamp(1rem, 4vw, 1.4rem);
+}
+
+.vnc-text p {
+  font-size: clamp(12px, 3vw, 16px);
+}
+
+.vnc-selection {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3rem 3rem;
+  border-radius: 16px;
+  text-align: center;
+  background-color: #FCFAFF;
+  width: 100%;
+  max-width: calc(100%-2rem);
+  height: auto;
+
+}
+
+.vnc-selection.active {
+  border: 1px solid #8B70E9;
+}
+
+.vnc-selection p {
+  padding: 1rem 0;
+}
+
+
+.vnc_proceed {
+  text-align: center;
+  margin: 3rem auto;
+  background-color: #8B70E9;
+  color: white;
+  padding: .5rem 2rem;
+  border-radius: 8px;
+  width: fit-content;
+
+}
+
+@media screen and (max-width:490px) {
+  .vnc-gender {
+    gap: 2rem;
+  }
+
+  .vnc-selection {
+    padding: 0 1.3rem 1.3rem;
+  }
 }

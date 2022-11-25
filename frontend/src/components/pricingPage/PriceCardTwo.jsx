@@ -14,7 +14,8 @@ export default function PriceCardTwo({
   return (
     <section
       style={{ "background-color": bg, color: font }}
-      className=" flex flex-col  justify-between vnc_card font-nunito rounded-lg border-vnc_line border-first w-80 break2:w-80 lg:w-96 p-4">
+      className="drop-shadow-xl flex flex-col  justify-between vnc_card font-nunito rounded-lg border-vnc_line border-first w-80 break2:w-80 lg:w-96 p-4"
+    >
       <div className="py-7 text-white">
         <h2 className=" md:mt-2 text-white mb-5 text-lg">{title}</h2>
         <div className="flex py-1 text-white gap-2 items-center">

@@ -12,18 +12,18 @@ const GuidelinePage = () => {
       <Navbar />
       <div className="guide">
         <div className="guide-top">
-          <h1>What is Noxus?</h1>
+          <h1>What is Avart?</h1>
           <p>
-            <span style={{ color: "#8B70E9" }}>Noxus</span> is a site that
+            <span style={{ color: "#8B70E9" }}>Avart</span> is a site that
             enables you to upload your own photos and create AI-generated
             avatars of yourself.
           </p>
           <img src={Cover} alt="home-cover-photo" />
         </div>
         <div className="guide-middle">
-          <h2>How Does Noxus Work?</h2>
+          <h2>How Does Avart Work?</h2>
           <p>
-            Creating your own avatars on Noxus is relatively easy and only takes
+            Creating your own avatars on Avart is relatively easy and only takes
             a few minutes.
           </p>
           <div className="cards">

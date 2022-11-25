@@ -11,14 +11,19 @@
     font-family: 'Nunito', sans-serif;
 }
 
+.dja_container_text {
+    font-size: clamp(1em, 3vw, 1.5em);
+    margin-top: 100px;
+}
+
 .dja_container h1, h2 {
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .dja_container p {
     line-height: 147%;
+    
 }
-
 .dja_banner_section, .dja_mission_section, .dja_story_section, .dja_container {
     position: relative;
 }
@@ -113,12 +118,23 @@
     gap: 40px;
 }
 
+.dja_why_card_p {
+    font-size: clamp(1em, 3vw, 1.5em);
+}
+
 .dja_teamCard_container {
     width: 100%;
     max-width: 285px;
     height: fit-content;
     text-align: center;
+
 }
+
+.dja_teamCard_container p {
+    font-size: clamp(1em, 3vw, 1.2em);
+}
+
+
 
 .dja_teamCard_img_ctn {
     width: 100%;
@@ -145,8 +161,13 @@
     box-shadow: 0px 15px 20px rgba(60, 44, 81, 0.15);
     border-radius: 10px;
     padding: 40px 20px;
+    width: 100%;
     max-width: 337px;
-    height: 192px;
+    height: 250px;
+    
+    display: grid;
+    place-items: center;
+    text-align: center;
 }
 
 .dja_why_card h2 {
@@ -155,6 +176,8 @@
     text-align: center;
     margin-bottom: 16px;
     color: #5A4379;
+    /* display: grid;
+    place-items: center; */
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px){

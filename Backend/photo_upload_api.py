@@ -7,6 +7,7 @@ from fastapi import Body, HTTPException, status
 from fastapi.responses import Response, JSONResponse
 from fastapi.encoders import jsonable_encoder
 import boto3
+import os
 from bson import json_util
 import json
 
@@ -14,6 +15,13 @@ import json
 photo_router = APIRouter()
 
 S3_BUCKET_NAME = "hngtest"
+
+client = boto3.client(
+    's3',
+    aws_access_key_id=os.environ["ACCESS_KEY"],
+    aws_secret_access_key=os.environ["SECRET_KEY"],
+)
+
 
 
 @photo_router.get("/get_photos", response_model= List[AvatarModel])

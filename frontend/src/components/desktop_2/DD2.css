@@ -1,0 +1,119 @@
+.aso-dd2-content-container {
+  width: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.aso-dd2-top {
+  padding: 32px 0 28px 0;
+  margin-left: 30px;
+  align-self: flex-start;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.aso-dd2-top p {
+  height: 32px;
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #8b70e9;
+  color: #ebebeb !important;
+  font-size: 18px;
+}
+
+.aso-dd2-content-container h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1c1c1c;
+  padding-bottom: 4px;
+  text-align: center;
+  margin: 0 !important;
+}
+
+.aso-dd2-content-container .aso-dd2-p {
+  font-size: 14px;
+  font-weight: 400;
+  max-width: 236px;
+  color: #6c6c6c;
+  text-align: center;
+  line-height: 21px;
+  padding-bottom: 62px;
+  margin: 0 auto!important;
+
+}
+
+.aso-dd2-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.aso-dd2-form input[type="file"] {
+  display: none;
+}
+
+.aso-dd2-label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #a28dee;
+  border-radius: 12px;
+  width: 247px;
+  height: 111px;
+  text-align: center;
+  font-size: 14px;
+  color: #8b70e9;
+  line-height: 18.2px;
+  margin-bottom: 30px;
+}
+
+.aso-dd2-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aso-dd2-btn {
+  width: 105px !important;
+  height: 32px !important;
+  border: none !important;
+  background-color: #8b70e9 !important;
+  font-size: 14px !important;
+  color: white !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  margin-bottom: 30px !important;
+}
+
+@media screen and (min-width: 768px) {
+  .aso-dd2-content-container h1 {
+    font-size: 32px;
+  }
+
+  .aso-dd2-content-container .aso-dd2-p {
+    font-size: 20px;
+    max-width: 356px;
+    text-align: center;
+  }
+
+  .aso-dd2-label {
+    font-size: 20px;
+    width: 461px;
+    height: 156px;
+  }
+
+  .aso-dd2-btn {
+    width: 179px !important;
+    height: 56px !important;
+    font-size: 20px !important;
+  }
+}

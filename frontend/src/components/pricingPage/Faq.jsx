@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+import { Link } from "react-router-dom";
+import QuestionSection from "../faq/QuestionSection";
+import faq from "../faq";
+
 export const Faq = () => {
   const [questions, setQuestions] = useState([
     {
@@ -40,18 +44,20 @@ export const Faq = () => {
         </p>
       </div>
 
-      <div className=" mx-auto w-5/6 break2:w-46rem  break1:w-faqWidth">
+      {/* <div className=" mx-auto w-5/6 break2:w-46rem  break1:w-faqWidth">
         {questions.map((question, index) => (
           <div>
             <div
               onClick={() => click(index)}
               key={index}
-              className="rounded-lg vnc_border p-3 mb-3 flex justify-between">
+              className="rounded-lg vnc_border p-3 mb-3 flex justify-between"
+            >
               <p className="font-semibold">{question.title}</p>
 
               <p
                 className="text-lg cursor-pointer"
-                onClick={() => setToggle(!toggle)}>
+                onClick={() => setToggle(!toggle)}
+              >
                 +
               </p>
             </div>
@@ -70,11 +76,8 @@ export const Faq = () => {
             ) : null}
           </div>
         ))}
-      </div>
-
-      <div className="text-center vnc_view underline py-5">
-        <a href="#"> View more FAQ</a>
-      </div>
+      </div> */}
+      <QuestionSection />
     </section>
   );
 };

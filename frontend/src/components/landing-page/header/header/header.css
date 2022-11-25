@@ -1,7 +1,7 @@
 
 
 .header__content-ony{
-   margin-top: 8rem;
+   margin-top: 3rem;
  
  
 }
@@ -53,8 +53,38 @@
 .tech__logo-ony{
     display: flex;
 }
+@media only screen and (max-width: 1200px) {
+    .header__title-ony{
+        font-size: 54px;
+        width: 75%;
+        line-height: 1.5;
+    }
+}
+@media only screen and (max-width: 900px) {
+    .header__title-ony{
+        font-size: 44px;
+        width: 75%;
+    }
+}
+@media only screen and (max-width: 769px) {
+    .header__title-ony{
+        font-size: 38px;
+        width: 80%;
+    }
+    .header__description-ony{
+        font-size: 14px;
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 560px) {
+    .header__title-ony{
+        font-size: 30px;
+        width: 95%;
+    }
+}
 
-@media(max-width: 380px){
+
+@media(max-width: 400px){
     .header__title-ony{
         font-size: 24px;
         line-height: 24px;
@@ -63,9 +93,9 @@
         margin: 0 auto;
     }
     .header__description-ony{
-        font-size: 16px;
+        font-size: 12px;
         text-align: center;
-        line-height: 26px;
+        line-height: 1.5;
         width: 310px;
         margin-left: auto;
         margin-right: auto;
