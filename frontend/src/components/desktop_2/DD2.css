@@ -60,7 +60,7 @@
 }
 
 .aso-dd2-label {
-    cursor: pointer;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,6 +73,12 @@
   color: #8b70e9;
   line-height: 18.2px;
   margin-bottom: 30px;
+}
+
+.aso-dd2-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .aso-dd2-btn {

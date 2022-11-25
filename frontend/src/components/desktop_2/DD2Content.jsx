@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./DD2.css";
+import { Link } from "react-router-dom";
 import arrowRightMobile from "./arrow-right-mobile.svg";
 import arrowRightDesktop from "./arrow-right-desktop.svg";
 import { v4 as uuidv4 } from "uuid";
@@ -66,6 +67,8 @@ const ImageUpload = () => {
             multiple
             type="file"
             name="file"
+            data-maxFileSize="10"
+            data-minFileSize="10"
             id="file"
             onChange={handleFile}
           />
@@ -74,9 +77,11 @@ const ImageUpload = () => {
             {labelText}
           </label>
         </div>
-        <button type="button" className="aso-dd2-btn" onClick={handleUpload}>
-          Upload
-        </button>
+        <Link to="/Dashboard_3" className="aso-dd2-link">
+          <button type="button" className="aso-dd2-btn" onClick={handleUpload}>
+            Upload
+          </button>
+        </Link>
       </form>
     </div>
   );
