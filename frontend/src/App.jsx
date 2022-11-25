@@ -40,7 +40,6 @@ import Desktop5 from "./components/desktop_5/Desktop5";
 import Desktop6 from "./components/desktop_6/Desktop6";
 import Preview from "./components/generatedAvatars/Preview";
 import LoadingImages from "./components/createAvatar/LoadingImages";
-import GuidelinePage from "./components/guidelinePage/Guideline";
 
 // import CareerPage from './components/careers-page/careerPage';
 
