@@ -88,7 +88,7 @@ const ImageUpload = () => {
 
   return (
     <div className="w-full h-full">
-      {
+      {!showAlertLink && !preview && (
         <div
           style={{ display: show ? "block" : "none" }}
           className="aso-dd2-content-container"
@@ -133,7 +133,7 @@ const ImageUpload = () => {
             </button>
           </form>
         </div>
-      }
+      )}
       {showAlertLink && (
         <div className="flex flex-col items-center w-full h-full justify-center">
           <div className="grow">
