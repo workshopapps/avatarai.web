@@ -1,19 +1,15 @@
-# App Modules
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-
-
-## User Modules
-from app.photo_upload_api import photo_router
-from app.retrieve_user_avatars_api import user_avatars_router
-from app.user_api import user_router
+from photo_upload_api import photo_router
+from retrieve_user_avatars_api import user_avatars_router
+from user_api import user_router
 
 # 👇 FastAPI INSTANCE
-app = FastAPI()#root_path="/api/v1")
+app = FastAPI(root_path="/api/v1")
 
 # ===================================================================
 
 # 👇 MIDDLEWARES
+from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
