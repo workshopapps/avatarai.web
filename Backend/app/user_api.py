@@ -1,10 +1,12 @@
 from fastapi import APIRouter, status
 from pydantic import BaseModel
-from schemas import User
 from passlib.context import CryptContext
-from database import db
 from fastapi.responses import  Response, JSONResponse
 
+# User Modules
+from app.schemas import User
+from app.database import db
+#====================================================#
 
 #temp class
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
