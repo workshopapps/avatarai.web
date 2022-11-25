@@ -1,12 +1,13 @@
 import sys 
 sys.path.append("..")
 
+from httpx import AsyncIOMotorClient
 from fastapi.testclient import TestClient
 import pytest
 from  ..api import app
 from database import db 
 
-@pytest.fixture
+@pytest.mark.any
 def client():
     client = TestClient(app)
     return client

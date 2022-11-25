@@ -81,6 +81,8 @@ async def login(login : Login):
     
     
     user = await db["user"].find_one({ "email": login.email }, None)
+    print(user)
+    
 
     if user is None:
         raise HTTPException(
@@ -103,13 +105,9 @@ async def login(login : Login):
             detail="Incorrect email or password"
         )
 
-    response = {
-        "access_token": create_access_token(user['email']),
-    #     "refresh_token": create_refresh_token(str(user['email'])),
-    }
-
-
-   
-
+    token = create_access_token('thisofhoihiufhckjh'),
+    #"refresh_token": create_refresh_token(str(user['email'])),
+  
+    return token
 
     
