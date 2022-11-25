@@ -30,7 +30,7 @@ const FrameEye = () => {
         <h2 className="text-nunito">Choose your Gender</h2>
         <p className="text-nunito">Are you Male or Female</p>
       </div>
-      <form action="" method="post">
+      <form action=""  method="post">
         <div className="vnc-gender">
           {list.map((e) => (
             <div
@@ -43,10 +43,12 @@ const FrameEye = () => {
             </div>
           ))}
         </div>
+          <Link to="/Dashboard_2">
 
         <div className="vnc_proceed">
-          <input type="submit" value="Proceed" />
+                <input type="submit"  value="Proceed" />
         </div>
+          </Link>
       </form>
     </div>
   );
