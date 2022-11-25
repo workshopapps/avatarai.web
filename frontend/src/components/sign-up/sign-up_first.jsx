@@ -30,6 +30,7 @@ export default function SignUp_first() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (error.confirmPassword === "") {
+      signUp()
       navigate("/Opt_sec");
     }
   };
@@ -93,6 +94,24 @@ export default function SignUp_first() {
       return stateObj;
     });
   };
+  const[first_name,setFirstName]=useState("")
+  const[last_name, setLastName]=useState("")
+  const[email,setEmail]=useState("")
+  async function signUp(){
+    let password = input.password
+    let item ={first_name,last_name,email,password}
+    console.warn(item)
+    let result = fetch("https://noxus-ai.herokuapp.com/api/user",{
+      method:'POST',
+      body:JSON.stringify(item),
+      headers:{
+        "Content-Type":'application/json',
+        "Accept":'application/json'
+      }
+    })
+    result=await result.json()
+    localStorage.setItem("user-info", JSON.stringify(result))
+  }
 
   return (
     <div className="house_opt">
@@ -121,17 +140,19 @@ export default function SignUp_first() {
           <div style={{ display: show ? "block" : "none" }}>
             <label htmlFor="myinput_op">First name</label>
             <br />
-            <input id="myinput_op" placeholder="John" type="text" required />
+            <input id="myinput_op" placeholder="John" value={first_name} onChange={(e)=>setFirstName(e.target.value)} type="text" required />
             <br />
             <label htmlFor="myinput_o">Last name</label>
             <br />
-            <input id="myinput_o" placeholder="Doe" type="text" required />
+            <input id="myinput_o" value={last_name} onChange={(e)=>setLastName(e.target.value)} placeholder="Doe" type="text" required />
             <br />
             <label htmlFor="myinput_opt">Email</label>
             <br />
             <input
               id="myinput_opt"
               placeholder="name@example.com"
+              value={email}
+              onChange={(e)=>setEmail(e.target.value)}
               type="email"
               required
             />
