@@ -78,9 +78,9 @@
 
 
 .vic_her {
-    height: clamp(150px, 3vw, 500px);
+    height: 280px;
     width: auto;
-    margin: 20px;
+    margin: 40px;
     margin-left: 0px;
     border-radius: 10.7848px;
 }
@@ -100,12 +100,29 @@
 }
 
 .vic_image_preview_div {
-    width: clamp(350px, 3vw, 550px);
+    width: 100%;
+    max-width: 1000px;
     display:-webkit-inline-box;
     overflow-x: scroll;
     place-items: center;
-    margin: 2em;
+    margin: 4em;
     
+}
+.vic_img_and_direction ::-webkit-scrollbar{
+    background-color: #1570ef0a;
+    cursor: pointer;
+}
+.vic_img_and_direction ::-webkit-scrollbar:hover{
+    background-color: #8b70e961;
+    cursor: pointer;
+}
+.vic_img_and_direction ::-webkit-scrollbar-thumb{
+    background: #0000001c;
+    border-radius: 40px;
+}
+.vic_img_and_direction ::-webkit-scrollbar-thumb:hover{
+    background: #8b70e9;
+    border-radius: 40px;
 }
 
 
