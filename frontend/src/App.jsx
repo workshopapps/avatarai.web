@@ -40,6 +40,7 @@ import Desktop5 from "./components/desktop_5/Desktop5";
 import Desktop6 from "./components/desktop_6/Desktop6";
 import Preview from "./components/generatedAvatars/Preview";
 import LoadingImages from "./components/createAvatar/LoadingImages";
+import GuidelinePage from "./components/guidelinePage/Guideline";
 
 // import CareerPage from './components/careers-page/careerPage';
 
@@ -97,7 +98,8 @@ export default function App() {
 
         {/* Desktop 4  (Generate Avatar)*/}
         <Route path="/GenerateAvatar" element={<Preview />} />
-
+        {/* GuideLine page */}
+        <Route path="/guide" element={<GuidelinePage />} />
         <Route path="/Courses" element={<Courses />} />
         <Route path="/details/:detailId" element={<CourseDetail />} />
 
