@@ -1,59 +1,89 @@
-import React, {Fragment} from "react";
+import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 import log from "../../assets/images/log.png";
 import Button from "../landingPage/Button/Button";
 import Navbar from "../landingPage/Navbar/Navbar";
 
-const Login = ({props}) => {
+const Login = ({ props }) => {
   return (
-    <Fragment>
+    <div className="h-screen">
       <Navbar />
-  
-    <div className="flex flex-col md:flex-row md:justify-between items-center gap-20 md:pl-20 md:pr-0 p-10 h-screen">
-      <div className="md:w-1/2 w-full">
-        <h1 className="text-2xl py-5">Welcome back</h1>
-        <h6 className="pb-5">Log in to have access to your account</h6>
-        <form className="flex flex-col gap-y-5 ">
-          <div className="flex flex-col w-full">
-            <label htmlFor="email">Email</label>
-            <input
-              type="text"
-              id="email"
-              placeholder="Email address"
-              className="border p-3 w-full my-1 rounded-lg outline-none"
-              required
-            />
+      <div className="flex w-full h-full pl-[60px]">
+        <div className="flex flex-col gap-8 w-full justify-center px-[60px]">
+          <div className="flex flex-col gap-[10px]">
+            <h1 className="text-4xl font-semibold text-[#333333]">
+              Welcome back
+            </h1>
+            <p className="text-2xl font-medium text-[#333333]">
+              Log in to have access to your account
+            </p>
           </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input
-              type="text"
-              id="password"
-              placeholder="Password"
-              className="border p-3 w-full my-1 rounded-lg outline-none"
-              required
-            />
-          </div>
-          <div className="flex justify-between outline-none">
-            <span className="space-x-3">
-            <input type="checkbox" name="remember" id="remember" />
-            <span>Remenber</span>
-            </span>
-       <p className="text-purple-500"><Link to="/ForgetPassword">Forgot Password</Link></p>
-          </div>
-          <Button className="w-full bg-purple-500 text-white">Log in</Button>
-        </form>
-        <p className="text-center py-5">Dont have an account? <a href="sign-up" className="text-purple-500">Sign Up</a></p>
-      </div>
-      <div className="h-screen md:w-1/2 bg-purple-500 flex flex-col md:p-15 p-10  items-center justify-center">
-        <div className=" w-[305px]">
-        <img src={log} alt="" className="bg-white    rounded-full object-scale-down "/>
+          <form className="flex flex-col gap-8 w-full">
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col w-full">
+                <label className="text-[#333333]" htmlFor="email">
+                  Email
+                </label>
+                <input
+                  type="text"
+                  id="email"
+                  placeholder="Email address"
+                  className="border p-3 w-full my-1 rounded-lg outline-none"
+                  required
+                />
+              </div>
+              <div>
+                <label className="text-[#333333]" htmlFor="password">
+                  Password
+                </label>
+                <input
+                  type="text"
+                  id="password"
+                  placeholder="Password"
+                  className="border p-3 w-full my-1 rounded-lg outline-none"
+                  required
+                />
+              </div>
+            </div>
+            <div className="flex justify-between items-center outline-none">
+              <div className="flex items-center gap-5">
+                <input
+                  className="h-[26px] w-[26px]"
+                  type="checkbox"
+                  name="remember"
+                  id="remember"
+                />
+                <span className="text-[#333333] text-[20px] font-medium">
+                  Remember me
+                </span>
+              </div>
+              <p className="text-[#8B70E9] text-[20px] font-medium">
+                <Link to="/forgot-password">Forgot Password</Link>
+              </p>
+            </div>
+            <Button className="w-full bg-[#8B70E9] text-white">Login</Button>
+            <p className="text-center text-[#333333] text-xl font-semibold">
+              Dont have an account?{" "}
+              <a href="sign-up" className="text-[#8B70E9]">
+                Sign Up
+              </a>
+            </p>
+          </form>
         </div>
-        <p className="text-white text-xl text-center lg:p-10 pt-5">Generate and customize AI Avatars just the way you like it!</p>
+        <div className="flex flex-col items-center justify-center gap-16 w-full">
+          <div className=" w-[305px]">
+            <img
+              src={log}
+              alt=""
+              className="bg-white    rounded-full object-scale-down "
+            />
+          </div>
+          <p className="text-[32px] font-semibold max-w-[547px] text-center text-[#333333]">
+            Generate and customize AI Avatars just the way you like it!
+          </p>
+        </div>
       </div>
-   
     </div>
-    </Fragment>
   );
 };
 
