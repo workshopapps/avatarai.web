@@ -31,6 +31,14 @@ jobs:
           context: .
           file: ./frontend/Dockerfile
           push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:v2
+      
+      - name: Build and push Frontend latest
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          file: ./frontend/Dockerfile
+          push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
 
       
@@ -42,6 +50,6 @@ jobs:
           sudo su
           cd /home/noxus
           sudo docker compose pull
-          sudo docker compose up -d --build frontend
+          sudo docker compose up -d --build frontend:v2
           sudo docker compose up -d --build backend 
           sudo docker system prune -af && exit'
