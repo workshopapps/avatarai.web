@@ -30,8 +30,8 @@ const AboutUs = () => {
         </section>
 
         <section className="dja_mission_section">
-          <div className="dja_container">
-            <strong>(app name)</strong> helps individuals online create a virtual identity to be
+          <div className="dja_container" >
+           <p className='dja_container_text'><strong>(app name)</strong> helps individuals online create a virtual identity to be
             used on various social media platforms while protecting their actual
             personality. This is done with a state of the art dream booth
             technology.
@@ -42,6 +42,7 @@ const AboutUs = () => {
             models. It lets us teach artificial intelligence imaging model who
             you are, by training it on your photos and then generate any image
             in any style you want with you in it.
+            </p> 
           </div>
         </section>
 
