@@ -41,6 +41,9 @@ import SetPassword from "./components/LoginPage/PasswordReset";
 import Terms from "./components/TermsPage/Terms";
 import Ttilp from "./components/TTILP/Ttilp";
 
+
+import DD2 from "./components/desktop_2/DD2";
+
 // import PaymentFlow12 from './components/paymentFlow-1.2/paymentFlow1.2';
 // import './App.css';
 
@@ -156,6 +159,9 @@ export default function App() {
         <Route path="/Dashboard_6" element={<Desktop6 />} />
         {/* Feedback page Review */}
         <Route path="/Review" element={<Review />} />
+
+        {/* Feedback page Review */}
+        <Route path="/DD2" element={<DD2 />} />
       </Routes>
     </Router>
   );

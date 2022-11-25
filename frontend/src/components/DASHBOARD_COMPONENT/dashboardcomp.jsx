@@ -7,7 +7,7 @@ import Sidebar from "./Sidebar";
 
 export default function Dashboardcomp(props) {
   return (
-    <main>
+    <main className="aso-dashboard-comp-main">
       <Sidebar />
       <div className="vic_dash_bg">
         <div className="vic_dash_inner_div">
