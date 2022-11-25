@@ -1,6 +1,8 @@
 import faqContent from "./questions";
 import QuestionCard from "./QuestionCard";
 import FaqGetInTouch from "./FaqGetInTouch";
+import './faqs.css'
+
 
 const QuestionSection = () => {
   return (
@@ -15,7 +17,7 @@ const QuestionSection = () => {
         </div>
       </div>
       {/* Expandable cards Section */}
-      <div className="w-full md:max-w-[1000px] md:shadow-2xl md:rounded flex flex-col md:gap-[24px] md:p-[48px]">
+      <div className="w-full md:max-w-[1000px] md:shadow-2xl md:rounded flex flex-col md:gap-[24px] md:p-[48px]" >
         {faqContent.map((question, i) => (
           <QuestionCard question={question} index={i} />
         ))}
