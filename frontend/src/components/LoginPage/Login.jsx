@@ -3,8 +3,18 @@ import { Link } from "react-router-dom";
 import log from "../../assets/images/log.png";
 import Button from "../landingPage/Button/Button";
 import Navbar from "../landingPage/Navbar/Navbar";
+import { useForm } from "react-hook-form";
 
 const Login = ({ props }) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  /** Remember to pass user data to api for storage */
+  const onSubmit = (data) => console.log(data);
+
   return (
     <div className="md:h-screen">
       <Navbar />
@@ -18,7 +28,10 @@ const Login = ({ props }) => {
               Log in to have access to your account
             </p>
           </div>
-          <form className="flex flex-col gap-8 w-full">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="flex flex-col gap-8 w-full"
+          >
             <div className="flex flex-col gap-4">
               <div className="flex flex-col w-full">
                 <label className="text-[#333333]" htmlFor="email">
@@ -28,9 +41,20 @@ const Login = ({ props }) => {
                   type="text"
                   id="email"
                   placeholder="Email address"
-                  className="border p-3 w-full my-1 rounded-lg outline-none"
+                  className={`border ${
+                    errors.email && "border-red-600"
+                  } p-3 w-full my-1 rounded-lg outline-none`}
                   required
+                  {...register("email", {
+                    required: true,
+                    pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+                  })}
                 />
+                {errors.email && (
+                  <span className="text-xs text-red-600">
+                    Please enter a valid email address
+                  </span>
+                )}
               </div>
               <div>
                 <label className="text-[#333333]" htmlFor="password">
@@ -40,9 +64,20 @@ const Login = ({ props }) => {
                   type="text"
                   id="password"
                   placeholder="Password"
-                  className="border p-3 w-full my-1 rounded-lg outline-none"
+                  className={`border ${
+                    errors.password && "border-red-600"
+                  } p-3 w-full my-1 rounded-lg outline-none`}
                   required
+                  {...register("password", {
+                    required: true,
+                    minLength: 8,
+                  })}
                 />
+                {errors.password && (
+                  <span className="text-xs text-red-600">
+                    Password must be at least 8 characters long
+                  </span>
+                )}
               </div>
             </div>
             <div className="flex justify-between items-center outline-none">
@@ -61,7 +96,9 @@ const Login = ({ props }) => {
                 <Link to="/forgot-password">Forgot Password</Link>
               </p>
             </div>
-            <Button className="w-full bg-[#8B70E9] text-white">Login</Button>
+            <Button type="submit" className="w-full bg-[#8B70E9] text-white">
+              Login
+            </Button>
             <p className="text-center text-[#333333] text-base md:text-xl font-semibold">
               Dont have an account?{" "}
               <a
@@ -81,7 +118,7 @@ const Login = ({ props }) => {
               className="bg-white rounded-full object-scale-down "
             />
           </div>
-          <p className="md:visible hidden text-[14px] md:text-[32px] font-semibold max-w-[228px] md:max-w-[547px] text-center text-[#333333]">
+          <p className="md:block hidden text-[14px] md:text-[32px] font-semibold max-w-[228px] md:max-w-[547px] text-center text-[#333333]">
             Generate and customize AI Avatars just the way you like it!
           </p>
         </div>

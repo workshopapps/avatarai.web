@@ -1,8 +1,22 @@
 import lock from "../../assets/images/lock.png";
 import Button from "../landingPage/Button/Button";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useState } from "react";
 
 const ResetPassword = () => {
+  const [formData, setFormData] = useState(() => {});
+
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => setFormData(data);
+  const watchPasswords = watch(["newPassword", "confirmPassword"]);
+
   return (
     <div className="flex flex-col pt-[120px] md:p-0 md:justify-center items-center h-screen">
       <div className="flex flex-col w-full max-w-xl px-6 gap-6 md:gap-8 items-center justify-center">
@@ -17,7 +31,10 @@ const ResetPassword = () => {
             Your new password must be different from previously used password
           </p>
         </div>
-        <form className="flex flex-col gap-4 w-full">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col gap-4 w-full"
+        >
           <div className="flex flex-col">
             <label htmlFor="new-password">New password</label>
             <input
@@ -25,8 +42,16 @@ const ResetPassword = () => {
               required
               type="password"
               placeholder="New password"
-              className="border p-3 my-1 rounded-lg outline-none"
+              className={`border ${
+                errors.newPassword && "border-red-600"
+              } p-3 w-full my-1 rounded-lg outline-none`}
+              {...register("newPassword", { required: true, minLength: 8 })}
             />
+            {errors.newPassword && (
+              <span className="text-xs text-red-600">
+                Password must be at least 8 characters long
+              </span>
+            )}
           </div>
           <div className="flex flex-col">
             <label htmlFor="confirm-password">Confirm password</label>
@@ -35,13 +60,27 @@ const ResetPassword = () => {
               required
               type="password"
               placeholder="Confirm password"
-              className="border p-3 my-1 rounded-lg outline-none"
+              className={`border ${
+                formData?.newPassword !== formData?.confirmPassword &&
+                "border-red-600"
+              } p-3 w-full my-1 rounded-lg outline-none`}
+              {...register("confirmPassword", { required: true, minLength: 8 })}
             />
+            {formData?.newPassword !== formData?.confirmPassword && (
+              <span className="text-xs md:text-sm text-red-600">
+                Passwords do not match! Please confirm
+              </span>
+            )}
+            <Button className="w-full bg-[#8B70E9] mt-8 text-white">
+              {watchPasswords[0] === watchPasswords[1] &&
+              watchPasswords[0]?.length > 7 ? (
+                <Link to={`/password-reset`}>Reset Password</Link>
+              ) : (
+                "Reset Password"
+              )}
+            </Button>
           </div>
         </form>
-        <Button className="w-full bg-[#8B70E9] text-white">
-          <Link to="/password-reset">Reset password</Link>
-        </Button>
       </div>
     </div>
   );

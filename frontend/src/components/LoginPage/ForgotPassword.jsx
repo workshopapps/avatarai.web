@@ -1,8 +1,19 @@
 import lock from "../../assets/images/lock.png";
 import Button from "../landingPage/Button/Button";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const ForgotPassword = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => console.log(data);
+  const watchEmail = watch("sendEmail");
+
   return (
     <div className="flex flex-col pt-[120px] md:p-0 md:justify-center items-center h-screen">
       <div className="flex flex-col w-full max-w-xl px-6 gap-6 md:gap-8 items-center justify-center">
@@ -17,19 +28,39 @@ const ForgotPassword = () => {
             Please enter the email address associated to this account
           </p>
         </div>
-        <form className="flex flex-col w-full">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="flex flex-col w-full"
+        >
           <label htmlFor="email">Email</label>
           <input
             name="email"
             required
             type="email"
             placeholder="Email address"
-            className="border p-3 my-1 rounded-lg outline-none"
+            className={`border ${
+              errors.sendEmail && "border-red-600"
+            } p-3 w-full my-1 rounded-lg outline-none`}
+            {...register("sendEmail", {
+              required: true,
+              pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+            })}
           />
+          {errors.sendEmail && (
+            <span className="text-xs text-red-600">
+              Please enter a valid email address
+            </span>
+          )}
+          <Button className="w-full mt-8 bg-[#8B70E9] text-white">
+            {!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+              watchEmail
+            ) ? (
+              "Send email"
+            ) : (
+              <Link to="/check-email">Send Email </Link>
+            )}
+          </Button>
         </form>
-        <Button className="w-full bg-[#8B70E9] text-white">
-          <Link to="/check-email">Send email</Link>
-        </Button>
       </div>
     </div>
   );
