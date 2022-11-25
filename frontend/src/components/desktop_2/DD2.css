@@ -1,6 +1,6 @@
 .aso-dd2-content-container {
   width: 100%;
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -61,7 +61,7 @@
 }
 
 .aso-dd2-label {
-    cursor: pointer;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,16 +76,22 @@
   margin-bottom: 30px;
 }
 
+.aso-dd2-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .aso-dd2-btn {
-  width: 105px;
-  height: 32px;
-  border: none;
-  background-color: #8b70e9;
-  font-size: 14px;
-  color: white;
-  font-weight: 700;
-  border-radius: 8px;
-  margin-bottom: 30px;
+  width: 105px !important;
+  height: 32px !important;
+  border: none !important;
+  background-color: #8b70e9 !important;
+  font-size: 14px !important;
+  color: white !important;
+  font-weight: 700 !important;
+  border-radius: 8px !important;
+  margin-bottom: 30px !important;
 }
 
 @media screen and (min-width: 768px) {

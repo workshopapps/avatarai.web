@@ -31,10 +31,10 @@ function Sidebar() {
           <ul>
             <div>
               <img src={noxus} alt="noxus logo" className="noxus-logo" />
+              <li onClick={showSidebar} className="aso-icon-close">
+                <AiOutlineCloseCircle />
+              </li>
             </div>
-            <li onClick={showSidebar}>
-              <AiOutlineCloseCircle className="aso-icon-close" />
-            </li>
             <li>
               <AiOutlineIdcard className="icon" />
               <Link to="/" className="sidebar-link">
