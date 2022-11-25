@@ -15,6 +15,9 @@ from datetime import datetime, timedelta
 from typing import Union, Any
 from jose import jwt
 from utility import *
+from bson import json_util
+import json
+
 
 #######################
 #HASHING PASSWORD
@@ -81,7 +84,9 @@ async def login(login : Login):
     
     
     user = await db["user"].find_one({ "email": login.email }, None)
-    print(user)
+    # print(user)
+    userRes = json.loads(json_util.dumps(user))
+    print(userRes)
     
 
     if user is None:
@@ -105,8 +110,18 @@ async def login(login : Login):
             detail="Incorrect email or password"
         )
 
-   #en = create_access_token('thisofhoihiufhckjh'),
-    #"refresh_token": create_refresh_token(str(user['email'])),
+    access_token = create_access_token(userRes['email'])
+    #refresh_token = create_refresh_token(userRes['email'])
+    # print(access_token)
+    Response = {
+        "token" :{ "token" : access_token},
+        "userData":{
+            'first_name': userRes['first_name'],
+             'last_name': userRes['last_name'],
+              'email': userRes['email'],
+            }
+        }
+    return JSONResponse(Response, status_code=status.HTTP_201_CREATED)
 
 
     
