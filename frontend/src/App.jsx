@@ -42,7 +42,11 @@ import PasswordReset from "./components/LoginPage/PasswordReset";
 import Terms from "./components/TermsPage/Terms";
 import Ttilp from "./components/TTILP/Ttilp";
 import DD2 from "./components/desktop_2/DD2";
+ feat/Contact-Us-page
+import Contact from "./components/Contact_page/Contact";
+
 import Guidelines from "./components/guidelinePage/Guideline.jsx";
+
 // import PaymentFlow12 from './components/paymentFlow-1.2/paymentFlow1.2';
 // import './App.css';
 
@@ -160,6 +164,10 @@ export default function App() {
 
         {/* Feedback page Review */}
         <Route path="/DD2" element={<DD2 />} />
+         feat/Contact-Us-page
+
+        {/* Contact Us page */}
+        <Route path="/contact-us" element={<Contact />} />
         {/* Guideline page */}
         <Route path="/guidelines" element={<Guidelines />} />
       </Routes>
