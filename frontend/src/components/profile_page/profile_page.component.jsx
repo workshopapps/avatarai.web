@@ -1,5 +1,6 @@
 import avatar from "../../assets/Avatar.svg";
 import State_options from "./state_options.component";
+import style from "./profile.module.css"
 
 import { useState } from "react";
 const defaultFields = {
@@ -26,12 +27,13 @@ const Profile = () => {
     const { name, value } = e.target;
     setFormFields({ ...formFields, [name]: value });
   };
-  const save_details = () => {
-    if (!firstName.trim() || !/[^a-zA-Z]/.test(firstName)) {
+  const save_details = (e) => {
+    e.preventDefault()
+    if (!firstName.trim() || !/[a-zA-Z]/.test(firstName)) {
       alert("firstName must contain only letters");
       return;
     }
-    if (!lastName.trim() || !/[^a-zA-Z]/.test(lastName)) {
+    if (!lastName.trim() || !/[a-zA-Z]/.test(lastName)) {
       alert("lastName must contain only letters");
       return;
     }
@@ -82,23 +84,27 @@ const Profile = () => {
     },
   ];
   return (
-    <div className="w-[95%] md:w-[90%] lg:w-[80%] m-auto ">
+    <div className="m-auto bg-[#f7f7f7] max-w-[875px] p-[4px] md:p-[32px] lg:p-[49px]">
       <h3 className="font-semibold">Your Profile</h3>
       <p className="text-[#949494]">See your personal information</p>
-      <div className="bg-white">
-        <div className="w-[95%] md:w-[90%] lg:w-[80%] m-auto p-[3rem]">
-          <div className="flex items-center gap-[3.5rem] mb-[2rem]">
+      <div className="bg-[#f7f7f7]">
+        <div className="flex flex-col
+        pl-[36px] pr-[36px] md:pl-[82px] 
+        md:pl-[82px]  ld:pl-[166px] ld:pr-[166px]
+        align-center w-[95%] md:w-[90%] lg:w-[80%] m-auto p-[o.6rem] pb-[2rem] pt-[1rem] md:p-[3rem] lg:p-[3rem] bg-[#fff]">
+          <div className="flex items-center gap-[1.5rem] md:gap-[2.5rem] lg:gap-[3.5em] mb-[2rem]"
+         >
             <img
               src={avatar}
               alt="profile image"
-              className=" w-[15%] md:w-[15%]"
+              className={`w-[15%] md:w-[15%] ${style.profilePix}`}
             />
             <div>
               <h3 className="font-semibold">Baki Hanma</h3>
               <p>bakii@gmail.com</p>
             </div>
           </div>
-          <form action="">
+          <form action="" className={style.form}>
             {/* states for editing and not editing */}
             {editing ? (
               <>
@@ -122,7 +128,7 @@ const Profile = () => {
                       <input
                         type="text"
                         placeholder="Triss"
-                        name="LastName"
+                        name="lastName"
                         value={lastName}
                         onChange={change_formField}
                         className=" w-[100%] md:w-[100%]   border  outline-[none] p-[1.5rem] mb-[1.5rem]"
@@ -134,7 +140,7 @@ const Profile = () => {
                       <input
                         placeholder="+2349078985443"
                         type="tel"
-                        name="mobileNuber"
+                        name="mobileNumber"
                         value={mobileNumber}
                         onChange={change_formField}
                         className=" w-[100%] md:w-[96%]   border  outline-[none] p-[1.5rem] mb-[1.5rem]"
@@ -342,9 +348,9 @@ const Profile = () => {
                 <div className="flex justify-center md:justify-end">
                   <button
                     onClick={change_editing_status}
-                    className="bg-[#22125A] 
+                    className={`bg-[#22125A] 
                 p-[1.5rem]  px-[3.5rem] text-[white] rounded-[8px] mt-[1.5rem]
-              "
+               ${style.edit}`}
                   >
                     Edit Profile
                   </button>
