@@ -397,7 +397,7 @@ input:focus:valid{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: auto;
+    margin: auto auto 50px;
     text-align: center;
 }
 
@@ -418,7 +418,9 @@ input:focus:valid{
         margin: 0px;
         
     }
-
+.opt_merg{
+    margin-bottom: 50px;
+}
     
 
     .all_opt{

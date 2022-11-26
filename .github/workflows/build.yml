@@ -37,6 +37,7 @@ jobs:
           pwd
           npm i
           npm run build --if-present
+          npm run test
         env:
           CI: false
 

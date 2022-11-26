@@ -21,6 +21,8 @@ describe('Dashboard_6', () =>{
         render(
             <Images src='../../../public/images/Frame_0.png' />
         );
+        const nameElement=screen.getByRole('img')
+        expect(nameElement).toBeInTheDocument();
         // const textElement= screen.getByText('Your Avatars are Ready')
         // expect(textElement).toBeInTheDocument()
     });
