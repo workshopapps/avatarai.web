@@ -18,3 +18,16 @@ Install certbot and provision SSL certification
 
 [CI/CD](../.github/workflows/deploy.yml)
 
+# Setup Dreambooth
+A server is configured using the (ansible playbook)[./dreambooth-setup/ansible/deploy-dreambooth.yml]
+
+---
+
+Our solution makes use of [joepenna's](https://github.com/JoePenna) dreambooth [repo](https://github.com/JoePenna/Dreambooth-Stable-Diffusion)
+
+Dreambooth is exposed via REST API endpoint using an [express server](./dreambooth-setup/dreambooth-server)
+
+A POST method in the express server calls a [bash script](./dreambooth-setup/scripts/beginTraining.sh) on the server
+
+The script runs the commands to train our model and and send our user an email after training is done.
+
