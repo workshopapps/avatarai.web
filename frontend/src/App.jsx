@@ -41,10 +41,11 @@ import ResetPassword from "./components/LoginPage/ResetPassword";
 import PasswordReset from "./components/LoginPage/PasswordReset";
 import Terms from "./components/TermsPage/Terms";
 import Ttilp from "./components/TTILP/Ttilp";
-
-
 import DD2 from "./components/desktop_2/DD2";
+ feat/Contact-Us-page
 import Contact from "./components/Contact_page/Contact";
+
+import Guidelines from "./components/guidelinePage/Guideline.jsx";
 
 // import PaymentFlow12 from './components/paymentFlow-1.2/paymentFlow1.2';
 // import './App.css';
@@ -66,7 +67,7 @@ export default function App() {
           !!!IMPORTANT INFORMATION
           !!!IMPORTANT INFORMATION
           add the path on your page to the live link so yoU can submit 
-          e.g. http://noxus.hng.tech/example
+          e.g. http://AvatarAI.hng.tech/example
           you can find the path to your page in the links below
           DO NOT EDIT ANYTHING HERE JUST COPY THE PATH TO YOUR PAGE
            */}
@@ -109,10 +110,8 @@ export default function App() {
 
         {/* Desktop 4  (Generate Avatar)*/}
         <Route path="/GenerateAvatar" element={<Preview />} />
-
         <Route path="/Courses" element={<Courses />} />
         <Route path="/details/:detailId" element={<CourseDetail />} />
-
         {/* 404 Page */}
         <Route path="/Four404" element={<Four404 />} />
 
@@ -165,9 +164,12 @@ export default function App() {
 
         {/* Feedback page Review */}
         <Route path="/DD2" element={<DD2 />} />
+         feat/Contact-Us-page
 
         {/* Contact Us page */}
         <Route path="/contact-us" element={<Contact />} />
+        {/* Guideline page */}
+        <Route path="/guidelines" element={<Guidelines />} />
       </Routes>
     </Router>
   );

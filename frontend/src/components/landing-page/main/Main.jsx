@@ -12,7 +12,7 @@ const Main = () => {
            <h3 className="image__title-ony">Become the artist</h3>
            <p className="image__description-ony"> Have access to many templates and scenes to create mindblowing
            AI-generated arts. The ball is in your court, be Michael Jordan with
-           Noxus amazing tools on our platform</p>
+           AvatarAI amazing tools on our platform</p>
           
           </div>
         </div>{" "} */}
@@ -34,7 +34,7 @@ const Main = () => {
               <img className="a1-ony" src="./images/a1.png" alt="second ai" />
               <h3 className="image__title-ony image__description3-ony">Fast and Easy</h3>
               <p className="image__description2-ony">
-                  Upload up to 10 images and let Avart create your avatars.<br/> Download avatars from your e-mail
+                  Upload up to 10 images and let AvatarAI create your avatars.<br/> Download avatars from your e-mail
               </p>
           </div>
 

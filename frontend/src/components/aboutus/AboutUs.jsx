@@ -18,7 +18,7 @@ const AboutUs = () => {
         <section className="dja_banner_section">
           <div className="dja_container">
             <div className="dja_banner_img">
-              <img src={Banner} alt="Avart" />
+              <img src={Banner} alt="AvatarAI" />
             </div>
             <div id="banner_title">
               <h1>
@@ -31,7 +31,7 @@ const AboutUs = () => {
 
         <section className="dja_mission_section">
           <div className="dja_container" >
-           <p className='dja_container_text'><strong>Avert</strong> helps individuals online create a virtual identity to be
+           <p className='dja_container_text'><strong>AvatarAI</strong> helps individuals online create a virtual identity to be
             used on various social media platforms while protecting their actual
             personality. This is done with a state of the art dream booth
             technology.

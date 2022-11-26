@@ -27,7 +27,7 @@
   border: 1px solid #dbdbdb;
   border-radius: 8px;
   padding: 0.8em;
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,7 +42,7 @@
 }
 
 .vic_dash_input {
-  width: 90%;
+  width: 100%;
   max-width: 580px;
   background-color: #fafafa;
   text-indent: 1em;
@@ -63,10 +63,8 @@
 }
 
 .vic_dash_header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  margin-left: 10%;
+  width: 90%;
 }
 
 .vic_dash_input::placeholder {
@@ -116,5 +114,13 @@
   .vic_dash_translate {
     display: flex;
     justify-content: center;
+  }
+
+  .vic_dash_header {
+    margin-left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 }

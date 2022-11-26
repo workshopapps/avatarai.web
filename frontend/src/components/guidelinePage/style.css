@@ -1,0 +1,69 @@
+.guide h1,
+.guide h2,
+.guide h3 {
+  font-weight: 700;
+}
+
+.guide p {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.guide .guide-top {
+  padding: 0 5rem;
+}
+.guide .guide-top h1 {
+  font-size: 3rem;
+  margin-top: 3rem;
+}
+
+.guide .guide-top p {
+  font-weight: 700;
+}
+
+.guide .guide-top > img {
+  margin-top: 3rem;
+}
+.guide-middle h2,
+.guide-middle p {
+  padding: 0 5rem;
+}
+.guide .guide-middle {
+  margin-top: 10rem;
+}
+
+.guide .guide-middle h2 {
+  font-size: 2.5rem;
+}
+
+.guide .guide-middle .cards {
+  background: #f8f8f8;
+  padding: 2rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.guide .guide-middle .cards img {
+  width: 100%;
+}
+.guide .guide-middle .cards button {
+  font-size: 1.5rem;
+  padding: 1rem 4rem;
+  margin-top: 3rem;
+  background: #8b70e9;
+  color: #fff;
+  border-radius: 0.3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .guide .guide-top,
+  .guide-middle h2,
+  .guide-middle p {
+    padding: 0 1.5rem;
+  }
+  .guide .guide-middle .cards button {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+}
