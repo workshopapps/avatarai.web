@@ -42,7 +42,6 @@ import PasswordReset from "./components/LoginPage/PasswordReset";
 import Terms from "./components/TermsPage/Terms";
 import Ttilp from "./components/TTILP/Ttilp";
 import DD2 from "./components/desktop_2/DD2";
- feat/Contact-Us-page
 import Contact from "./components/Contact_page/Contact";
 
 import Guidelines from "./components/guidelinePage/Guideline.jsx";
