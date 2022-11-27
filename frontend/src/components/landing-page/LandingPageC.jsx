@@ -7,8 +7,12 @@ import Social from './socialproof/SocialProof';
 import Header from './header/header/Header';
 import Navbar from "../landingPage/Navbar/Navbar";
 import QuestionSection from "../faq/QuestionSection.jsx";
+import Any from './Any/any.jsx'
 import FaqNewsletter from "../faq/FaqNewsletter.jsx";
 import Foooter from '../footer/Foooter';
+import Learn from './learn/learn.jsx'
+import Top from './Top/top.jsx';
+import Final from './final/final';
 // import Footer from "../Footerpage/Footer.jsx";
 
 
@@ -19,13 +23,16 @@ function LandingPageC() {
         <Header />
         <Main />
         <CTA />
+        <Any/>
         <Benefits />
-        {/*<Social />*/}
-      <About />
+        <Social />
+        <Learn/>
+        <Top/>
+        <Final/>
+      {/* <About />
         <QuestionSection />
         <FaqNewsletter />
-        {/* <Footer /> */}
-        <Foooter />
+        <Foooter /> */}
     </div>
   )
 }

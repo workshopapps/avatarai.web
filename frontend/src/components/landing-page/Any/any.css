@@ -1,0 +1,19 @@
+.any-sect{
+    text-align: left;
+   max-width: 400px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+.be{
+    color: #22125A    ;
+    font-weight: 700;
+}
+.button-bat{
+    background-color: #8B70E9;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 5px;
+}

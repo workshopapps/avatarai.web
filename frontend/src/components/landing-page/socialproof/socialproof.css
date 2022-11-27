@@ -1,11 +1,47 @@
 .ai__ony{
-    display: flex;
+    display: grid;
+    gap: 1%;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.5rem;
+    padding: 0 2rem;
   
 }
+.section-bat h2{
+    padding: 3rem 2rem;
+    font-size: 3rem;
+    font-weight: 700;
+}
+.section-bat{
+    text-align: center;
+    margin:2rem 0;
+    margin-bottom: 0;
+}
+.aii-ony{
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    margin: 0 auto;
+    /* justify-content: center; */
+    overflow-x: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */  
 
+}
+.aii-ony::-webkit-scrollbar {
+    display: none;
+  }
+
+.aii-ony img{
+    width: 100%;
+}
+.social-btn{
+    color: white;
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    background-color: #8B70E9;
+    text-align: center;
+}
 
 
 
@@ -21,9 +57,12 @@
     height: 469px;
    
 }
-
-
-
+@media(max-width: 1024px){
+    .aii-ony img{
+        width: 25%;
+        height: 200px;  
+    }
+}
 
 .socialproof__title-ony{
     font-size: 67px;
@@ -32,48 +71,41 @@
     padding-bottom: 2rem;
     font-weight: 700;
 }
-.aii-ony{
+/* .aii-ony{
     display: flex;
     gap: 1rem;
     width: 100%;
     justify-content: center;
    
-}
-@media(max-width: 380px){
+} */
+@media(max-width: 800px){
     .socialproof__title-ony{
         font-size: 24px;
         text-align: center;
        padding: 2rem 0;
         width: 100%;
     }
-    .ai___img-ony{
-        width: 20%;
+    .aii-ony img{
+        width: 25%;
         height: 101px;
        
-
-       
     }
-    .second__ai-ony img{
-        width: 60px;
-        height: 95px;
-        
-        
-       
+    .section-bat h2{
+        padding: 1rem 2rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }                                                                                          
+}
+@media(max-width: 500px){
+    .section-bat h2{
+        font-size: 1.2rem;
     }
-   
-   
+    .social-btn{
+        color: white;
+        margin: 2rem  0;
+        padding: 0.5rem 1rem;
+        background-color: #8B70E9;
+        text-align: center;
+    }
     
-    .second__ai-ony{
-        display: flex;
-     
-        gap: .5rem;
-    }
-    .ai__ony{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 1rem;
-        
-      
-    }
 }

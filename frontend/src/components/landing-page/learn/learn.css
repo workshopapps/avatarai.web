@@ -1,0 +1,91 @@
+.learn2{
+    display: grid;
+    grid-template-columns:  45% 50%;
+    gap: 5%;
+}
+.learn{
+    padding:5rem 10rem;
+}
+.learn img{
+    width: 100%;
+    max-width: 500px;
+}
+.learn2 div{
+    padding: 5rem 5rem 5rem 0;
+}
+#and{
+    color: #22125A;
+    font-size: 30px;
+    max-width: 400px;
+    font-weight: 700;
+}
+.learn h2{
+    font-size: 44px;
+    text-align: center;
+    font-weight: 700;
+    padding: 2rem 2rem;
+}
+.learn span{
+    color: #22125A;
+
+}
+.social-btn2{
+    color: white;
+    margin: 1rem  0;
+    padding: 0.5rem 1rem;
+    background-color: #8B70E9;
+    text-align: center;
+}
+
+@media(max-width: 1200px){
+    .learn2 div{
+        padding: 2rem;
+    }
+    .learn{
+        padding:5rem ;
+    }
+    
+}
+@media(max-width: 1000px){
+    .learn{
+        padding: 3rem;
+    }
+    #and{
+        font-size: 20px;
+    }
+}
+@media(max-width: 1000px){
+    .learn2 div{
+        padding: 1rem;
+    }
+    p{
+        font-size: 12px;
+    }
+}
+@media(max-width: 750px){
+    .learn{
+        padding: 2rem;
+        padding-top: 0;
+    }
+    #and{
+        font-size: 12px;
+    }
+    p{
+        font-size: 10px;
+    }
+}
+@media(max-width: 580px){
+    .learn2{
+        grid-template-columns: 100%;
+        gap: 0;
+    }    
+    #and{
+        font-size: 20px;
+    }
+    p{
+        font-size: 14px;
+    }
+    .learn h2{
+        font-size: 24px;
+    }
+}
