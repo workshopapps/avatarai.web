@@ -1,12 +1,13 @@
 name: Build Images
 on:
-  push:
-    branches:
-      - dev
+  workflow_run:
+    workflows: [noxus]
+    types: [completed]
   
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: Check out code
         uses: actions/checkout@v2
@@ -24,14 +25,6 @@ jobs:
           file: ./Backend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
-
-      - name: Build and push Frontend
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          file: ./frontend/Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:v2
       
       - name: Build and push Frontend latest
         uses: docker/build-push-action@v3
@@ -41,7 +34,6 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
 
-      
       - name: Deploy Apps
         run: |
           echo "${{ secrets.SSH_KEY }}" > id_rsa
@@ -49,6 +41,9 @@ jobs:
           ssh -i id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} '
           sudo su
           cd /home/noxus
+          sudo docker stop frontend backend
+          sudo docker rm frontend backend
+          sudo docker rmi -f tapeart/frontend:latest tapeart/backend:latest
           sudo docker compose pull
           sudo docker compose up -d --build frontend
           sudo docker compose up -d --build backend 
