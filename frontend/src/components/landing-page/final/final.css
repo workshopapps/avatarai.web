@@ -1,0 +1,25 @@
+.final{
+    text-align: center;
+    padding: 3rem 0;
+}
+.final span{
+    color: #8B70E9;
+}
+.final h1{
+    font-weight: 700;
+    font-size: 44px;
+    padding: 0 1rem;
+    max-width: 750px;
+    margin: 0 auto;
+
+}
+.final-btn{
+    background-color: #8B70E9;
+    color: white;
+    padding: 0.5rem 1rem;
+}
+@media(max-width: 550px){
+    .final h1{
+        font-size: 20px ;
+    }
+}
