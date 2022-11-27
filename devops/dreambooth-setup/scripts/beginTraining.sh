@@ -17,7 +17,7 @@ reg_img_prompt = "a photo of a $class"
 n_samples = 100 # number of images to generate
 reg_data_path = "classes/class-${class}-samples" # Path to save regularization images to
 
-iif [ -n "$(ls -A your/dir 2>/dev/null) | tail -1" ]
+if [ -n "$(ls -A your/dir 2>/dev/null) | tail -1" ]
 then
     echo "Regularization images already exist for this class"
 else
