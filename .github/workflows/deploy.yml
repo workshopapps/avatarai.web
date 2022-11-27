@@ -49,6 +49,7 @@ jobs:
           ssh -i id_rsa -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} '
           sudo su
           cd /home/noxus
+          sudo docker rmi -f tapeart/frontend:latest tapeart/backend:latest
           sudo docker compose pull
           sudo docker compose up -d --build frontend
           sudo docker compose up -d --build backend 
