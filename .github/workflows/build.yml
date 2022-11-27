@@ -2,8 +2,8 @@ name: noxus
 
 on:
   # Triggers the workflow on push or pull request events but only for the Dev branch
-  push:
-    branches: [ dev ]
+  # push:
+  #   branches: [ dev ]
   pull_request:
     branches: [ dev ]
 
