@@ -5,7 +5,7 @@ services:
         image: tapeart/frontend:latest
         container_name: frontend
         ports:
-          -  3030:5173
+          -  3000:80
         depends_on: 
           - backend  
 
@@ -17,3 +17,7 @@ services:
             - 8000:8000
         environment:
             MONGODB_URL: {{ secrets.MONGO_URL }}
+            ACCESS_KEY: {{ secrets.ACCESS_KEY }}
+            SECRET_KEY: {{ secrets.SECRET_KEY }}
+            JWT_SECRET_KEY: {{ secrets.JWT_SECRET_KEY }}
+            JWT_REFRESH_SECRET_KEY: {{ secrets.JWT_REFRESH_SECRET_KEY }}
