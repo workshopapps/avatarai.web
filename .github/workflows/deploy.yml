@@ -25,14 +25,6 @@ jobs:
           file: ./Backend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest
-
-      - name: Build and push Frontend
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          file: ./frontend/Dockerfile
-          push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:v2
       
       - name: Build and push Frontend latest
         uses: docker/build-push-action@v3
@@ -42,7 +34,6 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/frontend:latest
 
-      
       - name: Deploy Apps
         run: |
           echo "${{ secrets.SSH_KEY }}" > id_rsa
