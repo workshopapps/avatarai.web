@@ -1,13 +1,16 @@
 #!/bin/bash
 
-user_email = ""
-uid = '12sw'
-class = "" # to be read externally
-job_name = "${user_email}-${uid}"
+user_email = $1 # First variable passed
+class = $2 # Second variable
+uid = $3 # Third variable
+job_name = "${user_email}-${uid}" # Unique name for a particular training session
+
 
 # Start training environment
+echo "Creating latent diffusion environment"
 conda env create -f environment.yaml
 conda activate ldm
+echo "environment created"
 
 # Generate regularization images based on class
 
