@@ -1,5 +1,7 @@
 import React from 'react'
 import './any.css'
+import { Link } from 'react-router-dom'
+
 
  const Any = () => {
   return (
@@ -8,7 +10,11 @@ import './any.css'
         <p>Choose as many template as you want and put yourself anywhere you choose to be.
              Avart offers you the ability to elect amazing scenes and backgrounds to create amazing AI avatars
         </p>
-        <button className='button-bat'>Start Generating</button>
+        <button className='button-bat'>   
+          <Link to='/Signupfirst'>
+            Start Generating           
+          </Link>  
+        </button>
     </section>
   )
 }
