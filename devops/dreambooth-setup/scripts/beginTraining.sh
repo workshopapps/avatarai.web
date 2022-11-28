@@ -70,16 +70,16 @@ python $txt2img_path --ddim_eta 0.0 \
                 --scale 10.0  \
                 --ddim_steps 80 \  
                 --ckpt $last_model_path  \
-                --prompt $gen_img_prompt  \
+                --prompt $gen_img_prompt
 
 echo "Image generation Complete"
 
 gen_images_path = 'outputs/txt2img-samples/samples' # Change to absolute path
-ls -Al $gen_images_path
+ls -Al ${gen_images_path}
 
 # zip the generated images
 zipped_gen_file = ${user_email}-gen-images.zip
-zip zipped_gen_file gen_images_path
+zip ${zipped_gen_file} ${gen_images_path}
 
 # Send zipped package as an email to user
 
