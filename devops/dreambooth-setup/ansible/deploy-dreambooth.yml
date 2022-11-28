@@ -45,8 +45,8 @@
       command: bash /home/ubuntu/conda/miniconda.sh -b -f -p /home/ubuntu/conda/miniconda
 
     - name: Add conda commands to path
-      command: 
-        cmd: ln /home/ubuntu/conda/miniconda/bin/* /usr/bin
+      shell: 
+        cmd: ln /home/ubuntu/conda/miniconda/bin/conda /usr/bin
         warn: false 
 
     # Clone github repo for dreambooth
