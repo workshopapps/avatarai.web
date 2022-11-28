@@ -1,8 +1,8 @@
 import React from 'react'
 import '../cta/cta.css'
-  import Diva from './diva.png'
-  import war from './war.png'
-
+import Diva from './diva.png'
+import war from './war.png'
+import { Link } from 'react-router-dom'
 import './socialproof.css';
 
 const SocialProof = () => {
@@ -12,13 +12,12 @@ const SocialProof = () => {
         
         <div className='ai__ony'>
         
-        <div className='aii-ony'>
-          <img className='ai___img-ony' src='./images/ai5.png'/>
-          <img className='ai___img-ony' src='./images/a3.png'/>
-          <img className='ai___img-ony' src='./images/ai2.png'/>
-          <img className='ai___img-ony' src='./images/ai4.png'/>
-        </div>
-          
+          <div className='aii-ony'>
+            <img className='ai___img-ony' src='./images/ai5.png'/>
+            <img className='ai___img-ony' src='./images/a3.png'/>
+            <img className='ai___img-ony' src='./images/ai2.png'/>
+            <img className='ai___img-ony' src='./images/ai4.png'/>
+          </div>
           <div className='aii-ony' >
             <img src={Diva}/>
             <img src='./images/ava2.png'/>
@@ -27,8 +26,11 @@ const SocialProof = () => {
             <img src={war}/>
           </div>
         </div>
-        <button className="social-btn">Explore more</button>
-        
+        <Link to='/signupfirst'>
+          <button className="social-btn">
+            Explore more
+          </button>
+        </Link>  
     </div>
   )
 }

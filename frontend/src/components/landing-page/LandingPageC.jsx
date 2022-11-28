@@ -29,10 +29,9 @@ function LandingPageC() {
         <Learn/>
         <Top/>
         <Final/>
-      {/* <About />
-        <QuestionSection />
+        {/* <QuestionSection /> */}
         <FaqNewsletter />
-        <Foooter /> */}
+        <Foooter /> 
     </div>
   )
 }
