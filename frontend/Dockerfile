@@ -5,9 +5,13 @@ COPY ./frontend .
 RUN npm i
 RUN npm run build
 
+RUN npm i -g serve
+
+CMD ["serve", "-s", "build"]
+
 # Stage 2
-FROM nginx:alpine
+# FROM nginx:alpine
 
-COPY --from=build /frontend/dist/ /usr/share/nginx/html/
+# COPY --from=build /frontend/dist/ /usr/share/nginx/html/
 
-EXPOSE 80
+# EXPOSE 80
