@@ -62,7 +62,7 @@ async def create_user(raw_user: User):
 
 
     ############################
-    #MAKING TO POST TO DATABASE
+    #MAKING POST TO DATABASE
     ############################
     new_user = await db['user'].insert_one(user)
     create_user= await db.user.find_one({"_id": new_user.inserted_id})
