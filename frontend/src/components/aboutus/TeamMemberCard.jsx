@@ -5,19 +5,14 @@ import Member3 from "./img/member3.png";
 import Member4 from "./img/member4.png";
 import "./aboutUs.css";
 
-const membersImg = [
-    Member1, Member2, Member3, Member4
-]
-
-const TeamMemberCard = ({name, role, index}) => {
-    const members = useRef(membersImg).current;
+const TeamMemberCard = ({profile, index}) => {
     return (
-        <div className="dja_teamCard_container">
-            <div className="dja_teamCard_img_ctn">
-                <img src={members[index]} alt={name} />
+        <div key={index} className="">
+            <div className="">
+                <img src={profile.image} alt={profile.name} className="w-full rounded-[10px]" />
             </div>
-            <p className="dja_teamCard_name">{name}</p>
-            <p>{role}</p>
+            <p className="font-bold text-base mt-[8px]">{profile.name}</p>
+            <p className="text-base">{profile.role}</p>
         </div>
     )
 }
