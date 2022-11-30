@@ -4,6 +4,7 @@ import React from "react";
 export default function PriceCardTwo({
   title,
   amount,
+  top,
   bg,
   feature,
   feature2,
@@ -39,7 +40,7 @@ export default function PriceCardTwo({
         <div>{feature}</div>
         <div>{feature2}</div>
       </div>
-      <BuyPriceBtn background={background} text={text} />
+      <BuyPriceBtn top={top} background={background} text={text} />
     </section>
   );
 }
