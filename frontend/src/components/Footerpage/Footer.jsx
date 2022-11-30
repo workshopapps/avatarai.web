@@ -54,8 +54,9 @@ export default function Footer() {
                 </h6>
                 <p className="mb-4">
                   <a href="#!" className="text-gray-600 text-[16px]">
-                    Contact Us
+                    Contact Us 
                   </a>
+                  
                 </p>
                 <p className="mb-4">
                   <a href="#!" className="text-gray-600 text-[16px]">
