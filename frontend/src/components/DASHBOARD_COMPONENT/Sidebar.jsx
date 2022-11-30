@@ -21,9 +21,9 @@ function Sidebar() {
 
   return (
     <>
-      <div className="navbar">
+      <div className="navbar z-50">
         <Link to="#" className="menu-bars">
-          <AiOutlineMenu onClick={showSidebar} className="icon-open" />
+          <AiOutlineMenu onClick={showSidebar} className="icon-open z-50" />
         </Link>
       </div>
       <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
