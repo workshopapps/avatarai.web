@@ -1,15 +1,13 @@
-import WhyUsCard from './WhyUsCard';
 import TeamMemberCard from './TeamMemberCard';
 import './aboutUs.css';
 import Banner from './img/aboutBg.png';
-import PolygonLeft from './img/polygonLeft.png';
-import PolygonRight from './img/polygonRight.png';
 import Navbar from '../landingPage/Navbar/Navbar';
 import Banner2 from './img/image1.svg';
 
 import { WHY_US, TEAM } from './data';
 // import Footer from "../Footerpage/Footer";
 import Foooter from '../footer/Foooter';
+import ContactUs from './ContactUs';
 
 const AboutUs = () => {
 	return (
@@ -77,23 +75,12 @@ const AboutUs = () => {
 					</div>
 				</section>
 
-				{/* <section className="dja_why_section">
-					<div className="dja_container">
-						<h2 className="dja_title">Why Us?</h2>
-						<div className="dja_why_ctn">
-							{WHY_US.map((item) => (
-								<WhyUsCard title={item.title} content={item.content} />
-							))}
-						</div>
-					</div>
-				</section> */}
-
 				<section className="px-5 mt-[48px]">
 					<div className="max-w-[1200px] mx-auto">
 						<h2 className="font-bold text-[24px] md:text-[48px] mb-[24px]">
 							Meet our <br /> Amazing Team
 						</h2>
-						<p className='text-sm md;text-[24px] mb-[48px]'>
+						<p className="text-sm md;text-[24px] mb-[48px]">
 							Zuvatar was founded by a team of creatives in November 2022 during the most powerful internship in the
 							world (HNG). What brought the team together was a spark of ideas, and an idea to help online users to have
 							enough physical privacy on any online forum.
@@ -104,6 +91,10 @@ const AboutUs = () => {
 							))}
 						</div>
 					</div>
+				</section>
+
+				<section className="bg-[#6C6191] mt-[50px] relative overflow-hidden px-5">
+					<ContactUs />
 				</section>
 			</div>
 			{/* <Footer /> */}
