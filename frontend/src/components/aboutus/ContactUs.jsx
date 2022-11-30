@@ -5,12 +5,12 @@ const ContactUs = () => {
 	return (
 		<div className="max-w-[1200px] mx-auto flex justify-between gap-3 md:gap-5">
 			<div className="max-w-[580px] py-[32px] md:py-[112px] flex flex-col justify-center items-start">
-				<h1 className="text-[#ffffff] font-semibold text-[20px] md:text-[48px] lg:text-[64px] leading-[28px] md:leading-[48px] lg:leading-[64px] mb-[5px] md:mb-[16px]">
+				<h1 className="text-[#ffffff] font-semibold text-[20px] md:text-[48px] lg:text-[64px] leading-[28px] md:leading-[48px] lg:leading-[70px] mb-[5px] md:mb-[16px]">
 					Have a question?
 					<br />
 					Our team is happy to assist you
 				</h1>
-				<p className="mb-[16px] md:mb-[64px] text-[#BFC3D4] text-xs md:text-[24px] leading-3 md:leading-[24px] font-medium">
+				<p className="mb-[16px] md:mb-[64px] text-[#BFC3D4] text-xs md:text-[24px] leading-3 md:leading-[33px] font-medium">
 					Ask about Zuvatar products, pricing, implementation or anything else. Our highly trained reps are standing by,
 					ready to help
 				</p>
