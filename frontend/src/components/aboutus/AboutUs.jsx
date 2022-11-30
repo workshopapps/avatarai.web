@@ -3,6 +3,9 @@ import './aboutUs.css';
 import Banner from './img/aboutBg.png';
 import Navbar from '../landingPage/Navbar/Navbar';
 import Banner2 from './img/image1.svg';
+import Pattern1 from './img/pattern1.svg';
+import Pattern2 from './img/pattern2.svg';
+import Pattern3 from './img/pattern3.svg';
 
 import { WHY_US, TEAM } from './data';
 // import Footer from "../Footerpage/Footer";
@@ -30,7 +33,7 @@ const AboutUs = () => {
 				</section>
 
 				<section className="py-3 lg:py-[48px] px-5">
-					<div className="lg:h-[300px] flex justify-between items-start gap-3 md:gap-5 max-w-[1200px] mx-auto ">
+					<div className="lg:min-h-[300px] flex justify-between items-start gap-3 md:gap-5 max-w-[1200px] mx-auto ">
 						<div className="flex-auto w-56 md:w-64 flex h-full">
 							<h2 className="text-[#333333] font-semibold text-[20px] lg:text-[64px] leading-[20px] lg:leading-[81px]">
 								We are on a mission to change <span className="text-[#808080]">the face of art creation.</span>
@@ -50,12 +53,12 @@ const AboutUs = () => {
 					</div>
 				</section>
 
-				<div className="w-full pb-5">
+				<div className="w-full">
 					<img src={Banner2} alt="Large banner" className="w-full" />
 				</div>
 
-				<section className="pt-3 lg:pt-[48px] px-5">
-					<div className="lg:h-[300px] flex justify-between gap-3 md:gap-5 max-w-[1200px] mx-auto border-b border-[#808080] pb-3 lg:pb-[48px]">
+				<section className="pt-10 lg:pt-[48px] px-5 relative overflow-hidden">
+					<div className="lg:min-h-[300px] flex justify-between gap-3 md:gap-5 max-w-[1200px] mx-auto border-b border-[#808080] pb-3 lg:pb-[48px]">
 						<div className="flex-auto max-w-[413px] flex items-end h-full">
 							<p className="font-normal flex flex-col items-center">
 								<span className="text-[#808080] text-[48px] md:text-[64px] leading-[0px]">“</span>
@@ -74,9 +77,10 @@ const AboutUs = () => {
 							</h2>
 						</div>
 					</div>
+					<img src={Pattern1} alt="pattern" className="absolute md:top-[-160px] top-[-80px] left-0 w-20 md:w-auto" />
 				</section>
 
-				<section className="px-5 mt-[48px]">
+				<section className="px-5 mt-[48px] relative">
 					<div className="max-w-[1200px] mx-auto">
 						<h2 className="font-bold text-[24px] md:text-[48px] mb-[24px]">
 							Meet our <br /> Amazing Team
@@ -92,6 +96,8 @@ const AboutUs = () => {
 							))}
 						</div>
 					</div>
+					<img src={Pattern2} alt="pattern" className="absolute top-[-20px] left-0 hidden md:block" />
+					<img src={Pattern3} alt="pattern" className="absolute md:top-[-220px] top-[-140px] right-0 w-20 md:w-auto" />
 				</section>
 
 				<section className="bg-[#6C6191] mt-[50px] relative overflow-hidden px-5">
