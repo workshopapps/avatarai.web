@@ -3,17 +3,12 @@
 #################
 # IMPORTS
 #################
-from fastapi import APIRouter, status, HTTPException, Depends
-from pydantic import BaseModel
+from fastapi import APIRouter, status, HTTPException
 from schemas import User, Login
-from passlib.context import CryptContext
 from database import db
-from fastapi.responses import  Response, JSONResponse
+from fastapi.responses import JSONResponse
 ##############
-import os
-from datetime import datetime, timedelta
-from typing import Union, Any
-# from jose import jwt
+
 from utility import *
 from bson import json_util
 import json
@@ -47,8 +42,7 @@ user_router = APIRouter()
 @user_router.post("/api/user", response_model = User)
 async def create_user(raw_user: User):
     user = {        
-        "first_name": raw_user.first_name,
-        "last_name": raw_user.last_name,
+        "username": raw_user.username,
         "email":raw_user.email,
         "password": raw_user.password,                     
     }
@@ -64,13 +58,38 @@ async def create_user(raw_user: User):
     ############################
     #MAKING POST TO DATABASE
     ############################
+    if await db.user.find_one({"email": raw_user.email}):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Invalid Request"
+        )
+
+
     new_user = await db['user'].insert_one(user)
     create_user= await db.user.find_one({"_id": new_user.inserted_id})
     create_user["_id"] = str(create_user["_id"])
-    return JSONResponse(
-        status_code=status.HTTP_201_CREATED,
-        content=create_user
-    )
+
+    access_token = create_access_token(user['email'])
+    #refresh_token = create_refresh_token(userRes['email'])
+    # print(access_token)
+    Response = {
+        "token" :{ "token" : access_token},
+        "userData":{
+            'username': user['username'],
+            'email': user['email'],
+            }
+        }
+    return JSONResponse(Response, status_code=status.HTTP_201_CREATED)
+    # return JSONResponse(
+    #     status_code=status.HTTP_201_CREATED,
+    #     content=create_user
+    # )
+
+
+
+
+
+
 ##############################
 #Login Api
 ##############################
