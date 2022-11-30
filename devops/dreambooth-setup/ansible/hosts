@@ -1,2 +1,2 @@
 [dreambooth_servers]
-54.89.7.34
+18.205.190.112 ansible_user=ubuntu ansible_connection=ssh

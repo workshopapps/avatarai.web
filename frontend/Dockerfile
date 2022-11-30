@@ -1,8 +1,17 @@
-FROM node:16-alpine
+# Stage 1
+FROM node:16-alpine AS build
 WORKDIR /frontend
 COPY ./frontend .
 RUN npm i
 RUN npm run build
-ENV NODE_ENV production
-EXPOSE 5173
-CMD [ "npm", "run", "dev", "--", "--host"]
+
+RUN npm i -g serve
+
+CMD ["serve", "-s", "build"]
+
+# Stage 2
+# FROM nginx:alpine
+
+# COPY --from=build /frontend/dist/ /usr/share/nginx/html/
+
+# EXPOSE 80

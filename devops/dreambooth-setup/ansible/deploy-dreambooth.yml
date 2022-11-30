@@ -21,17 +21,40 @@
     - name: Create conda directory
       file:
         state: directory
-        path: conda
+        path: /home/ubuntu/conda
+        owner: ubuntu
 
     - name: Download conda installer script
       command:
-        cmd: wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
-        chdir: conda
+        cmd: wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+        chdir: /home/ubuntu/conda
+        warn: false
+    
+    # - name: Download conda installer script
+    #   command:
+    #     cmd: wget https://repo.anaconda.com/miniconda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
+    #     chdir: conda
+
+    - name: Make miniconda executable
+      file:
+        path: /home/ubuntu/conda/miniconda.sh
+        owner: ubuntu
+        mode: +x
 
     - name: Install miniconda
-      command: ./conda/Miniconda3-py39_4.12.0-Linux-x86_64.sh
+      command: bash /home/ubuntu/conda/miniconda.sh -b -f -p /home/ubuntu/conda/miniconda
+
+    - name: Add conda commands to path
+      shell: 
+        cmd: ln /home/ubuntu/conda/miniconda/bin/conda /usr/bin
+        warn: false 
 
     # Clone github repo for dreambooth
+    - name: Remove dreambooth github repo
+      file:
+        path: /home/ubuntu/Dreambooth-Stable-Diffusion
+        state: absent
+
     - name: Clone dreambooth github repo
       command:
         cmd: git clone https://github.com/JoePenna/Dreambooth-Stable-Diffusion
@@ -51,26 +74,31 @@
         owner: ubuntu
 
     # Configure mailing service
-    - name: Add app key environment variable
+    - name: Set mailing configurations
       ansible.builtin.blockinfile:
         path: "/etc/ssmtp/ssmtp.conf"
         block: |
+          #
+          #
           UseSTARTTLS=no
           FromLineOverride=YES
-          root=username@gmail.com
+          root=ezikegodson@gmail.com
           mailhub=smtp.gmail.com:465
-          AuthUser=username@gmail.com
-          AuthPass=xxxxxxxxxxxxx
+          AuthUser=ezikegodson@gmail.com
+          AuthPass=vuzzkqghcgehbmsl
           rewriteDomain=gmail.com
           FromLineOverride=YES
           UseTLS=YES
-    
-    - name: Reload 'ssmtp'
-      service:
-        name: ssmtp
-        state: reloaded
+          #
+          #
 
     # Transfer node server files
+    - name: Make training script executable
+      file:
+        path: /home/ubuntu/node-server
+        owner: ubuntu
+        state: directory
+
     - name: Transfer node server package.json template
       template:
         src: files/package.json
