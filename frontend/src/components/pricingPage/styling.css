@@ -20,11 +20,6 @@
 
 }
 
-.vnc_pricing {
-    color: var(--green);
-
-}
-
 .vnc_price {
     background-color: var(--bg-color);
 }
