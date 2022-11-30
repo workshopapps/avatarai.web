@@ -95,11 +95,7 @@ async def create_user(raw_user: User):
 ##############################
 @user_router.post("/api/user/login", response_model = Login)
 async def login(login : Login):
-    # user_data= {
-        
-    #     "email":login.email,
-    #     "password": login.password
-    # }
+    
     
     
     user = await db["user"].find_one({ "email": login.email }, None)
