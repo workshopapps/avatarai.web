@@ -16,8 +16,8 @@ const Login = ({ props }) => {
   const onSubmit = (data) => console.log(data);
 
   return (
-    <div className="flex gap-32 p-6 max-w-[1440px] mx-auto">
-      <div className="hidden md:flex flex-col rounded-2xl items-center bg-[#6c6191] justify-center max-w-[535px] px-14 py-32">
+    <div className="flex p-6 max-w-[1440px] mx-auto">
+      <div className="hidden md:flex flex-col rounded-2xl items-center bg-[#6c6191] justify-center max-w-xl px-14 py-32">
         <div className="flex flex-col gap-4">
           <h2 className="font-nunito font-extrabold text-5xl text-white max-w-2xl">
             Create your own AI-generated Avatars
@@ -28,21 +28,18 @@ const Login = ({ props }) => {
           </p>
         </div>
         <div className="h-12"></div>
-        <div className="w-full h-[350px] relative">
-          <div className="absolute left-44 top-10">
-            <img src="/arrow.svg" />
+        <div className="w-full">
+          <div className="relative">
+            <div className="bg-white h-[222px] w-[163px] absolute -top-5 -left-2"></div>
+            <img className="absolute " src="/parker-og.png" />
           </div>
-          <div className="absolute h-[222px] w-[163px]">
-            <div className="absolute -top-2 -left-2 bg-white h-[222px] w-[163px]"></div>
-            <img className="absolute" src="/parker-og.png" />
-          </div>
-          <div className="absolute h-[180px] w-[180px] bottom-0 right-0">
-            <div className="absolute bg-white h-[180px] w-[180px] -bottom-2 -right-2"></div>
-            <img src="parker-avartar.png" className="absolute" />
-          </div>
+          <img
+            src="parker-avartar.png"
+            className="ml-auto relative bottom-16"
+          />
         </div>
       </div>
-      <div className="flex flex-col items-center w-full max-w-lg py-2">
+      <div className="flex flex-col items-center w-full py-2">
         <div className="logo w-10 h-10">
           <img src="/tapart.svg" />
         </div>
