@@ -88,12 +88,19 @@ const AboutUs = () => {
 					</div>
 				</section> */}
 
-				<section className="dja_team_section">
-					<div className="dja_container">
-						<h2 className="dja_title">Our Team</h2>
+				<section className="px-5 mt-[48px]">
+					<div className="max-w-[1200px] mx-auto">
+						<h2 className="font-bold text-[24px] md:text-[48px] mb-[24px]">
+							Meet our <br /> Amazing Team
+						</h2>
+						<p className='text-sm md;text-[24px] mb-[48px]'>
+							Zuvatar was founded by a team of creatives in November 2022 during the most powerful internship in the
+							world (HNG). What brought the team together was a spark of ideas, and an idea to help online users to have
+							enough physical privacy on any online forum.
+						</p>
 						<div className="dja_team_ctn">
 							{TEAM.map((item, i) => (
-								<TeamMemberCard name={item.name} index={i} role={item.role} />
+								<TeamMemberCard index={i} profile={item} />
 							))}
 						</div>
 					</div>
