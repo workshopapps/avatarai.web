@@ -24,7 +24,7 @@ const FaqNewsletter = () => {
      <div className='flex-[100%] md:flex-[50%]'>
 
       <div className="flex flex-col gap-[16px] w-[100%] lg:w-[80%] md:float-right pt-[2rem]" >
-        <div  id="big-div" className="border border-[#403E46] flex items-center md:gap-4 gap-1 justify-between p-[5px] h-[52px] w-full max-w-[512px] bg-white rounded">
+        <div  id="big-div" className="border border-[#403E46] flex items-center md:gap-4 gap-1 justify-between rounded-[16px] p-[5px] h-[52px] w-full max-w-[512px] bg-white rounded">
           <div id='input' className="h-full flex md:gap-[8px] gap-1 items-center font-nunito grow text-[#848484] rounded py-[8px] md:pl-[12px] pl-2">
             <img src="/sms.svg" />
             <input
@@ -34,7 +34,7 @@ const FaqNewsletter = () => {
               placeholder="Enter your email address"
             />
           </div>
-          <button id="subscribe" className="cursor-pointer bg-[#8B70E9] h-full relative flex items-center font-nunito text-white rounded px-[20px] py-[8px]">
+          <button id="subscribe" className="cursor-pointer bg-[#8B70E9] h-full relative flex items-center font-nunito text-white rounded-[12px] px-[20px] py-[8px]">
             <span className="text-white">Subscribe</span>
           </button>
         </div>

@@ -16,7 +16,7 @@ const Foooter = () => {
       flex    justify-between  bg-[#FFFFF] w-[80%] md:[90%] m-auto py-[3.5rem] ">
         <div className="flex-[50%]">
 
-        <div className="text-[#201F23] w-[80%]">
+        <div className="text-[#201F23] w-[80%] md:w-[85%]">
               <h1 className="font-bold">Noxus</h1>
               <p className="font-medium mt-3 max-w-[508px]">
                Noxus is your webapp for creating Artificial Intelligent Avatars, we 
@@ -29,7 +29,7 @@ const Foooter = () => {
              <div className="float-right ">
 
             <div className="flex">
-              <div className="flex flex-col space-y-4 text-[#2B292F] md:mx-[1.8rem]">
+              <div className="flex flex-col space-y-4 text-[#2B292F] md:ml-[1.7rem]">
                 <p className="font-semibold text-xl">Resources</p>
                 <p className="text-[#605E65]">
                   <a href="/" className="text-base">Reviews</a>
@@ -41,7 +41,7 @@ const Foooter = () => {
                   <a href="/" className="text-base">Guides</a>
                 </p>
               </div>
-              <div className="flex flex-col space-y-4 text-[#2B292F] md:mx-[1.8rem]">
+              <div className="flex flex-col space-y-4 text-[#2B292F] md:ml-[1.7rem]">
                 <p className="font-semibold text-xl">Company</p>
                 <p className="text-[#605E65]">
                   <a href="/" className="text-base">Contact Us</a>
@@ -53,7 +53,7 @@ const Foooter = () => {
                   <a href="/" className="text-base">Events</a>
                 </p>
               </div>
-              <div className="flex flex-col space-y-4 text-[#2B292F] md:mx-[1.8rem]">
+              <div className="flex flex-col space-y-4 text-[#2B292F] md:ml-[1.7rem] lg:w-auto w-[6rem]">
                 <p className="font-semibold text-xl">Help</p>
                 <p className="text-[#605E65]">
                   <a href="/" className="text-base">FAQs</a>
