@@ -1,5 +1,7 @@
-#dja_main {
+* {
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .dja_container {
