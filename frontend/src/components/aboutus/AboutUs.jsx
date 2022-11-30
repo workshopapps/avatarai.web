@@ -8,6 +8,7 @@ import { WHY_US, TEAM } from './data';
 // import Footer from "../Footerpage/Footer";
 import Foooter from '../footer/Foooter';
 import ContactUs from './ContactUs';
+import FaqNewsletter from '../faq/FaqNewsletter';
 
 const AboutUs = () => {
 	return (
@@ -97,6 +98,7 @@ const AboutUs = () => {
 					<ContactUs />
 				</section>
 			</div>
+			<FaqNewsletter />
 			{/* <Footer /> */}
 			<Foooter />
 		</>
