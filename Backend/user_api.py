@@ -98,7 +98,7 @@ async def login(login : Login):
     
     
     
-    user = await db["user"].find_one({ "email": login.email }, None)
+    user = await db["user"].find_one({ "user": login.email }, None)
     # print(user)
     userRes = json.loads(json_util.dumps(user))
     #print(userRes)
