@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "../landingPage/Button/Button";
 import Navbar from "../landingPage/Navbar/Navbar";
 import { useForm } from "react-hook-form";
+import { useGoogleLogin } from "@react-oauth/google";
 
 const Login = ({ props }) => {
   const {
@@ -16,6 +17,11 @@ const Login = ({ props }) => {
   const handleVisibility = () => {
     setPasswordVisibility((prev) => !prev);
   };
+
+  const googleLogin = useGoogleLogin({
+    onSuccess: (tokenResponse) => console.log(tokenResponse),
+    onError: () => console.log("Login with Google Failed"),
+  });
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -84,10 +90,14 @@ const Login = ({ props }) => {
             className="flex flex-col w-full gap-7 lg:gap-10"
           >
             <div className="flex flex-col gap-2">
-              <label className="text-black font-nunito font-medium text-sm lg:text-xl">
+              <label
+                htmlFor="email"
+                className="text-black font-nunito font-medium text-sm lg:text-xl"
+              >
                 Email Address
               </label>
               <input
+                name="email"
                 type="email"
                 id="email"
                 required
@@ -105,12 +115,16 @@ const Login = ({ props }) => {
               )}
             </div>
             <div className="flex flex-col gap-2 relative">
-              <label className="text-black font-nunito font-medium text-sm lg:text-xl">
+              <label
+                htmlFor="password"
+                className="text-black font-nunito font-medium text-sm lg:text-xl"
+              >
                 Password
               </label>
               <input
                 type={passwordVisibility ? "text" : "password"}
                 id="password"
+                name="password"
                 placeholder="Password"
                 className="border border-[#121212] py-3 px-4 rounded-md placeholder-[#808080] text-sm lg:text-xl font-nunito font-medium w-full"
                 {...register("password", {
@@ -149,7 +163,10 @@ const Login = ({ props }) => {
             </button>
           </form>
           <div className="h-7 lg:h-10"></div>
-          <div className="w-full border border-[#808080] font-nunito font-bold p-4 rounded-lg flex gap-4 items-center justify-center">
+          <div
+            onClick={googleLogin}
+            className="cursor-pointer w-full border border-[#808080] font-nunito font-bold p-4 rounded-lg flex gap-4 items-center justify-center"
+          >
             <div className="google h-8 w-8">
               <img src="/google.svg" />
             </div>
