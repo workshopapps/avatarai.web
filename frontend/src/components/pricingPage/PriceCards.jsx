@@ -38,7 +38,7 @@ function PriceCards({
         <div>{feature}</div>
         <div>{feature2}</div>
       </div>
-      <BuyPriceBtn background={background} text={text} />
+      <BuyPriceBtn top={top} background={background} text={text} />
     </section>
   );
 }

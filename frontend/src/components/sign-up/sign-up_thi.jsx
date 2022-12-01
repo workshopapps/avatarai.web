@@ -24,19 +24,19 @@ export default function SignUp_thi() {
   return (
     <div className="houset_opt">
       <div className="first__opt">
-        <div className="nav_opt">
-          <img className="logo_opt logo_opt_2" src={logo_opt} alt="logo.png" />
-        </div>
-        <img className="mail_opt" src={tick_opt} alt="tick.png" />
+        {/*<div className="nav_opt">*/}
+        {/*  <img className="logo_opt logo_opt_2" src={logo_opt} alt="logo.png" />*/}
+        {/*</div>*/}
+        <img className="mail__opt" src={tick_opt} alt="tick.png" />
         <div className="ch__opt">E-mail verification successful</div>
         <div className="li_opt">
-          Your e-mail verification was successfully. You are very close to completing your account setup.
+          Your e-mail verification was successfully. You can start generating avatars now.
         </div>
 
         <div className="button_div_opt">
-          <Link to="/Opt_for">
+          <Link to="/Dashboard">
             <button className="mybutton_opt" id="mybutton_opt">
-              Complete Your Account Setup
+              Dashboard
             </button>
           </Link>
         </div>

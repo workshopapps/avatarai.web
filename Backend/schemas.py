@@ -93,8 +93,7 @@ class UpdateAvatarModel(BaseModel):
 #User data model
 class User(BaseModel):
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
-    first_name:str
-    last_name : str
+    username:str
     email:str
     password: str
     #is_deleted:bool
@@ -108,8 +107,7 @@ class User(BaseModel):
 
         schema_extra = {
             'example': {               
-                "first_name": "John",
-                "last_name": "Doe",
+                "username": "John",
                 "email":"johndoe@gmail.com",
                 "password": "I_can't_think_of_a_password",
             }
