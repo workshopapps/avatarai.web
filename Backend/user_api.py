@@ -101,7 +101,7 @@ async def login(login : Login):
     user = await db["user"].find_one({ "email": login.email }, None)
     # print(user)
     userRes = json.loads(json_util.dumps(user))
-    print(userRes)
+    #print(userRes)
     
 
     if user is None:
@@ -122,14 +122,15 @@ async def login(login : Login):
     if not verify_password(plain_password, password_hash):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Incorrect email or password"
+            detail="Incorrect email or password",
+            headers={"WWW-Authenticate": "Bearer"},
         )
 
     access_token = create_access_token(userRes['email'])
     #refresh_token = create_refresh_token(userRes['email'])
     # print(access_token)
     Response = {
-        "token" :{ "token" : access_token},
+        "token" :{ "token" : access_token, "token_type": "bearer"},
         "userData":{
             'username': userRes['username'],
               'email': userRes['email'],
