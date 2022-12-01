@@ -17,18 +17,32 @@ import Final from './final/final';
 
 
 function LandingPageC() {
+  const [show,setShow] = React.useState(true)
+  const [preview,setPreview] = React.useState(true)
+  React.useEffect(() => {
+    let timeout;
+      timeout = setTimeout(() => {
+        setShow((current) => !current);
+        setPreview(false)
+      }, 5000);
+    return () => clearTimeout(timeout);
+  });
+
   return (
     <div>
         <Navbar />
+        {preview && <div className="disclamiar">
+          <p>it will Take a few seconds for image and Icons to Loads</p>
+        </div>}
         <Header />
+        <Any/>
         <Main />
         <CTA />
-        <Any/>
         <Benefits />
-        <Social />
+        {/* <Social />
         <Learn/>
         <Top/>
-        <Final/>
+        <Final/> */}
         {/* <QuestionSection /> */}
         <FaqNewsletter />
         <Foooter /> 

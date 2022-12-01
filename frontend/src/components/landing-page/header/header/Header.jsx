@@ -7,21 +7,16 @@ import { Link } from 'react-router-dom'
 
 const Header = () => {
   return (
-    <section className='header'>
-      <div className='header__content-ony'>
-        <h1 className='header__title-ony'>Create your own <span className='span__color-ony'>AI-generated </span>Avatars</h1>
-        <p className='header__description-ony'>Create profile pictures, online gaming display pictures, pet potraits and much more on the go</p>
-        <button className='button'>
-          <Link to='/Signupfirst'>
-            Sign Up
-          </Link>  
-        </button>
-            
-      </div>
-      <div className="hero-img">
-        <img src={Hero} alt="" />
-      </div>
-    </section>
+        <header className='bat-header'>
+          <div className="bat-header-content">
+            <h2>Create your own <span>AI-generated </span>avatars</h2>
+            <p>Create Profile pictures, Online gaming display pictures, Pet potraits and much more on the go.</p>
+            <Link to='/Signupfirst'>
+            <button className="bat-btn">Generate Avatars</button>
+            </Link>
+          </div>
+          <div className="bat-header-overlay"></div>
+        </header>
   )
 }
 

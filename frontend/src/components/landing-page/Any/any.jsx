@@ -6,15 +6,15 @@ import { Link } from 'react-router-dom'
  const Any = () => {
   return (
     <section className='any-sect'>
-        <p className="be">Be Anywhere</p>
-        <p>Choose as many template as you want and put yourself anywhere you choose to be.
-             Avart offers you the ability to elect amazing scenes and backgrounds to create amazing AI avatars
+        <h4 className="be">Create avatars of more than 20 styles with zuvatar</h4>
+        <p>
+          Upload 3 - 10 images and generate avatars on the go. We’ll train the AI model to generate avatars that look just like you in any style you want.
         </p>
-        <button className='button-bat'>   
+        {/* <button className='button-bat'>   
           <Link to='/Signupfirst'>
             Start Generating           
           </Link>  
-        </button>
+        </button> */}
     </section>
   )
 }
