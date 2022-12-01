@@ -1,13 +1,14 @@
 import sys 
 sys.path.append("..")
 
-from httpx import AsyncIOMotorClient
+
 from fastapi.testclient import TestClient
 import pytest
 from  ..api import app
 from database import db 
-
-@pytest.mark.any
+from bson import json_util
+import json
+@pytest.fixture
 def client():
     client = TestClient(app)
     return client
@@ -20,23 +21,20 @@ def client():
 
 
 def test_create_user(client):
-    user={ 
+    user={         
         "first_name": "John",
         "last_name": "Doe",
         "email":"johndoe@gmail.com",
         "password": "I_can't_think_of_a_password",
     }
+    data = json.loads(json_util.dumps(user))
+
     response = client.post(
-        "/api/user",
-        headers={"Content-Type": "application/json"},
-        json ={
-            "first_name": user['first_name'],
-            "last_name": user['last_name'],
-            "email":user['email'],
-        }
-
-    
+        "/api/user", data,
+        headers={
+            "Content-Type": "application/json"
+            }
     )
-
+    
     assert response.status_code == 422
 

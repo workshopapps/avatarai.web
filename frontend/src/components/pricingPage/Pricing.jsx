@@ -1,13 +1,15 @@
 import "./styling.css";
 
 import { Faq } from "./Faq";
+import FaqNewsletter from "../faq/FaqNewsletter";
+import Foooter from "../footer/Foooter";
+import Navbar from "../landingPage/Navbar/Navbar";
 import Pricetop from "./Pricetop";
 import React from "react";
 import Sponsors from "./Sponsors";
 import TotalPriceCards from "./TotalPriceCards";
+
 // import Footer from "../Footerpage/Footer";
-import Navbar from "../landingPage/Navbar/Navbar";
-import Foooter from "../footer/Foooter";
 
 function Pricing() {
   return (
@@ -15,9 +17,7 @@ function Pricing() {
       <Navbar />
       <Pricetop />
       <TotalPriceCards />
-      {/*<Sponsors />*/}
-      <Faq />
-      {/* <Footer /> */}
+      <FaqNewsletter />
       <Foooter />
     </section>
   );
