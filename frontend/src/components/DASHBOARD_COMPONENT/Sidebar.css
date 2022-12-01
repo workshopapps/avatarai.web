@@ -56,6 +56,14 @@
   font-size: 16px;
 }
 
+ .sidebar-eye-web ul li .icon{
+  font-size: 24px;
+ }
+
+.sidebar-eye-web ul li:active {
+  background-color: #dcd4f8;
+}
+
 .sidebar-eye-web ul {
   padding-right: 20px;
 }
