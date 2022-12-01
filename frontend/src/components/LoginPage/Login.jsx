@@ -191,7 +191,7 @@ const Login = ({ props }) => {
               Don't have an account?{" "}
             </span>
             <a
-              href="sign-up"
+              href="signupfirst"
               className="font-nunito font-bold text-sm lg:text-xl text-[#6c6191]"
             >
               Sign Up
