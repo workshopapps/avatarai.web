@@ -1,10 +1,15 @@
+import sys 
+sys.path.append("..")
 from fastapi import FastAPI
-from photo_upload_api import photo_router
-from retrieve_user_avatars_api import user_avatars_router
-from user_api import user_router
+from model.routes.photo_upload_api import photo_router
+from model.routes.retrieve_user_avatars_api import user_avatars_router
+from model.routes.user_api import user_router
 
 # 👇 FastAPI INSTANCE
-app = FastAPI(root_path="/api/v1")
+app = FastAPI(root_path="/")
+
+
+
 
 # ===================================================================
 
