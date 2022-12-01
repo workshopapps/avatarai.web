@@ -11,12 +11,13 @@ import { Link } from "react-router-dom";
 import Button from "../landingPage/Button/Button.jsx";
 import arrowright from "../desktop_4/img/arrow-right.png";
 import Arrowright from "../desktop_4/img/arrowright.png";
-import three from "../desktop_4/img/3.png";
+import three from "./line.png";
 import left from "../desktop_4/img/arrowpleft.png";
 import right from "../desktop_4/img/arrowpright.png";
 import Her from "../desktop_4/img/her.png";
 import Background from "./../DASHBOARD_COMPONENT/dashboardcomp";
 import Content from "../Desktop_3/Content";
+import add from './add.png';
 
 // import axios from "axios";
 
@@ -30,6 +31,21 @@ const ImageUpload = () => {
   const labelText = `(PNG or JPEG)`;
 
   const handleFile = (e) => {
+    let file = e.target.files;
+    // setImageUpload({ file: file });
+    const selectedFilesArray = Array.from(file);
+    console.log(selectedFilesArray);
+    const imagesArray = selectedFilesArray.map((file) => {
+      return URL.createObjectURL(file);
+    });
+    setSelectedImages(imagesArray);
+    setShow(false);
+    setShowAlertLink(true);
+  };
+
+
+  // function to handle adding more files after preview
+  const handleFile2 = (e) => {
     let file = e.target.files;
     // setImageUpload({ file: file });
     const selectedFilesArray = Array.from(file);
@@ -151,15 +167,20 @@ const ImageUpload = () => {
       )}
       {preview && (
         <div className="vic_content">
-          <div className="vic_img_div">
-            <div>
-              <img src={arrowright} className="vic_1" />
-              <img src={Arrowright} className="vic_2" />
+          <div className="aso-dd2-top">
+            <Link className="link" to="/Dashboard_2">
+              <div className="previous-page">
+                {size < 760 ? (
+                  <img src={arrowRightMobile} alt="share icon" />
+                ) : (
+                  <img src={arrowRightDesktop} alt="share icon" />
+                )}
+              </div>
+            </Link>
+            {/* <p>2</p> */}
+            <div className="imgs flex justify-center items-center w-full h-10">
+              <img src={three} alt="" className="w-full "/>
             </div>
-            <div>
-              <img src={three} className="vic_3" />
-            </div>
-            <div></div>
           </div>
           <h3>Preview your Images</h3>
 
@@ -170,14 +191,35 @@ const ImageUpload = () => {
                 selectedImages.map((image, index) => {
                   return (
                     <div key={image} className="vic_her_div">
+                     
                       <img src={image} className="vic_her" />
+                      
                     </div>
+                     
                   );
+                
                 })}
 
               {/* : ( */}
 
               {/* ) */}
+              <form action="" className="vic-dd2-form">
+              <div className="aso-dd2-input">
+                {/* <div> */}
+              <input
+                accept="image/*"
+                multiple
+                type="file"
+                name="file"
+                id="file"
+                onChange={handleFile}
+              />
+              <label htmlFor="file">
+              {/* <label htmlFor="file" className="aso-dd2-label"> */}
+                <img src={upload} alt="" />
+              </label>
+            </div>
+            </form>
             </div>
             {/* <img src={right} className="vic_right" /> */}
           </div>
