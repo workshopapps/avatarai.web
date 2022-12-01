@@ -111,10 +111,9 @@
 }
 
 
-.dja_team_ctn, .dja_why_ctn {
+.dja_team_ctn {
     display: grid;
-    place-items: center;
-    gap: 40px;
+    gap: 20px;
 }
 
 
@@ -174,6 +173,9 @@
 
 @media screen and (min-width: 481px) and (max-width: 768px){
     .dja_team_ctn{
+        display: grid;
+        place-items: center;
+        gap: 40px;
         grid-template-columns: repeat(2, 1fr);
     }
     #banner_title {
@@ -183,12 +185,18 @@
 
 @media screen and (min-width: 769px) and (max-width: 1024px){
     .dja_team_ctn{
+        display: grid;
+        place-items: center;
+        gap: 40px;
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
 @media screen and (min-width: 1025px){
     .dja_team_ctn{
+        display: grid;
+        place-items: center;
+        gap: 40px;
         grid-template-columns: repeat(4, 1fr);
     }
 }
