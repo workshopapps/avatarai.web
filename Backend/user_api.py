@@ -61,7 +61,7 @@ async def create_user(raw_user: User):
     if await db.user.find_one({"email": raw_user.email}):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Invalid Request"
+            detail={'message' : '400'}
         )
 
 
@@ -131,8 +131,7 @@ async def login(login : Login):
     Response = {
         "token" :{ "token" : access_token},
         "userData":{
-            'first_name': userRes['first_name'],
-             'last_name': userRes['last_name'],
+            'username': userRes['username'],
               'email': userRes['email'],
             }
         }
