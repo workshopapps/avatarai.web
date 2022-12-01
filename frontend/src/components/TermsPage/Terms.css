@@ -14,6 +14,7 @@
     text-align: center;
     color: white;
     z-index: -1;
+    
     position: relative;
 }
 .header-overlay{
