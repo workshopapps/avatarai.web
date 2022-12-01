@@ -39,10 +39,7 @@ const Login = ({ props }) => {
   };
 
   return (
-    <div
-      style={{ fontSize: "16px !important" }}
-      className="w-screen h-screen flex items-center justify-center"
-    >
+    <div className="h-screen object-scale-down flex items-center justify-center">
       <div className="flex gap-16 p-6 w-full justify-center max-w-[1440px]">
         <div className="hidden lg:flex flex-col rounded-2xl items-center bg-[#6c6191] justify-center w-full max-w-[535px] px-14 py-32">
           <div className="flex flex-col gap-4 w-full">
@@ -63,7 +60,7 @@ const Login = ({ props }) => {
               <div className="absolute -top-2 -left-2 bg-white h-[222px] w-[163px]"></div>
               <img className="absolute" src="/parker-og.png" />
             </div>
-            <div className="absolute h-[180px] w-[180px] bottom-0 right-0">
+            <div className="absolute h-[180px] w-[180px] bottom-2 right-8">
               <div className="absolute bg-white h-[180px] w-[180px] -bottom-2 -right-2"></div>
               <img src="parker-avartar.png" className="absolute" />
             </div>
@@ -73,7 +70,7 @@ const Login = ({ props }) => {
           <div className="logo w-10 h-10">
             <img src="/tapart.svg" />
           </div>
-          <div className="h-[72px] lg:h-12"></div>
+          <div className="h-[10%] lg:h-12"></div>
           <div className="flex flex-col gap-4 lg:gap-10 w-full">
             <h1 className="font-nunito font-extrabold lg:text-5xl text-2xl text-[#212529]">
               Log In
