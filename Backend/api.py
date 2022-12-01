@@ -4,7 +4,10 @@ from retrieve_user_avatars_api import user_avatars_router
 from user_api import user_router
 
 # 👇 FastAPI INSTANCE
-app = FastAPI(root_path="/api/v1")
+app = FastAPI(root_path="/")
+
+
+
 
 # ===================================================================
 

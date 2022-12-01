@@ -1,36 +1,18 @@
 """User routes"""
 
-#################
+###############################
 # IMPORTS
-#################
-from fastapi import APIRouter, status, HTTPException
-from schemas import User, Login
+###############################
+from fastapi import APIRouter, status, HTTPException, Depends
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from schemas import User, Login, Token, TokenData
 from database import db
 from fastapi.responses import JSONResponse
 ##############
-
 from utility import *
 from bson import json_util
 import json
 
-
-#######################
-#HASHING PASSWORD
-#######################
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
-#######################
-#COMPARING HASH
-#######################
-def verify_password(plain_password, hashed_password):
-    return pwd_context.verify(plain_password, hashed_password)
-
-
-#######################
-#HASHING
-#######################
-def get_password_hash(password):
-    return pwd_context.hash(password)
 
 
 user_router = APIRouter()
@@ -40,7 +22,7 @@ user_router = APIRouter()
 #API
 ###########################
 @user_router.post("/api/user", response_model = User)
-async def create_user(raw_user: User):
+async def create_user(raw_user: OAuth2PasswordRequestForm = Depends()):
     user = {        
         "username": raw_user.username,
         "email":raw_user.email,
@@ -70,8 +52,7 @@ async def create_user(raw_user: User):
     create_user["_id"] = str(create_user["_id"])
 
     access_token = create_access_token(user['email'])
-    #refresh_token = create_refresh_token(userRes['email'])
-    # print(access_token)
+   
     Response = {
         "token" :{ "token" : access_token},
         "userData":{
@@ -80,10 +61,7 @@ async def create_user(raw_user: User):
             }
         }
     return JSONResponse(Response, status_code=status.HTTP_201_CREATED)
-    # return JSONResponse(
-    #     status_code=status.HTTP_201_CREATED,
-    #     content=create_user
-    # )
+    
 
 
 
@@ -94,15 +72,10 @@ async def create_user(raw_user: User):
 #Login Api
 ##############################
 @user_router.post("/api/user/login", response_model = Login)
-async def login(login : Login):
-    
-    
-    
-    user = await db["user"].find_one({ "email": login.email }, None)
+async def login(login : OAuth2PasswordRequestForm = Depends()):
+    user = await db["user"].find_one({ "email": login.username }, None)
     # print(user)
     userRes = json.loads(json_util.dumps(user))
-    #print(userRes)
-    
 
     if user is None:
         raise HTTPException(
@@ -126,11 +99,11 @@ async def login(login : Login):
             headers={"WWW-Authenticate": "Bearer"},
         )
 
-    access_token = create_access_token(userRes['email'])
+    token = create_access_token(userRes['email'])
     #refresh_token = create_refresh_token(userRes['email'])
     # print(access_token)
     Response = {
-        "token" :{ "token" : access_token, "token_type": "bearer"},
+        "access_token" : token, "token_type": "bearer",
         "userData":{
             'username': userRes['username'],
               'email': userRes['email'],
@@ -139,4 +112,7 @@ async def login(login : Login):
     return JSONResponse(Response, status_code=status.HTTP_201_CREATED)
 
 
-    
+@user_router.get("/get", response_model = Token)
+def get_user(current_user: Token = Depends(get_current_user)):
+    res={'user': current_user}
+    return JSONResponse(res)

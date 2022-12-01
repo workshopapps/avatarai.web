@@ -3,7 +3,7 @@ from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 from bson import ObjectId
 
-
+from utility import *
 from database import db
 from schemas import UserAvatarModel
 
@@ -20,7 +20,7 @@ user_avatar_list = []
 
 
 @user_avatars_router.get("/api/avatars/{user_id}")
-async def retrieve_user_avatars(user_id: int) -> dict:
+async def retrieve_user_avatars(user_id: int = Depends(oauth2_scheme)) -> dict:
     # 👇 DB query for the specific user generated avatars will be done here
     user_avatar_list.append(
         {
