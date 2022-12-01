@@ -1,107 +1,105 @@
-.section4{
-    font-family:'clash_displaymedium' ;
-    font-weight: unset;
-    color: white;
-    text-align: center;
-    padding-top: 7rem ;
+.section4 {
+  font-family: "clash_displaymedium";
+  font-weight: unset;
+  color: white;
+  text-align: center;
+  padding-top: 7rem;
 }
-.section4 h2{
-    margin-bottom: 2rem;
-    font-size: 2rem;
-    font-weight: unset;
+.section4 h2 {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  font-weight: unset;
 }
-.faqs{
-    padding:  2rem;
-    box-shadow: 1px 1px 1px 1px rgb(159, 145, 145);
+.faqs {
+  padding: 2rem;
+  box-shadow: 1px 1px 1px 1px rgb(159, 145, 145);
 }
-.part4{
-    padding: 3rem;
-    margin: 0 auto;
-    width: 40rem;
+.part4 {
+  padding: 3rem;
+  margin: 0 auto;
+  width: 40rem;
 }
-.faq div{
-    padding: 1rem 0;
-    text-align: left;
-    display:flex;
-    font-weight: unset;
-    font-size: 1rem;
-    align-items: center;
-    justify-content: space-between;
+.faq div {
+  padding: 1rem 0;
+  text-align: left;
+  display: flex;
+  font-weight: unset;
+  font-size: 1rem;
+  align-items: center;
+  justify-content: space-between;
 }
-#anchor{
-    font-family:'clash_displayregular' ;
-    color: #929292    ;
-    text-align: left;
-    transition: all 1s linear;
-    padding: 0rem 5rem 0rem 0;
-    /* padding-right: 3rem; */
+#anchor {
+  font-family: "clash_displayregular";
+  color: #929292;
+  text-align: left;
+  transition: all 1s linear;
+  padding: 0rem 5rem 0rem 0;
+  /* padding-right: 3rem; */
 
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
-.anchor{
-    cursor: pointer;
+.anchor {
+  cursor: pointer;
 }
-.show{
-    display: none;
+.show {
+  display: none;
 }
-.bat3-btn{
-    background-color: #8B70E9;
-    color: white;
-    padding: 0.5rem 2rem;
-    margin: 3rem 0;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    z-index: 999;
-
+.bat3-btn {
+  background-color: #8b70e9;
+  color: white;
+  padding: 0.5rem 2rem;
+  margin: 3rem 0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 999;
 }
 
 @media screen and (max-width: 1000px) {
-    :root{
-        font-size: 12px;
-    }
+  #benefits {
+    font-size: 12px;
+  }
 }
 @media screen and (max-width: 800px) {
-    :root{
-        font-size: 10px;
-    }
-    .part4{
-        /* min-width: 44rem; */
-        width: 60rem;
-        font-size: 3rem;
-        padding: 2rem;
-    }
-    .head p{
-        font-size: 1.5rem;
-    }
-    #anchor{
-        font-size: 1rem;
-        font-weight: lighter;
-        /* padding-right: 1rem; */
-    }
+  #benefits {
+    font-size: 10px;
+  }
+  .part4 {
+    /* min-width: 44rem; */
+    width: 60rem;
+    font-size: 3rem;
+    padding: 2rem;
+  }
+  .head p {
+    font-size: 1.5rem;
+  }
+  #anchor {
+    font-size: 1rem;
+    font-weight: lighter;
+    /* padding-right: 1rem; */
+  }
 }
 @media screen and (max-width: 600px) {
-    .part4{
-        width: unset;
-        padding: 2rem;
-    }
+  .part4 {
+    width: unset;
+    padding: 2rem;
+  }
 }
 @media screen and (max-width: 450px) {
-    :root{
-        font-size: 9px;
-    }
-    .part4{
-        width: unset;
-        padding: 2rem;
-    }
+  #benefits {
+    font-size: 9px;
+  }
+  .part4 {
+    width: unset;
+    padding: 2rem;
+  }
 }
 @media screen and (max-width: 375px) {
-
-    :root{
-        font-size: 8px;
-    }
-    .part4{
-        width: unset;
-        padding: 3rem;
-    }
+  #benefits {
+    font-size: 8px;
+  }
+  .part4 {
+    width: unset;
+    padding: 3rem;
+  }
 }

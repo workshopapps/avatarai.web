@@ -39,7 +39,10 @@ const Login = ({ props }) => {
   };
 
   return (
-    <div className="w-screen h-screen flex items-center justify-center">
+    <div
+      style={{ fontSize: "16px !important" }}
+      className="w-screen h-screen flex items-center justify-center"
+    >
       <div className="flex gap-16 p-6 w-full justify-center max-w-[1440px]">
         <div className="hidden lg:flex flex-col rounded-2xl items-center bg-[#6c6191] justify-center w-full max-w-[535px] px-14 py-32">
           <div className="flex flex-col gap-4 w-full">
@@ -106,7 +109,9 @@ const Login = ({ props }) => {
                   pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
                 })}
                 placeholder="Email Address"
-                className="border border-[#121212] py-3  px-4 rounded-md placeholder-[#808080] text-sm lg:text-xl font-nunito font-medium w-full"
+                className={`border ${
+                  errors.email && "border-red-600"
+                } border-[#121212] py-3 px-4 rounded-md placeholder-[#808080] text-sm lg:text-xl font-nunito font-medium w-full`}
               />
               {errors.email && (
                 <span className="text-xs text-red-600">
@@ -126,7 +131,9 @@ const Login = ({ props }) => {
                 id="password"
                 name="password"
                 placeholder="Password"
-                className="border border-[#121212] py-3 px-4 rounded-md placeholder-[#808080] text-sm lg:text-xl font-nunito font-medium w-full"
+                className={`border ${
+                  errors.password && "border-red-600"
+                } border-[#121212] py-3 px-4 rounded-md placeholder-[#808080] text-sm lg:text-xl font-nunito font-medium w-full`}
                 {...register("password", {
                   required: true,
                   minLength: 8,
@@ -151,9 +158,13 @@ const Login = ({ props }) => {
                   Remember me
                 </span>
               </div>
-              <span className="font-nunito font-semibold text-sm lg:text-xl text-[#8b70e9]">
-                Forgot Password?
-              </span>
+              <div>
+                <Link to="/forgot-password">
+                  <span className="font-nunito font-semibold text-sm lg:text-xl text-[#8b70e9]">
+                    Forgot Password?
+                  </span>
+                </Link>
+              </div>
             </div>
             <button
               type="submit"
@@ -179,121 +190,16 @@ const Login = ({ props }) => {
             <span className="font-nunito font-medium text-sm lg:text-xl text-[#808080]">
               Don't have an account?{" "}
             </span>
-            <span className="font-nunito font-bold text-sm lg:text-xl text-[#6c6191]">
+            <a
+              href="sign-up"
+              className="font-nunito font-bold text-sm lg:text-xl text-[#6c6191]"
+            >
               Sign Up
-            </span>
+            </a>
           </div>
         </div>
       </div>
     </div>
-    // <div className="lg:h-screen">
-    //   <Navbar />
-    //   <div className="flex flex-col-reverse gap-6 lg:flex-row w-full h-full lg:pl-[60px]">
-    //     <div className="flex flex-col gap-6 lg:gap-8 w-full justify-center px-6 lg:px-[60px]">
-    //       <div className="flex flex-col gap-1 lg:gap-[10px]">
-    //         <h1 className="text-xl lg:text-4xl font-semibold text-[#333333]">
-    //           Welcome back
-    //         </h1>
-    //         <p className="lg:text-2xl font-medium text-[#333333]">
-    //           Log in to have access to your account
-    //         </p>
-    //       </div>
-    //       <form
-    //         onSubmit={handleSubmit(onSubmit)}
-    //         className="flex flex-col gap-8 w-full"
-    //       >
-    //         <div className="flex flex-col gap-4">
-    //           <div className="flex flex-col w-full">
-    //             <label className="text-[#333333]" htmlFor="email">
-    //               Email
-    //             </label>
-    //             <input
-    //               type="text"
-    //               id="email"
-    //               placeholder="Email address"
-    //               className={`border ${
-    //                 errors.email && "border-red-600"
-    //               } p-3 w-full my-1 rounded-lg outline-none`}
-    //               required
-    //               {...register("email", {
-    //                 required: true,
-    //                 pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-    //               })}
-    //             />
-    //             {errors.email && (
-    //               <span className="text-xs text-red-600">
-    //                 Please enter a valid email address
-    //               </span>
-    //             )}
-    //           </div>
-    //           <div>
-    //             <label className="text-[#333333]" htmlFor="password">
-    //               Password
-    //             </label>
-    //             <input
-    //               type="password"
-    //               id="password"
-    //               placeholder="Password"
-    //               className={`border ${
-    //                 errors.password && "border-red-600"
-    //               } p-3 w-full my-1 rounded-lg outline-none`}
-    //               required
-    //               {...register("password", {
-    //                 required: true,
-    //                 minLength: 8,
-    //               })}
-    //             />
-    //             {errors.password && (
-    //               <span className="text-xs text-red-600">
-    //                 Password must be at least 8 characters long
-    //               </span>
-    //             )}
-    //           </div>
-    //         </div>
-    //         <div className="flex justify-between items-center outline-none">
-    //           <div className="flex items-center gap-2 lg:gap-5">
-    //             <input
-    //               className="h-4 w-4 lg:h-[26px] lg:w-[26px]"
-    //               type="checkbox"
-    //               name="remember"
-    //               id="remember"
-    //             />
-    //             <span className="text-[#333333] text-base lg:text-[20px] font-medium">
-    //               Remember me
-    //             </span>
-    //           </div>
-    //           <p className="text-[#8B70E9] text-base lg:text-[20px] font-medium">
-    //             <Link to="/forgot-password">Forgot Password</Link>
-    //           </p>
-    //         </div>
-    //         <Button type="submit" className="w-full bg-[#8B70E9] text-white">
-    //           Login
-    //         </Button>
-    //         <p className="text-center text-[#333333] text-base lg:text-xl font-semibold">
-    //           Dont have an account?{" "}
-    //           <a
-    //             href="sign-up"
-    //             className="text-[#8B70E9] text-base lg:text-xl font-semibold"
-    //           >
-    //             Sign Up
-    //           </a>
-    //         </p>
-    //       </form>
-    //     </div>
-    //     <div className="flex flex-col-reverse lg:flex-col items-center justify-center gap-[18px] lg:gap-16 w-full">
-    //       <div className="w-[128px] lg:w-[305px]">
-    //         <img
-    //           src={log}
-    //           alt=""
-    //           className="bg-white rounded-full object-scale-down "
-    //         />
-    //       </div>
-    //       <p className="lg:block hidden text-[14px] lg:text-[32px] font-semibold max-w-[228px] lg:max-w-[547px] text-center text-[#333333]">
-    //         Generate and customize AI Avatars just the way you like it!
-    //       </p>
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 
