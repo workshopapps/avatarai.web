@@ -12,7 +12,7 @@ const Benefits = () => {
   return (
     <section id="benefits" class="section4">
       <div class="part4">
-        <h2>Frequently asked qustions</h2>
+        <h2 className="be">Frequently asked qustions</h2>
         <div class="faqs">
           <div class="faq">
             <div class="head">
