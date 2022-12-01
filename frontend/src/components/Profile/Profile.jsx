@@ -88,7 +88,7 @@ const Profile = () => {
                 </div>
                 {/*  */}
                 <div className="aso-form-location">
-                  <label htmlFor="location">Last name</label>
+                  <label htmlFor="location">Location</label>
                   <input
                     type="text"
                     id="location"
