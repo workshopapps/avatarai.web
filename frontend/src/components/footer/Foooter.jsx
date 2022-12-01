@@ -14,9 +14,9 @@ const Foooter = () => {
       <div
       className="
       flex    justify-between  bg-[#FFFFF] w-[80%] md:[90%] m-auto py-[3.5rem] ">
-        <div className="flex-[50%]">
+        <div className="flex-[45%]">
 
-        <div className="text-[#201F23] w-[80%] md:w-[85%]">
+        <div className="text-[#201F23] w-[95%] md:w-[100%]">
               <h1 className="font-bold">Noxus</h1>
               <p className="font-medium mt-3 max-w-[508px]">
                Noxus is your webapp for creating Artificial Intelligent Avatars, we 
@@ -25,8 +25,9 @@ const Foooter = () => {
               </p>
             </div>
         </div>
-            <div className="flex-[50%]">
-             <div className="float-right ">
+        <div className="lg:flex-[20%] md:flex-[0%]"></div>
+            <div className="flex-[55%]">
+             <div className=" ">
 
             <div className="flex">
               <div className="flex flex-col space-y-4 text-[#2B292F] md:ml-[1.7rem]">

@@ -3,11 +3,11 @@ const FaqNewsletter = () => {
   return (
     <section className="bg-[#F9F9FB]">
       <div className="flex flex-col md:flex-row md:items-center justify-between  bg-[#F9F9FB] w-[80%] md:[90%] m-auto py-[3.5rem]">
-     <div className='flex-[100%] md:flex-[50%]'>
+     <div className='flex-[100%] md:flex-[45%]'>
 
-      <div className="flex flex-col gap-[24px] w-[100%] md:w-[80%]">
+      <div className="flex flex-col gap-[24px] w-[100%] md:w-[100%]">
         <img src="/tapart.svg" height={`40px`} width={`40px`} />
-        <div className="flex flex-col gap-[8px]">
+        <div className="flex flex-col gap-[8px] ">
           <p
             data-testid="subscribe"
             className="text-[#201F23] font-jakarta font-bold"
@@ -21,9 +21,10 @@ const FaqNewsletter = () => {
         </div>
       </div>
      </div>
-     <div className='flex-[100%] md:flex-[50%]'>
+     <div className=' lg:flex-[20%] md:flex-[0%]'></div>
+     <div className='flex-[100%] md:flex-[55%]'>
 
-      <div className="flex flex-col gap-[16px] w-[100%] lg:w-[80%] md:float-right pt-[2rem]" >
+      <div className="flex flex-col gap-[16px] w-[100%]   md:ml-[1.7rem]  pt-[2rem]" >
         <div  id="big-div" className="border border-[#403E46] flex items-center md:gap-4 gap-1 justify-between rounded-[16px] p-[5px] h-[52px] w-full max-w-[512px] bg-white rounded">
           <div id='input' className="h-full flex md:gap-[8px] gap-1 items-center font-nunito grow text-[#848484] rounded py-[8px] md:pl-[12px] pl-2">
             <img src="/sms.svg" />
