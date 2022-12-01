@@ -1,8 +1,11 @@
 import './faqs.css'
 const FaqNewsletter = () => {
   return (
-    <section className="flex flex-col md:flex-row md:items-center md:justify-around gap-[24px] bg-[#F9F9FB] py-[40px] md:py-[48px] px-[24px]">
-      <div className="flex flex-col gap-[24px]">
+    <section className="bg-[#F9F9FB]">
+      <div className="flex flex-col md:flex-row md:items-center justify-between  bg-[#F9F9FB] w-[80%] md:[90%] m-auto py-[3.5rem]">
+     <div className='flex-[100%] md:flex-[50%]'>
+
+      <div className="flex flex-col gap-[24px] w-[100%] md:w-[80%]">
         <img src="/tapart.svg" height={`40px`} width={`40px`} />
         <div className="flex flex-col gap-[8px]">
           <p
@@ -17,8 +20,11 @@ const FaqNewsletter = () => {
           </p>
         </div>
       </div>
-      <div className="flex flex-col gap-[16px]" >
-        <div  id="big-div" className="border border-[#403E46] flex items-center md:gap-4 gap-1 justify-between p-[5px] h-[52px] w-full max-w-[512px] bg-white rounded">
+     </div>
+     <div className='flex-[100%] md:flex-[50%]'>
+
+      <div className="flex flex-col gap-[16px] w-[100%] lg:w-[80%] md:float-right pt-[2rem]" >
+        <div  id="big-div" className="border border-[#403E46] flex items-center md:gap-4 gap-1 justify-between rounded-[16px] p-[5px] h-[52px] w-full max-w-[512px] bg-white rounded">
           <div id='input' className="h-full flex md:gap-[8px] gap-1 items-center font-nunito grow text-[#848484] rounded py-[8px] md:pl-[12px] pl-2">
             <img src="/sms.svg" />
             <input
@@ -28,7 +34,7 @@ const FaqNewsletter = () => {
               placeholder="Enter your email address"
             />
           </div>
-          <button id="subscribe" className="cursor-pointer bg-[#8B70E9] h-full relative flex items-center font-nunito text-white rounded px-[20px] py-[8px]">
+          <button id="subscribe" className="cursor-pointer bg-[#8B70E9] h-full relative flex items-center font-nunito text-white rounded-[12px] px-[20px] py-[8px]">
             <span className="text-white">Subscribe</span>
           </button>
         </div>
@@ -36,6 +42,9 @@ const FaqNewsletter = () => {
           By subscribing you agree to accept newsletter and Emails from us.
         </p>
       </div>
+     </div>
+      </div>
+     
     </section>
   );
 };

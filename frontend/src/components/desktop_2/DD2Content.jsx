@@ -3,6 +3,8 @@ import "./DD2.css";
 import "../desktop_4/DD4.css";
 import arrowRightMobile from "./arrow-right-mobile.svg";
 import arrowRightDesktop from "./arrow-right-desktop.svg";
+import upload from "./upload.svg";
+import progress from "./progress.svg";
 import { v4 as uuidv4 } from "uuid";
 
 import { Link } from "react-router-dom";
@@ -103,11 +105,15 @@ const ImageUpload = () => {
                 )}
               </div>
             </Link>
-            <p>2</p>
+            {/* <p>2</p> */}
+            <div className="imgs flex justify-center items-center w-full h-10">
+              <img src={progress} alt="" className="w-full "/>
+            </div>
           </div>
+
           <h1>Upload your Pictures</h1>
           <p className="aso-dd2-p">
-            You have to upload 10 pictures of you in different scenarios
+            You can upload files like PNG, JPG, PDF, WEBP are supported
           </p>
           <form action="" className="aso-dd2-form">
             <div className="aso-dd2-input">
@@ -120,8 +126,10 @@ const ImageUpload = () => {
                 onChange={handleFile}
               />
               <label htmlFor="file" className="aso-dd2-label">
-                Choose pictures from file <br />
-                {labelText}
+                <img src={upload} alt="" />
+                <br />
+                <p> Drag and drop or click here to upload file</p>
+                {/* {labelText} */}
               </label>
             </div>
             <button

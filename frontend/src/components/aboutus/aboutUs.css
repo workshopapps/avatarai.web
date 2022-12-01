@@ -1,5 +1,7 @@
-#dja_main {
+* {
     padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .dja_container {
@@ -20,10 +22,7 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.dja_container p {
-    line-height: 147%;
-    
-}
+
 .dja_banner_section, .dja_mission_section, .dja_story_section, .dja_container {
     position: relative;
 }
@@ -118,9 +117,6 @@
     gap: 40px;
 }
 
-.dja_why_card_p {
-    font-size: clamp(1em, 3vw, 1.5em);
-}
 
 .dja_teamCard_container {
     width: 100%;
@@ -128,10 +124,6 @@
     height: fit-content;
     text-align: center;
 
-}
-
-.dja_teamCard_container p {
-    font-size: clamp(1em, 3vw, 1.2em);
 }
 
 

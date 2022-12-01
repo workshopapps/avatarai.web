@@ -5,9 +5,9 @@ import React from "react";
 
 function TotalPriceCards() {
   return (
-    <div className=" relative mt-10 ">
+    <div className=" relative mt-10 mb-10 ">
       <div className="absolute lg:block hidden z-10 text-vnc_btn  -top-3 left-0 right-0 text-center">
-        <p className="vnc_popular p-2  rounded-lg w-fit mx-auto">
+        <p className="vnc_popular p-2 uppercase text-[#170C3C] font-bold rounded-lg w-fit mx-auto">
           Most Popular
         </p>
       </div>
@@ -15,7 +15,7 @@ function TotalPriceCards() {
         <PriceCards
           title="Basic"
           amount="$14"
-          background="rgba(77, 56, 153, 1)"
+          background="	#170C3C"
           text="white"
           feature={<Feature />}
           space="5rem"
@@ -26,8 +26,8 @@ function TotalPriceCards() {
           amount="$23"
           top="0"
           background="white"
-          text="rgba(77, 56, 153, 1)"
-          bg="rgba(77, 56, 153, 1)"
+          text="#170C3C"
+          bg="#170C3C"
           font="white"
           feature={<Feature color="white" />}
           feature2={<Feature color="white" />}
@@ -36,7 +36,7 @@ function TotalPriceCards() {
         <PriceCards
           title="Premium"
           amount="$42"
-          background="rgba(77, 56, 153, 1)"
+          background="#170C3C"
           text="white"
           space="5rem"
           bg="white"

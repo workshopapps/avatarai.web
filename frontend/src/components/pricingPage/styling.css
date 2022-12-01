@@ -1,6 +1,6 @@
 :root {
     --green: rgba(59, 196, 137, 1);
-    --btn-color: rgba(139, 112, 233, 1);
+    --btn-color: #170C3C;
     --card-color: rgba(77, 56, 153, 1);
     --sponsor: rgba(33, 37, 41, 0.6);
     --bg-color: rgba(207, 214, 255, 1);
@@ -8,6 +8,7 @@
     --line: rgba(123, 97, 255, 0.2);
     --hr: rgba(143, 111, 254, 1);
     --popular: rgba(247, 247, 247, 1);
+    --btn: rgba(139, 112, 233, 1);
 
 }
 
@@ -16,11 +17,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-}
-
-.vnc_pricing {
-    color: var(--green);
 
 }
 
@@ -68,6 +64,10 @@
 
 .vnc_view {
     color: var(--btn-color);
+}
+
+.bord {
+    border: 1px solid var(--btn);
 }
 
 @media screen and (max-width:752px) {
