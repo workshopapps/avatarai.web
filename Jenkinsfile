@@ -3,28 +3,32 @@ pipeline {
 	agent any
 	stages {
 
-		stage("build frontend"){
+		stage("Get repo"){
 
 			steps {
-
-				sh "cd frontend"
-				sh "sudo npm install"
-				sh "sudo npm run build"
+				// sh "sudo su de-marauder"
+				// sh "echo ${WORKSPACE}"
+				sh "rm -rf ${WORKSPACE}/avatarai.web"
+				sh "git clone https://github.com/workshopapps/avatarai.web.git"
+				sh "sudo cp -r ${WORKSPACE}/avatarai.web /home/de-marauder/avatarai.web"
 			}
 
 		
-			}
+		}
 		
-		stage("deploy") {
+		stage("start frontend") {
 		
 			steps {
-				sh "sudo cp -r Backend/ /home/de-marauder/backend"
-				sh "sudo cp -r frontend/dist/	/home/de-marauder/frontend"
-				sh ". ENV"
-				sh "pm2 stop zuvatar-frontend"
-				sh "cd /home/de-marauder/backend && pip install -r requirements.txt && uvicorn api:app --host 0.0.0.0 --port 8173"
-				sh "cd /home/de-marauder && pm2 serve frontend --port 5137 --name zuvatar-frontend"
-
+				sh "sudo systemctl stop zuvatar-frontend.service"
+				sh "sudo systemctl restart zuvatar-frontend.service"
+			}
+		}
+		
+		stage("start backend") {
+		
+			steps {
+				sh "sudo systemctl stop zuvatar-backend.service"
+				sh "sudo systemctl restart zuvatar-backend.service"
 			}
 		}
 
