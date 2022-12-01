@@ -14,19 +14,21 @@ const Foooter = () => {
       <div
       className="
       flex    justify-between  bg-[#FFFFF] w-[80%] md:[90%] m-auto py-[3.5rem] ">
-        <div className="flex-[50%]">
+        <div className="flex-[45%]">
 
         <div className="text-[#201F23] w-[80%] md:w-[85%]">
-              <h1 className="font-bold">Noxus</h1>
+              <h1 className="font-bold">Zuvatar</h1>
               <p className="font-medium mt-3 max-w-[508px]">
-               Noxus is your webapp for creating Artificial Intelligent Avatars, we 
-               also offer courses on avatar generation.
+               Zuvatar is a webapp for creating Artificial
+Intelligent Avatars. Our trained models are
+designed to generate perfect avatars for you.
 
               </p>
             </div>
         </div>
-            <div className="flex-[50%]">
-             <div className="float-right ">
+        <div className="lg:flex-[20%] md:flex-[0%]"></div>
+            <div className="flex-[55%]">
+             <div className=" ">
 
             <div className="flex">
               <div className="flex flex-col space-y-4 text-[#2B292F] md:ml-[1.7rem]">
@@ -58,13 +60,7 @@ const Foooter = () => {
                 <p className="text-[#605E65]">
                   <a href="/" className="text-base">FAQs</a>
                 </p>
-                <p className="text-[#605E65]">
-                  <a href="/" className="text-base">Terms & Policy</a>
-                </p>
-                <p className="text-[#605E65]">
-                  <a href="/" className="text-base">Contact Us</a>
-                </p>
-              </div>
+             </div>
             </div>
              </div>
             </div>
@@ -99,103 +95,18 @@ const Foooter = () => {
         </div>
       </div>
      
-      {/* <div className="hidden md:block"> */}
-      {/* <section className="
-      flex flex-col md:flex-row md:items-center md:justify-around gap-[24px]
-       bg-[#F9F9FB] py-[40px] md:py-[48px] px-[24px]
-      ">
-            
-            <div className="text-[#201F23]">
-              <h1 className="font-bold">AvatarAI</h1>
-              <p className="font-medium mt-3 max-w-[508px]">
-                AvatarAI is your webapp for creating Artificial Intelligent
-                Avatars, we also offer courses on avatar generation.
-              </p>
-            </div>
-
-            <div className="flex  ">
-              <div className="flex flex-col space-y-4 text-[#2B292F] md:mr-[1.5rem]">
-                <p className="font-semibold text-xl">Resources</p>
-                <p className="text-[#605E65]">
-                  <a href="/" className="text-base">Reviews</a>
-                </p>
-                <p className="text-[#605E65]">
-                  <a href="/" className="text-base">API integration</a>
-                </p>
-                <p className="text-[#605E65]">
-                  <a href="/" className="text-base">Guides</a>
-                </p>
-              </div>
-              <div className="flex flex-col space-y-4 text-[#2B292F] md:mr-[1.5rem]">
-                <p className="font-semibold text-xl">Company</p>
-                <p className="text-[#605E65]">
-                  <a href="/" className="text-base">Contact Us</a>
-                </p>
-                <p className="text-[#605E65]">
-                  <a href="/" className="text-base">About Us</a>
-                </p>
-                <p className="text-[#605E65]">
-                  <a href="/" className="text-base">Events</a>
-                </p>
-              </div>
-              <div className="flex flex-col space-y-4 text-[#2B292F] md:mr-[1.5rem]">
-                <p className="font-semibold text-xl">Help</p>
-                <p className="text-[#605E65]">
-                  <a href="/" className="text-base">FAQs</a>
-                </p>
-                <p className="text-[#605E65]">
-                  <a href="/" className="text-base">Terms & Policy</a>
-                </p>
-                <p className="text-[#605E65]">
-                  <a href="/" className="text-base">Contact Us</a>
-                </p>
-              </div>
-            </div>
-           
-
-            </section>
-          
-        
-        <div className="flex  md:flex-row md:items-center md:justify-around gap-[24px] 
-             py-[40px] md:py-[48px] md:px-[-3rem]">
-              <div className="flex gap-x-[5rem] text-[#2B292F]">
-                <p className="text-sm flex items-center gap-3">
-                <img src={Call} alt="/" />
-                  <a href="/"> AvatarAI@gmail.com</a>
-                </p>
-                <p className="text-sm flex items-center gap-3">
-                  
-                  <img src={Mail} alt="/" />
-                  <a href="/"> +2347012345678</a>
-                </p>
-              </div>
-              <div className="flex items-center justify-center space-x-4 text-[#000]">
-                <img src={Insta} alt="insta" className="text-[#000]" />
-                <img src={Twitter} alt="twitter" />
-                <img src={Facebook} alt="facebook" />
-              </div>
-            </div>
-        <div className="w-full text-center bg-[#8B70E9] flex items-center justify-center gap-2 py-3 ">
-          <div>
-            <img
-              src={Copy}
-              alt="copyright"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <p className="font-bold text-[#fff]">AvatarAI</p>
-        </div>
-      </div> */}
+    
 
       {/* MOBILE */}
       <div className="md:hidden">
         <div className="w-full bg-[#FFFFFF] px-5 py-5">
           <div className="flex flex-col">
             <div className="text-[#201F23]">
-              <h1 className="font-bold">Noxus</h1>
+              <h1 className="font-bold">Zuvatar</h1>
               <p className="font-medium mt-3">
-              Noxus is your webapp for creating Artificial Intelligent Avatars, we 
-               also offer courses on avatar generation.
+              Zuvatar is a webapp for creating Artificial
+Intelligent Avatars. Our trained models are
+designed to generate perfect avatars for you.
               </p>
             </div>
 
@@ -229,12 +140,8 @@ const Foooter = () => {
                 <p className="text-sm">
                   <a href="/">FAQs</a>
                 </p>
-                <p className="text-sm">
-                  <a href="/">Terms & Policy</a>
-                </p>
-                <p className="text-sm">
-                  <a href="/">Contact Us</a>
-                </p>
+               
+              
               </div>
               <div className="flex flex-col space-y-2 text-[#2B292F]">
                 <p className="font-semibold text-xl">Socials</p>

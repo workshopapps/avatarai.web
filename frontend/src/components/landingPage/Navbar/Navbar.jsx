@@ -23,7 +23,7 @@ const Navbar = () => {
 	const handleLogout = () => {
 		auth.logout();
 		navigate('/');
-		console.log("log")
+		console.log('log');
 	};
 	return (
 		<Fragment>
@@ -63,9 +63,9 @@ const Navbar = () => {
 							<Link to="/login"> Log in</Link>
 						</Button>
 					) : (
-						<button onClick={handleLogout} className=" border-purple-500 text-purple-500 bg-white  cbk-login-btn rounded-lg">
-							Logout
-						</button>
+						<span onClick={handleLogout}>
+							<Button className=" border-purple-500 text-purple-500 bg-white  cbk-login-btn ">Logout</Button>
+						</span>
 					)}
 
 					<Button className="text-white border-purple-500 bg-purple-500 cbk-login-btn ">
