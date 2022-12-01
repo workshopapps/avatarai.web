@@ -1,31 +1,38 @@
 import React from "react";
 import "./main.css";
+import part1 from './part1.png'
+import part2 from './part2.png'
+import part3 from './part3.png'
+import part4 from './part4.png'
+import part5 from './part5.png'
+import Group from './Group.png'
+import mbb1 from './mbb1.png'
+import mbb2 from './mbb2.png'
+import mbb3 from './mbb3.png'
+import mbb4 from './mbb4.png'
+import mbb5 from './mbb5.png'
 
 const Main = () => {
   return (
-    <div className="main-ony">
-      <h2 className="main__title-ony">Upload images and <span className="aiii-ony">create</span> avatars </h2>
-      <div className="main__section-ony">
-        <div className="main-bat">         
-          <img className="a1-ony" src="./images/a2.png" alt="second ai" />
-          <div>
-          <h3 className="image__title-ony image__description3-ony">Become the artist</h3>
-            <p className="image__description2-ony">
-            Have access to many templates and scenes to create mindblowing AI-generated arts. The ball is in your court, be Michael Jordan with Tapert amazing tools on our platform
-            </p>
-          </div>
-        </div>
-        <div className="main-bat" id="img2">
-          <div >
-            <h3 className="image__title-ony image__description3-ony">Run the show</h3>
-            <p className="image__description2-ony">
-              Have access to many templates and scenes to create mindblowing AI-generated arts. The ball is in your court, be Michael Jordan with Tapert amazing tools on our platform
-            </p>
-          </div>
-          <img className="a1-ony" src="./images/a1.png" alt="second ai" />
-        </div>
+    <>
+      <div className="main-ony">
+        <img id="one" src={part1} alt="" />
+        <img id="one" src={part2} alt="" />
+        <img  src={part3} alt="" />
+        <img id="one" src={part4} alt="" />
+        <img id="one" src={part5} alt="" />
       </div>
-    </div>
+      <div className="group">
+        <img src={Group} alt="" />
+      </div>
+      <div className="main2-ony">
+        <img src={mbb1} alt="" />
+        <img src={mbb2} alt="" />
+        <img src={mbb3} alt="" />
+        <img src={mbb4} alt="" />
+        <img src={mbb5} alt="" />
+      </div>
+    </>
   );
 };
 

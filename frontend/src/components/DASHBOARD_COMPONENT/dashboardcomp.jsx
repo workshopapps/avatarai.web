@@ -14,7 +14,7 @@ export default function Dashboardcomp(props) {
       
       
         <div className="w-[95vw] h-20  bg-[#fafafa] absolute top-0 right-0">
-        <div className="vic_dash_header mb-10 mt-5 md:w-[90vw] lg:max-w-screen-lg ">
+        <div className="vic_dash_header mb-10 mt-5 md:w-[90vw]  ">
             <div className="vic_dash_input_div md:ml-8 lg:ml-24 ">
               <img src={Search} className="vic_search" />
               <input

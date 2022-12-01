@@ -1,6 +1,9 @@
 import pytest
 from fastapi.testclient import TestClient
 
+import sys 
+sys.path.append("..")
+
 
 from ..api import app
 
@@ -37,7 +40,7 @@ def test_retrieve_user_avatars(client):
         }
 
 # ====================== TESTS FOR AN INEXISTENT USER =========================================
-# ==============================================================================================
+# =============================================================================================
 def test_inexistent_retrieve_user_avatars():
     inexistent_user_id = 000000000
     response = client.get(f"/api/avatars/{inexistent_user_id}",
