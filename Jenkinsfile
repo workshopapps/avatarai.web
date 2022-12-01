@@ -11,7 +11,6 @@ pipeline {
 				sh "sudo cp -r ${WORKSPACE}/avatarai.web /home/de-marauder/avatarai.web"
 			}
 
-		
 		}
 		
 		stage("start frontend") {
