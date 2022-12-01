@@ -1,6 +1,8 @@
 import React from "react";
 import logo_opt from "./images/sign_up/logo.png";
 import info_opt from "./images/sign_up/info_outline.png";
+import google from "./images/sign_up/google.png";
+import ava from "./images/sign_up/ava.png";
 import "./signup.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -110,135 +112,159 @@ export default function SignUp_first() {
       }
     })
     result=await result.json()
+      console.warn("result", result)
     localStorage.setItem("user-info", JSON.stringify(result))
   }
 
   return (
-    <div className="house_opt">
-      <div className="nav_opt">
-        <img className="logo_opt" src={logo_opt} alt="logo.png" />
-
-        <div className="all_opt">
-          Already have an account?
-          <span className="col_opt">
-            {" "}
-            <a href="\Login">Log in here</a>
-          </span>
-        </div>
-      </div>
-      <div className="first_opt">
-        <div className="get_opt">Get Started With A Free Account</div>
-        <div className="gett_opt">Sign Up to get your AI-generated avatars</div>
-        <div className="motion_opt">
-          <div className="one"></div>
-          <div className="two"></div>
-          <div className="three"></div>
-        </div>
-        <div className="provide_opt">Please provide your name and e-mail</div>
-
-        <form id="myform_opt" onSubmit={handleSubmit} method="post">
-          <div style={{ display: show ? "block" : "none" }}>
-            <label htmlFor="myinput_op">First name</label>
-            <br />
-            <input id="myinput_op" placeholder="John" value={first_name} onChange={(e)=>setFirstName(e.target.value)} type="text" required />
-            <br />
-            <label htmlFor="myinput_o">Last name</label>
-            <br />
-            <input id="myinput_o" value={last_name} onChange={(e)=>setLastName(e.target.value)} placeholder="Doe" type="text" required />
-            <br />
-            <label htmlFor="myinput_opt">Email</label>
-            <br />
-            <input
-              id="myinput_opt"
-              placeholder="name@example.com"
-              value={email}
-              onChange={(e)=>setEmail(e.target.value)}
-              type="email"
-              required
-            />
-            <br />
-            <label htmlFor="check_opt" className="container_opt" id="cap">
-              <span className="note_opt">
-                I agree to the terms & service and privacy policy
-              </span>
-              <input
-                type="checkbox"
-                id="check_opt"
-                onClick={() => setShow_s(!show_s)}
-                required
-              />
-              <span className="checkmark" />
-            </label>
-            <button onClick={click} disabled={show_s} className="mybutton_opt">
-              Continue
-            </button>
+      <div className="unn_opt">
+        <div className="rb_opt">
+          <div className='cre_opt'>
+            Create your own AI-generated Avatars
           </div>
-
-          {!show && (
-            <div>
-              <label>Password</label>
-              <br />
-              <input
-                id="myinput_opt"
-                name="password"
-                placeholder="Choose Password"
-                minLength="8"
-                value={input.password}
-                onChange={onInputChange}
-                onBlur={validateInput}
-                type="password"
-                required
-              />
-              <br />
-              <div className="tt">
-                {error.password && (
-                  <div className="info__opt">
-                    {" "}
-                    <img className="info_opt" src={info_opt} alt="info.png" />
-                    {error.password}
-                  </div>
-                )}
-              </div>
-              <label>Confirm Password</label>
-              <br />
-              <input
-                id="myinput_opt"
-                role="Opt_pass"
-                name="confirmPassword"
-                value={input.confirmPassword}
-                onChange={onInputChange}
-                onBlur={validateInput}
-                placeholder="Choose your password"
-                type="password"
-                required
-              />
-              <br />
-              <div className="tt">
-                {error.confirmPassword && (
-                  <div className="info__opt">
-                    {" "}
-                    <img
-                      className="info_opt"
-                      src={info_opt}
-                      alt="info.png"
-                    />{" "}
-                    {error.confirmPassword}
-                  </div>
-                )}
-              </div>
-
-              <button
-                role="Opt_submit"
-                className="mybutton_opt"
-                id="mybutton_opt"
-                type="submit"
-              >
-                Continue
-              </button>
+          <div className='creone_opt'>
+            Create profile pictures, online gaming display pictures, and much more on the go.
+          </div>
+          <div>
+            <img src={ava} className='ava_opt' alt='avatar.png'/>
+          </div>
+        </div>
+        <div className="house_opt">
+          <div className="nav_opt">
+            <img className="logo_opt" src={logo_opt} alt="logo.png" />
+          </div>
+          <div className="first_opt">
+            <div className="get_opt">Sign Up</div>
+            <div className="gett_opt">Create new account</div>
+            {/*<div className="motion_opt">*/}
+            {/*  <div className="one"></div>*/}
+            {/*  <div className="two"></div>*/}
+            {/*  <div className="three"></div>*/}
+            {/*</div>*/}
+            <div className="all_opt">
+              Already a member?
+              <span className="col_opt">
+            {" "}
+                <a href="\Login">Log in</a>
+          </span>
             </div>
-          )}
-        </form>
+
+            <form id="myform_opt" onSubmit={handleSubmit} method="post">
+              {/*<div style={{ display: show ? "block" : "none" }}>*/}
+                <div className='ss_opt'>
+                    <div className='sss_opt'>
+                        <label htmlFor="myinput_op">First name</label>
+                        <br />
+                        <input id="myinput_op" placeholder="First Name" value={first_name} onChange={(e)=>setFirstName(e.target.value)} type="text" required />
+                        <br />
+                    </div>
+                    <div className='sss_opt'>
+                        <label htmlFor="myinput_o">Last name</label>
+                        <br />
+                        <input id="myinput_o" value={last_name} onChange={(e)=>setLastName(e.target.value)} placeholder="Last Name" type="text" required />
+                        <br />
+                    </div>
+                </div>
+
+              <label htmlFor="myinput_opt">Email</label>
+              <br />
+              <input
+                  id="myinput_opt"
+                  placeholder="Email Address"
+                  value={email}
+                  onChange={(e)=>setEmail(e.target.value)}
+                  type="email"
+                  required
+              />
+              <br />
+              {/*<label htmlFor="check_opt" className="container_opt" id="cap">*/}
+              {/*  <span className="note_opt">*/}
+              {/*    I agree to the terms & service and privacy policy*/}
+              {/*  </span>*/}
+              {/*  <input*/}
+              {/*    type="checkbox"*/}
+              {/*    id="check_opt"*/}
+              {/*    onClick={() => setShow_s(!show_s)}*/}
+              {/*    required*/}
+              {/*  />*/}
+              {/*  <span className="checkmark" />*/}
+              {/*</label>*/}
+              {/*<button onClick={click} disabled={show_s} className="mybutton_opt">*/}
+              {/*  Continue*/}
+              {/*</button>*/}
+              {/*</div>*/}
+
+              <div>
+                <label>Password</label>
+                <br />
+                <input
+                    id="myinput_opt"
+                    name="password"
+                    placeholder="Choose Password"
+                    minLength="8"
+                    value={input.password}
+                    onChange={onInputChange}
+                    onBlur={validateInput}
+                    type="password"
+                    required
+                />
+                <br />
+                <div className="tt">
+                  {error.password && (
+                      <div className="info__opt">
+                        {" "}
+                        <img className="info_opt" src={info_opt} alt="info.png" />
+                        {error.password}
+                      </div>
+                  )}
+                </div>
+                <label>Confirm Password</label>
+                <br />
+                <input
+                    id="myinput_opt"
+                    role="Opt_pass"
+                    name="confirmPassword"
+                    value={input.confirmPassword}
+                    onChange={onInputChange}
+                    onBlur={validateInput}
+                    placeholder="Choose your password"
+                    type="password"
+                    required
+                />
+                <br />
+                <div className="tt">
+                  {error.confirmPassword && (
+                      <div className="info__opt">
+                        {" "}
+                        <img
+                            className="info_opt"
+                            src={info_opt}
+                            alt="info.png"
+                        />{" "}
+                        {error.confirmPassword}
+                      </div>
+                  )}
+                </div>
+                <div className='but_opt'>
+                  <button
+                      role="Opt_submit"
+                      className="mybutton_opt"
+                      id="mybutton_opt"
+                      type="submit"
+                  >
+                    Sign Up
+                  </button>
+                  <button className="button_opt">
+                    <div className="gog_opt"><img src={google} className="google_opt" alt="google.png"/>
+                      <span className="annoyed_opt">Sign Up with Google</span></div>
+
+                  </button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
   );
 }
