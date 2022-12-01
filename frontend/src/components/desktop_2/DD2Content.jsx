@@ -116,7 +116,7 @@ const ImageUpload = () => {
             You can upload files like PNG, JPG, PDF, WEBP are supported
           </p>
           <form action="" className="aso-dd2-form">
-            <div className="aso-dd2-input">
+            <div className="aso-dd2-input pb-20">
               <input
                 accept="image/*"
                 multiple
