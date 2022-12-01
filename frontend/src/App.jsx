@@ -48,6 +48,7 @@ import Guidelines from './components/guidelinePage/Guideline.jsx';
 import { useAuth } from '../context/auth-context';
 import { PrivateRoute } from './routes/PrivateRoute';
 import { useEffect } from 'react';
+import Profile2 from './components/Profile/Profile';
 
 // import PaymentFlow12 from './components/paymentFlow-1.2/paymentFlow1.2';
 // import './App.css';
@@ -67,8 +68,8 @@ export default function App() {
 		}
 	}, []);
 	return (
-			<Routes>
-				{/*
+		<Routes>
+			{/*
           !!!IMPORTANT INFORMATION
           !!!IMPORTANT INFORMATION
           !!!IMPORTANT INFORMATION
@@ -79,86 +80,142 @@ export default function App() {
           you can find the path to your page in the links below
           DO NOT EDIT ANYTHING HERE JUST COPY THE PATH TO YOUR PAGE
            */}
-				{/*  Landing Page */}
-				<Route path="/LandingPage" element={<LandingPage />} exact />
-				{/* Text to image landing page */}
-				<Route path="/" element={<LandingPage />} exact />
-				<Route path="/ttilp" element={<Ttilp />} exact />
-				{/* Signup components */}
-				<Route path="/signupfirst/" element={<Opt_first />} />
-				<Route path="/Opt_sec" element={<Opt_sec />} />
-				<Route path="/Opt_thi" element={<Opt_thi />} />
-				<Route path="/Opt_for" element={<Opt_for />} />
-				<Route path="/Opt_fi" element={<Opt_fi />} />
-				{/* Navbar components */}
-				<Route path="/Aboutus" element={<Aboutus />} />
-				<Route path="/FAQ" element={<FAQ />} />
-				{/* Terms and conditions */}
-				<Route path="/Terms" element={<Terms />} />
-				{/* Payment modals */}
-				<Route path="/Payment" element={<Payment />} />
-				<Route path="/Paymentauth" element={<Paymentauth />} />
-				{/* Pricing Component */}
-				<Route path="/Pricing" element={<Pricing />} />
-				{/* Course Page */}
-				{/* Desktop 2 (when the create-avatar link is being clicked from the sidebar)*/}
-				<Route path="/Avatar" element={<Avatar />} />
-				{/* Desktop 3 */}
-				<Route path="/LoadingImages" element={<LoadingImages />} />
-				<Route path="/Courses" element={<Courses />} />
-				<Route path="/details/:detailId" element={<CourseDetail />} />
-				{/* 404 Page */}
-				<Route path="/Four404" element={<Four404 />} />
-				{/* Course Page */}
-				<Route path="/Courses" element={<Courses />} />
-				{/* <Route path ="/CourseDetail" element={<CourseDetail /> } /> */}
-				{/* Readarticle Page */}
-				<Route path="/Readarticle" element={<ReadArticle />} />
-				{/* ApiPage */}
-				<Route path="/ApiPage" element={<ApiPage />} />
-				{/* login */}
-				<Route path="/login" element={<Login />} />
-				<Route path="/reset-password" element={<ResetPassword />} />
-				<Route path="/set-password" element={<SetPassword />} />
-				<Route path="password-reset" element={<PasswordReset />} />
-				<Route path="/forgot-password" element={<ForgotPassword />} />
-				<Route path="/check-email" element={<CheckEmail />} />
-				{/* chat */}
-				<Route path="/Chat" element={<Chat />} />
-				{/* Career Page */}
-				{/* <Route path="/CareerPage" element={<CareerPage />} />*/}
-				{/* Feedback page Review */}
-				<Route path="/Review" element={<Review />} />
-				{/* Feedback page Review */}
-				<Route path="/DD2" element={<DD2 />} />
-				feat/Contact-Us-page
-				{/* Contact Us page */}
-				<Route path="/contact-us" element={<Contact />} />
-				{/* Guideline page */}
-				<Route path="/guidelines" element={<Guidelines />} />
-				{/* desktop_1 */}
-				<Route
-					path="/dashboard"
-					element={
-						<PrivateRoute>
-							<DesktopEye />
-						</PrivateRoute>
-					}
-				/>
-				<Route path="/Dashboard_2" element={<Desktop2 />} />
-				{/* desktop_3 */}
-				<Route path="/Dashboard_3" element={<Desktop3 />} />
-				{/* desktop_4 */}
-				<Route path="/Dashboard_4" element={<Desktop4 />} />
-				{/* desktop_5 */}
-				<Route path="/Dashboard_5" element={<Desktop5 />} />
-				{/* desktop_6 */}
-				<Route path="/Dashboard_6" element={<Desktop6 />} />
-				{/* Profile Page */}
-				<Route path="/Profile" element={<Profile />} />
-				{/* Desktop 4  (Generate Avatar)*/}
-				<Route path="/GenerateAvatar" element={<Preview />} />
-			</Routes>
-		
+			{/*  Landing Page */}
+			<Route path="/LandingPage" element={<LandingPage />} exact />
+			{/* Text to image landing page */}
+			<Route path="/" element={<LandingPage />} exact />
+			<Route path="/ttilp" element={<Ttilp />} exact />
+			{/* Signup components */}
+			<Route path="/signupfirst/" element={<Opt_first />} />
+			<Route path="/Opt_sec" element={<Opt_sec />} />
+			<Route path="/Opt_thi" element={<Opt_thi />} />
+			<Route path="/Opt_for" element={<Opt_for />} />
+			<Route path="/Opt_fi" element={<Opt_fi />} />
+			{/* Navbar components */}
+			<Route path="/Aboutus" element={<Aboutus />} />
+			<Route path="/FAQ" element={<FAQ />} />
+			{/* Terms and conditions */}
+			<Route path="/Terms" element={<Terms />} />
+			{/* Payment modals */}
+			<Route path="/Payment" element={<Payment />} />
+			<Route path="/Paymentauth" element={<Paymentauth />} />
+			{/* Pricing Component */}
+			<Route path="/Pricing" element={<Pricing />} />
+			{/* Course Page */}
+			{/* Desktop 2 (when the create-avatar link is being clicked from the sidebar)*/}
+			<Route path="/Avatar" element={<Avatar />} />
+			{/* Desktop 3 */}
+			<Route path="/LoadingImages" element={<LoadingImages />} />
+			<Route path="/Courses" element={<Courses />} />
+			<Route path="/details/:detailId" element={<CourseDetail />} />
+			{/* 404 Page */}
+			<Route path="/Four404" element={<Four404 />} />
+			{/* Course Page */}
+			<Route path="/Courses" element={<Courses />} />
+			{/* <Route path ="/CourseDetail" element={<CourseDetail /> } /> */}
+			{/* Readarticle Page */}
+			<Route path="/Readarticle" element={<ReadArticle />} />
+			{/* ApiPage */}
+			<Route path="/ApiPage" element={<ApiPage />} />
+			{/* login */}
+			<Route path="/login" element={<Login />} />
+			<Route path="/reset-password" element={<ResetPassword />} />
+			<Route path="/set-password" element={<SetPassword />} />
+			<Route path="password-reset" element={<PasswordReset />} />
+			<Route path="/forgot-password" element={<ForgotPassword />} />
+			<Route path="/check-email" element={<CheckEmail />} />
+			{/* chat */}
+			<Route path="/Chat" element={<Chat />} />
+			{/* Career Page */}
+			{/* <Route path="/CareerPage" element={<CareerPage />} />*/}
+			{/* Feedback page Review */}
+			<Route path="/Review" element={<Review />} />
+			{/* Feedback page Review */}
+			<Route path="/DD2" element={<DD2 />} />
+			{/* Contact Us page */}
+			<Route path="/contact-us" element={<Contact />} />
+			{/* Guideline page */}
+			<Route path="/guidelines" element={<Guidelines />} />
+			{/* Profile */}
+			<Route
+				path="/profile2"
+				element={
+					<PrivateRoute>
+						<Profile2 />
+					</PrivateRoute>
+				}
+			/>
+			{/* desktop_1 */}
+			<Route
+				path="/dashboard"
+				element={
+					<PrivateRoute>
+						<DesktopEye />
+					</PrivateRoute>
+				}
+			/>
+			<Route
+				path="/Dashboard_2"
+				element={
+					<PrivateRoute>
+						<Desktop2 />
+					</PrivateRoute>
+				}
+			/>
+			{/* desktop_3 */}
+			<Route
+				path="/Dashboard_3"
+				element={
+					<PrivateRoute>
+						<Desktop3 />
+					</PrivateRoute>
+				}
+			/>
+			{/* desktop_4 */}
+			<Route
+				path="/Dashboard_4"
+				element={
+					<PrivateRoute>
+						<Desktop4 />
+					</PrivateRoute>
+				}
+			/>
+			{/* desktop_5 */}
+			<Route
+				path="/Dashboard_5"
+				element={
+					<PrivateRoute>
+						<Desktop5 />
+					</PrivateRoute>
+				}
+			/>
+			{/* desktop_6 */}
+			<Route
+				path="/Dashboard_6"
+				element={
+					<PrivateRoute>
+						<Desktop6 />
+					</PrivateRoute>
+				}
+			/>
+			{/* Profile Page */}
+			<Route
+				path="/Profile"
+				element={
+					<PrivateRoute>
+						<Profile />
+					</PrivateRoute>
+				}
+			/>
+			{/* Desktop 4  (Generate Avatar)*/}
+			<Route
+				path="/GenerateAvatar"
+				element={
+					<PrivateRoute>
+						<Preview />
+					</PrivateRoute>
+				}
+			/>
+		</Routes>
 	);
 }
