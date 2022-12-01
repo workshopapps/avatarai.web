@@ -6,8 +6,7 @@ pipeline {
 		stage("Get repo"){
 
 			steps {
-				// sh "sudo su de-marauder"
-				// sh "echo ${WORKSPACE}"
+				
 				sh "rm -rf ${WORKSPACE}/avatarai.web"
 				sh "git clone https://github.com/workshopapps/avatarai.web.git"
 				sh "sudo cp -r ${WORKSPACE}/avatarai.web /home/de-marauder/avatarai.web"
