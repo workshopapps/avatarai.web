@@ -129,7 +129,7 @@ class Login(BaseModel):
 
         schema_extra = {
             'example': {               
-                "username":"johndoe@gmail.com",
+                "user":"johndoe@gmail.com",
                 "password": "I_can't_think_of_a_password",
             }
         }
