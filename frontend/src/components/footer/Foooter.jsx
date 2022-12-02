@@ -148,7 +148,7 @@ designed to generate perfect avatars for you.
         </div>
         <hr />
 
-        <div className="flex items-center justify-center space-x-4 text-[#000] mt-3 pb-[2rem]">
+        <div className="flex items-center justify-center  text-[#000] mt-3 pb-[2rem]">
           <img src={Insta} alt="insta" className="text-[#000]" />
           <img src={Twitter} alt="twitter" />
           <img src={Facebook} alt="facebook" />
