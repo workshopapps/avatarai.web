@@ -39,10 +39,7 @@ designed to generate perfect avatars for you.
                 <p className="text-[#605E65]">
                   <a href="/ApiPage" className="text-base">API integration</a>
                 </p>
-                <p className="text-[#605E65]">
-                  <a href="/guidelines" className="text-base">Guides</a>
-                </p>
-              </div>
+             </div>
               <div className="flex flex-col space-y-4 text-[#2B292F] md:ml-[1.7rem]">
                 <p className="font-semibold text-xl">Company</p>
                 <p className="text-[#605E65]">
@@ -50,9 +47,6 @@ designed to generate perfect avatars for you.
                 </p>
                 <p className="text-[#605E65]">
                   <a href="/Aboutus" className="text-base">About Us</a>
-                </p>
-                <p className="text-[#605E65]">
-                  <a href="/" className="text-base">Events</a>
                 </p>
               </div>
               <div className="flex flex-col space-y-4 text-[#2B292F] md:ml-[1.7rem] lg:w-auto w-[6rem]">
@@ -119,10 +113,7 @@ designed to generate perfect avatars for you.
                 <p className="text-sm">
                   <a href="/ApiPage">API integration</a>
                 </p>
-                <p className="text-sm">
-                  <a href="/guidelines">Guides</a>
-                </p>
-              </div>
+            </div>
               <div className="flex flex-col space-y-2 text-[#2B292F]">
                 <p className="font-semibold text-xl">Company</p>
                 <p className="text-sm">
@@ -131,10 +122,7 @@ designed to generate perfect avatars for you.
                 <p>
                   <a href="/Aboutus">About Us</a>
                 </p>
-                <p className="text-sm">
-                  <a href="/">Events</a>
-                </p>
-              </div>
+           </div>
               <div className="flex flex-col space-y-2 text-[#2B292F]">
                 <p className="font-semibold text-xl">Help</p>
                 <p className="text-sm">
