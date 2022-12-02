@@ -2,8 +2,9 @@
     display: grid;
     grid-template-columns: 19% 19% 19% 19% 19%;
     place-items: center;
-    gap: 1%;
+    gap: 1.25%;
     margin: 1rem 0;
+    padding: 0 1rem;
 }
 .main-ony img{
     max-width: 700px;
@@ -29,6 +30,7 @@
     grid-template-columns: 19% 19% 19% 19% 19%;
     place-items: center;
     gap: 1%;
+    padding: 0 1rem;
     margin: 1rem 0;
 
 }

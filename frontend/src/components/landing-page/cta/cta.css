@@ -4,7 +4,8 @@
 .img-bat{
     display: grid;
     grid-template-columns: 30% 30% 30%;
-    place-content: center;
+    place-items: center;
+    justify-content: center;
     gap: 1%;
     margin-top: 2rem;
 }
