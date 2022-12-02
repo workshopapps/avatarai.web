@@ -39,15 +39,15 @@ const AboutUs = () => {
 					<div className="dja_overlay"></div>
 				</section>
 
-				<section className="py-3 lg:py-[48px] px-5">
-					<div className="lg:min-h-[300px] flex justify-between items-start gap-3 md:gap-5 max-w-[1200px] mx-auto ">
+				<section className="py-3 lg:py-[48px] px-5 relative overflow-clip">
+					<div className="flex justify-between items-start gap-3 md:gap-5 max-w-[1200px] mx-auto ">
 						<div className="flex-auto w-56 md:w-64 flex h-full">
 							<h2 className="text-[#333333] font-semibold text-[20px] lg:text-[64px] leading-[20px] lg:leading-[81px]">
 								We are on a mission to change <span className="text-[#808080]">the face of art creation.</span>
 							</h2>
 						</div>
 
-						<div className="flex-auto w-44 md:w-32 flex items-end h-full">
+						<div className="flex-auto w-44 md:w-32 flex items-end h-full md:mt-[2rem]">
 							<p className="font-normal flex flex-col items-center mt-[40px] lg:mt-[80px]">
 								<span className="text-[#808080] text-[48px] md:text-[64px] leading-[0px]">“</span>
 								<span className="text-[10px] lg:text-[24px] font-normal">
@@ -58,15 +58,17 @@ const AboutUs = () => {
 							</p>
 						</div>
 					</div>
+					<img src={Pattern3} alt="pattern" className="absolute md:top-[-160px] top-[-80px] right-0 w-20 md:w-auto" />
+					<img src={Pattern2} alt="pattern" className="absolute md:top-[-100px] top-[-80px] left-0 w-20 md:w-auto" />
 				</section>
 
 				<div className="w-full">
-					<img src={Banner2} alt="Large banner" className="w-full" />
+					<img src={Banner2} alt="Large banner max-h-[1080px]" className="w-full" />
 				</div>
 
-				<section className="pt-10 lg:pt-[48px] px-5 relative overflow-hidden">
-					<div className="lg:min-h-[300px] flex justify-between gap-3 md:gap-5 max-w-[1200px] mx-auto border-b border-[#808080] pb-3 lg:pb-[48px]">
-						<div className="flex-auto max-w-[413px] flex items-end h-full">
+				<section className="pt-10 lg:pt-[48px] px-5 relative overflow-clip">
+					<div className=" flex justify-between gap-3 md:gap-5 max-w-[1200px] mx-auto border-b border-[#808080] pb-[2em] lg:pb-[6rem]">
+						<div className="flex-auto max-w-[413px] mt-[3rem] md:mt-[7rem] flex items-end h-full">
 							<p className="font-normal flex flex-col items-center">
 								<span className="text-[#808080] text-[48px] md:text-[64px] leading-[0px]">“</span>
 								<span className="text-[10px] lg:text-[24px] font-normal">
@@ -84,15 +86,16 @@ const AboutUs = () => {
 							</h2>
 						</div>
 					</div>
-					<img src={Pattern1} alt="pattern" className="absolute md:top-[-160px] top-[-80px] left-0 w-20 md:w-auto" />
+					<img src={Pattern3} alt="pattern" className="absolute md:top-[-160px] top-[-80px] right-0 w-20 md:w-auto" />
+					<img src={Pattern2} alt="pattern" className="absolute md:top-[-100px] top-[-80px] left-0 w-20 md:w-auto" />
 				</section>
 
-				<section className="px-5 mt-[48px] relative">
+				<section className="px-5 mt-[3rem] lg:mt-[6rem] relative">
 					<div className="max-w-[1200px] mx-auto">
-						<h2 className="font-bold text-[24px] md:text-[48px] mb-3 md:mb-[24px]">
-							Meet our <br /> Amazing Team
+						<h2 className="font-bold text-center text-[24px] md:text-[48px] mb-3 md:mb-[24px]">
+							Meet our Amazing Team
 						</h2>
-						<p className="text-sm md:text-[24px] mb-[48px] md:leading-[32px]">
+						<p className="text-sm text-center md:text-[20px] mb-[48px] md:leading-[35px]">
 							Zuvatar was founded by a team of creatives in November 2022 during the most powerful internship in the
 							world (HNG). What brought the team together was a spark of ideas, and an idea to help online users to have
 							enough physical privacy on any online forum.
@@ -103,8 +106,6 @@ const AboutUs = () => {
 							))}
 						</div>
 					</div>
-					<img src={Pattern2} alt="pattern" className="absolute top-[-20px] left-0 hidden md:block" />
-					<img src={Pattern3} alt="pattern" className="absolute md:top-[-220px] top-[-140px] right-0 w-20 md:w-auto" />
 				</section>
 
 				<section className="bg-[#6C6191] mt-[50px] relative overflow-hidden px-5">
