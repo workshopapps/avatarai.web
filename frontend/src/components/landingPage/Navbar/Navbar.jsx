@@ -6,6 +6,8 @@ import menu from '../../../assets/images/menu.png';
 import Button from '../Button/Button';
 import MobileNav from './MobileNav';
 import './nav.css';
+import { useContext } from 'react';
+import { NavContext, pages } from '../../../../context/nav-context';
 import { useAuth } from '../../../../context/auth-context';
 
 const Navbar = () => {
@@ -25,6 +27,9 @@ const Navbar = () => {
 		navigate('/');
 		console.log('log');
 	};
+
+	const {page} = useContext(NavContext);
+	
 	return (
 		<Fragment>
 			<nav className="flex justify-between items-center max-w-[100%]  lg:px-16   py-5 cbk-ds-nav">
@@ -42,19 +47,30 @@ const Navbar = () => {
 
 				<ul className="lg:flex justify-between items-center gap-2  lg:gap-5 hidden cursor-pointer w-1/2 cbk-links">
 					<li className="p-2  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
-						<Link to="/"> Home</Link>
+						<Link to="/" 
+						className={ page === pages.Home ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" }
+						
+						> Home</Link>
 					</li>
 					<li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
-						<Link to="/Aboutus">About Us</Link>
+						<Link to="/Aboutus" 
+						className={ page === pages.AboutUs ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" }
+						>About Us</Link>
 					</li>
 					<li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
-						<Link to="/Pricing">Pricing</Link>
+						<Link to="/Pricing" 
+						className={ page === pages.Pricing ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" }
+						>Pricing</Link>
 					</li>
 					<li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
-						<Link to="/contact-us">Contact Us</Link>
+						<Link to="/contact-us" 
+						className={ page === pages.ContactUs ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" }
+						>Contact Us</Link>
 					</li>
 					<li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
-						<Link to="/FAQ">FAQs</Link>
+						<Link to="/FAQ" 
+						className={ page === pages.Faqs ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" }
+						>FAQs</Link>
 					</li>
 				</ul>
 				<div className="space-x-6 hidden lg:block">
