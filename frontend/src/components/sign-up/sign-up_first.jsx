@@ -100,14 +100,15 @@ export default function SignUp_first() {
   const[last_name, setLastName]=useState("")
   const[email,setEmail]=useState("")
   async function signUp(){
-    setTimeout(function() {
-      navigate("/Opt_sec");
-    }, 6000);
+    // setTimeout(function() {
+    // }, 8000);
+    navigate("/Opt_sec");
 
     let password = input.password
     let item ={first_name,last_name,email,password}
-    console.warn(item)
-    let result =await fetch("https://noxus-ai.herokuapp.com/api/user",{
+    // console.warn("item",item)
+    localStorage.setItem("opt_mail", JSON.stringify(item.email))
+    let result = await fetch("https://noxus-ai.herokuapp.com/api/user",{
       method:'POST',
       body:JSON.stringify(item),
       headers:{
@@ -117,7 +118,7 @@ export default function SignUp_first() {
     })
     result=await result.json()
     const myresult = result.email
-    localStorage.setItem("mail_", JSON.stringify(myresult))
+
   }
 
   return (
