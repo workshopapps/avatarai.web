@@ -2,21 +2,22 @@ import os
 import json
 import boto3
 
-from fastapi import APIRouter, Path
+from fastapi import APIRouter, Path, Depends
 from fastapi import UploadFile, File, Form
 from fastapi import Body, HTTPException, status
 from fastapi.responses import Response, JSONResponse
 from fastapi.encoders import jsonable_encoder
 from typing import List
 
-from app.server.models.schemas import AvatarModel, UpdateAvatarModel
-from app.database import db
+from server.models.schemas import AvatarModel, UpdateAvatarModel, Token
+from database import db
 
 from bson import json_util
 from io import BytesIO
 
 #### image processing module
 from PIL import Image
+from server.auth.utility import *
 
 # Define Avatar route instance
 photo_router = APIRouter()
@@ -30,7 +31,7 @@ client = boto3.client(
 )
 
 @photo_router.get("/photos", response_model= List[AvatarModel])
-async def get_all_photos():
+async def get_all_photos(token :Token = Depends(get_current_user)):
     all_photos = await db['avatar_pictures'].find().to_list(1000)
     #all_photos = json.loads(json_util.dumps(all_photos))
     avatar_model = []
