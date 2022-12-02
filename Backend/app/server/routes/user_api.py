@@ -9,8 +9,8 @@ from fastapi.responses import JSONResponse
 from google.oauth2 import id_token
 from google.auth.transport import requests
 from starlette.requests import Request
-
 from server.models.schemas import User, Login, EmailSchema, TokenData
+
 from database import db
 ##############
 
@@ -157,6 +157,20 @@ async def login(login : OAuth2PasswordRequestForm = Depends()):
 @user_router.post("/contactForm")
 async def send_mail(email: EmailSchema): 
     return JSONResponse(status_code=200, content={"message": "email has been sent"})
+
+@user_router.post("/newsletter")
+async def send_mail(data : EmailSchema ):
+    email = {        
+        "username": data.email,                     
+    }
+    
+    new_news_letter = await db['NewsLetter'].insert_one(email)
+    print(new_news_letter)
+    news_letter= await db.NewsLetter.find_one({"_id": new_news_letter.inserted_id})
+    print(news_letter)
+    news_letter["_id"] = str(news_letter["_id"])
+    return JSONResponse(status_code=200, content={"message": "success"})
+
 
 @user_router.post("/forgotPassword", response_model = TokenData )
 async def send_mail(data: TokenData): 
