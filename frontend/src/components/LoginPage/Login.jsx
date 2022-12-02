@@ -1,9 +1,6 @@
-import React, { Fragment, useState, useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import log from "../../assets/images/log.png";
-import Button from "../landingPage/Button/Button";
-import Navbar from "../landingPage/Navbar/Navbar";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useAuth } from "../../../context/auth-context";
@@ -14,7 +11,7 @@ import { gapi } from "gapi-script";
 const clientId =
   "835762326165-94q22eof4arhg4g3gnogj0gd55e6blle.apps.googleusercontent.com";
 
-const Login = ({ props }) => {
+const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { login, setToken, token } = useAuth();
