@@ -45,6 +45,14 @@ const Login = ({ props }) => {
 				reset();
 				setLoading(false);
 
+  let mail
+  function getemail(){
+    if(localStorage.getItem("mail_")!==""){
+      mail=localStorage.getItem("mail_").slice(1, -1)
+    }
+  }
+  getemail()
+
 				//Get token and save to local storage
 				const token = response?.data?.token;
 				localStorage.setItem('zvt_token', JSON.stringify(token));
