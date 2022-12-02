@@ -44,19 +44,11 @@ const Login = ({ props }) => {
 		await axios
 			.post(url, data)
 			.then((response) => {
-				console.log(response, 'response');
+				// console.log(response, 'response');
 
 				//Reset login form
 				reset();
 				setLoading(false);
-
-  let mail
-  function getemail(){
-    if(localStorage.getItem("mail_")!==""){
-      mail=localStorage.getItem("mail_").slice(1, -1)
-    }
-  }
-  getemail()
 
 				//Get token and save to local storage
 				const token = response?.data?.token;
@@ -67,6 +59,14 @@ const Login = ({ props }) => {
 				login(response?.data?.user);
 
 				setErrorStatus({ error: false, message: 'Login successful' });
+
+				let mail;
+				function getemail() {
+					if (localStorage.getItem('mail_') !== '') {
+						mail = localStorage.getItem('mail_').slice(1, -1);
+					}
+				}
+				getemail();
 			})
 			.catch((e) => {
 				setLoading(false);
