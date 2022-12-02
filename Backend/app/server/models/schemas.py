@@ -136,3 +136,6 @@ class Token(BaseModel):
 #token data
 class TokenData(BaseModel):
     username: Union[str, None] = None
+
+class EmailSchema(BaseModel):
+   email: List[EmailStr]
