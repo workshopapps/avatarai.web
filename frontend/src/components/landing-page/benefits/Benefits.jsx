@@ -69,7 +69,7 @@ const Benefits = () => {
             </div>
             {two && (
               <p id="anchor">
-                Yes. AvatarAI offers a list of backgrounds you can choose from
+                Yes. Zuvatar offers a list of backgrounds you can choose from
                 to generate your avatars. You can also upload images of the
                 backgrounds you want to appear in your avatar.
               </p>
