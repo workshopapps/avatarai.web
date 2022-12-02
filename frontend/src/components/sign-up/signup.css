@@ -356,12 +356,12 @@
 .mail_opt{
     width: 122px;
     height: auto;
-    margin: 280px auto 16px;
+    margin: 120px auto 16px;
 }
 .mail__opt{
     width: 80px;
     height: auto;
-    margin: 280px auto 16px;
+    margin: 130px auto 16px;
 }
 .ch_opt{
     font-weight: 700;
@@ -497,12 +497,14 @@
         display: block;
         padding-top: 131px;
         padding-left: 57px;
-        padding-right: 77px;
         width: 37vw;
         background: #6C6191;
         border-radius: 16px;
         margin-top: 32px;
 
+    }
+    .d_ava_opt{
+        padding-right: 30px;
     }
     .cre_opt{
         font-family: 'Nunito', serif;
@@ -516,6 +518,7 @@
         width: 100%;
     }
     .creone_opt{
+        padding-right: 22px;
         width: 100%;
         font-family: 'Nunito', serif;
         font-style: normal;
@@ -562,7 +565,7 @@
     .ss_opt{
         display: flex;
         gap: 32px;
-        width: 52vw;
+        width: 97%;
     }
     .sss_opt{
        width: 50%;
@@ -603,5 +606,7 @@
         justify-content: center;
         padding-bottom: 40px;
         max-height: 1074px;
+        max-width: 1440px;
+        margin: auto;
     }
 }
