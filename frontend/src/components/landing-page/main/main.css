@@ -3,7 +3,15 @@
     grid-template-columns: 19% 19% 19% 19% 19%;
     place-items: center;
     gap: 1%;
-    margin: 2rem 0;
+    margin: 1rem 0;
+}
+.main-ony img{
+    max-width: 700px;
+    width: 100%;
+}
+.main2-ony img{
+    max-width: 700px;
+    width: 100%;
 }
 /* #one{
     width: 100%;
@@ -21,7 +29,7 @@
     grid-template-columns: 19% 19% 19% 19% 19%;
     place-items: center;
     gap: 1%;
-    margin: 2rem 0;
+    margin: 1rem 0;
 
 }
 .disclamiar{
@@ -42,6 +50,26 @@
 @media only screen and (max-width: 500px) {
     .group img{
         width: 20px;
+    }
+}
+@media only screen and (min-width: 1600px) {
+    .main-ony{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main2-ony{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .main-ony img{
+        width: 500px;
+        height: 100%;
+    }
+    .main2-ony img{
+        width: 500px;
+        height: 100%;
     }
 }
 

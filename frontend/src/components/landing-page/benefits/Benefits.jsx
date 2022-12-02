@@ -53,7 +53,7 @@ const Benefits = () => {
                   alt=""
                   class="anchor"
                   onClick={() => {
-                    setOne((current) => !current);
+                    setTwo((current) => !current);
                   }}
                 />
               ) : (
@@ -117,7 +117,7 @@ const Benefits = () => {
           </div> */}
         </div>
         <Link to="/FAQ">
-          <button className="bat3-btn">view All</button>
+          <button className="bat3-btn">View All</button>
         </Link>
       </div>
     </section>
