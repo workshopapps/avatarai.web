@@ -4,12 +4,13 @@
 # IMPORTS
 #################
 from fastapi import APIRouter, status, HTTPException
-from schemas import User, Login
-from database import db
 from fastapi.responses import JSONResponse
+
+from app.server.models.schemas import User, Login
+from app.database import db
 ##############
 
-from utility import *
+from app.server.auth.utility import *
 from bson import json_util
 import json
 
@@ -34,7 +35,6 @@ def get_password_hash(password):
 
 
 user_router = APIRouter()
-
 
 ###########################
 #API

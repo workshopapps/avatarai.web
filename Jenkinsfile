@@ -12,6 +12,29 @@ pipeline {
 			}
 
 		}
+
+		stage("Build frontend"){
+
+			steps {
+
+                dir ('avatarai.web/frontend') {
+                    sh "npm i"
+                    sh "npm run build"
+                }
+
+			}
+		}
+
+		// stage("Install dependencies for backend"){
+
+		// 	steps {
+
+        //         dir ('avatarai.web/Backend') {
+        //             sh "npm i -f"
+        //         }
+
+		// 	}
+		// }
 		
 		stage("start frontend") {
 		

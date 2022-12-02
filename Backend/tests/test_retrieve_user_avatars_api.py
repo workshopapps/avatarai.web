@@ -5,7 +5,7 @@ import sys
 sys.path.append("..")
 
 
-from ..api import app
+from ..app.api import app
 
 
 @pytest.fixture
