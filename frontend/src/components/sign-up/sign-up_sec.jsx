@@ -25,7 +25,6 @@ export default function SignUp_sec(){
 
     }
     const mydata = localStorage.getItem("mail_")
-    // console.warn("mydata", mydata)
     return(
         <div className="houset_opt">
         <div className='first__opt'>
