@@ -11,7 +11,7 @@ const Contact = () => {
             <Navbar />
             <div className="barner">
                 <div className="overlay"></div>
-                <img src={Barner} />
+                <img className="contact-img" src={Barner} />
                 <div className="barner-text">
                     <h1 className="text-white font-semibold text-2xl mb-5">Contact Us!</h1>
                     <p className="text-white font-semibold text-5xl mb-5">How Can We Help You ?</p>
@@ -36,7 +36,7 @@ const Contact = () => {
                     </div>
                     <button className="text-white bg-violet-500 p-3 rounded-md w-full mt-5">Contact Us</button>
                 </form>
-                <img className="w-1/2  max-[1000px]:w-3/4" src={Illustration} />
+                <img className="w-1/2 contact-img max-[1000px]:w-3/4" src={Illustration} />
             </div>
             <Footer />
         </div>

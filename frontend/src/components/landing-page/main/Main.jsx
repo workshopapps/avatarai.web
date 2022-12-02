@@ -1,7 +1,7 @@
 import React from "react";
 import "./main.css";
 import part1 from './part1.png'
-import part2 from './part2.png'
+import part2 from './cv.png'
 import part3 from './part3.png'
 import part4 from './part4.png'
 import part5 from './part5.png'

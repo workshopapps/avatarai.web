@@ -10,7 +10,11 @@ from google.oauth2 import id_token
 from google.auth.transport import requests
 from starlette.requests import Request
 
+<<<<<<< HEAD
 from server.models.schemas import User, Login, EmailSchema, Token
+=======
+from server.models.schemas import User, Login, EmailSchema, TokenData
+>>>>>>> 0a19d110a3eda8e6bd41a3a96701b80c84a5c87a
 from database import db
 ##############
 
@@ -158,6 +162,7 @@ async def login(login : OAuth2PasswordRequestForm = Depends()):
 async def send_mail(email: EmailSchema): 
     return JSONResponse(status_code=200, content={"message": "email has been sent"})
 
+<<<<<<< HEAD
 @user_router.post("/newsletter")
 async def send_mail(data : EmailSchema ):
     email = {        
@@ -170,3 +175,20 @@ async def send_mail(data : EmailSchema ):
     print(news_letter)
     news_letter["_id"] = str(news_letter["_id"])
     return JSONResponse(status_code=200, content={"message": "success"})
+=======
+@user_router.post("/forgotPassword", response_model = TokenData )
+async def send_mail(data: TokenData): 
+    user = await db["user"].find_one({ "email": data.username }, None)
+    # print(user)
+    userRes = json.loads(json_util.dumps(user))
+
+    if user is None:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Not Found"
+        )
+    return JSONResponse(status_code=200, content={"message": "An email has been sent to you"})
+
+
+
+>>>>>>> 0a19d110a3eda8e6bd41a3a96701b80c84a5c87a
