@@ -21,7 +21,7 @@ const Contact = () => {
             <p>Contact Us!</p>
             <h1>How Can We Help You?</h1>
             </div>
-            <Button className="text-white border-purple-500 bg-purple-500 cbk-login-btn">
+            <Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn">
             <Link to="/"> Send A Message </Link>
           </Button>
         </div>
@@ -48,7 +48,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className="content4_bpc">
-                <Button className="text-white border-purple-500 bg-purple-500 cbk-login-btn">
+                <Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn">
                     <Link to="/"> Contact Us </Link>
           </Button>
                     <p>We’ll be in touch soon</p>

@@ -16,7 +16,7 @@ const MobileNav = ({navClose}) => {
         <div className=" mt-5 flex justify-center w-full">
           <Link to='/'><img src={logo} alt="" /></Link>
           <div>
-      <img src={close} alt="" onClick={navClose} className="text-purple-500 mt-2"/>
+      <img src={close} alt="" onClick={navClose} className="text-[#8B70E9] mt-2"/>
       </div>
         </div>
         <ul className=" flex flex-col justify-between items-start gap-5 cursor-pointer ">
@@ -37,13 +37,13 @@ const MobileNav = ({navClose}) => {
           </li>
         </ul>
         <div className=" w-full flex flex-col items-start justify-start gap-y-5" >
-          <button className="inline-flex justify-center items-center px-8 py-3  border border-purple-500  
-          rounded-[8px] font-semibold text-md text-purple-500 bg-white transition ease-in-out duration-150 cbk-mobile-login-btn" >
+          <button className="inline-flex justify-center items-center px-8 py-3  border border-[#8B70E9]  
+          rounded-[8px] font-semibold text-md text-[#8B70E9] bg-white transition ease-in-out duration-150 cbk-mobile-login-btn" >
           <Link to="/Login">  Log in</Link>
           </button>
         
 
-          <Button className="text-white bg-purple-500 cbk-mobile-login-btn"><Link to="/Signupfirst"> Sign up </Link></Button>
+          <Button className="text-white bg-[#8B70E9] cbk-mobile-login-btn"><Link to="/Signupfirst"> Sign up </Link></Button>
         </div>
         
       </nav>

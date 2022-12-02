@@ -56,7 +56,7 @@ function DD4content() {
       <div className="vic_div_div">
         {/* <input
           type="file"
-          className="vic_input_cls bg-purple-500"
+          className="vic_input_cls bg-[#8B70E9]"
           accept="image/*"
           onClick={!isVisible}
           onChange={(event) => {
@@ -71,7 +71,7 @@ function DD4content() {
         {/* <div className="vic_spacer"></div> */}
         <Link to="/Dashboard_6" className="vic_link">
           <Button
-            className="bg-purple-500 w-100 w-lg-120 text-white"
+            className="bg-[#8B70E9] w-100 w-lg-120 text-white"
             children="Generate Avatar"
           />{" "}
         </Link>
