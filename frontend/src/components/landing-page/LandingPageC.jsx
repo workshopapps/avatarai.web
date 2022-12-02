@@ -15,13 +15,26 @@ import Top from './Top/top.jsx';
 import Final from './final/final';
 import {useContext} from "react";
 import {NavContext, pages} from "../../../context/nav-context"
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import Cookies from '../cookies/cookies.component';
 // import Footer from "../Footerpage/Footer.jsx";
 
 
 function LandingPageC() {
   const [show,setShow] = React.useState(true)
   const [preview,setPreview] = React.useState(true)
+  const [cookiesShowing, setCookiesShowing] = useState(true)
+  const [isCookiesReady, setIsCookiesReady] = useState(false)
+
+  useEffect(() => {
+    let interval = setInterval(() => setIsCookiesReady(true), 1200);
+    
+  }, []);
+
+
+  const offCookies =()=>{
+    setCookiesShowing(false)
+  }
   React.useEffect(() => {
     let timeout;
       timeout = setTimeout(() => {
@@ -52,6 +65,14 @@ function LandingPageC() {
         <Top/>
         <Final/> */}
         {/* <QuestionSection /> */}
+        {isCookiesReady
+        ?(cookiesShowing ? <Cookies offCookies={offCookies}></Cookies> : "")
+        
+        :
+        ""
+        }
+       
+        
         <FaqNewsletter />
         <Foooter /> 
     </div>

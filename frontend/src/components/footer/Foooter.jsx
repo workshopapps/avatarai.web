@@ -114,7 +114,7 @@ designed to generate perfect avatars for you.
                   <a href="/ApiPage">API integration</a>
                 </p>
             </div>
-              <div className="flex flex-col space-y-2 text-[#2B292F]">
+              <div className="flex flex-col space-y-2 text-[#2B292F] ml-[-1rem] md:ml-0">
                 <p className="font-semibold text-xl">Company</p>
                 <p className="text-sm">
                   <a href="/contact-us">Contact Us</a>
@@ -131,11 +131,11 @@ designed to generate perfect avatars for you.
                
               
               </div>
-              <div className="flex flex-col space-y-2 text-[#2B292F]">
+              <div className="flex flex-col space-y-2 text-[#2B292F] ml-[-1rem] md:ml-0">
                 <p className="font-semibold text-xl">Socials</p>
                 <p className="text-sm flex items-center gap-3">
                 <img src={Call} alt="/" />
-                  <a href="/"> Zuvatar@gmail.com</a>
+                  <a href="/">Zuvatar@gmail.com</a>
                 </p>
                 <p className="text-sm flex items-center gap-3">
                   
@@ -148,7 +148,7 @@ designed to generate perfect avatars for you.
         </div>
         <hr />
 
-        <div className="flex items-center justify-center space-x-4 text-[#000] mt-3 pb-[2rem]">
+        <div className="flex items-center justify-center  text-[#000] mt-3 pb-[2rem]">
           <img src={Insta} alt="insta" className="text-[#000]" />
           <img src={Twitter} alt="twitter" />
           <img src={Facebook} alt="facebook" />
