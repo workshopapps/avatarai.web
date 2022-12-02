@@ -82,10 +82,10 @@ const AboutUs = () => {
 
 				<section className="px-5 mt-[48px] relative">
 					<div className="max-w-[1200px] mx-auto">
-						<h2 className="font-bold text-[24px] md:text-[48px] mb-[24px]">
+						<h2 className="font-bold text-[24px] md:text-[48px] mb-3 md:mb-[24px]">
 							Meet our <br /> Amazing Team
 						</h2>
-						<p className="text-sm md;text-[24px] mb-[48px]">
+						<p className="text-sm md:text-[24px] mb-[48px] md:leading-[32px]">
 							Zuvatar was founded by a team of creatives in November 2022 during the most powerful internship in the
 							world (HNG). What brought the team together was a spark of ideas, and an idea to help online users to have
 							enough physical privacy on any online forum.

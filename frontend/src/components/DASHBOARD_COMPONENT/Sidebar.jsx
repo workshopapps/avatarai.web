@@ -49,7 +49,7 @@ function Sidebar() {
             </li>
             <li>
               <AiOutlineUserAdd className="icon" />
-              <Link to="/" className="sidebar-link">
+              <Link to="/profile2" className="sidebar-link">
                 Profile
               </Link>
             </li>

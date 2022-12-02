@@ -34,22 +34,22 @@ designed to generate perfect avatars for you.
               <div className="flex flex-col space-y-4 text-[#2B292F] md:ml-[1.7rem]">
                 <p className="font-semibold text-xl">Resources</p>
                 <p className="text-[#605E65]">
-                  <a href="/" className="text-base">Reviews</a>
+                  <a href="/Review" className="text-base">Reviews</a>
                 </p>
                 <p className="text-[#605E65]">
-                  <a href="/" className="text-base">API integration</a>
+                  <a href="/ApiPage" className="text-base">API integration</a>
                 </p>
                 <p className="text-[#605E65]">
-                  <a href="/" className="text-base">Guides</a>
+                  <a href="/guidelines" className="text-base">Guides</a>
                 </p>
               </div>
               <div className="flex flex-col space-y-4 text-[#2B292F] md:ml-[1.7rem]">
                 <p className="font-semibold text-xl">Company</p>
                 <p className="text-[#605E65]">
-                  <a href="/" className="text-base">Contact Us</a>
+                  <a href="/contact-us" className="text-base">Contact Us</a>
                 </p>
                 <p className="text-[#605E65]">
-                  <a href="/" className="text-base">About Us</a>
+                  <a href="/Aboutus" className="text-base">About Us</a>
                 </p>
                 <p className="text-[#605E65]">
                   <a href="/" className="text-base">Events</a>
@@ -58,7 +58,7 @@ designed to generate perfect avatars for you.
               <div className="flex flex-col space-y-4 text-[#2B292F] md:ml-[1.7rem] lg:w-auto w-[6rem]">
                 <p className="font-semibold text-xl">Help</p>
                 <p className="text-[#605E65]">
-                  <a href="/" className="text-base">FAQs</a>
+                  <a href="/FAQ" className="text-base">FAQs</a>
                 </p>
              </div>
             </div>
@@ -69,7 +69,7 @@ designed to generate perfect avatars for you.
               <div className="flex gap-x-[5rem] text-[#2B292F]">
                 <p className="text-sm flex items-center gap-3">
                 <img src={Call} alt="/" />
-                  <a href="/"> AvatarAI@gmail.com</a>
+                  <a href="/"> Zuvatar@gmail.com</a>
                 </p>
                 <p className="text-sm flex items-center gap-3">
                   
@@ -91,7 +91,7 @@ designed to generate perfect avatars for you.
               className="w-full h-full object-cover"
             />
           </div>
-          <p className="font-bold text-[#fff]">AvatarAI</p>
+          <p className="font-bold text-[#fff]">Zuvatar</p>
         </div>
       </div>
      
@@ -114,22 +114,22 @@ designed to generate perfect avatars for you.
               <div className="flex flex-col space-y-2 text-[#2B292F]">
                 <p className="font-semibold text-xl">Resources</p>
                 <p className="text-sm">
-                  <a href="/">Reviews</a>
+                  <a href="/Review">Reviews</a>
                 </p>
                 <p className="text-sm">
-                  <a href="/">API integration</a>
+                  <a href="/ApiPage">API integration</a>
                 </p>
                 <p className="text-sm">
-                  <a href="/">Guides</a>
+                  <a href="/guidelines">Guides</a>
                 </p>
               </div>
               <div className="flex flex-col space-y-2 text-[#2B292F]">
                 <p className="font-semibold text-xl">Company</p>
                 <p className="text-sm">
-                  <a href="/">Contact Us</a>
+                  <a href="/contact-us">Contact Us</a>
                 </p>
                 <p>
-                  <a href="/">About Us</a>
+                  <a href="/Aboutus">About Us</a>
                 </p>
                 <p className="text-sm">
                   <a href="/">Events</a>
@@ -138,7 +138,7 @@ designed to generate perfect avatars for you.
               <div className="flex flex-col space-y-2 text-[#2B292F]">
                 <p className="font-semibold text-xl">Help</p>
                 <p className="text-sm">
-                  <a href="/">FAQs</a>
+                  <a href="/FAQ">FAQs</a>
                 </p>
                
               
@@ -147,7 +147,7 @@ designed to generate perfect avatars for you.
                 <p className="font-semibold text-xl">Socials</p>
                 <p className="text-sm flex items-center gap-3">
                 <img src={Call} alt="/" />
-                  <a href="/"> AvatarAI@gmail.com</a>
+                  <a href="/"> Zuvatar@gmail.com</a>
                 </p>
                 <p className="text-sm flex items-center gap-3">
                   
@@ -173,7 +173,7 @@ designed to generate perfect avatars for you.
               className="w-full h-full object-cover"
             />
           </div>
-          <p className="font-bold text-[#fff]">AvatarAI</p>
+          <p className="font-bold text-[#fff]">Zuvatar</p>
         </div>
       </div>
     </section>

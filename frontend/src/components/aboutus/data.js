@@ -29,13 +29,13 @@ export const TEAM = [
 		image: Member4,
 	},
 	{
-		name: 'Caleb C Ihuarulam',
+		name: 'Toluwani Oluwamuyiwa',
 		role: 'Product Designer',
 		image: Member5,
 	},
 	{
-		name: 'Toluwani Oluwamuyiwa',
-		role: 'Product Designer',
+		name: 'Caleb C Ihuarulam',
+		role: 'Product Manager',
 		image: Member6,
 	},
 	{

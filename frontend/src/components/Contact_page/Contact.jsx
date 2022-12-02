@@ -3,7 +3,7 @@ import Navbar from "../landingPage/Navbar/Navbar";
 import Barner from "./barner.png";
 import Illustration from "./illus.png";
 import Footer from "../landing-page/footer/Footer";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Contact = () => {
     return (
