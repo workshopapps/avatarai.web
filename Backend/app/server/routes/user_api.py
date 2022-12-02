@@ -68,7 +68,7 @@ async def create_user(raw_user: User = Depends()):
             detail={'message' : '400'}
         )
 
-    if await db.user.find_one({"user": raw_user.email} ):
+    if await db.user.find_one({"user": raw_user.username} ):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail={'message' : 'Username not unique'}
