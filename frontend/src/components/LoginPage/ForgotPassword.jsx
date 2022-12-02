@@ -1,4 +1,4 @@
-import lock from "../../assets/images/lock.png";
+import lock from "./LoginImg/lock.svg";
 import Button from "../landingPage/Button/Button";
 import { Link } from "react-router-dom";
 import  designL from './LoginImg/designL.svg'
@@ -18,10 +18,21 @@ const ForgotPassword = () => {
   const watchEmail = watch("sendEmail");
 
   return (
-    <div className="flex flex-col pt-[50%] mt-[7%] md:p-0 md:justify-center items-center h-screen ">
+    <div
+      className="flex flex-col justify-center items-center h-screen
+    w-screen overflow-hidden"
+    >
       <div className="flex flex-col w-full max-w-xl px-6 gap-6 md:gap-8 items-center justify-center">
-        <div className="bg-[#F3F0FF] p-6 md:p-10 rounded-full mr-[6%] ">
-          <img className="w-7 h-7 md:w-20 md:h-20" src={lock} alt="" />
+        <div className="bg-[#F3F0FF] p-3 md:p-5 rounded-full mr-[5%]">
+          <div
+            className="w-[60px] md:w-[220px] ld:w-[220px] h-[60px] md:h-[220px] ld:h-[220px] "
+            style={{
+              backgroundImage: `url(${lock})`,
+              backgroundSize: 'contain',
+              backgroundRepeat: 'no-repeat',
+            }}
+            alt=""
+          />
         </div>
         <div className="flex flex-col gap-2 text-center max-[480px]:text-start">
           <h1 className="font-bold text-[#333333] text-xl md:text-4xl max-[480px]:text-center">
@@ -62,16 +73,15 @@ const ForgotPassword = () => {
               <Link to="/check-email">Send</Link>
             )}
           </Button>
-          
         </form>
-        <div class='relative bottom-[0] left-[-42vw] w-[42%] max-[1024px]:left-[-88%] max-[480px]:hidden '>
-          <img src={designL} alt='design'/>
+        <div class="absolute bottom-[0] left-[-42vw] w-[42%] max-[1024px]:left-[-88%] max-[480px]:hidden ">
+          <img src={designL} alt="design" />
         </div>
-        <div class='max-[480px]:relative top-[-70%] right-[-45vw] w-[25%] min-[480px]:relative mt-[-45%] right-[-45vw] '>
-          <img src={designR} alt='design'/>
+        <div class="max-[480px]:absolute top-[-70%] right-[-45vw] w-[25%] min-[480px]:relative mt-[-45%] right-[-45vw] ">
+          <img src={designR} alt="design" />
         </div>
-        <div class='max-[480px]:relative bottom-[9%] left-0 w-20 mr-[90%] min-[480px]:hidden'>
-          <img src={mdesign} alt='design'/>
+        <div class="max-[480px]:absolute bottom-[9%] left-0 w-20 mr-[90%] min-[480px]:hidden">
+          <img src={mdesign} alt="design" />
         </div>
       </div>
     </div>
