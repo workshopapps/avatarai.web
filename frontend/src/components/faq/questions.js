@@ -25,7 +25,7 @@ const faqContent = [
   },
   {
     q: "Are there age restriction for Zuvatar?",
-    a: "Yes. AvatarAI should not be used by children under 13 years of age without supervision.",
+    a: "Yes. Zuvatar should not be used by children under 13 years of age without supervision.",
   },
   {
     q: "How does Zuvatar ensure my data is protected?",

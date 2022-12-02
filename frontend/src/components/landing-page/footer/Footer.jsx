@@ -26,8 +26,8 @@ const Footer = () => {
     </div>
     <div className="footer__items-ony">
     <div>
-  <h4 className="footer__mini__title-ony">AvatarAI</h4>
-  <p className="noxus__description-ony">AvatarAI is your webapp for creating Artificial Intelligent Avatars, we also offer courses on avatar generation</p>
+  <h4 className="footer__mini__title-ony">Zuvatar</h4>
+  <p className="noxus__description-ony">Zuvatar is your webapp for creating Artificial Intelligent Avatars, we also offer courses on avatar generation</p>
 </div>
 
 <div className="footer__item-ony">
@@ -56,14 +56,14 @@ const Footer = () => {
 </div>
 <div className="socials__ony">
   <h3 className="footer__mini__title-ony so-ony">Socials</h3>
-  <p className="footer__mini__description-ony cont-ony">AvatarAI@gmail.com</p>
+  <p className="footer__mini__description-ony cont-ony">Zuvatar@gmail.com</p>
   <p className="footer__mini__description-ony cont-ony">+2340917695205</p>
    <img className="contact-ony" src="./images/num2.png"/>
 <img className="contact-ony" src="./images/num.png"/></div>
     </div>
     <div className="last__footer-ony">
       <div>
-      <p className="footer__mini__description-ony con-ony">AvatarAI@gmail.com</p>
+      <p className="footer__mini__description-ony con-ony">Zuvatar@gmail.com</p>
       </div>
       <div>
       <p className="footer__mini__description-ony con-ony">+2340917695205</p>
@@ -74,7 +74,7 @@ const Footer = () => {
       </div>
     </div>
     <div className="last__footer__mini-ony">
-      &copy;AvatarAI
+      &copy;Zuvatar
     </div>
     </>
     

@@ -20,7 +20,7 @@ const Hero = () => {
 							illustration{' '}
 						</p>
 						<p className="text-[#ffffff] text-[16px] mb-[32px]">
-							AvatarAI APIs make it easy to integrate and generate custom illustrations into your app or website.
+							Zuvatar APIs make it easy to integrate and generate custom illustrations into your app or website.
 						</p>
 						<button className="px-[26px] py-[12px] outline-none normal-case border-none rounded-lg bg-[#8B70E9] text-[#ffffff]">
 							API free trial
