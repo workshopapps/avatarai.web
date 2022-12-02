@@ -38,6 +38,13 @@ const Login = ({ props }) => {
     result = await result.json();
   };
 
+  let mail
+  function getemail(){
+    if(localStorage.getItem("mail_")!==""){
+      mail=localStorage.getItem("mail_").slice(1, -1)
+    }
+  }
+  getemail()
   return (
     <div className="h-screen object-scale-down flex items-center justify-center">
       <div className="flex gap-16 p-6 w-full justify-center max-w-[1440px]">
@@ -100,6 +107,7 @@ const Login = ({ props }) => {
                 name="email"
                 type="email"
                 id="email"
+                value={mail}
                 required
                 {...register("email", {
                   required: true,
