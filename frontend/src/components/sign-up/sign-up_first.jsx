@@ -33,7 +33,7 @@ export default function SignUp_first() {
     event.preventDefault();
     if (error.confirmPassword === "") {
       signUp()
-      navigate("/Opt_sec");
+
     }
   };
   const [show_s, setShow_s] = useState(true);
@@ -100,10 +100,14 @@ export default function SignUp_first() {
   const[last_name, setLastName]=useState("")
   const[email,setEmail]=useState("")
   async function signUp(){
+    setTimeout(function() {
+      navigate("/Opt_sec");
+    }, 6000);
+
     let password = input.password
     let item ={first_name,last_name,email,password}
     console.warn(item)
-    let result = fetch("https://noxus-ai.herokuapp.com/api/user",{
+    let result =await fetch("https://noxus-ai.herokuapp.com/api/user",{
       method:'POST',
       body:JSON.stringify(item),
       headers:{
@@ -112,8 +116,9 @@ export default function SignUp_first() {
       }
     })
     result=await result.json()
-      console.warn("result", result)
-    localStorage.setItem("user-info", JSON.stringify(result))
+    const myresult = result.email
+      // console.warn("myresult", myresult)
+    localStorage.setItem("mail_", JSON.stringify(myresult))
   }
 
   return (
@@ -125,7 +130,7 @@ export default function SignUp_first() {
           <div className='creone_opt'>
             Create profile pictures, online gaming display pictures, and much more on the go.
           </div>
-          <div>
+          <div className='d_ava_opt' >
             <img src={ava} className='ava_opt' alt='avatar.png'/>
           </div>
         </div>
