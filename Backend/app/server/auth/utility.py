@@ -6,6 +6,9 @@ import os
 from datetime import datetime, timedelta
 from typing import Union, Any
 from jose import jwt, JWTError
+
+
+
 # from passlib.context import CryptContext
 # import os
 # from datetime import datetime, timedelta
@@ -24,6 +27,14 @@ password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 ###################################
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/user/login")
+
+# ##################################
+# #Google uthentication
+# ##################################
+# async def login_via_google(request):
+#     google = oauth.create_client('google')
+#     redirect_uri = request.url_for('authorize_google')
+#     return await google.authorize_redirect(request, redirect_uri)
 
 ####################################
 #get current User
