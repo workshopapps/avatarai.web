@@ -1,12 +1,12 @@
-from fastapi import FastAPI, File, UploadFile, status, APIRouter, Form
+from fastapi import FastAPI, File, UploadFile, status, APIRouter, Form, Depends
 from fastapi.exceptions import HTTPException
-
-
+from server.models.schemas import Token
+from server.auth.utility import *
 import os
 import boto3
 import json
-from app.server.utils.avatarzip import unzip_avatar, get_avatars
-from app.server.utils.sendmail import sendmail
+from server.utils.avatarzip import unzip_avatar, get_avatars
+from server.utils.sendmail import sendmail
 
 avatar_router = APIRouter()
 
@@ -34,7 +34,7 @@ async def upload(file: UploadFile = File(...), email: str = Form(default="exampl
 
 
 @avatar_router.get("/avatar/{email}")
-async def get_avatar(email):
+async def get_avatar(email : Token = Depends(get_current_user)):
     list_of_avatars = get_avatars(id, "hngtest")
     
     return {"data": list_of_avatars}

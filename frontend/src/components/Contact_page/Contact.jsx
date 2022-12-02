@@ -9,8 +9,15 @@ import google1 from "./google1.png";
 import Footer from "../landing-page/footer/Footer";
 import Button from "../landingPage/Button/Button";
 import { Link } from "react-router-dom";
+import { useContext,useEffect } from "react";
+import { NavContext, pages } from "../../../context/nav-context";
 
 const Contact = () => {
+    const {setPage} = useContext(NavContext)
+   
+     useEffect(()=>{
+      setPage(pages.ContactUs)
+     },[])
     return (
         <div>
         <Navbar />

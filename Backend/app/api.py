@@ -1,11 +1,11 @@
 from fastapi import FastAPI
-from app.server.routes.photo_upload_api import photo_router
-from app.server.routes.retrieve_user_avatars_api import user_avatars_router
-from app.server.routes.user_api import user_router
-from app.server.routes.avatars import avatar_router
+from server.routes.photo_upload_api import photo_router
+from server.routes.retrieve_user_avatars_api import user_avatars_router
+from server.routes.user_api import user_router
+from server.routes.avatars import avatar_router
 
 # 👇 FastAPI INSTANCE
-app = FastAPI(root_path="/api/v1")
+app = FastAPI(root_path="/")
 
 # ===================================================================
 

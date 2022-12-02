@@ -249,7 +249,6 @@ export default function SignUp_first() {
                       </div>
                   )}
                 </div>
-                <div className='but_opt'>
                   <button
                       role="Opt_submit"
                       className="mybutton_opt"
@@ -263,7 +262,6 @@ export default function SignUp_first() {
                       <span className="annoyed_opt">Sign Up with Google</span></div>
 
                   </button>
-                </div>
 
               </div>
             </form>

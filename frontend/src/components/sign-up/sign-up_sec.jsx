@@ -34,7 +34,7 @@ export default function SignUp_sec(){
             <div className='li_opt'>A verification link has been sent to {mydata.slice(1, -1)}, click on the link to continue</div>
 
             <div className="button_div_opt">
-               {/*<Link to="/Login"> <button className='mybutton_opt' id='mybutton_opt' >Continue</button></Link>*/}
+               <Link to="/Login"> <button className='mybutton_opt' id='mybutton_opt' >Continue</button></Link>
                 <div className="all_opt" id="--opt">Didn’t receive the e-mail? <span className='col_opt'>Resend</span></div>
             </div>
             </div>

@@ -12,8 +12,15 @@ import { WHY_US, TEAM } from './data';
 import Foooter from '../footer/Foooter';
 import ContactUs from './ContactUs';
 import FaqNewsletter from '../faq/FaqNewsletter';
+import { useContext, useEffect } from 'react';
+import { NavContext, pages } from '../../../context/nav-context';
 
 const AboutUs = () => {
+	const {setPage} = useContext(NavContext)
+ 
+   useEffect(()=>{
+    setPage(pages.AboutUs)
+   },[])
 	return (
 		<>
 			<Navbar />
