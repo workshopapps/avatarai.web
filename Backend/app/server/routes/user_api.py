@@ -6,8 +6,11 @@
 from fastapi import APIRouter, status, HTTPException, Depends
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from fastapi.responses import JSONResponse
+from google.oauth2 import id_token
+from google.auth.transport import requests
+from starlette.requests import Request
 
-from server.models.schemas import User, Login
+from server.models.schemas import User, Login, EmailSchema
 from database import db
 ##############
 
@@ -59,12 +62,17 @@ async def create_user(raw_user: User = Depends()):
     ############################
     #MAKING POST TO DATABASE
     ############################
-    if await db.user.find_one({"email": raw_user.email}):
+    if await db.user.find_one({"email": raw_user.email} ):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail={'message' : '400'}
         )
 
+    if await db.user.find_one({"user": raw_user.email} ):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail={'message' : 'Username not unique'}
+        )
 
     new_user = await db['user'].insert_one(user)
     create_user= await db.user.find_one({"_id": new_user.inserted_id})
@@ -131,8 +139,21 @@ async def login(login : OAuth2PasswordRequestForm = Depends()):
     return JSONResponse(Response, status_code=status.HTTP_201_CREATED)
 
 
-# @user_router.get("/get", response_model = Token)
-# def get_user(current_user: Token = Depends(get_current_user)):
-#     res={'user': current_user}
-#     return JSONResponse(res)
-    
+# @user_router.get("user/login/google")
+# def authentication(request: Request,token:str):
+#     try:
+#         # Specify the CLIENT_ID of the app that accesses the backend:
+#         user =id_token.verify_oauth2_token(token, requests.Request(), os.environ["CLIENT_ID"])
+  
+#         request.session['user'] = dict({
+#             "email" : user["email"] 
+#         })
+          
+#         return user['name'] + ' Logged In successfully'
+#     except ValueError:
+#         return "unauthorized"
+
+
+@user_router.post("/contactForm")
+async def send_mail(email: EmailSchema): 
+    return JSONResponse(status_code=200, content={"message": "email has been sent"})
