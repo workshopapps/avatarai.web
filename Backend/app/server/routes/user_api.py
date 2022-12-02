@@ -10,7 +10,7 @@ from google.oauth2 import id_token
 from google.auth.transport import requests
 from starlette.requests import Request
 
-from server.models.schemas import User, Login, EmailSchema
+from server.models.schemas import User, Login, EmailSchema, TokenData
 from database import db
 ##############
 
@@ -157,3 +157,19 @@ async def login(login : OAuth2PasswordRequestForm = Depends()):
 @user_router.post("/contactForm")
 async def send_mail(email: EmailSchema): 
     return JSONResponse(status_code=200, content={"message": "email has been sent"})
+
+@user_router.post("/forgotPassword", response_model = TokenData )
+async def send_mail(data: TokenData): 
+    user = await db["user"].find_one({ "email": data.username }, None)
+    # print(user)
+    userRes = json.loads(json_util.dumps(user))
+
+    if user is None:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Not Found"
+        )
+    return JSONResponse(status_code=200, content={"message": "An email has been sent to you"})
+
+
+
