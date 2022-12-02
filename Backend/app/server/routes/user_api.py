@@ -44,7 +44,7 @@ user_router = APIRouter()
 #API
 ###########################
 @user_router.post("/api/user", response_model = User)
-async def create_user(raw_user: User = Depends()):
+async def create_user(raw_user: User):
     user = {        
         "username": raw_user.username,
         "email":raw_user.email,
@@ -65,10 +65,10 @@ async def create_user(raw_user: User = Depends()):
     if await db.user.find_one({"email": raw_user.email} ):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail={'message' : '400'}
+            detail={'message' : 'Something went wrong. Try another email'}
         )
 
-    if await db.user.find_one({"user": raw_user.username} ):
+    if await db.user.find_one({"username": raw_user.username} ):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail={'message' : 'Username not unique'}
