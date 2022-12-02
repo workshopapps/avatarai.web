@@ -4,7 +4,18 @@
 .img-bat{
     display: grid;
     grid-template-columns: 30% 30% 30%;
-    place-content: center;
+    place-items: center;
+    justify-content: center;
     gap: 1%;
     margin-top: 2rem;
+}
+@media only screen and (min-width: 1600px) {
+    .img-bat{
+        display: flex;
+        align-items: center;
+        justify-content: center;        
+    }
+    .img-bat img{
+        width: 500px;
+    }
 }
