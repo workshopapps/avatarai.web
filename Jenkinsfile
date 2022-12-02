@@ -8,7 +8,7 @@ pipeline {
 			steps {
 				sh "rm -rf ${WORKSPACE}/avatarai.web"
 				sh "git clone https://github.com/workshopapps/avatarai.web.git"
-				sh "sudo cp -r ${WORKSPACE}/avatarai.web /home/de-marauder/avatarai.web"
+				sh "sudo cp -r ${WORKSPACE}/avatarai.web /home/de-marauder/"
 			}
 
 		}

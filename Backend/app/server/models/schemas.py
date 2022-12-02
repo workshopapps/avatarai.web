@@ -93,8 +93,7 @@ class UpdateAvatarModel(BaseModel):
 #User data model
 class User(BaseModel):
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
-    first_name: str = Field(...)
-    last_name: str = Field(...)
+    username: str = Field(...)
     email: str = Field(...)
     password: str = Field(...)
     
@@ -105,8 +104,7 @@ class User(BaseModel):
 
         schema_extra = {
             'example': {               
-                "first_name": "John",
-                "last_name": "Doe",
+                "username": "John",
                 "email":"johndoe@gmail.com",
                 "password": "I_can't_think_of_a_password",
             }
@@ -117,8 +115,6 @@ class Login(BaseModel):
     username:str
     password: str
     #is_deleted:bool
-
-    
 
 
     class Config:
@@ -140,3 +136,6 @@ class Token(BaseModel):
 #token data
 class TokenData(BaseModel):
     username: Union[str, None] = None
+
+class EmailSchema(BaseModel):
+   email: List[EmailStr]
