@@ -1,17 +1,14 @@
 const FaqGetInTouch = () => {
   return (
-    <div className="flex flex-col gap-[42px]">
+    <div className="flex flex-col gap-[42px] items-center">
       <div className="flex flex-col items-center">
-        <h3 data-testid="h3" className="font-medium text-[20px]">
-          Still have a question?
+        <h3 data-testid="h3" className="font-medium text-[26px] md:text-[32px] ld:text-[32px] font-[700] text-center">
+          Still have questions?
         </h3>
-        <p data-testid="subheading">
-          Can't find the answer you are looking for?
-        </p>
       </div>
-      <a className="cursor-pointer text-white font-semibold flex items-center justify-center h-[52px] w-full bg-[#8B70E9] rounded">
-        <p data-testid="button" className="text-white">
-          Get in touch
+      <a className="cursor-pointer text-white font-semibold flex items-center justify-center h-[48px] w-[100%] md:w-[128px] ld:w-[128px] bg-[#8B70E9] rounded">
+        <p data-testid="button" className="text-white text-[16px]">
+          Contact Us
         </p>
       </a>
     </div>
