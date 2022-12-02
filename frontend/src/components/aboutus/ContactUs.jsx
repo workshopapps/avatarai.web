@@ -10,7 +10,7 @@ const ContactUs = () => {
 					<br />
 					Our team is happy to assist you
 				</h1>
-				<p className="mb-[16px] md:mb-[64px] text-[#BFC3D4] text-xs md:text-[24px] leading-3 md:leading-[33px] font-medium">
+				<p className="mb-[16px] md:mb-[64px] text-[#BFC3D4] text-xs md:text-[24px] leading-[16px] md:leading-[33px] font-medium">
 					Ask about Zuvatar products, pricing, implementation or anything else. Our highly trained reps are standing by,
 					ready to help
 				</p>

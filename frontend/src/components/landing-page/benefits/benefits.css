@@ -5,10 +5,10 @@
   text-align: center;
   padding-top: 7rem;
 }
-.section4 h2 {
-  margin-bottom: 2rem;
-  font-size: 2rem;
-  font-weight: unset;
+.section4 h2{
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    /* font-weight: unset; */
 }
 .faqs {
   padding: 2rem;

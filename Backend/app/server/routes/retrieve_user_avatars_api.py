@@ -4,8 +4,8 @@ from fastapi.responses import JSONResponse
 from bson import ObjectId
 
 
-from database import db
-from schemas import UserAvatarModel
+from app.database import db
+from app.server.models.schemas import UserAvatarModel
 
 # ========================================================================================
 # 👇This Endpoint is responsible for fetching the avatars of a particular user-(ID)

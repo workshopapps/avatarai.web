@@ -4,7 +4,7 @@ sys.path.append("..")
 
 from fastapi.testclient import TestClient
 import pytest
-from  ..api import app
+from  ..app.api import app
 from database import db 
 from bson import json_util
 import json

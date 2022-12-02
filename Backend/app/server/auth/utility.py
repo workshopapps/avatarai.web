@@ -12,7 +12,6 @@ JWT_REFRESH_SECRET_KEY = os.environ['JWT_REFRESH_SECRET_KEY']
 password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
-
 def create_access_token(data: Union[str, Any], expires_delta: int = None):
     if expires_delta is not None:
         expires_delta = datetime.utcnow() + expires_delta
