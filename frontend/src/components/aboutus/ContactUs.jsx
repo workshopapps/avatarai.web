@@ -1,5 +1,6 @@
 import React from 'react';
 import CallImg from './img/rafiki.svg';
+import { Link } from 'react-router-dom';
 
 const ContactUs = () => {
 	return (
@@ -10,13 +11,13 @@ const ContactUs = () => {
 					<br />
 					Our team is happy to assist you
 				</h1>
-				<p className="mb-[16px] md:mb-[64px] text-[#BFC3D4] text-xs md:text-[24px] leading-3 md:leading-[33px] font-medium">
+				<p className="mb-[16px] md:mb-[64px] text-[#BFC3D4] text-xs md:text-[24px] leading-[16px] md:leading-[33px] font-medium">
 					Ask about Zuvatar products, pricing, implementation or anything else. Our highly trained reps are standing by,
 					ready to help
 				</p>
 
 				<button className="px-[26px] py-3 md:py-[24px] outline-none normal-case border-none text-sm md:text-[28px] font-medium rounded-lg bg-[#FFFFFF] text-[#6C6191]">
-					Contact Us
+					<Link to="/contact-us">Contact Us</Link>
 				</button>
 			</div>
 			<div className="w-full flex items-end justify-end">

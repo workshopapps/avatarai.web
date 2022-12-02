@@ -8,11 +8,16 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { useAuth } from '../../../context/auth-context';
 import { useGoogleLogin } from '@react-oauth/google';
+import ErrorSuccessCard from '../utils/ErrorSuccessCard';
 
 const Login = ({ props }) => {
 	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();
 	const { login, setToken, token } = useAuth();
+	const [errorStatus, setErrorStatus] = useState({
+		error: null,
+		message: '',
+	});
 
 	const {
 		register,
@@ -39,7 +44,7 @@ const Login = ({ props }) => {
 		await axios
 			.post(url, data)
 			.then((response) => {
-				console.log(response, 'response');
+				// console.log(response, 'response');
 
 				//Reset login form
 				reset();
@@ -52,10 +57,21 @@ const Login = ({ props }) => {
 				//save token to state
 				setToken(token);
 				login(response?.data?.user);
+
+				setErrorStatus({ error: false, message: 'Login successful' });
+
+				let mail;
+				function getemail() {
+					if (localStorage.getItem('mail_') !== '') {
+						mail = localStorage.getItem('mail_').slice(1, -1);
+					}
+				}
+				getemail();
 			})
 			.catch((e) => {
 				setLoading(false);
-				const err = e?.response?.data?.errors;
+				const err = e?.response?.data?.detail;
+				setErrorStatus({ error: true, message: err });
 				console.log(err);
 			});
 	};
@@ -109,6 +125,7 @@ const Login = ({ props }) => {
 						</div>
 					</div>
 					<div className="h-8 lg:h-12"></div>
+					{errorStatus.message && <ErrorSuccessCard error={errorStatus.error} message={errorStatus.message} />}
 					<form onSubmit={handleSubmit(onSubmit)} className="flex flex-col w-full gap-7 lg:gap-10">
 						<div className="flex flex-col gap-2">
 							<label htmlFor="email" className="text-black font-nunito font-medium text-sm lg:text-xl">
@@ -164,13 +181,13 @@ const Login = ({ props }) => {
 							</div>
 							<div>
 								<Link to="/forgot-password">
-									<span className="font-nunito font-semibold text-sm lg:text-xl text-[#8b70e9]">Forgot Password?</span>
+									<span className="font-nunito font-semibold text-sm lg:text-xl text-[#8B70E9]">Forgot Password?</span>
 								</Link>
 							</div>
 						</div>
 						<button
 							type="submit"
-							className="bg-[#8b70e9] text-white font-nunito font-bold text-lg lg:text-xl p-4  rounded-lg"
+							className="bg-[#8B70E9] text-white font-nunito font-bold text-lg lg:text-xl p-4  rounded-lg"
 						>
 							{loading ? 'Loading...' : 'Login'}
 						</button>

@@ -9,8 +9,8 @@ const Intro = () => {
                         <p className="text-white text-sm mb-5 font-normal">We are a team of creative people helping people transform themselves into imaginations, if <br/>
                             this interests you, check out our job opening and apply</p>
                         <div className="flex justify-center">
-                            <a href="/roles" className="inline-flex text-white bg-purple-600 border-0 py-2 px-6 focus:outline-none hover:bg-purple-500 rounded text-base">See open roles</a>
-                            <a href="/more" className="ml-4 inline-flex text-purple-400 bg-white border-0 py-2 px-6 focus:outline-none hover:bg-purple-500 hover:text-white rounded text-base">Learn more</a>
+                            <a href="/roles" className="inline-flex text-white bg-purple-600 border-0 py-2 px-6 focus:outline-none hover:bg-[#8B70E9] rounded text-base">See open roles</a>
+                            <a href="/more" className="ml-4 inline-flex text-purple-400 bg-white border-0 py-2 px-6 focus:outline-none hover:bg-[#8B70E9] hover:text-white rounded text-base">Learn more</a>
                         </div>
                     </div>
                 </div>

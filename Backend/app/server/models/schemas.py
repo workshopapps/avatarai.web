@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import List, Optional
+from typing import List, Optional, Union
 
 from bson import ObjectId
 from pydantic import BaseModel, EmailStr, Field
@@ -93,13 +93,11 @@ class UpdateAvatarModel(BaseModel):
 #User data model
 class User(BaseModel):
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
-    username:str
-    email:str
-    password: str
-    #is_deleted:bool
-
+    first_name: str = Field(...)
+    last_name: str = Field(...)
+    email: str = Field(...)
+    password: str = Field(...)
     
-
     class Config:
         allow_population_by_field_name = True
         arbitrary_types_allowed = True
@@ -107,7 +105,8 @@ class User(BaseModel):
 
         schema_extra = {
             'example': {               
-                "username": "John",
+                "first_name": "John",
+                "last_name": "Doe",
                 "email":"johndoe@gmail.com",
                 "password": "I_can't_think_of_a_password",
             }
@@ -115,7 +114,7 @@ class User(BaseModel):
 #Login Data model 
 class Login(BaseModel):
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
-    email:str
+    username:str
     password: str
     #is_deleted:bool
 
@@ -133,3 +132,11 @@ class Login(BaseModel):
                 "password": "I_can't_think_of_a_password",
             }
         }
+#access token model        
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+#token data
+class TokenData(BaseModel):
+    username: Union[str, None] = None

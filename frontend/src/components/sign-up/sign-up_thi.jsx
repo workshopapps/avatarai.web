@@ -21,6 +21,7 @@ export default function SignUp_thi() {
       });
     }
   };
+
   return (
     <div className="houset_opt">
       <div className="first__opt">

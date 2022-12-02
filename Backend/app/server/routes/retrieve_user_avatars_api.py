@@ -1,12 +1,12 @@
-from fastapi import APIRouter, Body, Path, status
+from fastapi import APIRouter, Body, Path, status, Depends
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
 from bson import ObjectId
 
 
 from database import db
-from schemas import UserAvatarModel
-
+from server.models.schemas import UserAvatarModel
+from server.auth.utility import *
 # ========================================================================================
 # 👇This Endpoint is responsible for fetching the avatars of a particular user-(ID)
 #   and then serve back to the request as a response
@@ -20,7 +20,7 @@ user_avatar_list = []
 
 
 @user_avatars_router.get("/api/avatars/{user_id}")
-async def retrieve_user_avatars(user_id: int) -> dict:
+async def retrieve_user_avatars(user_id: int = Depends(oauth2_scheme)) -> dict:
     # 👇 DB query for the specific user generated avatars will be done here
     user_avatar_list.append(
         {

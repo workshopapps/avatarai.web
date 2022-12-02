@@ -13,6 +13,9 @@ import Foooter from '../footer/Foooter';
 import Learn from './learn/learn.jsx'
 import Top from './Top/top.jsx';
 import Final from './final/final';
+import {useContext} from "react";
+import {NavContext, pages} from "../../../context/nav-context"
+import { useEffect } from 'react';
 // import Footer from "../Footerpage/Footer.jsx";
 
 
@@ -28,6 +31,11 @@ function LandingPageC() {
     return () => clearTimeout(timeout);
   });
 
+  const {setPage} = useContext(NavContext)
+ 
+   useEffect(()=>{
+    setPage(pages.Home)
+   },[])
   return (
     <div>
         <Navbar />

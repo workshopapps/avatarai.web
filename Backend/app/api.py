@@ -1,10 +1,11 @@
 from fastapi import FastAPI
-from photo_upload_api import photo_router
-from retrieve_user_avatars_api import user_avatars_router
-from user_api import user_router
+from server.routes.photo_upload_api import photo_router
+from server.routes.retrieve_user_avatars_api import user_avatars_router
+from server.routes.user_api import user_router
+from server.routes.avatars import avatar_router
 
 # 👇 FastAPI INSTANCE
-app = FastAPI(root_path="/api/v1")
+app = FastAPI(root_path="/")
 
 # ===================================================================
 
@@ -24,10 +25,11 @@ app.add_middleware(
 
 @app.get('/app')
 async def start():
-    return {"Message":"Welcome to Noxus Avatar AI"}
+    return {"Message":"Welcome to Zuvatar AI"}
 
 # include api endpoints
 
-app.include_router(photo_router)
+app.include_router(photo_router, tags=["User Photos"])
+app.include_router(avatar_router, tags=["Avatars"])
 app.include_router(user_avatars_router)
 app.include_router(user_router)
