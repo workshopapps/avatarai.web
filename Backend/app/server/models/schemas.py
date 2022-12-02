@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import List, Optional
+from typing import List, Optional, Union
 
 from bson import ObjectId
 from pydantic import BaseModel, EmailStr, Field
@@ -114,7 +114,7 @@ class User(BaseModel):
 #Login Data model 
 class Login(BaseModel):
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
-    email:str
+    username:str
     password: str
     #is_deleted:bool
 
@@ -132,3 +132,11 @@ class Login(BaseModel):
                 "password": "I_can't_think_of_a_password",
             }
         }
+#access token model        
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+
+#token data
+class TokenData(BaseModel):
+    username: Union[str, None] = None
