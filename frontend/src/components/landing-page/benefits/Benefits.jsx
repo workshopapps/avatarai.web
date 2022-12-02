@@ -12,7 +12,7 @@ const Benefits = () => {
   return (
     <section id="benefits" class="section4">
       <div class="part4">
-        <h2 className="be">Frequently asked qustions</h2>
+        <h2 className="be">Frequently asked questions</h2>
         <div class="faqs">
           <div class="faq">
             <div class="head">
@@ -53,7 +53,7 @@ const Benefits = () => {
                   alt=""
                   class="anchor"
                   onClick={() => {
-                    setOne((current) => !current);
+                    setTwo((current) => !current);
                   }}
                 />
               ) : (
@@ -117,7 +117,7 @@ const Benefits = () => {
           </div> */}
         </div>
         <Link to="/FAQ">
-          <button className="bat3-btn">view All</button>
+          <button className="bat3-btn">View All</button>
         </Link>
       </div>
     </section>
