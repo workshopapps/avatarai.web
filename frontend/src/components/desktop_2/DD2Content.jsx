@@ -15,7 +15,7 @@ import three from "./line.png";
 import left from "../desktop_4/img/arrowpleft.png";
 import right from "../desktop_4/img/arrowpright.png";
 import Her from "../desktop_4/img/her.png";
-import Background from "./../DASHBOARD_COMPONENT/dashboardcomp";
+// import Background from "./../DASHBOARD_COMPONENT/dashboardcomp";
 import Content from "../Desktop_3/Content";
 import add from './add.png';
 
