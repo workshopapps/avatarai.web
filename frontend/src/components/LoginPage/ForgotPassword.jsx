@@ -20,8 +20,8 @@ const ForgotPassword = () => {
   return (
     <div className="flex flex-col pt-[50%] mt-[7%] md:p-0 md:justify-center items-center h-screen ">
       <div className="flex flex-col w-full max-w-xl px-6 gap-6 md:gap-8 items-center justify-center">
-        <div className="bg-[#F3F0FF] p-3 md:p-5 rounded-full mr-[5%]">
-          <img className="w-4 h-4 md:w-8 md:h-8" src={lock} alt="" />
+        <div className="bg-[#F3F0FF] p-6 md:p-10 rounded-full mr-[6%] ">
+          <img className="w-7 h-7 md:w-20 md:h-20" src={lock} alt="" />
         </div>
         <div className="flex flex-col gap-2 text-center max-[480px]:text-start">
           <h1 className="font-bold text-[#333333] text-xl md:text-4xl max-[480px]:text-center">
