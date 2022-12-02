@@ -8,7 +8,7 @@
     background-size: cover;
     text-align: center;
     color: white;
-    /* z-index: -99999; */
+    z-index: 9;
     position: relative;
 }
 .bat-header-overlay{
@@ -47,14 +47,19 @@
     z-index: 999;
     /* font-size: 60px; */
 }
+.bat-link{
+    background-color: white;
+}
 .bat-btn{
-    background-color: #8B70E9;
+    background-color: #4543a5;
+   
     color: white;
     padding: 0.5rem 1rem;
     margin: 2.5rem 0;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+   
     z-index: 999;
 }
 @media only screen and (max-width: 1200px) {
