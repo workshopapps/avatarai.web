@@ -6,6 +6,11 @@ import Footer from "../landing-page/footer/Footer";
 // import { Link } from "react-router-dom";
 
 const Contact = () => {
+    const {setPage} = useContext(NavContext)
+   
+     useEffect(()=>{
+      setPage(pages.ContactUs)
+     },[])
     return (
         <div>
         <Navbar />

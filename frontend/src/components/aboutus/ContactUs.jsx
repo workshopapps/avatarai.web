@@ -1,5 +1,6 @@
 import React from 'react';
 import CallImg from './img/rafiki.svg';
+import { Link } from 'react-router-dom';
 
 const ContactUs = () => {
 	return (
@@ -16,7 +17,7 @@ const ContactUs = () => {
 				</p>
 
 				<button className="px-[26px] py-3 md:py-[24px] outline-none normal-case border-none text-sm md:text-[28px] font-medium rounded-lg bg-[#FFFFFF] text-[#6C6191]">
-					Contact Us
+					<Link to="/contact-us">Contact Us</Link>
 				</button>
 			</div>
 			<div className="w-full flex items-end justify-end">
