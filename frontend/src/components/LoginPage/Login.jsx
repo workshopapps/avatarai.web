@@ -7,8 +7,12 @@ import Navbar from "../landingPage/Navbar/Navbar";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useAuth } from "../../../context/auth-context";
-import { useGoogleLogin } from "@react-oauth/google";
 import ErrorSuccessCard from "../utils/ErrorSuccessCard";
+import { GoogleLogin } from "react-google-login";
+import { gapi } from "gapi-script";
+
+const clientId =
+  "835762326165-94q22eof4arhg4g3gnogj0gd55e6blle.apps.googleusercontent.com";
 
 const Login = ({ props }) => {
   const [loading, setLoading] = useState(false);
@@ -31,16 +35,6 @@ const Login = ({ props }) => {
   const handleVisibility = () => {
     setPasswordVisibility((prev) => !prev);
   };
-
-  let googleToken;
-
-  const googleLogin = useGoogleLogin({
-    onSuccess: (tokenResponse) => {
-      console.log(tokenResponse);
-      googleToken = tokenResponse;
-    },
-    onError: () => console.log("Login with Google Failed"),
-  });
 
   /** Remember to pass user data to api for storage */
   const url = `${import.meta.env.VITE_API_URL}/api/user/login`;
@@ -83,10 +77,34 @@ const Login = ({ props }) => {
 
   useEffect(() => {
     const getUser = localStorage.getItem("zvt_token");
-    if (getUser || googleToken) {
+    if (getUser) {
       navigate("/dashboard");
     }
-  }, [token, googleToken]);
+  }, [token]);
+
+  useEffect(() => {
+    const initClient = () => {
+      gapi.client.init({
+        clientId,
+        scope:
+          "email profile openid https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email",
+      });
+    };
+    gapi.load("client:auth2", initClient);
+  });
+
+  const handleSuccess = (res) => {
+    const email = res.profileObj.email;
+    const password = res.profileObj.googleId;
+    const username = `${res.profileObj.givenName} ${res.profileObj.familyName}`;
+    const data = { email, password, username };
+    const accessToken = res?.accessToken;
+    localStorage.setItem("zvt_token", JSON.stringify(accessToken));
+
+    console.log("success: ", res);
+
+    setToken(accessToken);
+  };
 
   return (
     <div className="h-screen object-scale-down flex items-center justify-center">
@@ -227,17 +245,27 @@ const Login = ({ props }) => {
             </button>
           </form>
           <div className="h-7 lg:h-10"></div>
-          <div
-            onClick={googleLogin}
-            className="cursor-pointer w-full border border-[#808080] font-nunito font-bold p-4 rounded-lg flex gap-4 items-center justify-center"
-          >
-            <div className="google h-8 w-8">
-              <img src="/google.svg" />
-            </div>
-            <span className="font-nunito font-semibold text-lg lg:text-xl text-[#808080]">
-              Log In with Google
-            </span>
-          </div>
+          <GoogleLogin
+            clientId={clientId}
+            buttonText="Sign in with Google"
+            onSuccess={handleSuccess}
+            cookiePolicy={"single_host_origin"}
+            isSignedIn={true}
+            render={(renderProps) => (
+              <div
+                onClick={renderProps.onClick}
+                disabled={renderProps.disabled}
+                className="cursor-pointer w-full border border-[#808080] font-nunito font-bold p-4 rounded-lg flex gap-4 items-center justify-center"
+              >
+                <div className="google h-8 w-8">
+                  <img src="/google.svg" />
+                </div>
+                <span className="font-nunito font-semibold text-lg lg:text-xl text-[#808080]">
+                  Log In with Google
+                </span>
+              </div>
+            )}
+          />
           <div className="h-6"></div>
           <div>
             <span className="font-nunito font-medium text-sm lg:text-xl text-[#808080]">
