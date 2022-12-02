@@ -42,7 +42,11 @@ const Login = ({ props }) => {
 	const onSubmit = async (data) => {
 		setLoading(true);
 		await axios
-			.post(url, data)
+			.post(url, data, {
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded',
+				},
+			})
 			.then((response) => {
 				// console.log(response, 'response');
 
@@ -136,16 +140,16 @@ const Login = ({ props }) => {
 								type="email"
 								id="email"
 								required
-								{...register('email', {
+								{...register('username', {
 									required: true,
 									pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
 								})}
 								placeholder="Email Address"
 								className={`border ${
-									errors.email && 'border-red-600'
+									errors.username && 'border-red-600'
 								} border-[#121212] py-3 px-4 rounded-md placeholder-[#808080] text-sm lg:text-xl font-nunito font-medium w-full`}
 							/>
-							{errors.email && <span className="text-xs text-red-600">Please enter a valid email address</span>}
+							{errors.username && <span className="text-xs text-red-600">Please enter a valid email address</span>}
 						</div>
 						<div className="flex flex-col gap-2 relative">
 							<label htmlFor="password" className="text-black font-nunito font-medium text-sm lg:text-xl">
