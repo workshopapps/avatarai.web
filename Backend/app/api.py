@@ -5,7 +5,7 @@ from app.server.routes.user_api import user_router
 from app.server.routes.avatars import avatar_router
 
 # 👇 FastAPI INSTANCE
-app = FastAPI()#(root_path="/api/v1")
+app = FastAPI(root_path="/api/v1")
 
 # ===================================================================
 
