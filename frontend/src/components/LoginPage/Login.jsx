@@ -164,13 +164,13 @@ const Login = ({ props }) => {
 							</div>
 							<div>
 								<Link to="/forgot-password">
-									<span className="font-nunito font-semibold text-sm lg:text-xl text-[#8b70e9]">Forgot Password?</span>
+									<span className="font-nunito font-semibold text-sm lg:text-xl text-[#8B70E9]">Forgot Password?</span>
 								</Link>
 							</div>
 						</div>
 						<button
 							type="submit"
-							className="bg-[#8b70e9] text-white font-nunito font-bold text-lg lg:text-xl p-4  rounded-lg"
+							className="bg-[#8B70E9] text-white font-nunito font-bold text-lg lg:text-xl p-4  rounded-lg"
 						>
 							{loading ? 'Loading...' : 'Login'}
 						</button>

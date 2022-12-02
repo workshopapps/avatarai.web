@@ -34,7 +34,7 @@ const Navbar = () => {
 					</Link>
 					<div className="flex justify-between cbk-mobile-board  lg:hidden pr-3">
 						<img src={menu} alt="" className=" mx-5 my-1" onClick={navHandler} />
-						<Button className="text-white border-purple-500 bg-purple-500 cbk-login-btn">
+						<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn">
 							<Link to="/Signupfirst"> Create avatars </Link>
 						</Button>
 					</div>
@@ -59,16 +59,16 @@ const Navbar = () => {
 				</ul>
 				<div className="space-x-6 hidden lg:block">
 					{auth.token === null ? (
-						<Button className=" border-purple-500 text-purple-500 bg-white  cbk-login-btn ">
+						<Button className=" border-[#8B70E9] text-[#8B70E9] bg-white  cbk-login-btn ">
 							<Link to="/login"> Log in</Link>
 						</Button>
 					) : (
 						<span onClick={handleLogout}>
-							<Button className=" border-purple-500 text-purple-500 bg-white  cbk-login-btn ">Logout</Button>
+							<Button className=" border-[#8B70E9] text-[#8B70E9] bg-white  cbk-login-btn ">Logout</Button>
 						</span>
 					)}
 
-					<Button className="text-white border-purple-500 bg-purple-500 cbk-login-btn ">
+					<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn ">
 						<Link to="/Signupfirst"> Sign up </Link>
 					</Button>
 				</div>

@@ -226,7 +226,7 @@ const ImageUpload = () => {
           <div className="vic_div_div">
             <Link to="/Dashboard_5" className="vic_link">
               <Button
-                className="bg-purple-500 w-100 w-lg-120 text-white"
+                className="bg-[#8B70E9] w-100 w-lg-120 text-white"
                 children="Generate Avatar"
               />{" "}
             </Link>
