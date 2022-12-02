@@ -117,7 +117,6 @@ export default function SignUp_first() {
     })
     result=await result.json()
     const myresult = result.email
-      // console.warn("myresult", myresult)
     localStorage.setItem("mail_", JSON.stringify(myresult))
   }
 
