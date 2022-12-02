@@ -25,7 +25,7 @@ const ArticleHeader = () => {
           />
         </picture>
         <h1 className={styles.articleHeaderHeading}>
-          All you need to know about AvatarAI AI avatar generator
+          All you need to know about Zuvatar AI avatar generator
         </h1>
         <div className={styles.articleBio}>
           <img src={bioImg} alt="" />
