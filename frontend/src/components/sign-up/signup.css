@@ -423,6 +423,7 @@
 }
 
 #--opt {
+    margin-top: 30px;
     position: relative;
     text-align: center;
 }
@@ -470,7 +471,7 @@
     .mail_opt{
         width: 486px;
         height: auto;
-        margin: 0 auto 48px;
+        margin: 60px auto 48px;
     }
     .mail__opt{
         width: 200px;
@@ -498,9 +499,10 @@
         padding-top: 131px;
         padding-left: 57px;
         width: 37vw;
-        background: #6C6191;
+        background: #8B70E9;
         border-radius: 16px;
         margin-top: 32px;
+        margin-bottom: 46px;
 
     }
     .d_ava_opt{
@@ -605,8 +607,13 @@
         display: flex;
         justify-content: center;
         padding-bottom: 40px;
-        max-height: 1074px;
+        max-height: 1128px;
         max-width: 1440px;
         margin: auto;
+
+    }
+    .rb_opt{
+        margin-bottom: unset;
+
     }
 }
