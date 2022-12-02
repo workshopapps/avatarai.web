@@ -161,15 +161,19 @@ export const SideBar = ({ show, setShow }) => {
 										return (
 											<Link to={item.link} key={i}>
 												<li
-													className={`px-4 py-3 cursor-pointer font-semibold focus:outline-none mb-2 hover:bg-[#8B70E94D] rounded-[5px] ml-[15px] mr-[15px] text-base text-[#6C6C6C] hover:text-[#241B8F]`}
+													className={`px-4 py-3 cursor-pointer font-semibold focus:outline-none mb-2 hover:bg-[#8B70E94D] rounded-[5px] ml-[15px] mr-[15px] text-base text-[#6C6C6C] hover:text-[#241B8F ] ${
+														isActive(item.pathname) ? 'bg-[#8B70E94D]' : ''
+													}`}
 												>
 													<div className="flex items-center gap-4">
 														<div>
-															<img src={item.icon} alt={item.title} />
+															<img src={isActive(item.pathname) ? item.activeIcon : item.icon} alt={item.title} />
 														</div>
 
 														<div>
-															<p>{item.title}</p>
+															<p className={isActive(item.pathname) ? 'text-[#241B8F]' : 'text-[#6C6C6C]'}>
+																{item.title}
+															</p>
 														</div>
 													</div>
 												</li>
