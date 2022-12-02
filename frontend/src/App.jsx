@@ -18,7 +18,7 @@ import Pricing from "./components/pricingPage/Pricing";
 import FAQ from "./components/faq/index";
 import Terms from "./components/TermsPage/Terms";
 import Paymentauth from "./components/paymentFlow-1.1/paymentFlow1.1";
-import Payment from "./components/paymentflow-1/payment";
+import Payment from "./components/payment-flow/Payment";
 import Avatar from "./components/createAvatar/Welcome";
 import Courses from "./components/courses/CoursePage";
 import CourseDetail from "./components/courses/CourseDetail";
@@ -144,7 +144,7 @@ export default function App() {
         {/* desktop_6 */}
         <Route path="/Dashboard_6" element={<Desktop6 />} />
         {/* Feedback page Review */}
-        <Route path="/Review" element={<Review/>}/>
+        <Route path="/Review" element={<Review />} />
       </Routes>
     </Router>
   );
