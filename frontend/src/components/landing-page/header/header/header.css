@@ -47,16 +47,11 @@
     z-index: 999;
     /* font-size: 60px; */
 }
+
 .bat-btn{
-    background-color: #8B70E9;
-    color: white;
-    padding: 0.5rem 1rem;
     margin: 2.5rem 0;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    z-index: 999;
 }
+
 @media only screen and (max-width: 1200px) {
     .bat-header-content h2 {
         font-size: 54px;

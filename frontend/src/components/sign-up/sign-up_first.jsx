@@ -6,6 +6,7 @@ import ava from "./images/sign_up/ava.png";
 import "./signup.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Button from "../landingPage/Button/Button";
 
 let state;
 export default function SignUp_first() {
@@ -250,19 +251,19 @@ export default function SignUp_first() {
                       </div>
                   )}
                 </div>
-                  <button
+                  <Button
                       role="Opt_submit"
                       className="mybutton_opt"
                       id="mybutton_opt"
                       type="submit"
                   >
                     Sign Up
-                  </button>
-                  <button className="button_opt">
+                  </Button>
+                  <Button className="button_opt">
                     <div className="gog_opt"><img src={google} className="google_opt" alt="google.png"/>
                       <span className="annoyed_opt">Sign Up with Google</span></div>
 
-                  </button>
+                  </Button>
 
               </div>
             </form>

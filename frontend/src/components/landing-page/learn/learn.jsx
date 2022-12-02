@@ -3,6 +3,7 @@ import React from 'react'
 import Learn1 from './learn.png'
 import './learn.css'
 import { Link } from 'react-router-dom'
+import Button from '../../landingPage/Button/Button'
 
 const Learn = () => {
   return (
@@ -16,9 +17,9 @@ const Learn = () => {
                     These courses are scrutinized by top industry experts and folks who love what we are doing. Get in here and discover what works for you.
                 </p>
                 <Link to='/signupfirst'>
-                    <button className="social-btn">
+                    <Button className="social-btn">
                         Start Learning                    
-                    </button>
+                    </Button>
                 </Link>  
             </div>
         </div>

@@ -4,6 +4,8 @@ import tick_opt from './images/sign_up/tick-circle.png';
 import './signup.css';
 import clap from './images/sign_up/clap.png';
 import {Link} from "react-router-dom";
+import Button from "../landingPage/Button/Button";
+
 export default function SignUp_fi(){
 
     return(
@@ -20,7 +22,7 @@ export default function SignUp_fi(){
 
             <div className="button_div_opt">
                 <Link to='/Dashboard'>
-                    <button className='mybutton_opt' id='mybutton_opt' >Proceed to Dashboard</button>
+                    <Button className='mybutton_opt' id='mybutton_opt' >Proceed to Dashboard</Button>
                 </Link>
             </div>
 
