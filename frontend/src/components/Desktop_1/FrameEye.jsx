@@ -2,9 +2,15 @@ import "./frame-eye.css";
 
 import Frame_1 from "../desktop_4/Frame_1";
 import { Link } from "react-router-dom";
-import female_icon from "./female.svg";
-import male_icon from "./male.svg";
+import female_icon from "./Female User.svg";
+import dog_icon from "./Dog Sit.svg";
+import cat_icon from "./Cat Pot.svg";
+import Couple from "./Couple posing.svg";
+import other from "./Decision.svg";
+import male_icon from "./User Male.svg";
 import one_icon from "./oneicon.png";
+import prog from "./prog.svg";
+import progM from "./prog2.svg";
 import { useState } from "react";
 
 const FrameEye = () => {
@@ -16,6 +22,22 @@ const FrameEye = () => {
     {
       whatGender: "Female",
       icon: female_icon,
+    },
+    {
+      whatGender: "Cat",
+      icon: cat_icon,
+    },
+    {
+      whatGender: "Dog",
+      icon: dog_icon,
+    },
+    {
+      whatGender: "Couple",
+      icon: Couple,
+    },
+    {
+      whatGender: "Others",
+      icon: other,
     },
   ]);
 
@@ -35,16 +57,16 @@ const FrameEye = () => {
   };
 
   return (
-    <div className="vnc-main">
-      <div className="vnc-icon">
-        <img src={one_icon} alt="" />
+    <div className="vnc-main ">
+      <div className="vnc-icon md:mb-20">
+        <img src={prog} alt="" className="hidden md:block" />
+        <img src={progM} alt="" className="block md:hidden"  />
       </div>
       <div className="vnc-text">
-        <h2 className="text-nunito">Choose your Gender</h2>
-        <p className="text-nunito">Are you Male or Female</p>
+        <h2 className="text-nunito">You are a ...</h2>
       </div>
       <form action="" method="post">
-        <div className="vnc-gender">
+        <div className="grid grid-cols-3 gap-3 md:grid-cols-6 ">
           {list.map((e, index) => (
             <div
               onClick={() => {
@@ -60,7 +82,7 @@ const FrameEye = () => {
           ))}
         </div>
 
-        <div className="vnc_proceed">
+        <div className="vnc_proceed my-40">
           <Link className="link" to="/Dashboard_2">
             <input
               className="input"
