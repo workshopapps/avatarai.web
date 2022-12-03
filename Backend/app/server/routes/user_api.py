@@ -9,8 +9,8 @@ from fastapi.responses import JSONResponse
 from google.oauth2 import id_token
 from google.auth.transport import requests
 from starlette.requests import Request
+from server.models.schemas import User, Login, EmailSchema, TokenData
 
-from server.models.schemas import User, Login, EmailSchema
 from database import db
 ##############
 
@@ -44,7 +44,7 @@ user_router = APIRouter()
 #API
 ###########################
 @user_router.post("/api/user", response_model = User)
-async def create_user(raw_user: User = Depends()):
+async def create_user(raw_user: User):
     user = {        
         "username": raw_user.username,
         "email":raw_user.email,
@@ -65,10 +65,10 @@ async def create_user(raw_user: User = Depends()):
     if await db.user.find_one({"email": raw_user.email} ):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail={'message' : '400'}
+            detail={'message' : 'Something went wrong. Try another email'}
         )
 
-    if await db.user.find_one({"user": raw_user.email} ):
+    if await db.user.find_one({"username": raw_user.username} ):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail={'message' : 'Username not unique'}
@@ -157,3 +157,33 @@ async def login(login : OAuth2PasswordRequestForm = Depends()):
 @user_router.post("/contactForm")
 async def send_mail(email: EmailSchema): 
     return JSONResponse(status_code=200, content={"message": "email has been sent"})
+
+@user_router.post("/newsletter")
+async def send_mail(data : EmailSchema ):
+    email = {        
+        "username": data.email,                     
+    }
+    
+    new_news_letter = await db['NewsLetter'].insert_one(email)
+    print(new_news_letter)
+    news_letter= await db.NewsLetter.find_one({"_id": new_news_letter.inserted_id})
+    print(news_letter)
+    news_letter["_id"] = str(news_letter["_id"])
+    return JSONResponse(status_code=200, content={"message": "success"})
+
+
+@user_router.post("/forgotPassword", response_model = TokenData )
+async def send_mail(data: TokenData): 
+    user = await db["user"].find_one({ "email": data.username }, None)
+    # print(user)
+    userRes = json.loads(json_util.dumps(user))
+
+    if user is None:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Not Found"
+        )
+    return JSONResponse(status_code=200, content={"message": "An email has been sent to you"})
+
+
+

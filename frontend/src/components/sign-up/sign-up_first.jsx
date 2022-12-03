@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo_opt from "./images/sign_up/logo.png";
 import info_opt from "./images/sign_up/info_outline.png";
 import google from "./images/sign_up/google.png";
@@ -6,6 +6,8 @@ import ava from "./images/sign_up/ava.png";
 import "./signup.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useGoogleLogin } from '@react-oauth/google';
+import Button from "../landingPage/Button/Button";
 
 let state;
 export default function SignUp_first() {
@@ -26,6 +28,21 @@ export default function SignUp_first() {
       });
     }
   };
+ const [googlesignup, setgooglesignup]=useState("");
+    
+ const signup = useGoogleLogin({
+  onSuccess: (tokenResponse) => setgooglesignup(tokenResponse),
+  onError: () => console.log('Login with Google Failed'),
+ })
+
+//  Navigates to the Opt_sec page
+  useEffect(()=>{
+    if(googlesignup){
+      navigate("/Opt_sec")
+    }
+   }, [googlesignup]) 
+
+  //  https://zuvatar.hng.tech/api/v1/docs
 
   const navigate = useNavigate();
 
@@ -250,19 +267,19 @@ export default function SignUp_first() {
                       </div>
                   )}
                 </div>
-                  <button
+                  <Button
                       role="Opt_submit"
                       className="mybutton_opt"
                       id="mybutton_opt"
                       type="submit"
                   >
                     Sign Up
-                  </button>
-                  <button className="button_opt">
+                  </Button>
+                  <Button className="button_opt" onClick={signup}>
                     <div className="gog_opt"><img src={google} className="google_opt" alt="google.png"/>
-                      <span className="annoyed_opt">Sign Up with Google</span></div>
+                      <span className="annoyed_opt" >Sign Up with Google</span></div>
 
-                  </button>
+                  </Button>
 
               </div>
             </form>

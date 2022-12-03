@@ -139,3 +139,14 @@ class TokenData(BaseModel):
 
 class EmailSchema(BaseModel):
    email: List[EmailStr]
+
+class Config:
+        allow_population_by_field_name = True
+        arbitrary_types_allowed = True
+        json_encoders = {ObjectId: str}
+
+        schema_extra = {
+            'example': {               
+                "email":"johndoe@gmail.com",
+            }
+        }

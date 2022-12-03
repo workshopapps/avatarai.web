@@ -19,6 +19,7 @@ import L40 from "../courses/images/40.png";
 import L58 from "../courses/images/58.png";
 import { Link } from 'react-router-dom';
 import Lock from "../courses/images/lock.png";
+import Button from "../landingPage/Button/Button";
 
 const CoursePage = () => {
   const OVER_VIEW = [
@@ -229,12 +230,12 @@ const CoursePage = () => {
                       {data.lesson} Lessons <span className="border-[1px] mx-[3px]" /> {data.hour} Hours
                     </p>
                   </div>
-                  <button className="bg-[#7454E5] w-full flex items-center justify-center text-[#fff] gap-2 mt-2 rounded-[4px] py-4 text-center font-medium text-[13px]">
+                  <Button className="bg-[#7454E5] w-full flex items-center justify-center text-[#fff] gap-2 mt-2 rounded-[4px] py-4 text-center font-medium text-[13px]">
                     <span>
                         <img src={Lock} alt="lock" />
                     </span>
                     Enroll
-                  </button>
+                  </Button>
                 </Link>
               ))}
             </div>

@@ -3,7 +3,7 @@ import "./benefits.css";
 import vector from "./Vector.png";
 import Vector2 from "./Vector2.png";
 import { Link } from "react-router-dom";
-
+import Button from "../../landingPage/Button/Button";
 const Benefits = () => {
   const [one, setOne] = React.useState(false);
   const [two, setTwo] = React.useState(false);
@@ -12,7 +12,7 @@ const Benefits = () => {
   return (
     <section id="benefits" class="section4">
       <div class="part4">
-        <h2 className="be">Frequently asked qustions</h2>
+        <h2 className="be">Frequently asked questions</h2>
         <div class="faqs">
           <div class="faq">
             <div class="head">
@@ -53,7 +53,7 @@ const Benefits = () => {
                   alt=""
                   class="anchor"
                   onClick={() => {
-                    setOne((current) => !current);
+                    setTwo((current) => !current);
                   }}
                 />
               ) : (
@@ -69,7 +69,7 @@ const Benefits = () => {
             </div>
             {two && (
               <p id="anchor">
-                Yes. AvatarAI offers a list of backgrounds you can choose from
+                Yes. Zuvatar offers a list of backgrounds you can choose from
                 to generate your avatars. You can also upload images of the
                 backgrounds you want to appear in your avatar.
               </p>
@@ -116,9 +116,10 @@ const Benefits = () => {
             </p>}
           </div> */}
         </div>
-        <Link to="/FAQ">
-          <button className="bat3-btn">view All</button>
-        </Link>
+
+        <Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn viewBtn">
+          <Link to="/FAQ"> View All </Link>
+        </Button>
       </div>
     </section>
 
