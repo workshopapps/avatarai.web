@@ -4,6 +4,7 @@ import Diva from './diva.png'
 import war from './war.png'
 import { Link } from 'react-router-dom'
 import './socialproof.css';
+import Button from '../../landingPage/Button/Button'
 
 const SocialProof = () => {
   return (
@@ -26,10 +27,10 @@ const SocialProof = () => {
             <img src={war}/>
           </div>
         </div>
-        <Link to='/signupfirst'>
-          <button className="social-btn">
+        <Link to='/signup'>
+          <Button className="social-btn">
             Explore more
-          </button>
+          </Button>
         </Link>  
     </div>
   )

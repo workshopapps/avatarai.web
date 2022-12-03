@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Dashboardlayout from '../DASHBOARD_COMPONENT/DashboardLayout';
 import ProfileImg from './Profile.jpeg';
 import './Profile.css';
+import Button from '../landingPage/Button/Button';
 
 const Profile = () => {
 	const [firstName, setFirstName] = useState('');
@@ -116,9 +117,9 @@ const Profile = () => {
 								/>
 							</div>
 
-							<button type="submit" id="aso-btn__submit" onClick={handleSubmit}>
+							<Button type="submit" id="aso-btn__submit" onClick={handleSubmit}>
 								Save Changes
-							</button>
+							</Button>
 						</form>
 					</div>
 				</section>

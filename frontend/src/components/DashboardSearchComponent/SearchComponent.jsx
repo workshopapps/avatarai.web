@@ -7,6 +7,7 @@ import style from "./searchComponent.module.css";
 import search from "./assets/search.png";
 import microphone from "./assets/microphone.svg";
 import { browserIsFirefox } from "./helper/helper";
+import Button from "../landingPage/Button/Button";
 
 export default function SearchComponent() {
   const [searchValue, setSearchValue] = useState("");
@@ -36,7 +37,7 @@ export default function SearchComponent() {
         value={searchValue}
         onChange={({ target }) => setSearchValue(target.value)}
       />
-      <button
+      <Button
         type="submit"
         className={style.search}
         style={{
@@ -44,7 +45,7 @@ export default function SearchComponent() {
         }}
         onClick={() => handleSubmit()}
       />
-      <button
+      <Button
         className={style.microphone}
         style={{
           backgroundImage: `url(${microphone})`,
