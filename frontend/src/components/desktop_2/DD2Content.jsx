@@ -227,7 +227,7 @@ const ImageUpload = () => {
                       <img src={image} className="vic_her" />
                       <div
                       id="closeSideBar"
-                      className=" mr-8 absolute vic_x"
+                      className=" mr-8 vic_x"
                     
                     >
                       <svg
