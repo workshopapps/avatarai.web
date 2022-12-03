@@ -15,7 +15,7 @@ const Desktop3 = () => {
 
 	return (
 		<div>
-			<Dashboardlayout title="Hello Baki," text="Start generating cool avatars.">
+			<Dashboardlayout title="Hello" text="">
 				<Content />
 			</Dashboardlayout>
 		</div>

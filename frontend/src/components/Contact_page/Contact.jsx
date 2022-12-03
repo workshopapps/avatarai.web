@@ -4,6 +4,7 @@ import Foooter from "../footer/Foooter";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { NavContext, pages } from "../../../context/nav-context";
+import FaqNewsletter from "../faq/FaqNewsletter"
 import Button from "../landingPage/Button/Button";
 // import { Link } from "react-router-dom";
 
@@ -89,6 +90,7 @@ const Contact = () => {
             src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670061925/illus_ubfd58.png"
           />
         </div>
+        <FaqNewsletter></FaqNewsletter>
         <Foooter />
       </div>
     );

@@ -69,9 +69,15 @@ const Login = ({ props }) => {
 				const token = response?.data?.token;
 				localStorage.setItem('zvt_token', JSON.stringify(token));
 
+				//Get userData and save in local Storage
+				const userData = response?.data?.userData
+				localStorage.setItem('userData', JSON.stringify(userData));
+                 
+
 				//save token to state
 				setToken(token);
-				login(response?.data?.user);
+				login(response?.data?.userData);
+				
 			
 
 				setErrorStatus({ error: false, message: 'Login successful' });
