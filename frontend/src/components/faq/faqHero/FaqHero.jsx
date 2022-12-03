@@ -1,4 +1,4 @@
-import heroBg from "./heroBg.svg";
+import heroBg from "./herobg.svg";
 import style from "./faqHero.module.css";
 import searchIcon from "./searchIcon.svg";
 import buttonSearch from "./buttonSearch.svg";
