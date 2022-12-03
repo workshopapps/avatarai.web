@@ -4,6 +4,7 @@ import Footer from "../landing-page/footer/Footer";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { NavContext, pages } from "../../../context/nav-context";
+import Button from "../landingPage/Button/Button";
 // import { Link } from "react-router-dom";
 
 const Contact = () => {
@@ -28,9 +29,9 @@ const Contact = () => {
             <p className="text-white font-semibold text-5xl mb-5">
               How Can We Help You ?
             </p>
-            <button className="text-white bg-violet-500 p-3 rounded-md">
+            <Button className="text-white bg-violet-500 p-3 rounded-md">
               Send A Message
-            </button>
+            </Button>
           </div>
         </div>
         <div className="flex max-[1000px]:block">

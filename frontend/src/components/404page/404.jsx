@@ -1,6 +1,7 @@
 import React from 'react'
 import './404.css'
 import { Link } from 'react-router-dom'
+import Button from '../landingPage/Button/Button'
  const Page404 = () => {
   return (
     <div className="bat-error-main">
@@ -19,11 +20,11 @@ import { Link } from 'react-router-dom'
           src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670062689/error_bq2tln.png"
           alt=""
         />
-        <button>
+        <Button>
           <Link to="/" id="bat-btn-two" className="bat-home-btn">
             Go home
           </Link>
-        </button>
+        </Button>
       </div>
     </div>
   );
