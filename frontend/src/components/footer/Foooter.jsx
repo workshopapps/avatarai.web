@@ -149,9 +149,9 @@ designed to generate perfect avatars for you.
         <hr />
 
         <div className="flex items-center justify-center  text-[#000] mt-3 pb-[2rem]">
-          <img src={Insta} alt="insta" className="text-[#000]" />
-          <img src={Twitter} alt="twitter" />
-          <img src={Facebook} alt="facebook" />
+          <img src={Insta} alt="insta" className="text-[#000] mx-[1rem]" />
+          <img src={Twitter} alt="twitter" className="text-[#000] mx-[1rem]" />
+          <img src={Facebook} alt="facebook" className="text-[#000] mx-[1rem]"/>
         </div>
         <div className="w-full text-center bg-[#8B70E9] flex items-center justify-center gap-2 py-3 ">
           <div>
