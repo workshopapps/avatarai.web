@@ -2,6 +2,7 @@ import React from 'react'
 import './404.css'
 import error from './error.png'
 import { Link } from 'react-router-dom'
+import Button from '../landingPage/Button/Button'
  const Page404 = () => {
   return (
     <div className='bat-error-main'>
@@ -16,11 +17,11 @@ import { Link } from 'react-router-dom'
         </div>
         <div className="bat-error-img">
             <img src={error} alt="" />
-            <button>
+            <Button>
             <Link to='/' id='bat-btn-two' className="bat-home-btn">
                 Go home
             </Link>
-            </button>
+            </Button>
         </div>
     </div>
   )
