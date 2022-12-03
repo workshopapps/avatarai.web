@@ -43,7 +43,7 @@ const MobileNav = ({navClose}) => {
           </button>
         
 
-          <Button className="text-white bg-[#8B70E9] cbk-mobile-login-btn"><Link to="/Signupfirst"> Sign up </Link></Button>
+          <Button className="text-white bg-[#8B70E9] cbk-mobile-login-btn"><Link to="/Signup"> Sign up </Link></Button>
         </div>
         
       </nav>
