@@ -27,10 +27,30 @@ function LandingPageC() {
   const [isCookiesReady, setIsCookiesReady] = useState(false)
 
   useEffect(() => {
-    let interval = setInterval(() => setIsCookiesReady(true), 1200);
+    let interval = setInterval(() =>{
+  //        // First check, if localStorage is supported.
+	// if (window.localStorage) {
+	// 	// Get the expiration date of the previous popup.
+	// 	let nextPopup = localStorage.getItem( 'cookies' );
+
+	// 	if (nextPopup > new Date()) {
+	// 		return;
+	// 	}
+
+	// 	// Store the expiration date of the current popup in localStorage.
+	// 	let expires = new Date();
+	// 	expires = expires.setHours(expires.getHours() + 24);
+
+	// 	localStorage.setItem( 'cookies', expires );
+	// }
+
+      setIsCookiesReady(true)
+    }, 2000);
+
+	
     
   }, []);
-
+ 
 
   const offCookies =()=>{
     setCookiesShowing(false)
