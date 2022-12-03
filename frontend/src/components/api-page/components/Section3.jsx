@@ -1,7 +1,3 @@
-import img1 from "../images/img1.svg";
-import img2 from "../images/img2.svg";
-import purplePattern from "../images/purple-pattern.svg";
-import code from "../images/code.svg";
 import Button from "../../landingPage/Button/Button";
 
 const Section3 = () => {
@@ -16,7 +12,10 @@ const Section3 = () => {
             Zuvatar APIs make it easy to integrate and generate custom
             illustrations into your app or website.
           </p>
-          <img src={code} alt="" />
+          <img
+            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670063242/code_um7xfs.png"
+            alt=""
+          />
           <div className="flex justify-center">
             <Button
               style={{ border: "1px solid" }}
@@ -40,12 +39,20 @@ const Section3 = () => {
 
           <div className="grid grid-cols-12 gap-3 md:h-[542px]">
             <div className="col-span-12 md:col-span-6 flex items-center gap-3 h-full md:mr-3 mb-10 md:mb-0">
-              <img src={img1} className="h-full w-1/2" alt="" />
-              <img src={img2} className="h-full w-1/2" alt="" />
+              <img
+                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670063483/img1_ozgpo7.png"
+                className="h-full w-1/2"
+                alt=""
+              />
+              <img
+                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670063483/img2_wkk8is.png"
+                className="h-full w-1/2"
+                alt=""
+              />
             </div>
             <div className="col-span-12 md:col-span-6 h-full relative rounded-lg w-full">
               <img
-                src={purplePattern}
+                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670063241/purple-pattern_al89aw.png"
                 className="md:h-full w-full rounded-lg"
                 alt="purple background"
               />
