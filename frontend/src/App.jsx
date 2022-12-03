@@ -36,7 +36,7 @@ import React from 'react';
 import ReadArticle from './components/read article/ReadArticle';
 
 import Review from './components/Review/Review';
-import SetPassword from './components/LoginPage/PasswordReset';
+import SetPassword from './components/LoginPage/ResetPassword';
 import ResetPassword from './components/LoginPage/ResetPassword';
 import PasswordReset from './components/LoginPage/PasswordReset';
 import Terms from './components/TermsPage/Terms';
@@ -121,7 +121,7 @@ export default function App() {
 			<Route path="/login" element={<Login />} />
 			<Route path="/reset-password" element={<ResetPassword />} />
 			<Route path="/set-password" element={<SetPassword />} />
-			<Route path="password-reset" element={<PasswordReset />} />
+			<Route path="/password-reset" element={<PasswordReset />} />
 			<Route path="/forgot-password" element={<ForgotPassword />} />
 			<Route path="/check-email" element={<CheckEmail />} />
 			{/* chat */}

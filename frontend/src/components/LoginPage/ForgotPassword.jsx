@@ -1,21 +1,61 @@
+import {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 import lock from "./LoginImg/lock.svg";
-import Button from "../landingPage/Button/Button";
+
 import { Link } from "react-router-dom";
 import  designL from './LoginImg/designL.svg'
 import  designR from './LoginImg/designR.svg'
 import  mdesign from './LoginImg/mdesign.svg'
-import { useForm } from "react-hook-form";
+
+
+import { NavContext } from '../../../context/nav-context';
+import { useContext } from 'react';
+
 
 const ForgotPassword = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const navigate = useNavigate()
+  const [email, setEmail] = useState('')
+  const [invalid, setInvalid] = useState(false)
 
-  const onSubmit = (data) => console.log(data);
-  const watchEmail = watch("sendEmail");
+  const [failedReq, setFailedReq] = useState('')
+
+  const {setResetEmail} = useContext(NavContext)
+  const invalidEmail = !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+    email
+  );
+
+  
+  const submitHandler = (e) => {
+    e.preventDefault()
+    
+    if(invalidEmail){
+      setInvalid(true)
+      return
+    }
+    fetch("https://zuvatar.hng.tech/api/v1/forgotPassword", {
+      method: "POST",
+      body: JSON.stringify({username: email}),
+      
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((res) => {
+        console.log(res);
+        if (res.status === 200) {
+          navigate("/check-email");
+        }else {
+          setFailedReq("failed request, verify email and retry");
+          setTimeout(() => setFailedReq(""), 3000);
+        }
+      })
+      .catch((error) => {
+        setFailedReq("failed to send request");
+        setTimeout(() => setFailedReq(""), 3000);
+      });
+      setResetEmail(email)
+  }
 
   return (
     <div
@@ -28,8 +68,8 @@ const ForgotPassword = () => {
             className="w-[60px] md:w-[220px] ld:w-[220px] h-[60px] md:h-[220px] ld:h-[220px] "
             style={{
               backgroundImage: `url(${lock})`,
-              backgroundSize: 'contain',
-              backgroundRepeat: 'no-repeat',
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
             }}
             alt=""
           />
@@ -42,45 +82,44 @@ const ForgotPassword = () => {
             Please enter the email address associated with this account
           </p>
         </div>
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="flex flex-col w-full max-[480px]:w-[130%]"
-        >
-          <input
-            name="email"
-            required
-            type="email"
-            placeholder="Email address"
-            className={`border ${
-              errors.sendEmail && "border-red-600"
-            } p-3 w-[77%] ml-[10%] my-1 rounded-lg outline-none max-[480px]:w-[100%]mt-0`}
-            {...register("sendEmail", {
-              required: true,
-              pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-            })}
-          />
-          {errors.sendEmail && (
-            <span className="text-xs text-red-600">
-              Please enter a valid email address
+        <form onSubmit={submitHandler} className="w-full flex flex-col">
+          {failedReq && (
+            <span className="text-xs text-red-600 display-block text-center w-full">
+              {failedReq}
             </span>
           )}
-          <Button className="w-[77%] mt-7 bg-[#8B70E9] text-white font-[Nunito] text-[22px] ml-[10%] max-[480px]:w-[100%]pr-[50%]">
-            {!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-              watchEmail
-            ) ? (
-              "Send"
-            ) : (
-              <Link to="/check-email">Send</Link>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            value={email}
+            className={`border ${
+              invalid && "border-red-600"
+            } p-3 w-[77%] ml-[10%] my-1 rounded-lg outline-none max-[480px]:w-[100%]mt-0`}
+            onChange={({ target }) => setEmail(target.value)}
+            />
+            {invalid && (
+              <span className="text-xs text-red-600 display-block text-center">
+                Please enter a valid email address
+              </span>
             )}
-          </Button>
+          <button
+            className="w-[77%] mt-7 bg-[#8B70E9] text-white font-[Nunito] text-[22px] ml-[10%] max-[480px]:w-[100%]pr-[50%] `inline-flex justify-center items-center px-8 py-3 border   rounded-[8px] font-semibold text-md 
+         transition ease-in-out duration-150 "
+          >
+            Send
+          </button>
+
         </form>
-        <div class="absolute bottom-[0] left-[-42vw] w-[42%] max-[1024px]:left-[-88%] max-[480px]:hidden ">
+
+        <div className="absolute bottom-[0] left-[-42vw] w-[42%] max-[1024px]:left-[-88%] max-[480px]:hidden ">
           <img src={designL} alt="design" />
         </div>
-        <div class="max-[480px]:absolute top-[-70%] right-[-45vw] w-[25%] min-[480px]:relative mt-[-45%] right-[-45vw] ">
+        <div className="max-[480px]:absolute top-[-70%] right-[-45vw] w-[25%] min-[480px]:relative mt-[-45%] right-[-45vw] ">
           <img src={designR} alt="design" />
         </div>
-        <div class="max-[480px]:absolute bottom-[9%] left-0 w-20 mr-[90%] min-[480px]:hidden">
+        <div className="max-[480px]:absolute bottom-[9%] left-0 w-20 mr-[90%] min-[480px]:hidden">
           <img src={mdesign} alt="design" />
         </div>
       </div>

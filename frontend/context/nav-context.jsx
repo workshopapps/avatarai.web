@@ -15,6 +15,8 @@ Faqs:"faqs",
 export const NavProvider = ({ children }) => {
 	const [page, setPage] = useState(pages.Home);
 	
+	/* reset email flow state */
+	const [resetEmail, setResetEmail] = useState('placeholder@gmail.com')
 
 
 	
@@ -23,6 +25,9 @@ export const NavProvider = ({ children }) => {
 	const navContextValue = {
 		page,
 		setPage,
+		/* context value for reset email flow */
+		resetEmail,
+		setResetEmail
 	};
 
 
