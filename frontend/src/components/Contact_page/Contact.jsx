@@ -3,9 +3,17 @@ import Navbar from "../landingPage/Navbar/Navbar";
 import Barner from "./barner.png";
 import Illustration from "./illus.png";
 import Footer from "../landing-page/footer/Footer";
+import { useEffect } from "react";
+import { useContext } from "react";
+import { NavContext, pages } from "../../../context/nav-context";
 // import { Link } from "react-router-dom";
 
 const Contact = () => {
+    const {setPage} = useContext(NavContext)
+   
+    useEffect(()=>{
+     setPage(pages.ContactUs)
+    },[])
     return (
         <div>
             <Navbar />
