@@ -1,10 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import LogoImgs from "../courses/images/logo.png";
-import Menu from "../courses/images/menu.png";
-import Search from "../courses/images/Search.png";
-import Profile from "../courses/images/profiledp.png";
-import Bell from "../courses/images/Group.png";
 import '../courses/courses.css'
 
 
@@ -23,14 +18,21 @@ const Navbar = () => {
             <div className="font-bold cursor-pointer">
               <span>
                 <div className="max-h-[3rem] max-w-[9rem]">
-                  <img src={LogoImgs} alt="Logo" className="w-full h-full" />
+                  <img
+                    src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072639/logo_tn4p3c.png"
+                    alt="Logo"
+                    className="w-full h-full"
+                  />
                 </div>
               </span>
             </div>
           </Link>
 
           <div className="flex items-center gap-4 justify-between bg-[#fff] py-2 px-4 ml-[20%] md:ml-0 rounded-[4px] border-[1px] border-[#B5B5B5] overflow-hidden max-w-[153px] md:max-w-[285px]">
-            <img src={Search} alt="search" />
+            <img
+              src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072642/Search_hxlm0b.png"
+              alt="search"
+            />
             <input
               type="text"
               placeholder="Search..."
@@ -42,7 +44,10 @@ const Navbar = () => {
             onClick={navOpener}
             className="text-2xl p-2 absolute right-5 top-5 cursor-pointer md:hidden transition-all ease-in-out delay-150 duration-300"
           >
-            <img src={Menu} alt="menu" />
+            <img
+              src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072639/menu_acw6xr.png"
+              alt="menu"
+            />
           </div>
 
           <ul
@@ -55,11 +60,17 @@ const Navbar = () => {
           >
             <div className="flex flex-col md:flex-row items-center gap-3">
               <div>
-                <img src={Bell} alt="notification" />
+                <img
+                  src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072635/Group_zardtq.png"
+                  alt="notification"
+                />
               </div>
 
               <div className="flex items-center justify-between gap-1">
-                <img src={Profile} alt="George Lucas" />
+                <img
+                  src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072640/profiledp_ajnju2.png"
+                  alt="George Lucas"
+                />
                 <p className="font-bold text-[#333333]">George Lucas</p>
               </div>
 
