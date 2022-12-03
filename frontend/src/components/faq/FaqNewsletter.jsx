@@ -13,7 +13,8 @@ const [showSuccessModal, setShowSuccessModal] = useState(false)
 const closeModal =()=>{
   setTimeout(() => {
     setShowSuccessModal(false)
-  }, 1000);
+    setshowErrorModal(false)
+  }, 1500);
  
 }
 
@@ -53,14 +54,15 @@ subscribe(emailField)
           "Content-Type": "application/json"
         }
        })
-       
+       console.log(response, "from najib")
        if(response.status === 200){
        setShowSuccessModal(true)
       closeModal()
        }
     } catch (error) {
       
-      console.log(error)
+      setshowErrorModal(true)
+      closeModal()
     }
   
   }
@@ -133,7 +135,8 @@ subscribe(emailField)
         </div>
       </div>
       {showSuccessModal ? <SuccessModal></SuccessModal> : ""}
-
+      {showErrorModal ? <ErrorModal></ErrorModal> : ""}
+      
       
       
     </section>
