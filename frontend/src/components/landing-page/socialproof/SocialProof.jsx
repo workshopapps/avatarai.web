@@ -27,8 +27,8 @@ const SocialProof = () => {
             <img src={war}/>
           </div>
         </div>
-        <Link to='/signupfirst'>
-          <Button className="social-btn">
+        <Link to='/signup'>
+          <button className="social-btn">
             Explore more
           </Button>
         </Link>  

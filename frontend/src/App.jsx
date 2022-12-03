@@ -86,7 +86,7 @@ export default function App() {
 			<Route path="/" element={<LandingPage />} exact />
 			<Route path="/ttilp" element={<Ttilp />} exact />
 			{/* Signup components */}
-			<Route path="/signupfirst/" element={<Opt_first />} />
+			<Route path="/signup" element={<Opt_first />} />
 			<Route path="/Opt_sec" element={<Opt_sec />} />
 			<Route path="/Opt_thi" element={<Opt_thi />} />
 			<Route path="/Opt_for" element={<Opt_for />} />
