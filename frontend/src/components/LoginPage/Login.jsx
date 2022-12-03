@@ -36,6 +36,17 @@ const Login = ({ props }) => {
 		onSuccess: (tokenResponse) => console.log(tokenResponse),
 		onError: () => console.log('Login with Google Failed'),
 	});
+	let mail;
+	// function getemail() {
+	// 	if (localStorage.getItem('opt_mail') !== '') {
+	// 		mail = localStorage.getItem('opt_mail').slice(1, -1);
+	// 	}
+	// 	else
+	// 	{
+	// 		localStorage.setItem("opt_mail", JSON.stringify(mail))
+	// 	}
+	// }
+	// getemail();
 
 	/** Remember to pass user data to api for storage */
 	const url = `${import.meta.env.VITE_API_URL}/api/user/login`;
@@ -61,16 +72,11 @@ const Login = ({ props }) => {
 				//save token to state
 				setToken(token);
 				login(response?.data?.user);
+			
 
 				setErrorStatus({ error: false, message: 'Login successful' });
 
-				let mail;
-				function getemail() {
-					if (localStorage.getItem('mail_') !== '') {
-						mail = localStorage.getItem('mail_').slice(1, -1);
-					}
-				}
-				getemail();
+
 			})
 			.catch((e) => {
 				setLoading(false);
@@ -139,7 +145,9 @@ const Login = ({ props }) => {
 								name="email"
 								type="email"
 								id="email"
+								// value={mail}
 								required
+								onClick={getemail}
 								{...register('username', {
 									required: true,
 									pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
@@ -189,12 +197,12 @@ const Login = ({ props }) => {
 								</Link>
 							</div>
 						</div>
-						<button
+						< Button
 							type="submit"
 							className="bg-[#8B70E9] text-white font-nunito font-bold text-lg lg:text-xl p-4  rounded-lg"
 						>
 							{loading ? 'Loading...' : 'Login'}
-						</button>
+						</ Button>
 					</form>
 					<div className="h-7 lg:h-10"></div>
 					<div
@@ -209,7 +217,7 @@ const Login = ({ props }) => {
 					<div className="h-6"></div>
 					<div>
 						<span className="font-nunito font-medium text-sm lg:text-xl text-[#808080]">Don't have an account? </span>
-						<a href="signupfirst" className="font-nunito font-bold text-sm lg:text-xl text-[#6c6191]">
+						<a href="signup" className="font-nunito font-bold text-sm lg:text-xl text-[#6c6191]">
 							Sign Up
 						</a>
 					</div>

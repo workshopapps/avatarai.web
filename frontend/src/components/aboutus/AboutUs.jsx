@@ -1,26 +1,14 @@
 import TeamMemberCard from './TeamMemberCard';
 import './aboutUs.css';
-import Banner from './img/aboutBg.png';
 import Navbar from '../landingPage/Navbar/Navbar';
-import Banner2 from './img/image1.svg';
-import Pattern1 from './img/pattern1.svg';
-import Pattern2 from './img/pattern2.svg';
-import Pattern3 from './img/pattern3.svg';
-
-import { WHY_US, TEAM } from './data';
+import { TEAM } from './data';
 // import Footer from "../Footerpage/Footer";
 import Foooter from '../footer/Foooter';
 import ContactUs from './ContactUs';
 import FaqNewsletter from '../faq/FaqNewsletter';
-import { useContext, useEffect } from 'react';
-import { NavContext, pages } from '../../../context/nav-context';
 
 const AboutUs = () => {
-	const {setPage} = useContext(NavContext)
- 
-   useEffect(()=>{
-    setPage(pages.AboutUs)
-   },[])
+
 	return (
 		<>
 			<Navbar />
@@ -28,11 +16,14 @@ const AboutUs = () => {
 				<section className="dja_banner_section">
 					<div className="dja_container">
 						<div className="dja_banner_img">
-							<img src={Banner} alt="AvatarAI" />
+							<img
+								src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670023748/aboutBg_cfvrvy.png"
+								alt="AvatarAI"
+							/>
 						</div>
 						<div id="banner_title">
-							<h1 className="font-bold">
-								About <span className="text-[#B5B0C8]">Us</span>
+							<h1 className="font-bold text-[24px] md:text-[72px]">
+								About <span className="text-[#8B70E9]">Us</span>
 							</h1>
 						</div>
 					</div>
@@ -58,12 +49,24 @@ const AboutUs = () => {
 							</p>
 						</div>
 					</div>
-					<img src={Pattern3} alt="pattern" className="absolute md:top-[-160px] top-[-80px] right-0 w-20 md:w-auto" />
-					<img src={Pattern2} alt="pattern" className="absolute md:top-[-100px] top-[-80px] left-0 w-20 md:w-auto" />
+					<img
+						src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670062331/pattern3_ttm6gz.png"
+						alt="pattern"
+						className="absolute md:top-[-160px] top-[-80px] right-0 w-20 md:w-auto"
+					/>
+					<img
+						src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670062331/pattern2_olfm3o.png"
+						alt="pattern"
+						className="absolute md:top-[-100px] top-[-80px] left-0 w-20 md:w-auto"
+					/>
 				</section>
 
 				<div className="w-full">
-					<img src={Banner2} alt="Large banner max-h-[1080px]" className="w-full" />
+					<img
+						src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670026630/image1_woebre.png"
+						alt="Large banner max-h-[1080px]"
+						className="w-full"
+					/>
 				</div>
 
 				<section className="pt-10 lg:pt-[48px] px-5 relative overflow-clip">
@@ -86,8 +89,16 @@ const AboutUs = () => {
 							</h2>
 						</div>
 					</div>
-					<img src={Pattern3} alt="pattern" className="absolute md:top-[-160px] top-[-80px] right-0 w-20 md:w-auto" />
-					<img src={Pattern2} alt="pattern" className="absolute md:top-[-100px] top-[-80px] left-0 w-20 md:w-auto" />
+					<img
+						src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670062331/pattern3_ttm6gz.png"
+						alt="pattern"
+						className="absolute md:top-[-160px] top-[-80px] right-0 w-20 md:w-auto"
+					/>
+					<img
+						src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670062331/pattern2_olfm3o.png"
+						alt="pattern"
+						className="absolute md:top-[-100px] top-[-80px] left-0 w-20 md:w-auto"
+					/>
 				</section>
 
 				<section className="px-5 mt-[3rem] lg:mt-[6rem] relative">
@@ -108,7 +119,7 @@ const AboutUs = () => {
 					</div>
 				</section>
 
-				<section className="bg-[#6C6191] mt-[50px] relative overflow-hidden px-5">
+				<section className="bg-[#8B70E9] mt-[50px] relative overflow-hidden px-5">
 					<ContactUs />
 				</section>
 			</div>

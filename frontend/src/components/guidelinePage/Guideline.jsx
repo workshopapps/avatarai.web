@@ -5,6 +5,7 @@ import Cover from "./images/home.png";
 import Frame1 from "./images/fr.png";
 import FaqNewsletter from "../faq/FaqNewsletter.jsx";
 import Footer from "../Footerpage/Footer.jsx";
+import Button from "../landingPage/Button/Button";
 
 const GuidelinePage = () => {
   return (
@@ -28,7 +29,7 @@ const GuidelinePage = () => {
           </p>
           <div className="cards">
             <img src={Frame1} alt="frame1" />
-            <button>Create Avatar</button>
+            <Button>Create Avatar</Button>
           </div>
         </div>
       </div>

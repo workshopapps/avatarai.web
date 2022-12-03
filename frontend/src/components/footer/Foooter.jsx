@@ -63,12 +63,13 @@ designed to generate perfect avatars for you.
               <div className="flex gap-x-[5rem] text-[#2B292F]">
                 <p className="text-sm flex items-center gap-3">
                 <img src={Call} alt="/" />
-                  <a href="/"> Zuvatar@gmail.com</a>
+                
+                  <a href="mailto:zuvatar@gmail.com"> zuvatar@gmail.com</a>
                 </p>
                 <p className="text-sm flex items-center gap-3">
                   
                   <img src={Mail} alt="/" />
-                  <a href="/"> +2347012345678</a>
+                  <a href="tel:+2347012345678"> +2347012345678</a>
                 </p>
               </div>
               <div className="flex items-center justify-center space-x-4 text-[#000]">
@@ -135,12 +136,12 @@ designed to generate perfect avatars for you.
                 <p className="font-semibold text-xl">Socials</p>
                 <p className="text-sm flex items-center gap-3">
                 <img src={Call} alt="/" />
-                  <a href="/">Zuvatar@gmail.com</a>
+                  <a href="mailto:zuvatar@gmail.com">zuvatar@gmail.com</a>
                 </p>
                 <p className="text-sm flex items-center gap-3">
                   
                   <img src={Mail} alt="/" />
-                  <a href="/"> +2347012345678</a>
+                  <a href="tel:+2347012345678"> +2347012345678</a>
                 </p>
               </div>
             </div>
@@ -149,9 +150,9 @@ designed to generate perfect avatars for you.
         <hr />
 
         <div className="flex items-center justify-center  text-[#000] mt-3 pb-[2rem]">
-          <img src={Insta} alt="insta" className="text-[#000]" />
-          <img src={Twitter} alt="twitter" />
-          <img src={Facebook} alt="facebook" />
+          <img src={Insta} alt="insta" className="text-[#000] mx-[1rem]" />
+          <img src={Twitter} alt="twitter" className="text-[#000] mx-[1rem]" />
+          <img src={Facebook} alt="facebook" className="text-[#000] mx-[1rem]"/>
         </div>
         <div className="w-full text-center bg-[#8B70E9] flex items-center justify-center gap-2 py-3 ">
           <div>

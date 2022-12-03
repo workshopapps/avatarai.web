@@ -1,19 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import details from "./Detaildata";
-import Star from "../courses/images/Star.png";
-import Lock from "../courses/images/lock.png";
-import img4 from "../courses/images/web.png";
-import img5 from "../courses/images/java.png";
-import img6 from "../courses/images/html.png";
-import img7 from "../courses/images/next.png";
-import L75 from "../courses/images/75.png";
-import L40 from "../courses/images/40.png";
-import L58 from "../courses/images/58.png";
-import World from "../courses/images/world.png";
-import Schedule from "../courses/images/schedule.png";
-import Time from "../courses/images/time.png";
-import Message from "../courses/images/message.png";
+import Button from "../landingPage/Button/Button";
 
 const CourseDetail = () => {
   const { detailId } = useParams();
@@ -21,22 +9,26 @@ const CourseDetail = () => {
 
   const ABOUT_STATE = [
     {
-      imgSrc: World,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072644/world_psxvey.png",
       about: "100% Onlne Courses",
       hint: "Start instantly and learn at your own schedule.",
     },
     {
-      imgSrc: Schedule,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072641/schedule_dzhnlw.png",
       about: "Flexible Schedule",
       hint: "Set and maintain flexible deadlines.",
     },
     {
-      imgSrc: Time,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072644/time_mkew43.png",
       about: "Approximately 4 months to complete",
       hint: "Suggested pace of 4 hours/week",
     },
     {
-      imgSrc: Message,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072639/message_iqod0h.png",
       about: "English",
       hint: "Subtitles: English",
     },
@@ -45,32 +37,38 @@ const CourseDetail = () => {
   const UP_COMING = [
     {
       name: "Web Design",
-      imgSrc: img4,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072644/web_mfkbzm.png",
     },
     {
       name: "Javascript",
-      imgSrc: img5,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072636/java_rcycwh.png",
     },
     {
       name: "Html Basics",
-      imgSrc: img6,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072636/html_u2l90a.png",
     },
   ];
 
   const PRO_GRESS = [
     {
       name: "Web Design",
-      imgSrc: L75,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072632/75_fchswg.png",
       number: "05",
     },
     {
       name: "Javascript",
-      imgSrc: L40,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072632/40_eavnaz.png",
       number: "25",
     },
     {
       name: "Html Basics",
-      imgSrc: L58,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072632/58_flalmc.png",
       number: "13",
     },
   ];
@@ -92,7 +90,11 @@ const CourseDetail = () => {
             <h1 className="font-bold text-[#1C1C1E] text-base md:text-[20px]">
               {detail.name}
             </h1>
-            <img src={Star} alt="star" className="self-start" />
+            <img
+              src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072643/Star_aozor9.png"
+              alt="star"
+              className="self-start"
+            />
             <p className="text-[#333333] font-semibold text-sm md:text-[14px]">
               {detail.rating}{" "}
               <span className="text-[#909090] pl-2">
@@ -100,21 +102,27 @@ const CourseDetail = () => {
               </span>
             </p>
             <p className="text-[#1C1C1E] py-2">{detail.about}</p>
-            <button className="bg-[#7454E5] w-full flex items-center justify-center md:hidden text-[#fff] gap-2 mt-2 rounded-[4px] py-4 text-center font-medium text-[13px]">
+            <Button className="bg-[#7454E5] w-full flex items-center justify-center md:hidden text-[#fff] gap-2 mt-2 rounded-[4px] py-4 text-center font-medium text-[13px]">
               <span>
-                <img src={Lock} alt="lock" />
+                <img
+                  src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072638/lock_vbny3m.png"
+                  alt="lock"
+                />
               </span>
               Enroll
-            </button>
+            </Button>
           </div>
 
           <div className="w-full md:flex items-center my-4 justify-between gap-5 hidden">
-            <button className="bg-[#7454E5] w-[50%] flex items-center justify-center text-[#fff] gap-2 mt-2 rounded-[4px] py-4 text-center font-medium text-[13px]">
+            <Button className="bg-[#7454E5] w-[50%] flex items-center justify-center text-[#fff] gap-2 mt-2 rounded-[4px] py-4 text-center font-medium text-[13px]">
               <span>
-                <img src={Lock} alt="lock" />
+                <img
+                  src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072638/lock_vbny3m.png"
+                  alt="lock"
+                />
               </span>
               Enroll
-            </button>
+            </Button>
 
             <div className="w-[50%]">
               <p className="font-bold text-sm md:text-base text-[#333333]">
@@ -198,7 +206,10 @@ const CourseDetail = () => {
                     </p>
                   </div>
                   <div>
-                    <img src={img7} alt="arrow.png" />
+                    <img
+                      src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072640/next_hfj9gc.png"
+                      alt="arrow.png"
+                    />
                   </div>
                 </div>
               ))}
@@ -231,7 +242,10 @@ const CourseDetail = () => {
                     </p>
                   </div>
                   <div>
-                    <img src={img7} alt="arrow.png" />
+                    <img
+                      src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072640/next_hfj9gc.png"
+                      alt="arrow.png"
+                    />
                   </div>
                 </div>
               ))}
