@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { SideBar } from './SideBar';
 import { TopNav } from './TopNav';
+import {useAuth} from "../../../context/auth-context";
+
+
 
 const Dashboardlayout = ({ children }) => {
 	const [show, setShow] = useState(false);
 	const [profile, setProfile] = useState(false);
+  const user = useAuth()
+  console.log(user, "from najjiv")
+
 
 	return (
     <>

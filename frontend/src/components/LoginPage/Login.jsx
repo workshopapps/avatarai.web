@@ -61,6 +61,7 @@ const Login = ({ props }) => {
 				//save token to state
 				setToken(token);
 				login(response?.data?.user);
+			
 
 				setErrorStatus({ error: false, message: 'Login successful' });
 
