@@ -7,8 +7,10 @@ import "./signup.css";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useGoogleLogin } from '@react-oauth/google';
+import ErrorSuccessCard from "../utils/ErrorSuccessCard.jsx";
 
 let state;
+let result;
 export default function SignUp_first() {
   state = {
     disabled: true,
@@ -45,13 +47,7 @@ export default function SignUp_first() {
 
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (error.confirmPassword === "") {
-      signUp()
 
-    }
-  };
   const [show_s, setShow_s] = useState(true);
   const [show_s_, setShow_s_] = useState(true);
 
@@ -69,6 +65,7 @@ export default function SignUp_first() {
     password: "Must be 8 characters long",
     confirmPassword: "Both passwords must match",
   });
+
 
   const onInputChange = (e) => {
     const { name, value } = e.target;
@@ -112,19 +109,23 @@ export default function SignUp_first() {
       return stateObj;
     });
   };
+
   const[first_name,setFirstName]=useState("")
   const[last_name, setLastName]=useState("")
   const[email,setEmail]=useState("")
+    const [errorStatus, setErrorStatus] = useState({
+        error: null,
+        message: '',
+    });
   async function signUp(){
     // setTimeout(function() {
     // }, 8000);
-    navigate("/Opt_sec");
 
     let password = input.password
     let item ={first_name,last_name,email,password}
     // console.warn("item",item)
     localStorage.setItem("opt_mail", JSON.stringify(item.email))
-    let result = await fetch("https://noxus-ai.herokuapp.com/api/user",{
+    result = await fetch("https://zuvatar.hng.tech/api/v1/api/user",{
       method:'POST',
       body:JSON.stringify(item),
       headers:{
@@ -132,10 +133,25 @@ export default function SignUp_first() {
         "Accept":'application/json'
       }
     })
-    result=await result.json()
-    const myresult = result.email
+    result = await result.json()
+      console.warn('result', result.detail.msg)
+      if (result.username){
+          navigate("/Opt_sec");
+          setErrorStatus({ error: false, message: 'Login successful' });
+
+      }
+      else{
+          setErrorStatus({ error: true, message: "Invalid Email or Username" });
+      }
 
   }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if (error.confirmPassword === "") {
+            signUp()
+        }
+    };
 
   return (
       <div className="unn_opt">
@@ -172,7 +188,11 @@ export default function SignUp_first() {
 
             <form id="myform_opt" onSubmit={handleSubmit} method="post">
               {/*<div style={{ display: show ? "block" : "none" }}>*/}
+                <div className="opt_error">
+                    {errorStatus.message && <ErrorSuccessCard error={errorStatus.error} message={errorStatus.message} />}
+                </div>
                 <div className='ss_opt'>
+
                     <div className='sss_opt'>
                         <label htmlFor="myinput_op">First name</label>
                         <br />
