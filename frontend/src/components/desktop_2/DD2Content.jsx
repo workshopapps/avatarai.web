@@ -71,7 +71,7 @@ const ImageUpload = () => {
       method: "POST",
       // body: JSON.stringify(formdata),
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "multipart/form-data",
         Accept: "application/json",
       },
       data: formdata,
@@ -257,7 +257,7 @@ const ImageUpload = () => {
                   type="file"
                   name="file"
                   id="file"
-                  // onChange={storeItem}
+                  onChange={handleFile}
                 />
                 <label htmlFor="file">
                   {/* <label htmlFor="file" className="aso-dd2-label"> */}

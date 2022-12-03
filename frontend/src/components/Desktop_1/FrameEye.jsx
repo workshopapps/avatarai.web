@@ -17,7 +17,7 @@ import one_icon from "./oneicon.png";
 import { useState } from "react";
 
 
-let personality;
+// let personality;
 
 
 const FrameEye = () => {
@@ -48,10 +48,6 @@ const FrameEye = () => {
     },
   ]);
 
-  // let personality = input.password
-  //   let item ={first_name,last_name,email,password}
-  //   // console.warn("item",item)
-  //   localStorage.setItem("opt_mail", JSON.stringify(item.email))
 
   const [toggle, setToggle] = useState(false);
   const [work, setWork] = useState(true);
@@ -155,11 +151,7 @@ const FrameEye = () => {
                 setToggle(e);
                 change(e);
                 console.log(index)
-                if(index === 0) {
-                  personality = "male";
-                } else {
-                  personality = "female";
-                }
+                
 
               }}
               key={index}
@@ -178,7 +170,7 @@ const FrameEye = () => {
               disabled={work}
               type="submit"
               value="Proceed"
-              onClick={localStorage.setItem("personality", JSON.stringify(personality))}
+              //onClick={localStorage.setItem("personality", JSON.stringify(personality))}
             />
           </Link>
         </div>
