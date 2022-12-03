@@ -6,7 +6,7 @@ const ArticleBody = () => {
       <div>
         <h1>Introduction</h1>
         <p>
-          AvatarAI is an ai avatar generator that allows you create multiple images
+        Zuvatar is an ai avatar generator that allows you create multiple images
           of yourself in different environments and settings. They mostly appear
           as pictures. Pictures are important ways we store and preserve
           memories. It is also a unique way we personalise our items. From
@@ -28,18 +28,18 @@ const ArticleBody = () => {
         </p>
       </div>
       <div>
-        <h1>Functions of the AvatarAI AI generator</h1>
+        <h1>Functions of the Zuvatar AI generator</h1>
         <p>
-          AvatarAI AI avatar is a tool that allows users to create as many avatars
+        Zuvatar AI avatar is a tool that allows users to create as many avatars
           as possible from a combination of 10 pictures. The app uses artificial
           intelligence to combine your images and create an entirely new image
           in a different background.
         </p>
       </div>
       <div>
-        <h1>Functions of the AvatarAI AI generator</h1>
+        <h1>Functions of the Zuvatar AI generator</h1>
         <p>
-          AvatarAI AI avatar is a tool that allows users to create as many avatars
+        Zuvatar AI avatar is a tool that allows users to create as many avatars
           as possible from a combination of 10 pictures. The app uses artificial
           intelligence to combine your images and create an entirely new image
           in a different background.
@@ -48,7 +48,7 @@ const ArticleBody = () => {
       <div>
         <h1>How it works</h1>
         <p>
-          AvatarAI leverages on advanced machine learning models to create real
+        Zuvatar leverages on advanced machine learning models to create real
           humanoid representation of your images. It also allows you to upload
           pictures of you and a loved one or pet in different locations and
           creates a single image of both of you together.
@@ -101,7 +101,7 @@ const ArticleBody = () => {
         <h1>Ease Of Use</h1>
         <ul>
           <li>
-            AvatarAI is a web application which means you can use it from your
+          Zuvatar is a web application which means you can use it from your
             phone.
           </li>
           <li>You can easily upload and change the pictures you want.</li>
@@ -110,9 +110,9 @@ const ArticleBody = () => {
           <li>Generate as many as 10 pictures with one click.</li>
         </ul>
         <p>
-          AvatarAI gives you a new way to appear online. It gives you the freedom
+        Zuvatar gives you a new way to appear online. It gives you the freedom
           you need to navigate from one virtual environment to another without
-          compromising your personal data and security. AvatarAI is the virtual
+          compromising your personal data and security. Zuvatar is the virtual
           identity partner that helps you be you.
         </p>
       </div>

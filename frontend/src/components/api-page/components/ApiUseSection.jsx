@@ -38,7 +38,7 @@ const ApiUseSection = () => {
 						Utilize our API and customize avatars suitable for use anywhere and anytime
 					</h2>
 					<p className="text-[#605E65] font-medium text-base max-w-[495px]">
-						Connecting to Nexus API is extremely simple. The actual complex mechanics are implemented on our servers.
+						Connecting to Zuvatar API is extremely simple. The actual complex mechanics are implemented on our servers.
 						You’ll just need to connect your app with the server by using an online API as detailed in the following
 						manual:
 					</p>
