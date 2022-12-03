@@ -2,7 +2,7 @@ import "./Contact.css";
 import Navbar from "../landingPage/Navbar/Navbar";
 import Barner from "./barner.png";
 import Illustration from "./illus.png";
-import Footer from "../landing-page/footer/Footer";
+import Foooter from "../footer/Foooter";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { NavContext, pages } from "../../../context/nav-context";
@@ -46,7 +46,7 @@ const Contact = () => {
                 </form>
                 <img className="w-1/2 contact-img max-[1000px]:w-3/4" src={Illustration} />
             </div>
-            <Footer />
+            <Foooter />
         </div>
     );
 }
