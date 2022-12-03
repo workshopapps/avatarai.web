@@ -13,7 +13,7 @@ const Header = () => {
           <div className="bat-header-content">
             <h2>Create your own <span>AI-generated </span>avatars</h2>
             <p>Create Profile pictures, Online gaming display pictures, Pet potraits and much more on the go.</p>
-            <Link to='/Signupfirst' className='bat-link'>
+            <Link to='/Signup' className='bat-link'>
             <button className="bat-btn">Generate Avatars</button>
               
             </Link>
