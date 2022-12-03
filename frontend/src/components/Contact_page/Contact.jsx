@@ -2,7 +2,7 @@ import "./Contact.css";
 import Navbar from "../landingPage/Navbar/Navbar";
 import Barner from "./barner.png";
 import Illustration from "./illus.png";
-import Footer from "../landing-page/footer/Footer";
+import Foooter from "../footer/Foooter";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { NavContext, pages } from "../../../context/nav-context";
@@ -85,7 +85,7 @@ const Contact = () => {
           src={Illustration}
         />
       </div>
-      <Footer />
+      <Foooter />
     </div>
   );
 };
