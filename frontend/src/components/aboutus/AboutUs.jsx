@@ -1,10 +1,7 @@
 import TeamMemberCard from './TeamMemberCard';
 import './aboutUs.css';
 import Navbar from '../landingPage/Navbar/Navbar';
-import Banner2 from './img/image1.svg';
-import Pattern1 from './img/pattern1.svg';
-import Pattern2 from './img/pattern2.svg';
-import Pattern3 from './img/pattern3.svg';
+
 
 import { WHY_US, TEAM } from './data';
 // import Footer from "../Footerpage/Footer";
@@ -69,12 +66,12 @@ const AboutUs = () => {
             </div>
           </div>
           <img
-            src={Pattern3}
+            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670062331/pattern3_ttm6gz.png"
             alt="pattern"
             className="absolute md:top-[-160px] top-[-80px] right-0 w-20 md:w-auto"
           />
           <img
-            src={Pattern2}
+            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670062331/pattern2_olfm3o.png"
             alt="pattern"
             className="absolute md:top-[-100px] top-[-80px] left-0 w-20 md:w-auto"
           />
@@ -116,12 +113,12 @@ const AboutUs = () => {
             </div>
           </div>
           <img
-            src={Pattern3}
+            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670062331/pattern3_ttm6gz.png"
             alt="pattern"
             className="absolute md:top-[-160px] top-[-80px] right-0 w-20 md:w-auto"
           />
           <img
-            src={Pattern2}
+            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670062331/pattern2_olfm3o.png"
             alt="pattern"
             className="absolute md:top-[-100px] top-[-80px] left-0 w-20 md:w-auto"
           />
