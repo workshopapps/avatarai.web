@@ -117,12 +117,18 @@
     /* max-width: 1000px; */
      display:flex;
      flex-wrap: wrap;
+     max-width: 1200px;
    /*overflow-x: scroll; */
     /* place-items: center; */
     /* margin: 4em; */
     
 }
 
+.vic_x {
+   
+    right: 0px;
+    top: 30px;
+}
 
 .vic_img_and_direction ::-webkit-scrollbar{
     background-color: #1570ef0a;
