@@ -37,16 +37,16 @@ const Login = ({ props }) => {
 		onError: () => console.log('Login with Google Failed'),
 	});
 	let mail;
-	function getemail() {
-		if (localStorage.getItem('opt_mail') !== '') {
-			mail = localStorage.getItem('opt_mail').slice(1, -1);
-		}
-		else
-		{
-			localStorage.setItem("opt_mail", JSON.stringify(mail))
-		}
-	}
-	getemail();
+	// function getemail() {
+	// 	if (localStorage.getItem('opt_mail') !== '') {
+	// 		mail = localStorage.getItem('opt_mail').slice(1, -1);
+	// 	}
+	// 	else
+	// 	{
+	// 		localStorage.setItem("opt_mail", JSON.stringify(mail))
+	// 	}
+	// }
+	// getemail();
 
 	/** Remember to pass user data to api for storage */
 	const url = `${import.meta.env.VITE_API_URL}/api/user/login`;
@@ -145,7 +145,7 @@ const Login = ({ props }) => {
 								name="email"
 								type="email"
 								id="email"
-								value={mail}
+								// value={mail}
 								required
 								onClick={getemail}
 								{...register('username', {
