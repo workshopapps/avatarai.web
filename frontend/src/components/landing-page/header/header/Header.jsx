@@ -17,7 +17,7 @@ const Header = () => {
         </p>
 
         <Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn bat-btn">
-          <Link to="/Signupfirst"> Generate Avatars </Link>
+          <Link to="/Signup"> Generate Avatars </Link>
         </Button>
       </div>
       <div className="bat-header-overlay"></div>

@@ -16,7 +16,7 @@ const Learn = () => {
                 <p>Access every course ranging from beginner level to expert level and up your game in the web3 space without any hassle. <br/>
                     These courses are scrutinized by top industry experts and folks who love what we are doing. Get in here and discover what works for you.
                 </p>
-                <Link to='/signupfirst'>
+                <Link to='/signup'>
                     <Button className="social-btn">
                         Start Learning                    
                     </Button>
