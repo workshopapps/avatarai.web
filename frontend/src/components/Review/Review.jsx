@@ -5,6 +5,7 @@ import good from "./assets/good.png";
 import emptyStar from "./assets/emptyStar.png";
 import goldStar from "./assets/goldStar.png";
 import { useEffect, useState, useRef } from "react";
+import Button from "../landingPage/Button/Button";
 
 export default function Review() {
   const [rating, setRating] = useState(0);
@@ -106,7 +107,7 @@ export default function Review() {
             placeholder="Your email address"
           />
         </label>
-        <button
+        <Button
           disabled={!disabled}
           type="submit"
           className={styles.submit}
@@ -115,7 +116,7 @@ export default function Review() {
           }}
         >
           Submit your review
-        </button>
+        </Button>
       </form>
       <div className={styles.reviewList}>
         <h3>Other reviews</h3>
@@ -193,7 +194,7 @@ function Popup({ setShowPopup }) {
             community help us to constantly improve the Tapeart EXPERIENCE
           </p>
           <div className={styles.popupBtn}>
-            <button onClick={() => setShowPopup(false)}>ok</button>
+            <Button onClick={() => setShowPopup(false)}>ok</Button>
           </div>
         </div>
       </div>

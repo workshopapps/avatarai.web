@@ -1,6 +1,7 @@
 import React from 'react'
 import './final.css'
 import { Link } from 'react-router-dom'
+import Button from '../../landingPage/Button/Button'
 
 const Final = () => {
   return (
@@ -9,7 +10,7 @@ const Final = () => {
         <Link to='/signup'>
           <button className="social-btn">
             Sign up for free
-          </button>
+          </Button>
         </Link>  
     </div>
   )

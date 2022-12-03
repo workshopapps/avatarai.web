@@ -189,12 +189,12 @@ const Login = ({ props }) => {
 								</Link>
 							</div>
 						</div>
-						<button
+						< Button
 							type="submit"
 							className="bg-[#8B70E9] text-white font-nunito font-bold text-lg lg:text-xl p-4  rounded-lg"
 						>
 							{loading ? 'Loading...' : 'Login'}
-						</button>
+						</ Button>
 					</form>
 					<div className="h-7 lg:h-10"></div>
 					<div

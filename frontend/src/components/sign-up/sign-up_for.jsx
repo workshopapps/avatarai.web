@@ -3,6 +3,7 @@ import logo_opt from './images/sign_up/logo.png';
 import info_opt from './images/sign_up/info_outline.png';
 import { Link, useNavigate } from 'react-router-dom';
 import './signup.css';
+import Button from "../landingPage/Button/Button";
 let handleclick;
 let state;
 
@@ -41,7 +42,7 @@ export default function SignUp_for (){
                     <input id='myinput_opt' placeholder='https://www.twitter.com/username' type='text'  /><br/>
                     <label>Instagram</label><br/>
                     <input id='myinput_opt' placeholder='https://www.instagram.com/username' type='text'  /><br/>
-                    <button className='mybutton_opt' id='mybutton_opt' type='submit'>Continue</button>
+                    <Button className='mybutton_opt' id='mybutton_opt' type='submit'>Continue</Button>
                 </div>
 
             </form>

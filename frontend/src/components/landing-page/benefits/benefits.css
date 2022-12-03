@@ -27,6 +27,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.viewBtn{
+  margin: 2rem 0;
+}
 #anchor {
   font-family: "clash_displayregular";
   color: #929292;
