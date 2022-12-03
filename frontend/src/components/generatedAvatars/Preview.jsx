@@ -11,6 +11,7 @@ import SearchComponent from "../DashboardSearchComponent/SearchComponent";
 import SidebarEye from "../Desktop_1/SidebarEye";
 import Menu from "../createAvatar/images/menu.svg";
 import MobileLogo from "../createAvatar/images/mobileLogo.svg";
+import Button from "../landingPage/Button/Button";
 
 function Preview() {
   return (
@@ -36,7 +37,7 @@ function Preview() {
               <img src={User} alt="user-pic" />
               <img src={Right} alt="right" />
             </div>
-            <button type="submit">Generate Avatar</button>
+            <Button type="submit">Generate Avatar</Button>
           </div>
         </div>
       </div>

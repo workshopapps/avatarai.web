@@ -38,7 +38,7 @@
         font-size: x-large;
         margin-bottom: 10px;
     }
-    .barner button{
+    .barner .barnerBtn{
         padding: 9px;
         font-size: medium;
     }
@@ -51,7 +51,7 @@
         padding: 15px !important;
         width: 100vw;
     }
-    .barner button{
+    .barner .barnerBtn{
         padding: 5px;
         padding-left: 10px;
         padding-right: 10px;

@@ -148,13 +148,13 @@ const ImageUpload = () => {
                 {/* {labelText} */}
               </label>
             </div>
-            <button
+            <Button
               type="button"
               className="aso-dd2-btn"
               onClick={handleUpload}
             >
               Upload
-            </button>
+            </Button>
           </form>
         </div>
       )}

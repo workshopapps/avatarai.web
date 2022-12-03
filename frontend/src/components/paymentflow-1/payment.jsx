@@ -4,6 +4,7 @@ import PaymentFlow11 from '../paymentFlow-1.1/paymentFlow1.1';
 import Logo from './images/logo.svg'
 import Close from './images/close-drop.svg'
 import './payment.css';
+import Button from '../landingPage/Button/Button';
 
 
 const Payment = ()=>{
@@ -68,7 +69,7 @@ const Payment = ()=>{
                     <div id='cbk-drop' className='cbk-drop drop'>
                         <div className='flex w-full justify-between'>
                             <img src={Logo} />
-                            <button onClick={()=>{dropdown('none', 'block')}}>Close<img className='inline mb-1' src={Close} /></button>
+                            <Button onClick={()=>{dropdown('none', 'block')}}>Close<img className='inline mb-1' src={Close} /></Button>
                         </div>
                         <div className='flex w-full justify-between mt-5 mb-10'>
                             <div>
@@ -104,7 +105,7 @@ const Payment = ()=>{
                             <p>Per Month</p>
                         </div>
                         <div className='dan-view-details'>
-                            <button className='text-violet-500' onClick={() => {dropdown('block', 'block')}}>View details <img className='inline cbk-rot' src={Close}/></button>
+                            <Button className='text-violet-500' onClick={() => {dropdown('block', 'block')}}>View details <img className='inline cbk-rot' src={Close}/></Button>
                         </div>
                     </div>
                     <div className='dan-details'>
@@ -398,7 +399,7 @@ const Payment = ()=>{
                             <input type='checkbox'/>
                             <p class='text-[#919191;] '>Save card details</p>
                         </div>
-                        <button className='btn' onClick={() => toogleFlow1('block')}>Subscribe</button>
+                        <Button className='btn' onClick={() => toogleFlow1('block')}>Subscribe</Button>
                     </form>
                     <div className='dan-confirmation'>
                         <p>By confirming your subscription, you allow Generated Media, Inc. to charge your

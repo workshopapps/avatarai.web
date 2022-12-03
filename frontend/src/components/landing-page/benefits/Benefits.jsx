@@ -3,7 +3,7 @@ import "./benefits.css";
 import vector from "./Vector.png";
 import Vector2 from "./Vector2.png";
 import { Link } from "react-router-dom";
-
+import Button from "../../landingPage/Button/Button";
 const Benefits = () => {
   const [one, setOne] = React.useState(false);
   const [two, setTwo] = React.useState(false);
@@ -116,9 +116,10 @@ const Benefits = () => {
             </p>}
           </div> */}
         </div>
-        <Link to="/FAQ">
-          <button className="bat3-btn">View All</button>
-        </Link>
+
+        <Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn viewBtn">
+          <Link to="/FAQ"> View All </Link>
+        </Button>
       </div>
     </section>
 

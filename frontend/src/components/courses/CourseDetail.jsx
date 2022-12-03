@@ -14,6 +14,7 @@ import World from "../courses/images/world.png";
 import Schedule from "../courses/images/schedule.png";
 import Time from "../courses/images/time.png";
 import Message from "../courses/images/message.png";
+import Button from "../landingPage/Button/Button";
 
 const CourseDetail = () => {
   const { detailId } = useParams();
@@ -100,21 +101,21 @@ const CourseDetail = () => {
               </span>
             </p>
             <p className="text-[#1C1C1E] py-2">{detail.about}</p>
-            <button className="bg-[#7454E5] w-full flex items-center justify-center md:hidden text-[#fff] gap-2 mt-2 rounded-[4px] py-4 text-center font-medium text-[13px]">
+            <Button className="bg-[#7454E5] w-full flex items-center justify-center md:hidden text-[#fff] gap-2 mt-2 rounded-[4px] py-4 text-center font-medium text-[13px]">
               <span>
                 <img src={Lock} alt="lock" />
               </span>
               Enroll
-            </button>
+            </Button>
           </div>
 
           <div className="w-full md:flex items-center my-4 justify-between gap-5 hidden">
-            <button className="bg-[#7454E5] w-[50%] flex items-center justify-center text-[#fff] gap-2 mt-2 rounded-[4px] py-4 text-center font-medium text-[13px]">
+            <Button className="bg-[#7454E5] w-[50%] flex items-center justify-center text-[#fff] gap-2 mt-2 rounded-[4px] py-4 text-center font-medium text-[13px]">
               <span>
                 <img src={Lock} alt="lock" />
               </span>
               Enroll
-            </button>
+            </Button>
 
             <div className="w-[50%]">
               <p className="font-bold text-sm md:text-base text-[#333333]">

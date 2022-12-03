@@ -3,6 +3,7 @@ import State_options from "./state_options.component";
 import style from "./profile.module.css"
 
 import { useState } from "react";
+import Button from "../landingPage/Button/Button";
 const defaultFields = {
   firstName: "",
   lastName: "",
@@ -217,22 +218,22 @@ const Profile = () => {
                   />
                 </fieldset>
                 <div className="flex justify-between md:justify-around">
-                  <button
+                  <Button
                     onClick={change_editing_status}
                     className="border border-[#22125A] p-[1.5rem] px-[2rem] md:px-[3.5rem]
                   mt-[1.5rem] text-[#22125A] rounded-[8px]
               "
                   >
                     Cancel
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     onClick={save_details}
                     className="bg-[#22125A] p-[1.5rem]  px-[2rem] md:px-[3.5rem] text-[white]
                   mt-[1.5rem] rounded-[8px]
               "
                   >
                     save
-                  </button>
+                  </Button>
                 </div>
               </>
             ) : (
@@ -346,14 +347,14 @@ const Profile = () => {
                   />
                 </fieldset>
                 <div className="flex justify-center md:justify-end">
-                  <button
+                  <Button
                     onClick={change_editing_status}
                     className={`bg-[#22125A] 
                 p-[1.5rem]  px-[3.5rem] text-[white] rounded-[8px] mt-[1.5rem]
                ${style.edit}`}
                   >
                     Edit Profile
-                  </button>
+                  </Button>
                 </div>
               </>
             )}

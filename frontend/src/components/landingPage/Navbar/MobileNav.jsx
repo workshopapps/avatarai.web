@@ -37,10 +37,10 @@ const MobileNav = ({navClose}) => {
           </li>
         </ul>
         <div className=" w-full flex flex-col items-start justify-start gap-y-5" >
-          <button className="inline-flex justify-center items-center px-8 py-3  border border-[#8B70E9]  
+          <Button className="inline-flex justify-center items-center px-8 py-3  border border-[#8B70E9]  
           rounded-[8px] font-semibold text-md text-[#8B70E9] bg-white transition ease-in-out duration-150 cbk-mobile-login-btn" >
           <Link to="/Login">  Log in</Link>
-          </button>
+          </Button>
         
 
           <Button className="text-white bg-[#8B70E9] cbk-mobile-login-btn"><Link to="/Signupfirst"> Sign up </Link></Button>

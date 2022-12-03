@@ -48,7 +48,7 @@ const Contact = () => {
             </div>
             <Foooter />
         </div>
-    );
-}
- 
+  );
+};
+
 export default Contact;

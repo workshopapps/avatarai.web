@@ -3,6 +3,7 @@ import Logo from './images/logo.svg'
 import Close from './images/close.svg'
 import './paymentflow1.2.css'
 import { Link } from 'react-router-dom'
+import Button from '../landingPage/Button/Button'
 
 function PaymentFlow12(props){
     useEffect(()=>{displayModal(props.display)}, [props.display])
@@ -30,13 +31,13 @@ function PaymentFlow12(props){
                         <input type='number' data-testid='input'/><br/>
                         <p className='hidden mt-5 w-9/12 max-[768px]:block'>A token should be sent to you within two minutes</p>
                         <Link to='/Paymentauth'>
-                            <button className='bg-violet-500 text-white w-1/2 p-2 rounded-md mt-7 mb-5 authorize'>Authorize</button>
+                            <Button className='bg-violet-500 text-white w-1/2 p-2 rounded-md mt-7 mb-5 authorize'>Authorize</Button>
                         </Link>
                     </form>
                     <p className='max-[768px]:hidden'>A token should be sent to you within two minutes</p>
-                    <button className='mt-6 mb-10 text-violet-500 max-[768px]:mt-4' data-testid='cancel-btn' onClick={() => {props.resetFlow2('none')}}>Cancel</button>
+                    <Button className='mt-6 mb-10 text-violet-500 max-[768px]:mt-4' data-testid='cancel-btn' onClick={() => {props.resetFlow2('none')}}>Cancel</Button>
                 </div>
-                <button className='text-violet-500 mt-5 hidden max-[768px]:block close' data-testid='cancel-btn' onClick={() => {props.resetFlow2('none')}}><img src={Close} className='inline'/>Cancel Payment</button>
+                <Button className='text-violet-500 mt-5 hidden max-[768px]:block close' data-testid='cancel-btn' onClick={() => {props.resetFlow2('none')}}><img src={Close} className='inline'/>Cancel Payment</Button>
             </div>
         </div>
     )
