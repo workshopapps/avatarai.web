@@ -8,7 +8,7 @@ import cat_icon from "./Cat Pot.svg";
 import Couple from "./Couple posing.svg";
 import other from "./Decision.svg";
 import male_icon from "./User Male.svg";
-import one_icon from "./oneicon.png";
+
 import prog from "./prog.svg";
 import progM from "./prog2.svg";
 import { useState } from "react";
