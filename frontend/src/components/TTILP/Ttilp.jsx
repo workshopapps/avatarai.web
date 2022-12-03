@@ -1,8 +1,6 @@
 import "./TTILP.css";
 import Get_started from "./Get_started";
-import Heroimg from "./img/heroimg.png";
 import Creative from "./Creative";
-import Hero_img from "./img/heroimg2.png";
 import Button from "./Button";
 // import Navbar from "../landingPage/Navbar/Navbar";
 import Faq from './../faq/index'
@@ -26,8 +24,14 @@ export default function Ttilp() {
         </div>
 
         <div className="vic_hero_img_div">
-          <img src={Heroimg} className="imageone" />
-          <img src={Hero_img} className="imagetwo" />
+          <img
+            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670068758/heroimg_tn23dp.png"
+            className="imageone"
+          />
+          <img
+            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670068759/heroimg2_ln9wfs.png"
+            className="imagetwo"
+          />
         </div>
       </div>
 

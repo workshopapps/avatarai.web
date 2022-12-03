@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { SideBar } from './SideBar';
 import { TopNav } from './TopNav';
+import {useAuth} from "../../../context/auth-context";
 
-const Dashboardlayout = ({ children }) => {
+
+
+const Dashboardlayout = ({ children, title, text }) => {
 	const [show, setShow] = useState(false);
 	const [profile, setProfile] = useState(false);
+  const user = useAuth()
+  console.log(user, "from najjiv")
+
 
 	return (
     <>
@@ -14,6 +20,8 @@ const Dashboardlayout = ({ children }) => {
           <div className="w-full h-screen overflow-y-auto">
             <div className="mx-auto py-[36px] px-3 lg:px-6 ">
               <TopNav
+                title={title}
+                text={text}
                 show={show}
                 setShow={setShow}
                 profile={profile}
