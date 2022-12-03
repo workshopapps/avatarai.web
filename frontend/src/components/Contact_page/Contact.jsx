@@ -6,6 +6,7 @@ import Foooter from "../footer/Foooter";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { NavContext, pages } from "../../../context/nav-context";
+import Button from "../landingPage/Button/Button";
 // import { Link } from "react-router-dom";
 
 const Contact = () => {
@@ -27,9 +28,9 @@ const Contact = () => {
           <p className="text-white font-semibold text-5xl mb-5">
             How Can We Help You ?
           </p>
-          <button className="text-white bg-violet-500 p-3 rounded-md">
+          <Button className="text-white bg-violet-500 p-3 rounded-md">
             Send A Message
-          </button>
+          </Button>
         </div>
       </div>
       <div className="flex max-[1000px]:block">
@@ -76,9 +77,9 @@ const Contact = () => {
               required
             />
           </div>
-          <button className="text-white bg-violet-500 p-3 rounded-md w-full mt-5">
+          <Button className="text-white bg-violet-500 p-3 rounded-md w-full mt-5">
             Contact Us
-          </button>
+          </Button>
         </form>
         <img
           className="w-1/2 contact-img max-[1000px]:w-3/4"

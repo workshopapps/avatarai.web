@@ -3,6 +3,7 @@ import style from "./faqHero.module.css";
 import searchIcon from "./searchIcon.svg";
 import buttonSearch from "./buttonSearch.svg";
 import { useState, useEffect } from "react";
+import Button from "../../landingPage/Button/Button";
 
 const getInnerWidth = () => {
   const { innerWidth } = window;
@@ -51,13 +52,13 @@ const FaqHero = () => {
             }`}
             className={style.input}
           />
-          <button>{innerWidth < 480 ? <div
+          <Button>{innerWidth < 480 ? <div
           style={{
             backgroundImage: `url(${buttonSearch})`,
             width: '20px',
             height: '20px'
           }}>
-          </div> : "Search"}</button>
+          </div> : "Search"}</Button>
         </form>
       </div>
     </section>
