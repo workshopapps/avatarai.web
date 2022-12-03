@@ -1,5 +1,4 @@
 import React from "react";
-import CallImg from "./img/rafiki.svg";
 import { Link } from "react-router-dom";
 import Button from "../landingPage/Button/Button";
 
@@ -23,7 +22,7 @@ const ContactUs = () => {
       </div>
       <div className="w-full flex items-end justify-end">
         <img
-          src={CallImg}
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670061110/rafiki_zlcbsw.png"
           alt="Call center man"
           className="w-full md:w-[80%] z-10"
         />
