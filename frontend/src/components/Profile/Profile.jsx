@@ -25,8 +25,8 @@ const Profile = () => {
 
   return (
     <>
+    <Sidebar />
       <main className="aso-profile">
-        <Sidebar />
         <section className="aso-profile-section">
           <div className="aso-profile-header">
             <div>
