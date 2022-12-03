@@ -1,13 +1,11 @@
 import BuyPriceBtn from "./BuyPriceBtn";
 import React from "react";
 
-function PriceCards({
+function PriceCardOne({
   title,
   amount,
   bg,
   top,
-  feature,
-  feature2,
   font,
   background,
   text,
@@ -23,24 +21,31 @@ function PriceCards({
           <h1 className="text-5xl font-bold font-jakarta">{amount}</h1>
           <p>/month</p>
         </div>
-        <p className=" py-4">
+        {/* <p className=" py-4">
           All can have random results and may include artistic nudes, erotic or
           otherwise shocking images, if you do not want that and are sensitive,
           we recommend you to NOT use the site!
-        </p>
-        <div>{feature}</div>
-        <div>{feature2}</div>
-        <hr className=" vnc_hr" />
-        <div className="py-2">
-          <span>4k avatars are</span> 4096x4096
-        </div>
-        <hr className="vnc_hr" />
-        <div>{feature}</div>
-        <div>{feature2}</div>
+        </p> */}
+        <ul>
+          <li>Access to create up to 10 different digital characters daily</li>{" "}
+          <hr className=" vnc_hr" />
+          <li>
+            Access to change the avatar's hair or cloth up to 10 times daily
+          </li>{" "}
+          <hr className=" vnc_hr" />
+          <li>Choose from 200+ outfits, 100+ shoes, 100+ accessories</li>{" "}
+          <hr className=" vnc_hr" />
+          <li>Access to View different activities on the web app</li>{" "}
+          <hr className=" vnc_hr" />
+          <li>
+            Limited access to share generated avatars directly from the web app
+            to other platforms
+          </li>
+        </ul>
       </div>
       <BuyPriceBtn top={top} background={background} text={text} />
     </section>
   );
 }
 
-export default PriceCards;
+export default PriceCardOne;
