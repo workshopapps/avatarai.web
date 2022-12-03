@@ -1,19 +1,31 @@
+import Plan from "./Plan";
+
 const Payment = () => {
   return (
-    <div className="flex flex-col items-center">
-      <div className="py-8 px-6 flex flex-col gap-5 max-w-lg">
-        <div className="h-10 w-10">
+    <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-center lg:pt-16">
+      <div className="w-full max-w-lg hidden lg:flex ">
+        <div className="flex flex-col py-8 px-6 items-center gap-10">
+          <Plan />
+          <div>
+            <img src="/payment-illustration.svg" />
+          </div>
+          <div className="max-w-[400px]">
+            <p className="font-nunito font-bold text-base text-[#595959]">
+              4K avatars are 4096x4096. AI can have random results and may
+              include artistic nudes, erotic or otherwise shocking images, if
+              you do not want that and are sensitive, we recommend you to NOT
+              use this site!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="py-8 px-6 flex flex-col gap-5 w-full max-w-lg">
+        <div className="h-10 w-10 lg:hidden">
           <img src="/tapart.svg" />
         </div>
         <div className="flex flex-col gap-8 items-center">
-          <div className="flex flex-col items-center">
-            <p className="font-nunito text-base">Basic</p>
-            <div className="flex flex-row gap-2 items-center">
-              <span className="font-nunito font-semibold text-2xl">$14</span>
-              <span className="font-nunito text-base">/</span>
-              <span className="font-nunito text-base">Per Month</span>
-            </div>
-            <p className="text-[#8b70e9] font-nunito text-base">View Details</p>
+          <div className="lg:hidden">
+            <Plan />
           </div>
           <form className="flex flex-col gap-6 w-full">
             <p className="font-nunito text-base">Enter payment details</p>
@@ -76,7 +88,7 @@ const Payment = () => {
               Subscribe
             </button>
             <div>
-              <p className="text-center font-nunito text-xs">
+              <p className="text-center text-[#262626] lg:font-bold lg:text-base font-nunito text-xs">
                 By confirming your subscription, you allow Generated Media, Inc.
                 to charge your card for this payment and future payments in
                 accordance with their terms. You can always cancel your
