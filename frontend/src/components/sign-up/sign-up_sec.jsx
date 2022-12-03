@@ -3,6 +3,7 @@ import logo_opt from './images/sign_up/logo.png';
 import mail_opt from './images/sign_up/mailbox.png';
 import './signup.css';
 import {Link} from "react-router-dom";
+import Button from "../landingPage/Button/Button";
 let handleclick;
 let state;
 
@@ -34,7 +35,7 @@ export default function SignUp_sec(){
             <div className='li_opt'>A verification link has been sent to <span className="opt_mail">{mydata.slice(1, -1)}</span>, click on the link to continue</div>
 
             <div className="button_div_opt">
-               <Link to="/Login"> <button className='mybutton_opt' id='mybutton_opt' >Continue</button></Link>
+               <Link to="/Login"> <Button className='mybutton_opt' id='mybutton_opt' >Continue</Button></Link>
                 <div className="all_opt" id="--opt">Didn’t receive the e-mail? <span className='col_opt'>Resend</span></div>
             </div>
             </div>
