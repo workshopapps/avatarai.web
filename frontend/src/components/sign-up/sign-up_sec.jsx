@@ -31,7 +31,7 @@ export default function SignUp_sec(){
             {/*<img className='logo_opt logo_opt_2' src={logo_opt} alt='logo.png' />*/}
             <img className='mail_opt' src={mail_opt} alt='mail.png' />
             <div className='ch_opt'>Verify your email address</div>
-            <div className='li_opt'>A verification link has been sent to {mydata.slice(1, -1)}, click on the link to continue</div>
+            <div className='li_opt'>A verification link has been sent to <span className="opt_mail">{mydata.slice(1, -1)}</span>, click on the link to continue</div>
 
             <div className="button_div_opt">
                <Link to="/Login"> <button className='mybutton_opt' id='mybutton_opt' >Continue</button></Link>
