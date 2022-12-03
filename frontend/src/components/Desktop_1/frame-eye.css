@@ -1,4 +1,4 @@
-.vnc-main {
+/* .vnc-main {
 
   display: grid;
   place-content: center;
@@ -81,4 +81,90 @@
   .vnc-selection {
     padding: 0 1.3rem 1.3rem;
   }
+} */
+
+.vnc-main {
+    display: grid;
+    place-content: center;
+    padding: 1rem;
+    width: 100%;
+}
+
+.vnc-icon-image {
+    min-width: 4rem
+}
+
+.vnc-icon {
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.vnc-gender {
+    display: flex;
+    gap: 1rem;
+    flex: 0, 0, 33.3333333%;
+}
+
+.vnc-text {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.vnc-text h2 {
+    font-weight: 600;
+    font-size: clamp(1rem, 4vw, 2rem);
+}
+
+.vnc-text p {
+    font-size: clamp(12px, 3vw, 16px);
+}
+
+.vnc-selection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3rem .5rem;
+    border-radius: 16px;
+    text-align: center;
+    background-color: #FCFAFF;
+    width: 100%;
+    max-width: calc(100%-2rem);
+}
+
+.vnc-selection.active {
+    border: 4px solid #8B70E9;
+}
+
+.vnc-selection p {
+    padding: .5rem 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.vnc_proceed {
+    text-align: center;
+    margin: 3rem auto;
+    background-color: #8B70E9;
+    color: white;
+    padding: .5rem 2rem;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.input_btn {
+    font-size: 20px;
+    font-weight: 700;
+    padding: .5rem 2rem;
+    cursor: pointer;
+    background-color: #8B70E9;
+}
+
+@media screen and (max-width:490px) {
+    .vnc-gender {
+        gap: 2rem;
+    }
+    .vnc-selection {
+        padding: 0;
+    }
 }

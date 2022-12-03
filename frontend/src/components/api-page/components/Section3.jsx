@@ -1,5 +1,7 @@
+import Button from "../../landingPage/Button/Button";
+
 const Section3 = () => {
-	return (
+  return (
     <div>
       <div className="w-full py-20 bg-[#F4F5F6]">
         <div className="max-w-[1240px] mx-auto px-5 flex flex-col justify-center">
@@ -15,12 +17,12 @@ const Section3 = () => {
             alt=""
           />
           <div className="flex justify-center">
-            <button
+            <Button
               style={{ border: "1px solid" }}
               className="px-[26px] py-[12px] outline-none normal-case border border-[#8B70E9] rounded-lg bg-[#ffffff] text-[#8B70E9] mt-[49px]"
             >
               View all features
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -61,9 +63,9 @@ const Section3 = () => {
                   your avatars.
                 </p>
                 <div className="flex justify-center">
-                  <button className="px-[26px] py-[12px] outline-none normal-case border border-[#333333] rounded-lg bg-[#333333] text-[#ffffff] mt-[2rem] md:mt-[70px]">
+                  <Button className="px-[26px] py-[12px] outline-none normal-case border border-[#333333] rounded-lg bg-[#333333] text-[#ffffff] mt-[2rem] md:mt-[70px]">
                     Create sandbox account
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>
