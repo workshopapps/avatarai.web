@@ -133,6 +133,7 @@
     background-color: rgba(0, 0, 0, 0.9);
     color: white;
     border-radius: 5px;
+    cursor: pointer;
 
 }
 
@@ -198,7 +199,6 @@
     .vic_x {
         left: 75%;
        top: 15%;
-       
         background-color: rgba(0, 0, 0, 0.9);
         color: white;
         border-radius: 5px;

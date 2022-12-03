@@ -19,8 +19,6 @@ import Her from "../desktop_4/img/her.png";
 import Content from "../Desktop_3/Content";
 import add from "./add.png";
 
-
-
 // import axios from "axios";
 
 const ImageUpload = () => {
@@ -34,64 +32,56 @@ const ImageUpload = () => {
 
   const handleFile = (e) => {
     let file = e.target.files;
-    // setImageUpload({ file: file });
+    setImageUpload({ file: file });
     const selectedFilesArray = Array.from(file);
-    console.log(selectedFilesArray);
+    // console.log(selectedFilesArray);
     const imagesArray = selectedFilesArray.map((file) => {
       return URL.createObjectURL(file);
     });
-    setSelectedImages(imagesArray);
+    setSelectedImages((previousImages) => previousImages.concat(imagesArray));
     setShow(false);
     setShowAlertLink(true);
   };
 
+  console.log(selectedImages);
 
-  // const storeItem = function (item) {
+  // getting email from localhost
+  let mail;
+  let personality;
+  function getItems() {
+    if (
+      localStorage.getItem("opt_mail") !== "" &&
+      localStorage.getItem("personality") !== ""
+    ) {
+      mail = localStorage.getItem("opt_mail").slice(1, -1);
+      personality = localStorage.getItem("personality").slice(1, -1);
+      console.log(personality);
+    }
+  }
+  getItems();
 
-  //   let items;
-  //   if (localStorage.getItem("items") === null) {
-  //     items = [];
-  //     items.push(item);
-  //     localStorage.setItem("items", JSON.stringify(items));
-  //   } else {
-  //     items = JSON.parse(localStorage.getItem("items"));
-  //     let i;
-  //     for(i = 0; i < items.length; i++) {
-  //       if(item === items[i]){
-  //         localStorage.setItem("items", JSON.stringify(items));
-  //       }
-        
-  //     }
-  //     items.push(item);
-  //     localStorage.setItem("items", JSON.stringify(items));
-      
-  //   }
-  // };
-  // const getItemsFromStorage = function () {
-  //   let items;
-  //   if (localStorage.getItem("items") === null) {
-  //     items = [];
-  //   } else {
-  //     items = JSON.parse(localStorage.getItem("items"));
-  //   }
-  //   return items;
-  // };
+  async function sendData() {
+ 
 
-  // // function to handle adding more files after preview
-  // const handleFile2 = (e) => {
-  //   let file = e.target.files;
-  //   // setImageUpload({ file: file });
-  //   const selectedFilesArray = Array.from(file);
-  //   console.log(selectedFilesArray);
-  //   const imagesArray = selectedFilesArray.map((file) => {
-      
-  //     return URL.createObjectURL(file);
-  //   });
-  //   localStorage.setItem("imagesArray", JSON.stringify(items));
-  //   setSelectedImages(imagesArray);
-  //   setShow(false);
-  //   setShowAlertLink(true);
-  // };
+    let formdata = new FormData();
+    formdata.append("file", selectedImages);
+    formdata.append("email", mail);
+ 
+    let result = await fetch("https://zuvatar.hng.tech/api/v1/avatar", {
+      method: "POST",
+      // body: JSON.stringify(formdata),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      data: formdata,
+
+    });
+    result = await result.json();
+    console.warn("result", result)
+  }
+
+
 
   const handleUpload = (e) => {
     let file = imageUpload;
@@ -221,14 +211,20 @@ const ImageUpload = () => {
             {selectedImages &&
               selectedImages.map((image, index) => {
                 return (
-                  <div key={image} className="vic_her_div relative"
-                  
+                  <div
+                    key={image}
+                    className="vic_her_div relative"
+                    // onChange={storeItem(image)}
                   >
-                      <img src={image} className="vic_her" />
-                      <div
+                    <img src={image} className="vic_her" />
+                    <button
                       id="closeSideBar"
                       className=" mr-8 vic_x"
-                    
+                      onClick={() =>
+                        setSelectedImages(
+                          selectedImages.filter((e) => e !== image)
+                        )
+                      }
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -241,21 +237,17 @@ const ImageUpload = () => {
                         fill="none"
                         strokeLinecap="round"
                         strokeLinejoin="round"
+                        key={image}
                       >
                         <path stroke="none" d="M0 0h24v24H0z" />
                         <line x1={18} y1={6} x2={6} y2={18} />
                         <line x1={6} y1={6} x2={18} y2={18} />
                       </svg>
-                    </div>
-
-                  
+                    </button>
                   </div>
                 );
               })}
 
-            {/* : ( */}
-
-            {/* ) */}
             <form action="" className="vic-dd2-form">
               <div className="aso-dd2-input">
                 {/* <div> */}
@@ -277,10 +269,11 @@ const ImageUpload = () => {
           {/* <img src={right} className="vic_right" /> */}
           {/* </div> */}
           <div className="vic_div_div">
-            <Link to="/Dashboard_5" className="vic_link">
+            <Link to="/Dashboard_5" className="vic_link" onClick={sendData}>
               <Button
                 className="bg-[#8B70E9] w-100 w-lg-120 text-white"
                 children="Generate Avatar"
+                
               />{" "}
             </Link>
           </div>

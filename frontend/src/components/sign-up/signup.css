@@ -1,23 +1,23 @@
 
-.house_opt input[type=text]:focus{
+/* .house_opt input[type=text]:focus{
     border: 0px solid #84CAFF;
     outline: #84CAFF;
 }
 .house_opt input[type=email]:focus{
     border: 0px solid #84CAFF;
     outline: #84CAFF;
-}
+} */
 .opt_mail{
     color: #6C6191;
 }
-.house_opt input:focus:invalid{
+/* .house_opt input:focus:invalid{
     border: 1px solid #F89687;
     box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #FFD3CC;
 }
 .house_opt input:focus:valid{
     border: 1px solid #84CAFF;
     box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #D1E9FF;
-}
+} */
 .house_opt {
     position: relative;
     padding-bottom: 45px;
