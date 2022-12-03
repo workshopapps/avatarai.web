@@ -42,7 +42,7 @@ const ForgotPassword = () => {
             placeholder="Email address"
             className={`border ${
               errors.sendEmail && "border-red-600"
-            } p-3 w-[77%] ml-[10%] my-1 rounded-lg outline-none max-[480px]:w-[100%]mt-0`}
+            } p-4 w-[77%] ml-[10%] my-1 rounded-lg outline-none max-[480px]:w-[100%]mt-0`}
             {...register("sendEmail", {
               required: true,
               pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
@@ -53,7 +53,7 @@ const ForgotPassword = () => {
               Please enter a valid email address
             </span>
           )}
-          <Button className="w-[77%] mt-7 bg-[#8B70E9] text-white font-[Nunito] text-[22px] ml-[10%] max-[480px]:w-[100%]pr-[50%]">
+          <Button className="w-[77%] mt-6 bg-[#8B70E9] text-white font-[Nunito] text-[22px] ml-[10%] max-[480px]:w-[100%]pr-[50%]">
             {!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
               watchEmail
             ) ? (

@@ -28,7 +28,7 @@ export default function SignUp_first() {
     }
   };
  const [googlesignup, setgooglesignup]=useState("");
-    // 
+    
  const signup = useGoogleLogin({
   onSuccess: (tokenResponse) => setgooglesignup(tokenResponse),
   onError: () => console.log('Login with Google Failed'),
