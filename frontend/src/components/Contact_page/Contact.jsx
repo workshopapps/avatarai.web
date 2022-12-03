@@ -1,6 +1,8 @@
 import "./Contact.css";
 import Navbar from "../landingPage/Navbar/Navbar";
-import Footer from "../landing-page/footer/Footer";
+// import Footer from "../landing-page/footer/Footer";
+import Foooter from "../footer/Foooter";
+import FaqNewsletter from "../faq/FaqNewsletter";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { NavContext, pages } from "../../../context/nav-context";
@@ -89,7 +91,8 @@ const Contact = () => {
             src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670061925/illus_ubfd58.png"
           />
         </div>
-        <Footer />
+        <FaqNewsletter />
+        <Foooter />
       </div>
     );
 };
