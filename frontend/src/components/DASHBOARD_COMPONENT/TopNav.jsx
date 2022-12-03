@@ -2,9 +2,9 @@ import React from 'react';
 import MenuIcon from './img/menu.svg';
 import Logo from './img/logo.svg';
 import Dashboardtranslate from './dashboardtranslate';
-import ArrowDown from "./img/arrowdown.svg";
 
-export const TopNav = ({ profile, setProfile, show, setShow }) => {
+
+export const TopNav = ({ title, text, show, setShow }) => {
 	return (
     <div className="mb-[60px]">
       <nav className="pl-6">
@@ -26,10 +26,10 @@ export const TopNav = ({ profile, setProfile, show, setShow }) => {
         <div className="flex items-center justify-between gap-5">
           <div>
             <h1 className="text-[24px] md:text-[40px] text-[#000] font-bold">
-              Hello Baki,
+              {title}
             </h1>
             <p className="text-[#6c6c6c] text-sm md:text-[18px]">
-              Start generating cool avatars.
+              {text}
             </p>
           </div>
 
@@ -37,12 +37,7 @@ export const TopNav = ({ profile, setProfile, show, setShow }) => {
             <Dashboardtranslate />
           </div>
         </div>
-        <div className='flex items-center gap-5 mt-[40px]'>
-			<p className="text-[#000] text-sm md:text-[20px] font-bold">
-			  Read upload instructions
-			</p>
-			<img src={ArrowDown} alt="arrow-down" />
-		</div>
+      
       </nav>
     </div>
   );
