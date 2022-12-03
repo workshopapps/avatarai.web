@@ -1,11 +1,8 @@
-import heroBg from "./herobg.svg";
 import style from "./faqHero.module.css";
-import searchIcon from "./searchIcon.svg";
-import buttonSearch from "./buttonSearch.svg";
 import { useState, useEffect } from "react";
 import Button from "../../landingPage/Button/Button";
 
-const getInnerWidth = () => {
+const getInnerWidth = () => { 
   const { innerWidth } = window;
   return innerWidth;
 };
@@ -29,7 +26,7 @@ const FaqHero = () => {
     <section
       className={style.heroContainer}
       style={{
-        backgroundImage: `url(${heroBg})`,
+        backgroundImage: `url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670062331/herobg_yytctl.png")`,
       }}
     >
       <div className={style.centered}>
@@ -39,7 +36,7 @@ const FaqHero = () => {
           <div
             className={style.searchIcon}
             style={{
-              backgroundImage: `url(${searchIcon})`,
+              backgroundImage: `url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670062331/searchIcon_nivpev.png")`,
             }}
           ></div>
           <input
@@ -52,13 +49,19 @@ const FaqHero = () => {
             }`}
             className={style.input}
           />
-          <Button>{innerWidth < 480 ? <div
-          style={{
-            backgroundImage: `url(${buttonSearch})`,
-            width: '20px',
-            height: '20px'
-          }}>
-          </div> : "Search"}</Button>
+          <Button>
+            {innerWidth < 480 ? (
+              <div
+                style={{
+                  backgroundImage: `url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670062330/buttonSearch_lbctxk.png")`,
+                  width: "20px",
+                  height: "20px",
+                }}
+              ></div>
+            ) : (
+              "Search"
+            )}
+          </Button>
         </form>
       </div>
     </section>
