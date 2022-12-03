@@ -82,7 +82,7 @@ const AboutUs = () => {
 
         <div className="w-full">
           <img
-            src={Banner2}
+            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670026630/image1_woebre.png"
             alt="Large banner max-h-[1080px]"
             className="w-full"
           />

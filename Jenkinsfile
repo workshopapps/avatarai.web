@@ -17,7 +17,10 @@ pipeline {
 
 			steps {
 
+				sh "echo $pwd 1"
+
                 dir ('avatarai.web/frontend') {
+					sh "echo $pwd 2"
                     sh "npm i"
                     sh "npm run build"
                 }
