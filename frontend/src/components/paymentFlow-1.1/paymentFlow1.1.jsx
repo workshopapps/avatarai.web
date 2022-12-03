@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Logo from './images/logo.svg'
 import Close from './images/close.svg'
 import './paymentflow1.1.css'
+import Button from '../landingPage/Button/Button'
 
 
 function PaymentFlow11(props){
@@ -28,11 +29,11 @@ function PaymentFlow11(props){
                         <input type='number' data-testid='input' />
                         <input type='number' data-testid='input' />
                         <input type='number' data-testid='input' /><br/>
-                        <button type='submit' className='bg-violet-500 text-white w-1/2 p-2 rounded-md mt-7 mb-5 authorize' onClick={() => {props.resetFlow2('block'); props.resetFlow1()}}>Continue</button>
+                        <Button type='submit' className='bg-violet-500 text-white w-1/2 p-2 rounded-md mt-7 mb-5 authorize' onClick={() => {props.resetFlow2('block'); props.resetFlow1()}}>Continue</Button>
                     </form>
-                    <button className='mt-8 mb-10 text-violet-500' onClick={() => {props.resetFlow1()}} data-testid='cancel-btn'>Cancel</button>
+                    <Button className='mt-8 mb-10 text-violet-500' onClick={() => {props.resetFlow1()}} data-testid='cancel-btn'>Cancel</Button>
                 </div>
-               <button className='text-violet-500 mt-5 hidden max-[768px]:inline close' onClick={() => {displayModal('none')}} data-testid='cancel-btn'><img src={Close}  className='inline'/>Cancel Payment</button> 
+               <Button className='text-violet-500 mt-5 hidden max-[768px]:inline close' onClick={() => {displayModal('none')}} data-testid='cancel-btn'><img src={Close}  className='inline'/>Cancel Payment</Button> 
             </div>
     </div>
   )

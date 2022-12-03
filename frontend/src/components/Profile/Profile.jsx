@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Dashboardlayout from '../DASHBOARD_COMPONENT/DashboardLayout';
 import ProfileImg from './Profile.jpeg';
 import './Profile.css';
+import Button from '../landingPage/Button/Button';
 
 const Profile = () => {
 	const [firstName, setFirstName] = useState('');
@@ -25,17 +26,10 @@ const Profile = () => {
 	};
 
 	return (
-		<Dashboardlayout>
+		<Dashboardlayout title="Profile" text="See your personal information">
 			<main className="aso-profile">
-				{/* <Sidebar /> */}
 				<section className="aso-profile-section">
-					<div className="aso-profile-header">
-						<div>
-							<h1>Profile</h1>
-							<p>See your personal information</p>
-						</div>
-						{/* <Dashboardtranslate /> */}
-					</div>
+					
 					<div className="aso-profile-board">
 						<div className="aso-bio">
 							<img src={ProfileImg} alt="Bio Img" className="" />
@@ -116,9 +110,9 @@ const Profile = () => {
 								/>
 							</div>
 
-							<button type="submit" id="aso-btn__submit" onClick={handleSubmit}>
+							<Button type="submit" id="aso-btn__submit" onClick={handleSubmit}>
 								Save Changes
-							</button>
+							</Button>
 						</form>
 					</div>
 				</section>
