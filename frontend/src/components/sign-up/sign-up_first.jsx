@@ -54,7 +54,7 @@ export default function SignUp_first() {
   };
   const [input, setInput] = useState({
     password: "",
-    confirmPassword: "",
+    confirmPassword: " ",
   });
 
   const [error, setError] = useState({
