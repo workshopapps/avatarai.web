@@ -78,7 +78,7 @@
 
 
 .vic_her {
-    max-height: 100px;
+    height: 100px;
     width: auto;
     margin: clamp(10px, 3vw, 30px);
     /* margin-left: 0px; */
@@ -117,10 +117,23 @@
     /* max-width: 1000px; */
      display:flex;
      flex-wrap: wrap;
+     max-width: 1200px;
    /*overflow-x: scroll; */
     /* place-items: center; */
     /* margin: 4em; */
     
+}
+
+.vic_x {
+    /* left: 80%; */
+    position: absolute;
+    left: 60%;
+   top: 15%;
+   
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    border-radius: 5px;
+
 }
 
 
@@ -175,5 +188,28 @@
         align-items: center;
         justify-content: space-between;
         margin: 40px 0px 10px;
+    }
+
+    .vic_her {
+        height: 200px;
+        
+    }
+
+    .vic_x {
+        left: 75%;
+       top: 15%;
+       
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        border-radius: 5px;
+    
+    }
+   
+}
+
+@media (min-width: 768px) {
+    .vic_her {
+        height: 300px;
+        
     }
 }

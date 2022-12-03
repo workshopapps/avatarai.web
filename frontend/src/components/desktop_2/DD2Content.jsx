@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./DD2.css";
 import "../desktop_4/DD4.css";
 import arrowRightMobile from "./arrow-right-mobile.svg";
@@ -17,7 +17,9 @@ import right from "../desktop_4/img/arrowpright.png";
 import Her from "../desktop_4/img/her.png";
 // import Background from "./../DASHBOARD_COMPONENT/dashboardcomp";
 import Content from "../Desktop_3/Content";
-import add from './add.png';
+import add from "./add.png";
+
+
 
 // import axios from "axios";
 
@@ -44,19 +46,52 @@ const ImageUpload = () => {
   };
 
 
-  // function to handle adding more files after preview
-  const handleFile2 = (e) => {
-    let file = e.target.files;
-    // setImageUpload({ file: file });
-    const selectedFilesArray = Array.from(file);
-    console.log(selectedFilesArray);
-    const imagesArray = selectedFilesArray.map((file) => {
-      return URL.createObjectURL(file);
-    });
-    setSelectedImages(imagesArray);
-    setShow(false);
-    setShowAlertLink(true);
-  };
+  // const storeItem = function (item) {
+
+  //   let items;
+  //   if (localStorage.getItem("items") === null) {
+  //     items = [];
+  //     items.push(item);
+  //     localStorage.setItem("items", JSON.stringify(items));
+  //   } else {
+  //     items = JSON.parse(localStorage.getItem("items"));
+  //     let i;
+  //     for(i = 0; i < items.length; i++) {
+  //       if(item === items[i]){
+  //         localStorage.setItem("items", JSON.stringify(items));
+  //       }
+        
+  //     }
+  //     items.push(item);
+  //     localStorage.setItem("items", JSON.stringify(items));
+      
+  //   }
+  // };
+  // const getItemsFromStorage = function () {
+  //   let items;
+  //   if (localStorage.getItem("items") === null) {
+  //     items = [];
+  //   } else {
+  //     items = JSON.parse(localStorage.getItem("items"));
+  //   }
+  //   return items;
+  // };
+
+  // // function to handle adding more files after preview
+  // const handleFile2 = (e) => {
+  //   let file = e.target.files;
+  //   // setImageUpload({ file: file });
+  //   const selectedFilesArray = Array.from(file);
+  //   console.log(selectedFilesArray);
+  //   const imagesArray = selectedFilesArray.map((file) => {
+      
+  //     return URL.createObjectURL(file);
+  //   });
+  //   localStorage.setItem("imagesArray", JSON.stringify(items));
+  //   setSelectedImages(imagesArray);
+  //   setShow(false);
+  //   setShowAlertLink(true);
+  // };
 
   const handleUpload = (e) => {
     let file = imageUpload;
@@ -123,7 +158,7 @@ const ImageUpload = () => {
             </Link>
             {/* <p>2</p> */}
             <div className="imgs flex justify-center items-center w-full h-10">
-              <img src={progress} alt="" className="w-full "/>
+              <img src={progress} alt="" className="w-full " />
             </div>
           </div>
 
@@ -148,11 +183,7 @@ const ImageUpload = () => {
                 {/* {labelText} */}
               </label>
             </div>
-            <Button
-              type="button"
-              className="aso-dd2-btn"
-              onClick={handleUpload}
-            >
+            <Button type="button" className="aso-dd2-btn">
               Upload
             </Button>
           </form>
@@ -179,50 +210,72 @@ const ImageUpload = () => {
             </Link>
             {/* <p>2</p> */}
             <div className="imgs flex justify-center items-center w-full h-10">
-              <img src={three} alt="" className="w-full "/>
+              <img src={three} alt="" className="w-full " />
             </div>
           </div>
           <h3>Preview your Images</h3>
 
-          <div className="vic_img_and_direction">
-            {/* <img src={left} className="vic_left" /> */}
-            <div className="vic_image_preview_div">
-              {selectedImages &&
-                selectedImages.map((image, index) => {
-                  return (
-                    <div key={image} className="vic_her_div">
-                     
+          {/* <div className="vic_img_and_direction"> */}
+          {/* <img src={left} className="vic_left" /> */}
+          <div className="vic_image_preview_div">
+            {selectedImages &&
+              selectedImages.map((image, index) => {
+                return (
+                  <div key={image} className="vic_her_div relative"
+                  
+                  >
                       <img src={image} className="vic_her" />
-                      
+                      <div
+                      id="closeSideBar"
+                      className=" mr-8 vic_x"
+                    
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon-tabler icon-tabler-x"
+                        width={30}
+                        height={30}
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <line x1={18} y1={6} x2={6} y2={18} />
+                        <line x1={6} y1={6} x2={18} y2={18} />
+                      </svg>
                     </div>
-                     
-                  );
-                
-                })}
 
-              {/* : ( */}
+                  
+                  </div>
+                );
+              })}
 
-              {/* ) */}
-              <form action="" className="vic-dd2-form">
+            {/* : ( */}
+
+            {/* ) */}
+            <form action="" className="vic-dd2-form">
               <div className="aso-dd2-input">
                 {/* <div> */}
-              <input
-                accept="image/*"
-                multiple
-                type="file"
-                name="file"
-                id="file"
-                onChange={handleFile}
-              />
-              <label htmlFor="file">
-              {/* <label htmlFor="file" className="aso-dd2-label"> */}
-                <img src={upload} alt="" />
-              </label>
-            </div>
+                <input
+                  accept="image/*"
+                  multiple
+                  type="file"
+                  name="file"
+                  id="file"
+                  // onChange={storeItem}
+                />
+                <label htmlFor="file">
+                  {/* <label htmlFor="file" className="aso-dd2-label"> */}
+                  <img src={upload} alt="" />
+                </label>
+              </div>
             </form>
-            </div>
-            {/* <img src={right} className="vic_right" /> */}
           </div>
+          {/* <img src={right} className="vic_right" /> */}
+          {/* </div> */}
           <div className="vic_div_div">
             <Link to="/Dashboard_5" className="vic_link">
               <Button
