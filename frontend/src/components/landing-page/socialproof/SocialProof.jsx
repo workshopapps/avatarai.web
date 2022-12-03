@@ -28,7 +28,7 @@ const SocialProof = () => {
           </div>
         </div>
         <Link to='/signup'>
-          <button className="social-btn">
+          <Button className="social-btn">
             Explore more
           </Button>
         </Link>  
