@@ -6,7 +6,7 @@ import ImageUpload from './DD2Content';
 const DD2 = () => {
 	return (
 		<div>
-			<Dashboardlayout>
+			<Dashboardlayout title="Hello Baki," text="Start generating cool avatars.">
 				<ImageUpload />
 			</Dashboardlayout>
 		</div>

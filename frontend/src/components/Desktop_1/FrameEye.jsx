@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import female_icon from "./Female User.svg";
 import dog_icon from "./Dog Sit.svg";
 import cat_icon from "./Cat Pot.svg";
-import Couple from "./Couple posing.svg";
+import Couple from "./Couple-Posing.svg";
 import other from "./Decision.svg";
 import male_icon from "./User Male.svg";
 
