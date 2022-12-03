@@ -7,6 +7,10 @@ import male_icon from "./male.svg";
 import one_icon from "./oneicon.png";
 import { useState } from "react";
 
+
+let personality;
+
+
 const FrameEye = () => {
   const [list, setList] = useState([
     {
@@ -18,6 +22,11 @@ const FrameEye = () => {
       icon: female_icon,
     },
   ]);
+
+  // let personality = input.password
+  //   let item ={first_name,last_name,email,password}
+  //   // console.warn("item",item)
+  //   localStorage.setItem("opt_mail", JSON.stringify(item.email))
 
   const [toggle, setToggle] = useState(false);
   const [work, setWork] = useState(true);
@@ -34,6 +43,9 @@ const FrameEye = () => {
     }
   };
 
+  
+  
+  
   return (
     <div className="vnc-main">
       <div className="vnc-icon">
@@ -50,6 +62,13 @@ const FrameEye = () => {
               onClick={() => {
                 setToggle(e);
                 change(e);
+                console.log(index)
+                if(index === 0) {
+                  personality = "male";
+                } else {
+                  personality = "female";
+                }
+
               }}
               key={index}
               className={`vnc-selection ${e === toggle && "active"}`}
@@ -67,6 +86,7 @@ const FrameEye = () => {
               disabled={work}
               type="submit"
               value="Proceed"
+              onClick={localStorage.setItem("personality", JSON.stringify(personality))}
             />
           </Link>
         </div>
