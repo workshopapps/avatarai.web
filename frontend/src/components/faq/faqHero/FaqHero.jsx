@@ -1,4 +1,4 @@
-import heroBg from "./heroBg.svg";
+import heroBg from "./herobg.svg";
 import style from "./faqHero.module.css";
 import searchIcon from "./searchIcon.svg";
 import buttonSearch from "./buttonSearch.svg";
@@ -51,13 +51,19 @@ const FaqHero = () => {
             }`}
             className={style.input}
           />
-          <button>{innerWidth < 480 ? <div
-          style={{
-            backgroundImage: `url(${buttonSearch})`,
-            width: '20px',
-            height: '20px'
-          }}>
-          </div> : "Search"}</button>
+          <button>
+            {innerWidth < 480 ? (
+              <div
+                style={{
+                  backgroundImage: `url(${buttonSearch})`,
+                  width: "20px",
+                  height: "20px",
+                }}
+              ></div>
+            ) : (
+              "Search"
+            )}
+          </button>
         </form>
       </div>
     </section>
