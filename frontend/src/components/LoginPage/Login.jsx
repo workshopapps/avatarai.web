@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Input from "../Input/Input"
 import log from '../../assets/images/log.png';
 import Button from '../landingPage/Button/Button';
 import Navbar from '../landingPage/Navbar/Navbar';

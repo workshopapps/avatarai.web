@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useGoogleLogin } from '@react-oauth/google';
 import Button from "../landingPage/Button/Button";
+import Input from "../Input/Input"
 
 let state;
 export default function SignUp_first() {
@@ -175,27 +176,23 @@ export default function SignUp_first() {
               {/*<div style={{ display: show ? "block" : "none" }}>*/}
                 <div className='ss_opt'>
                     <div className='sss_opt'>
-                        <label htmlFor="myinput_op">First name</label>
-                        <br />
-                        <input id="myinput_op" placeholder="First Name" value={first_name} onChange={(e)=>setFirstName(e.target.value)} type="text" required />
+                        <Input label="First name" name="first name" id="myinput_op" placeholder="First Name" value={first_name} onChange={(e)=>setFirstName(e.target.value)} type="text" htmlFor="myinput_op" required />
                         <br />
                     </div>
                     <div className='sss_opt'>
-                        <label htmlFor="myinput_o">Last name</label>
-                        <br />
-                        <input id="myinput_o" value={last_name} onChange={(e)=>setLastName(e.target.value)} placeholder="Last Name" type="text" required />
+                        <Input label="Last name" name="last name" id="myinput_o" value={last_name} onChange={(e)=>setLastName(e.target.value)} placeholder="Last Name" type="text" htmlFor="myinput_o" required />
                         <br />
                     </div>
                 </div>
-
-              <label htmlFor="myinput_opt">Email</label>
-              <br />
-              <input
+              <Input
                   id="myinput_opt"
                   placeholder="Email Address"
                   value={email}
                   onChange={(e)=>setEmail(e.target.value)}
                   type="email"
+                  label="Email"
+                  name="email"
+                  htmlFor="myinput_opt"
                   required
               />
               <br />
