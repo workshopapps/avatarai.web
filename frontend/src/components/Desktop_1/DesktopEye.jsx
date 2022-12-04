@@ -10,7 +10,7 @@ import Dashboardlayout from '../DASHBOARD_COMPONENT/DashboardLayout';
 const DesktopEye = () => {
 	return (
 		<div>
-			<Dashboardlayout title="Hello Baki," text="Start generating cool avatars.">
+			<Dashboardlayout title="Hello" text="Start generating cool avatars.">
 				<div className="flex items-center gap-5 ml-6">
 					<p className="text-[#000] text-sm md:text-[20px] font-bold">Read upload instructions</p>
 					<img src={ArrowDown} alt="arrow-down" />

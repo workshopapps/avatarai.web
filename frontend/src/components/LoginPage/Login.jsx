@@ -71,6 +71,11 @@ const Login = () => {
 				localStorage.setItem('zvt_token', JSON.stringify(token));
 				localStorage.setItem('zvt_user', JSON.stringify(user));
 
+				//Get userData and save in local Storage
+				const userData = response?.data?.userData
+				localStorage.setItem('userData', JSON.stringify(userData));
+                 
+
 				//save token to state
 				setToken(token);
 				login(user);
