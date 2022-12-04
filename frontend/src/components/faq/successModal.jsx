@@ -1,6 +1,6 @@
 import image from "./images/green.png"
 import cancel from "./images/cancel.png"
-const SuccessModal =({close})=>{
+const SuccessModal =({closeModalNow})=>{
 return(
     <>
    
@@ -9,7 +9,8 @@ return(
     fixed top-[50%] md:bottom-[0%] left-[50%] translate-x-[-50%]  translate-y-[-50%] z-[9999] bg-white h-[fit-content]">
         <div className="relative p-[1.5rem] ">
             <img src={cancel} alt="" 
-            className="absolute right-[5%] top-[-4%] md:top-[-4%] font-bold w-[1.5rem]"/>
+            className="absolute right-[5%] top-[-4%] md:top-[-4%] font-bold w-[1.5rem]"
+            onClick={closeModalNow}/>
            
             <div className="flex-[100%] md:flex-[80%]">
             <div className="flex justify-center">

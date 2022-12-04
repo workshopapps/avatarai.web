@@ -6,7 +6,7 @@ import FaqNewsletter from "../faq/FaqNewsletter";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { NavContext, pages } from "../../../context/nav-context";
-import FaqNewsletter from "../faq/FaqNewsletter"
+
 import Button from "../landingPage/Button/Button";
 // import { Link } from "react-router-dom";
 

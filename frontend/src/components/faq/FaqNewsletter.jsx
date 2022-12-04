@@ -14,9 +14,17 @@ const closeModal =()=>{
   setTimeout(() => {
     setShowSuccessModal(false)
     setshowErrorModal(false)
-  }, 1500);
+  }, 3500);
  
 }
+const closeModalNow =()=>{
+  
+    setShowSuccessModal(false)
+    setshowErrorModal(false)
+ 
+ 
+}
+
 
 const resetFormField =()=>{
   setEmailField("")
@@ -134,8 +142,8 @@ subscribe(emailField)
           </div>
         </div>
       </div>
-      {showSuccessModal ? <SuccessModal></SuccessModal> : ""}
-      {showErrorModal ? <ErrorModal></ErrorModal> : ""}
+      {showSuccessModal ? <SuccessModal closeModalNow={closeModalNow}></SuccessModal> : ""}
+      {showErrorModal ? <ErrorModal closeModalNow={closeModalNow}></ErrorModal> : ""}
       
       
       
