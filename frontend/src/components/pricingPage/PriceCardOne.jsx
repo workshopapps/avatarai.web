@@ -1,15 +1,7 @@
 import BuyPriceBtn from "./BuyPriceBtn";
 import React from "react";
 
-function PriceCardOne({
-  title,
-  amount,
-  bg,
-  top,
-  font,
-  background,
-  text,
-}) {
+function PriceCardOne({ title, amount, bg, top, font, background, text }) {
   return (
     <section
       style={{ "background-color": bg, color: font }}
@@ -26,28 +18,28 @@ function PriceCardOne({
           otherwise shocking images, if you do not want that and are sensitive,
           we recommend you to NOT use the site!
         </p> */}
-        <ul className="text-lg">
-          <li className="list-item">
+        <div>
+          <p className="text-lg my-2">
             Access to create up to 10 different digital characters daily
-          </li>{" "}
+          </p>{" "}
           <hr className=" vnc_hr" />
-          <li className="list-item">
+          <p className="text-lg my-2">
             Access to change the avatar's hair or cloth up to 10 times daily
-          </li>{" "}
+          </p>{" "}
           <hr className=" vnc_hr" />
-          <li className="list-item">
+          <p className="text-lg my-2">
             Choose from 200+ outfits, 100+ shoes, 100+ accessories
-          </li>{" "}
+          </p>{" "}
           <hr className=" vnc_hr" />
-          <li className="list-item">
+          <p className="text-lg my-2">
             Access to View different activities on the web app
-          </li>{" "}
+          </p>{" "}
           <hr className=" vnc_hr" />
-          <li className="list-item">
+          <p className="text-lg my-2">
             Limited access to share generated avatars directly from the web app
             to other platforms
-          </li>
-        </ul>
+          </p>
+        </div>
       </div>
       <BuyPriceBtn top={top} background={background} text={text} />
     </section>

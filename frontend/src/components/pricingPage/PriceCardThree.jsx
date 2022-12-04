@@ -28,34 +28,34 @@ function PriceCardThree({
           otherwise shocking images, if you do not want that and are sensitive,
           we recommend you to NOT use the site!
         </p> */}
-        <ul className="text-lg">
-          <li className="list-item">
+        <div>
+          <p className="text-lg my-2">
             Create unlimited number of digital characters daily
-          </li>
+          </p>
           <hr className=" vnc_hr" />
-          <li className="list-item">
+          <p className="text-lg my-2">
             Unlimited access to change the avatar's hair, cloth, or skin color
-          </li>{" "}
+          </p>{" "}
           <hr className=" vnc_hr" />
-          <li className="list-item">
+          <p className="text-lg my-2">
             Create high resolution characters, cartoons and anime profile photos
             up to 10 times daily
-          </li>
+          </p>
           <hr className=" vnc_hr" />
-          <li className="list-item">
+          <p className="text-lg my-2">
             Access to unlimited specially designed avatars through referrals
-          </li>{" "}
+          </p>{" "}
           <hr className=" vnc_hr" />
-          <li className="list-item">
+          <p className="text-lg my-2">
             Access to save or export the AI-generated avatars in a JPG or PNG
             format at any time
-          </li>{" "}
+          </p>{" "}
           <hr className=" vnc_hr" />
-          <li className="list-item">
+          <p className="text-lg my-2">
             Unlimited access to share generated avatars directly from the web
             app to other platforms
-          </li>
-        </ul>
+          </p>
+        </div>
 
         {/* <div className="py-2">
           <span>4k avatars are</span> 4096x4096
