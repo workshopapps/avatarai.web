@@ -28,7 +28,7 @@ function PriceCardThree({
           otherwise shocking images, if you do not want that and are sensitive,
           we recommend you to NOT use the site!
         </p> */}
-        <ul>
+        <ul className="text-lg">
           <li className="list-item">
             Create unlimited number of digital characters daily
           </li>

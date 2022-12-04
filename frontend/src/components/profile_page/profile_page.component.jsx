@@ -20,6 +20,7 @@ const Profile = () => {
     e.preventDefault();
     setEditing(!editing);
   };
+  const user = JSON.parse(localStorage.getItem("userData"));
   const [formFields, setFormFields] = useState(defaultFields);
   const { firstName, lastName, email, mobileNumber, password, location } =
     formFields;
@@ -101,8 +102,8 @@ const Profile = () => {
               className={`w-[15%] md:w-[15%] ${style.profilePix}`}
             />
             <div>
-              <h3 className="font-semibold">Baki Hanma</h3>
-              <p>bakii@gmail.com</p>
+              <h3 className="font-semibold">{user?.username}</h3>
+              <p>{user?.email}</p>
             </div>
           </div>
           <form action="" className={style.form}>

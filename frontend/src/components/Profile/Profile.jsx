@@ -13,6 +13,8 @@ const Profile = () => {
 	const [location, setLocation] = useState('');
 	const [email, setEmail] = useState('');
 
+	const user = JSON.parse(localStorage.getItem("userData"));
+
 	const clearValue = () => {
 		setFirstName('');
 		setLastName('');
@@ -126,8 +128,8 @@ const Profile = () => {
 						<div className="aso-bio">
 							<img src={ProfileImg} alt="Bio Img" className="" />
 							<div className="aso-bio-details">
-								<h1>Baki Hanma</h1>
-								<p>bakii@gmail.com</p>
+								<h1>{user?.username}</h1>
+								<p>{user?.email}</p>
 							</div>
 						</div>
 						<form className="aso-form-container">

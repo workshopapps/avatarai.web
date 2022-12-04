@@ -13,9 +13,18 @@ const [showSuccessModal, setShowSuccessModal] = useState(false)
 const closeModal =()=>{
   setTimeout(() => {
     setShowSuccessModal(false)
-  }, 1000);
+    setshowErrorModal(false)
+  }, 3600);
  
 }
+const closeModalNow =()=>{
+  
+    setShowSuccessModal(false)
+    setshowErrorModal(false)
+ 
+ 
+}
+
 
 const resetFormField =()=>{
   setEmailField("")
@@ -53,14 +62,15 @@ subscribe(emailField)
           "Content-Type": "application/json"
         }
        })
-       
+       console.log(response, "from najib")
        if(response.status === 200){
        setShowSuccessModal(true)
       closeModal()
        }
     } catch (error) {
       
-      console.log(error)
+      setshowErrorModal(true)
+      closeModal()
     }
   
   }
@@ -132,8 +142,9 @@ subscribe(emailField)
           </div>
         </div>
       </div>
-      {showSuccessModal ? <SuccessModal></SuccessModal> : ""}
-
+      {showSuccessModal ? <SuccessModal closeModalNow={closeModalNow}></SuccessModal> : ""}
+      {showErrorModal ? <ErrorModal closeModalNow={closeModalNow}></ErrorModal> : ""}
+      
       
       
     </section>
