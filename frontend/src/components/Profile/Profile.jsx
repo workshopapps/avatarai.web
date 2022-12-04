@@ -140,7 +140,7 @@ const Profile = () => {
 										type="text"
 										id="first_name"
 										value={firstName}
-										placeholder="Sandra"
+										placeholder="Eddie"
 										onChange={(e) => {
 											setFirstName(e.target.value);
 										}}
@@ -153,7 +153,6 @@ const Profile = () => {
 										type="text"
 										id="last_name"
 										value={lastName}
-										placeholder="Triss"
 										onChange={(e) => {
 											setLastName(e.target.value);
 										}}
@@ -197,14 +196,14 @@ const Profile = () => {
 									type="email"
 									id="aso-email"
 									value={email}
-									placeholder="bakii@gmail.com"
+									placeholder="eddie@gmail.com"
 									onChange={(e) => {
 										setEmail(e.target.value);
 									}}
 								/>
 							</div>
 
-							<Button type="submit" id="aso-btn__submit" onClick={handleSubmit}>
+							<Button type="submit" className="aso-btn__submit" onClick={handleSubmit}>
 								Save Changes
 							</Button>
 						</form>
