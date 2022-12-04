@@ -3,7 +3,6 @@
 }
 
 .aso-profile-section {
-  margin-left: 150px;
   width: 80vw;
   max-width: 1075px;
   display: flex;
@@ -74,7 +73,7 @@
   display: flex;
   flex-direction: column;
   padding-left: 138px;
-  width: 110%;
+  width: 100%;
 }
 
 .aso-form-name-input,
@@ -99,7 +98,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
+  width: 138%;
 }
 
 .aso-form-container label {
@@ -149,7 +148,7 @@
   padding-left: 10px;
 }
 
-#aso-btn__submit {
+.aso-btn__submit {
   margin-bottom: 54px;
   width: 179px;
   height: 56px;

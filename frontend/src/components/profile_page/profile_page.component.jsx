@@ -1,3 +1,4 @@
+
 import avatar from "../../assets/Avatar.svg";
 import State_options from "./state_options.component";
 import style from "./profile.module.css"
@@ -65,14 +66,13 @@ const Profile = () => {
   const half_display_inputs = [
     {
       label: "First Name",
-      placeholder: "Sandra",
+      placeholder: "Eddie",
       type: "text",
       name: "firstName",
       value: firstName,
     },
     {
       label: "Last Name",
-      placeholder: "Triss",
       type: "text",
       name: "lastName",
       value: lastName,
@@ -117,7 +117,7 @@ const Profile = () => {
                       <br />
                       <input
                         type="text"
-                        placeholder="Sandra"
+                        placeholder="Eddie"
                         name="firstName"
                         value={firstName}
                         onChange={change_formField}
@@ -129,7 +129,6 @@ const Profile = () => {
                       <br />
                       <input
                         type="text"
-                        placeholder="Triss"
                         name="lastName"
                         value={lastName}
                         onChange={change_formField}
@@ -200,7 +199,7 @@ const Profile = () => {
                   <br />
                   <input
                     type="email"
-                    placeholder="bakii@gmail.com"
+                    placeholder="eddie@gmail.com"
                     name="email"
                     value={email}
                     onChange={change_formField}
@@ -246,7 +245,7 @@ const Profile = () => {
                       <br />
                       <input
                         type="text"
-                        placeholder="Sandra"
+                        placeholder="Eddie"
                         name="firstName"
                         value={firstName}
                         onChange={change_formField}
@@ -258,7 +257,6 @@ const Profile = () => {
                       <br />
                       <input
                         type="text"
-                        placeholder="Triss"
                         name="LastName"
                         value={lastName}
                         onChange={change_formField}
@@ -329,7 +327,7 @@ const Profile = () => {
                   <br />
                   <input
                     type="email"
-                    placeholder="bakii@gmail.com"
+                    placeholder="eddie@gmail.com"
                     name="email"
                     value={email}
                     onChange={change_formField}
