@@ -3,18 +3,59 @@ import Navbar from "../landingPage/Navbar/Navbar";
 // import Footer from "../landing-page/footer/Footer";
 import Foooter from "../footer/Foooter";
 import FaqNewsletter from "../faq/FaqNewsletter";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { NavContext, pages } from "../../../context/nav-context";
 import Button from "../landingPage/Button/Button";
 // import { Link } from "react-router-dom";
 
 const Contact = () => {
+
+    let [overlay, setOverlay] = useState('overlay-visible')  
+    let [status, setStatus] = useState('')
+    let [message, setMessage] = useState('')
+    let [stateColor, setStateColor] = useState('')
+
     const {setPage} = useContext(NavContext)
-   
     useEffect(()=>{
      setPage(pages.ContactUs)
     },[])
+
+    function sendMessage(){
+      postMessage({
+        "email": [
+          document.getElementById('email').value
+        ]
+      })
+      document.getElementById('contact-form').reset()
+      setOverlay('overlay-visible')
+    }
+    const postMessage = async(info)=>{
+      try {
+        const response = await fetch("https://zuvatar.hng.tech/api/v1/contactForm", {
+          method: "POST",
+          headers: {
+            'content-type': 'application/json',
+            'accept': 'application/json',
+          },
+          body: JSON.stringify(info)
+        })
+         
+        if(response.status === 200){
+          setStatus(':) Success')
+          setMessage('Your response was successfully sent, Thanks for contacting us')
+          setStateColor('green')
+        }
+        else{
+          setStatus('Request failed :(')
+          setMessage(`Oops we ran into a ${response.status} error while trying to send your message, please try again later`)
+          setStateColor('red')
+        }
+      } catch (error) {  
+        console.log(error)
+      }
+    }
+
     return (
       <div>
         <Navbar />
@@ -37,7 +78,10 @@ const Contact = () => {
           </div>
         </div>
         <div className="flex max-[1000px]:block">
-          <form className="contact-form p-10">
+          <form className="contact-form p-10" id="contact-form" onSubmit={(e) => {
+            e.preventDefault()
+            sendMessage()
+          }}>
             <h2 className="font-semibold text-5xl mb-5">
               Have some Questions ?
             </h2>
@@ -75,7 +119,7 @@ const Contact = () => {
                 Message
               </label>
               <textarea
-                id="email"
+                id="message"
                 placeholder="Write your message here..."
                 className="block border border-gray-400 p-3 rounded-md w-full"
                 rows="5"
@@ -91,6 +135,16 @@ const Contact = () => {
             src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670061925/illus_ubfd58.png"
           />
         </div>
+
+        <div className="contact-overlay" id={overlay} onClick={() => {setOverlay('overlay-hidden')}}>
+            <div className='contact-modal bg-white p-10 rounded-md'>
+                  <h3 className={`text-4xl text-${stateColor}-500`}>{status}</h3><hr/>
+                  <p className="mt-5">{message}</p>
+                  <button className="mt-5 p-2 rounded-md" onClick={() => {setOverlay('overlay-hidden')}}
+                  style={{border: `1px solid ${stateColor}`}}>Close</button>
+            </div>
+        </div>
+
         <FaqNewsletter />
         <Foooter />
       </div>
