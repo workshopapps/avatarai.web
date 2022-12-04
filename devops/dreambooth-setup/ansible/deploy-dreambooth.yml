@@ -16,7 +16,7 @@
     - name: Install required packages
       apt:
         state: present
-        name: ['git', 'python3', 'ssmtp', 'mutt', 'npm', nginx]
+        name: ['git', 'python3', 'ssmtp', 'mutt', 'npm', 'nginx', 'python3-pip']
 
     - name: Create conda directory
       file:
@@ -62,7 +62,7 @@
 
     # Download Gdown
     - name: Download Gdown
-      command: python -m pip install gdown
+      command: python3 -m pip install gdown
 
     # Transfer training script
     - name: Transfer training script
