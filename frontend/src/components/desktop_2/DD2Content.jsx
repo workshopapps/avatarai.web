@@ -62,7 +62,7 @@ const ImageUpload = () => {
  
 
   // getting email from localhost
-  let mail;
+  /* let mail;
   let personality;
   function getItems() {
     if (
@@ -74,7 +74,7 @@ const ImageUpload = () => {
       console.log(personality);
     }
   }
-  getItems();
+  getItems(); */
 
   async function sendData() {
  
