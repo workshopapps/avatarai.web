@@ -26,7 +26,7 @@ function PriceCardOne({
           otherwise shocking images, if you do not want that and are sensitive,
           we recommend you to NOT use the site!
         </p> */}
-        <ul>
+        <ul className="text-lg">
           <li className="list-item">
             Access to create up to 10 different digital characters daily
           </li>{" "}
