@@ -1,7 +1,7 @@
-import { Feature } from "./Feature";
 import PriceCardTwo from "./PriceCardTwo";
-import PriceCards from "./PriceCards";
 import React from "react";
+import PriceCardOne from "./PriceCardOne";
+import PriceCardThree from "./PriceCardThree";
 
 function TotalPriceCards() {
   return (
@@ -12,37 +12,33 @@ function TotalPriceCards() {
         </p>
       </div>
       <div className="flex vnc_cap align-top justify-center items-top px-4 mt-4 gap-1 lg:gap-3">
-        <PriceCards
+        <PriceCardOne
           title="Basic"
-          amount="$14"
-          background="#4D3899"
+          amount="$13.45"
+          background="#170c3c"
           text="white"
-          feature={<Feature />}
           space="5rem"
           bg="white"
           top="1.5rem"
         />
         <PriceCardTwo
           title="Standard"
-          amount="$23"
+          amount="$25.45"
           top="1.5rem"
           background="white"
-          text="#4D3899"
-          bg="#4D3899"
+          text="#170c3c"
+          bg="#170c3c"
           font="white"
-          feature={<Feature color="white" />}
-          feature2={<Feature color="white" />}
         />
 
-        <PriceCards
+        <PriceCardThree
           title="Premium"
-          amount="$42"
-          background="#4D3899"
+          amount="$49.45"
+          background="#170c3c"
           text="white"
           space="5rem"
           bg="white"
           top="1.5rem"
-          feature={<Feature />}
         />
       </div>
     </div>

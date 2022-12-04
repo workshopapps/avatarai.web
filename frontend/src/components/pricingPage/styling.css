@@ -25,7 +25,7 @@
 }
 
 .vnc_btn1 {
-    background-color: #4D3899;
+    background-color: #170C3C !important;
 }
 
 .price-top {
@@ -39,7 +39,7 @@
 
 .vnc_card {
     border: 1px solid var(--line);
-    height: 39rem;
+    height: auto;
 }
 
 .vnc_hr {
