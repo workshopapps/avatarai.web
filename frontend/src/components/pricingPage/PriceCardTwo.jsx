@@ -27,29 +27,29 @@ export default function PriceCardTwo({
         </div>
 
         <ul>
-          <li className="text-white">
+          <li className="text-white list-item">
             Create up to 50 digital characters daily
           </li>{" "}
           <hr className=" vnc_hr" />
-          <li className="text-white">
+          <li className="text-white list-item">
             Change the avatar's hair, cloth, or skin color up to 50 times daily
           </li>
           <hr className=" vnc_hr" />
-          <li className="text-white">
+          <li className="text-white list-item">
             Choose from 300+ outfits, 200+ shoes, 200+ accessories
           </li>
           <hr className=" vnc_hr" />
-          <li className="text-white">
+          <li className="text-white list-item">
             Create high resolution characters, cartoons and anime profile photos
             up to 3 times daily
           </li>{" "}
           <hr className=" vnc_hr" />
-          <li className="text-white">
+          <li className="text-white list-item">
             Save or export the AI-generated avatars in a JPG or PNG format up to
             five times daily
           </li>
           <hr className=" vnc_hr" />
-          <li className="text-white">
+          <li className="text-white list-item">
             Unlimited access to share generated avatars directly from the web
             app to other platforms
           </li>

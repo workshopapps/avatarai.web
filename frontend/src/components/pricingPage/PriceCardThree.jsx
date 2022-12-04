@@ -29,27 +29,29 @@ function PriceCardThree({
           we recommend you to NOT use the site!
         </p> */}
         <ul>
-          <li>Create unlimited number of digital characters daily</li>
+          <li className="list-item">
+            Create unlimited number of digital characters daily
+          </li>
           <hr className=" vnc_hr" />
-          <li>
+          <li className="list-item">
             Unlimited access to change the avatar's hair, cloth, or skin color
           </li>{" "}
           <hr className=" vnc_hr" />
-          <li>
+          <li className="list-item">
             Create high resolution characters, cartoons and anime profile photos
             up to 10 times daily
           </li>
           <hr className=" vnc_hr" />
-          <li>
+          <li className="list-item">
             Access to unlimited specially designed avatars through referrals
           </li>{" "}
           <hr className=" vnc_hr" />
-          <li>
+          <li className="list-item">
             Access to save or export the AI-generated avatars in a JPG or PNG
             format at any time
           </li>{" "}
           <hr className=" vnc_hr" />
-          <li>
+          <li className="list-item">
             Unlimited access to share generated avatars directly from the web
             app to other platforms
           </li>

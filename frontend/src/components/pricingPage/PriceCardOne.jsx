@@ -27,17 +27,23 @@ function PriceCardOne({
           we recommend you to NOT use the site!
         </p> */}
         <ul>
-          <li>Access to create up to 10 different digital characters daily</li>{" "}
+          <li className="list-item">
+            Access to create up to 10 different digital characters daily
+          </li>{" "}
           <hr className=" vnc_hr" />
-          <li>
+          <li className="list-item">
             Access to change the avatar's hair or cloth up to 10 times daily
           </li>{" "}
           <hr className=" vnc_hr" />
-          <li>Choose from 200+ outfits, 100+ shoes, 100+ accessories</li>{" "}
+          <li className="list-item">
+            Choose from 200+ outfits, 100+ shoes, 100+ accessories
+          </li>{" "}
           <hr className=" vnc_hr" />
-          <li>Access to View different activities on the web app</li>{" "}
+          <li className="list-item">
+            Access to View different activities on the web app
+          </li>{" "}
           <hr className=" vnc_hr" />
-          <li>
+          <li className="list-item">
             Limited access to share generated avatars directly from the web app
             to other platforms
           </li>
