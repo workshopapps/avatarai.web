@@ -5,7 +5,7 @@ export default function Pricetop() {
   return (
     <>
       <div className="text-center mt-4 ">
-        <h1 className=" text-5xl mx-auto md:w-4/6 font-jakarta font-bold">
+        <h1 className=" text-5xl mx-auto md:w-4/6 font-jakarta font-bold px-3">
           Pick a <span className="text-[#4D3899]"> plan </span> and create your{" "}
           <span className="text-[#4D3899]"> AI generated Avatars </span>
         </h1>
