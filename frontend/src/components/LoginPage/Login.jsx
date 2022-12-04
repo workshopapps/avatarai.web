@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Input from "../Input/Input"
 import log from '../../assets/images/log.png';
 import Button from '../landingPage/Button/Button';
 import Navbar from '../landingPage/Navbar/Navbar';
@@ -37,6 +38,7 @@ const Login = () => {
 		onError: () => console.log('Login with Google Failed'),
 	});
 	// let mail;
+	// let mail;
 	// function getemail() {
 	// 	if (localStorage.getItem('opt_mail') !== '') {
 	// 		mail = localStorage.getItem('opt_mail').slice(1, -1);
@@ -70,6 +72,11 @@ const Login = () => {
 				localStorage.setItem('zvt_token', JSON.stringify(token));
 				const user = response?.data?.userData;
 				localStorage.setItem('zvt_user', JSON.stringify(user));
+
+				//Get userData and save in local Storage
+				const userData = response?.data?.userData
+				localStorage.setItem('userData', JSON.stringify(userData));
+                 
 
 				//save token to state
 				setToken(token);

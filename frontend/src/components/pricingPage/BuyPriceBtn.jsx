@@ -9,9 +9,9 @@ function BuyPriceBtn({ top, background, text }) {
         "background-color": background,
         color: text,
       }}
-      className="w-full text-center p-2 rounded-lg"
+      className="w-full text-center p-2 rounded-lg font-bold"
     >
-      <Button> Buy this plan</Button>
+      <Button> GET STARTED NOW</Button>
     </div>
   );
 }

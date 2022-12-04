@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useGoogleLogin } from '@react-oauth/google';
 import ErrorSuccessCard from "../utils/ErrorSuccessCard.jsx";
 import Button from "../landingPage/Button/Button";
+import Input from "../Input/Input"
 
 let state;
 let result;
@@ -190,67 +191,50 @@ export default function SignUp_first() {
             </span>
           </div>
 
-          <form id="myform_opt" onSubmit={handleSubmit} method="post">
-            {/*<div style={{ display: show ? "block" : "none" }}>*/}
-            <div className="opt_error">
-              {errorStatus.message && <ErrorSuccessCard error={errorStatus.error} message={errorStatus.message} />}
-            </div>
-            <div className="ss_opt">
-              <div className="sss_opt">
-                <label htmlFor="myinput_op">First name</label>
-                <br />
-                <input
-                  id="myinput_op"
-                  placeholder="First Name"
-                  value={first_name}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  type="text"
-                  required
-                />
-                <br />
-              </div>
-              <div className="sss_opt">
-                <label htmlFor="myinput_o">Last name</label>
-                <br />
-                <input
-                  id="myinput_o"
-                  value={last_name}
-                  onChange={(e) => setLastName(e.target.value)}
-                  placeholder="Last Name"
-                  type="text"
-                  required
-                />
-                <br />
-              </div>
-            </div>
 
-            <label htmlFor="myinput_opt">Email</label>
-            <br />
-            <input
-              id="myinput_opt"
-              placeholder="Email Address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              type="email"
-              required
-            />
-            <br />
-            {/*<label htmlFor="check_opt" className="container_opt" id="cap">*/}
-            {/*  <span className="note_opt">*/}
-            {/*    I agree to the terms & service and privacy policy*/}
-            {/*  </span>*/}
-            {/*  <input*/}
-            {/*    type="checkbox"*/}
-            {/*    id="check_opt"*/}
-            {/*    onClick={() => setShow_s(!show_s)}*/}
-            {/*    required*/}
-            {/*  />*/}
-            {/*  <span className="checkmark" />*/}
-            {/*</label>*/}
-            {/*<button onClick={click} disabled={show_s} className="mybutton_opt">*/}
-            {/*  Continue*/}
-            {/*</button>*/}
-            {/*</div>*/}
+            <form id="myform_opt" onSubmit={handleSubmit} method="post">
+              {/*<div style={{ display: show ? "block" : "none" }}>*/}
+                <div className='ss_opt'>
+                    <div className='sss_opt'>
+                        <Input label="First name" name="first name" id="myinput_op" placeholder="First Name" value={first_name} onChange={(e)=>setFirstName(e.target.value)} type="text" htmlFor="myinput_op" required />
+                        <br />
+                    </div>
+                    <div className='sss_opt'>
+                        <Input label="Last name" name="last name" id="myinput_o" value={last_name} onChange={(e)=>setLastName(e.target.value)} placeholder="Last Name" type="text" htmlFor="myinput_o" required />
+                        <br />
+                    </div>
+                </div>
+              <Input
+                  id="myinput_opt"
+                  placeholder="Email Address"
+                  value={email}
+                  onChange={(e)=>setEmail(e.target.value)}
+                  type="email"
+                  label="Email"
+                  name="email"
+                  htmlFor="myinput_opt"
+                  required
+              />
+              <br />
+              {/*<label htmlFor="check_opt" className="container_opt" id="cap">*/}
+              {/*  <span className="note_opt">*/}
+              {/*    I agree to the terms & service and privacy policy*/}
+              {/*  </span>*/}
+              {/*  <input*/}
+              {/*    type="checkbox"*/}
+              {/*    id="check_opt"*/}
+              {/*    onClick={() => setShow_s(!show_s)}*/}
+              {/*    required*/}
+              {/*  />*/}
+              {/*  <span className="checkmark" />*/}
+              {/*</label>*/}
+              {/*<button onClick={click} disabled={show_s} className="mybutton_opt">*/}
+              {/*  Continue*/}
+              {/*</button>*/}
+              {/*</div>*/}
+
+
+          
 
             <div>
               <label>Password</label>
@@ -315,8 +299,8 @@ export default function SignUp_first() {
               >
                 Sign Up
               </Button>
-              <Button className="button_opt" onClick={signup}>
-                <div className="gog_opt">
+              <Button className="button_opt" onClick={signup} >
+                <div className="gog_opt" >
                   <img
                     src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670070846/google_npmeof.png"
                     className="google_opt"

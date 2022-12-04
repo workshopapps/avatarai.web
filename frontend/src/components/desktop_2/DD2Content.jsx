@@ -27,6 +27,7 @@ const ImageUpload = () => {
   const [imageUpload, setImageUpload] = useState({ file: null });
   const [showAlertLink, setShowAlertLink] = useState(false);
   const [preview, setPreview] = useState(false);
+  let addFile = false;
 
   const labelText = `(PNG or JPEG)`;
 
@@ -40,15 +41,30 @@ const ImageUpload = () => {
     });
     setSelectedImages((previousImages) => previousImages.concat(imagesArray));
     setShow(false);
-    setShowAlertLink(true);
+    setShowAlertLink(!showAlertLink);
   };
 
-  console.log(selectedImages);
+
+  const handleFilee = (e) => {
+    let file = e.target.files;
+    setImageUpload({ file: file });
+    const selectedFilesArray = Array.from(file);
+    // console.log(selectedFilesArray);
+    const imagesArray = selectedFilesArray.map((file) => {
+      return URL.createObjectURL(file);
+    });
+    setSelectedImages((previousImages) => previousImages.concat(imagesArray));
+    setShow(false);
+    // setShowAlertLink(!showAlertLink);
+  };
+  // console.log(selectedImages);
+
+ 
 
   // getting email from localhost
-  let mail;
-  let personality;
-  function getItems() {
+   let mail;
+   let personality;
+/*  function getItems() {
     if (
       localStorage.getItem("opt_mail") !== "" &&
       localStorage.getItem("personality") !== ""
@@ -58,7 +74,7 @@ const ImageUpload = () => {
       console.log(personality);
     }
   }
-  getItems();
+  getItems(); */
 
   async function sendData() {
  
@@ -71,7 +87,7 @@ const ImageUpload = () => {
       method: "POST",
       // body: JSON.stringify(formdata),
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "multipart/form-data",
         Accept: "application/json",
       },
       data: formdata,
@@ -179,17 +195,19 @@ const ImageUpload = () => {
           </form>
         </div>
       )}
-      {showAlertLink && (
+      {showAlertLink && addFile === false && (
         <div className="flex flex-col items-center w-full h-full justify-center">
           <div className="grow">
             <Content />
+            
+          
           </div>
         </div>
       )}
       {preview && (
         <div className="vic_content">
           <div className="aso-dd2-top">
-            <Link className="link" to="/Dashboard_2">
+            <Link className="link" to="/Dashboard">
               <div className="previous-page">
                 {size < 760 ? (
                   <img src={arrowRightMobile} alt="share icon" />
@@ -217,14 +235,17 @@ const ImageUpload = () => {
                     // onChange={storeItem(image)}
                   >
                     <img src={image} className="vic_her" />
+
                     <button
                       id="closeSideBar"
                       className=" mr-8 vic_x"
                       onClick={() =>
                         setSelectedImages(
                           selectedImages.filter((e) => e !== image)
+
                         )
                       }
+                     
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -233,7 +254,7 @@ const ImageUpload = () => {
                         height={30}
                         viewBox="0 0 24 24"
                         strokeWidth="1.5"
-                        stroke="currentColor"
+                        stroke="white"
                         fill="none"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -250,16 +271,21 @@ const ImageUpload = () => {
 
             <form action="" className="vic-dd2-form">
               <div className="aso-dd2-input">
-                {/* <div> */}
+                
                 <input
                   accept="image/*"
                   multiple
                   type="file"
                   name="file"
                   id="file"
-                  // onChange={storeItem}
+                  // onclick={setPreview(false)}
+                  onChange={handleFilee}
+                 
                 />
-                <label htmlFor="file">
+                  
+                <label htmlFor="file"
+                
+                >
                   {/* <label htmlFor="file" className="aso-dd2-label"> */}
                   <img src={upload} alt="" />
                 </label>
