@@ -315,8 +315,8 @@ export default function SignUp_first() {
               >
                 Sign Up
               </Button>
-              <Button className="button_opt" onClick={signup}>
-                <div className="gog_opt">
+              <Button className="button_opt" onClick={signup} >
+                <div className="gog_opt" >
                   <img
                     src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670070846/google_npmeof.png"
                     className="google_opt"
