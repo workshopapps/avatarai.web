@@ -1,8 +1,3 @@
-import { useRef } from "react";
-import Member1 from "./img/member1.png";
-import Member2 from "./img/member2.png";
-import Member3 from "./img/member3.png";
-import Member4 from "./img/member4.png";
 import "./aboutUs.css";
 
 const TeamMemberCard = ({profile, index}) => {

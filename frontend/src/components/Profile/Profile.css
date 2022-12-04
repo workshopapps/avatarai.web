@@ -1,5 +1,4 @@
 .aso-profile {
-  background: #fcfcfc;
   display: flex;
 }
 
@@ -7,7 +6,6 @@
   margin-left: 150px;
   width: 80vw;
   max-width: 1075px;
-  justify-self: flex-end;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -38,6 +36,9 @@
   background: #ffffff;
   width: 100%;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   box-shadow: 0px 2px 20px 0px rgba(232, 232, 232, 0.26);
   -webkit-box-shadow: 0px 2px 20px 0px rgba(232, 232, 232, 0.26);
   -moz-box-shadow: 0px 2px 20px 0px rgba(232, 232, 232, 0.26);
@@ -73,6 +74,7 @@
   display: flex;
   flex-direction: column;
   padding-left: 138px;
+  width: 110%;
 }
 
 .aso-form-name-input,
@@ -97,7 +99,7 @@
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
-  width: 85%;
+  width: 100%;
 }
 
 .aso-form-container label {
@@ -210,7 +212,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
+    width: 80%;
   }
 
   .aso-form-name-input {
@@ -303,7 +305,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
+    width: 85%;
   }
 
   .aso-form-name-input {
@@ -315,7 +317,7 @@
   }
 
   .aso-form-email-input {
-    width: 90%;
+    width: 77%;
   }
 
   .aso-form-first-name,

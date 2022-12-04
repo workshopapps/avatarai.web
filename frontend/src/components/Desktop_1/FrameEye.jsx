@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import female_icon from "./Female User.svg";
 import dog_icon from "./Dog Sit.svg";
 import cat_icon from "./Cat Pot.svg";
-import Couple from "./Couple posing.svg";
+import Couple from "./Couple-Posing.svg";
 import other from "./Decision.svg";
 import male_icon from "./User Male.svg";
 
@@ -15,6 +15,10 @@ import progM from "./prog2.svg";
 
 import one_icon from "./oneicon.png";
 import { useState } from "react";
+
+
+let personality;
+
 
 const FrameEye = () => {
   const [list, setList] = useState([
@@ -44,6 +48,11 @@ const FrameEye = () => {
     },
   ]);
 
+  // let personality = input.password
+  //   let item ={first_name,last_name,email,password}
+  //   // console.warn("item",item)
+  //   localStorage.setItem("opt_mail", JSON.stringify(item.email))
+
   const [toggle, setToggle] = useState(false);
   const [work, setWork] = useState(true);
 
@@ -59,6 +68,9 @@ const FrameEye = () => {
     }
   };
 
+  
+  
+  
   return (
     // <div className="vnc-main">
     //    <div className="vnc-icon md:mb-20">
@@ -142,6 +154,13 @@ const FrameEye = () => {
               onClick={() => {
                 setToggle(e);
                 change(e);
+                console.log(index)
+                if(index === 0) {
+                  personality = "male";
+                } else {
+                  personality = "female";
+                }
+
               }}
               key={index}
               className={`vnc-selection ${e === toggle && "active"}`}
@@ -159,6 +178,7 @@ const FrameEye = () => {
               disabled={work}
               type="submit"
               value="Proceed"
+              onClick={localStorage.setItem("personality", JSON.stringify(personality))}
             />
           </Link>
         </div>

@@ -13,7 +13,7 @@ const app = express();
 
 app.use(jsonParser);
 
-const PORT = 8080;
+const PORT = 8000;
 
 app.get('/', (req, res) => {
     res.status(200).json({
