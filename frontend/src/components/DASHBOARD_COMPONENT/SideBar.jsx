@@ -132,19 +132,19 @@ export const SideBar = ({ show, setShow }) => {
 				<div className="absolute z-40 sm:relative w-64 md:w-96 shadow pb-4 bg-[#FFFFFF] xl:hidden transition duration-150 ease-in-out h-screen overflow-y-auto">
 					<div className="flex flex-col justify-between h-full w-full">
 						<div>
-							<div className="flex items-center justify-between mt-[32px] mb-5">
+							<div className="flex items-center justify-between py-[15px] px-5">
 								<div className="w-full flex justify-left">
-									<img src={Logo} alt="logo" className="ml-8" />
+									<img src={Logo} alt="logo" className="" />
 								</div>
-								<div id="closeSideBar" className=" mr-8" onClick={() => setShow(!show)}>
+								<div id="closeSideBar" className="" onClick={() => setShow(!show)}>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										className="icon icon-tabler icon-tabler-x"
 										width={30}
 										height={30}
 										viewBox="0 0 24 24"
-										strokeWidth="1.5"
-										stroke="currentColor"
+										strokeWidth="2"
+										stroke="#000000"
 										fill="none"
 										strokeLinecap="round"
 										strokeLinejoin="round"
