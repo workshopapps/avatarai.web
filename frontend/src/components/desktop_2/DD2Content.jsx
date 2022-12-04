@@ -207,7 +207,7 @@ const ImageUpload = () => {
       {preview && (
         <div className="vic_content">
           <div className="aso-dd2-top">
-            <Link className="link" to="/Dashboard_2">
+            <Link className="link" to="/Dashboard">
               <div className="previous-page">
                 {size < 760 ? (
                   <img src={arrowRightMobile} alt="share icon" />
