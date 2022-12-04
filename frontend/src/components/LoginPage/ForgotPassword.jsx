@@ -7,34 +7,30 @@ import  mdesign from './LoginImg/mdesign.svg'
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import ErrorModal from "../faq/faqHero/errorModal";
 import SuccessModal from "../faq/successModal";
+import ErrorModal from "./errorModal";
 
 
 
 const ForgotPassword = () => {
 
   const navigate = useNavigate();
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
-
-  const onSubmit = (data) => console.log(data);
-  const watchEmail = watch("sendEmail");
-
-  const [emailField, setEmailField] = useState("")
+  
+const [emailField, setEmailField] = useState("")
 const [errorInFormInput, setErrorInFormInput] = useState(false)
-const [showErrorModal, setshowErrorModal] = useState(false)
-const [showSuccessModal, setShowSuccessModal] = useState(false)
 
+const [errorModal, setErrorModal]= useState(false)
+
+const closeModalNow =()=>{
+     setErrorModal(false) ;     
+}
 
 const closeModal =()=>{
   setTimeout(() => {
-    setShowSuccessModal(false)
-  }, 1000);
+    setErrorModal(false)
+
+   
+  }, 3600);
  
 }
 
@@ -59,35 +55,29 @@ const validate=()=>{
 }  
 }
 
-
-
-
 // POST request using fetch()
 const requestEmail = async (username)=>{
-  
-    const response= await fetch("https://zuvatar.hng.tech/api/v1/forgotPassword", {
+     try {
+      const response= await fetch("https://zuvatar.hng.tech/api/v1/forgotPassword", {
 
       // Adding method type
   
       method: "POST",
   
-       
-  
       // Adding body or contents to send
   
-      body:{
+      body: JSON.stringify( {
+        
+        "username":"eddie@gmail.com"
   
-        "username": username
-  
-      },
-  
-       
+      }),
   
       // Adding headers to the request
   
       headers: {
   
-          "Content-type": "application/json"
+          "Content-type": "application/x-www-form-urlencoded"
+              //  "Accept": "application/x-www-form-urlencoded"
   
       }
   })
@@ -95,21 +85,11 @@ const requestEmail = async (username)=>{
   if(response.status===200){
     navigate('/check-email')
   }
-  if(response.status===422){
-    setshowErrorModal(true)
-  }
-  
-  
- 
- 
-// // Converting to JSON
-// .then(response => response.json())
- 
-// // Displaying results to console
-// .then(json => console.log(json));
-}
-
-
+     } catch (error) {
+      setErrorModal(true)
+      closeModal();
+     }
+    }
 
   return (
     <div
@@ -139,7 +119,6 @@ const requestEmail = async (username)=>{
           </p>
         </div>
         <div
-          onSubmit={handleSubmit(onSubmit)}
           className="flex flex-col w-full max-[480px]:w-[130%]"
         >
           {
@@ -159,15 +138,6 @@ const requestEmail = async (username)=>{
             className=" border p-4 w-[77%] ml-[10%] my-1 rounded-lg outline-none max-[480px]:w-[100%]mt-0`"
           />
 
-            {/* pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-           {/* {`border ${ */}
-              {/* errors.sendEmail && "border-red-600"
-            }  */} 
-          {errors.sendEmail && (
-            <span className="text-xs text-red-600">
-              Please enter a valid email address
-            </span>
-          )}
           <button className="w-[77%] p-[3%] rounded-[11px] mt-6 bg-[#8B70E9] text-white font-[Nunito] text-[22px] ml-[10%] max-[480px]:w-[100%]pr-[50%]" onClick={validate}>
             Send
           </button>
@@ -182,8 +152,7 @@ const requestEmail = async (username)=>{
           <img src={mdesign} alt="design" />
         </div>
       </div>
-      
-      
+      {errorModal?<ErrorModal closeModalNow = {closeModalNow} />:''}
     </div>
   );
 };
