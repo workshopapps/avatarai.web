@@ -40,7 +40,7 @@ const Navbar = () => {
 					<div className="flex justify-between cbk-mobile-board  lg:hidden pr-3">
 						<img src={menu} alt="" className=" mx-5 my-1" onClick={navHandler} />
 						<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn">
-							<Link to="/Signupfirst"> Create avatars </Link>
+							<Link to="/Signup"> Create avatars </Link>
 						</Button>
 					</div>
 				</div>
@@ -85,7 +85,7 @@ const Navbar = () => {
 					)}
 
 					<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn ">
-						<Link to="/Signupfirst"> Sign up </Link>
+						<Link to="/Signup"> Sign up </Link>
 					</Button>
 				</div>
 			</nav>

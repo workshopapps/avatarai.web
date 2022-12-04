@@ -7,7 +7,7 @@ import Content from './DD4content';
 function Destopfour() {
 	return (
 		<div>
-			<Dashboardlayout>
+			<Dashboardlayout title="Hello Baki," text="Start generating cool avatars.">
 				<Content />
 			</Dashboardlayout>
 		</div>

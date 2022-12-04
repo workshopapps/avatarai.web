@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./DD2.css";
 import "../desktop_4/DD4.css";
 import arrowRightMobile from "./arrow-right-mobile.svg";
@@ -17,7 +17,7 @@ import right from "../desktop_4/img/arrowpright.png";
 import Her from "../desktop_4/img/her.png";
 // import Background from "./../DASHBOARD_COMPONENT/dashboardcomp";
 import Content from "../Desktop_3/Content";
-import add from './add.png';
+import add from "./add.png";
 
 // import axios from "axios";
 
@@ -27,36 +27,77 @@ const ImageUpload = () => {
   const [imageUpload, setImageUpload] = useState({ file: null });
   const [showAlertLink, setShowAlertLink] = useState(false);
   const [preview, setPreview] = useState(false);
+  let addFile = false;
 
   const labelText = `(PNG or JPEG)`;
 
   const handleFile = (e) => {
     let file = e.target.files;
-    // setImageUpload({ file: file });
+    setImageUpload({ file: file });
     const selectedFilesArray = Array.from(file);
-    console.log(selectedFilesArray);
+    // console.log(selectedFilesArray);
     const imagesArray = selectedFilesArray.map((file) => {
       return URL.createObjectURL(file);
     });
-    setSelectedImages(imagesArray);
+    setSelectedImages((previousImages) => previousImages.concat(imagesArray));
     setShow(false);
-    setShowAlertLink(true);
+    setShowAlertLink(!showAlertLink);
   };
 
 
-  // function to handle adding more files after preview
-  const handleFile2 = (e) => {
+  const handleFilee = (e) => {
     let file = e.target.files;
-    // setImageUpload({ file: file });
+    setImageUpload({ file: file });
     const selectedFilesArray = Array.from(file);
-    console.log(selectedFilesArray);
+    // console.log(selectedFilesArray);
     const imagesArray = selectedFilesArray.map((file) => {
       return URL.createObjectURL(file);
     });
-    setSelectedImages(imagesArray);
+    setSelectedImages((previousImages) => previousImages.concat(imagesArray));
     setShow(false);
-    setShowAlertLink(true);
+    // setShowAlertLink(!showAlertLink);
   };
+  // console.log(selectedImages);
+
+ 
+
+  // getting email from localhost
+   let mail;
+   let personality;
+/*  function getItems() {
+    if (
+      localStorage.getItem("opt_mail") !== "" &&
+      localStorage.getItem("personality") !== ""
+    ) {
+      mail = localStorage.getItem("opt_mail").slice(1, -1);
+      personality = localStorage.getItem("personality").slice(1, -1);
+      console.log(personality);
+    }
+  }
+  getItems(); */
+
+  async function sendData() {
+ 
+
+    let formdata = new FormData();
+    formdata.append("file", selectedImages);
+    formdata.append("email", mail);
+ 
+    let result = await fetch("https://zuvatar.hng.tech/api/v1/avatar", {
+      method: "POST",
+      // body: JSON.stringify(formdata),
+      headers: {
+        "Content-Type": "multipart/form-data",
+        Accept: "application/json",
+      },
+      data: formdata,
+
+    });
+    result = await result.json();
+    console.warn("result", result)
+  }
+
+
 
   const handleUpload = (e) => {
     let file = imageUpload;
@@ -123,7 +164,7 @@ const ImageUpload = () => {
             </Link>
             {/* <p>2</p> */}
             <div className="imgs flex justify-center items-center w-full h-10">
-              <img src={progress} alt="" className="w-full "/>
+              <img src={progress} alt="" className="w-full " />
             </div>
           </div>
 
@@ -148,27 +189,25 @@ const ImageUpload = () => {
                 {/* {labelText} */}
               </label>
             </div>
-            <Button
-              type="button"
-              className="aso-dd2-btn"
-              onClick={handleUpload}
-            >
+            <Button type="button" className="aso-dd2-btn">
               Upload
             </Button>
           </form>
         </div>
       )}
-      {showAlertLink && (
+      {showAlertLink && addFile === false && (
         <div className="flex flex-col items-center w-full h-full justify-center">
           <div className="grow">
             <Content />
+            
+          
           </div>
         </div>
       )}
       {preview && (
         <div className="vic_content">
           <div className="aso-dd2-top">
-            <Link className="link" to="/Dashboard_2">
+            <Link className="link" to="/Dashboard">
               <div className="previous-page">
                 {size < 760 ? (
                   <img src={arrowRightMobile} alt="share icon" />
@@ -179,55 +218,88 @@ const ImageUpload = () => {
             </Link>
             {/* <p>2</p> */}
             <div className="imgs flex justify-center items-center w-full h-10">
-              <img src={three} alt="" className="w-full "/>
+              <img src={three} alt="" className="w-full " />
             </div>
           </div>
           <h3>Preview your Images</h3>
 
-          <div className="vic_img_and_direction">
-            {/* <img src={left} className="vic_left" /> */}
-            <div className="vic_image_preview_div">
-              {selectedImages &&
-                selectedImages.map((image, index) => {
-                  return (
-                    <div key={image} className="vic_her_div">
-                     
-                      <img src={image} className="vic_her" />
-                      
-                    </div>
-                     
-                  );
-                
-                })}
+          {/* <div className="vic_img_and_direction"> */}
+          {/* <img src={left} className="vic_left" /> */}
+          <div className="vic_image_preview_div">
+            {selectedImages &&
+              selectedImages.map((image, index) => {
+                return (
+                  <div
+                    key={image}
+                    className="vic_her_div relative"
+                    // onChange={storeItem(image)}
+                  >
+                    <img src={image} className="vic_her" />
 
-              {/* : ( */}
+                    <button
+                      id="closeSideBar"
+                      className=" mr-8 vic_x"
+                      onClick={() =>
+                        setSelectedImages(
+                          selectedImages.filter((e) => e !== image)
 
-              {/* ) */}
-              <form action="" className="vic-dd2-form">
+                        )
+                      }
+                     
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="icon icon-tabler icon-tabler-x"
+                        width={30}
+                        height={30}
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="white"
+                        fill="none"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        key={image}
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <line x1={18} y1={6} x2={6} y2={18} />
+                        <line x1={6} y1={6} x2={18} y2={18} />
+                      </svg>
+                    </button>
+                  </div>
+                );
+              })}
+
+            <form action="" className="vic-dd2-form">
               <div className="aso-dd2-input">
-                {/* <div> */}
-              <input
-                accept="image/*"
-                multiple
-                type="file"
-                name="file"
-                id="file"
-                onChange={handleFile}
-              />
-              <label htmlFor="file">
-              {/* <label htmlFor="file" className="aso-dd2-label"> */}
-                <img src={upload} alt="" />
-              </label>
-            </div>
+                
+                <input
+                  accept="image/*"
+                  multiple
+                  type="file"
+                  name="file"
+                  id="file"
+                  // onclick={setPreview(false)}
+                  onChange={handleFilee}
+                 
+                />
+                  
+                <label htmlFor="file"
+                
+                >
+                  {/* <label htmlFor="file" className="aso-dd2-label"> */}
+                  <img src={upload} alt="" />
+                </label>
+              </div>
             </form>
-            </div>
-            {/* <img src={right} className="vic_right" /> */}
           </div>
+          {/* <img src={right} className="vic_right" /> */}
+          {/* </div> */}
           <div className="vic_div_div">
-            <Link to="/Dashboard_5" className="vic_link">
+            <Link to="/Dashboard_5" className="vic_link" onClick={sendData}>
               <Button
                 className="bg-[#8B70E9] w-100 w-lg-120 text-white"
                 children="Generate Avatar"
+                
               />{" "}
             </Link>
           </div>

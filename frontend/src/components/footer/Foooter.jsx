@@ -63,12 +63,13 @@ designed to generate perfect avatars for you.
               <div className="flex gap-x-[5rem] text-[#2B292F]">
                 <p className="text-sm flex items-center gap-3">
                 <img src={Call} alt="/" />
-                  <a href="/"> zuvatar@gmail.com</a>
+                
+                  <a href="mailto:zuvatar@gmail.com"> zuvatar@gmail.com</a>
                 </p>
                 <p className="text-sm flex items-center gap-3">
                   
                   <img src={Mail} alt="/" />
-                  <a href="/"> +2347012345678</a>
+                  <a href="tel:+2347012345678"> +2347012345678</a>
                 </p>
               </div>
               <div className="flex items-center justify-center space-x-4 text-[#000]">
@@ -135,12 +136,12 @@ designed to generate perfect avatars for you.
                 <p className="font-semibold text-xl">Socials</p>
                 <p className="text-sm flex items-center gap-3">
                 <img src={Call} alt="/" />
-                  <a href="/">zuvatar@gmail.com</a>
+                  <a href="mailto:zuvatar@gmail.com">zuvatar@gmail.com</a>
                 </p>
                 <p className="text-sm flex items-center gap-3">
                   
                   <img src={Mail} alt="/" />
-                  <a href="/"> +2347012345678</a>
+                  <a href="tel:+2347012345678"> +2347012345678</a>
                 </p>
               </div>
             </div>

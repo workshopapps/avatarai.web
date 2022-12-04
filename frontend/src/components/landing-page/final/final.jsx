@@ -7,7 +7,7 @@ const Final = () => {
   return (
     <div className='final'>
         <h1>Get started generating amazing <br/> AI <span>avatars</span> for yourself</h1>
-        <Link to='/signupfirst'>
+        <Link to='/signup'>
           <Button className="social-btn">
             Sign up for free
           </Button>
