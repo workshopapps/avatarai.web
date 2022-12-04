@@ -22,9 +22,7 @@ return (
               Accept
             </button>
 
-            <Link to="/" className="text-[#8B70E9] underline md:text-[15px]">
-              Learn More
-            </Link>
+            
           </div>
         </div>
         <div className="hidden md:inline-block my-auto">

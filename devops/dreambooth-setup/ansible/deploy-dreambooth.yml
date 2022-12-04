@@ -16,7 +16,7 @@
     - name: Install required packages
       apt:
         state: present
-        name: ['git', 'python3', 'ssmtp', 'mutt', 'npm', nginx]
+        name: ['git', 'python3', 'ssmtp', 'mutt', 'npm', 'nginx', 'python3-pip']
 
     - name: Create conda directory
       file:
@@ -44,6 +44,12 @@
     - name: Install miniconda
       command: bash /home/ubuntu/conda/miniconda.sh -b -f -p /home/ubuntu/conda/miniconda
 
+    - name: Remove conda commands from path
+      shell: 
+        cmd: unlink /usr/bin/conda
+        warn: false 
+
+
     - name: Add conda commands to path
       shell: 
         cmd: ln /home/ubuntu/conda/miniconda/bin/conda /usr/bin
@@ -59,6 +65,10 @@
       command:
         cmd: git clone https://github.com/JoePenna/Dreambooth-Stable-Diffusion
         warn: false
+
+    # Download Gdown
+    - name: Download Gdown
+      command: python3 -m pip install gdown
 
     # Transfer training script
     - name: Transfer training script
