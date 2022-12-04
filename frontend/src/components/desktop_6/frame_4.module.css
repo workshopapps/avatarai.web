@@ -20,6 +20,7 @@
 
 .back{
   width: 48px;
+  cursor: pointer;
   height: 48px;
   position: absolute;
   left: 5.74%;
