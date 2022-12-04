@@ -142,7 +142,7 @@ class TokenData(BaseModel):
 class EmailSchema(BaseModel):
    email: List[EmailStr]
 
-class Config:
+   class Config:
         allow_population_by_field_name = True
         arbitrary_types_allowed = True
         json_encoders = {ObjectId: str}
@@ -150,5 +150,29 @@ class Config:
         schema_extra = {
             'example': {               
                 "email":"johndoe@gmail.com",
+            }
+        }
+
+
+
+class ContactForm(BaseModel):
+    id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
+    firstname: str = Field(...)
+    lastname: str = Field(...)
+    email: str = Field(...)
+    message: str = Field(...)
+    
+    class Config:
+        allow_population_by_field_name = True
+        arbitrary_types_allowed = True
+        
+
+        schema_extra = {
+            'example': {               
+                "firstname": "John",
+                "lastname": "Doe",
+                "email":"johndoe@gmail.com",
+                "message": "Input text here",
+
             }
         }
