@@ -38,6 +38,7 @@ const Login = () => {
 		onError: () => console.log('Login with Google Failed'),
 	});
 	// let mail;
+	// let mail;
 	// function getemail() {
 	// 	if (localStorage.getItem('opt_mail') !== '') {
 	// 		mail = localStorage.getItem('opt_mail').slice(1, -1);
