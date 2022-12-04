@@ -152,3 +152,23 @@ class Config:
                 "email":"johndoe@gmail.com",
             }
         }
+
+class ContactForm(BaseModel):
+    firstname: str = Field(...)
+    lastname: str = Field(...)
+    email: str = Field(...)
+    message: str = Field(...)
+    
+    class Config:
+        allow_population_by_field_name = True
+        arbitrary_types_allowed = True
+        
+
+        schema_extra = {
+            'example': {               
+                "firstname": "John",
+                "lastname": "Doe",
+                "email":"johndoe@gmail.com",
+                "message": "Input your message here.",
+            }
+        }

@@ -9,7 +9,7 @@ from fastapi.responses import JSONResponse
 from google.oauth2 import id_token
 from google.auth.transport import requests
 from starlette.requests import Request
-from server.models.schemas import User, Login, EmailSchema, TokenData
+from server.models.schemas import User, Login, EmailSchema,ContactForm, TokenData
 
 from database import db
 ##############
@@ -155,7 +155,7 @@ async def login(login : OAuth2PasswordRequestForm = Depends()):
 
 
 @user_router.post("/contactForm")
-async def send_mail(email: EmailSchema): 
+async def send_mail(email: ContactForm): 
     return JSONResponse(status_code=200, content={"message": "email has been sent"})
 
 @user_router.post("/newsletter")
