@@ -26,7 +26,7 @@ export default function PriceCardTwo({
           <p className="text-white">/month</p>
         </div>
 
-        <ul>
+        <ul className="text-lg">
           <li className="text-white list-item">
             Create up to 50 digital characters daily
           </li>{" "}
