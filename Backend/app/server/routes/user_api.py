@@ -10,7 +10,7 @@ from google.oauth2 import id_token
 from google.auth.transport import requests
 from starlette.requests import Request
 
-from server.models.schemas import User, Login, EmailSchema
+from server.models.schemas import User, Login, EmailSchema, ContactForm
 from database import db
 ##############
 
@@ -155,5 +155,5 @@ async def login(login : OAuth2PasswordRequestForm = Depends()):
 
 
 @user_router.post("/contactForm")
-async def send_mail(email: EmailSchema): 
-    return JSONResponse(status_code=200, content={"message": "email has been sent"})
+async def send_mail(email: ContactForm): 
+    return JSONResponse(status_code=200, content={"message": "Thanks for reaching out"})

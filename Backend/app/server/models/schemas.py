@@ -141,7 +141,7 @@ class EmailSchema(BaseModel):
    email: List[EmailStr]
 
 
-class User(BaseModel):
+class ContactForm(BaseModel):
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
     firstname: str = Field(...)
     lastname: str = Field(...)
