@@ -14,7 +14,7 @@ const closeModal =()=>{
   setTimeout(() => {
     setShowSuccessModal(false)
     setshowErrorModal(false)
-  }, 3500);
+  }, 3000);
  
 }
 const closeModalNow =()=>{
