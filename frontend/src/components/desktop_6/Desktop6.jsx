@@ -6,7 +6,7 @@ import Frame_4 from './Frame_4';
 const Desktop6 = () => {
 	return (
 		<div>
-			<Dashboardlayout title="Hello Baki," text="Start generating cool avatars.">
+			<Dashboardlayout title="Hello " text="Start generating cool avatars.">
 				<Frame_4 />
 			</Dashboardlayout>
 		</div>
