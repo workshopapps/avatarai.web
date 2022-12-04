@@ -11,7 +11,7 @@ import Button from "../landingPage/Button/Button";
 
 const Contact = () => {
 
-    let [overlay, setOverlay] = useState('overlay-visible')  
+    let [overlay, setOverlay] = useState('overlay-hidden')  
     let [status, setStatus] = useState('')
     let [message, setMessage] = useState('')
     let [stateColor, setStateColor] = useState('')
