@@ -62,9 +62,9 @@ const ImageUpload = () => {
  
 
   // getting email from localhost
-  let mail;
-  let personality;
-  function getItems() {
+   let mail;
+   let personality;
+/*  function getItems() {
     if (
       localStorage.getItem("opt_mail") !== "" &&
       localStorage.getItem("personality") !== ""
@@ -74,7 +74,7 @@ const ImageUpload = () => {
       console.log(personality);
     }
   }
-  getItems();
+  getItems(); */
 
   async function sendData() {
  

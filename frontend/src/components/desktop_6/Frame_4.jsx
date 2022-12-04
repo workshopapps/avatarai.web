@@ -1,5 +1,5 @@
 /* dependency imports */
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 /* style imports */
 import style from "./frame_4.module.css";
@@ -9,18 +9,21 @@ import back from "./back.svg";
 import receivedmail from "./receivedmail.svg";
 
 const Frame_4 = () => {
+  const navigate = useNavigate()
+  const user = JSON.parse(localStorage.getItem("userData"));
+
   return (
     <>
       <section className={style.container}>
-        <img src={back} alt="go back" className={style.back} /> 
+        <img src={back} alt="go back" className={style.back} onClick={()=>navigate('/ashboard')}/> 
         <article className={style.main}>
-          <h4>Congratulations User,</h4>
+          <h4>Congratulations {user.username},</h4>
           <img src={receivedmail} alt="recieved mail" />
-          <p>Your avatars has been sent to oriyomi@gmail.com</p>
+          <p>Your avatars has been sent to {user.email}</p>
         </article>
       </section>
       <div className={style.linkdiv}>
-        <Link to="#">Generate More</Link>
+        <Link to="/Dashboard_2">Generate More</Link>
       </div>
     </>
   );
