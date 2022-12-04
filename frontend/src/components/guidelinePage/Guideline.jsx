@@ -5,6 +5,7 @@ import Cover from "./images/home.png";
 import Frame1 from "./images/fr.png";
 import FaqNewsletter from "../faq/FaqNewsletter.jsx";
 import Footer from "../Footerpage/Footer.jsx";
+import Button from "../landingPage/Button/Button";
 
 const GuidelinePage = () => {
   return (
@@ -12,23 +13,23 @@ const GuidelinePage = () => {
       <Navbar />
       <div className="guide">
         <div className="guide-top">
-          <h1>What is AvatarAI?</h1>
+          <h1>What is Zuvatar?</h1>
           <p>
-            <span style={{ color: "#8B70E9" }}>AvatarAI</span> is a site that
+            <span style={{ color: "#8B70E9" }}>Zuvatar</span> is a site that
             enables you to upload your own photos and create AI-generated
             avatars of yourself.
           </p>
           <img src={Cover} alt="home-cover-photo" />
         </div>
         <div className="guide-middle">
-          <h2>How Does AvatarAI Work?</h2>
+          <h2>How Does Zuvatar Work?</h2>
           <p>
-            Creating your own avatars on AvatarAI is relatively easy and only takes
+            Creating your own avatars on Zuvatar is relatively easy and only takes
             a few minutes.
           </p>
           <div className="cards">
             <img src={Frame1} alt="frame1" />
-            <button>Create Avatar</button>
+            <Button>Create Avatar</Button>
           </div>
         </div>
       </div>

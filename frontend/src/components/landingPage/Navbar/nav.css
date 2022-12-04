@@ -7,6 +7,10 @@
 }
 .cbk-ds-nav{
     width: 100vw;
+    /* position: fixed;
+    height: 5rem; */
+    /* background-color: green; */
+    /* z-index: 9999; */
 }
 #cbk-mobile-nav{
     z-index: 99999;

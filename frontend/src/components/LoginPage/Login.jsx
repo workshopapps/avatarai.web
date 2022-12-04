@@ -1,6 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Input from "../Input/Input"
 import log from '../../assets/images/log.png';
 import Button from '../landingPage/Button/Button';
 import Navbar from '../landingPage/Navbar/Navbar';
@@ -10,7 +11,7 @@ import { useAuth } from '../../../context/auth-context';
 import { useGoogleLogin } from '@react-oauth/google';
 import ErrorSuccessCard from '../utils/ErrorSuccessCard';
 
-const Login = ({ props }) => {
+const Login = () => {
 	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();
 	const { login, setToken, token } = useAuth();
@@ -36,15 +37,31 @@ const Login = ({ props }) => {
 		onSuccess: (tokenResponse) => console.log(tokenResponse),
 		onError: () => console.log('Login with Google Failed'),
 	});
+	// let mail;
+	// let mail;
+	// function getemail() {
+	// 	if (localStorage.getItem('opt_mail') !== '') {
+	// 		mail = localStorage.getItem('opt_mail').slice(1, -1);
+	// 	}
+	// 	else
+	// 	{
+	// 		localStorage.setItem("opt_mail", JSON.stringify(mail))
+	// 	}
+	// }
+	// getemail();
 
 	/** Remember to pass user data to api for storage */
 	const url = `${import.meta.env.VITE_API_URL}/api/user/login`;
 	const onSubmit = async (data) => {
 		setLoading(true);
 		await axios
-			.post(url, data)
+			.post(url, data, {
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded',
+				},
+			})
 			.then((response) => {
-				// console.log(response, 'response');
+				console.log(response, 'response');
 
 				//Reset login form
 				reset();
@@ -52,21 +69,20 @@ const Login = ({ props }) => {
 
 				//Get token and save to local storage
 				const token = response?.data?.token;
+				const user = response?.data?.user;
 				localStorage.setItem('zvt_token', JSON.stringify(token));
+				localStorage.setItem('zvt_user', JSON.stringify(user));
+
+				//Get userData and save in local Storage
+				const userData = response?.data?.userData
+				localStorage.setItem('userData', JSON.stringify(userData));
+                 
 
 				//save token to state
 				setToken(token);
-				login(response?.data?.user);
+				login(user);
 
 				setErrorStatus({ error: false, message: 'Login successful' });
-
-				let mail;
-				function getemail() {
-					if (localStorage.getItem('mail_') !== '') {
-						mail = localStorage.getItem('mail_').slice(1, -1);
-					}
-				}
-				getemail();
 			})
 			.catch((e) => {
 				setLoading(false);
@@ -136,16 +152,16 @@ const Login = ({ props }) => {
 								type="email"
 								id="email"
 								required
-								{...register('email', {
+								{...register('username', {
 									required: true,
 									pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
 								})}
 								placeholder="Email Address"
 								className={`border ${
-									errors.email && 'border-red-600'
+									errors.username && 'border-red-600'
 								} border-[#121212] py-3 px-4 rounded-md placeholder-[#808080] text-sm lg:text-xl font-nunito font-medium w-full`}
 							/>
-							{errors.email && <span className="text-xs text-red-600">Please enter a valid email address</span>}
+							{errors.username && <span className="text-xs text-red-600">Please enter a valid email address</span>}
 						</div>
 						<div className="flex flex-col gap-2 relative">
 							<label htmlFor="password" className="text-black font-nunito font-medium text-sm lg:text-xl">
@@ -185,12 +201,12 @@ const Login = ({ props }) => {
 								</Link>
 							</div>
 						</div>
-						<button
+						<Button
 							type="submit"
 							className="bg-[#8B70E9] text-white font-nunito font-bold text-lg lg:text-xl p-4  rounded-lg"
 						>
 							{loading ? 'Loading...' : 'Login'}
-						</button>
+						</Button>
 					</form>
 					<div className="h-7 lg:h-10"></div>
 					<div
@@ -205,7 +221,7 @@ const Login = ({ props }) => {
 					<div className="h-6"></div>
 					<div>
 						<span className="font-nunito font-medium text-sm lg:text-xl text-[#808080]">Don't have an account? </span>
-						<a href="signupfirst" className="font-nunito font-bold text-sm lg:text-xl text-[#6c6191]">
+						<a href="signup" className="font-nunito font-bold text-sm lg:text-xl text-[#6c6191]">
 							Sign Up
 						</a>
 					</div>

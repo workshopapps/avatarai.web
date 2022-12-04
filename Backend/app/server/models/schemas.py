@@ -93,7 +93,8 @@ class UpdateAvatarModel(BaseModel):
 #User data model
 class User(BaseModel):
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
-    username: str = Field(...)
+    firstname: str = Field(...)
+    lastname: str = Field(...)
     email: str = Field(...)
     password: str = Field(...)
     
@@ -104,7 +105,8 @@ class User(BaseModel):
 
         schema_extra = {
             'example': {               
-                "username": "John",
+                "firstname": "John",
+                "lastname": "Doe",
                 "email":"johndoe@gmail.com",
                 "password": "I_can't_think_of_a_password",
             }
@@ -140,6 +142,18 @@ class TokenData(BaseModel):
 class EmailSchema(BaseModel):
    email: List[EmailStr]
 
+   class Config:
+        allow_population_by_field_name = True
+        arbitrary_types_allowed = True
+        json_encoders = {ObjectId: str}
+
+        schema_extra = {
+            'example': {               
+                "email":"johndoe@gmail.com",
+            }
+        }
+
+
 
 class ContactForm(BaseModel):
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
@@ -159,5 +173,6 @@ class ContactForm(BaseModel):
                 "lastname": "Doe",
                 "email":"johndoe@gmail.com",
                 "message": "Input text here",
+
             }
         }
