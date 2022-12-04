@@ -6,8 +6,9 @@ const getInnerWidth = () => {
   const { innerWidth } = window;
   return innerWidth;
 };
+
 const FaqHero = () => {
-  const [searchText, setSearchText] = useState();
+  const [searchText, setSearchText] = useState('');
   const [innerWidth, setInnerWidth] = useState(getInnerWidth());
 
   useEffect(() => {
@@ -22,6 +23,11 @@ const FaqHero = () => {
     };
   }, []);
 
+  const onSubmit = (e) => {
+    e.preventDefault()
+    setSearchText('')
+  }
+
   return (
     <section
       className={style.heroContainer}
@@ -32,7 +38,7 @@ const FaqHero = () => {
       <div className={style.centered}>
         <h2>Frequently Asked Questions</h2>
         <p>Have questions? We are here to help.</p>
-        <form onSubmit={(e) => e.preventDefault()} className={style.form}>
+        <form onSubmit={onSubmit} className={style.form}>
           <div
             className={style.searchIcon}
             style={{
@@ -49,7 +55,7 @@ const FaqHero = () => {
             }`}
             className={style.input}
           />
-          <Button>
+          <Button type="submit">
             {innerWidth < 480 ? (
               <div
                 style={{

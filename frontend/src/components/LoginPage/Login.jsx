@@ -10,7 +10,7 @@ import { useAuth } from '../../../context/auth-context';
 import { useGoogleLogin } from '@react-oauth/google';
 import ErrorSuccessCard from '../utils/ErrorSuccessCard';
 
-const Login = ({ props }) => {
+const Login = () => {
 	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();
 	const { login, setToken, token } = useAuth();
@@ -36,7 +36,7 @@ const Login = ({ props }) => {
 		onSuccess: (tokenResponse) => console.log(tokenResponse),
 		onError: () => console.log('Login with Google Failed'),
 	});
-	let mail;
+	// let mail;
 	// function getemail() {
 	// 	if (localStorage.getItem('opt_mail') !== '') {
 	// 		mail = localStorage.getItem('opt_mail').slice(1, -1);
@@ -59,7 +59,7 @@ const Login = ({ props }) => {
 				},
 			})
 			.then((response) => {
-				// console.log(response, 'response');
+				console.log(response, 'response');
 
 				//Reset login form
 				reset();
@@ -67,7 +67,9 @@ const Login = ({ props }) => {
 
 				//Get token and save to local storage
 				const token = response?.data?.token;
+				const user = response?.data?.user;
 				localStorage.setItem('zvt_token', JSON.stringify(token));
+				localStorage.setItem('zvt_user', JSON.stringify(user));
 
 				//Get userData and save in local Storage
 				const userData = response?.data?.userData
@@ -76,13 +78,9 @@ const Login = ({ props }) => {
 
 				//save token to state
 				setToken(token);
-				login(response?.data?.userData);
-				
-			
+				login(user);
 
 				setErrorStatus({ error: false, message: 'Login successful' });
-
-
 			})
 			.catch((e) => {
 				setLoading(false);
@@ -151,9 +149,7 @@ const Login = ({ props }) => {
 								name="email"
 								type="email"
 								id="email"
-								// value={mail}
 								required
-								onClick={getemail}
 								{...register('username', {
 									required: true,
 									pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
@@ -203,12 +199,12 @@ const Login = ({ props }) => {
 								</Link>
 							</div>
 						</div>
-						< Button
+						<Button
 							type="submit"
 							className="bg-[#8B70E9] text-white font-nunito font-bold text-lg lg:text-xl p-4  rounded-lg"
 						>
 							{loading ? 'Loading...' : 'Login'}
-						</ Button>
+						</Button>
 					</form>
 					<div className="h-7 lg:h-10"></div>
 					<div

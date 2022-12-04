@@ -15,7 +15,7 @@ export default function PriceCardTwo({
   return (
     <section
       style={{ "background-color": bg, color: font }}
-      className="drop-shadow-xl flex flex-col  justify-between vnc_card font-nunito rounded-lg border-vnc_line border-first w-80 break2:w-80 lg:w-96 p-4"
+      className="drop-shadow-xl flex flex-col  justify-between vnc_card font-nunito rounded-lg border-vnc_line border-first w-100 break2:w-80 lg:w-96 p-4"
     >
       <div className="py-7 text-white">
         <h2 className=" md:mt-2 text-white mb-5 text-lg">{title}</h2>
@@ -25,20 +25,39 @@ export default function PriceCardTwo({
           </h1>
           <p className="text-white">/month</p>
         </div>
-        <p className="py-4 text-white">
-          All can have random results and may include artistic nudes, erotic or
-          otherwise shocking images, if you do not want that and are sensitive,
-          we recommend you to NOT use the site!
-        </p>
-        <div>{feature}</div>
-        <div>{feature2}</div>
-        <hr className="border-1 vnc_hr" />
-        <div className="py-2 text-white">
-          <span className="text-white">4k avatars</span> 4096x4096
-        </div>
-        <hr className="border-1 vnc_hr" />
-        <div>{feature}</div>
-        <div>{feature2}</div>
+
+        <ul>
+          <li className="text-white list-item">
+            Create up to 50 digital characters daily
+          </li>{" "}
+          <hr className=" vnc_hr" />
+          <li className="text-white list-item">
+            Change the avatar's hair, cloth, or skin color up to 50 times daily
+          </li>
+          <hr className=" vnc_hr" />
+          <li className="text-white list-item">
+            Choose from 300+ outfits, 200+ shoes, 200+ accessories
+          </li>
+          <hr className=" vnc_hr" />
+          <li className="text-white list-item">
+            Create high resolution characters, cartoons and anime profile photos
+            up to 3 times daily
+          </li>{" "}
+          <hr className=" vnc_hr" />
+          <li className="text-white list-item">
+            Save or export the AI-generated avatars in a JPG or PNG format up to
+            five times daily
+          </li>
+          <hr className=" vnc_hr" />
+          <li className="text-white list-item">
+            Unlimited access to share generated avatars directly from the web
+            app to other platforms
+          </li>
+        </ul>
+
+        {/* <div className="py-2 text-white">
+          <span className="text-white">4k avatars are </span> 4096x4096
+        </div> */}
       </div>
       <BuyPriceBtn top={top} background={background} text={text} />
     </section>
