@@ -42,8 +42,8 @@ const Contact = () => {
         })
          
         if(response.status === 200){
-          setStatus(':) Success')
-          setMessage('Your response was successfully sent, Thanks for contacting us')
+          setStatus(':) Success!!')
+          setMessage('Your message was successfully sent, Thanks for contacting us and watchout for our response')
           setStateColor('green')
         }
         else{
@@ -138,7 +138,7 @@ const Contact = () => {
 
         <div className="contact-overlay" id={overlay} onClick={() => {setOverlay('overlay-hidden')}}>
             <div className='contact-modal bg-white p-10 rounded-md'>
-                  <h3 className={`text-4xl text-${stateColor}-500`}>{status}</h3><hr/>
+                  <h3 className={`text-4xl text-${stateColor}-500 font-semibold`}>{status}</h3><hr/>
                   <p className="mt-5">{message}</p>
                   <button className="mt-5 p-2 rounded-md" onClick={() => {setOverlay('overlay-hidden')}}
                   style={{border: `1px solid ${stateColor}`}}>Close</button>
