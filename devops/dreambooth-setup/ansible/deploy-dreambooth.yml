@@ -60,6 +60,10 @@
         cmd: git clone https://github.com/JoePenna/Dreambooth-Stable-Diffusion
         warn: false
 
+    # Download Gdown
+    - name: Download Gdown
+      command: python -m pip install gdown
+
     # Transfer training script
     - name: Transfer training script
       template:
