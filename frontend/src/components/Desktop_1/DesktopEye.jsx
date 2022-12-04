@@ -6,11 +6,13 @@ import FrameEye from './FrameEye';
 import React from 'react';
 import ArrowDown from './arrowdown.svg';
 import Dashboardlayout from '../DASHBOARD_COMPONENT/DashboardLayout';
+import InstructionModal from '../DASHBOARD_COMPONENT/instructionModal';
 
 const DesktopEye = () => {
 	return (
 		<div>
 			<Dashboardlayout title="Hello" text="Start generating cool avatars.">
+				<InstructionModal />
 				<FrameEye />
 			</Dashboardlayout>
 		</div>
