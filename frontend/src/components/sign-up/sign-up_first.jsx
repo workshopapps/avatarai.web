@@ -41,7 +41,6 @@ export default function SignUp_first() {
     }
   }, [googlesignup]);
 
-  //  https://zuvatar.hng.tech/api/v1/docs
 
   const navigate = useNavigate();
 
@@ -55,7 +54,7 @@ export default function SignUp_first() {
   };
   const [input, setInput] = useState({
     password: "",
-    confirmPassword: " ",
+    confirmPassword: "",
   });
 
   const [error, setError] = useState({
@@ -233,9 +232,6 @@ export default function SignUp_first() {
               {/*</button>*/}
               {/*</div>*/}
 
-
-          
-
             <div>
               <label>Password</label>
               <br />
@@ -299,8 +295,8 @@ export default function SignUp_first() {
               >
                 Sign Up
               </Button>
-              <Button className="button_opt" onClick={signup} >
-                <div className="gog_opt" >
+              <button className="button_opt"onClick={signup} >
+                <div className="gog_opt"  >
                   <img
                     src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670070846/google_npmeof.png"
                     className="google_opt"
@@ -308,7 +304,7 @@ export default function SignUp_first() {
                   />
                   <span className="annoyed_opt">Sign Up with Google</span>
                 </div>
-              </Button>
+              </button>
             </div>
           </form>
         </div>

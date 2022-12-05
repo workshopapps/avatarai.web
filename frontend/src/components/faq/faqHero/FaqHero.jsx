@@ -55,7 +55,7 @@ const FaqHero = () => {
             }`}
             className={style.input}
           />
-          <Button type="submit">
+          <button type="submit">
             {innerWidth < 480 ? (
               <div
                 style={{
@@ -67,7 +67,7 @@ const FaqHero = () => {
             ) : (
               "Search"
             )}
-          </Button>
+          </button>
         </form>
       </div>
     </section>

@@ -6,7 +6,7 @@ import About from './about/About';
 import Social from './socialproof/SocialProof';
 import Header from './header/header/Header';
 import Navbar from "../landingPage/Navbar/Navbar";
-import QuestionSection from "../faq/QuestionSection.jsx";
+import QuestionSection from "./question/questionsection.jsx";
 import Any from './Any/any.jsx'
 import FaqNewsletter from "../faq/FaqNewsletter.jsx";
 import Foooter from '../footer/Foooter';
@@ -72,19 +72,16 @@ function LandingPageC() {
   return (
     <div>
         <Navbar />
-        {preview && <div className="disclamiar">
-          <p>it will Take a few seconds for image and Icons to Loads</p>
-        </div>}
         <Header />
         <Any/>
         <Main />
         <CTA />
-        <Benefits />
+        {/* <Benefits /> */}
         {/* <Social />
         <Learn/>
         <Top/>
         <Final/> */}
-        {/* <QuestionSection /> */}
+        <QuestionSection />
         {isCookiesReady
         ?(cookiesShowing ? <Cookies offCookies={offCookies}></Cookies> : "")
         

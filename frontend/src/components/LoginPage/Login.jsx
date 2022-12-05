@@ -38,6 +38,7 @@ const Login = () => {
 		onError: () => console.log('Login with Google Failed'),
 	});
 	// let mail;
+	// let mail;
 	// function getemail() {
 	// 	if (localStorage.getItem('opt_mail') !== '') {
 	// 		mail = localStorage.getItem('opt_mail').slice(1, -1);
@@ -67,9 +68,9 @@ const Login = () => {
 				setLoading(false);
 
 				//Get token and save to local storage
-				const token = response?.data?.token;
-				const user = response?.data?.user;
+				const token = response?.data?.access_token;
 				localStorage.setItem('zvt_token', JSON.stringify(token));
+				const user = response?.data?.userData;
 				localStorage.setItem('zvt_user', JSON.stringify(user));
 
 				//Get userData and save in local Storage

@@ -203,7 +203,7 @@ const Profile = () => {
 								/>
 							</div>
 
-							<Button type="submit" className="aso-btn__submit" onClick={handleSubmit}>
+							<Button type="submit" className="bg-[#8b70e9] aso-btn__submit" onClick={handleSubmit}>
 								Save Changes
 							</Button>
 						</form>
