@@ -62,26 +62,26 @@ const ImageUpload = () => {
  
 
   // getting email from localhost
-   let mail;
-   let personality;
-/*  function getItems() {
+
+   let email;
+  function getItems() {
     if (
-      localStorage.getItem("opt_mail") !== "" &&
-      localStorage.getItem("personality") !== ""
+      localStorage.getItem("userData") !== ""
     ) {
-      mail = localStorage.getItem("opt_mail").slice(1, -1);
-      personality = localStorage.getItem("personality").slice(1, -1);
-      console.log(personality);
+      let mail = localStorage.getItem("userData").slice(1, -1);
+      let emailQuote = mail.split(":");
+      email = emailQuote[2].slice(1, -1);
+      console.log(email);
     }
   }
-  getItems(); */
+  getItems(); 
 
   async function sendData() {
  
 
     let formdata = new FormData();
     formdata.append("file", selectedImages);
-    formdata.append("email", mail);
+    formdata.append("email", email);
  
     let result = await fetch("https://zuvatar.hng.tech/api/v1/avatar", {
       method: "POST",
@@ -231,7 +231,7 @@ const ImageUpload = () => {
                 return (
                   <div
                     key={image}
-                    className="vic_her_div relative"
+                    className="vic_her_div relative cbk-hover"
                     // onChange={storeItem(image)}
                   >
                     <img src={image} className="vic_her" />

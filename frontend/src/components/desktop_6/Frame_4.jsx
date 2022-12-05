@@ -15,7 +15,7 @@ const Frame_4 = () => {
   return (
     <>
       <section className={style.container}>
-        <img src={back} alt="go back" className={style.back} onClick={()=>navigate('/ashboard')}/> 
+        <img src={back} alt="go back" className={style.back} onClick={()=>navigate('/dashboard')}/> 
         <article className={style.main}>
           <h4>Congratulations {user.username},</h4>
           <img src={receivedmail} alt="recieved mail" />

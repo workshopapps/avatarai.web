@@ -94,7 +94,17 @@
     border-radius: 8px !important;
     margin-bottom: 30px !important;
 }
-
+.cbk-hover{
+    width: fit-content;
+}
+.cbk-hover > button{
+    top: 0px;
+    left: 0px;
+    display: none;
+}
+.cbk-hover:hover > button{
+    display: block;
+}
 @media screen and (min-width: 768px) {
     .aso-dd2-content-container h1 {
         font-size: 32px;
