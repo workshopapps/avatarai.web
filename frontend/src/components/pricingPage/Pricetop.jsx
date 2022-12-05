@@ -1,4 +1,3 @@
-import PriceButton from "./PriceButton";
 import React from "react";
 
 export default function Pricetop() {
@@ -15,7 +14,6 @@ export default function Pricetop() {
           your face when it's done
         </p>
       </div>
-      <PriceButton />
     </>
   );
 }
