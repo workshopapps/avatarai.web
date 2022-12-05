@@ -231,7 +231,7 @@ const ImageUpload = () => {
                 return (
                   <div
                     key={image}
-                    className="vic_her_div relative"
+                    className="vic_her_div relative cbk-hover"
                     // onChange={storeItem(image)}
                   >
                     <img src={image} className="vic_her" />
