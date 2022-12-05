@@ -7,6 +7,8 @@ var bodyParser = require('body-parser');
 
 var jsonParser = bodyParser.json()
 
+const PORT = 8000;
+
 const app = express();
 
 app.use(jsonParser);
@@ -25,13 +27,24 @@ app.post('/', (req, res) => {
 
     const pathToTrainingScript = '/home/ubuntu/beginTraining.sh';
 
-    exec(pathToTrainingScript, (error, stdout, stderr) => {
-        console.log('stdout: ' + stdout);
+    const {email, img_class} = req.body;
+
+    const uid = uuid.v4().toString().split('-')[0];
+
+    exec(`${pathToTrainingScript} ${email} ${img_class} ${uid}`, (error, stdout, stderr) => {
+        console.log('stdout: \n' + stdout);
         console.log('stderr: ' + stderr);
+        if (stderr !== null) {
+            console.log(stderr)
+
+            return res.status(500).json({
+                message: `An error occcured while training your images`
+            })
+        }
         if (error !== null) {
             console.log('exec error: ' + error);
 
-            res.status(400).json({
+            return res.status(400).json({
                 message: `An error occcured ==> ${error.message}`
             })
         }

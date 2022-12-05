@@ -24,9 +24,9 @@ const Contact = () => {
 
     function sendMessage(){
       postMessage({
-        "email": [
-          document.getElementById('email').value
-        ]
+        "name": document.getElementById('name').value,
+        "email": document.getElementById('email').value,
+        "message": document.getElementById('message').value
       })
       document.getElementById('contact-form').reset()
       setOverlay('overlay-visible')
