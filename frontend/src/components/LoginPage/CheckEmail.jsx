@@ -27,9 +27,11 @@ const CheckEmail = () => {
         A password reset link has been sent to <span className='text-[#6C6191] font-[700]'>{emailForgot}</span> click on the link to reset your password.
           </p>
           <div>
-          <button className=" p-[12px] rounded-[8px] w-[100%] justify-center md: justify-center rounded-[8px] p-[12px] w-[100%] bg-[#8B70E9] md: text-white sm: w-[50%] ">
+            <div className='w-[100%]'>
+          <button className=" items-center content-center justify-center mix-auto p-[12px] rounded-[8px] w-[100%] md:items-center content-center  justify-center mix-auto rounded-[8px] p-[12px] w-[100%] bg-[#8B70E9] md: text-white sm: w-[50%] ">
           <Link to="/reset-password">Continue</Link>
           </button>
+          </div>
           <div className='ml-[-50%]'>
           <p className=" w-[130%] text-[#808080] text-center mt-[6%] md:w-[130%]  text-[15px] text-center">
           Didn't receive the e-mail?{""}
