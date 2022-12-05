@@ -9,11 +9,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import SuccessModal from "../faq/successModal";
 import ErrorModal from "./errorModal";
-
+import { useContext } from "react";
+import { ForgetPasswordContext } from "../../../context/forgetpassword-context";
 
 
 const ForgotPassword = () => {
-
+const {setEmailForgot}=useContext(ForgetPasswordContext);
   const navigate = useNavigate();
   
 const [emailField, setEmailField] = useState("")
@@ -82,6 +83,7 @@ const requestEmail = async (username)=>{
       }
   })
   console.log(response)
+  setEmailForgot(emailField)
   if(response.status===200){
     navigate('/check-email')
   }
