@@ -156,7 +156,10 @@ async def login(login : OAuth2PasswordRequestForm = Depends()):
 
 
 @user_router.post("/contactForm")
-async def send_mail(email: ContactForm): 
+async def send_mail(email: ContactForm):
+    ##################
+    #SMTP
+    ##################
     return JSONResponse(status_code=200, content={"message": "Thanks for reaching out"})
 
 @user_router.post("/newsletter")
