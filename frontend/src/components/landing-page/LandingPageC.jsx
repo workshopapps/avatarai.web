@@ -72,9 +72,6 @@ function LandingPageC() {
   return (
     <div>
         <Navbar />
-        {preview && <div className="disclamiar">
-          <p>it will Take a few seconds for image and Icons to Loads</p>
-        </div>}
         <Header />
         <Any/>
         <Main />
