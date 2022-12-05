@@ -5,11 +5,11 @@ return(
     <>
    
 
-    <div className="flex justify-center items-center w-[80%] md:w-[50%] lg:w-[40%] rounded shadow-2xl
+    <div className="flex justify-center items-center w-[70%] md:w-[40%] lg:w-[30%] rounded shadow-2xl
     fixed top-[50%] md:bottom-[0%] left-[50%] translate-x-[-50%]  translate-y-[-50%] z-[9999] bg-white h-[fit-content]">
-        <div className="relative p-[1.5rem] ">
+        <div className="relative p-[1rem] ">
             <img src={cancel} alt="" 
-            className="absolute right-[5%] top-[-4%] md:top-[-4%] font-bold w-[1.5rem]"
+            className="absolute right-[5%] top-[5%] md:top-[5%] font-bold w-[1rem] md:w-[1.5rem]"
             onClick={closeModalNow}/>
            
             <div className="flex-[100%] md:flex-[80%]">
