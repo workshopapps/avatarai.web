@@ -1,7 +1,16 @@
 import BuyPriceBtn from "./BuyPriceBtn";
 import React from "react";
 
-function PriceCardOne({ title, amount, bg, top, font, background, text }) {
+function PriceCardOne({
+  title,
+  amount,
+  bg,
+  top,
+  font,
+  background,
+  text,
+  duration,
+}) {
   return (
     <section
       style={{ "background-color": bg, color: font }}
@@ -11,7 +20,7 @@ function PriceCardOne({ title, amount, bg, top, font, background, text }) {
         <h2 className=" md:mt-20 mb-4 text-lg">{title}</h2>
         <div className="flex py-1 gap-2 items-center">
           <h1 className="text-5xl font-bold font-jakarta">{amount}</h1>
-          <p>/month</p>
+          <p>{duration}</p>
         </div>
         {/* <p className=" py-4">
           All can have random results and may include artistic nudes, erotic or
