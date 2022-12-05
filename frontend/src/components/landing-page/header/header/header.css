@@ -3,7 +3,7 @@
     height: 35rem;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-position: center center;
+    background-position: center ;
     background-size: cover;
     text-align: center;
     color: white;
@@ -34,7 +34,7 @@
 }
 .bat-header-content p {
     width: 30%;
-    font-size: 15px;
+    font-size: 20px;
     margin: 0 auto;
     z-index: 999;
     margin-top: 1rem;
@@ -88,7 +88,7 @@
     }
     .bat-header-content p {
         width: 70%;
-        font-size: 12px;
+        font-size: 16px;
     }    
     .bat-header-overlay{
         height: 30rem;
