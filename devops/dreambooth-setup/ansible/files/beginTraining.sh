@@ -5,19 +5,22 @@ uid = '12sw'
 class = "" # to be read externally
 job_name = "${user_email}-${uid}"
 
+echo pwd
+
 # Start training environment
 conda env create -f environment.yaml
 conda activate ldm
 
 # Generate regularization images based on class
 
-txt2img_path = 'scripts/stable_txt2img.py'
-ckpt_path = '/path/to/original/stable-diffusion/sd-v1-4-full-ema.ckpt'
+txt2img_path = 'scripts/stable_txt2img.py' # Change to correct path
+ckpt_path = '/path/to/original/stable-diffusion/sd-v1-4-full-ema.ckpt' # Change to correct path
 reg_img_prompt = "a photo of a $class"
 n_samples = 100 # number of images to generate
+ # Change to correct path
 reg_data_path = "classes/class-${class}-samples" # Path to save regularization images to
 
-iif [ -n "$(ls -A your/dir 2>/dev/null) | tail -1" ]
+iif [ -n "$(ls -A your/dir 2> /dev/null) | tail -1" ]
 then
     echo "Regularization images already exist for this class"
 else
@@ -29,9 +32,9 @@ fi
 
 # Traing the model
 
-model_path = '/path/to/original/stable-diffusion/sd-v1-4-full-ema.ckpt'
-last_model_path = '/path/to/original/stable-diffusion/last.ckpt'
-training_images_path = '/root/to/training/images'
+model_path = '/path/to/original/stable-diffusion/sd-v1-4-full-ema.ckpt'  # Change to correct path
+last_model_path = '/path/to/original/stable-diffusion/last.ckpt'  # Change to correct path
+training_images_path = '/root/to/training/images'  # Change to correct path
 max_steps = 1000
 seed = 49
 
@@ -76,14 +79,14 @@ ls -Al $gen_images_path
 
 # zip the generated images
 zipped_gen_file = ${user_email}-gen-images.zip
-zip zipped_gen_file gen_images_path
+zip -r zipped_gen_file gen_images_path
 
 # Send zipped package as an email to user
 
 echo "Sending zipped_gen_file to ${user_email} as an email..."
 if [[ -f ${zipped_gen_file} ]]
 then
-	mutt -s "Here are your generated avatars. Enjoy!" -- ${user_email}  < "${zipped_gen_file}"
+	echo "Unzip the attached file to see your pictures" | mutt -s "Here are your generated avatars. Enjoy!"  -a "${zipped_gen_file}"  -- ${user_email}
 fi
 
 echo "done"
