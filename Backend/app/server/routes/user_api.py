@@ -47,8 +47,8 @@ user_router = APIRouter()
 @user_router.post("/api/user", response_model = User)
 async def create_user(raw_user: User):
     user = {        
-        "firstname": raw_user.firstname,
-        "lastname": raw_user.lastname,
+        "first_name": raw_user.first_name,
+        "lastname": raw_user.last_name,
         "email":raw_user.email,
         "password": raw_user.password,                     
     }
