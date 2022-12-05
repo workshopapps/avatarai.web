@@ -74,12 +74,16 @@ python $txt2img_path --ddim_eta 0.0 \
 
 echo "Image generation Complete"
 
+sleep 10
+
 gen_images_path = 'outputs/txt2img-samples/samples' # Change to absolute path
 ls -Al $gen_images_path
 
 # zip the generated images
-zipped_gen_file = ${user_email}-gen-images.zip
+zipped_gen_file = "${user_email}-gen-images.zip"
 zip -r zipped_gen_file gen_images_path
+
+sleep 10
 
 # Send zipped package as an email to user
 
@@ -88,5 +92,14 @@ if [[ -f ${zipped_gen_file} ]]
 then
 	echo "Unzip the attached file to see your pictures" | mutt -s "Here are your generated avatars. Enjoy!"  -a "${zipped_gen_file}"  -- ${user_email}
 fi
+
+sleep 3
+
+echo "Sending ${zipped_gen_file} to API endpoint to be saved to s3 bucket and a database..."
+API_ENDPOINT='zuvatar.hng.tech/api/v1/save-gen-img-to-s3'
+
+# Send zipped images to specified endpoint to be saved to s3 bucket and a database
+curl -H "Content-Type:application/zip" --data-binary @${zipped_gen_file} -X POST https://${API_ENDPOINT}
+
 
 echo "done"
