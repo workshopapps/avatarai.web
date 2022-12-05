@@ -153,11 +153,9 @@ class EmailSchema(BaseModel):
             }
         }
 
-
-
 class ContactForm(BaseModel):
-    id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
-    name: str = Field(...)
+    firstname: str = Field(...)
+    lastname: str = Field(...)
     email: str = Field(...)
     message: str = Field(...)
     
@@ -168,9 +166,9 @@ class ContactForm(BaseModel):
 
         schema_extra = {
             'example': {               
-                "name": "John",
+                "firstname": "John",
+                "lastname": "Doe",
                 "email":"johndoe@gmail.com",
-                "message": "Input text here",
-
+                "message": "Input your message here.",
             }
         }

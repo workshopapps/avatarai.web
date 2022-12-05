@@ -9,7 +9,7 @@ from fastapi.responses import JSONResponse
 from google.oauth2 import id_token
 from google.auth.transport import requests
 from starlette.requests import Request
-from server.models.schemas import User, Login, EmailSchema, TokenData
+from server.models.schemas import User, Login, EmailSchema,ContactForm, TokenData
 
 from server.models.schemas import User, Login, EmailSchema, ContactForm
 from database import db
@@ -47,7 +47,8 @@ user_router = APIRouter()
 @user_router.post("/api/user", response_model = User)
 async def create_user(raw_user: User):
     user = {        
-        "username": raw_user.username,
+        "firstname": raw_user.firstname,
+        "lastname": raw_user.lastname,
         "email":raw_user.email,
         "password": raw_user.password,                     
     }
@@ -69,11 +70,11 @@ async def create_user(raw_user: User):
             detail={'message' : 'Something went wrong. Try another email'}
         )
 
-    if await db.user.find_one({"username": raw_user.username} ):
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail={'message' : 'Username not unique'}
-        )
+    # if await db.user.find_one({"username": raw_user.username} ):
+    #     raise HTTPException(
+    #         status_code=status.HTTP_400_BAD_REQUEST,
+    #         detail={'message' : 'Username not unique'}
+    #    )
 
     new_user = await db['user'].insert_one(user)
     create_user= await db.user.find_one({"_id": new_user.inserted_id})
@@ -85,7 +86,8 @@ async def create_user(raw_user: User):
     Response = {
         "token" :{ "token" : access_token},
         "userData":{
-            'username': user['username'],
+            'firstname': user['firstname'],
+            'lastname': user['lastname'],
             'email': user['email'],
             }
         }
