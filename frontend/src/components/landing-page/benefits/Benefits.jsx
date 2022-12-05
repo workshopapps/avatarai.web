@@ -14,9 +14,9 @@ const Benefits = () => {
       <div class="part4">
         <h2 className="be">Frequently asked questions</h2>
         <div class="faqs">
-          <div class="faq">
+          <div className={`faq ${one && 'bad'}`}>
             <div class="head">
-              <p>How will I get the avatars generated?</p>
+              <h3>How will I get the avatars generated?</h3>
               {one ? (
                 <img
                   src={Vector2}
@@ -38,15 +38,15 @@ const Benefits = () => {
               )}
             </div>
             {one && (
-              <p id="anchor">
+              <p id="anchor" >
                 Once your avatars are ready, you will receive and email with the
                 generated avatars for you.
               </p>
             )}
           </div>
-          <div class="faq">
+          <div className={`faq ${two && 'bad'}`}>
             <div class="head">
-              <p>Can I choose the background for my avatars?</p>
+              <h3>Can I choose the background for my avatars?</h3>
               {two ? (
                 <img
                   src={Vector2}
@@ -75,9 +75,9 @@ const Benefits = () => {
               </p>
             )}
           </div>
-          <div class="faq">
+          <div className={`faq ${three && 'bad'}`}>
             <div class="head">
-              <p>What are digital avatars used for?</p>
+              <h3>What are digital avatars used for?</h3>
               {three ? (
                 <img
                   src={Vector2}
@@ -106,15 +106,6 @@ const Benefits = () => {
               </p>
             )}
           </div>
-          {/* <div class="faq">
-            <div class="head">
-              <p>Are there age restriction for AvatarAI?</p>
-              {four ? (<img src={Vector2} alt="" class="anchor" onClick={()=>{setFour(current => !current)}} />): (<img src={vector} alt="" class="anchor" onClick={()=>{setFour(current => !current)}} />)}
-            </div>
-            {four && <p id="anchor">
-            Yes. AvatarAI should not be used by children under 13 years of age without supervision.
-            </p>}
-          </div> */}
         </div>
 
         <Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn viewBtn">
@@ -122,28 +113,6 @@ const Benefits = () => {
         </Button>
       </div>
     </section>
-
-    // <div>
-
-    //   <div className="benefits__description-ony">
-
-    //   </div>
-    //   <h3 className="features__title-ony"><span className="aiii-ony">Exciting </span>features for you</h3>
-    //   <div className="features__ony">
-    //   <div>
-    //     <h4 className="aiiii-ony">Image to avatar</h4>
-    //     <p>Convert your images to amazing and cool avatars that you can share to friends anywhere on the internet</p>
-    //   </div>
-    //   <div>
-    //     <h4 className="aiiii-ony">Text to avatar</h4>
-    //     <p>Convert text to amazing and cool avatars that you can share to friends anywhere on the internet</p>
-    //   </div>
-    //   <div>
-    //     <h4 className="aiiii-ony">Community</h4>
-    //     <p>Connect with other tapert users and see the amazing avatars they are creating. </p>
-    //   </div>
-    //   </div>
-    // </div>
   );
 };
 
