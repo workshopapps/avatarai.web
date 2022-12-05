@@ -31,3 +31,4 @@ A POST method in the express server calls a [bash script](./dreambooth-setup/scr
 
 The script runs the commands to train our model and and send our user an email after training is done.
 
+Another endpoint on the server is called to GET the zipped generated images and send to another endpoint as a byte stream. This next (external) endpoint should save the zipped file on s3.
