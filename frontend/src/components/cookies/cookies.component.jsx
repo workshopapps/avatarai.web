@@ -21,7 +21,7 @@ return (
           <div className="">
             <button
               className="bg-[#8B70E9] text-white px-[1rem] md:px-[1.5rem] xl:px-[2rem] py-[0.5rem] rounded mr-[1rem]"
-              onClick={throwError}
+              onClick={offCookies}
             >
               Accept
             </button>
