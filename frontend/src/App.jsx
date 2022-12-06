@@ -1,3 +1,5 @@
+import * as Sentry from "@sentry/react";
+
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import Aboutus from './components/aboutus/AboutUs';
@@ -59,7 +61,7 @@ import Profile2 from './components/Profile/Profile';
 
 // import CareerPage from './components/careers-page/careerPage';
 
-export default function App() {
+function App() {
 	const { setToken } = useAuth();
 	useEffect(() => {
 		const token = localStorage.getItem('zvt_token');
@@ -219,3 +221,5 @@ export default function App() {
 		</Routes>
 	);
 }
+
+export default Sentry.withProfiler(App)

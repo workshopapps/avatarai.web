@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 const Cookies =({offCookies})=>{
+
+  const throwError = () => {
+    throw Error("wow...something just broke");
+  }
 return (
   <>
     <div
@@ -17,7 +21,7 @@ return (
           <div className="">
             <button
               className="bg-[#8B70E9] text-white px-[1rem] md:px-[1.5rem] xl:px-[2rem] py-[0.5rem] rounded mr-[1rem]"
-              onClick={offCookies}
+              onClick={throwError}
             >
               Accept
             </button>
