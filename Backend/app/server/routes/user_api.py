@@ -94,7 +94,7 @@ async def create_user(raw_user: User):
     Response = {
         "token" :{ "token" : access_token},
         "userData":{
-            'firstname': user['firstname'],
+            'firstname': user['first_name'],
             'lastname': user['lastname'],
             'email': user['email'],
             }
@@ -146,7 +146,7 @@ async def login(login : OAuth2PasswordRequestForm = Depends()):
         "access_token" : token, "token_type": "bearer",
         "userData":{
             'Firstname': userRes['first_name'],
-            'Lastname': userRes['last_name'],
+            'Lastname': userRes['lastname'],
             'email': userRes['email'],
             }
         }
