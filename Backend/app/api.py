@@ -1,8 +1,11 @@
 from fastapi import FastAPI
+from fastapi.responses import HTMLResponse
 from server.routes.photo_upload_api import photo_router
 from server.routes.retrieve_user_avatars_api import user_avatars_router
 from server.routes.user_api import user_router
 from server.routes.avatars import avatar_router
+
+
 
 from fastapi import FastAPI
 
@@ -21,10 +24,15 @@ sentry_sdk.init(
 # 👇 FastAPI INSTANCE
 app = FastAPI(root_path="/api/v1")
 
+##################################
+
+##################################
+
 # ===================================================================
 
 # 👇 MIDDLEWARES
 from fastapi.middleware.cors import CORSMiddleware
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -33,6 +41,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+   
 
 # =================================================================
  

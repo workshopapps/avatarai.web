@@ -14,7 +14,7 @@ const Dashboardlayout = ({ children, title, text }) => {
 
 	return (
     <>
-      <div className="w-full max-h-screen bg-[#FAFAFA] lg:bg-[#FAFAFA] relative">
+      <div className="w-full max-h-screen bg-[#FFFFFF] lg:bg-[#FAFAFA] relative">
         <div className="flex flex-no-wrap h-full">
           <SideBar show={show} setShow={setShow} />
           <div className="w-full h-screen overflow-y-auto">

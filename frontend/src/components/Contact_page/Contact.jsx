@@ -24,7 +24,8 @@ const Contact = () => {
 
     function sendMessage(){
       postMessage({
-        "name": document.getElementById('name').value,
+        "firstname": document.getElementById('firstname').value,
+        "lastname": document.getElementById('lastname').value,
         "email": document.getElementById('email').value,
         "message": document.getElementById('message').value
       })
@@ -92,13 +93,25 @@ const Contact = () => {
               Thanks!
             </p>
             <div className="mt-5">
-              <label htmlFor="name" className="text-xl">
-                Name
+              <label htmlFor="firstname" className="text-xl">
+                First name
               </label>
               <input
                 type="text"
-                id="name"
-                placeholder="Jane Doe"
+                id="firstname"
+                placeholder="Jane"
+                className="block border border-gray-400 p-3 rounded-md w-full"
+                required
+              />
+            </div>
+            <div className="mt-5">
+              <label htmlFor="lastname" className="text-xl">
+                Last name
+              </label>
+              <input
+                type="text"
+                id="lastname"
+                placeholder="Doe"
                 className="block border border-gray-400 p-3 rounded-md w-full"
                 required
               />

@@ -9,9 +9,9 @@ import { NavProvider } from "../context/nav-context";
 import { ForgetPasswordProvider } from "../context/forgetpassword-context";
 import "./index.css";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import reportWebVitals from "./reportWebVitals";
 
-// process.env.NODE === "production" && 
-Sentry.init({
+process.env.NODE_ENV === "production" && Sentry.init({
 	dsn: "https://10e43f27c83a4abc8e9c2605b69e557d@o4504280846565376.ingest.sentry.io/4504280979275777",
 	integrations: [new BrowserTracing()],
 
@@ -36,3 +36,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 		</AuthProvider>
 	</React.StrictMode>
 );
+
+reportWebVitals();

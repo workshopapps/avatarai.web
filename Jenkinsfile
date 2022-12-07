@@ -21,7 +21,7 @@ pipeline {
                 dir ('avatarai.web/frontend') {
 					sh "echo $pwd 2"
                     sh "npm i"
-                    sh "npm run build"
+                    sh "export NODE_ENV=production && npm run build"
                 }
 
 			}
