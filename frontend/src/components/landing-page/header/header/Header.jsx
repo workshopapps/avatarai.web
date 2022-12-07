@@ -15,10 +15,11 @@ const Header = () => {
           Create Profile pictures, Online gaming display pictures, Pet potraits
           and much more on the go.
         </p>
-
+        <Link to="/login">
         <Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn bat-btn">
-          <Link to="/Signup"> Generate Avatars </Link>
+           Generate Avatars
         </Button>
+        </Link>
       </div>
       <div className="bat-header-overlay"></div>
     </header>
