@@ -20,12 +20,14 @@ function Pricing() {
       setPage(pages.Pricing)
      },[])
   return (
-    <section className="overflow-x-hidden price-top">
+    <section className="price-top">
       <Navbar />
-      <Pricetop />
-      <TotalPriceCards />
-      <FaqNewsletter />
-      <Foooter />
+      <div className="overflow-x-hidden">
+        <Pricetop />
+        <TotalPriceCards />
+        <FaqNewsletter />
+        <Foooter />
+      </div>
     </section>
   );
 }
