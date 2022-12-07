@@ -94,7 +94,7 @@ async def create_user(raw_user: User):
     Response = {
         "token" :{ "token" : access_token},
         "userData":{
-            'firstname': user['firstname'],
+            'firstname': user['first_name'],
             'lastname': user['lastname'],
             'email': user['email'],
             }
