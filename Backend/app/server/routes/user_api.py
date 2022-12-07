@@ -190,8 +190,6 @@ async def verify(token:list):
         )
 
 
-
-
 @user_router.post("/contactForm")
 async def send_mail(email: ContactForm):
     ##################
