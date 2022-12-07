@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../landingPage/Button/Button";
 
 function BuyPriceBtn({ top, background, text }) {
   return (
@@ -8,9 +9,9 @@ function BuyPriceBtn({ top, background, text }) {
         "background-color": background,
         color: text,
       }}
-      className="w-full text-center p-2 rounded-lg"
+      className="w-full text-center p-2 rounded-lg font-bold"
     >
-      <button> Buy this plan</button>
+      <Button> GET STARTED NOW</Button>
     </div>
   );
 }

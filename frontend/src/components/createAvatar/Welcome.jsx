@@ -6,6 +6,7 @@ import SearchComponent from "../DashboardSearchComponent/SearchComponent";
 import SidebarEye from "../Desktop_1/SidebarEye";
 import MobileLogo from "./images/mobileLogo.svg";
 import Menu from "./images/menu.svg";
+import Button from "../landingPage/Button/Button";
 
 function Upload() {
   return (
@@ -32,7 +33,7 @@ function Upload() {
             <p id="add-pictures">
               Choose pictures from file <br /> (PNG or JPEG)
             </p>
-            <button type="submit">Proceed</button>
+            <Button type="submit">Proceed</Button>
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@
 .contact-form{
     margin: auto;
 }
-img{
+.contact-img{
     margin: auto;
 }
 
@@ -38,7 +38,7 @@ img{
         font-size: x-large;
         margin-bottom: 10px;
     }
-    .barner button{
+    .barner .barnerBtn{
         padding: 9px;
         font-size: medium;
     }
@@ -50,10 +50,35 @@ img{
     .contact-form{
         padding: 15px !important;
         width: 100vw;
+        margin-top: 25px;
     }
-    .barner button{
+    .barner .barnerBtn{
         padding: 5px;
         padding-left: 10px;
         padding-right: 10px;
     }
 }
+.contact-overlay{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.438);
+    z-index: 1;
+    top: 0px;
+}
+#overlay-hidden{
+    display: none;
+}
+#overlay-visible{
+    display: block;
+}
+.contact-modal{
+    width: 90vw;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 15%;
+    text-align: center;
+}
+/* .contact-modal button{
+    border: 1px solid red;
+} */

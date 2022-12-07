@@ -1,8 +1,10 @@
+
 import avatar from "../../assets/Avatar.svg";
 import State_options from "./state_options.component";
 import style from "./profile.module.css"
 
 import { useState } from "react";
+import Button from "../landingPage/Button/Button";
 const defaultFields = {
   firstName: "",
   lastName: "",
@@ -19,6 +21,7 @@ const Profile = () => {
     e.preventDefault();
     setEditing(!editing);
   };
+  const user = JSON.parse(localStorage.getItem("userData"));
   const [formFields, setFormFields] = useState(defaultFields);
   const { firstName, lastName, email, mobileNumber, password, location } =
     formFields;
@@ -63,14 +66,13 @@ const Profile = () => {
   const half_display_inputs = [
     {
       label: "First Name",
-      placeholder: "Sandra",
+      placeholder: "Eddie",
       type: "text",
       name: "firstName",
       value: firstName,
     },
     {
       label: "Last Name",
-      placeholder: "Triss",
       type: "text",
       name: "lastName",
       value: lastName,
@@ -100,8 +102,8 @@ const Profile = () => {
               className={`w-[15%] md:w-[15%] ${style.profilePix}`}
             />
             <div>
-              <h3 className="font-semibold">Baki Hanma</h3>
-              <p>bakii@gmail.com</p>
+              <h3 className="font-semibold">{user?.username}</h3>
+              <p>{user?.email}</p>
             </div>
           </div>
           <form action="" className={style.form}>
@@ -115,7 +117,7 @@ const Profile = () => {
                       <br />
                       <input
                         type="text"
-                        placeholder="Sandra"
+                        placeholder="Eddie"
                         name="firstName"
                         value={firstName}
                         onChange={change_formField}
@@ -127,7 +129,6 @@ const Profile = () => {
                       <br />
                       <input
                         type="text"
-                        placeholder="Triss"
                         name="lastName"
                         value={lastName}
                         onChange={change_formField}
@@ -198,7 +199,7 @@ const Profile = () => {
                   <br />
                   <input
                     type="email"
-                    placeholder="bakii@gmail.com"
+                    placeholder="eddie@gmail.com"
                     name="email"
                     value={email}
                     onChange={change_formField}
@@ -217,22 +218,22 @@ const Profile = () => {
                   />
                 </fieldset>
                 <div className="flex justify-between md:justify-around">
-                  <button
+                  <Button
                     onClick={change_editing_status}
                     className="border border-[#22125A] p-[1.5rem] px-[2rem] md:px-[3.5rem]
                   mt-[1.5rem] text-[#22125A] rounded-[8px]
               "
                   >
                     Cancel
-                  </button>
-                  <button
+                  </Button>
+                  <Button
                     onClick={save_details}
                     className="bg-[#22125A] p-[1.5rem]  px-[2rem] md:px-[3.5rem] text-[white]
                   mt-[1.5rem] rounded-[8px]
               "
                   >
                     save
-                  </button>
+                  </Button>
                 </div>
               </>
             ) : (
@@ -244,7 +245,7 @@ const Profile = () => {
                       <br />
                       <input
                         type="text"
-                        placeholder="Sandra"
+                        placeholder="Eddie"
                         name="firstName"
                         value={firstName}
                         onChange={change_formField}
@@ -256,7 +257,6 @@ const Profile = () => {
                       <br />
                       <input
                         type="text"
-                        placeholder="Triss"
                         name="LastName"
                         value={lastName}
                         onChange={change_formField}
@@ -327,7 +327,7 @@ const Profile = () => {
                   <br />
                   <input
                     type="email"
-                    placeholder="bakii@gmail.com"
+                    placeholder="eddie@gmail.com"
                     name="email"
                     value={email}
                     onChange={change_formField}
@@ -346,14 +346,14 @@ const Profile = () => {
                   />
                 </fieldset>
                 <div className="flex justify-center md:justify-end">
-                  <button
+                  <Button
                     onClick={change_editing_status}
                     className={`bg-[#22125A] 
                 p-[1.5rem]  px-[3.5rem] text-[white] rounded-[8px] mt-[1.5rem]
                ${style.edit}`}
                   >
                     Edit Profile
-                  </button>
+                  </Button>
                 </div>
               </>
             )}

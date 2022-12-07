@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
           Upload 3 - 10 images and generate avatars on the go. We’ll train the AI model to generate avatars that look just like you in any style you want.
         </p>
         {/* <button className='button-bat'>   
-          <Link to='/Signupfirst'>
+          <Link to='/Signup'>
             Start Generating           
           </Link>  
         </button> */}

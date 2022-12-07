@@ -6,7 +6,7 @@ import About from './about/About';
 import Social from './socialproof/SocialProof';
 import Header from './header/header/Header';
 import Navbar from "../landingPage/Navbar/Navbar";
-import QuestionSection from "../faq/QuestionSection.jsx";
+import QuestionSection from "./question/questionsection.jsx";
 import Any from './Any/any.jsx'
 import FaqNewsletter from "../faq/FaqNewsletter.jsx";
 import Foooter from '../footer/Foooter';
@@ -27,10 +27,30 @@ function LandingPageC() {
   const [isCookiesReady, setIsCookiesReady] = useState(false)
 
   useEffect(() => {
-    let interval = setInterval(() => setIsCookiesReady(true), 1200);
+    let interval = setInterval(() =>{
+  //        // First check, if localStorage is supported.
+	// if (window.localStorage) {
+	// 	// Get the expiration date of the previous popup.
+	// 	let nextPopup = localStorage.getItem( 'cookies' );
+
+	// 	if (nextPopup > new Date()) {
+	// 		return;
+	// 	}
+
+	// 	// Store the expiration date of the current popup in localStorage.
+	// 	let expires = new Date();
+	// 	expires = expires.setHours(expires.getHours() + 24);
+
+	// 	localStorage.setItem( 'cookies', expires );
+	// }
+
+      setIsCookiesReady(true)
+    }, 2000);
+
+	
     
   }, []);
-
+ 
 
   const offCookies =()=>{
     setCookiesShowing(false)
@@ -52,19 +72,16 @@ function LandingPageC() {
   return (
     <div>
         <Navbar />
-        {preview && <div className="disclamiar">
-          <p>it will Take a few seconds for image and Icons to Loads</p>
-        </div>}
         <Header />
         <Any/>
         <Main />
         <CTA />
-        <Benefits />
+        {/* <Benefits /> */}
         {/* <Social />
         <Learn/>
         <Top/>
         <Final/> */}
-        {/* <QuestionSection /> */}
+        <QuestionSection />
         {isCookiesReady
         ?(cookiesShowing ? <Cookies offCookies={offCookies}></Cookies> : "")
         

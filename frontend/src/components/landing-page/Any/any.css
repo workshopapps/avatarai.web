@@ -9,12 +9,13 @@
     color: black;
     font-size: 40px;
     font-weight: 800;
+    text-align: center;
 }
 .any-sect p{
-    width: 40%;
+    width: 50%;
     font-weight: 500;
     margin: 0 auto;
-    font-size: 12px;
+    font-size: 20px;
 }
 .button-bat{
     background-color: #8B70E9;
@@ -38,10 +39,11 @@
     }
 }
 @media only screen and (max-width: 500px) {
-    .be{
+    /* .be{
         font-size: 16px;
-    }
+    } */
     .any-sect p{
-        width: 100%;
+        width: 95%;
+        font-size: 16px;
     }
 }

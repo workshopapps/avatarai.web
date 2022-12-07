@@ -1,14 +1,13 @@
-
 .bat-header{
-    background-image: url(Header.png);
+    background-image: url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670024198/Header_w9d46m.png");
     height: 35rem;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-position: top center;
+    background-position: 100% ;
     background-size: cover;
     text-align: center;
     color: white;
-    /* z-index: -99999; */
+    z-index: 9;
     position: relative;
 }
 .bat-header-overlay{
@@ -35,7 +34,7 @@
 }
 .bat-header-content p {
     width: 30%;
-    font-size: 15px;
+    font-size: 20px;
     margin: 0 auto;
     z-index: 999;
     margin-top: 1rem;
@@ -47,16 +46,16 @@
     z-index: 999;
     /* font-size: 60px; */
 }
+.bat-link{
+    background-color: white;
+}
 .bat-btn{
     background-color: #8B70E9;
     color: white;
     padding: 0.5rem 1rem;
-    margin: 1rem 0;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    z-index: 999;
+    margin: 2.5rem 0;
 }
+
 @media only screen and (max-width: 1200px) {
     .bat-header-content h2 {
         font-size: 54px;
@@ -69,6 +68,7 @@
     }
     .bat-header-content p {
         width: 50%;
+        font-size: 18px;
     }    
 }
 
@@ -79,23 +79,27 @@
     }
     .bat-header-content p {
         width: 60%;
+        font-size: 16px;
+
     }    
 
 }
 @media only screen and (max-width: 550px) {
     .bat-header{
         /* background-size: contain; */
-        height: 30rem;
+        height: 20rem;
+        background-position: 70% ;
+
     }
     .bat-header-content p {
         width: 70%;
-        font-size: 12px;
+        font-size: 13px;
     }    
     .bat-header-overlay{
-        height: 30rem;
+        height: 20rem;
     } 
     .bat-header-content{
-        padding: 7rem 0;
+        padding: 3rem 0;
     }
 }
 @media only screen and (max-width: 420px) {

@@ -8,7 +8,6 @@ pipeline {
 			steps {
 				sh "rm -rf ${WORKSPACE}/avatarai.web"
 				sh "git clone https://github.com/workshopapps/avatarai.web.git"
-				sh "sudo cp -r ${WORKSPACE}/avatarai.web /home/de-marauder/"
 			}
 
 		}
@@ -17,25 +16,23 @@ pipeline {
 
 			steps {
 
+				sh "echo $pwd 1"
+
                 dir ('avatarai.web/frontend') {
+					sh "echo $pwd 2"
                     sh "npm i"
-                    sh "npm run build"
+                    sh "export NODE_ENV=production && npm run build"
                 }
 
 			}
 		}
-
-		// stage("Install dependencies for backend"){
-
-		// 	steps {
-
-        //         dir ('avatarai.web/Backend') {
-        //             sh "npm i -f"
-        //         }
-
-		// 	}
-		// }
 		
+		stage("Move repo") {
+		
+			steps {
+				sh "sudo cp -r ${WORKSPACE}/avatarai.web /home/de-marauder/"
+			}
+		}
 		stage("start frontend") {
 		
 			steps {

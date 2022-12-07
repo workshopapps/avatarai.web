@@ -34,7 +34,7 @@ async def upload(file: UploadFile = File(...), email: str = Form(default="exampl
 
 
 @avatar_router.get("/avatar/{email}")
-async def get_avatar(email : Token = Depends(get_current_user)):
-    list_of_avatars = get_avatars(id, "hngtest")
+async def get_avatar(email): #(email : Token = Depends(get_current_user)):
+    list_of_avatars = get_avatars(email, "hngtest")
     
     return {"data": list_of_avatars}

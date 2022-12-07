@@ -1,40 +1,26 @@
 import React from "react";
-import './courses.css';
-import img1 from "../courses/images/completed.png";
-import img2 from "../courses/images/earned.png";
-import img3 from "../courses/images/progress.png";
-import img4 from "../courses/images/web.png";
-import img5 from "../courses/images/java.png";
-import img6 from "../courses/images/html.png";
-import img7 from "../courses/images/next.png";
-import img8 from "../courses/images/script.png";
-import img9 from "../courses/images/front.png";
-import img10 from "../courses/images/learn.png";
-import img11 from "../courses/images/jimmy.png";
-import img12 from "../courses/images/daniel.png";
-import img13 from "../courses/images/amanda.png";
-import Lines from "../courses/images/lines.png";
-import L75 from "../courses/images/75.png";
-import L40 from "../courses/images/40.png";
-import L58 from "../courses/images/58.png";
-import { Link } from 'react-router-dom';
-import Lock from "../courses/images/lock.png";
+import "./courses.css";
+import { Link } from "react-router-dom";
+import Button from "../landingPage/Button/Button";
 
 const CoursePage = () => {
   const OVER_VIEW = [
     {
       name: "Courses in progress",
-      imgSrc: img3,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072641/progress_yz3ijt.png",
       amount: "05",
     },
     {
       name: "Courses Completed",
-      imgSrc: img1,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072633/completed_kuuyx0.png",
       amount: "24",
     },
     {
       name: "Certificate Earned",
-      imgSrc: img2,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072633/earned_nsgm6u.png",
       amount: "15",
     },
   ];
@@ -42,32 +28,38 @@ const CoursePage = () => {
   const UP_COMING = [
     {
       name: "Web Design",
-      imgSrc: img4,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072644/web_mfkbzm.png",
     },
     {
       name: "Javascript",
-      imgSrc: img5,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072636/java_rcycwh.png",
     },
     {
       name: "Html Basics",
-      imgSrc: img6,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072636/html_u2l90a.png",
     },
   ];
 
   const PRO_GRESS = [
     {
       name: "Web Design",
-      imgSrc: L75,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072632/75_fchswg.png",
       number: "05",
     },
     {
       name: "Javascript",
-      imgSrc: L40,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072632/40_eavnaz.png",
       number: "25",
     },
     {
       name: "Html Basics",
-      imgSrc: L58,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072632/58_flalmc.png",
       number: "13",
     },
   ];
@@ -75,7 +67,8 @@ const CoursePage = () => {
   const NEW_COURSES = [
     {
       name: "Javascript Course",
-      imgSrc: img8,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072642/script_a5nw9a.png",
       id: "javascript",
       description: "HTML",
       lesson: "30",
@@ -83,7 +76,8 @@ const CoursePage = () => {
     },
     {
       name: "Front-end Development",
-      imgSrc: img9,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072634/front_rrfhaq.png",
       id: "frontend",
       description: "HTML",
       lesson: "34",
@@ -91,7 +85,8 @@ const CoursePage = () => {
     },
     {
       name: "Learn Creative Design",
-      imgSrc: img10,
+      imgSrc:
+        "https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072638/learn_fh3zyy.png",
       id: "ui",
       description: "UI DESIGN",
       lesson: "20",
@@ -124,7 +119,11 @@ const CoursePage = () => {
                   <p className="font-semibold text-2xl text-[#333333]">
                     {data.amount}
                   </p>
-                  <img src={Lines} alt="lines" className="self-start" />
+                  <img
+                    src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072637/lines_e59ost.png"
+                    alt="lines"
+                    className="self-start"
+                  />
                 </div>
               </div>
             ))}
@@ -159,40 +158,58 @@ const CoursePage = () => {
                 </tr>
                 <tr>
                   <td className="flex items-center gap-2 py-2">
-                    <img src={img4} alt="web" />
+                    <img
+                      src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072644/web_mfkbzm.png"
+                      alt="web"
+                    />
                     <p>Web Design</p>
                   </td>
                   <td>Intermediate</td>
                   <td className="okt_hide">7/35 (20%)</td>
                   <td className="okt_hide">08h 04m 12s</td>
                   <td className="md:flex items-center gap-2 py-2 hidden">
-                    <img src={img11} alt="web" />
+                    <img
+                      src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072636/jimmy_yurlws.png"
+                      alt="web"
+                    />
                     <p>Jimmy</p>
                   </td>
                 </tr>
                 <tr>
                   <td className="flex items-center gap-2 py-2">
-                    <img src={img5} alt="java" />
+                    <img
+                      src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072636/java_rcycwh.png"
+                      alt="java"
+                    />
                     <p>Javascript</p>
                   </td>
                   <td>Beginner</td>
                   <td className="okt_hide">21/23 (97%)</td>
                   <td className="okt_hide">13h 24m 02s</td>
                   <td className="md:flex items-center gap-2 py-2 hidden">
-                    <img src={img12} alt="web" />
+                    <img
+                      src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072633/daniel_znnnxm.png"
+                      alt="web"
+                    />
                     <p>Daniel</p>
                   </td>
                 </tr>
                 <tr>
                   <td className="flex items-center gap-2 py-2">
-                    <img src={img6} alt="html" />
+                    <img
+                      src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072636/html_u2l90a.png"
+                      alt="html"
+                    />
                     <p>Html Basics</p>
                   </td>
                   <td>Beginner</td>
                   <td className="okt_hide">18/40 (48%)</td>
                   <td className="okt_hide">17h 15m 00s</td>
                   <td className="md:flex items-center gap-2 py-2 hidden">
-                    <img src={img13} alt="web" />
+                    <img
+                      src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072632/amanda_xklmez.png"
+                      alt="web"
+                    />
                     <p>Amanda</p>
                   </td>
                 </tr>
@@ -223,18 +240,25 @@ const CoursePage = () => {
                     />
                   </div>
                   <div className="pt-2">
-                    <p className="text-[#7454E5] text-sm font-semibold">{data.description}</p>
+                    <p className="text-[#7454E5] text-sm font-semibold">
+                      {data.description}
+                    </p>
                     <p className="text-[#333333] font-bold">{data.name}</p>
                     <p className="text-[#909090] font-medium">
-                      {data.lesson} Lessons <span className="border-[1px] mx-[3px]" /> {data.hour} Hours
+                      {data.lesson} Lessons{" "}
+                      <span className="border-[1px] mx-[3px]" /> {data.hour}{" "}
+                      Hours
                     </p>
                   </div>
-                  <button className="bg-[#7454E5] w-full flex items-center justify-center text-[#fff] gap-2 mt-2 rounded-[4px] py-4 text-center font-medium text-[13px]">
+                  <Button className="bg-[#7454E5] w-full flex items-center justify-center text-[#fff] gap-2 mt-2 rounded-[4px] py-4 text-center font-medium text-[13px]">
                     <span>
-                        <img src={Lock} alt="lock" />
+                      <img
+                        src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072638/lock_vbny3m.png"
+                        alt="lock"
+                      />
                     </span>
                     Enroll
-                  </button>
+                  </Button>
                 </Link>
               ))}
             </div>
@@ -269,7 +293,10 @@ const CoursePage = () => {
                     </p>
                   </div>
                   <div>
-                    <img src={img7} alt="arrow.png" />
+                    <img
+                      src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072640/next_hfj9gc.png"
+                      alt="arrow.png"
+                    />
                   </div>
                 </div>
               ))}
@@ -302,7 +329,10 @@ const CoursePage = () => {
                     </p>
                   </div>
                   <div>
-                    <img src={img7} alt="arrow.png" />
+                    <img
+                      src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670072640/next_hfj9gc.png"
+                      alt="arrow.png"
+                    />
                   </div>
                 </div>
               ))}

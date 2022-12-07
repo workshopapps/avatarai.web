@@ -20,12 +20,19 @@ reg_img_prompt = "a photo of a $class"
 n_samples = 100 # number of images to generate
 reg_data_path = "classes/class-${class}-samples" # Path to save regularization images to
 
-if [ -n "$(ls -A your/dir 2>/dev/null) | tail -1" ]
+if [ -n "$(ls -A ${reg_data_path} 2> /dev/null) | tail -1" ]
 then
     echo "Regularization images already exist for this class"
 else
     echo "No regulariation images. Creating..."
-    python $txt2img_path --ddim_eta 0.0 --n_samples $n_samples --n_iter 1 --scale 10.0 --ddim_steps 50  --ckpt $ckpt_path --prompt $reg_img_prompt --outdir $reg_data_path; 
+    python $txt2img_path --ddim_eta 0.0 \
+                    --n_samples $n_samples \
+                    --n_iter 1 \
+                    --scale 10.0 \
+                    --ddim_steps 50  \
+                    --ckpt $ckpt_path \
+                    --prompt $reg_img_prompt \
+                    --outdir $reg_data_path; 
     echo "Regulariation images done creating"
 fi
 
@@ -86,7 +93,7 @@ zip ${zipped_gen_file} ${gen_images_path}
 echo "Sending zipped_gen_file to ${user_email} as an email..."
 if [[ -f ${zipped_gen_file} ]]
 then
-	mutt -s "Here are your generated avatars. Enjoy!" -- ${user_email}  < "${zipped_gen_file}"
+	echo "Here are your pictures" | mutt -s "Testing sending zipped files" -a ${zipped_gen_file}  -- ${user_email}
 fi
 
 echo "done"
