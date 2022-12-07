@@ -6,7 +6,7 @@ import Navbar from '../landingPage/Navbar/Navbar';
 import Button from '../landingPage/Button/Button';
 import Foooter from '../footer/Foooter';
 
-const payment = () => {
+const Payment = () => {
 	const [loading, setLoading] = useState(false);
 	const {
 		register,
@@ -22,7 +22,7 @@ const payment = () => {
 	return (
 		<>
 			<Navbar />
-			<div className="max-w-[1240px] mx-auto font-nunito mt-10 md:mt-[80px] px-5 pb-10">
+			<div className="max-w-[1240px] mx-auto font-nunito mt-[27px] md:mt-[80px] px-5 pb-10">
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-[#595959]">
 					<div className="col-span-1 md:max-w-[407px]">
 						<div className="mb-10 max-w-fit mx-auto md:mx-0 ">
@@ -66,7 +66,7 @@ const payment = () => {
 											pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
 										})}
 									/>
-									{errors.username && <span className="text-xs text-red-600">Please enter a valid email address</span>}
+									{errors.email && <span className="text-xs text-red-600">Please enter a valid email address</span>}
 								</div>
 
 								<div className="mb-[24px]">
@@ -74,7 +74,7 @@ const payment = () => {
 										Card Number
 									</label>
 									<input
-										type="text"
+										type="number"
 										name="cardNumber"
 										placeholder="1234 1234 1234 1234"
 										className={`border ${
@@ -93,7 +93,7 @@ const payment = () => {
 											Expiration Date
 										</label>
 										<input
-											type="text"
+											type="month"
 											name="expDate"
 											placeholder="MM/YY"
 											className={`border ${
@@ -111,15 +111,15 @@ const payment = () => {
 											CVV
 										</label>
 										<input
-											type="text"
+											type="number"
 											name="cvv"
+											maxLength={3}
 											placeholder="123"
 											className={`border ${
 												errors.cvv && 'border-red-600'
 											} border-[#403E46] py-3 px-4 rounded-[4px] placeholder-[#808080] text-base font-medium w-full`}
 											{...register('cvv', {
 												required: true,
-												max: 3,
 											})}
 										/>
 										{errors.cvv && <span className="text-xs text-red-600">CVV is required</span>}
@@ -146,7 +146,7 @@ const payment = () => {
 									>
 										{loading ? 'Loading...' : 'Subscribe'}
 									</Button>
-									<p className="text-center text-[#262626] font-bold text-base">
+									<p className="text-center text-[#262626] md:font-bold text-xs md:text-base">
 										By confirming your subscription, you allow Generated Media, Inc. to charge your card for this
 										payment and future payments in accordance with their terms. You can always cancel your subscription.
 									</p>
@@ -161,4 +161,4 @@ const payment = () => {
 	);
 };
 
-export default payment;
+export default Payment;
