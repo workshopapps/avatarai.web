@@ -7,6 +7,20 @@ from server.routes.avatars import avatar_router
 
 
 
+from fastapi import FastAPI
+
+import sentry_sdk
+
+
+sentry_sdk.init(
+    dsn="https://772868875b8a427b8e30c9a40e462d91@o4504280846565376.ingest.sentry.io/4504280979275776",
+
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production,
+    traces_sample_rate=1.0,
+)
+
 # 👇 FastAPI INSTANCE
 app = FastAPI(root_path="/api/v1")
 
@@ -36,6 +50,12 @@ app.add_middleware(
 @app.get('/app')
 async def start():
     return {"Message":"Welcome to Zuvatar AI"}
+
+# Test sentry
+@app.get("/sentry-debug")
+async def trigger_error():
+    division_by_zero = 1 / 0
+    return {"message": "Error"}
 
 # include api endpoints
 

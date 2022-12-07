@@ -10,7 +10,7 @@ function PriceCardThree({
   feature2,
   font,
   background,
-  text,
+  text,duration
 }) {
   return (
     <section
@@ -21,7 +21,7 @@ function PriceCardThree({
         <h2 className=" md:mt-20 mb-4 text-lg">{title}</h2>
         <div className="flex py-1 gap-2 items-center">
           <h1 className="text-5xl font-bold font-jakarta">{amount}</h1>
-          <p>/month</p>
+          <p>{ duration}</p>
         </div>
         {/* <p className=" py-4">
           All can have random results and may include artistic nudes, erotic or

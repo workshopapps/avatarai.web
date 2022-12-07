@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 const Cookies =({offCookies})=>{
+
+  const throwError = () => {
+    throw Error("wow...something just broke");
+  }
 return (
   <>
     <div

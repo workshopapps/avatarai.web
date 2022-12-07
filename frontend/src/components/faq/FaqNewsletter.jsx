@@ -145,7 +145,7 @@ subscribe(emailField)
       {showSuccessModal ? <SuccessModal closeModalNow={closeModalNow}></SuccessModal> : ""}
       {showErrorModal ? <ErrorModal closeModalNow={closeModalNow}></ErrorModal> : ""}
       
-      
+     
       
     </section>
   );
