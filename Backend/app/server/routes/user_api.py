@@ -4,11 +4,18 @@
 # IMPORTS
 #################
 from fastapi import APIRouter, status, HTTPException, Depends
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.responses import JSONResponse
-from google.oauth2 import id_token
+
 from google.auth.transport import requests
+from google.oauth2 import id_token
+
+from authlib.integrations.starlette_client import OAuth, OAuthError
+from starlette.config import Config
+
 from starlette.requests import Request
+from starlette.routing  import Router######################
+from starlette_session import SessionMiddleware
 from server.models.schemas import User, Login, EmailSchema,ContactForm, TokenData
 
 from server.models.schemas import User, Login, EmailSchema, ContactForm
@@ -18,6 +25,9 @@ from database import db
 from server.auth.utility import *
 from bson import json_util
 import json
+
+config = Config('.env')
+oauth = OAuth(config)
 
 
 #######################
@@ -135,26 +145,53 @@ async def login(login : OAuth2PasswordRequestForm = Depends()):
     Response = {
         "access_token" : token, "token_type": "bearer",
         "userData":{
-            'username': userRes['username'],
-              'email': userRes['email'],
+            'username': userRes['firstname'],
+            'email': userRes['email'],
             }
         }
     return JSONResponse(Response, status_code=status.HTTP_201_CREATED)
 
 
-# @user_router.get("user/login/google")
-# def authentication(request: Request,token:str):
-#     try:
-#         # Specify the CLIENT_ID of the app that accesses the backend:
-#         user =id_token.verify_oauth2_token(token, requests.Request(), os.environ["CLIENT_ID"])
-  
-#         request.session['user'] = dict({
-#             "email" : user["email"] 
-#         })
-          
-#         return user['name'] + ' Logged In successfully'
-#     except ValueError:
-#         return "unauthorized"
+
+CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID') or None
+CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET') or None
+if CLIENT_ID is None or CLIENT_SECRET is None:
+    raise BaseException('Missing env variables')
+
+
+config_data = {'GOOGLE_CLIENT_ID': CLIENT_ID, 'GOOGLE_CLIENT_SECRET': CLIENT_SECRET}
+#config = Config('.env')
+#starlette_config = Config(environ = config_data)
+#oauth = OAuth(starlette_config)
+oauth.register(
+    name='google',
+    server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
+    client_kwargs={'scope': 'openid email profile',
+    'prompt': 'select_account',  # force to select account
+    },
+)
+
+
+
+
+#############################################
+#Email signUp
+#############################################
+
+@user_router.get('/verifyGoogle' )
+async def verify(token:list):
+    try:
+        idinfo = id_token.verify_oauth2_token(token, requests.Request(), CLIENT_ID)
+        
+        userid = idinfo['sub']
+    except ValueError:
+        raise HTTPException(
+            status_code=status.HTTP_401_UNAUTHORIZED,
+            detail='Could not validate credentials',
+            headers={'WWW-Authenticate': 'Bearer'},
+        )
+
+
 
 
 @user_router.post("/contactForm")
@@ -190,6 +227,10 @@ async def send_mail(data: TokenData):
             detail="Not Found"
         )
     return JSONResponse(status_code=200, content={"message": "An email has been sent to you"})
+
+
+
+
 
 
 
