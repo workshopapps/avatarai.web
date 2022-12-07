@@ -146,7 +146,7 @@ async def login(login : OAuth2PasswordRequestForm = Depends()):
         "access_token" : token, "token_type": "bearer",
         "userData":{
             'Firstname': userRes['first_name'],
-            'Lastname': userRes['last_name'],
+            'Lastname': userRes['lastname'],
             'email': userRes['email'],
             }
         }
