@@ -56,11 +56,16 @@ const ImageUpload = ({ setStep, step }) => {
 
 	const sendImages = async () => {
 		const user = JSON.parse(localStorage.getItem('userData'));
-		const data = { images: selectedImages, email: user.email };
+		const data = { file: selectedImages, email: user.email };
 		console.log(data, 'data');
 		setGenAvt(true);
 		await axios
-			.post('https://zuvatar.hng.tech/api/v1/avatar', data)
+			.post('https://zuvatar.hng.tech/api/v1/avatar', data, {
+				headers: {
+					'Content-Type': 'multipart/form-data',
+					Accept: 'application/json',
+				},
+			})
 			.then((response) => {
 				console.log(response.data, 'upload data');
 				setGenAvt(false);
@@ -68,7 +73,7 @@ const ImageUpload = ({ setStep, step }) => {
 			})
 			.catch((e) => {
 				setGenAvt(false);
-				const err = e?.response?.data?.detail;
+				const err = e?.response?.data;
 				// setErrorStatus({ error: true, message: err });
 				console.log(err);
 			});
