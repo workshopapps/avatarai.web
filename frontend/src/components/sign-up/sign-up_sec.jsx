@@ -2,6 +2,7 @@ import React from "react";
 import './signup.css';
 import {Link} from "react-router-dom";
 import Button from "../landingPage/Button/Button";
+import mail from "../LoginPage/LoginImg/mail_box.svg";
 let handleclick;
 let state;
 
@@ -30,7 +31,7 @@ export default function SignUp_sec(){
           {/*<img className='logo_opt logo_opt_2' src={logo_opt} alt='logo.png' />*/}
           <img
             className="mail_opt"
-            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670068759/mail_ctdv5u.png"
+            src={mail}
             alt="mail.png"
           />
           <div className="ch_opt">Verify your email address</div>

@@ -52,6 +52,27 @@ user_router = APIRouter()
 ###########################
 #API
 ###########################
+@user_router.get("/user/{email}")
+async def user(get_user : str= Depends(oauth2_scheme)):
+    try:
+        user = await db.user.find_one({"email": 'johnemma1234@gmail.com'}, None)
+        print(user)
+    except None:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail={'message' : 'Something went wrong. Try again'}
+        )
+
+    Response = {
+        "userData": {
+            'id': str(user['_id']),
+            'firstname': user['first_name'],
+            'lastname': user['lastname'],
+            'email': user['email'],
+            }
+        }
+    return JSONResponse(Response, status_code=status.HTTP_200_OK)
+
 @user_router.post("/api/user", response_model = User)
 async def create_user(raw_user: User):
     user = {        
@@ -94,7 +115,7 @@ async def create_user(raw_user: User):
     Response = {
         "token" :{ "token" : access_token},
         "userData":{
-            'firstname': user['firstname'],
+            'firstname': user['first_name'],
             'lastname': user['lastname'],
             'email': user['email'],
             }
@@ -140,10 +161,13 @@ async def login(login : OAuth2PasswordRequestForm = Depends()):
     token = create_access_token(userRes['email'])
     #refresh_token = create_refresh_token(userRes['email'])
     # print(access_token)
+   
+  
     Response = {
         "access_token" : token, "token_type": "bearer",
         "userData":{
-            'username': userRes['firstname'],
+            'Firstname': userRes['first_name'],
+            'Lastname': userRes['lastname'],
             'email': userRes['email'],
             }
         }
@@ -181,7 +205,54 @@ async def verify(token:list):
     try:
         idinfo = id_token.verify_oauth2_token(token, requests.Request(), CLIENT_ID)
         
-        userid = idinfo['sub']
+        user = idinfo['sub']
+    # user = {        
+    #     "first_name": raw_user.first_name,
+    #     "lastname": raw_user.last_name,
+    #     "email":raw_user.email,
+    #     "password": raw_user.password,                     
+    # }
+    # #print(raw_user)
+    
+    # ##########################
+    # #STORING HASHED PASSWORD
+    # ##########################
+    # password_hash = get_password_hash(raw_user.password)
+    # user["password"] = password_hash
+
+
+    # ############################
+    # #MAKING POST TO DATABASE
+    # ############################
+    # if await db.user.find_one({"email": raw_user.email} ):
+    #     raise HTTPException(
+    #         status_code=status.HTTP_400_BAD_REQUEST,
+    #         detail={'message' : 'Something went wrong. Try another email'}
+    #     )
+
+    # # if await db.user.find_one({"username": raw_user.username} ):
+    # #     raise HTTPException(
+    # #         status_code=status.HTTP_400_BAD_REQUEST,
+    # #         detail={'message' : 'Username not unique'}
+    # #    )
+
+    # new_user = await db['user'].insert_one(user)
+    # create_user= await db.user.find_one({"_id": new_user.inserted_id})
+    # create_user["_id"] = str(create_user["_id"])
+
+    # access_token = create_access_token(user['email'])
+    # #refresh_token = create_refresh_token(userRes['email'])
+    # # print(access_token)
+    # Response = {
+    #     "token" :{ "token" : access_token},
+    #     "userData":{
+    #         'firstname': user['firstname'],
+    #         'lastname': user['lastname'],
+    #         'email': user['email'],
+    #         }
+    #     }
+
+
     except ValueError:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,

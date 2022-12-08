@@ -2,6 +2,7 @@ import './faqs.css'
 import SuccessModal from './successModal';
 import ErrorModal from './faqHero/errorModal';
 import { useState } from 'react';
+import {Link} from "react-router-dom";
 
 
 const FaqNewsletter = () => {
@@ -80,7 +81,10 @@ subscribe(emailField)
       <div className="flex flex-col md:flex-row md:items-center justify-between  bg-[#F9F9FB] w-[80%] md:[90%] m-auto py-[3.5rem]">
         <div className="flex-[100%] md:flex-[45%]">
           <div className="flex flex-col gap-[24px] w-[100%] md:w-[100%]">
-            <img src="/tapart.svg" height={`40px`} width={`40px`} />
+            <Link to="/LandingPage">
+              <img src="/tapart.svg" height={`40px`} width={`40px`} />
+            </Link>
+
             <div className="flex flex-col gap-[8px] ">
               <p
                 data-testid="subscribe"
