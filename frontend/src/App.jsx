@@ -151,9 +151,9 @@ function App() {
 			<Route
 				path="/dashboard"
 				element={
-					<PrivateRoute>
+					
 						<DesktopEye />
-					</PrivateRoute>
+					
 				}
 			/>
 			<Route
