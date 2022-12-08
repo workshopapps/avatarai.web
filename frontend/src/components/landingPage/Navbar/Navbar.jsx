@@ -34,7 +34,7 @@ const Navbar = () => {
 		<Fragment>
 			<nav className="flex justify-between items-center max-w-[100%]  lg:px-16   py-5 cbk-ds-nav">
 				<div>
-					<Link to="/">
+					<Link to="/LandingPage">
 						<img src={logo} alt="" className="w-10 hidden lg:block" />
 					</Link>
 					<div className="flex justify-between cbk-mobile-board  lg:hidden pr-3">

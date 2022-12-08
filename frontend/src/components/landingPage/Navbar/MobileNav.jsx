@@ -14,7 +14,7 @@ const MobileNav = ({navClose}) => {
     <div className="bg-white w-[261px] fixed top-0 left-0 lg:hidden z-20 h-full " id="cbk-mobile-nav">
       <nav className="flex relative flex-col justify-center  items-start gap-y-10 lg:hidden px-10 pb-10 z-30">
         <div className=" mt-5 flex justify-center w-full">
-          <Link to='/'><img src={logo} alt="" /></Link>
+          <Link to='/LandingPage'><img src={logo} alt="" /></Link>
           <div>
       <img src={close} alt="" onClick={navClose} className="text-[#8B70E9] mt-2"/>
       </div>
