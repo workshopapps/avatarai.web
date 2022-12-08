@@ -52,19 +52,6 @@ const ImageUpload = ({ setStep, step }) => {
 		setShow(false);
 		// setShowAlertLink(!showAlertLink);
 	};
-	// console.log(selectedImages);
-
-	// getting email from localhost
-
-	// function getItems() {
-	// 	if (localStorage.getItem('userData') !== '') {
-	// 		let mail = localStorage.getItem('userData').slice(1, -1);
-	// 		let emailQuote = mail.split(':');
-	// 		email = emailQuote[2].slice(1, -1);
-	// 		console.log(email);
-	// 	}
-	// }
-	// getItems();
 
 	const sendImages = async () => {
     const user = JSON.parse(localStorage.getItem('userData'));
