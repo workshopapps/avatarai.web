@@ -1,0 +1,18 @@
+
+.modal{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3333;
+}
+
+.container{
+  width: 90vw;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 10px;
+}

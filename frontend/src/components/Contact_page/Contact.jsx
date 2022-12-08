@@ -3,6 +3,8 @@ import Navbar from "../landingPage/Navbar/Navbar";
 // import Footer from "../landing-page/footer/Footer";
 import Foooter from "../footer/Foooter";
 import FaqNewsletter from "../faq/FaqNewsletter";
+import Modal from "../modal/Modal";
+
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { NavContext, pages } from "../../../context/nav-context";
@@ -13,6 +15,8 @@ import Button from "../landingPage/Button/Button";
 const Contact = () => {
 
     let [overlay, setOverlay] = useState('overlay-hidden')  
+    const [modal, setModal] = useState(false)
+
     let [status, setStatus] = useState('')
     let [message, setMessage] = useState('')
     let [stateColor, setStateColor] = useState('')
@@ -22,15 +26,16 @@ const Contact = () => {
      setPage(pages.ContactUs)
     },[])
 
-    function sendMessage(){
-      postMessage({
+    async function sendMessage(){
+     await postMessage({
         "firstname": document.getElementById('firstname').value,
         "lastname": document.getElementById('lastname').value,
         "email": document.getElementById('email').value,
         "message": document.getElementById('message').value
       })
       document.getElementById('contact-form').reset()
-      setOverlay('overlay-visible')
+      //setOverlay('overlay-visible')
+      setModal(true)
     }
     const postMessage = async(info)=>{
       try {
@@ -80,10 +85,14 @@ const Contact = () => {
           </div>
         </div>
         <div className="flex max-[1000px]:block">
-          <form className="contact-form p-10" id="contact-form" onSubmit={(e) => {
-            e.preventDefault()
-            sendMessage()
-          }}>
+          <form
+            className="contact-form p-10"
+            id="contact-form"
+            onSubmit={(e) => {
+              e.preventDefault();
+              sendMessage();
+            }}
+          >
             <h2 className="font-semibold text-5xl mb-5">
               Have some Questions ?
             </h2>
@@ -149,15 +158,20 @@ const Contact = () => {
             src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670061925/illus_ubfd58.png"
           />
         </div>
-
-        <div className="contact-overlay" id={overlay} onClick={() => {setOverlay('overlay-hidden')}}>
+        {/*  <div className="contact-overlay" id={overlay} onClick={() => {setOverlay('overlay-hidden')}}>
             <div className='contact-modal bg-white p-10 rounded-md'>
                   <h3 className={`text-4xl text-${stateColor}-500 font-semibold`}>{status}</h3><hr/>
                   <p className="mt-5">{message}</p>
                   <button className="mt-5 p-2 rounded-md" onClick={() => {setOverlay('overlay-hidden')}}
                   style={{border: `1px solid ${stateColor}`}}>Close</button>
             </div>
-        </div>
+        </div> */}
+        { <Modal 
+        header={"dream"}
+        Image={false}
+        text={"login succesfuuleafpasuhfpsgfugspufgps"}
+        setShow={setModal} 
+        />}
 
         <FaqNewsletter />
         <Foooter />
