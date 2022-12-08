@@ -3,7 +3,7 @@
 #################
 # IMPORTS
 #################
-from fastapi import APIRouter, status, HTTPException, Depends
+from fastapi import APIRouter, status, HTTPException, Depends, Request
 from fastapi.security import OAuth2PasswordRequestForm
 from fastapi.responses import JSONResponse
 
@@ -19,13 +19,50 @@ from server.models.schemas import User, Login, EmailSchema,ContactForm, TokenDat
 from server.models.schemas import User, Login, EmailSchema, ContactForm
 from database import db
 ##############
-
+import smtplib, ssl
 from server.auth.utility import *
 from bson import json_util
 import json
+from typing  import List
+# from fastapi import BackgroundTask, FastAPI
+# from fastapi_mail import ConnectionConfig, FastMail, MessageSchema, MessageType
+# from pydantic import BaseModel, EmailStr
+#from starlette.responses import JSONResponse
 
 config = Config('.env')
 oauth = OAuth(config)
+
+
+
+
+##############################
+#
+##############################
+
+
+
+# message = 
+
+def send_mail(destination):
+        
+    port = 587  # For starttls
+    smtp_server = "smtp.gmail.com"
+    sender_email = os.environ.get('EMAIL')
+    password = os.environ.get('PASSWORD')
+    message = """\
+# Subject: Hi there
+
+# This message is sent from Python."""
+
+    context = ssl.create_default_context()
+    with smtplib.SMTP(smtp_server, port) as server:
+        server.ehlo()  # Can be omitted
+        server.starttls(context=context)
+        server.ehlo()  # Can be omitted
+        server.login(sender_email, password)
+        server.sendmail(sender_email, destination, message)
+##############################
+
 
 
 #######################
@@ -263,18 +300,27 @@ async def verify(token:list):
 
 @user_router.post("/contactForm")
 async def send_mail(email: ContactForm):
+    message = """\
+Subject: Hi there
+
+This message is sent from Python."""
+
     ##################
     #SMTP
     ##################
+    mail=send_mail(email, message)
+    print(mail)
     return JSONResponse(status_code=200, content={"message": "Thanks for reaching out"})
 
-@user_router.post("/newsletter")
-async def send_mail(data : EmailSchema ):
-    email = {        
-        "username": data.email,                     
-    }
     
-    new_news_letter = await db['NewsLetter'].insert_one(email)
+
+@user_router.post("/newsletter")
+async def send_mail(data : Request):
+    # email = {        
+    #     "email": da,                     
+    # }
+    
+    new_news_letter = await db['NewsLetter'].insert_one(data)
     print(new_news_letter)
     news_letter= await db.NewsLetter.find_one({"_id": new_news_letter.inserted_id})
     print(news_letter)
@@ -282,17 +328,31 @@ async def send_mail(data : EmailSchema ):
     return JSONResponse(status_code=200, content={"message": "success"})
 
 
-@user_router.post("/forgotPassword", response_model = TokenData )
-async def send_mail(data: TokenData): 
-    user = await db["user"].find_one({ "email": data.username }, None)
-    # print(user)
-    userRes = json.loads(json_util.dumps(user))
+@user_router.post("/forgotPassword")
+async def password_recovery(email: EmailSchema):
+    print(email)
+    # data = {
+    #     "username": str(forgotPassword_email['username'])
+    # }
+    
+    #print(data)
+    # user = await db["user"].find_one({ 'email': userRes.email}, None)
+    # userRes = json.loads(json_util.dumps(user))
+    # print(userRes)
 
-    if user is None:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Not Found"
-        )
+    # if userRes is None:
+    #     raise HTTPException(
+    #         status_code=status.HTTP_400_BAD_REQUEST,
+    #         detail="Not Found"
+    #     )
+    message = """\
+    Subject: Hi there! This message is sent from Python."""
+
+    ##################
+    #SMTP
+    ##################
+    mail= await send_mail('meelisfidelis@gmail.com')
+    print(mail)
     return JSONResponse(status_code=200, content={"message": "An email has been sent to you"})
 
 

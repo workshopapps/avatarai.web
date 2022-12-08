@@ -137,19 +137,20 @@ class Token(BaseModel):
 
 #token data
 class TokenData(BaseModel):
-    username: Union[str, None] = None
+    
+    email: Optional[EmailStr]
 
 class EmailSchema(BaseModel):
-   email: List[EmailStr]
-
-   class Config:
+    email: str
+    first_name: Union[str, None] =None
+    class Config:
         allow_population_by_field_name = True
         arbitrary_types_allowed = True
-        json_encoders = {ObjectId: str}
+        # json_encoders = {ObjectId: str}
 
         schema_extra = {
             'example': {               
-                "email":"johndoe@gmail.com",
+                'email':"johndoe@gmail.com",
             }
         }
 

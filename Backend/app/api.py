@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from fastapi.responses import HTMLResponse
+
 from server.routes.photo_upload_api import photo_router
 from server.routes.retrieve_user_avatars_api import user_avatars_router
 from server.routes.user_api import user_router
@@ -7,7 +7,7 @@ from server.routes.avatars import avatar_router
 
 
 
-from fastapi import FastAPI
+
 
 import sentry_sdk
 
@@ -22,7 +22,7 @@ sentry_sdk.init(
 )
 
 # 👇 FastAPI INSTANCE
-app = FastAPI(root_path="/api/v1")
+app = FastAPI(root_path="/")
 
 ##################################
 
