@@ -38,10 +38,10 @@ const navItems = [
 		id: 2,
 	},
 	{
-		title: 'Profile',
+		title: 'profile',
 		icon: Icon3,
 		activeIcon: Icon3Active,
-		link: '/profile2',
+		link: '/profile',
 		pathname: 'profile',
 		id: 3,
 	},
@@ -64,8 +64,8 @@ const navItems = [
 	{
 		title: 'Chat',
 		icon: Icon6,
-		activeIcon: Icon1Active,
-		link: '#',
+		activeIcon: Icon6,
+		link: '/chat',
 		pathname: 'chat',
 		id: 6,
 	},

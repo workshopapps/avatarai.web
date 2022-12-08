@@ -1,15 +1,13 @@
-import ChatSideBar from "./ChatSideBar";
-import ChatMain from "./ChatMain";
+import ChatSideBar from './ChatSideBar';
+import ChatMain from './ChatMain';
+import Dashboardlayout from '../DASHBOARD_COMPONENT/DashboardLayout';
 
 const ChatPage = () => {
-  return (
-    <div className="bg-[#FCFCFC] w-full flex">
-      <div className="flex pt-11 pb-5 px-12 bg-white h-screen">
-        <ChatSideBar />
-      </div>
-      <ChatMain />
-    </div>
-  );
+	return (
+		<Dashboardlayout>
+			<ChatMain />
+		</Dashboardlayout>
+	);
 };
 
 export default ChatPage;
