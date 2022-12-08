@@ -38,7 +38,7 @@ const navItems = [
 		id: 2,
 	},
 	{
-		title: 'profile',
+		title: 'Profile',
 		icon: Icon3,
 		activeIcon: Icon3Active,
 		link: '/profile',
