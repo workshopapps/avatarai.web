@@ -13,7 +13,7 @@ const DesktopEye = () => {
 	console.log(user);
 	return (
 		<div>
-			<Dashboardlayout title={`Hello ${user?.username}`} text="Start generating cool avatars.">
+			<Dashboardlayout title={`Hello ${user?.Firstname}`} text="Start generating cool avatars.">
 				<InstructionModal />
 				<FrameEye />
 			</Dashboardlayout>
