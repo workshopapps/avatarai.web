@@ -92,6 +92,10 @@
   .centered p{
     font-size: 20px;
   }
+  .input{
+    padding-right: 63px;
+    padding-left: 45px;
+  }
   .form Button{
     width: 50px;
   }
