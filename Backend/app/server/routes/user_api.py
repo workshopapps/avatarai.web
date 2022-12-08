@@ -282,18 +282,18 @@ async def send_mail(data : EmailSchema ):
     return JSONResponse(status_code=200, content={"message": "success"})
 
 
-@user_router.post("/forgotPassword", response_model = TokenData )
-async def send_mail(data: TokenData): 
-    user = await db["user"].find_one({ "email": data.username }, None)
-    # print(user)
-    userRes = json.loads(json_util.dumps(user))
-
-    if user is None:
-        raise HTTPException(
-            status_code=status.HTTP_400_BAD_REQUEST,
-            detail="Not Found"
-        )
-    return JSONResponse(status_code=200, content={"message": "An email has been sent to you"})
+#@user_router.post("/forgotPassword", response_model = TokenData )
+#async def send_mail(data: TokenData): 
+#    user = await db["user"].find_one({ "email": data.username }, None)
+#    # print(user)
+#    userRes = json.loads(json_util.dumps(user))
+#
+#    if user is None:
+#        raise HTTPException(
+#            status_code=status.HTTP_400_BAD_REQUEST,
+#           detail="Not Found"
+#        )
+#    return JSONResponse(status_code=200, content={"message": "An email has been sent to you"})
 
 
 
