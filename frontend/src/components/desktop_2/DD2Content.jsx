@@ -29,9 +29,14 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 	const labelText = `(PNG or JPEG)`;
 
 	const handleFile = (e) => {
-		let file = URL.createObjectURL(e.target.files[0]);
-		console.log(file, 'file');
-		setSelectedImages((prev) => [...prev, file]);
+		let file = e.target.files;
+		setImageUpload({ file: file });
+		const selectedFilesArray = Array.from(file);
+		// console.log(selectedFilesArray);
+		const imagesArray = selectedFilesArray.map((file) => {
+			return URL.createObjectURL(file);
+		});
+		setSelectedImages((previousImages) => previousImages.concat(imagesArray));
 		setShow(false);
 		setShowAlertLink(!showAlertLink);
 	};
