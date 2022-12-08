@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Dashboardlayout from '../DASHBOARD_COMPONENT/DashboardLayout';
 import ProfileImg from './Profile.jpeg';
 import './Profile.css';
+
 import Button from '../landingPage/Button/Button';
 
 const Profile = () => {
@@ -98,7 +99,7 @@ const Profile = () => {
 							</div>
 							{/*  */}
 							{/*  */}
-							<div className="aso-form-email-input">
+							{/* <div className="aso-form-email-input">
 								<label htmlFor="aso-email">Email</label>
 								<input
 									type="email"
@@ -109,7 +110,7 @@ const Profile = () => {
 										setEmail(e.target.value);
 									}}
 								/>
-							</div>
+							</div> */}
 
 							<Button type="submit" className="bg-[#8b70e9] aso-btn__submit" onClick={handleSubmit}>
 								Save Changes
