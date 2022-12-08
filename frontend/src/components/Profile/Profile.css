@@ -79,6 +79,7 @@
 .aso-form-location {
   display: flex;
   flex-direction: column;
+  width: 50%;
 }
 
 .aso-form-first-name,
@@ -117,7 +118,7 @@
   border-radius: 5px;
   color: #ffffff;
 }
-@media screen and (max-width: 605px) {
+@media screen and (max-width: 620px) {
   .aso-bio-details h1 {
     font-size: 18px;
   }
@@ -133,17 +134,17 @@
     width: 100%;
   }
   .aso-form-name-input {
-    padding-bottom: 20px;
+    padding-bottom: 0 !important;
   }
   .aso-form-first-name input,
   .aso-form-last-name input,
   .aso-form-mobile input,
   .aso-form-location input {
-    width: 250px !important;
+    width: 100% !important;
   }
   .aso-form-mobile-location {
     padding-bottom: 20px;
-  }
+    }
   .aso-form-container label {
     font-weight: 400;
     font-size: 16px;
@@ -151,8 +152,10 @@
   }
 
   .aso-form-first-name,
-  .aso-form-mobile {
+  .aso-form-mobile,   .aso-form-last-name ,
+  .aso-form-location{
     padding-bottom: 20px;
+    width: 100%;
   }
   .aso-form-first-name input::placeholder,
   .aso-form-last-name input::placeholder,
