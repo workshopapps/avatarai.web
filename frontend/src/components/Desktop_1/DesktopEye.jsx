@@ -14,13 +14,14 @@ const DesktopEye = () => {
 	const user = JSON.parse(localStorage.getItem('userData'));
 
 	const [step, setStep] = useState(1);
+	const [photoUser, setPhotoUser] = useState("")
 
 	return (
 		<div>
 			<Dashboardlayout title={`Hello ${user?.Firstname}`} text="Start generating cool avatars.">
 				<InstructionModal />
-				{step === 1 && <FrameEye setStep={setStep} step={step} />}
-				{step === 2 && <ImageUpload setStep={setStep} step={step} />}
+				{step === 1 && <FrameEye setStep={setStep} step={step} setPhotoUser={setPhotoUser} />}
+				{step === 2 && <ImageUpload setStep={setStep} step={step} photoUser={photoUser} />}
 				{step === 3 && <AvatarSuccess setStep={setStep} step={step} />}
 			</Dashboardlayout>
 		</div>

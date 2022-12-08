@@ -17,7 +17,7 @@ import Content from '../Desktop_3/Content';
 
 // import axios from "axios";
 
-const ImageUpload = ({ setStep, step }) => {
+const ImageUpload = ({ setStep, step, photoUser }) => {
 	const [selectedImages, setSelectedImages] = useState([]);
 	const [size, setSize] = useState(window.innerWidth);
 	const [imageUpload, setImageUpload] = useState({ file: null });
@@ -29,38 +29,20 @@ const ImageUpload = ({ setStep, step }) => {
 	const labelText = `(PNG or JPEG)`;
 
 	const handleFile = (e) => {
-		let file = e.target.files;
-		setImageUpload({ file: file });
-		const selectedFilesArray = Array.from(file);
-		// console.log(selectedFilesArray);
-		const imagesArray = selectedFilesArray.map((file) => {
-			return URL.createObjectURL(file);
-		});
-		setSelectedImages((previousImages) => previousImages.concat(imagesArray));
+		let file = URL.createObjectURL(e.target.files[0]);
+		console.log(file, 'file');
+		setSelectedImages((prev) => [...prev, file]);
 		setShow(false);
 		setShowAlertLink(!showAlertLink);
 	};
 
-	const handleFilee = (e) => {
-		let file = e.target.files;
-		setImageUpload({ file: file });
-		const selectedFilesArray = Array.from(file);
-		// console.log(selectedFilesArray);
-		const imagesArray = selectedFilesArray.map((file) => {
-			return URL.createObjectURL(file);
-		});
-		setSelectedImages((previousImages) => previousImages.concat(imagesArray));
-		setShow(false);
-		// setShowAlertLink(!showAlertLink);
-	};
-
 	const sendImages = async () => {
 		const user = JSON.parse(localStorage.getItem('userData'));
-		const data = { file: selectedImages, email: user.email };
+		const data = { files: selectedImages, email: user.email, photo_class: photoUser };
 		console.log(data, 'data');
 		setGenAvt(true);
 		await axios
-			.post('https://zuvatar.hng.tech/api/v1/avatar', data, {
+			.post(`${import.meta.env.VITE_API_URL}/photos`, data, {
 				headers: {
 					'Content-Type': 'multipart/form-data',
 					Accept: 'application/json',
@@ -77,26 +59,6 @@ const ImageUpload = ({ setStep, step }) => {
 				// setErrorStatus({ error: true, message: err });
 				console.log(err);
 			});
-	};
-
-	const handleUpload = (e) => {
-		let file = imageUpload;
-		console.log(file);
-		let formdata = new FormData();
-		formdata.append('image', file);
-		formdata.append('id', `${uuidv4()}`);
-		// console.log(formdata);
-		axios({
-			url: '/some/api',
-			method: 'POST',
-			headers: {
-				authorization: 'your token',
-			},
-			data: formdata,
-		}).then(
-			(res) => {},
-			(err) => {}
-		);
 	};
 
 	const checkSize = () => {
@@ -121,8 +83,6 @@ const ImageUpload = ({ setStep, step }) => {
 	const click = (event) => {
 		setShow((current) => !current);
 	};
-	const isVisible = false;
-	const [image, setImage] = useState();
 	// const [preview, setPreview] = useState();
 
 	return (
@@ -165,14 +125,14 @@ const ImageUpload = ({ setStep, step }) => {
 					</form>
 				</div>
 			)}
-			{showAlertLink && addFile === false && (
+			{showAlertLink  && (
 				<div className="flex flex-col items-center w-full h-full justify-center">
 					<div className="grow">
 						<Content />
 					</div>
 				</div>
 			)}
-			{preview && (
+			{preview && !showAlertLink && (
 				<>
 					{genAvt ? (
 						<GeneratingAvatar />
@@ -204,7 +164,7 @@ const ImageUpload = ({ setStep, step }) => {
 									selectedImages.map((image, index) => {
 										return (
 											<div
-												key={image}
+												key={index}
 												className="vic_her_div relative cbk-hover"
 												// onChange={storeItem(image)}
 											>
@@ -246,7 +206,7 @@ const ImageUpload = ({ setStep, step }) => {
 											name="file"
 											id="file"
 											// onclick={setPreview(false)}
-											onChange={handleFilee}
+											onChange={handleFile}
 										/>
 
 										<label htmlFor="file">
