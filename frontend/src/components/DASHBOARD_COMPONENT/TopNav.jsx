@@ -4,8 +4,6 @@ import Dashboardtranslate from './dashboardtranslate';
 
 
 export const TopNav = ({ title, text, show, setShow }) => {
-  const user = JSON.parse(localStorage.getItem("userData"));
-  console.log(user)
 
   return (
 		<div className="mb-[60px] bg-[#FFFFFF] lg:bg-[#FAFAFA]">
@@ -25,7 +23,7 @@ export const TopNav = ({ title, text, show, setShow }) => {
 				<div className="flex items-center justify-between pt-[50px] xl:pt-0 gap-5 bg-[#FFFFFF] lg:bg-[#FAFAFA]">
 					<div>
 						<h1 className="text-[24px] md:text-[40px] text-[#000] font-bold">
-							{title} {user?.username}
+							{title} 
 						</h1>
 						<p className="text-[#6c6c6c] text-sm md:text-[18px]">{text}</p>
 					</div>
