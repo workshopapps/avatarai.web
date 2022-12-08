@@ -52,6 +52,25 @@ user_router = APIRouter()
 ###########################
 #API
 ###########################
+@user_router.get("/user/{email}")
+async def user(get_user : str= Depends(oauth2_scheme)):
+    try:
+        user = await db.user.find_one({"email": get_user}, None)
+        print(user)
+    except None:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail={'message' : 'Something went wrong. Try again'}
+        )
+    Response = {
+        "userData":{
+            'firstname': user['first_name'],
+            'lastname': user['lastname'],
+            'email': user['email'],
+            }
+        }
+    return JSONResponse(Response, status_code=status.HTTP_200_OK)
+
 @user_router.post("/api/user", response_model = User)
 async def create_user(raw_user: User):
     user = {        
