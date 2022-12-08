@@ -6,7 +6,7 @@ import style from "./frame_4.module.css";
 
 /* images import*/
 import back from "./back.svg";
-import receivedmail from "./receivedmail.svg";
+import clock from "./clock.svg";
 
 const Frame_4 = () => {
   const navigate = useNavigate()
@@ -18,8 +18,9 @@ const Frame_4 = () => {
         <img src={back} alt="go back" className={style.back} onClick={()=>navigate('/dashboard')}/> 
         <article className={style.main}>
           <h4>Congratulations {user.username},</h4>
-          <img src={receivedmail} alt="recieved mail" />
-          <p>Your avatars has been sent to {user.email}</p>
+          <img src={clock} alt="recieved mail" />
+          <p>Your avatars are being generated and would be sent to {user.email}.</p>
+          <p>This process takes 30 mins or less.</p>
         </article>
       </section>
       <div className={style.linkdiv}>
