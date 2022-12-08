@@ -26,7 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 		<AuthProvider>
 			<NavProvider>
 				<ForgetPasswordProvider>
-					<GoogleOAuthProvider clientId="730438514566-heblqc7dtqc29cuqbc0dp24igg4lbo7m.apps.googleusercontent.com">
+					<GoogleOAuthProvider clientId={import.meta.env.VITE_CLIENT_ID}>
 						<BrowserRouter>
 							<App />
 						</BrowserRouter>
