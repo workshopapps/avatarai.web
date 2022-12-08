@@ -11,7 +11,7 @@ import { useState } from 'react';
 
 // let personality;
 
-const FrameEye = ({ setStep, setPhotoUser }) => {
+const FrameEye = ({ setStep, setPhotoUser, photoUser }) => {
 	const [list, setList] = useState([
 		{
 			user: 'Male',
@@ -75,7 +75,7 @@ const FrameEye = ({ setStep, setPhotoUser }) => {
 								console.log(index);
 							}}
 							key={index}
-							className={`vnc-selection ${e === toggle && 'active'}`}
+							className={`vnc-selection ${e.user === photoUser && 'active'}`}
 						>
 							<p>{e.user}</p>
 							<img className="vnc-icon-image" src={e.icon} alt="" />
