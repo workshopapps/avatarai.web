@@ -1,54 +1,32 @@
 .aso-profile {
   display: flex;
+  padding: 0 !important;
 }
-
 .aso-profile-section {
-  width: 80vw;
-  max-width: 1075px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.aso-profile-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 29px;
-}
-
-.aso-profile-header h1 {
-  font-weight: 600;
-  font-size: 24px;
-  color: #000000;
-  padding-bottom: 2px;
-}
-
-.aso-profile-header p {
-  font-weight: 400;
-  font-size: 18px;
-  color: #949494;
-}
-
 .aso-profile-board {
   background: #ffffff;
-  width: 100%;
+  width: auto;
+  margin: 0 auto;
   border-radius: 8px;
   display: flex;
+  padding: 2rem;
   flex-direction: column;
   align-items: flex-start;
   box-shadow: 0px 2px 20px 0px rgba(232, 232, 232, 0.26);
   -webkit-box-shadow: 0px 2px 20px 0px rgba(232, 232, 232, 0.26);
   -moz-box-shadow: 0px 2px 20px 0px rgba(232, 232, 232, 0.26);
 }
-
 .aso-bio {
-  padding: 71px 0 46px 138px;
   display: flex;
   align-items: center;
 }
-
 .aso-bio img {
   width: 160px;
   width: 160px;
@@ -68,14 +46,12 @@
   font-size: 16px;
   color: #778888;
 }
-
 .aso-form-container {
   display: flex;
   flex-direction: column;
-  padding-left: 138px;
   width: 100%;
+  margin-top: 2rem;
 }
-
 .aso-form-name-input,
 .aso-form-mobile-location {
   display: flex;
@@ -91,16 +67,6 @@
 .aso-form-mobile-location {
   padding-bottom: 45px;
 }
-
-.aso-form-email-input {
-  padding-bottom: 46px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 145%;
-}
-
 .aso-form-container label {
   font-weight: 400;
   font-size: 16px;
@@ -119,7 +85,6 @@
 .aso-form-mobile {
   margin-right: 65px;
 }
-
 .aso-form-first-name input,
 .aso-form-last-name input,
 .aso-form-mobile input,
@@ -130,7 +95,6 @@
   border-radius: 4px;
   padding-left: 10px;
 }
-
 .aso-form-first-name input::placeholder,
 .aso-form-last-name input::placeholder,
 .aso-form-mobile input::placeholder,
@@ -140,20 +104,11 @@
   color: #888888;
 }
 
-.aso-form-email-input input {
-  width: 55%;
-  height: 46px;
-  border: 1px solid #5e6e6e;
-  border-radius: 4px;
-  padding-left: 10px;
-}
-
 .aso-btn__submit {
   margin-bottom: 54px;
-  width: 179px;
+  width: 100%;
   height: 56px;
   align-self: flex-start;
-  margin-left: 25%;
   justify-self: center;
   display: flex;
   align-items: center;
@@ -162,38 +117,7 @@
   border-radius: 5px;
   color: #ffffff;
 }
-
-@media screen and (max-width: 939px) {
-  .aso-profile {
-    background: #fcfcfc;
-    display: flex;
-  }
-
-  .aso-profile-section {
-    margin-left: 70px;
-  }
-
-  .aso-profile-header h1 {
-    font-size: 18px;
-  }
-
-  .aso-profile-header p {
-    font-size: 16px;
-  }
-
-  .aso-bio {
-    padding: 71px 0 46px 80px;
-    display: flex;
-    align-items: center;
-  }
-
-  .aso-bio img {
-    width: 90px;
-    width: 90px;
-    border-radius: 50%;
-    margin-right: 20px;
-  }
-
+@media screen and (max-width: 605px) {
   .aso-bio-details h1 {
     font-size: 18px;
   }
@@ -201,32 +125,25 @@
   .aso-bio-details p {
     font-size: 16px;
   }
-
-  .aso-form-container {
-    padding-left: 80px;
-  }
-
   .aso-form-name-input,
   .aso-form-mobile-location {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 80%;
+    width: 100%;
   }
-
   .aso-form-name-input {
     padding-bottom: 20px;
   }
-
+  .aso-form-first-name input,
+  .aso-form-last-name input,
+  .aso-form-mobile input,
+  .aso-form-location input {
+    width: 250px !important;
+  }
   .aso-form-mobile-location {
     padding-bottom: 20px;
   }
-
-  .aso-form-email-input {
-    padding-bottom: 30px;
-    width: 68%;
-  }
-
   .aso-form-container label {
     font-weight: 400;
     font-size: 16px;
@@ -237,26 +154,6 @@
   .aso-form-mobile {
     padding-bottom: 20px;
   }
-
-  .aso-form-first-name,
-  .aso-form-last-name,
-  .aso-form-mobile,
-  .aso-form-location {
-    margin-right: 0;
-    width: 85%;
-  }
-
-  .aso-form-first-name input,
-  .aso-form-last-name input,
-  .aso-form-mobile input,
-  .aso-form-location input {
-    width: 100%;
-    height: 46px;
-    border: 1px solid #5e6e6e;
-    border-radius: 4px;
-    padding-left: 10px;
-  }
-
   .aso-form-first-name input::placeholder,
   .aso-form-last-name input::placeholder,
   .aso-form-mobile input::placeholder,
@@ -264,75 +161,19 @@
   .aso-form-email-input input::placeholder {
     font-size: 14px;
   }
-
-  .aso-form-email-input input {
+  .aso-profile-board {
     width: 100%;
-    height: 46px;
-    border: 1px solid #5e6e6e;
-    border-radius: 4px;
+    padding: 10px;
   }
-}
-
-@media screen and (max-width: 499px) {
-  .aso-profile {
-    background: #fcfcfc;
-    display: flex;
+  .aso-bio img {
+    width: 90px;
+    width: 90px;
+    border-radius: 50%;
+    margin-right: 20px;
   }
-
-  .aso-profile-section {
-    margin-left: 30px;
-  }
-
-  .aso-profile-header h1 {
-    font-size: 18px;
-  }
-
-  .aso-profile-header p {
-    font-size: 16px;
-  }
-
   .aso-bio {
-    padding: 71px 0 46px 40px;
-  }
-
-  .aso-form-container {
-    padding-left: 40px;
-  }
-
-  .aso-form-name-input,
-  .aso-form-mobile-location {
+    padding: 5px 0 5px 0;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 85%;
-  }
-
-  .aso-form-name-input {
-    padding-bottom: 20px;
-  }
-
-  .aso-form-mobile-location {
-    padding-bottom: 20px;
-  }
-
-  .aso-form-email-input {
-    width: 77%;
-  }
-
-  .aso-form-first-name,
-  .aso-form-mobile {
-    padding-bottom: 20px;
-  }
-
-  .aso-form-first-name,
-  .aso-form-last-name,
-  .aso-form-mobile,
-  .aso-form-location {
-    margin-right: 0;
-    width: 90%;
-  }
-
-  #aso-btn__submit {
-    margin-left: 20%;
+    align-items: center;
   }
 }
