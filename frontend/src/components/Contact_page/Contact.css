@@ -78,7 +78,18 @@
     margin: auto;
     margin-top: 15%;
     text-align: center;
+    animation: load 1s;
 }
-/* .contact-modal button{
-    border: 1px solid red;
-} */
+#loader, #loader div{
+    width: fit-content;
+    margin: auto;
+}
+#statusImg{
+    width: 30px !important;
+    display: inline;
+    margin-top: -10px;
+}
+@keyframes load {
+    0%{opacity: 0; margin-top: 10%;}
+    100%{opacity: 1; margin-top: 15%;}
+}
