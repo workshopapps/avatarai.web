@@ -4,8 +4,9 @@ import './DD2.css';
 import '../desktop_4/DD4.css';
 import arrowRightMobile from './arrow-right-mobile.svg';
 import arrowRightDesktop from './arrow-right-desktop.svg';
+import GrayLine from './../DASHBOARD_COMPONENT/img/gray-rect.svg';
+import PurpleLine from './../DASHBOARD_COMPONENT/img/purple-rect.svg';
 import upload from './upload.svg';
-import progress from './progress.svg';
 import { v4 as uuidv4 } from 'uuid';
 import GeneratingAvatar from '../desktop_5/GeneratingAvatar';
 import { Link } from 'react-router-dom';
@@ -54,9 +55,9 @@ const ImageUpload = ({ setStep, step }) => {
 	};
 
 	const sendImages = async () => {
-    const user = JSON.parse(localStorage.getItem('userData'));
+		const user = JSON.parse(localStorage.getItem('userData'));
 		const data = { images: selectedImages, email: user.email };
-		console.log(data, "data");
+		console.log(data, 'data');
 		setGenAvt(true);
 		await axios
 			.post('https://zuvatar.hng.tech/api/v1/avatar', data)
@@ -120,7 +121,7 @@ const ImageUpload = ({ setStep, step }) => {
 	// const [preview, setPreview] = useState();
 
 	return (
-		<div className="w-full h-full relative">
+		<div className="w-full h-full relative overflow-x-hidden">
 			{!showAlertLink && !preview && (
 				<div style={{ display: show ? 'block' : 'none' }} className="aso-dd2-content-container">
 					<div className="aso-dd2-top w-full">
@@ -134,8 +135,10 @@ const ImageUpload = ({ setStep, step }) => {
 							</div>
 						</div>
 
-						<div className="imgs flex justify-center items-center w-full ">
-							<img src={progress} alt="" className="w-[200px] h-[20px] md:h-auto md:w-[250px] lg:w-auto" />
+						<div className="flex items-center justify-center gap-3 w-full">
+							<img src={GrayLine} alt="" className="w-[50px] md:w-[120px] md:h-[5px]" />
+							<img src={PurpleLine} alt="" className="w-[50px] md:w-[120px] md:h-[5px] " />
+							<img src={GrayLine} alt="" className="w-[50px] md:w-[120px] md:h-[5px]" />
 						</div>
 					</div>
 
@@ -181,8 +184,10 @@ const ImageUpload = ({ setStep, step }) => {
 									</div>
 								</div>
 								{/* <p>2</p> */}
-								<div className="imgs flex justify-center items-center w-full h-10">
-									<img src={three} alt="" className="w-[200px] md:w-[250px] lg:w-auto" />
+								<div className="md:mb-5 flex items-center justify-center gap-3 w-full">
+									<img src={GrayLine} alt="" className="w-[50px] md:w-[120px] md:h-[5px]" />
+									<img src={GrayLine} alt="" className="w-[50px] md:w-[120px] md:h-[5px]" />
+									<img src={PurpleLine} alt="" className="w-[50px] md:w-[120px] md:h-[5px] " />
 								</div>
 							</div>
 							<h3>Preview your Images</h3>

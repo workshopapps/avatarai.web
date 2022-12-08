@@ -37,7 +37,7 @@ const Profile = () => {
 						<div className="aso-bio">
 							<img src={ProfileImg} alt="Bio Img" className="" />
 							<div className="aso-bio-details">
-								<h1>{user?.username}</h1>
+								<h1>{user?.Firstname}</h1>
 								<p>{user?.email}</p>
 							</div>
 						</div>

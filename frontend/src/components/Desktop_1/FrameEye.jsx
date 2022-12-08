@@ -1,18 +1,12 @@
 import './frame-eye.css';
-
-import Frame_1 from '../desktop_4/Frame_1';
-import { Link } from 'react-router-dom';
+import GrayLine from './../DASHBOARD_COMPONENT/img/gray-rect.svg';
+import PurpleLine from './../DASHBOARD_COMPONENT/img/purple-rect.svg';
 import female_icon from './Female User.svg';
 import dog_icon from './Dog Sit.svg';
 import cat_icon from './Cat Pot.svg';
 import Couple from './Couple-Posing.svg';
 import other from './Decision.svg';
 import male_icon from './User Male.svg';
-
-import prog from './prog.svg';
-import progM from './prog2.svg';
-
-import one_icon from './oneicon.png';
 import { useState } from 'react';
 
 // let personality;
@@ -61,10 +55,11 @@ const FrameEye = ({ setStep }) => {
 	};
 
 	return (
-		<div className="vnc-main ">
-			<div className="vnc-icon md:mb-10">
-				<img src={prog} alt="" className="hidden md:block" />
-				<img src={progM} alt="" className="block md:hidden" />
+		<div className="vnc-main overflow-x-hidden">
+			<div className="md:mb-5 flex items-center justify-center gap-3 w-full">
+				<img src={PurpleLine} alt="" className="w-[50px] md:w-[120px] md:h-[5px] " />
+				<img src={GrayLine} alt="" className="w-[50px] md:w-[120px] md:h-[5px]" />
+				<img src={GrayLine} alt="" className="w-[50px] md:w-[120px] md:h-[5px]" />
 			</div>
 			<div className="vnc-text">
 				<h2 className="text-nunito">You are a ...</h2>
@@ -93,7 +88,7 @@ const FrameEye = ({ setStep }) => {
 						disabled={work}
 						type="submit"
 						value="Proceed"
-						onClick={()=>setStep(2)}
+						onClick={() => setStep(2)}
 						//onClick={localStorage.setItem("personality", JSON.stringify(personality))}
 					/>
 				</div>

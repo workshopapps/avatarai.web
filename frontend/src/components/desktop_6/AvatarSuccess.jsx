@@ -1,5 +1,6 @@
 /* dependency imports */
 import { Link, useNavigate } from 'react-router-dom';
+import Button from '../landingPage/Button/Button';
 
 /* style imports */
 import style from './frame_4.module.css';
@@ -8,7 +9,7 @@ import style from './frame_4.module.css';
 import back from './back.svg';
 import receivedmail from './recievedmail.svg';
 
-const AvatarSuccess = () => {
+const AvatarSuccess = ({ setStep, step }) => {
 	const navigate = useNavigate();
 	const user = JSON.parse(localStorage.getItem('userData'));
 
@@ -22,8 +23,8 @@ const AvatarSuccess = () => {
 					<p>Your avatars has been sent to {user.email}</p>
 				</article>
 			</section>
-			<div className={style.linkdiv}>
-				<Link to="/Dashboard_2">Generate More</Link>
+			<div className="w-full flex justify-center mt-[60px]">
+				<Button className="bg-[#8B70E9] w-100 w-lg-120 text-[20px] font-bold text-white" children="Generate More" />
 			</div>
 		</>
 	);

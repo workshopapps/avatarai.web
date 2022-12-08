@@ -12,8 +12,8 @@ import AvatarSuccess from '../desktop_6/AvatarSuccess';
 
 const DesktopEye = () => {
 	const user = JSON.parse(localStorage.getItem('userData'));
-	console.log(user);
-	const [step, setStep] = useState(1)
+
+	const [step, setStep] = useState(1);
 
 	return (
 		<div>
