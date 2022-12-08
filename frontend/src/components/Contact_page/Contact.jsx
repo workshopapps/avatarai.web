@@ -6,6 +6,9 @@ import FaqNewsletter from "../faq/FaqNewsletter";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { NavContext, pages } from "../../../context/nav-context";
+import Loading from "../loading/Loading";
+import Failed from "./failed.png"
+import Success from "./success.png"
 
 import Button from "../landingPage/Button/Button";
 // import { Link } from "react-router-dom";
@@ -13,14 +16,33 @@ import Button from "../landingPage/Button/Button";
 const Contact = () => {
 
     let [overlay, setOverlay] = useState('overlay-hidden')  
-    let [status, setStatus] = useState('')
-    let [message, setMessage] = useState('')
-    let [stateColor, setStateColor] = useState('')
+    let [status, setStatus] = useState('Success !')
+    let [message, setMessage] = useState('our message was successfully sent, Thanks for contacting us and watchout for our response')
+    let [stateColor, setStateColor] = useState('green')
+    let [content, setModalContent] = useState('')
+    let [statusImg, setStatusImg] = useState(Success)
 
     const {setPage} = useContext(NavContext)
     useEffect(()=>{
      setPage(pages.ContactUs)
     },[])
+
+    const loader = (
+      <div id="loader">
+          <div>
+            <Loading/>
+          </div>
+          <p>Sending Message, pleasewait</p>
+      </div>
+    )
+    const modalResponse = (
+      <div id="response">
+          <h3 className={`text-${stateColor}-500 text-4xl font-semibold`}><img id="statusImg" src={statusImg}/> {status}</h3><hr/>
+          <p className="mt-5">{message}</p>
+          <button className="mt-5 p-2 rounded-md" onClick={() => {setOverlay('overlay-hidden')}}
+        style={{border: `1px solid ${stateColor}`}}>Close</button>
+      </div>
+    )
 
     function sendMessage(){
       postMessage({
@@ -33,6 +55,7 @@ const Contact = () => {
       setOverlay('overlay-visible')
     }
     const postMessage = async(info)=>{
+      setModalContent(loader)
       try {
         const response = await fetch("https://zuvatar.hng.tech/api/v1/contactForm", {
           method: "POST",
@@ -44,12 +67,16 @@ const Contact = () => {
         })
          
         if(response.status === 200){
-          setStatus(':) Success!!')
+          setModalContent(modalResponse)
+          setStatusImg(Success)
+          setStatus("Success !")
           setMessage('Your message was successfully sent, Thanks for contacting us and watchout for our response')
           setStateColor('green')
         }
         else{
-          setStatus('Request failed :(')
+          setModalContent(modalResponse)
+          setStatusImg(Failed)
+          setStatus('Request failed')
           setMessage(`Oops we ran into a ${response.status} error while trying to send your message, please try again later`)
           setStateColor('red')
         }
@@ -74,9 +101,13 @@ const Contact = () => {
             <p className="text-white font-semibold text-5xl mb-5">
               How Can We Help You ?
             </p>
-            <Button className="text-white bg-violet-500 p-3 rounded-md">
+            <button className="text-white bg-violet-500 p-3 rounded-md"
+              onClick={()=>{
+                  document.getElementById("contact-form").scrollIntoView({behavior: 'smooth'});
+                  console.log('scroll')
+                }}>
               Send A Message
-            </Button>
+            </button>
           </div>
         </div>
         <div className="flex max-[1000px]:block">
@@ -152,10 +183,7 @@ const Contact = () => {
 
         <div className="contact-overlay" id={overlay} onClick={() => {setOverlay('overlay-hidden')}}>
             <div className='contact-modal bg-white p-10 rounded-md'>
-                  <h3 className={`text-4xl text-${stateColor}-500 font-semibold`}>{status}</h3><hr/>
-                  <p className="mt-5">{message}</p>
-                  <button className="mt-5 p-2 rounded-md" onClick={() => {setOverlay('overlay-hidden')}}
-                  style={{border: `1px solid ${stateColor}`}}>Close</button>
+              {modalResponse}
             </div>
         </div>
 
