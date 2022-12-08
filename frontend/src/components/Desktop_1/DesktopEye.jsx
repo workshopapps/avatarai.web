@@ -9,9 +9,11 @@ import Dashboardlayout from '../DASHBOARD_COMPONENT/DashboardLayout';
 import InstructionModal from '../DASHBOARD_COMPONENT/instructionModal';
 
 const DesktopEye = () => {
+	const user = JSON.parse(localStorage.getItem('userData'));
+	console.log(user);
 	return (
 		<div>
-			<Dashboardlayout title="Hello" text="Start generating cool avatars.">
+			<Dashboardlayout title={`Hello ${user?.Firstname}`} text="Start generating cool avatars.">
 				<InstructionModal />
 				<FrameEye />
 			</Dashboardlayout>

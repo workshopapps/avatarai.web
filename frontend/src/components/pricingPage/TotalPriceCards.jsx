@@ -21,30 +21,30 @@ function TotalPriceCards() {
         <div className="flex vnc_cap align-top justify-center items-top px-4 mt-4 gap-1 lg:gap-3">
           <PriceCardOne
             title="Basic Plan"
-            amount={toggle ? "$13.45" : `$${(13.45 * 7.5).toFixed(2)}`}
+            amount={toggle ? "13.45" : `${(13.45 * 7.5).toFixed(2)}`}
             background="#170c3c"
             text="white"
             space="5rem"
-            duration={toggle ? "/month" : "/year"}
+            duration={toggle ? "month" : "year"}
             bg="white"
             top="1.5rem"
           />
           <PriceCardTwo
             title="Standard Plan"
-            amount={toggle ? "$25.45" : `$${(25.45 * 7.5).toFixed(2)}`}
+            amount={toggle ? "25.45" : `${(25.45 * 7.5).toFixed(2)}`}
             top="1.5rem"
             background="white"
-            duration={toggle ? "/month" : "/year"}
+            duration={toggle ? "month" : "year"}
             text="#170c3c"
             bg="#170c3c"
             font="white"
           />
           <PriceCardThree
             title="Premium Plan"
-            amount={toggle ? "$49.45" : `$${(49.45 * 7.5).toFixed(2)}`}
+            amount={toggle ? "49.45" : `${(49.45 * 7.5).toFixed(2)}`}
             background="#170c3c"
             text="white"
-            duration={toggle ? "/month" : "/year"}
+            duration={toggle ? "month" : "year"}
             space="5rem"
             bg="white"
             top="1.5rem"

@@ -112,7 +112,7 @@ subscribe(emailField)
             
             <div
               id="big-div"
-              className="border border-[#403E46] flex items-center md:gap-4 gap-1 justify-between rounded-[16px] p-[5px] h-[52px] w-full max-w-[512px] bg-white rounded"
+              className="border border-[#403E46] flex items-center md:gap-4 gap-1 justify-between rounded-[16px] p-[5px] h-[52px] w-full max-w-[512px] bg-white"
             >
               <div
                 id="input"
@@ -134,7 +134,7 @@ subscribe(emailField)
               <button
                 id="subscribe"
                 onClick={validate}
-                className="text-white border-[#8B70E9] bg-[#8B70E9] cursor-pointer bg-[#8B70E9] h-full relative flex items-center font-nunito text-white rounded-[12px] px-[20px] py-[8px]"
+                className="text-white border-[#8B70E9] cursor-pointer bg-[#8B70E9] h-full relative flex items-center font-nunito rounded-[12px] px-[20px] py-[8px]"
               >
                 <span className="text-white">Subscribe</span>
               </button>

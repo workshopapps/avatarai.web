@@ -13,27 +13,27 @@ const Dashboardlayout = ({ children, title, text }) => {
 
 
 	return (
-    <>
-      <div className="w-full max-h-screen bg-[#FFFFFF] lg:bg-[#FAFAFA] relative">
-        <div className="flex flex-no-wrap h-full">
-          <SideBar show={show} setShow={setShow} />
-          <div className="w-full h-screen overflow-y-auto">
-            <div className="mx-auto py-[36px] px-3 lg:px-6 ">
-              <TopNav
-                title={title}
-                text={text}
-                show={show}
-                setShow={setShow}
-                profile={profile}
-                setProfile={setProfile}
-              />
-              <div className="w-full">{children}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
+		<>
+			<div className="w-full max-h-screen bg-[#FFFFFF] lg:bg-[#FAFAFA] relative">
+				<div className="flex flex-no-wrap h-full">
+					<SideBar show={show} setShow={setShow} />
+					<div className="w-full h-screen overflow-y-auto">
+						<div className="mx-auto py-[36px] px-3 lg:px-6 ">
+							<TopNav
+								title={title}
+								text={text}
+								show={show}
+								setShow={setShow}
+								profile={profile}
+								setProfile={setProfile}
+							/>
+							<div className="w-full">{children}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</>
+	);
 };
 
 export default Dashboardlayout;

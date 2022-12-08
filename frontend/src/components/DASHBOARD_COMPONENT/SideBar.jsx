@@ -123,13 +123,13 @@ export const SideBar = ({ show, setShow }) => {
 			<div
 				className={
 					show
-						? 'w-full h-screen absolute z-40  transform  translate-x-0 '
-						: '   w-full h-screen absolute z-40  transform -translate-x-full'
+						? 'w-full h-screen absolute z-[200]  transform  translate-x-0 '
+						: '   w-full h-screen absolute z-[200]  transform -translate-x-full'
 				}
 				id="mobile-nav"
 			>
 				<div className="bg-[#000000] opacity-50 absolute h-screen w-full xl:hidden" onClick={() => setShow(!show)} />
-				<div className="absolute z-40 sm:relative w-64 md:w-96 shadow pb-4 bg-[#FFFFFF] xl:hidden transition duration-150 ease-in-out h-screen overflow-y-auto">
+				<div className="absolute z-[200] sm:relative w-64 md:w-96 shadow pb-4 bg-[#FFFFFF] xl:hidden transition duration-150 ease-in-out h-screen overflow-y-auto">
 					<div className="flex flex-col justify-between h-full w-full">
 						<div>
 							<div className="flex items-center justify-between py-[15px] px-5">
