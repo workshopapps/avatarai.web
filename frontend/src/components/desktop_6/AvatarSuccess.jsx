@@ -20,7 +20,8 @@ const AvatarSuccess = ({ setStep, step }) => {
 				<article className={style.main}>
 					<h4>Congratulations {user.Firstname},</h4>
 					<img src={receivedmail} alt="recieved mail" />
-					<p>Your avatars has been sent to {user.email}</p>
+					<p>Your avatars are being generated and would be sent to {user.email}.</p>
+					<p>This procees would take some time.</p>
 				</article>
 			</section>
 			<div className="w-full flex justify-center mt-[60px]">
