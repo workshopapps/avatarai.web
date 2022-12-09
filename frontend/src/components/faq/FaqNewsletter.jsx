@@ -72,6 +72,9 @@ subscribe(emailField)
        if(response.status === 200){
        setShowSuccessModal(true)
       closeModal()
+       }else{
+        setshowErrorModal(true)
+        closeModal()
        }
     } catch (error) {
       
