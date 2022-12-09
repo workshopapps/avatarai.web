@@ -3,7 +3,7 @@ import Navbar from "../landingPage/Navbar/Navbar";
 // import Footer from "../landing-page/footer/Footer";
 import Foooter from "../footer/Foooter";
 import FaqNewsletter from "../faq/FaqNewsletter";
-import Modal from "../modal/Modal";
+import Modal from "../modal/modal";
 
 import { useEffect, useState } from "react";
 import { useContext } from "react";
