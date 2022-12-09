@@ -16,10 +16,9 @@ from starlette.config import Config
 
 from server.models.schemas import User, Login, EmailSchema,ContactForm, TokenData
 
-from server.models.schemas import User, Login, EmailSchema, ContactForm
 from database import db
 ##############
-import smtplib, ssl
+import smtplib
 from server.auth.utility import *
 from bson import json_util
 import json
@@ -30,39 +29,12 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-# from fastapi import BackgroundTask, FastAPI
-# from fastapi_mail import ConnectionConfig, FastMail, MessageSchema, MessageType
-# from pydantic import BaseModel, EmailStr
-#from starlette.responses import JSONResponse
 
 config = Config('.env')
 oauth = OAuth(config)
 
 
 
-
-##############################
-#
-##############################
-
-
-
-# message = 
-
-# def send_mail(message):
-        
-#     port = 587  # For starttls
-#     smtp_server = "smtp.gmail.com"
-#     sender_email = os.environ.get('EMAIL')
-#     password = os.environ.get('PASSWORD')
-#     context = ssl.create_default_context()
-#     with smtplib.SMTP(smtp_server, port) as server:
-#         server.ehlo()  # Can be omitted
-#         server.starttls(context=context)
-#         server.ehlo()  # Can be omitted
-#         server.login(sender_email, password)
-#         server.sendmail(sender_email, 'meelisfidelis@gmail.com', message)
-##############################
 
 
 
@@ -267,21 +239,6 @@ if CLIENT_ID is None or CLIENT_SECRET is None:
 #Email signUp
 #############################################
 
-# config_data = {'GOOGLE_CLIENT_ID': CLIENT_ID, 'GOOGLE_CLIENT_SECRET': CLIENT_SECRET}
-# #config = Config('.env')
-# #starlette_config = Config(environ = config_data)
-# #oauth = OAuth(starlette_config)
-# oauth.register(
-#     name='google',
-#     server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
-#     client_kwargs={'scope': 'openid email profile',
-#     'prompt': 'select_account',  # force to select account
-#     },
-# )
-
-
-
-
 
 #@user_router.get('/verifyGoogle' )
 #async def verify(token:list):
@@ -345,17 +302,45 @@ if CLIENT_ID is None or CLIENT_SECRET is None:
 
 
 @user_router.post("/contactForm")
-async def send_mail():
-    mail = """\
-Subject: Hi there
+async def send_mail(data : ContactForm):
+    msg={
+        'firstname': data.firstname,
+        'lastname': data.lastname,
+        'email': data.email,
+        'message': data.message,
+    }
 
-This message is sent from Python."""
+    new = await db['questions'].insert_one(msg)
+    create= await db.questions.find_one({"_id": new.inserted_id})
+    create["_id"] = str(create["_id"])
+
+
+
+
 
     ##################
     #SMTP
     ##################
-  
-    print(mail)
+    msg = 'Subject: Thanks for Reaching out.'
+    #The mail addresses and password
+    sender_address = os.environ.get('EMAIL')
+    sender_pass = os.environ.get('PASSWORD')
+    receiver_address = data.email
+    #Setup the MIME
+    message = MIMEMultipart()
+    message['From'] = sender_address
+    message['To'] = receiver_address
+    message['Subject'] = 'Password Recovery'   #The subject line
+    #The body and the attachments for the mail
+    message.attach(MIMEText(msg, 'plain'))
+    #Create SMTP session for sending the mail
+    session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
+    session.starttls() #enable security
+    session.login(sender_address, sender_pass) #login with mail_id and password
+    text = message.as_string()
+    session.sendmail(sender_address, receiver_address, text)
+    session.quit()
+    
     return JSONResponse(status_code=200, content={"message": "Thanks for reaching out"})
 
     
