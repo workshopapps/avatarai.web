@@ -12,7 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { ForgetPasswordContext } from "../../../context/forgetpassword-context";
 
-import Modal from "../modal/Modal";
+import Modal from "../modal/modal";
 import red from "./LoginImg/red.png";
 
 const ForgotPassword = () => {
