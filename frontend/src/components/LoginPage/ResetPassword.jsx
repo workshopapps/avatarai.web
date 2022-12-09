@@ -1,35 +1,85 @@
 import lock from "./LoginImg/lock.svg";
 import Button from "../landingPage/Button/Button";
 import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { createContext } from "react";
-import { useContext } from "react";
 
-const RpContext = createContext();
+
+
 
 const ResetPassword = () => {
-  const [formData, setFormData] = useState(() => {});
-  const [placeholder, setPlaceholder] = useState(true)
+  const [pwd, setPwd] = useState({
+    new_password: '',
+    confirm_password: ''
+  })
+  const [errMessage, setErrMessage] = useState('')
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const [invalid, setInvalid] = useState(false)
+  const invalidPassword = pwd.new_password.length<8
+  const pwdNotMatch = pwd.new_password!=pwd.confirm_password
 
-  const onSubmit = (data) => setFormData(data);
-  const watchPasswords = watch(["newPassword", "confirmPassword"]);
+  const handleChange = ({target}) => {
+    if(invalid){
+      setInvalid(false)
+    }
+    let name = target.name
+    let value = target.value
+    setPwd(prev=>({...prev, 
+    [name]: value}))
+  }
+  
+  
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (invalidPassword) {
+      setInvalid(true);
+      setErrMessage("passwords must be longer than seven characters")
+      
+      return;
+    }
+    if(pwdNotMatch){
+      setInvalid(true)
+      setErrMessage("passwords don't match")
+      return;
+    }
+    setInvalid(false);
+    fetch("https://zuvatar.hng.tech/api/v1/updatepassword", {
+      method: "PUT",
+      body: JSON.stringify({ email: email,
+      password: pwd.new_password }),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          
+        } else {
+          setInvalid(true)
+          setErrMessage(`password reset failed. got a ${res.status} code, try again.`)
+          setTimeout(() => setFailedReq(""), 3000);
+        }
+      })
+      .catch((err) => {
+        setInvalid(true)
+        setErrMessage("password reset failed. Check your network and try again.")
+        setTimeout(() => setFailedReq(""), 3000);
+      });
+
+    setPwd({
+      new_password: '',
+      confirm_password: ''
+    })
+  };
+
 
   return (
-    <RpContext.Provider value={{setPlaceholder}}>
       <div className="flex flex-col pt-[120px] md:p-0 md:justify-center items-center h-screen">
-        {placeholder&&<PlaceholderPopup />}
         <div className="flex flex-col w-full max-w-xl px-6 gap-6 md:gap-8 items-center justify-center">
           <div className="bg-[#F3F0FF] p-3 md:p-5 rounded-full">
             <img
-              className="w-4 h-[60px] w-[60px] md:w-[160px] md:h-[160px]"
+              className=" h-[60px] w-[60px] md:w-[100px] md:h-[100px]"
               src={lock}
               alt=""
             />
@@ -43,10 +93,15 @@ const ResetPassword = () => {
             </p>
           </div>
           <form
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={onSubmit}
             className="flex flex-col gap-4 w-full"
           >
             <div className="flex flex-col">
+              {invalid && (
+                <span className="text-xs text-red-600">
+                  {errMessage}
+                </span>
+              )}
               <label
                 htmlFor="new-password"
                 className="font-semibold font-[16px] md:font-[20px]"
@@ -54,50 +109,37 @@ const ResetPassword = () => {
                 New password
               </label>
               <input
-                name="new-password"
+                name="new_password"
                 required
                 type="password"
                 placeholder="New password"
                 className={`border ${
-                  errors.newPassword && "border-red-600"
+                  invalid&&invalidPassword && "border-red-600"
                 } p-3 md:p-5 w-full my-1 rounded-lg outline-none`}
-                {...register("newPassword", { required: true, minLength: 8 })}
+                onChange={handleChange}
               />
-              {errors.newPassword && (
-                <span className="text-xs text-red-600">
-                  Password must be at least 8 characters long
-                </span>
-              )}
             </div>
             <div className="flex flex-col w-full">
               <label htmlFor="confirm-password" className="font-semibold">
                 Confirm password
               </label>
               <input
-                name="confirm-password"
+                name="confirm_password"
                 required
                 type="password"
                 placeholder="Confirm password"
                 className={`border ${
-                  formData?.newPassword !== formData?.confirmPassword &&
+                  invalid&&pwdNotMatch &&
                   "border-red-600"
                 } p-3 md:p-5 w-full my-1 rounded-lg outline-none`}
-                {...register("confirmPassword", {
-                  required: true,
-                  minLength: 8,
-                })}
+                onChange={handleChange}
               />
-              {formData?.newPassword !== formData?.confirmPassword && (
-                <span className="text-xs md:text-sm text-red-600">
-                  Passwords do not match! Please confirm
-                </span>
-              )}
               <Button
                 className="w-full flex align-center justify-center bg-[#8B70E9] mt-8 text-white h-[58px] md:h-[68px] 
               text-lg md:text-3xl font-nunito"
               >
-                {watchPasswords[0] === watchPasswords[1] &&
-                watchPasswords[0]?.length > 7 ? (
+                {!pwdNotMatch &&
+                 !invalidPassword ? (
                   <Link
                     to={`/password-reset`}
                     className="text-white flex align-center justify-center text-center m-0 p-0
@@ -113,14 +155,14 @@ const ResetPassword = () => {
           </form>
         </div>
       </div>
-    </RpContext.Provider>
+    
   );
 };
 
 export default ResetPassword;
 
 const PlaceholderPopup = () => {
-  const {setPlaceholder} = useContext(RpContext)
+  
   const [email, setEmail] = useState("");
   const [invalid, setInvalid] = useState(false);
   const [failedReq, setFailedReq] = useState("");
@@ -145,8 +187,8 @@ const PlaceholderPopup = () => {
     })
       .then((res) => {
         if (res.status === 200) {
-          setPlaceholder(false)
-          console.log(res);
+       
+          
         } else {
           setFailedReq(
             "email may not exist on database, try eddie@gmail.com for testing"
@@ -208,3 +250,4 @@ const PlaceholderPopup = () => {
     </div>
   );
 };
+
