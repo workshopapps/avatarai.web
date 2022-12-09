@@ -267,21 +267,6 @@ if CLIENT_ID is None or CLIENT_SECRET is None:
 #Email signUp
 #############################################
 
-# config_data = {'GOOGLE_CLIENT_ID': CLIENT_ID, 'GOOGLE_CLIENT_SECRET': CLIENT_SECRET}
-# #config = Config('.env')
-# #starlette_config = Config(environ = config_data)
-# #oauth = OAuth(starlette_config)
-# oauth.register(
-#     name='google',
-#     server_metadata_url='https://accounts.google.com/.well-known/openid-configuration',
-#     client_kwargs={'scope': 'openid email profile',
-#     'prompt': 'select_account',  # force to select account
-#     },
-# )
-
-
-
-
 
 #@user_router.get('/verifyGoogle' )
 #async def verify(token:list):
