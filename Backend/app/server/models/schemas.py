@@ -134,15 +134,14 @@ class Login(BaseModel):
 class Token(BaseModel):
     access_token: str
     token_type: str
+    
 
 #token data
 class TokenData(BaseModel):
-    username: Union[str, None] = None
-
-class EmailSchema(BaseModel):
-   email: List[EmailStr]
-
-   class Config:
+    email:str
+    password:str
+    
+    class Config:
         allow_population_by_field_name = True
         arbitrary_types_allowed = True
         json_encoders = {ObjectId: str}
@@ -150,6 +149,22 @@ class EmailSchema(BaseModel):
         schema_extra = {
             'example': {               
                 "email":"johndoe@gmail.com",
+                "password": "I_can't_think_of_a_password",
+            }
+        }
+
+class EmailSchema(BaseModel):
+    email: EmailStr
+    
+
+    class Config:
+        allow_population_by_field_name = True
+        arbitrary_types_allowed = True
+        json_encoders = {ObjectId: str}
+
+        schema_extra = {
+            'example': {               
+                'email':"johndoe@gmail.com",
             }
         }
 
