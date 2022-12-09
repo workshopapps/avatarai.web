@@ -143,6 +143,7 @@ class TokenData(BaseModel):
 class EmailSchema(BaseModel):
     email: str
     first_name: Union[str, None] =None
+    
     class Config:
         allow_population_by_field_name = True
         arbitrary_types_allowed = True

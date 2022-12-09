@@ -43,24 +43,19 @@ oauth = OAuth(config)
 
 # message = 
 
-def send_mail(destination):
+def send_mail(message):
         
     port = 587  # For starttls
     smtp_server = "smtp.gmail.com"
     sender_email = os.environ.get('EMAIL')
     password = os.environ.get('PASSWORD')
-    message = """\
-# Subject: Hi there
-
-# This message is sent from Python."""
-
     context = ssl.create_default_context()
     with smtplib.SMTP(smtp_server, port) as server:
         server.ehlo()  # Can be omitted
         server.starttls(context=context)
         server.ehlo()  # Can be omitted
         server.login(sender_email, password)
-        server.sendmail(sender_email, destination, message)
+        server.sendmail(sender_email, 'meelisfidelis@gmail.com', message)
 ##############################
 
 
@@ -329,30 +324,29 @@ async def send_mail(data : Request):
 
 
 @user_router.post("/forgotPassword")
-async def password_recovery(email: EmailSchema):
-    print(email)
+async def password_recovery(data: EmailSchema):
+    print(data)
     # data = {
-    #     "username": str(forgotPassword_email['username'])
+    #     "username": )
     # }
     
-    #print(data)
-    # user = await db["user"].find_one({ 'email': userRes.email}, None)
-    # userRes = json.loads(json_util.dumps(user))
-    # print(userRes)
+    print(data)
+    user = await db["user"].find_one({ 'email': data.email}, None)
+    userRes = json.loads(json_util.dumps(user))
+    print(userRes)
 
-    # if userRes is None:
-    #     raise HTTPException(
-    #         status_code=status.HTTP_400_BAD_REQUEST,
-    #         detail="Not Found"
-    #     )
-    message = """\
-    Subject: Hi there! This message is sent from Python."""
+    if userRes is None:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Not Found"
+        )
+    message = """Subject: Hi there! This message is sent from Python."""
 
-    ##################
-    #SMTP
-    ##################
-    mail= await send_mail('meelisfidelis@gmail.com')
-    print(mail)
+    # ##################
+    # #SMTP
+    # ##################
+    mail= await send_mail(message)
+    # print(mail)
     return JSONResponse(status_code=200, content={"message": "An email has been sent to you"})
 
 
