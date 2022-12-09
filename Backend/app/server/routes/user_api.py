@@ -384,9 +384,10 @@ async def send_mail(data : EmailSchema):
 
 
 @user_router.post("/forgotPassword")
-async def password_recovery(data: OAuth2PasswordRequestForm =Depends()):
+async def password_recovery(data: EmailSchema):
   
-    userRes = data.username
+    userRes = data.email
+    print(userRes)
     
     user = await db["user"].find_one({ 'email': userRes}, None)
     
@@ -428,12 +429,12 @@ async def password_recovery(data: OAuth2PasswordRequestForm =Depends()):
     
    
 
-    token = create_access_token(userRes)
+    
     return JSONResponse(
         {
-            'access_token': token,
+            
             'pin': random,
-            "token_type": "bearer"
+            
             
         },
     status_code = status.HTTP_200_OK)
