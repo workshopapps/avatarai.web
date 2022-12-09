@@ -11,7 +11,6 @@ const ProfileUI = () => {
 	const handleLogout = () => {
 		logout();
 		navigate('/');
-		console.log('log');
 	};
 	const user = JSON.parse(localStorage.getItem("userData"));
 	console.log(user)

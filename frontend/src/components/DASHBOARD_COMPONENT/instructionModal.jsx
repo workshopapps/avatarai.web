@@ -9,7 +9,7 @@ const InstructionModal = () => {
   };
   return (
     <>
-      <div className="flex items-center gap-3 mt-[40px]" onClick={showUp}>
+      <div className="flex items-center gap-3 mb-5" onClick={showUp}>
         <p className="text-[#000] text-sm md:text-[20px] font-bold">
           Read upload instructions
         </p>
