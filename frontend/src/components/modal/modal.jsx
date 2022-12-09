@@ -5,7 +5,7 @@ import style from "./modal.module.css"
 
 import close from "./close.svg";
 
-export default function Modal({ header, headerStyle, text, textStyle, Image, setShow }) {
+export default function Modal({ header, HeaderImg,headerStyle, text, textStyle, Image, setShow }) {
 
 
   return createPortal(
@@ -14,14 +14,18 @@ export default function Modal({ header, headerStyle, text, textStyle, Image, set
     onClick={()=>setShow(false)}>
       <div className="w-[90vw] max-w-[460px]  rounded-lg relative bg-white min-h-[200px] flex flex-col items-center justify-center p-[30px] pb-[36px]" 
       onClick={(e)=>e.stopPropagation()}>
+      
         <img
           src={close}
           className="w-[25px] h-[25px] absolute right-[8px] top-[8px]"
           onClick={() => setShow(false)}
-        />
-        <h3 className= {`font-nunito text-center text-[22px] font-[600] m-[20px] ${headerStyle}`}>{header}</h3>
+          />
+        <h3 className= {`font-nunito text-center text-[22px] font-[600] m-[15px] ${headerStyle}`}>
+          {HeaderImg&&<HeaderImg/>}
+          <span className="w-[5px]">{' '}</span>
+          {header}</h3>
         {Image?<Image />:null}
-        <p className={`font-nunito text-[16px] font-[400] w-[90%] text-center ${textStyle}`}
+        <p className={`font-nunito text-[16px] font-[400] w-[90%] m-[10px] text-center ${textStyle}`}
         >{text}</p>
       </div>
     </section>,

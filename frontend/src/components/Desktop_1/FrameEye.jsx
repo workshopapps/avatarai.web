@@ -11,30 +11,30 @@ import { useState } from 'react';
 
 // let personality;
 
-const FrameEye = ({ setStep }) => {
+const FrameEye = ({ setStep, setPhotoUser, photoUser }) => {
 	const [list, setList] = useState([
 		{
-			whatGender: 'Male',
+			user: 'Male',
 			icon: male_icon,
 		},
 		{
-			whatGender: 'Female',
+			user: 'Female',
 			icon: female_icon,
 		},
 		{
-			whatGender: 'Cat',
+			user: 'Cat',
 			icon: cat_icon,
 		},
 		{
-			whatGender: 'Dog',
+			user: 'Dog',
 			icon: dog_icon,
 		},
 		{
-			whatGender: 'Couple',
+			user: 'Couple',
 			icon: Couple,
 		},
 		{
-			whatGender: 'Others',
+			user: 'Others',
 			icon: other,
 		},
 	]);
@@ -70,13 +70,14 @@ const FrameEye = ({ setStep }) => {
 						<div
 							onClick={() => {
 								setToggle(e);
+								setPhotoUser(e.user);
 								change(e);
 								console.log(index);
 							}}
 							key={index}
-							className={`vnc-selection ${e === toggle && 'active'}`}
+							className={`vnc-selection ${e.user === photoUser && 'active'}`}
 						>
-							<p>{e.whatGender}</p>
+							<p>{e.user}</p>
 							<img className="vnc-icon-image" src={e.icon} alt="" />
 						</div>
 					))}
@@ -86,7 +87,7 @@ const FrameEye = ({ setStep }) => {
 					<input
 						className="input_btn"
 						disabled={work}
-						type="submit"
+						type="button"
 						value="Proceed"
 						onClick={() => setStep(2)}
 						//onClick={localStorage.setItem("personality", JSON.stringify(personality))}
