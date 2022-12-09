@@ -41,30 +41,52 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 		setShowAlertLink(!showAlertLink);
 	};
 
-	const sendImages = async () => {
-		const user = JSON.parse(localStorage.getItem('userData'));
-		const data = { files: selectedImages, email: user.email, photo_class: photoUser };
-		console.log(data, 'data');
+	async function sendImages() {
 		setGenAvt(true);
-		await axios
-			.post(`${import.meta.env.VITE_API_URL}/photos`, data, {
-				headers: {
-					'Content-Type': 'multipart/form-data',
-					Accept: 'application/json',
-				},
-			})
-			.then((response) => {
-				console.log(response.data, 'upload data');
-				setGenAvt(false);
-				setStep(step + 1);
-			})
-			.catch((e) => {
-				setGenAvt(false);
-				const err = e?.response?.data;
-				// setErrorStatus({ error: true, message: err });
-				console.log(err);
-			});
-	};
+		const user = JSON.parse(localStorage.getItem('userData'));
+		let formdata = new FormData();
+		formdata.append('file', selectedImages);
+		formdata.append('email', user.email);
+		formdata.append('photo_class', photoUser);
+
+		let result = await fetch(`${import.meta.env.VITE_API_URL}/photos`, {
+			method: 'POST',
+			// body: JSON.stringify(formdata),
+			headers: {
+				'Content-Type': 'multipart/form-data',
+				Accept: 'application/json',
+			},
+			data: formdata,
+		});
+		result = await result.json();
+		console.log('result', result);
+		setGenAvt(false);
+	}
+
+	// const sendImages = async () => {
+	// 	const user = JSON.parse(localStorage.getItem('userData'));
+	// 	const data = { files: selectedImages, email: user.email, photo_class: photoUser };
+	// 	console.log(data, 'data');
+	// 	setGenAvt(true);
+	// 	await axios
+	// 		.post(`${import.meta.env.VITE_API_URL}/photos`, data, {
+	// 			headers: {
+	// 				'Content-Type': 'multipart/form-data',
+	// 				Accept: 'application/json',
+	// 			},
+	// 		})
+	// 		.then((response) => {
+	// 			console.log(response.data, 'upload data');
+	// 			setGenAvt(false);
+	// 			setStep(step + 1);
+	// 		})
+	// 		.catch((e) => {
+	// 			setGenAvt(false);
+	// 			const err = e?.response?.data;
+	// 			// setErrorStatus({ error: true, message: err });
+	// 			console.log(err);
+	// 		});
+	// };
 
 	const checkSize = () => {
 		setSize(window.innerWidth);
@@ -130,7 +152,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 					</form>
 				</div>
 			)}
-			{showAlertLink  && (
+			{showAlertLink && (
 				<div className="flex flex-col items-center w-full h-full justify-center">
 					<div className="grow">
 						<Content />
