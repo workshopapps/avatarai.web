@@ -134,20 +134,33 @@ class Login(BaseModel):
 class Token(BaseModel):
     access_token: str
     token_type: str
+    
 
 #token data
 class TokenData(BaseModel):
-    
-    email: Optional[EmailStr]
-
-class EmailSchema(BaseModel):
-    email: str
-    first_name: Union[str, None] =None
+    email:str
+    password:str
     
     class Config:
         allow_population_by_field_name = True
         arbitrary_types_allowed = True
-        # json_encoders = {ObjectId: str}
+        json_encoders = {ObjectId: str}
+
+        schema_extra = {
+            'example': {               
+                "email":"johndoe@gmail.com",
+                "password": "I_can't_think_of_a_password",
+            }
+        }
+
+class EmailSchema(BaseModel):
+    email: EmailStr
+    
+
+    class Config:
+        allow_population_by_field_name = True
+        arbitrary_types_allowed = True
+        json_encoders = {ObjectId: str}
 
         schema_extra = {
             'example': {               

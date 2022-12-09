@@ -31,6 +31,7 @@ password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 ###################################
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/user/login")
+oauth2_scheme_3 = OAuth2PasswordBearer(tokenUrl="/forgotPassword")
 
 # ##################################
 # #Google uthentication
@@ -40,6 +41,11 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/user/login")
 #     redirect_uri = request.url_for('authorize_google')
 #     return await google.authorize_redirect(request, redirect_uri)
 
+
+def rand():
+    import random
+    random_id = ''.join([str(random.randint(0, 999)).zfill(3) for _ in range(2)])
+    return random_id
 ####################################
 #get current User
 ####################################

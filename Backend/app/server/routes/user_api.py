@@ -24,6 +24,12 @@ from server.auth.utility import *
 from bson import json_util
 import json
 from typing  import List
+
+
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 # from fastapi import BackgroundTask, FastAPI
 # from fastapi_mail import ConnectionConfig, FastMail, MessageSchema, MessageType
 # from pydantic import BaseModel, EmailStr
@@ -43,19 +49,19 @@ oauth = OAuth(config)
 
 # message = 
 
-def send_mail(message):
+# def send_mail(message):
         
-    port = 587  # For starttls
-    smtp_server = "smtp.gmail.com"
-    sender_email = os.environ.get('EMAIL')
-    password = os.environ.get('PASSWORD')
-    context = ssl.create_default_context()
-    with smtplib.SMTP(smtp_server, port) as server:
-        server.ehlo()  # Can be omitted
-        server.starttls(context=context)
-        server.ehlo()  # Can be omitted
-        server.login(sender_email, password)
-        server.sendmail(sender_email, 'meelisfidelis@gmail.com', message)
+#     port = 587  # For starttls
+#     smtp_server = "smtp.gmail.com"
+#     sender_email = os.environ.get('EMAIL')
+#     password = os.environ.get('PASSWORD')
+#     context = ssl.create_default_context()
+#     with smtplib.SMTP(smtp_server, port) as server:
+#         server.ehlo()  # Can be omitted
+#         server.starttls(context=context)
+#         server.ehlo()  # Can be omitted
+#         server.login(sender_email, password)
+#         server.sendmail(sender_email, 'meelisfidelis@gmail.com', message)
 ##############################
 
 
@@ -157,7 +163,50 @@ async def create_user(raw_user: User):
 
 
 
+@user_router.put("/updateUser", response_model = User)
+async def create_user(raw_user: User):
+    user = {        
+        "first_name": raw_user.first_name,
+        "lastname": raw_user.last_name,
+        "email":raw_user.email,
+        "password": raw_user.password,                     
+    }
+    #print(raw_user)
+    
+    ##########################
+    #STORING HASHED PASSWORD
+    ##########################
+    password_hash = get_password_hash(raw_user.password)
+    user["password"] = password_hash
 
+
+    ############################
+    #MAKING POST TO DATABASE
+    ############################
+    
+
+    # if await db.user.find_one({"username": raw_user.username} ):
+    #     raise HTTPException(
+    #         status_code=status.HTTP_400_BAD_REQUEST,
+    #         detail={'message' : 'Username not unique'}
+    #    )
+
+    new_user = await db['user'].update_one({"email": user['email']},  {"$set": {
+        "first_name": user["first_name"],
+        "lastname": user["lastname"],
+        "email":user["lastname"],
+        }})
+
+    
+    Response = {
+            "userData":{
+            'firstname': user['first_name'],
+            'lastname': user['lastname'],
+            'email': user['email'],
+            }
+        }
+    return JSONResponse(Response, status_code=status.HTTP_201_CREATED)
+    
 
 ##############################
 #Login Api
@@ -213,6 +262,11 @@ if CLIENT_ID is None or CLIENT_SECRET is None:
     raise BaseException('Missing env variables')
 
 
+
+#############################################
+#Email signUp
+#############################################
+
 # config_data = {'GOOGLE_CLIENT_ID': CLIENT_ID, 'GOOGLE_CLIENT_SECRET': CLIENT_SECRET}
 # #config = Config('.env')
 # #starlette_config = Config(environ = config_data)
@@ -228,16 +282,13 @@ if CLIENT_ID is None or CLIENT_SECRET is None:
 
 
 
-#############################################
-#Email signUp
-#############################################
 
-@user_router.get('/verifyGoogle' )
-async def verify(token:list):
-    try:
-        idinfo = id_token.verify_oauth2_token(token, requests.Request(), CLIENT_ID)
-        
-        user = idinfo['sub']
+#@user_router.get('/verifyGoogle' )
+#async def verify(token:list):
+#    try:
+#        idinfo = id_token.verify_oauth2_token(token, requests.Request(), CLIENT_ID)
+#       
+#        user = idinfo['sub']
     # user = {        
     #     "first_name": raw_user.first_name,
     #     "lastname": raw_user.last_name,
@@ -285,17 +336,17 @@ async def verify(token:list):
     #     }
 
 
-    except ValueError:
-        raise HTTPException(
-            status_code=status.HTTP_401_UNAUTHORIZED,
-            detail='Could not validate credentials',
-            headers={'WWW-Authenticate': 'Bearer'},
-        )
+    # except ValueError:
+    #     raise HTTPException(
+    #         status_code=status.HTTP_401_UNAUTHORIZED,
+    #         detail='Could not validate credentials',
+    #         headers={'WWW-Authenticate': 'Bearer'},
+    #     )
 
 
 @user_router.post("/contactForm")
-async def send_mail(email: ContactForm):
-    message = """\
+async def send_mail():
+    mail = """\
 Subject: Hi there
 
 This message is sent from Python."""
@@ -303,52 +354,119 @@ This message is sent from Python."""
     ##################
     #SMTP
     ##################
-    mail=send_mail(email, message)
+  
     print(mail)
     return JSONResponse(status_code=200, content={"message": "Thanks for reaching out"})
 
     
 
 @user_router.post("/newsletter")
-async def send_mail(data : Request):
-    # email = {        
-    #     "email": da,                     
-    # }
+async def send_mail(data : EmailSchema):
+    news={
+        "email": data.email
+    }
     
-    new_news_letter = await db['NewsLetter'].insert_one(data)
-    print(new_news_letter)
+    print(data)
+    new_news_letter = await db['NewsLetter'].insert_one(news)
+  
     news_letter= await db.NewsLetter.find_one({"_id": new_news_letter.inserted_id})
-    print(news_letter)
+  
     news_letter["_id"] = str(news_letter["_id"])
+
+    msg = 'Subject: Thanks for Reaching out.'
+    #The mail addresses and password
+    sender_address = os.environ.get('EMAIL')
+    sender_pass = os.environ.get('PASSWORD')
+    receiver_address = news['email']
+    #Setup the MIME
+    message = MIMEMultipart()
+    message['From'] = sender_address
+    message['To'] = receiver_address
+    message['Subject'] = 'Password Recovery'   #The subject line
+    #The body and the attachments for the mail
+    message.attach(MIMEText(msg, 'plain'))
+    #Create SMTP session for sending the mail
+    session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
+    session.starttls() #enable security
+    session.login(sender_address, sender_pass) #login with mail_id and password
+    text = message.as_string()
+    session.sendmail(sender_address, receiver_address, text)
+    session.quit()
+    print('Mail Sent')
     return JSONResponse(status_code=200, content={"message": "success"})
 
 
-@user_router.post("/forgotPassword")
-async def password_recovery(data: EmailSchema):
-    print(data)
-    # data = {
-    #     "username": )
-    # }
-    
-    print(data)
-    user = await db["user"].find_one({ 'email': data.email}, None)
-    userRes = json.loads(json_util.dumps(user))
-    print(userRes)
 
-    if userRes is None:
+
+@user_router.post("/forgotPassword")
+async def password_recovery(data: OAuth2PasswordRequestForm =Depends()):
+  
+    userRes = data.username
+    
+    user = await db["user"].find_one({ 'email': userRes}, None)
+    
+    print(user)
+
+    if user is None:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Not Found"
         )
-    message = """Subject: Hi there! This message is sent from Python."""
-
+    random = rand()
+    
+   
+    msg = f'Subject: Hi there! Your secret code is {random}.'
+    print(msg)
     # ##################
     # #SMTP
     # ##################
-    mail= await send_mail(message)
-    # print(mail)
-    return JSONResponse(status_code=200, content={"message": "An email has been sent to you"})
 
+    #The mail addresses and password
+    sender_address = os.environ.get('EMAIL')
+    sender_pass = os.environ.get('PASSWORD')
+    receiver_address = user['email']
+    #Setup the MIME
+    message = MIMEMultipart()
+    message['From'] = sender_address
+    message['To'] = receiver_address
+    message['Subject'] = 'Password Recovery'   #The subject line
+    #The body and the attachments for the mail
+    message.attach(MIMEText(msg, 'plain'))
+    #Create SMTP session for sending the mail
+    session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
+    session.starttls() #enable security
+    session.login(sender_address, sender_pass) #login with mail_id and password
+    text = message.as_string()
+    session.sendmail(sender_address, receiver_address, text)
+    session.quit()
+    print('Mail Sent')
+    
+   
+
+    token = create_access_token(userRes)
+    return JSONResponse(
+        {
+            'access_token': token,
+            'pin': random,
+            "token_type": "bearer"
+            
+        },
+    status_code = status.HTTP_200_OK)
+
+@user_router.put('/updatepassword')
+async def update_user_pass(password : TokenData):
+   
+    
+    password_hash = get_password_hash(password.password)
+ 
+    print(password_hash)
+    user = await db.user.find_one({"email": password.email} )
+    userRes = json.loads(json_util.dumps(user))
+    print(userRes)
+    update_result = await db["user"].update_one({"email": userRes['email']},  {"$set": {'password': password_hash}})
+    
+    print(update_result)
+    return JSONResponse(status_code=status.HTTP_201_CREATED)
 
 
 
