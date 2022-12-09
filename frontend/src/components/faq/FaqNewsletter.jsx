@@ -1,7 +1,7 @@
 import './faqs.css'
 //import SuccessModal from './successModal';
 //import ErrorModal from './faqHero/errorModal';
-import Modal from '../modal/Modal';
+import Modal from '../modal/modal';
 import green from './images/green.png'
 import red from './images/red.png'
 
