@@ -11,8 +11,12 @@ import "./index.css";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import reportWebVitals from "./reportWebVitals";
 
-import * as atatus from 'atatus-spa';
-atatus.config('b1fd163497f740bfa060a7b67021e6c1').install();
+// import * as atatus from 'atatus-spa';
+import * as atatus from 'atatus-js';
+
+// atatus.config('b1fd163497f740bfa060a7b67021e6c1').install();
+atatus.config('c392113d601e407c8f6cd3c9cd4bb63d').install();
+
 atatus.notify(new Error('Test Atatus Setup'));
 
 // process.env.NODE_ENV === "production" && Sentry.init({
