@@ -36,6 +36,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 	const handleFile = (e) => {
 		let file = e.target.files;
 		console.log(file)
+		setFiles(file)
 		setImageUpload({ file: file });
 		const selectedFilesArray = Array.from(file);
 		// console.log(selectedFilesArray);
@@ -51,7 +52,6 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 	const handleFilee = (e) => {
 		let file = e.target.files;
 		console.log(file)
-		setFiles(file)
 		console.dir("e.target: ");
 		console.dir(e.target);
 		setImageUpload({ file: file });
@@ -142,7 +142,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 			});
 	};
 
-	const handleUpload = (e) => {
+	const handleUpload = async (e) => {
 		let file = imageUpload;
 		console.log(file);
 		let formdata = new FormData();
