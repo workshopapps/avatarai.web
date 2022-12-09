@@ -11,6 +11,9 @@ import "./index.css";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import reportWebVitals from "./reportWebVitals";
 
+import * as atatus from 'atatus-spa';
+atatus.config('b1fd163497f740bfa060a7b67021e6c1').install();
+
 process.env.NODE_ENV === "production" && Sentry.init({
 	dsn: "https://10e43f27c83a4abc8e9c2605b69e557d@o4504280846565376.ingest.sentry.io/4504280979275777",
 	integrations: [new BrowserTracing()],
@@ -38,3 +41,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 );
 
 reportWebVitals();
+
+atatus.notify(new Error('Test Atatus Setup'));
