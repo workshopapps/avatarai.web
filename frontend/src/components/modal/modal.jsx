@@ -5,24 +5,24 @@ import style from "./modal.module.css"
 
 import close from "./close.svg";
 
-export default function Modal({ header, text, Image, setShow }) {
+export default function Modal({ header, headerStyle, text, textStyle, Image, setShow }) {
 
-  useEffect(()=>{
-    let  body = document.getElementById('body')
-    body.style.overflow = 'hidden'
-    return ()=> body.style.overflow = 'auto'
-  }, [])
+
   return createPortal(
-    <section className="absolute left-0 grid place-items-center w-full h-full bg-[#3333] ">
-      <div className="w-[90vw] md:w-[460px] ld:w-[550px] p-[10px] md:p-[20px] relative bg-white">
+    <section className="w-full h-full fixed 
+    top-0 left-0 grid place-items-center bg-[#3338] border-box"
+    onClick={()=>setShow(false)}>
+      <div className="w-[90vw] max-w-[460px]  rounded-lg relative bg-white min-h-[200px] flex flex-col items-center justify-center p-[30px] pb-[36px]" 
+      onClick={(e)=>e.stopPropagation()}>
         <img
           src={close}
           className="w-[25px] h-[25px] absolute right-[8px] top-[8px]"
           onClick={() => setShow(false)}
         />
-        <h3 className="text-center">{header}</h3>
-        {Image && <Image />}
-        <p>{text}</p>
+        <h3 className= {`font-nunito text-center text-[22px] font-[600] m-[20px] ${headerStyle}`}>{header}</h3>
+        {Image?<Image />:null}
+        <p className={`font-nunito text-[16px] font-[400] w-[90%] text-center ${textStyle}`}
+        >{text}</p>
       </div>
     </section>,
     document.getElementById("modal")

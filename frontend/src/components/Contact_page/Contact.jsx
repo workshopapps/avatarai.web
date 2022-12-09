@@ -14,7 +14,7 @@ import Button from "../landingPage/Button/Button";
 
 const Contact = () => {
 
-    let [overlay, setOverlay] = useState('overlay-hidden')  
+    //let [overlay, setOverlay] = useState('overlay-hidden')  
     const [modal, setModal] = useState(false)
 
     let [status, setStatus] = useState('')
@@ -59,6 +59,8 @@ const Contact = () => {
           setStateColor('red')
         }
       } catch (error) {  
+        setStatus('Request failed :(')
+        setMessage(`Oops we ran into an unknown error while trying to send your message, please try again later`)
         console.log(error)
       }
     }
@@ -158,18 +160,18 @@ const Contact = () => {
             src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670061925/illus_ubfd58.png"
           />
         </div>
-        {/*  <div className="contact-overlay" id={overlay} onClick={() => {setOverlay('overlay-hidden')}}>
+       {/*  <div className="contact-overlay" id={overlay} onClick={() => {setOverlay('overlay-hidden')}}>
             <div className='contact-modal bg-white p-10 rounded-md'>
                   <h3 className={`text-4xl text-${stateColor}-500 font-semibold`}>{status}</h3><hr/>
                   <p className="mt-5">{message}</p>
                   <button className="mt-5 p-2 rounded-md" onClick={() => {setOverlay('overlay-hidden')}}
                   style={{border: `1px solid ${stateColor}`}}>Close</button>
             </div>
-        </div> */}
-        { <Modal 
-        header={"dream"}
-        Image={false}
-        text={"login succesfuuleafpasuhfpsgfugspufgps"}
+        </div>  */}
+      {modal&&<Modal 
+        header={status}
+        headerStyle={`text-${stateColor}`}
+        text={message}
         setShow={setModal} 
         />}
 
