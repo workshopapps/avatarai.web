@@ -19,6 +19,7 @@ import Content from '../Desktop_3/Content';
 
 const ImageUpload = ({ setStep, step, photoUser }) => {
 	const [selectedImages, setSelectedImages] = useState([]);
+	const [imagesToUpload, setImagesToUpload] = useState([]);
 	const [size, setSize] = useState(window.innerWidth);
 	const [imageUpload, setImageUpload] = useState({ file: null });
 	const [genAvt, setGenAvt] = useState(false);
@@ -30,63 +31,93 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 
 	const handleFile = (e) => {
 		let file = e.target.files;
+		console.log(file, 'files');
 		setImageUpload({ file: file });
 		const selectedFilesArray = Array.from(file);
-		// console.log(selectedFilesArray);
+
+		let reader = new FileReader();
 		const imagesArray = selectedFilesArray.map((file) => {
 			return URL.createObjectURL(file);
 		});
+		const imagesToUploadArray = selectedFilesArray.map((file) => {
+			return file;
+		});
+		console.log(imagesArray);
 		setSelectedImages((previousImages) => previousImages.concat(imagesArray));
+		setImagesToUpload((prev) => prev.concat(imagesToUploadArray));
 		setShow(false);
 		setShowAlertLink(!showAlertLink);
 	};
 
-	async function sendImages() {
-		setGenAvt(true);
-		const user = JSON.parse(localStorage.getItem('userData'));
-		let formdata = new FormData();
-		formdata.append('file', selectedImages);
-		formdata.append('email', user.email);
-		formdata.append('photo_class', photoUser);
-
-		let result = await fetch(`${import.meta.env.VITE_API_URL}/photos`, {
-			method: 'POST',
-			// body: JSON.stringify(formdata),
-			headers: {
-				'Content-Type': 'multipart/form-data',
-				Accept: 'application/json',
-			},
-			data: formdata,
-		});
-		result = await result.json();
-		console.log('result', result);
-		setGenAvt(false);
-	}
-
-	// const sendImages = async () => {
-	// 	const user = JSON.parse(localStorage.getItem('userData'));
-	// 	const data = { files: selectedImages, email: user.email, photo_class: photoUser };
-	// 	console.log(data, 'data');
+	// function sendImages() {
 	// 	setGenAvt(true);
-	// 	await axios
-	// 		.post(`${import.meta.env.VITE_API_URL}/photos`, data, {
-	// 			headers: {
-	// 				'Content-Type': 'multipart/form-data',
-	// 				Accept: 'application/json',
-	// 			},
-	// 		})
+	// 	const user = JSON.parse(localStorage.getItem('userData'));
+	// 	const formdata = new FormData();
+	// 	formdata.append('file', selectedImages);
+	// 	formdata.append('email', user.email);
+	// 	formdata.append('photo_class', photoUser);
+	// 	console.log(formdata.get('file'));
+
+	// 	fetch(`${import.meta.env.VITE_API_URL}/photos`, {
+	// 		method: 'POST',
+	// 		// body: JSON.stringify(formdata),
+	// 		headers: {
+	// 			'Content-Type': 'multipart/form-data',
+	// 			Accept: 'application/json',
+	// 		},
+	// 		data: formdata,
+	// 	})
 	// 		.then((response) => {
-	// 			console.log(response.data, 'upload data');
+	// 			if (response.ok) {
+	// 				return response.json();
+	// 			}
+	// 			return Promise.reject(response);
+	// 		})
+	// 		.then((data) => {
+	// 			console.log(data, 'upload data');
 	// 			setGenAvt(false);
 	// 			setStep(step + 1);
 	// 		})
-	// 		.catch((e) => {
+	// 		.catch((response) => {
 	// 			setGenAvt(false);
-	// 			const err = e?.response?.data;
+	// 			// const err = e?.response?.data;
 	// 			// setErrorStatus({ error: true, message: err });
-	// 			console.log(err);
+	// 			console.log(response.status, response.statusText);
 	// 		});
-	// };
+	// }
+
+	const sendImages = async () => {
+		setGenAvt(true);
+		const user = JSON.parse(localStorage.getItem('userData'));
+		const formdata = new FormData();
+		formdata.append('files', imagesToUpload);
+		formdata.append('email', user.email);
+		formdata.append('photo_class', photoUser);
+		console.log(formdata.get('files'));
+		// const data = { files: selectedImages, email: user.email, photo_class: photoUser };
+
+		await axios
+			.post(
+				`${import.meta.env.VITE_API_URL}/photos`, formdata,
+				{
+					headers: {
+						'Content-Type': 'multipart/form-data',
+						Accept: 'application/json',
+					},
+				}
+			)
+			.then((response) => {
+				console.log(response.data, 'upload data');
+				setGenAvt(false);
+				setStep(step + 1);
+			})
+			.catch((e) => {
+				setGenAvt(false);
+				const err = e?.response?.data;
+				// setErrorStatus({ error: true, message: err });
+				console.log(err);
+			});
+	};
 
 	const checkSize = () => {
 		setSize(window.innerWidth);
