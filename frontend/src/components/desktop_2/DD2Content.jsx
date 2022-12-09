@@ -17,97 +17,73 @@ import Content from '../Desktop_3/Content';
 
 // import axios from "axios";
 
+// import * as mime from 'mime'
+
+// import * as mime from 'mime'
+
 const ImageUpload = ({ setStep, step, photoUser }) => {
 	const [selectedImages, setSelectedImages] = useState([]);
-	const [imagesToUpload, setImagesToUpload] = useState([]);
 	const [size, setSize] = useState(window.innerWidth);
 	const [imageUpload, setImageUpload] = useState({ file: null });
 	const [genAvt, setGenAvt] = useState(false);
 	const [showAlertLink, setShowAlertLink] = useState(false);
 	const [preview, setPreview] = useState(false);
-	let addFile = false;
+	const [files, setFiles] = useState();
 
 	const labelText = `(PNG or JPEG)`;
 
 	const handleFile = (e) => {
 		let file = e.target.files;
-		console.log(file, 'files');
+		console.log(file)
+		setFiles(file)
 		setImageUpload({ file: file });
 		const selectedFilesArray = Array.from(file);
-
-		let reader = new FileReader();
 		const imagesArray = selectedFilesArray.map((file) => {
 			return URL.createObjectURL(file);
 		});
-		const imagesToUploadArray = selectedFilesArray.map((file) => {
-			return file;
-		});
 		console.log(imagesArray);
 		setSelectedImages((previousImages) => previousImages.concat(imagesArray));
-		setImagesToUpload((prev) => prev.concat(imagesToUploadArray));
 		setShow(false);
 		setShowAlertLink(!showAlertLink);
 	};
 
-	// function sendImages() {
-	// 	setGenAvt(true);
-	// 	const user = JSON.parse(localStorage.getItem('userData'));
-	// 	const formdata = new FormData();
-	// 	formdata.append('file', selectedImages);
-	// 	formdata.append('email', user.email);
-	// 	formdata.append('photo_class', photoUser);
-	// 	console.log(formdata.get('file'));
-
-	// 	fetch(`${import.meta.env.VITE_API_URL}/photos`, {
-	// 		method: 'POST',
-	// 		// body: JSON.stringify(formdata),
-	// 		headers: {
-	// 			'Content-Type': 'multipart/form-data',
-	// 			Accept: 'application/json',
-	// 		},
-	// 		data: formdata,
-	// 	})
-	// 		.then((response) => {
-	// 			if (response.ok) {
-	// 				return response.json();
-	// 			}
-	// 			return Promise.reject(response);
-	// 		})
-	// 		.then((data) => {
-	// 			console.log(data, 'upload data');
-	// 			setGenAvt(false);
-	// 			setStep(step + 1);
-	// 		})
-	// 		.catch((response) => {
-	// 			setGenAvt(false);
-	// 			// const err = e?.response?.data;
-	// 			// setErrorStatus({ error: true, message: err });
-	// 			console.log(response.status, response.statusText);
-	// 		});
-	// }
-
 	const sendImages = async () => {
 		setGenAvt(true);
 		const user = JSON.parse(localStorage.getItem('userData'));
+		// const data = { file: selectedImages, email: user.email };
+		console.dir(Array.from(imageUpload.file))
+		const fileList = Array.from(imageUpload.file).map((file) => {
+			return {
+				rawFile: {
+					type: file.type,
+					size: file.size,
+				},
+				name: file.name,
+				src: URL.createObjectURL(file),
+			}
+		})
+		console.log("fileList: ", fileList)
 		const formdata = new FormData();
-		formdata.append('files', imagesToUpload);
-		formdata.append('email', user.email);
-		formdata.append('photo_class', photoUser);
-		console.log(formdata.get('files'));
-		// const data = { files: selectedImages, email: user.email, photo_class: photoUser };
+		console.log(files)
+		// files.forEach((file)=>{
+		for (let i = 0; i < files.length; i++) {
+			formdata.append("file", files[i])
+		}
 
 		await axios
-			.post(
-				`${import.meta.env.VITE_API_URL}/photos`, formdata,
+			.post('https://zuvatar.hng.tech/api/v1/avatar',
+				formdata,
+				// data,
 				{
 					headers: {
 						'Content-Type': 'multipart/form-data',
+						// 'Content-Type': `${file.type}`,
+						// 'Content-Type': `${file.type}`,
 						Accept: 'application/json',
 					},
-				}
-			)
+				})
 			.then((response) => {
-				console.log(response.data, 'upload data');
+				console.log('upload data: ', response.data);
 				setGenAvt(false);
 				setStep(step + 1);
 			})
@@ -224,7 +200,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 											<div
 												key={index}
 												className="vic_her_div relative cbk-hover"
-												// onChange={storeItem(image)}
+											// onChange={storeItem(image)}
 											>
 												<img src={image} className="vic_her w-[120px] h-[125px]" />
 
