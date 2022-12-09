@@ -17,6 +17,10 @@ import Content from '../Desktop_3/Content';
 
 // import axios from "axios";
 
+// import * as mime from 'mime'
+
+// import * as mime from 'mime'
+
 const ImageUpload = ({ setStep, step, photoUser }) => {
 	const [selectedImages, setSelectedImages] = useState([]);
 	const [size, setSize] = useState(window.innerWidth);
@@ -24,12 +28,15 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 	const [genAvt, setGenAvt] = useState(false);
 	const [showAlertLink, setShowAlertLink] = useState(false);
 	const [preview, setPreview] = useState(false);
+	const [files, setFiles] = useState();
 	let addFile = false;
 
 	const labelText = `(PNG or JPEG)`;
 
 	const handleFile = (e) => {
 		let file = e.target.files;
+		console.log(file)
+		setFiles(file)
 		setImageUpload({ file: file });
 		const selectedFilesArray = Array.from(file);
 		// console.log(selectedFilesArray);
@@ -41,20 +48,89 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 		setShowAlertLink(!showAlertLink);
 	};
 
+
+	const handleFilee = (e) => {
+		let file = e.target.files;
+		console.log(file)
+		console.dir("e.target: ");
+		console.dir(e.target);
+		setImageUpload({ file: file });
+		const selectedFilesArray = Array.from(file);
+		const imagesArray = selectedFilesArray.map((file) => {
+			console.log("File: ", file)
+			return URL.createObjectURL(file);
+		});
+		setSelectedImages((previousImages) => previousImages.concat(imagesArray));
+		setShow(false);
+		// setShowAlertLink(!showAlertLink);
+		console.log("file: ", file);
+		console.log("imageUpload: ", imageUpload);
+		console.log('SELECTED IMAGES: ', selectedImages);
+	};
+
 	const sendImages = async () => {
 		const user = JSON.parse(localStorage.getItem('userData'));
-		const data = { files: selectedImages, email: user.email, photo_class: photoUser };
-		console.log(data, 'data');
-		setGenAvt(true);
-		await axios
-			.post(`${import.meta.env.VITE_API_URL}/photos`, data, {
-				headers: {
-					'Content-Type': 'multipart/form-data',
-					Accept: 'application/json',
+		// const data = { file: selectedImages, email: user.email };
+		console.dir(Array.from(imageUpload.file))
+		const fileList = Array.from(imageUpload.file).map((file) => {
+			return {
+				rawFile: {
+					type: file.type,
+					size: file.size,
 				},
-			})
+				name: file.name,
+				src: URL.createObjectURL(file),
+			}
+		})
+		console.log("fileList: ", fileList)
+		// const data = { file: Array.from(imageUpload.file), email: user.email };
+		const data = { file: fileList, email: user.email };
+		const formdata = new FormData();
+		console.log(files)
+		// files.forEach((file)=>{
+		for (let i = 0; i < files.length; i++) {
+			formdata.append("file", files[i])
+		}
+		// })
+		// formdata.append(
+		// 	"filename",
+		// 	"file:////home/de-marauder/Downloads/essie-jks/essie-jks/essie1.jpg"
+		// 	// data.file,
+		// )
+		// formdata.append(
+		// 	"email",
+		// 	data.email,
+		// // )
+		// console.log('data: ', data);
+		// console.log('data.file.file[0]: ', Array.from(imageUpload.file));
+		// console.log('data.file[0]: ', data.file[0].type);
+		setGenAvt(true);
+		// let file = {
+		// 	"height": 512,
+		// 	"type": "image/jpeg",
+		// 	"uri": "file:////home/de-marauder/Downloads/essie-jks/essie-jks/essie1.jpg",
+		// 	"width": 512,
+		// }
+		// file = {
+		// 	...file,
+		// 	// type: mime.getType(file.uri),
+		// 	name: file.uri.split('/').pop()
+		// }
+		// console.log(formdata)
+		await axios
+			.post('https://zuvatar.hng.tech/api/v1/avatar',
+				formdata,
+				// data,
+				{
+					headers: {
+						'Content-Type': 'multipart/form-data',
+						// 'Content-Type': `${file.type}`,
+						// 'Content-Type': `${file.type}`,
+						Accept: 'application/json',
+					},
+				})
 			.then((response) => {
-				console.log(response.data, 'upload data');
+				console.log('upload data: ', response.data);
 				setGenAvt(false);
 				setStep(step + 1);
 			})
@@ -64,6 +140,28 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 				// setErrorStatus({ error: true, message: err });
 				console.log(err);
 			});
+	};
+
+	const handleUpload = async (e) => {
+		let file = imageUpload;
+		console.log(file);
+		let formdata = new FormData();
+		formdata.append('file', selectedImages);
+		formdata.append('email', user.email);
+		formdata.append('photo_class', photoUser);
+
+		let result = await fetch(`${import.meta.env.VITE_API_URL}/photos`, {
+			method: 'POST',
+			// body: JSON.stringify(formdata),
+			headers: {
+				'Content-Type': 'multipart/form-data',
+				Accept: 'application/json',
+			},
+			data: formdata,
+		}).then(
+			(res) => { },
+			(err) => { }
+		);
 	};
 
 	const checkSize = () => {
@@ -130,7 +228,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 					</form>
 				</div>
 			)}
-			{showAlertLink  && (
+			{showAlertLink && (
 				<div className="flex flex-col items-center w-full h-full justify-center">
 					<div className="grow">
 						<Content />
@@ -171,7 +269,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 											<div
 												key={index}
 												className="vic_her_div relative cbk-hover"
-												// onChange={storeItem(image)}
+											// onChange={storeItem(image)}
 											>
 												<img src={image} className="vic_her w-[120px] h-[125px]" />
 
