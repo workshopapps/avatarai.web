@@ -1,2 +1,5 @@
 [dreambooth_servers]
-3.84.159.50 ansible_user=ubuntu ansible_connection=ssh
+34.125.185.159 ansible_user=ezikegodson ansible_connection=ssh
+
+[stable-diffusion]
+34.81.209.57 ansible_user=musaadamuw ansible_connection=ssh

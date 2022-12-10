@@ -11,7 +11,6 @@ const ProfileUI = () => {
 	const handleLogout = () => {
 		logout();
 		navigate('/');
-		console.log('log');
 	};
 	const user = JSON.parse(localStorage.getItem("userData"));
 	console.log(user)
@@ -21,7 +20,7 @@ const ProfileUI = () => {
 			<div className="flex items-center gap-3 ">
 				<img src={Avatar} alt="avatar" />
 				<p className="flex flex-col">
-					<span className="text-[#0D0F11] font-medium text-sm">{user?.username}</span>
+					<span className="text-[#0D0F11] font-medium text-sm">{user?.Firstname}</span>
 					<span className="text-[#AFB6B6] text-[10px]">{user?.email}</span>
 				</p>
 			</div>

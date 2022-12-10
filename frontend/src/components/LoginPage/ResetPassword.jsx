@@ -1,35 +1,103 @@
 import lock from "./LoginImg/lock.svg";
 import Button from "../landingPage/Button/Button";
-import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import { useState } from "react";
-import { createContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { createContext, useState } from "react";
+import { useAuth } from "../../../context/auth-context";
 import { useContext } from "react";
 
 const RpContext = createContext();
 
 const ResetPassword = () => {
-  const [formData, setFormData] = useState(() => {});
-  const [placeholder, setPlaceholder] = useState(true)
+  const [pwd, setPwd] = useState({
+    new_password: "",
+    confirm_password: "",
+  });
+  const [errMessage, setErrMessage] = useState("");
 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm();
+  const [invalid, setInvalid] = useState(false);
 
-  const onSubmit = (data) => setFormData(data);
-  const watchPasswords = watch(["newPassword", "confirmPassword"]);
+  const {resetDetails:{
+    email
+  }} = useAuth()
+
+
+
+  const invalidPassword = pwd.new_password.length < 8;
+  const pwdNotMatch = pwd.new_password != pwd.confirm_password;
+
+  const [closeAuthModal, setCloseAuthModal] = useState(false);
+  const navigate = useNavigate()
+
+  const handleChange = ({ target }) => {
+    if (invalid) {
+      setInvalid(false);
+    }
+    let name = target.name;
+    let value = target.value;
+    setPwd((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    if (invalidPassword) {
+      setInvalid(true);
+      setErrMessage("passwords must be longer than seven characters");
+
+      return;
+    }
+    if (pwdNotMatch) {
+      setInvalid(true);
+      setErrMessage("passwords don't match");
+      return;
+    }
+    setInvalid(false);
+    fetch("https://zuvatar.hng.tech/api/v1/updatepassword", {
+      method: "PUT",
+      body: JSON.stringify({ email, password: pwd.new_password }),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then((res) => {
+        if (res.status === 201||res.status===200) {
+          setPwd({
+            new_password: "",
+            confirm_password: "",
+          });
+          navigate('/password-reset')
+        } else {
+          setInvalid(true);
+          setErrMessage(
+            `password reset failed. got a ${res.status} code, try again.`
+          );
+          setTimeout(() => setErrMessage(""), 3000);
+        }
+      })
+      .catch(() => {
+        setInvalid(true);
+        setErrMessage(
+          "password reset failed. Check your network and try again."
+        );
+        setTimeout(() => setErrMessage(""), 3000);
+      });
+
+    setPwd({
+      new_password: "",
+      confirm_password: "",
+    });
+  };
 
   return (
-    <RpContext.Provider value={{setPlaceholder}}>
+    <RpContext.Provider value={{setCloseAuthModal}}>
+      {!closeAuthModal&&(
+        <AuthenticationPopup/>
+      )}
       <div className="flex flex-col pt-[120px] md:p-0 md:justify-center items-center h-screen">
-        {placeholder&&<PlaceholderPopup />}
         <div className="flex flex-col w-full max-w-xl px-6 gap-6 md:gap-8 items-center justify-center">
           <div className="bg-[#F3F0FF] p-3 md:p-5 rounded-full">
             <img
-              className="w-4 h-[60px] w-[60px] md:w-[160px] md:h-[160px]"
+              className=" h-[60px] w-[60px] md:w-[100px] md:h-[100px]"
               src={lock}
               alt=""
             />
@@ -42,11 +110,11 @@ const ResetPassword = () => {
               Please enter a new password for this account
             </p>
           </div>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="flex flex-col gap-4 w-full"
-          >
+          <form onSubmit={onSubmit} className="flex flex-col gap-4 w-full">
             <div className="flex flex-col">
+              {invalid && (
+                <span className="text-xs text-red-600">{errMessage}</span>
+              )}
               <label
                 htmlFor="new-password"
                 className="font-semibold font-[16px] md:font-[20px]"
@@ -54,60 +122,38 @@ const ResetPassword = () => {
                 New password
               </label>
               <input
-                name="new-password"
+                name="new_password"
                 required
                 type="password"
                 placeholder="New password"
                 className={`border ${
-                  errors.newPassword && "border-red-600"
+                  invalid && invalidPassword && "border-red-600"
                 } p-3 md:p-5 w-full my-1 rounded-lg outline-none`}
-                {...register("newPassword", { required: true, minLength: 8 })}
+                onChange={handleChange}
               />
-              {errors.newPassword && (
-                <span className="text-xs text-red-600">
-                  Password must be at least 8 characters long
-                </span>
-              )}
             </div>
             <div className="flex flex-col w-full">
               <label htmlFor="confirm-password" className="font-semibold">
                 Confirm password
               </label>
               <input
-                name="confirm-password"
+                name="confirm_password"
                 required
                 type="password"
                 placeholder="Confirm password"
                 className={`border ${
-                  formData?.newPassword !== formData?.confirmPassword &&
-                  "border-red-600"
+                  invalid && pwdNotMatch && "border-red-600"
                 } p-3 md:p-5 w-full my-1 rounded-lg outline-none`}
-                {...register("confirmPassword", {
-                  required: true,
-                  minLength: 8,
-                })}
+                onChange={handleChange}
               />
-              {formData?.newPassword !== formData?.confirmPassword && (
-                <span className="text-xs md:text-sm text-red-600">
-                  Passwords do not match! Please confirm
-                </span>
-              )}
               <Button
+                type="submit"
                 className="w-full flex align-center justify-center bg-[#8B70E9] mt-8 text-white h-[58px] md:h-[68px] 
-              text-lg md:text-3xl font-nunito"
-              >
-                {watchPasswords[0] === watchPasswords[1] &&
-                watchPasswords[0]?.length > 7 ? (
-                  <Link
-                    to={`/password-reset`}
-                    className="text-white flex align-center justify-center text-center m-0 p-0
                 text-lg md:text-3xl font-nunito"
-                  >
-                    Reset Password
-                  </Link>
-                ) : (
+              >
+                
                   "Reset Password"
-                )}
+              
               </Button>
             </div>
           </form>
@@ -119,47 +165,49 @@ const ResetPassword = () => {
 
 export default ResetPassword;
 
-const PlaceholderPopup = () => {
-  const {setPlaceholder} = useContext(RpContext)
-  const [email, setEmail] = useState("");
-  const [invalid, setInvalid] = useState(false);
-  const [failedReq, setFailedReq] = useState("");
-  const invalidEmail = !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-    email
-  );
+const AuthenticationPopup = () => {
+  const {setCloseAuthModal} = useContext(RpContext)
+  const [pin, setPin] = useState("");
+  const { resetDetails:{
+    pin: resetPin
+  } } = useAuth();
+  const [error, setError] = useState("");
+  const [invalid, setInvalid] = useState(false)
 
+
+  const handleChange = ({ target }) => {
+    if(target.value.length>6){
+      setError("pins length shouldn't be longer than 6")
+      setTimeout(()=>setError(''), 3000)
+      return
+    }
+    
+    if(!Number(target.value)&&target.value!='0'){
+      if(target.value.length){
+
+        setError('you can only input numbers')
+        setInvalid(true)
+        setTimeout(()=>{
+          setInvalid(false)
+          setError('')
+        }, 3000)
+        return
+      }
+    }
+    setPin(target.value);
+  };
   const onSubmit = (e) => {
     e.preventDefault();
-    if (invalidEmail) {
-      setInvalid(true);
-      return;
+    if (pin == resetPin) {
+      setCloseAuthModal(true)
+    } else {
+      setError("incorrect pin, check your email and try again");
+      setInvalid(true)
+      setTimeout(()=>{
+        setInvalid(false)
+        setError('')
+      }, 5000)
     }
-    setInvalid(false);
-    fetch("https://zuvatar.hng.tech/api/v1/forgotPassword", {
-      method: "POST",
-      body: JSON.stringify({ username: email }),
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then((res) => {
-        if (res.status === 200) {
-          setPlaceholder(false)
-          console.log(res);
-        } else {
-          setFailedReq(
-            "email may not exist on database, try eddie@gmail.com for testing"
-          );
-          setTimeout(() => setFailedReq(""), 3000);
-        }
-      })
-      .catch((err) => {
-        setFailedReq("could not access database, retry");
-        setTimeout(() => setFailedReq(""), 3000);
-      });
-
-    setEmail("");
   };
 
   return (
@@ -169,29 +217,28 @@ const PlaceholderPopup = () => {
           className="font-nunito mb-[20px] font-[700]
           text-[18px] md:text-[24px] w-full text-center"
         >
-          Enter email to be authenticated
+          Enter pin sent to email
         </h3>
-        {failedReq && (
+        {error && (
           <span className="text-xs text-red-600 display-block text-center w-full">
-            {failedReq}
+            {error}
           </span>
         )}
         <form onSubmit={onSubmit} className="w-full">
           <div className="flex flex-col">
-            <label htmlFor="email" className="font-[600] m-auto w-[90%] mb-1">
-              Email
+            <label htmlFor="pin" className="font-[600] m-auto w-[90%] mb-1">
+              Pin
             </label>
-            {invalid && (
-              <p className="text-red-600 w-[90%] m-auto">invalid email</p>
-            )}
             <input
-              type="email"
-              name="email"
-              id="email"
+              type="pin"
+              name="pin"
+              id="pin"
+              min={6}
+              max={6}
               required
-              placeholder="Enter your email"
-              value={email}
-              onChange={({ target }) => setEmail(target.value)}
+              placeholder="Enter pin"
+              value={pin}
+              onChange={handleChange}
               className={`${
                 invalid && "border-red-600"
               } border m-auto p-3 font-nunito md:p-5 w-[90%] rounded-lg outline-none rounder-lg`}

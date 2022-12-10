@@ -7,6 +7,10 @@ from datetime import datetime, timedelta
 from typing import Union, Any
 from jose import jwt, JWTError
 
+# import smtplib
+# from email.mime.multipart import MIMEMultipart
+# from email.mime.text import MIMEText
+
 
 
 # from passlib.context import CryptContext
@@ -27,6 +31,7 @@ password_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 ###################################
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/user/login")
+oauth2_scheme_3 = OAuth2PasswordBearer(tokenUrl="/forgotPassword")
 
 # ##################################
 # #Google uthentication
@@ -36,6 +41,11 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/user/login")
 #     redirect_uri = request.url_for('authorize_google')
 #     return await google.authorize_redirect(request, redirect_uri)
 
+
+def rand():
+    import random
+    random_id = ''.join([str(random.randint(0, 999)).zfill(3) for _ in range(2)])
+    return random_id
 ####################################
 #get current User
 ####################################
@@ -89,3 +99,30 @@ def create_refresh_token(subject: Union[str, Any], expires_delta: int = None) ->
     to_encode = {"exp": expires_delta, "sub": str(subject)}
     encoded_jwt = jwt.encode(to_encode, JWT_REFRESH_SECRET_KEY, ALGORITHM)
     return encoded_jwt
+
+# def send_mail():
+    
+
+#     mail_content = '''Hello,
+#     This is a simple mail. There is only text, no attachments are there The mail is sent using Python SMTP library.
+#     Thank You
+#     '''
+#     #The mail addresses and password
+#     sender_address = 'sender123@gmail.com'
+#     sender_pass = 'xxxxxxxx'
+#     receiver_address = 'receiver567@gmail.com'
+#     #Setup the MIME
+#     message = MIMEMultipart()
+#     message['From'] = sender_address
+#     message['To'] = receiver_address
+#     message['Subject'] = 'A test mail sent by Python. It has an attachment.'   #The subject line
+#     #The body and the attachments for the mail
+#     message.attach(MIMEText(mail_content, 'plain'))
+#     #Create SMTP session for sending the mail
+#     session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
+#     session.starttls() #enable security
+#     session.login(sender_address, sender_pass) #login with mail_id and password
+#     text = message.as_string()
+#     session.sendmail(sender_address, receiver_address, text)
+#     session.quit()
+#     print('Mail Sent')

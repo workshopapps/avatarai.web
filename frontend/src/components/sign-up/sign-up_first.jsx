@@ -7,6 +7,7 @@ import ErrorSuccessCard from "../utils/ErrorSuccessCard.jsx";
 import Button from "../landingPage/Button/Button";
 import Input from "../Input/Input"
 
+
 let state;
 let result;
 export default function SignUp_first() {
@@ -27,6 +28,7 @@ export default function SignUp_first() {
       });
     }
   };
+
   const [googlesignup, setgooglesignup] = useState("");
 
   const signup = useGoogleLogin({
@@ -41,7 +43,6 @@ export default function SignUp_first() {
     }
   }, [googlesignup]);
 
-  //  https://zuvatar.hng.tech/api/v1/docs
 
   const navigate = useNavigate();
 
@@ -55,7 +56,7 @@ export default function SignUp_first() {
   };
   const [input, setInput] = useState({
     password: "",
-    confirmPassword: " ",
+    confirmPassword: "",
   });
 
   const [error, setError] = useState({
@@ -120,25 +121,31 @@ export default function SignUp_first() {
 
     let password = input.password;
     let item = { first_name, last_name, email, password };
-    // console.warn("item",item)
+    let firstname = item.first_name
+    let lastname = item.last_name
+    let email_ = item.email
+    let password_ = item.password
+    let items = { "first_name" : firstname, "last_name" : lastname, "email" : email_,"password" : password_}
+
+    console.warn("items",item)
     localStorage.setItem("opt_mail", JSON.stringify(item.email))
     result = await fetch("https://zuvatar.hng.tech/api/v1/api/user",{
       method:'POST',
-      body:JSON.stringify(item),
+      body:JSON.stringify(items),
       headers:{
         "Content-Type":'application/json',
         "Accept":'application/json'
       }
     })
     result = await result.json()
-      console.warn('result', result.detail.msg)
-      if (result.username){
+      console.warn('result', result)
+      if (!result.detail){
           navigate("/Opt_sec");
           setErrorStatus({ error: false, message: 'Login successful' });
 
       }
       else{
-          setErrorStatus({ error: true, message: "Invalid Email or Username" });
+          setErrorStatus({ error: true, message: "Invalid email" });
       }
 
   }
@@ -169,11 +176,14 @@ export default function SignUp_first() {
       </div>
       <div className="house_opt">
         <div className="nav_opt">
-          <img
-            className="logo_opt"
-            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670070847/logo_dpfx4a.png"
-            alt="logo.png"
-          />
+          <Link to='/LandingPage'>
+            <img
+                className="logo_opt"
+                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670070847/logo_dpfx4a.png"
+                alt="logo.png"
+            />
+          </Link>
+
         </div>
         <div className="first_opt">
           <div className="get_opt">Sign Up</div>
@@ -191,8 +201,8 @@ export default function SignUp_first() {
             </span>
           </div>
 
-
             <form id="myform_opt" onSubmit={handleSubmit} method="post">
+              {errorStatus.message && <ErrorSuccessCard error={errorStatus.error} message={errorStatus.message}/>}
               {/*<div style={{ display: show ? "block" : "none" }}>*/}
                 <div className='ss_opt'>
                     <div className='sss_opt'>
@@ -232,9 +242,6 @@ export default function SignUp_first() {
               {/*  Continue*/}
               {/*</button>*/}
               {/*</div>*/}
-
-
-          
 
             <div>
               <label>Password</label>
@@ -299,8 +306,8 @@ export default function SignUp_first() {
               >
                 Sign Up
               </Button>
-              <Button className="button_opt" onClick={signup}>
-                <div className="gog_opt">
+              {/* <button className="button_opt"onClick={signup} >
+                <div className="gog_opt"  >
                   <img
                     src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670070846/google_npmeof.png"
                     className="google_opt"
@@ -308,7 +315,7 @@ export default function SignUp_first() {
                   />
                   <span className="annoyed_opt">Sign Up with Google</span>
                 </div>
-              </Button>
+              </button> */}
             </div>
           </form>
         </div>

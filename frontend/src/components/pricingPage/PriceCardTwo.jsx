@@ -11,6 +11,7 @@ export default function PriceCardTwo({
   font,
   background,
   text,
+  duration,
 }) {
   return (
     <section
@@ -21,9 +22,9 @@ export default function PriceCardTwo({
         <h2 className=" md:mt-2 text-white mb-5 text-lg">{title}</h2>
         <div className="flex py-1 text-white gap-2 items-center">
           <h1 className="text-5xl font-bold text-white font-jakarta">
-            {amount}
+            ${amount}
           </h1>
-          <p className="text-white">/month</p>
+          <p className="text-white">/{duration}</p>
         </div>
 
         <div>

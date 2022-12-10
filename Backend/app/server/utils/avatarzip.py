@@ -38,7 +38,8 @@ def unzip_avatar(email):
        
 def get_avatars(email, bucket_name): 
     avatars = []
-    client = boto3.client('s3')
+    client = boto3.client('s3',
+                          aws_access_key_id=os.environ["ACCESS_KEY"],aws_secret_access_key=os.environ["SECRET_KEY"])
 
     bucket = client.list_objects(Bucket=bucket_name, Marker=f"{email}/generated")
     for content in bucket["Contents"]:

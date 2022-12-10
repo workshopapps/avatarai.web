@@ -18,24 +18,40 @@
   margin: 0 auto;
   width: 60rem;
 }
+.faq{
+  border: 0.5px solid rgb(110, 104, 104);
+  margin: 1rem;
+  padding: 1rem;
+}
 .faq div {
-  padding: 1rem 0;
+  /* padding: 1rem; */
   text-align: left;
   display: flex;
+  gap: 2rem;
   font-weight: unset;
   font-size: 1rem;
   align-items: center;
   justify-content: space-between;
 }
 .viewBtn{
+  padding: 0 2rem !important;
   margin: 2rem 0;
 }
+.bad{
+  border: 1px solid #8b70e9;
+}
+.head h3{
+  font-size: 24px;
+  font-weight: 500;
+}
 #anchor {
-  font-family: "clash_displayregular";
-  color: #929292;
+  /* font-family: "clash_displayregular";
+  color: #929292; */
+  color: black;
+  font-weight: 400;
   text-align: left;
   transition: all 1s linear;
-  padding: 0rem 5rem 0rem 0;
+  padding: 0rem 2rem 0rem 0;
   /* padding-right: 3rem; */
 
   font-size: 0.9rem;
@@ -59,9 +75,19 @@
 .part4 h2{
   margin-bottom: 1rem;
 }
+.head{
+
+}
 @media screen and (max-width: 1000px) {
   #benefits {
     font-size: 12px;
+  }
+  .faqs{
+    padding: 2rem;
+    width: unset;
+  }
+  .part4{
+    width: unset;
   }
 }
 @media screen and (max-width: 800px) {
@@ -70,16 +96,16 @@
   }
   .part4 {
     /* min-width: 44rem; */
-    width: 60rem;
+    width: 40rem;
     font-size: 3rem;
     /* padding: 2rem; */
   }
-  .head p {
-    font-size: 1.5rem;
+  .head h3{
+    font-size: 1rem;
   }
   #anchor {
     font-size: 1rem;
-    font-weight: lighter;
+    font-weight: 400;
     /* padding-right: 1rem; */
   }
 }
@@ -88,12 +114,12 @@
     width: unset;
     /* padding: 2rem; */
   }
-  .head p{
-    font-size: 16px;
+  .head h3{
+    font-size: 14px;
     font-weight: 700;
   }
   .faqs {
-    padding: 2rem;
+    padding: 0.5rem;
   }
 }
 @media screen and (max-width: 450px) {
@@ -104,11 +130,11 @@
     width: unset;
     /* padding: 2rem; */
   }
-  .head p{
+  .head h3{
     font-size: 12px;
   }
   #anchor{
-    font-size: 12px;
+    font-size: 10px;
   }
   /* .section4 h2{
     font-size: 1.5rem;
@@ -118,7 +144,7 @@
   #benefits {
     font-size: 8px;
   }
-  .head p{
+  .head h3{
     font-size: 12px;
   }
   .part4 {

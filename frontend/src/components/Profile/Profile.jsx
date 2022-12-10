@@ -1,10 +1,13 @@
+
 import React, { useState, useEffect } from 'react';
+
 // import Sidebar from '../DASHBOARD_COMPONENT/Sidebar';
 // import Dashboardtranslate from '../DASHBOARD_COMPONENT/dashboardtranslate';
-import Dashboardlayout from '../DASHBOARD_COMPONENT/DashboardLayout';
-import ProfileImg from './Profile.jpeg';
-import './Profile.css';
-import Button from '../landingPage/Button/Button';
+import Dashboardlayout from "../DASHBOARD_COMPONENT/DashboardLayout";
+import ProfileImg from "./Profile.jpeg";
+import "./Profile.css";
+
+import Button from "../landingPage/Button/Button";
 
 
 
@@ -20,7 +23,9 @@ const Profile = () => {
 
 
 
-	const user = JSON.parse(localStorage.getItem("userData"));
+
+  const user = JSON.parse(localStorage.getItem("userData"));
+
 
 	// const setData = (user) => {
     //     let { id, firstName, lastName, email } = user;
@@ -165,7 +170,7 @@ const Profile = () => {
 //                   }}
 //                 />
 //               </div>
-// =======
+// 
 	return (
 		<Dashboardlayout title="Profile" text="See your personal information">
 			<main className="aso-profile">
@@ -253,18 +258,19 @@ const Profile = () => {
 							</div>
 							{/*  */}
 							{/*  */}
-							<div className="aso-form-email-input">
+							<div className="aso-form-email-input">  
 								<label htmlFor="aso-email">Email</label>
 								<input
 									type="email"
 									id="aso-email"
 									value={email}
-									placeholder="bakii@gmail.com"
+									placeholder="eddie@gmail.com"
 									onChange={(e) => {
 										setEmail(e.target.value);
 									}}
 								/>
-							</div>
+							</div> */}
+
 
 							<button type="submit" id="aso-btn__submit" onClick={handleSubmit}>
 								Save Changes

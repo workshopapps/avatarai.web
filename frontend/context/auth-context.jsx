@@ -6,6 +6,10 @@ const useAuth = () => useContext(AuthContext);
 const AuthProvider = ({ children }) => {
 	const [token, setToken] = useState(null);
 	const [user, setUser] = useState(null);
+	const [resetDetails, setResetDetails] = useState({
+		pin: '',
+		email: ''
+	})
 	console.log(token);
 
 	const login = (user) => {
@@ -24,6 +28,8 @@ const AuthProvider = ({ children }) => {
 		token,
 		setToken,
 		logout,
+		resetDetails,
+		setResetDetails
 	};
 
 

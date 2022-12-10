@@ -4,16 +4,19 @@
 
 const express = require('express');
 const bodyParser = require('body-parser');
-
 const uuid = require('uuid');
+const exec = require('child_process').exec;
+const fs = require('fs');
+const axios = require('axios');
 
-var jsonParser = bodyParser.json()
-
-const app = express();
-
-app.use(jsonParser);
+const jsonParser = bodyParser.json()
 
 const PORT = 8000;
+
+const app = express();
+upload_middleware = multer({ dest: '/home/ubuntu/' });
+
+app.use(jsonParser);
 
 app.get('/', (req, res) => {
     res.status(200).json({
@@ -21,15 +24,58 @@ app.get('/', (req, res) => {
     })
 });
 
+app.get('/zip', (req, res) => {
+
+    const filename = 'file', format = 'zip';
+    let content;
+    const pathToZippedImages = '/home/ubuntu/Dreambooth-server/zipped-images.zip'; // Change later when the path is known
+    try {
+        const data = fs.readFileSync(pathToZippedImages, 'binary');
+        console.log(data);
+        content = data
+    } catch (err) {
+        console.error("error: ", err);
+    }
+
+    res.set({
+        "Content-Length": Buffer.byteLength(content),
+        "Content-Type": "text/plain",
+        "Content-Disposition": `attachment; filename=${filename}.${format}`,
+    });
+
+    res.status(200).send(content.toString("hex"));
+});
+
+
+// To be implemented by Musa in python
+// Should send zipped file to s3
+
+app.post('/zip', async (req, res) => {
+    console.log("zip POST route hit")
+    const data = await axios.get('http://3.84.159.50/zip')
+
+    // Send file to musa's endpoint
+
+    // fs.writeFile("new.zip", data.data, 'binary', (err) => {
+    //     if (err) {
+    //         console.log(err);
+    //     } else {
+    //         console.log("The file was saved!");
+    //     }
+    // });
+    console.log("====Request =====\n", data)
+    console.log("====\n File: \n======\n", req.file)
+    res.send({ "message": "success", "data": `${data}` });
+});
+
+
 app.post('/', (req, res) => {
 
     console.log(req.body)
 
-    var exec = require('child_process').exec;
-
     const pathToTrainingScript = '/home/ubuntu/beginTraining.sh';
 
-    const {email, img_class} = req.body;
+    const { email, img_class } = req.body;
 
     const uid = uuid.v4().toString().split('-')[0];
 
@@ -57,6 +103,8 @@ app.post('/', (req, res) => {
     })
 });
 
-app.listen(PORT, ()=>{
+app.listen(PORT, () => {
     console.log(`App is listening on http://localhost:${PORT}`)
 })
+
+
