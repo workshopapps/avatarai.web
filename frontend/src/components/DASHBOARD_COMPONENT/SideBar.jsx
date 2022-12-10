@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import { navItems } from '../data';
 import Logo from './img/logo.svg';
-
+import Home from './img/Home.svg';
 import Icon1 from './img/group.svg';
 import Icon1Active from './img/group-active.svg';
 
@@ -21,6 +21,12 @@ import { useLocation } from 'react-router-dom';
 import ProfileUI from './ProfileUI';
 
 const navItems = [
+	{
+		title: 'Home',
+		icon: Home,
+		link: '/',
+		id: 22,
+	},
 	{
 		title: 'Create avatar',
 		icon: Icon1,
