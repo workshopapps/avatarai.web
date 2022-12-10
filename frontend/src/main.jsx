@@ -13,6 +13,7 @@ import reportWebVitals from "./reportWebVitals";
 
 // import * as atatus from 'atatus-spa';
 import * as atatus from 'atatus-js';
+import ScrollToTop from "./components/scrollToTop/scrollToTop.component";
 
 // atatus.config('b1fd163497f740bfa060a7b67021e6c1').install();
 atatus.config('c392113d601e407c8f6cd3c9cd4bb63d').install();
@@ -36,6 +37,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 				<ForgetPasswordProvider>
 					<GoogleOAuthProvider clientId={import.meta.env.VITE_CLIENT_ID}>
 						<BrowserRouter>
+						<ScrollToTop />
 							<App />
 						</BrowserRouter>
 					</GoogleOAuthProvider>
