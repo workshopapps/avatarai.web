@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+
+import React, { useState, useEffect } from 'react';
+
 // import Sidebar from '../DASHBOARD_COMPONENT/Sidebar';
 // import Dashboardtranslate from '../DASHBOARD_COMPONENT/dashboardtranslate';
 import Dashboardlayout from "../DASHBOARD_COMPONENT/DashboardLayout";
@@ -7,50 +9,98 @@ import "./Profile.css";
 
 import Button from "../landingPage/Button/Button";
 
+
+
+
 const Profile = () => {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [location, setLocation] = useState("");
-  const [email, setEmail] = useState("");
+	
+	const [firstName, setFirstName] = useState('');
+	const [lastName, setLastName] = useState('');
+	const [mobile, setMobile] = useState('');
+	const [location, setLocation] = useState('');
+	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+
+
+
 
   const user = JSON.parse(localStorage.getItem("userData"));
 
-  const clearValue = () => {
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setMessage("");
-  };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    clearValue();
-  };
+	// const setData = (user) => {
+    //     let { id, firstName, lastName, email } = user;
+    //     localStorage.setItem('ID', id);
+    //     localStorage.setItem('First Name', firstName);
+    //     localStorage.setItem('Last Name', lastName);
+	// 	localStorage.setItem('Email', email);
+    // }
 
-  return (
+	// useEffect(() => {
+
+    //     setFirstName(localStorage.getItem('First Name'));
+    //     setLastName(localStorage.getItem('Last Name'));
+    //     setEmail(localStorage.getItem('Email'));
+    // }, []);
+
+	const updateAPIData = async() => {
+		try {
+			const response = await fetch("https://zuvatar.hng.tech/api/v1/updateUser", {
+			  method: "PUT",
+			
+				body:JSON.stringify({
+					"first_name": firstName,
+					"last_name": lastName,
+					"email": email,
+					"password": password
+				}),
+			  
+			  headers: {
+				"Content-Type": "application/json"
+			  }
+			 })
+			 console.log(response, "from holar")
+			
+		  } catch (error) {
+			
+		
+		  }
+		}
+
+	const clearValue = () => {
+		setFirstName('');
+		setLastName('');
+		setEmail('');
+		setPassword('');
+		
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		updateAPIData();
+	};
+
+	return (
 		<Dashboardlayout title="Profile" text="See your personal information">
 			<main className="aso-profile">
 				<section className="aso-profile-section">
+					
 					<div className="aso-profile-board">
 						<div className="aso-bio">
 							<img src={ProfileImg} alt="Bio Img" className="" />
 							<div className="aso-bio-details">
-								<h1>
-									{user?.Firstname} {user?.Lastname}
-								</h1>
+								<h1>{user?.username}</h1>
 								<p>{user?.email}</p>
 							</div>
 						</div>
-						<form className="aso-form-container">
+						<div className="aso-form-container">
 							<div className="aso-form-name-input">
 								<div className="aso-form-first-name">
 									<label htmlFor="first_name">First name</label>
 									<input
 										type="text"
-										name="first_name"
+										id="first_name"
 										value={firstName}
-										placeholder={user?.Firstname}
+										placeholder="Sandra"
 										onChange={(e) => {
 											setFirstName(e.target.value);
 										}}
@@ -61,9 +111,9 @@ const Profile = () => {
 									<label htmlFor="last_name">Last name</label>
 									<input
 										type="text"
-										name="last_name"
+										id="last_name"
 										value={lastName}
-										placeholder={user?.Lastname}
+										placeholder="Triss"
 										onChange={(e) => {
 											setLastName(e.target.value);
 										}}
@@ -77,11 +127,26 @@ const Profile = () => {
 									<label htmlFor="mobile">Mobile Number</label>
 									<input
 										type="text"
-										name="mobile"
+										id="mobile"
 										value={mobile}
 										placeholder="+2349078985443"
 										onChange={(e) => {
 											setMobile(e.target.value);
+										}}
+									/>
+								</div>
+								
+
+							
+								<div className="aso-form-mobile">
+									<label htmlFor="password">Password</label>
+									<input
+										type="password"
+										id="password"
+										value={password}
+										placeholder="my password"
+										onChange={(e) => {
+											setPassword(e.target.value);
 										}}
 									/>
 								</div>
@@ -90,7 +155,7 @@ const Profile = () => {
 									<label htmlFor="location">Location</label>
 									<input
 										type="text"
-										name="location"
+										id="location"
 										value={location}
 										placeholder="Abuja, Nigeria"
 										onChange={(e) => {
@@ -99,9 +164,10 @@ const Profile = () => {
 									/>
 								</div>
 							</div>
-
-							<div className="aso-form-location w-full">
-								<label htmlFor="email">Email</label>
+							{/*  */}
+							{/*  */}
+							<div className="aso-form-email-input">  
+								<label htmlFor="aso-email">Email</label>
 								<input
 									type="text"
 									name="email"
@@ -113,10 +179,11 @@ const Profile = () => {
 								/>
 							</div>
 
-							<Button type="submit" className="bg-[#8b70e9] aso-btn__submit" onClick={handleSubmit}>
+
+							<button type="submit" id="aso-btn__submit" onClick={handleSubmit}>
 								Save Changes
-							</Button>
-						</form>
+							</button>
+						</div>
 					</div>
 				</section>
 			</main>

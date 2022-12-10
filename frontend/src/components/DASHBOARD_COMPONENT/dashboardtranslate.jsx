@@ -6,7 +6,7 @@ function Dashboardtranslate() {
   return (
     <div className="vic_dash_translate ">
       <p>English</p>
-      <img src={Arrow} onClick="" />
+      <img src={Arrow}  />
       {/* translation languages come here and will be linked to the onClick event above  */}
     </div>
   );
