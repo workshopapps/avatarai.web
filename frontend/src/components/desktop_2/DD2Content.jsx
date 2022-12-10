@@ -23,6 +23,7 @@ import Content from '../Desktop_3/Content';
 
 const ImageUpload = ({ setStep, step, photoUser }) => {
 	const [selectedImages, setSelectedImages] = useState([]);
+	const [imageToUpload, setImageToUpload] = useState([]);
 	const [size, setSize] = useState(window.innerWidth);
 	const [imageUpload, setImageUpload] = useState({ file: null });
 	const [genAvt, setGenAvt] = useState(false);
@@ -34,54 +35,31 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 
 	const handleFile = (e) => {
 		let file = e.target.files;
-		console.log(file)
-		setFiles(file)
-		setImageUpload({ file: file });
+		setImageToUpload(file[0]);
+
 		const selectedFilesArray = Array.from(file);
 		const imagesArray = selectedFilesArray.map((file) => {
 			return URL.createObjectURL(file);
 		});
-		console.log(imagesArray);
 		setSelectedImages((previousImages) => previousImages.concat(imagesArray));
+
+		// setImageToUpload((prev) => prev.concat([...file]));
 		setShow(false);
 		setShowAlertLink(!showAlertLink);
 	};
 
 	const sendImages = async () => {
 		setGenAvt(true);
+		console.log(imageToUpload, "imagetoupload")
 		const user = JSON.parse(localStorage.getItem('userData'));
-		// const data = { file: selectedImages, email: user.email };
-		console.dir(Array.from(imageUpload.file))
-		const fileList = Array.from(imageUpload.file).map((file) => {
-			return {
-				rawFile: {
-					type: file.type,
-					size: file.size,
-				},
-				name: file.name,
-				src: URL.createObjectURL(file),
-			}
-		})
-		console.log("fileList: ", fileList)
-		const formdata = new FormData();
-		console.log(files)
-		// files.forEach((file)=>{
-		for (let i = 0; i < files.length; i++) {
-			formdata.append("file", files[i])
-		}
+		const formData = new FormData();
+		formData.append("files", imageToUpload)
+		formData.append('email', user.email);
+		formData.append('photo_class', photoUser);
+
 
 		await axios
-			.post('https://zuvatar.hng.tech/api/v1/photos',
-				formdata,
-				// data,
-				{
-					headers: {
-						'Content-Type': 'multipart/form-data',
-						// 'Content-Type': `${file.type}`,
-						// 'Content-Type': `${file.type}`,
-						Accept: 'application/json',
-					},
-				})
+			.post('https://zuvatar.hng.tech/api/v1/photos', formData)
 			.then((response) => {
 				console.log('upload data: ', response.data);
 				setGenAvt(false);
@@ -114,10 +92,6 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 		window.addEventListener('resize', checkSize);
 	}, []);
 	const [show, setShow] = useState(true);
-	const click = (event) => {
-		setShow((current) => !current);
-	};
-	// const [preview, setPreview] = useState();
 
 	return (
 		<div className="w-full h-full relative overflow-x-hidden">
@@ -200,7 +174,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 											<div
 												key={index}
 												className="vic_her_div relative cbk-hover"
-											// onChange={storeItem(image)}
+												// onChange={storeItem(image)}
 											>
 												<img src={image} className="vic_her w-[120px] h-[125px]" />
 
