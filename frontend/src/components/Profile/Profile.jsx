@@ -5,9 +5,10 @@ import Dashboardlayout from '../DASHBOARD_COMPONENT/DashboardLayout';
 import ProfileImg from './Profile.jpeg';
 import './Profile.css';
 import Button from '../landingPage/Button/Button';
+import { useAuth } from '../../../context/auth-context';
 
 const Profile = () => {
-	// const { login, setToken, token } = useAuth();
+	const { login, setToken, token } = useAuth();
 	const [loading, setLoading] = useState(false);
 	const [errorStatus, setErrorStatus] = useState({
 		error: null,
@@ -23,11 +24,11 @@ const Profile = () => {
 
 	const user = JSON.parse(localStorage.getItem('userData'));
 
-	const url = `${import.meta.env.VITE_API_URL}/updateUser`;
+	const BaseUrl = `${import.meta.env.VITE_API_URL}`;
 	const onSubmit = async (data) => {
 		setLoading(true);
 		await axios
-			.put(url, data, {
+			.put(`${BaseUrl}/updateUser`, data, {
 				headers: {
 					'Content-Type': 'application/json',
 				},
@@ -36,6 +37,7 @@ const Profile = () => {
 				console.log(response, 'response');
 
 				setErrorStatus({ error: false, message: 'Profile updated successfully' });
+				setLoading(false);
 			})
 			.catch((e) => {
 				setLoading(false);
@@ -45,7 +47,25 @@ const Profile = () => {
 			});
 	};
 
+	const fetchUser = async () => {
+		await axios
+			.get(`${BaseUrl}/user/${user.email}`, {
+				headers: {
+					'Content-Type': 'application/json',
+					token: token,
+				},
+			})
+			.then((response) => {
+				console.log(response, 'user');
+			})
+			.catch((e) => {
+				const err = e?.response?.data?.detail;
+				console.log(err);
+			});
+	};
+
 	useEffect(() => {
+		fetchUser();
 		reset({
 			first_name: user?.Firstname,
 			last_name: user?.Lastname,
