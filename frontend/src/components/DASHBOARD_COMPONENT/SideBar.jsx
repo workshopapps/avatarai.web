@@ -29,14 +29,14 @@ const navItems = [
 		pathname: 'dashboard',
 		id: 1,
 	},
-	{
-		title: 'Generated avatars',
-		icon: Icon2,
-		activeIcon: Icon2Active,
-		link: '#',
-		pathname: 'avatars',
-		id: 2,
-	},
+	// {
+	// 	title: 'Generated avatars',
+	// 	icon: Icon2,
+	// 	activeIcon: Icon2Active,
+	// 	link: '#',
+	// 	pathname: 'avatars',
+	// 	id: 2,
+	// },
 	{
 		title: 'Profile',
 		icon: Icon3,

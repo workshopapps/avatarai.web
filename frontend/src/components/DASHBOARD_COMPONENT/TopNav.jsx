@@ -31,7 +31,7 @@ export const TopNav = ({ title, text, show, setShow }) => {
 					</div>
 
 					<div>
-						<Dashboardtranslate />
+						{/* <Dashboardtranslate /> */}
 					</div>
 				</div>
 			</nav>
