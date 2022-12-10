@@ -11,12 +11,15 @@ import { useNavigate } from "react-router-dom";
 //import ErrorModal from "./errorModal";
 import { useContext } from "react";
 import { ForgetPasswordContext } from "../../../context/forgetpassword-context";
+import { useAuth } from "../../../context/auth-context";
 
 import Modal from "../modal/modal";
 import red from "./LoginImg/red.png";
 
 const ForgotPassword = () => {
+  
   const { setEmailForgot } = useContext(ForgetPasswordContext);
+  const {setResetDetails} = useAuth()
   const navigate = useNavigate();
 
   const [emailField, setEmailField] = useState("");
@@ -50,14 +53,13 @@ const ForgotPassword = () => {
       setErrorInFormInput(true);
     } else {
       setEmailField("");
-      console.log(emailField);
       setErrorInFormInput(false);
       requestEmail(emailField);
     }
   };
 
   // POST request using fetch()
-  const requestEmail = async (username) => {
+  const requestEmail = async (email) => {
     try {
       const response = await fetch(
         "https://zuvatar.hng.tech/api/v1/forgotPassword",
@@ -68,21 +70,20 @@ const ForgotPassword = () => {
 
           // Adding body or contents to send
 
-          body: JSON.stringify({
-            username: "eddie@gmail.com",
-          }),
+          body: JSON.stringify({email}),
 
           // Adding headers to the request
 
           headers: {
-            "Content-type": "application/x-www-form-urlencoded",
-            //  "Accept": "application/x-www-form-urlencoded"
+            "Content-type": "application/json",
+            "Accept": "application/json"
           },
         }
       );
-      console.log(response);
-      setEmailForgot(emailField);
+      setEmailForgot(email);
       if (response.status === 200) {
+        let body = await response.json()
+        setResetDetails(prev=>({...prev, email,pin:body.pin}));
         navigate("/check-email");
       }else{
         setErrorModal(true)
