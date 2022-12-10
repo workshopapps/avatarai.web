@@ -55,13 +55,7 @@ import Profile2 from './components/Profile/Profile';
 // import CareerPage from './components/careers-page/careerPage';
 
 function App() {
-	const { setToken } = useAuth();
-	useEffect(() => {
-		const token = localStorage.getItem('zvt_token');
-		if (token) {
-			setToken(token);
-		}
-	}, []);
+
 	return (
 		<Routes>
 			{/*

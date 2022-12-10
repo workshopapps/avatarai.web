@@ -1,4 +1,5 @@
 import MenuIcon from './img/menu.svg';
+import { Link } from 'react-router-dom';
 import Logo from './img/logo.svg';
 import Dashboardtranslate from './dashboardtranslate';
 
@@ -14,8 +15,11 @@ export const TopNav = ({ title, text, show, setShow }) => {
 							{show ? ' ' : <img src={MenuIcon} alt="Menu" className="md:w-[40px] md:h-[40px]" />}
 						</div>
 					</div>
-
-					<img src={Logo} alt="Logo" className="xl:hidden block" />
+					<div className="xl:hidden block">
+						<Link to="/">
+							<img src={Logo} alt="Logo" />
+						</Link>
+					</div>
 
 					<div></div>
 				</div>
