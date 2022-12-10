@@ -25,7 +25,7 @@ const ProfileUI = () => {
 				</p>
 			</div>
 			<div>
-				<img src={LogoutIcon} alt="logout" onClick={handleLogout} className="cursor-pointer" />
+				<img src={LogoutIcon} title="Logout" alt="logout" onClick={handleLogout} className="cursor-pointer" />
 			</div>
 		</div>
 	);
