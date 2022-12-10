@@ -110,7 +110,7 @@ class User(BaseModel):
                 "last_name": "Doe",
                 "email":"johndoe@gmail.com",
                 "password": "I_can't_think_of_a_password",
-                "default" : False
+                "verified" : False
             }
         }
 
