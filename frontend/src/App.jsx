@@ -1,4 +1,4 @@
-// import * as Sentry from '@sentry/react';
+import * as Sentry from '@sentry/react';
 
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
@@ -140,15 +140,6 @@ function App() {
 				}
 			/>
 
-			<Route
-				path="/chat"
-				element={
-					<PrivateRoute>
-						<Chat />
-					</PrivateRoute>
-				}
-			/>
-
 			{/* Desktop 4  (Generate Avatar)*/}
 			<Route
 				path="/GenerateAvatar"
@@ -165,5 +156,5 @@ function App() {
 	);
 }
 
-export default App;
-// export default Sentry.withProfiler(App);
+// export default App;
+export default Sentry.withProfiler(App);

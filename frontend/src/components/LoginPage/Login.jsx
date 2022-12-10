@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Input from "../Input/Input"
+import Input from '../Input/Input';
 import log from '../../assets/images/log.png';
 import Button from '../landingPage/Button/Button';
 import Navbar from '../landingPage/Navbar/Navbar';
@@ -74,9 +74,8 @@ const Login = () => {
 				localStorage.setItem('zvt_user', JSON.stringify(user));
 
 				//Get userData and save in local Storage
-				const userData = response?.data?.userData
+				const userData = response?.data?.userData;
 				localStorage.setItem('userData', JSON.stringify(userData));
-                 
 
 				//save token to state
 				setToken(token);
@@ -209,7 +208,7 @@ const Login = () => {
 						</Button>
 					</form>
 					<div className="h-7 lg:h-10"></div>
-					<div
+					{/* <div
 						onClick={googleLogin}
 						className="cursor-pointer w-full border border-[#808080] font-nunito font-bold p-4 rounded-lg flex gap-4 items-center justify-center"
 					>
@@ -217,13 +216,13 @@ const Login = () => {
 							<img src="/google.svg" />
 						</div>
 						<span className="font-nunito font-semibold text-lg lg:text-xl text-[#808080]">Log In with Google</span>
-					</div>
+					</div> */}
 					<div className="h-6"></div>
 					<div>
 						<span className="font-nunito font-medium text-sm lg:text-xl text-[#808080]">Don't have an account? </span>
-						<a href="signup" className="font-nunito font-bold text-sm lg:text-xl text-[#6c6191]">
-							Sign Up
-						</a>
+						<Link to="/signup">
+							<a className="font-nunito font-bold text-sm lg:text-xl text-[#6c6191]">Sign Up</a>
+						</Link>
 					</div>
 				</div>
 			</div>
