@@ -71,7 +71,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 		}
 
 		await axios
-			.post('https://zuvatar.hng.tech/api/v1/avatar',
+			.post('https://zuvatar.hng.tech/api/v1/photos',
 				formdata,
 				// data,
 				{
