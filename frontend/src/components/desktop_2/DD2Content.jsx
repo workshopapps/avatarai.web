@@ -25,19 +25,17 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 	const [selectedImages, setSelectedImages] = useState([]);
 	const [imageToUpload, setImageToUpload] = useState([]);
 	const [size, setSize] = useState(window.innerWidth);
-	const [imageUpload, setImageUpload] = useState({ file: null });
 	const [genAvt, setGenAvt] = useState(false);
 	const [showAlertLink, setShowAlertLink] = useState(false);
 	const [preview, setPreview] = useState(false);
-	const [files, setFiles] = useState();
-
-	const labelText = `(PNG or JPEG)`;
 
 	const handleFile = (e) => {
 		let file = e.target.files;
 		setImageToUpload(file[0]);
 
 		const selectedFilesArray = Array.from(file);
+
+		//Displays images
 		const imagesArray = selectedFilesArray.map((file) => {
 			return URL.createObjectURL(file);
 		});
@@ -83,7 +81,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 			timeout = setTimeout(() => {
 				setShowAlertLink((current) => !current);
 				setPreview(true);
-			}, 5000);
+			}, 3000);
 		}
 		return () => clearTimeout(timeout);
 	}, [showAlertLink]);
