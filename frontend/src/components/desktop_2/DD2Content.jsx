@@ -25,7 +25,6 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 
 	const handleFile = (e) => {
 		let file = e.target.files;
-		// setImageToUpload(file[0]);
 
 		const selectedFilesArray = Array.from(file);
 
@@ -70,13 +69,18 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 		setSize(window.innerWidth);
 	};
 
+	const removeImage = (index) => {
+		setSelectedImages(selectedImages.filter((_, i) => i !== index));
+		setImageToUpload(imageToUpload.filter((_, i) => i !== index));
+	};
+
 	useEffect(() => {
 		let timeout;
 		if (showAlertLink) {
 			timeout = setTimeout(() => {
 				setShowAlertLink((current) => !current);
 				setPreview(true);
-			}, 3000);
+			}, 2000);
 		}
 		return () => clearTimeout(timeout);
 	}, [showAlertLink]);
@@ -170,11 +174,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 											>
 												<img src={image} className="vic_her w-[120px] h-[125px]" />
 
-												<button
-													id="closeSideBar"
-													className=" vic_x"
-													onClick={() => setSelectedImages(selectedImages.filter((e) => e !== image))}
-												>
+												<button id="closeSideBar" className=" vic_x" onClick={() => removeImage(index)}>
 													<svg
 														xmlns="http://www.w3.org/2000/svg"
 														className="icon icon-tabler icon-tabler-x"
