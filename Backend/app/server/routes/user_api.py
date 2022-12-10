@@ -141,7 +141,7 @@ async def create_user(raw_user: User):
         "first_name": raw_user.first_name,
         "lastname": raw_user.last_name,
         "email":raw_user.email,
-        "password": raw_user.password,                     
+                          
     }
     #print(raw_user)
     
