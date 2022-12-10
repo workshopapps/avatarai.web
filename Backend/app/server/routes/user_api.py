@@ -141,15 +141,9 @@ async def create_user(raw_user: User):
         "first_name": raw_user.first_name,
         "lastname": raw_user.last_name,
         "email":raw_user.email,
-        "password": raw_user.password,                     
+                          
     }
-    #print(raw_user)
-    
-    ##########################
-    #STORING HASHED PASSWORD
-    ##########################
-    password_hash = get_password_hash(raw_user.password)
-    user["password"] = password_hash
+
 
 
     ############################
@@ -157,11 +151,7 @@ async def create_user(raw_user: User):
     ############################
     
 
-    # if await db.user.find_one({"username": raw_user.username} ):
-    #     raise HTTPException(
-    #         status_code=status.HTTP_400_BAD_REQUEST,
-    #         detail={'message' : 'Username not unique'}
-    #    )
+
 
     new_user = await db['user'].update_one({"email": user['email']},  {"$set": {
         "first_name": user["first_name"],

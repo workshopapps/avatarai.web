@@ -111,6 +111,27 @@ class User(BaseModel):
                 "password": "I_can't_think_of_a_password",
             }
         }
+
+class User(BaseModel):
+    id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
+    first_name: str = Field(...)
+    last_name: str = Field(...)
+    email: str = Field(...)
+
+    
+    class Config:
+        allow_population_by_field_name = True
+        arbitrary_types_allowed = True
+        json_encoders = {ObjectId: str}
+
+        schema_extra = {
+            'example': {               
+                "first_name": "John",
+                "last_name": "Doe",
+                "email":"johndoe@gmail.com",
+
+            }
+        }        
 #Login Data model 
 class Login(BaseModel):
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")

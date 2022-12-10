@@ -19,6 +19,11 @@ from io import BytesIO
 from PIL import Image
 from server.auth.utility import *
 
+
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 # Define Avatar route instance
 photo_router = APIRouter()
 
@@ -85,5 +90,27 @@ async def add_photo(files: list[UploadFile] = File(...), email: str = Form(defau
         
     created_photo = await db["avatar_pictures"].find_one({"_id": new_photo.inserted_id})
     created_photo = json.loads(json_util.dumps(created_photo))
+
+     #The mail addresses and password
+
+    msg = 'Subject: It takes aproximatly 2 hours to to .'
+    sender_address = os.environ.get('EMAIL')
+    sender_pass = os.environ.get('PASSWORD')
+    receiver_address = photo['email']
+    #Setup the MIME
+    message = MIMEMultipart()
+    message['From'] = sender_address
+    message['To'] = receiver_address
+    message['Subject'] = 'Password Recovery'   #The subject line
+    #The body and the attachments for the mail
+    message.attach(MIMEText(msg, 'plain'))
+    #Create SMTP session for sending the mail
+    session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
+    session.starttls() #enable security
+    session.login(sender_address, sender_pass) #login with mail_id and password
+    text = message.as_string()
+    session.sendmail(sender_address, receiver_address, text)
+    session.quit()
+    print('Mail Sent')
         
     return JSONResponse(status_code=status.HTTP_201_CREATED, content = created_photo)
