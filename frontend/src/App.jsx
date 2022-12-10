@@ -1,4 +1,4 @@
-// import * as Sentry from '@sentry/react';
+import * as Sentry from '@sentry/react';
 
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
