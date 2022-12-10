@@ -212,8 +212,8 @@ class Value(BaseModel):
         }
 
 class ContactForm(BaseModel):
-    firstname: str = Field(...)
-    lastname: str = Field(...)
+    first_name: str = Field(...)
+    last_name: str = Field(...)
     email: str = Field(...)
     message: str = Field(...)
     
@@ -224,8 +224,8 @@ class ContactForm(BaseModel):
 
         schema_extra = {
             'example': {               
-                "firstname": "John",
-                "lastname": "Doe",
+                "first_name": "John",
+                "last_name": "Doe",
                 "email":"johndoe@gmail.com",
                 "message": "Input your message here.",
             }
