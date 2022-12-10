@@ -7,13 +7,11 @@ import LogoutIcon from './img/Logout.svg';
 const ProfileUI = () => {
 	const { logout } = useAuth();
 	const navigate = useNavigate();
-	console.log(location.pathname);
 	const handleLogout = () => {
 		logout();
 		navigate('/');
 	};
 	const user = JSON.parse(localStorage.getItem("userData"));
-	console.log(user)
 	
 	return (
 		<div className="flex items-center justify-between border-t border-[#F4F5F6] pt-4 px-5">

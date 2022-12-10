@@ -15,7 +15,9 @@ export const TopNav = ({ title, text, show, setShow }) => {
 						</div>
 					</div>
 
-					<img src={Logo} alt="Logo" className="xl:hidden block" />
+					<Link to="/">
+						<img src={Logo} alt="Logo" className="xl:hidden block" />
+					</Link>
 
 					<div></div>
 				</div>
