@@ -45,30 +45,23 @@ const navItems = [
 		pathname: 'profile',
 		id: 3,
 	},
+	// {
+	// 	title: 'Support',
+	// 	icon: Icon4,
+	// 	activeIcon: Icon1Active,
+	// 	link: '#',
+	// 	pathname: 'support',
+	// 	id: 4,
+	// },
 	{
-		title: 'Support',
-		icon: Icon4,
-		activeIcon: Icon1Active,
-		link: '#',
-		pathname: 'support',
-		id: 4,
-	},
-	{
-		title: 'Setting',
+		title: 'Settings',
 		icon: Icon5,
 		activeIcon: Icon1Active,
 		link: '#',
 		pathname: 'setting',
 		id: 5,
 	},
-	{
-		title: 'Chat',
-		icon: Icon6,
-		activeIcon: Icon6,
-		link: '/chat',
-		pathname: 'chat',
-		id: 6,
-	},
+
 ];
 
 export const SideBar = ({ show, setShow }) => {
