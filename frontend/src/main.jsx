@@ -1,5 +1,5 @@
-// import * as Sentry from "@sentry/react";
-// import { BrowserTracing } from "@sentry/tracing";
+import * as Sentry from "@sentry/react";
+import { BrowserTracing } from "@sentry/tracing";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
@@ -19,15 +19,15 @@ atatus.config('c392113d601e407c8f6cd3c9cd4bb63d').install();
 
 atatus.notify(new Error('Test Atatus Setup'));
 
-// process.env.NODE_ENV === "production" && Sentry.init({
-// 	dsn: "https://10e43f27c83a4abc8e9c2605b69e557d@o4504280846565376.ingest.sentry.io/4504280979275777",
-// 	integrations: [new BrowserTracing()],
+process.env.NODE_ENV === "production" && Sentry.init({
+	dsn: "https://10e43f27c83a4abc8e9c2605b69e557d@o4504280846565376.ingest.sentry.io/4504280979275777",
+	integrations: [new BrowserTracing()],
 
-// 	// Set tracesSampleRate to 1.0 to capture 100%
-// 	// of transactions for performance monitoring.
-// 	// We recommend adjusting this value in production
-// 	tracesSampleRate: 1.0,
-// });
+	// Set tracesSampleRate to 1.0 to capture 100%
+	// of transactions for performance monitoring.
+	// We recommend adjusting this value in production
+	tracesSampleRate: 1.0,
+});
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>

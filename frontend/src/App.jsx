@@ -165,5 +165,5 @@ function App() {
 	);
 }
 
-export default App;
-// export default Sentry.withProfiler(App);
+// export default App;
+export default Sentry.withProfiler(App);
