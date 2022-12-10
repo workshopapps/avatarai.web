@@ -1,5 +1,6 @@
 import { useAuth } from '../../context/auth-context';
 import { Navigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export const PrivateRoute = ({ children }) => {
 	const { user, token, setToken } = useAuth();
