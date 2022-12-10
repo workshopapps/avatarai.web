@@ -14,7 +14,7 @@ from authlib.integrations.starlette_client import OAuth
 from starlette.config import Config
 
 
-from server.models.schemas import User, Login, EmailSchema,ContactForm, TokenData
+from server.models.schemas import User, Login, EmailSchema,ContactForm, TokenData, UpdateUser, Value
 
 from database import db
 ##############
@@ -63,21 +63,22 @@ user_router = APIRouter()
 #API
 ###########################
 @user_router.get("/user/{email}")
-async def user(get_user : str= Depends(oauth2_scheme)):
+async def user(email: str)-> dict:
+
     try:
-        user = await db.user.find_one({"email": 'johnemma1234@gmail.com'}, None)
-        print(user)
+        user = await db.user.find_one({"email":email}, None)
+       
     except None:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail={'message' : 'Something went wrong. Try again'}
         )
-
+   
     Response = {
         "userData": {
             'id': str(user['_id']),
             'firstname': user['first_name'],
-            'lastname': user['lastname'],
+            'lastname': user['last_name'],
             'email': user['email'],
             }
         }
@@ -122,6 +123,30 @@ async def create_user(raw_user: User):
     access_token = create_access_token(user['email'])
     #refresh_token = create_refresh_token(userRes['email'])
     # print(access_token)
+
+    
+    
+   
+    msg = 'Welcome to Zuvatar, we are happy to have you.'
+
+    #The mail addresses and password
+    sender_address = os.environ.get('EMAIL')
+    sender_pass = os.environ.get('PASSWORD')
+    receiver_address = raw_user.email
+    #Setup the MIME
+    message = MIMEMultipart()
+    message['From'] = sender_address
+    message['To'] = receiver_address
+    message['Subject'] = 'Password Recovery'   #The subject line
+    #The body and the attachments for the mail
+    message.attach(MIMEText(msg, 'plain'))
+    #Create SMTP session for sending the mail
+    session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
+    session.starttls() #enable security
+    session.login(sender_address, sender_pass) #login with mail_id and password
+    text = message.as_string()
+    session.sendmail(sender_address, receiver_address, text)
+    session.quit()
     Response = {
         "token" :{ "token" : access_token},
         "userData":{
@@ -133,10 +158,66 @@ async def create_user(raw_user: User):
     return JSONResponse(Response, status_code=status.HTTP_201_CREATED)
     
 
+@user_router.post('/verifyEmail')
+async def verify_email(email: EmailSchema):
+    email={
+        "email": email.email
+    }
+    #print(email)
+    try:
+        random = rand()
 
 
-@user_router.put("/updateUser", response_model = User)
-async def create_user(raw_user: User):
+        msg = f'Welcome to Zuvatar, your Verifiction code is {random}.'
+
+        #The mail addresses and password
+        sender_address = os.environ.get('EMAIL')
+        sender_pass = os.environ.get('PASSWORD')
+        receiver_address = email['email']
+        #Setup the MIME
+        message = MIMEMultipart()
+        message['From'] = sender_address
+        message['To'] = receiver_address
+        message['Subject'] = 'Password Recovery'   #The subject line
+        #The body and the attachments for the mail
+        message.attach(MIMEText(msg, 'plain'))
+        #Create SMTP session for sending the mail
+        session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
+        session.starttls() #enable security
+        session.login(sender_address, sender_pass) #login with mail_id and password
+        text = message.as_string()
+        session.sendmail(sender_address, receiver_address, text)
+        session.quit()
+
+        Response = {
+                "random" :{ 
+                    "random" : random
+                    }
+                }
+    
+        return JSONResponse(Response, status_code=status.HTTP_201_CREATED)
+    except:
+        Response = {
+                "message" : 'please try again'
+                }
+        return JSONResponse(Response, status_code=status.HTTP_501_NOT_IMPLEMENTED)
+
+@user_router.post('/EmailVerified')
+async def update_verify_email(value:Value):
+    print(value)
+    userRes = json.loads(json_util.dumps(value))
+    #print(userRes)
+    
+  
+    update = await db['user'].update_one({"email": userRes[0]},  {"$set": {
+        "value": userRes[1],
+        
+        }})
+
+    return JSONResponse({'message': 'verification Success'}, status_code=status.HTTP_201_CREATED)    
+
+@user_router.put("/updateUser", response_model = UpdateUser )
+async def create_user(raw_user: UpdateUser):
     user = {        
         "first_name": raw_user.first_name,
         "lastname": raw_user.last_name,
@@ -162,9 +243,9 @@ async def create_user(raw_user: User):
     
     Response = {
             "userData":{
-            'firstname': user['first_name'],
-            'lastname': user['lastname'],
-            'email': user['email'],
+            'firstname': new_user['first_name'],
+            'lastname': new_user['lastname'],
+            'email': new_user['email'],
             }
         }
     return JSONResponse(Response, status_code=status.HTTP_201_CREATED)
@@ -311,7 +392,7 @@ async def send_mail(data : ContactForm):
     ##################
     #SMTP
     ##################
-    msg = 'Subject: Thanks for Reaching out.'
+    msg = 'Subject: Thanks for Reaching out to us. you will get a response from one of our representatives.'
     #The mail addresses and password
     sender_address = os.environ.get('EMAIL')
     sender_pass = os.environ.get('PASSWORD')

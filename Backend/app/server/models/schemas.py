@@ -97,6 +97,7 @@ class User(BaseModel):
     last_name: str = Field(...)
     email: str = Field(...)
     password: str = Field(...)
+    verified: bool
     
     class Config:
         allow_population_by_field_name = True
@@ -109,14 +110,16 @@ class User(BaseModel):
                 "last_name": "Doe",
                 "email":"johndoe@gmail.com",
                 "password": "I_can't_think_of_a_password",
+                "default" : False
             }
         }
 
-class User(BaseModel):
+class UpdateUser(BaseModel):
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
     first_name: str = Field(...)
     last_name: str = Field(...)
     email: str = Field(...)
+    
 
     
     class Config:
@@ -186,6 +189,25 @@ class EmailSchema(BaseModel):
         schema_extra = {
             'example': {               
                 'email':"johndoe@gmail.com",
+            }
+        }
+
+
+
+class Value(BaseModel):
+    value: bool
+    email: EmailStr
+
+    class Config:
+        allow_population_by_field_name = True
+        arbitrary_types_allowed = True
+        json_encoders = {ObjectId: str}
+
+        schema_extra = {
+            'example': {
+                'email':'johndoe@gmail.com',               
+                'value': True
+                
             }
         }
 
