@@ -20,7 +20,7 @@ const AvatarSuccess = ({ setStep, step }) => {
 					<h4>Congratulations {user?.Firstname},</h4>
 					<img src={clock} alt="recieved mail" />
 					<p>Your avatars are being generated and would be sent to {user?.email}.</p>
-					<p>This procees would take some time.</p>
+					<p>This process would take some time.</p>
 				</article>
 			</section>
 			<div className="w-full flex justify-center mt-[30px]" onClick={() => setStep(1)}>

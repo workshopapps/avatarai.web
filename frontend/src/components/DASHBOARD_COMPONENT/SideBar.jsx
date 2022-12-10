@@ -88,7 +88,9 @@ export const SideBar = ({ show, setShow }) => {
 			<div className="absolute xl:relative w-[300px] overflow-y-auto shadow bg-[#FFFFFF] hidden xl:block">
 				{/* //Desktop UI */}
 				<div className="w-full flex justify-left mt-[52px] mb-5">
-					<img src={Logo} alt="logo" className="ml-8" />
+					<Link to="/">
+						<img src={Logo} alt="logo" className="ml-8" />
+					</Link>
 				</div>
 				<div className="flex flex-col justify-between h-[80vh]">
 					<ul className="py-3">

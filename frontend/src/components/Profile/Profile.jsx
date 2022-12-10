@@ -52,7 +52,6 @@ const Profile = () => {
 			.get(`${BaseUrl}/user/${user.email}`, {
 				headers: {
 					'Content-Type': 'application/json',
-					token: token,
 				},
 			})
 			.then((response) => {
