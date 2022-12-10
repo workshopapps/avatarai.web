@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import Sidebar from '../DASHBOARD_COMPONENT/Sidebar';
 // import Dashboardtranslate from '../DASHBOARD_COMPONENT/dashboardtranslate';
 import Dashboardlayout from '../DASHBOARD_COMPONENT/DashboardLayout';
@@ -6,25 +6,72 @@ import ProfileImg from './Profile.jpeg';
 import './Profile.css';
 import Button from '../landingPage/Button/Button';
 
+
+
+
 const Profile = () => {
+	
 	const [firstName, setFirstName] = useState('');
 	const [lastName, setLastName] = useState('');
 	const [mobile, setMobile] = useState('');
 	const [location, setLocation] = useState('');
 	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
+
+
 
 	const user = JSON.parse(localStorage.getItem("userData"));
+
+	// const setData = (user) => {
+    //     let { id, firstName, lastName, email } = user;
+    //     localStorage.setItem('ID', id);
+    //     localStorage.setItem('First Name', firstName);
+    //     localStorage.setItem('Last Name', lastName);
+	// 	localStorage.setItem('Email', email);
+    // }
+
+	// useEffect(() => {
+
+    //     setFirstName(localStorage.getItem('First Name'));
+    //     setLastName(localStorage.getItem('Last Name'));
+    //     setEmail(localStorage.getItem('Email'));
+    // }, []);
+
+	const updateAPIData = async() => {
+		try {
+			const response = await fetch("https://zuvatar.hng.tech/api/v1/updateUser", {
+			  method: "PUT",
+			
+				body:JSON.stringify({
+					"first_name": firstName,
+					"last_name": lastName,
+					"email": email,
+					"password": password
+				}),
+			  
+			  headers: {
+				"Content-Type": "application/json"
+			  }
+			 })
+			 console.log(response, "from holar")
+			
+		  } catch (error) {
+			
+		
+		  }
+		}
 
 	const clearValue = () => {
 		setFirstName('');
 		setLastName('');
 		setEmail('');
-		setMessage('');
+		setPassword('');
+		
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		clearValue();
+		updateAPIData();
 	};
 
 //   return (
@@ -132,7 +179,7 @@ const Profile = () => {
 								<p>{user?.email}</p>
 							</div>
 						</div>
-						<form className="aso-form-container">
+						<div className="aso-form-container">
 							<div className="aso-form-name-input">
 								<div className="aso-form-first-name">
 									<label htmlFor="first_name">First name</label>
@@ -175,6 +222,21 @@ const Profile = () => {
 										}}
 									/>
 								</div>
+								
+
+							
+								<div className="aso-form-mobile">
+									<label htmlFor="password">Password</label>
+									<input
+										type="password"
+										id="password"
+										value={password}
+										placeholder="my password"
+										onChange={(e) => {
+											setPassword(e.target.value);
+										}}
+									/>
+								</div>
 								{/*  */}
 								<div className="aso-form-location">
 									<label htmlFor="location">Location</label>
@@ -204,10 +266,10 @@ const Profile = () => {
 								/>
 							</div>
 
-							<Button type="submit" id="aso-btn__submit" onClick={handleSubmit}>
+							<button type="submit" id="aso-btn__submit" onClick={handleSubmit}>
 								Save Changes
-							</Button>
-						</form>
+							</button>
+						</div>
 					</div>
 				</section>
 			</main>
