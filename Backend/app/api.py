@@ -6,15 +6,27 @@ from server.routes.user_api import user_router
 from server.routes.avatars import avatar_router
 
 
+# import sentry_sdk
 
 
+# sentry_sdk.init(
+#     dsn="https://772868875b8a427b8e30c9a40e462d91@o4504280846565376.ingest.sentry.io/4504280979275776",
+#     integrations=[
+#         StarletteIntegration(transaction_style="url"),
+#         FastApiIntegration(transaction_style="url"),
+#     ],
+#     # Set traces_sample_rate to 1.0 to capture 100%
+#     # of transactions for performance monitoring.
+#     # We recommend adjusting this value in production,
+#     traces_sample_rate=1.0,
+# )
 
 import sentry_sdk
 
 
 sentry_sdk.init(
-    dsn="https://772868875b8a427b8e30c9a40e462d91@o4504280846565376.ingest.sentry.io/4504280979275776",
-
+    dsn="https://cfb445dbfb5d433392625573f3df9c8d@o4504280846565376.ingest.sentry.io/4504301895483392",
+    
     # Set traces_sample_rate to 1.0 to capture 100%
     # of transactions for performance monitoring.
     # We recommend adjusting this value in production,
