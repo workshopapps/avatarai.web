@@ -15,10 +15,11 @@ export const TopNav = ({ title, text, show, setShow }) => {
 							{show ? ' ' : <img src={MenuIcon} alt="Menu" className="md:w-[40px] md:h-[40px]" />}
 						</div>
 					</div>
-
-					<Link to="/">
-						<img src={Logo} alt="Logo" className="xl:hidden block" />
-					</Link>
+					<div className="xl:hidden block">
+						<Link to="/">
+							<img src={Logo} alt="Logo" />
+						</Link>
+					</div>
 
 					<div></div>
 				</div>
