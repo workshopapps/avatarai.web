@@ -140,15 +140,6 @@ function App() {
 				}
 			/>
 
-			<Route
-				path="/chat"
-				element={
-					<PrivateRoute>
-						<Chat />
-					</PrivateRoute>
-				}
-			/>
-
 			{/* Desktop 4  (Generate Avatar)*/}
 			<Route
 				path="/GenerateAvatar"

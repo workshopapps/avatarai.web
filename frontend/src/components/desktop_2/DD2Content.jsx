@@ -12,14 +12,7 @@ import GeneratingAvatar from '../desktop_5/GeneratingAvatar';
 import { Link } from 'react-router-dom';
 import Button from '../landingPage/Button/Button.jsx';
 import three from './line.png';
-// import Background from "./../DASHBOARD_COMPONENT/dashboardcomp";
 import Content from '../Desktop_3/Content';
-
-// import axios from "axios";
-
-// import * as mime from 'mime'
-
-// import * as mime from 'mime'
 
 const ImageUpload = ({ setStep, step, photoUser }) => {
 	const [selectedImages, setSelectedImages] = useState([]);
@@ -28,10 +21,11 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 	const [genAvt, setGenAvt] = useState(false);
 	const [showAlertLink, setShowAlertLink] = useState(false);
 	const [preview, setPreview] = useState(false);
+	const [show, setShow] = useState(true);
 
 	const handleFile = (e) => {
 		let file = e.target.files;
-		setImageToUpload(file[0]);
+		// setImageToUpload(file[0]);
 
 		const selectedFilesArray = Array.from(file);
 
@@ -41,20 +35,21 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 		});
 		setSelectedImages((previousImages) => previousImages.concat(imagesArray));
 
-		// setImageToUpload((prev) => prev.concat([...file]));
+		setImageToUpload((prev) => prev.concat(selectedFilesArray));
 		setShow(false);
 		setShowAlertLink(!showAlertLink);
 	};
 
 	const sendImages = async () => {
 		setGenAvt(true);
-		console.log(imageToUpload, "imagetoupload")
+		console.log(imageToUpload, 'imagetoupload');
 		const user = JSON.parse(localStorage.getItem('userData'));
 		const formData = new FormData();
-		formData.append("files", imageToUpload)
+		imageToUpload.forEach((image) => {
+			formData.append('files', image);
+		});
 		formData.append('email', user.email);
 		formData.append('photo_class', photoUser);
-
 
 		await axios
 			.post('https://zuvatar.hng.tech/api/v1/photos', formData)
@@ -89,7 +84,6 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 	useEffect(() => {
 		window.addEventListener('resize', checkSize);
 	}, []);
-	const [show, setShow] = useState(true);
 
 	return (
 		<div className="w-full h-full relative overflow-x-hidden">
