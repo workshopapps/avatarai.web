@@ -78,7 +78,7 @@ async def user(email: str)-> dict:
         "userData": {
             'id': str(user['_id']),
             'firstname': user['first_name'],
-            'lastname': user['last_name'],
+            'lastname': user['lastname'],
             'email': user['email'],
             }
         }
