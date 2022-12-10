@@ -209,7 +209,7 @@ const Login = () => {
 						</Button>
 					</form>
 					<div className="h-7 lg:h-10"></div>
-					<div
+					{/* <div
 						onClick={googleLogin}
 						className="cursor-pointer w-full border border-[#808080] font-nunito font-bold p-4 rounded-lg flex gap-4 items-center justify-center"
 					>
@@ -217,7 +217,7 @@ const Login = () => {
 							<img src="/google.svg" />
 						</div>
 						<span className="font-nunito font-semibold text-lg lg:text-xl text-[#808080]">Log In with Google</span>
-					</div>
+					</div> */}
 					<div className="h-6"></div>
 					<div>
 						<span className="font-nunito font-medium text-sm lg:text-xl text-[#808080]">Don't have an account? </span>

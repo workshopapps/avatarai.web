@@ -306,7 +306,7 @@ export default function SignUp_first() {
               >
                 Sign Up
               </Button>
-              <button className="button_opt"onClick={signup} >
+              {/* <button className="button_opt"onClick={signup} >
                 <div className="gog_opt"  >
                   <img
                     src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670070846/google_npmeof.png"
@@ -315,7 +315,7 @@ export default function SignUp_first() {
                   />
                   <span className="annoyed_opt">Sign Up with Google</span>
                 </div>
-              </button>
+              </button> */}
             </div>
           </form>
         </div>
