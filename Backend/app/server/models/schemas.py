@@ -97,6 +97,7 @@ class User(BaseModel):
     last_name: str = Field(...)
     email: str = Field(...)
     password: str = Field(...)
+    verified: bool
     
     class Config:
         allow_population_by_field_name = True
@@ -109,8 +110,31 @@ class User(BaseModel):
                 "last_name": "Doe",
                 "email":"johndoe@gmail.com",
                 "password": "I_can't_think_of_a_password",
+                "verified" : False
             }
         }
+
+class UpdateUser(BaseModel):
+    id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
+    first_name: str = Field(...)
+    last_name: str = Field(...)
+    email: str = Field(...)
+    
+
+    
+    class Config:
+        allow_population_by_field_name = True
+        arbitrary_types_allowed = True
+        json_encoders = {ObjectId: str}
+
+        schema_extra = {
+            'example': {               
+                "first_name": "John",
+                "last_name": "Doe",
+                "email":"johndoe@gmail.com",
+
+            }
+        }        
 #Login Data model 
 class Login(BaseModel):
     id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
@@ -168,9 +192,28 @@ class EmailSchema(BaseModel):
             }
         }
 
+
+
+class Value(BaseModel):
+    value: bool
+    email: EmailStr
+
+    class Config:
+        allow_population_by_field_name = True
+        arbitrary_types_allowed = True
+        json_encoders = {ObjectId: str}
+
+        schema_extra = {
+            'example': {
+                'email':'johndoe@gmail.com',               
+                'value': True
+                
+            }
+        }
+
 class ContactForm(BaseModel):
-    firstname: str = Field(...)
-    lastname: str = Field(...)
+    first_name: str = Field(...)
+    last_name: str = Field(...)
     email: str = Field(...)
     message: str = Field(...)
     
@@ -181,8 +224,8 @@ class ContactForm(BaseModel):
 
         schema_extra = {
             'example': {               
-                "firstname": "John",
-                "lastname": "Doe",
+                "first_name": "John",
+                "last_name": "Doe",
                 "email":"johndoe@gmail.com",
                 "message": "Input your message here.",
             }
