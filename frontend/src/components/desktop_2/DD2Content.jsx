@@ -112,7 +112,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 					</div>
 
 					<h1>Upload your Pictures</h1>
-					<p className="aso-dd2-p">You can upload files like PNG, JPG, PDF, WEBP are supported</p>
+					<p className="aso-dd2-p">You can upload files like PNG, JPG, WEBP are supported</p>
 					<form action="" className="aso-dd2-form">
 						<div className="aso-dd2-input">
 							<input accept="image/*" multiple type="file" name="file" id="file" onChange={handleFile} />
