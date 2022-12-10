@@ -116,8 +116,8 @@ export default function SignUp_first() {
 		let lastname = item.last_name;
 		let email_ = item.email;
 		let password_ = item.password;
-		let verified_ = false;
-		let items = { first_name: firstname, last_name: lastname, email: email_, password: password_,"verified": verified_ };
+		let checkVerified = false;
+		let items = { first_name: firstname, last_name: lastname, email: email_, password: password_,"verified": checkVerified };
 
 		console.warn('items', item);
 		localStorage.setItem('opt_mail', JSON.stringify(item.email));
