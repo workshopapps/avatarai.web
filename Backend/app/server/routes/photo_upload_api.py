@@ -115,11 +115,11 @@ async def add_photo(files: list[UploadFile] = File(...), email: str = Form(defau
 
 
     ##############################################################
-    #Temporary fix to manually train the model prnding dreambooth
+    #Temporary fix to manually train the model pending dreambooth payment
     ##############################################################
 
 
-    msg = 'Hi! We have a new upload.'
+    msg = f'Hi! We have a new upload from {email}.'
 
     #The mail addresses and password
     sender_address = os.environ.get('EMAIL')
