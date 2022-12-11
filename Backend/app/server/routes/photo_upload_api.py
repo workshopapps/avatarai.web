@@ -87,6 +87,7 @@ async def add_photo(files: list[UploadFile] = File(...), email: str = Form(defau
         "photo_name": images_filename
     }
     new_photo = await db["avatar_pictures"].insert_one(photo)
+   
         
     created_photo = await db["avatar_pictures"].find_one({"_id": new_photo.inserted_id})
     created_photo = json.loads(json_util.dumps(created_photo))
@@ -117,9 +118,10 @@ async def add_photo(files: list[UploadFile] = File(...), email: str = Form(defau
     ##############################################################
     #Temporary fix to manually train the model prnding dreambooth
     ##############################################################
+    
+    
 
-
-    msg = 'Hi! We have a new upload.'
+    msg = f'Hi! We have a new upload from {email}.'
 
     #The mail addresses and password
     sender_address = os.environ.get('EMAIL')
