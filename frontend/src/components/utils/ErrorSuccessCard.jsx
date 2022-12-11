@@ -3,7 +3,7 @@ import React from 'react';
 const ErrorSuccessCard = ({ error, message }) => {
 	return (
 		<div
-			className={`alert ${
+			className={`alert transform duration-500 ${
 				!error ? 'bg-white border-green-600 text-green-600' : 'bg-white border-red-600 text-red-600'
 			} shadow-md border mb-5`}
 		>
@@ -38,9 +38,7 @@ const ErrorSuccessCard = ({ error, message }) => {
 					</svg>
 				)}
 
-				<span className={!error ? 'text-green-600' : 'text-red-600'}>
-					{message}
-				</span>
+				<span className={!error ? 'text-green-600' : 'text-red-600'}>{message}</span>
 			</div>
 		</div>
 	);

@@ -1,23 +1,19 @@
-import BuyPriceBtn from "./BuyPriceBtn";
-import React from "react";
-import { Link } from "react-router-dom";  
+import BuyPriceBtn from './BuyPriceBtn';
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-function PriceCardOne({
-  title,
-  amount,
-  bg,
-  top,
-  font,
-  background,
-  text,
-  duration,
-}) {
-  const handleClick = () => {
+function PriceCardOne({ title, amount, bg, top, font, background, text, duration, setDetails }) {
 
-  }
-  return (
+	const handleClick = () => {
+		setDetails({
+			title,
+			amount,
+			duration,
+		});
+	};
+	return (
 		<section
-			style={{ 'background-color': bg, color: font }}
+			style={{ backgroundColor: bg, color: font }}
 			className="drop-shadow-xl flex flex-col  vnc_card justify-between  font-nunito rounded-lg border-vnc_line border-first w-100 break2:w-80 lg:w-96 p-4 mt-7 mb-7"
 		>
 			<div className="py-8 vnc_cover">

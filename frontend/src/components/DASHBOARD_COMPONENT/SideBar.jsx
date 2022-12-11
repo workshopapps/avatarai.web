@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 // import { navItems } from '../data';
 import Logo from './img/logo.svg';
-
+import Home from './img/Home.svg';
 import Icon1 from './img/group.svg';
 import Icon1Active from './img/group-active.svg';
 
@@ -21,6 +21,12 @@ import { useLocation } from 'react-router-dom';
 import ProfileUI from './ProfileUI';
 
 const navItems = [
+	// {
+	// 	title: 'Home',
+	// 	icon: Home,
+	// 	link: '/',
+	// 	id: 22,
+	// },
 	{
 		title: 'Create avatar',
 		icon: Icon1,
@@ -29,14 +35,14 @@ const navItems = [
 		pathname: 'dashboard',
 		id: 1,
 	},
-	{
-		title: 'Generated avatars',
-		icon: Icon2,
-		activeIcon: Icon2Active,
-		link: '#',
-		pathname: 'avatars',
-		id: 2,
-	},
+	// {
+	// 	title: 'Generated avatars',
+	// 	icon: Icon2,
+	// 	activeIcon: Icon2Active,
+	// 	link: '/avatars',
+	// 	pathname: 'avatars',
+	// 	id: 2,
+	// },
 	{
 		title: 'Profile',
 		icon: Icon3,
@@ -45,30 +51,23 @@ const navItems = [
 		pathname: 'profile',
 		id: 3,
 	},
+	// {
+	// 	title: 'Support',
+	// 	icon: Icon4,
+	// 	activeIcon: Icon1Active,
+	// 	link: '#',
+	// 	pathname: 'support',
+	// 	id: 4,
+	// },
 	{
-		title: 'Support',
-		icon: Icon4,
-		activeIcon: Icon1Active,
-		link: '#',
-		pathname: 'support',
-		id: 4,
-	},
-	{
-		title: 'Setting',
+		title: 'Settings',
 		icon: Icon5,
 		activeIcon: Icon1Active,
 		link: '#',
 		pathname: 'setting',
 		id: 5,
 	},
-	{
-		title: 'Chat',
-		icon: Icon6,
-		activeIcon: Icon6,
-		link: '/chat',
-		pathname: 'chat',
-		id: 6,
-	},
+
 ];
 
 export const SideBar = ({ show, setShow }) => {
@@ -89,7 +88,9 @@ export const SideBar = ({ show, setShow }) => {
 			<div className="absolute xl:relative w-[300px] overflow-y-auto shadow bg-[#FFFFFF] hidden xl:block">
 				{/* //Desktop UI */}
 				<div className="w-full flex justify-left mt-[52px] mb-5">
-					<img src={Logo} alt="logo" className="ml-8" />
+					<Link to="/">
+						<img src={Logo} alt="logo" className="ml-8" />
+					</Link>
 				</div>
 				<div className="flex flex-col justify-between h-[80vh]">
 					<ul className="py-3">
@@ -134,9 +135,11 @@ export const SideBar = ({ show, setShow }) => {
 						<div>
 							<div className="flex items-center justify-between py-[15px] px-5">
 								<div className="w-full flex justify-left">
-									<img src={Logo} alt="logo" className="" />
+									<Link to="/">
+										<img src={Logo} alt="logo" className="" />
+									</Link>
 								</div>
-								<div id="closeSideBar" className="" onClick={() => setShow(!show)}>
+								<div id="closeSideBar" className="cursor-pointer" onClick={() => setShow(!show)}>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										className="icon icon-tabler icon-tabler-x"

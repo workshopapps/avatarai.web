@@ -150,10 +150,8 @@ const ResetPassword = () => {
                 type="submit"
                 className="w-full flex align-center justify-center bg-[#8B70E9] mt-8 text-white h-[58px] md:h-[68px] 
                 text-lg md:text-3xl font-nunito"
-              >
-                
-                  "Reset Password"
-              
+              > 
+                  Reset Password     
               </Button>
             </div>
           </form>

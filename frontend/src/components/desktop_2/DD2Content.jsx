@@ -12,123 +12,46 @@ import GeneratingAvatar from '../desktop_5/GeneratingAvatar';
 import { Link } from 'react-router-dom';
 import Button from '../landingPage/Button/Button.jsx';
 import three from './line.png';
-// import Background from "./../DASHBOARD_COMPONENT/dashboardcomp";
 import Content from '../Desktop_3/Content';
-
-// import axios from "axios";
-
-// import * as mime from 'mime'
-
-// import * as mime from 'mime'
 
 const ImageUpload = ({ setStep, step, photoUser }) => {
 	const [selectedImages, setSelectedImages] = useState([]);
+	const [imageToUpload, setImageToUpload] = useState([]);
 	const [size, setSize] = useState(window.innerWidth);
-	const [imageUpload, setImageUpload] = useState({ file: null });
 	const [genAvt, setGenAvt] = useState(false);
 	const [showAlertLink, setShowAlertLink] = useState(false);
 	const [preview, setPreview] = useState(false);
-	const [files, setFiles] = useState();
-	let addFile = false;
-
-	const labelText = `(PNG or JPEG)`;
+	const [show, setShow] = useState(true);
 
 	const handleFile = (e) => {
 		let file = e.target.files;
-		console.log(file)
-		setFiles(file)
-		setImageUpload({ file: file });
+
 		const selectedFilesArray = Array.from(file);
-		// console.log(selectedFilesArray);
+
+		//Displays images
 		const imagesArray = selectedFilesArray.map((file) => {
 			return URL.createObjectURL(file);
 		});
 		setSelectedImages((previousImages) => previousImages.concat(imagesArray));
+
+		setImageToUpload((prev) => prev.concat(selectedFilesArray));
 		setShow(false);
 		setShowAlertLink(!showAlertLink);
 	};
 
-
-	const handleFilee = (e) => {
-		let file = e.target.files;
-		console.log(file)
-		console.dir("e.target: ");
-		console.dir(e.target);
-		setImageUpload({ file: file });
-		const selectedFilesArray = Array.from(file);
-		const imagesArray = selectedFilesArray.map((file) => {
-			console.log("File: ", file)
-			return URL.createObjectURL(file);
-		});
-		setSelectedImages((previousImages) => previousImages.concat(imagesArray));
-		setShow(false);
-		// setShowAlertLink(!showAlertLink);
-		console.log("file: ", file);
-		console.log("imageUpload: ", imageUpload);
-		console.log('SELECTED IMAGES: ', selectedImages);
-	};
-
 	const sendImages = async () => {
-		const user = JSON.parse(localStorage.getItem('userData'));
-		// const data = { file: selectedImages, email: user.email };
-		console.dir(Array.from(imageUpload.file))
-		const fileList = Array.from(imageUpload.file).map((file) => {
-			return {
-				rawFile: {
-					type: file.type,
-					size: file.size,
-				},
-				name: file.name,
-				src: URL.createObjectURL(file),
-			}
-		})
-		console.log("fileList: ", fileList)
-		// const data = { file: Array.from(imageUpload.file), email: user.email };
-		const data = { file: fileList, email: user.email };
-		const formdata = new FormData();
-		console.log(files)
-		// files.forEach((file)=>{
-		for (let i = 0; i < files.length; i++) {
-			formdata.append("file", files[i])
-		}
-		// })
-		// formdata.append(
-		// 	"filename",
-		// 	"file:////home/de-marauder/Downloads/essie-jks/essie-jks/essie1.jpg"
-		// 	// data.file,
-		// )
-		// formdata.append(
-		// 	"email",
-		// 	data.email,
-		// // )
-		// console.log('data: ', data);
-		// console.log('data.file.file[0]: ', Array.from(imageUpload.file));
-		// console.log('data.file[0]: ', data.file[0].type);
 		setGenAvt(true);
-		// let file = {
-		// 	"height": 512,
-		// 	"type": "image/jpeg",
-		// 	"uri": "file:////home/de-marauder/Downloads/essie-jks/essie-jks/essie1.jpg",
-		// 	"width": 512,
-		// }
-		// file = {
-		// 	...file,
-		// 	// type: mime.getType(file.uri),
-		// 	name: file.uri.split('/').pop()
-		// }
-		// console.log(formdata)
+		console.log(imageToUpload, 'imagetoupload');
+		const user = JSON.parse(localStorage.getItem('userData'));
+		const formData = new FormData();
+		imageToUpload.forEach((image) => {
+			formData.append('files', image);
+		});
+		formData.append('email', user.email);
+		formData.append('photo_class', photoUser);
+
 		await axios
-			.post('https://zuvatar.hng.tech/api/v1/avatar',
-				formdata,
-				// data,
-				{
-					headers: {
-						'Content-Type': 'multipart/form-data',
-						// 'Content-Type': `${file.type}`,
-						// 'Content-Type': `${file.type}`,
-						Accept: 'application/json',
-					},
-				})
+			.post('https://zuvatar.hng.tech/api/v1/photos', formData)
 			.then((response) => {
 				console.log('upload data: ', response.data);
 				setGenAvt(false);
@@ -142,30 +65,13 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 			});
 	};
 
-	const handleUpload = async (e) => {
-		let file = imageUpload;
-		console.log(file);
-		let formdata = new FormData();
-		formdata.append('file', selectedImages);
-		formdata.append('email', user.email);
-		formdata.append('photo_class', photoUser);
-
-		let result = await fetch(`${import.meta.env.VITE_API_URL}/photos`, {
-			method: 'POST',
-			// body: JSON.stringify(formdata),
-			headers: {
-				'Content-Type': 'multipart/form-data',
-				Accept: 'application/json',
-			},
-			data: formdata,
-		}).then(
-			(res) => { },
-			(err) => { }
-		);
-	};
-
 	const checkSize = () => {
 		setSize(window.innerWidth);
+	};
+
+	const removeImage = (index) => {
+		setSelectedImages(selectedImages.filter((_, i) => i !== index));
+		setImageToUpload(imageToUpload.filter((_, i) => i !== index));
 	};
 
 	useEffect(() => {
@@ -174,7 +80,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 			timeout = setTimeout(() => {
 				setShowAlertLink((current) => !current);
 				setPreview(true);
-			}, 5000);
+			}, 2000);
 		}
 		return () => clearTimeout(timeout);
 	}, [showAlertLink]);
@@ -182,11 +88,6 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 	useEffect(() => {
 		window.addEventListener('resize', checkSize);
 	}, []);
-	const [show, setShow] = useState(true);
-	const click = (event) => {
-		setShow((current) => !current);
-	};
-	// const [preview, setPreview] = useState();
 
 	return (
 		<div className="w-full h-full relative overflow-x-hidden">
@@ -211,7 +112,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 					</div>
 
 					<h1>Upload your Pictures</h1>
-					<p className="aso-dd2-p">You can upload files like PNG, JPG, PDF, WEBP are supported</p>
+					<p className="aso-dd2-p">You can upload files like PNG, JPG, WEBP are supported</p>
 					<form action="" className="aso-dd2-form">
 						<div className="aso-dd2-input">
 							<input accept="image/*" multiple type="file" name="file" id="file" onChange={handleFile} />
@@ -269,15 +170,11 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 											<div
 												key={index}
 												className="vic_her_div relative cbk-hover"
-											// onChange={storeItem(image)}
+												// onChange={storeItem(image)}
 											>
 												<img src={image} className="vic_her w-[120px] h-[125px]" />
 
-												<button
-													id="closeSideBar"
-													className=" vic_x"
-													onClick={() => setSelectedImages(selectedImages.filter((e) => e !== image))}
-												>
+												<button id="closeSideBar" className=" vic_x" onClick={() => removeImage(index)}>
 													<svg
 														xmlns="http://www.w3.org/2000/svg"
 														className="icon icon-tabler icon-tabler-x"

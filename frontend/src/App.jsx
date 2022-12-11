@@ -1,11 +1,9 @@
-// import * as Sentry from '@sentry/react';
+import * as Sentry from '@sentry/react';
 
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import Aboutus from './components/aboutus/AboutUs';
 import ApiPage from './components/api-page/ApiPage';
-import Avatar from './components/createAvatar/Welcome';
-import Chat from './components/chat/ChatPage';
 
 import LandingPage from './components/landing-page/LandingPageC';
 
@@ -16,8 +14,6 @@ import DesktopEye from './components/Desktop_1/DesktopEye';
 import FAQ from './components/faq/index';
 import ForgotPassword from './components/LoginPage/ForgotPassword';
 import Four404 from './components/404page/404';
-
-import LoadingImages from './components/createAvatar/LoadingImages';
 import Login from './components/LoginPage/Login';
 import Opt_fi from './components/sign-up/sign-up_fi';
 import Opt_first from '../src/components/sign-up/sign-up_first';
@@ -26,7 +22,6 @@ import Opt_sec from '../src/components/sign-up/sign-up_sec';
 import Opt_thi from '../src/components/sign-up/sign-up_thi';
 import Payment from './components/paymentflow-1/payment';
 import Paymentauth from './components/paymentFlow-1.1/paymentFlow1.1';
-import Preview from './components/generatedAvatars/Preview';
 import Pricing from './components/pricingPage/Pricing';
 import React from 'react';
 import ReadArticle from './components/read article/ReadArticle';
@@ -36,13 +31,10 @@ import SetPassword from './components/LoginPage/PasswordReset';
 import ResetPassword from './components/LoginPage/ResetPassword';
 import PasswordReset from './components/LoginPage/PasswordReset';
 import Terms from './components/TermsPage/Terms';
-import Ttilp from './components/TTILP/Ttilp';
 import Contact from './components/Contact_page/Contact';
 
 import Guidelines from './components/guidelinePage/Guideline.jsx';
-import { useAuth } from '../context/auth-context';
 import { PrivateRoute } from './routes/PrivateRoute';
-import { useEffect } from 'react';
 import Profile2 from './components/Profile/Profile';
 
 // import PaymentFlow12 from './components/paymentFlow-1.2/paymentFlow1.2';
@@ -55,13 +47,6 @@ import Profile2 from './components/Profile/Profile';
 // import CareerPage from './components/careers-page/careerPage';
 
 function App() {
-	const { setToken } = useAuth();
-	useEffect(() => {
-		const token = localStorage.getItem('zvt_token');
-		if (token) {
-			setToken(token);
-		}
-	}, []);
 	return (
 		<Routes>
 			{/*
@@ -88,8 +73,7 @@ function App() {
 			<Route path="/faq" element={<FAQ />} />
 			{/* Terms and conditions */}
 			<Route path="/Terms" element={<Terms />} />
-			{/* Payment modals */}
-			<Route path="/payment" element={<Payment />} />
+			
 			<Route path="/paymentauth" element={<Paymentauth />} />
 			{/* Pricing Component */}
 			<Route path="/pricing" element={<Pricing />} />
@@ -109,61 +93,19 @@ function App() {
 			<Route path="password-reset" element={<PasswordReset />} />
 			<Route path="/forgot-password" element={<ForgotPassword />} />
 			<Route path="/check-email" element={<CheckEmail />} />
-			{/* chat */}
-
-			{/* Career Page */}
-			{/* <Route path="/CareerPage" element={<CareerPage />} />*/}
-			{/* Feedback page Review */}
 			<Route path="/Review" element={<Review />} />
-
-			{/* Contact Us page */}
-			<Route path="/contact-us" element={<Contact />} />
-			{/* Guideline page */}
+			<Route path="/contactus" element={<Contact />} />
 			<Route path="/guidelines" element={<Guidelines />} />
-			{/* Profile */}
-			<Route
-				path="/profile"
-				element={
-					<PrivateRoute>
-						<Profile2 />
-					</PrivateRoute>
-				}
-			/>
-			{/* desktop_1 */}
 
-			<Route
-				path="/dashboard"
-				element={
-					<PrivateRoute>
-						<DesktopEye />
-					</PrivateRoute>
-				}
-			/>
+			<Route element={<PrivateRoute />}>
+				<Route path="/dashboard" element={<DesktopEye />} />
+				<Route path="/profile" element={<Profile2 />} />
+			</Route>
 
-			<Route
-				path="/chat"
-				element={
-					<PrivateRoute>
-						<Chat />
-					</PrivateRoute>
-				}
-			/>
-
-			{/* Desktop 4  (Generate Avatar)*/}
-			<Route
-				path="/GenerateAvatar"
-				element={
-					<PrivateRoute>
-						<Preview />
-					</PrivateRoute>
-				}
-			/>
-
-			{/* 404 Page */}
 			<Route path="*" element={<Four404 />} />
 		</Routes>
 	);
 }
 
-export default App;
-// export default Sentry.withProfiler(App);
+// export default App;
+export default Sentry.withProfiler(App);
