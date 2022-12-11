@@ -32,7 +32,7 @@ const AuthProvider = ({ children }) => {
 		const token = localStorage.getItem('zvt_token');
 		const user = localStorage.getItem('zvt_user');
 		console.log(user)
-		if (token && user) {
+		if (token) {
 			setToken(token);
 			setUser(JSON.parse(user));
 		}

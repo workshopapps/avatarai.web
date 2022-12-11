@@ -39,7 +39,7 @@ const navItems = [
 	// 	title: 'Generated avatars',
 	// 	icon: Icon2,
 	// 	activeIcon: Icon2Active,
-	// 	link: '#',
+	// 	link: '/avatars',
 	// 	pathname: 'avatars',
 	// 	id: 2,
 	// },
