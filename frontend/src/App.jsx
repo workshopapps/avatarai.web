@@ -55,7 +55,6 @@ import Profile2 from './components/Profile/Profile';
 // import CareerPage from './components/careers-page/careerPage';
 
 function App() {
-
 	return (
 		<Routes>
 			{/*
@@ -103,48 +102,16 @@ function App() {
 			<Route path="password-reset" element={<PasswordReset />} />
 			<Route path="/forgot-password" element={<ForgotPassword />} />
 			<Route path="/check-email" element={<CheckEmail />} />
-			{/* chat */}
-
-			{/* Career Page */}
-			{/* <Route path="/CareerPage" element={<CareerPage />} />*/}
-			{/* Feedback page Review */}
 			<Route path="/Review" element={<Review />} />
-
-			{/* Contact Us page */}
 			<Route path="/contact-us" element={<Contact />} />
-			{/* Guideline page */}
 			<Route path="/guidelines" element={<Guidelines />} />
-			{/* Profile */}
-			<Route
-				path="/profile"
-				element={
-					<PrivateRoute>
-						<Profile2 />
-					</PrivateRoute>
-				}
-			/>
-			{/* desktop_1 */}
 
-			<Route
-				path="/dashboard"
-				element={
-					<PrivateRoute>
-						<DesktopEye />
-					</PrivateRoute>
-				}
-			/>
+			<Route element={<PrivateRoute />}>
+				<Route path="/dashboard" element={<DesktopEye />} />
+				<Route path="/profile" element={<Profile2 />} />
+				<Route path="/generate-avatar" element={<Preview />} />
+			</Route>
 
-			{/* Desktop 4  (Generate Avatar)*/}
-			<Route
-				path="/GenerateAvatar"
-				element={
-					<PrivateRoute>
-						<Preview />
-					</PrivateRoute>
-				}
-			/>
-
-			{/* 404 Page */}
 			<Route path="*" element={<Four404 />} />
 		</Routes>
 	);

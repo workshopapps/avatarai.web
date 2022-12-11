@@ -11,10 +11,6 @@ const AuthProvider = ({ children }) => {
 		email: '',
 	});
 
-	const login = (user) => {
-		setUser(user);
-	};
-
 	const logout = () => {
 		localStorage.removeItem('zvt_token');
 		localStorage.removeItem('zvt_user');
@@ -34,12 +30,13 @@ const AuthProvider = ({ children }) => {
 
 	useEffect(() => {
 		const token = localStorage.getItem('zvt_token');
-		const user = localStorage.getItem('zvt_token');
+		const user = localStorage.getItem('zvt_user');
+		console.log(user)
 		if (token && user) {
 			setToken(token);
-			setUser(user);
+			setUser(JSON.parse(user));
 		}
-	}, [token, user]);
+	}, [token])
 
 	return <AuthContext.Provider value={authContextValue}>{children}</AuthContext.Provider>;
 };
