@@ -14,7 +14,7 @@ import ErrorSuccessCard from '../utils/ErrorSuccessCard';
 const Login = () => {
 	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();
-	const { login, setToken, token } = useAuth();
+	const { setToken, token, setUser } = useAuth();
 	const [errorStatus, setErrorStatus] = useState({
 		error: null,
 		message: '',
@@ -70,16 +70,13 @@ const Login = () => {
 				//Get token and save to local storage
 				const token = response?.data?.access_token;
 				localStorage.setItem('zvt_token', JSON.stringify(token));
+
 				const user = response?.data?.userData;
 				localStorage.setItem('zvt_user', JSON.stringify(user));
 
-				//Get userData and save in local Storage
-				const userData = response?.data?.userData;
-				localStorage.setItem('userData', JSON.stringify(userData));
-
 				//save token to state
 				setToken(token);
-				login(user);
+				setUser(user);
 
 				setErrorStatus({ error: false, message: 'Login successful' });
 			})

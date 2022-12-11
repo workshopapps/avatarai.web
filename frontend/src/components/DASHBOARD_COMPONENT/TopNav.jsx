@@ -12,7 +12,7 @@ export const TopNav = ({ title, text, show, setShow }) => {
 				<div className="flex items-center justify-between mb-[40px] py-5 xl:py-0 fixed top-0 xl:relative w-full xl:mb-0 bg-[#FFFFFF] lg:bg-[#FAFAFA]">
 					<div className="">
 						<div className="text-gray-600 xl:hidden relative" onClick={() => setShow(!show)}>
-							{show ? ' ' : <img src={MenuIcon} alt="Menu" className="md:w-[40px] md:h-[40px]" />}
+							{show ? ' ' : <img src={MenuIcon} alt="Menu" className="md:w-[40px] md:h-[40px] cursor-pointer" />}
 						</div>
 					</div>
 					<div className="xl:hidden block">

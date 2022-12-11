@@ -8,17 +8,19 @@ import React from 'react';
 import Dashboardlayout from '../DASHBOARD_COMPONENT/DashboardLayout';
 import InstructionModal from '../DASHBOARD_COMPONENT/instructionModal';
 import { useState } from 'react';
+import { useAuth } from '../../../context/auth-context';
 import AvatarSuccess from '../desktop_6/AvatarSuccess';
 
 const DesktopEye = () => {
-	const user = JSON.parse(localStorage.getItem('userData'));
+	// const user = JSON.parse(localStorage.getItem('userData'));
+	const { user } = useAuth();
 
 	const [step, setStep] = useState(1);
 	const [photoUser, setPhotoUser] = useState("")
 
 	return (
 		<div>
-			<Dashboardlayout title={`Hello ${user?.Firstname}`} text="Start generating cool avatars.">
+			<Dashboardlayout title={`Hello ${user?.first_name}`} text="Start generating cool avatars.">
 				<InstructionModal />
 				{step === 1 && <FrameEye setStep={setStep} step={step} setPhotoUser={setPhotoUser} photoUser={photoUser} />}
 				{step === 2 && <ImageUpload setStep={setStep} step={step} photoUser={photoUser} />}

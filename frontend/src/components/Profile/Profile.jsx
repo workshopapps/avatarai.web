@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import Dashboardlayout from '../DASHBOARD_COMPONENT/DashboardLayout';
-import ProfileImg from './Profile.jpeg';
+import Avatar from '../../assets/images/avatar.png';
+import ErrorSuccessCard from '../utils/ErrorSuccessCard';
 import './Profile.css';
 import Button from '../landingPage/Button/Button';
 import { useAuth } from '../../../context/auth-context';
 
 const Profile = () => {
-	const { login, setToken, token } = useAuth();
+	const { user } = useAuth();
 	const [loading, setLoading] = useState(false);
 	const [errorStatus, setErrorStatus] = useState({
 		error: null,
@@ -22,7 +23,6 @@ const Profile = () => {
 		formState: { errors },
 	} = useForm();
 
-	const user = JSON.parse(localStorage.getItem('userData'));
 
 	const BaseUrl = `${import.meta.env.VITE_API_URL}`;
 	const onSubmit = async (data) => {
@@ -34,15 +34,25 @@ const Profile = () => {
 				},
 			})
 			.then((response) => {
-				console.log(response, 'response');
+				console.log(response?.data, 'response');
+
+				const user = response?.data;
+				localStorage.setItem('zvt_user', JSON.stringify(user));
 
 				setErrorStatus({ error: false, message: 'Profile updated successfully' });
+				setTimeout(() => {
+					setErrorStatus({ error: null, message: '' });
+				}, 3000);
+
 				setLoading(false);
 			})
 			.catch((e) => {
 				setLoading(false);
 				const err = e?.response?.data?.detail;
 				setErrorStatus({ error: true, message: err });
+				setTimeout(() => {
+					setErrorStatus({ error: null, message: '' });
+				}, 5000);
 				console.log(err);
 			});
 	};
@@ -66,25 +76,33 @@ const Profile = () => {
 	useEffect(() => {
 		fetchUser();
 		reset({
-			first_name: user?.Firstname,
-			last_name: user?.Lastname,
+			first_name: user?.first_name,
+			last_name: user?.last_name,
 			email: user?.email,
 		});
 	}, []);
 
 	return (
 		<Dashboardlayout title="Profile" text="See your personal information">
-			<main className="aso-profile">
+			<main className="aso-profile relative">
 				<section className="aso-profile-section">
 					<div className=" w-full px-5 bg-white rounded-lg py-10 md:shadow-lg">
 						<div className="max-w-[650px] mx-auto">
 							<div className="aso-bio">
-								<img src={ProfileImg} alt="Bio Img" className="" />
+								<div className="bg-[#8B70E94D] w-[90px] h-[90px] md:w-[150px] md:h-[150px] rounded-full overflow-clip mr-[20px]">
+									<img src={Avatar} alt="Bio Img" className="w-full h-full" />
+								</div>
+
 								<div className="aso-bio-details">
-									<h1>{user?.Firstname}</h1>
+									<h1>{user?.first_name}</h1>
 									<p>{user?.email}</p>
 								</div>
 							</div>
+							{errorStatus.message && (
+								<div className="my-5 absolute top-[-50px] md:top-0 right-5">
+									<ErrorSuccessCard error={errorStatus.error} message={errorStatus.message} />
+								</div>
+							)}
 							<form onSubmit={handleSubmit(onSubmit)} className="aso-form-container">
 								<div className="md:grid md:grid-cols-2 gap-5 mb-5">
 									<div className="flex flex-col col-span-1 mb-5 md:mb-0">
