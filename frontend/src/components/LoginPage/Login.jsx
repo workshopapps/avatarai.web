@@ -14,7 +14,7 @@ import ErrorSuccessCard from '../utils/ErrorSuccessCard';
 const Login = () => {
 	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();
-	const { setToken, token, setUser, user } = useAuth();
+	const {token, setUser, setToken } = useAuth();
 	const [errorStatus, setErrorStatus] = useState({
 		error: null,
 		message: '',
@@ -89,10 +89,10 @@ const Login = () => {
 	};
 
 	useEffect(() => {
-		if (user) {
-			navigate('/dashboard');
+		if (token) {
+			navigate('/dashboard', { replace: true });
 		}
-	}, [user]);
+	}, [token]);
 
 	return (
 		<div className="h-screen object-scale-down flex items-center justify-center">

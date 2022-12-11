@@ -9,7 +9,7 @@ import Button from '../landingPage/Button/Button';
 import { useAuth } from '../../../context/auth-context';
 
 const Profile = () => {
-	const { user } = useAuth();
+	const { user, getUser } = useAuth();
 	const [loading, setLoading] = useState(false);
 	const [errorStatus, setErrorStatus] = useState({
 		error: null,
@@ -36,8 +36,8 @@ const Profile = () => {
 			.then((response) => {
 				console.log(response?.data, 'response');
 
-				const user = response?.data;
-				localStorage.setItem('zvt_user', JSON.stringify(user));
+				getUser();
+				// localStorage.setItem('zvt_user', JSON.stringify(user));
 
 				setErrorStatus({ error: false, message: 'Profile updated successfully' });
 				setTimeout(() => {
@@ -57,24 +57,24 @@ const Profile = () => {
 			});
 	};
 
-	const fetchUser = async () => {
-		await axios
-			.get(`${BaseUrl}/user/${user.email}`, {
-				headers: {
-					'Content-Type': 'application/json',
-				},
-			})
-			.then((response) => {
-				console.log(response, 'user');
-			})
-			.catch((e) => {
-				const err = e?.response?.data?.detail;
-				console.log(err);
-			});
-	};
+	// const fetchUser = async () => {
+	// 	await axios
+	// 		.get(`${BaseUrl}/user/${user.email}`, {
+	// 			headers: {
+	// 				'Content-Type': 'application/json',
+	// 			},
+	// 		})
+	// 		.then((response) => {
+	// 			console.log(response, 'user');
+	// 		})
+	// 		.catch((e) => {
+	// 			const err = e?.response?.data?.detail;
+	// 			console.log(err);
+	// 		});
+	// };
 
 	useEffect(() => {
-		fetchUser();
+		console.log(user, "user")
 		reset({
 			first_name: user?.first_name,
 			last_name: user?.last_name,
