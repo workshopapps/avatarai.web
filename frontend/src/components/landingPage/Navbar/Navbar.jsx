@@ -34,13 +34,13 @@ const Navbar = () => {
 		<Fragment>
 			<nav className="flex justify-between items-center max-w-[100%]  lg:px-16   py-5 cbk-ds-nav">
 				<div>
-					<Link to="/LandingPage">
+					<Link to="/">
 						<img src={logo} alt="" className="w-10 hidden lg:block" />
 					</Link>
 					<div className="flex justify-between cbk-mobile-board  lg:hidden pr-3">
 						<img src={menu} alt="" className=" mx-5 my-1" onClick={navHandler} />
 						<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn">
-							<Link to="/Signup"> Create avatars </Link>
+							<Link to="/login"> Create avatars </Link>
 						</Button>
 					</div>
 				</div>
@@ -53,22 +53,22 @@ const Navbar = () => {
 						> Home</Link>
 					</li>
 					<li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
-						<Link to="/Aboutus" 
+						<Link to="/aboutus" 
 						className={ page === pages.AboutUs ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" }
 						>About Us</Link>
 					</li>
 					<li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
-						<Link to="/Pricing" 
+						<Link to="/pricing" 
 						className={ page === pages.Pricing ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" }
 						>Pricing</Link>
 					</li>
 					<li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
-						<Link to="/contact-us" 
+						<Link to="/contactus" 
 						className={ page === pages.ContactUs ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" }
 						>Contact Us</Link>
 					</li>
 					<li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
-						<Link to="/FAQ" 
+						<Link to="/faq" 
 						className={ page === pages.Faqs ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" }
 						>FAQs</Link>
 					</li>
@@ -85,7 +85,7 @@ const Navbar = () => {
 					)}
 
 					<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn ">
-						<Link to="/Signup"> Sign up </Link>
+						<Link to="/signup"> Sign up </Link>
 					</Button>
 				</div>
 			</nav>

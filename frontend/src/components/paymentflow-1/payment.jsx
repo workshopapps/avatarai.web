@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData, useLocation } from 'react-router-dom';
 import Illus from './images/payment-illus.svg';
 import { useForm } from 'react-hook-form';
 import Navbar from '../landingPage/Navbar/Navbar';
 import Button from '../landingPage/Button/Button';
 import Foooter from '../footer/Foooter';
 
-const Payment = () => {
+const Payment = ({ details, setShowPayment }) => {
 	const [loading, setLoading] = useState(false);
+	const location = useLocation();
 	const {
 		register,
 		handleSubmit,
@@ -21,15 +22,15 @@ const Payment = () => {
 
 	return (
 		<>
-			<Navbar />
 			<div className="max-w-[1240px] mx-auto font-nunito mt-[27px] md:mt-[80px] px-5 pb-10">
+				<div onClick={() => setShowPayment(false)} className="cursor-pointer mb-5">Back</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-[#595959]">
 					<div className="col-span-1 md:max-w-[407px]">
 						<div className="mb-10 max-w-fit mx-auto md:mx-0 ">
-							<h1 className="font-bold text-base mb-[5px]">Premium</h1>
+							<h1 className="font-bold text-base mb-[5px]">{details?.title}</h1>
 							<p className="">
-								<span className="text-[32px] text-[#333333]">$45</span>
-								<span className="text-base"> / Per Month</span>
+								<span className="text-[32px] text-[#333333]">${details?.amount}</span>
+								<span className="text-base capitalize"> / Per {details?.duration}</span>
 							</p>
 							<Link to="#" className="text-[#8B70E9] text-base md:hidden">
 								View details
@@ -156,7 +157,6 @@ const Payment = () => {
 					</div>
 				</div>
 			</div>
-			{/* <Foooter /> */}
 		</>
 	);
 };
