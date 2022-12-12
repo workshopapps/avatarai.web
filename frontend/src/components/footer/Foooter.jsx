@@ -34,7 +34,7 @@ designed to generate perfect avatars for you.
               <div className="flex flex-col space-y-4 text-[#2B292F] md:ml-[1.7rem]">
                 <p className="font-semibold text-xl">Resources</p>
                 <p className="text-[#605E65]">
-                  <a href="/Review" className="text-base">Reviews</a>
+                  <a href="/" className="text-base">Reviews</a>
                 </p>
                 <p className="text-[#605E65]">
                   <a href="/ApiPage" className="text-base">API integration</a>
@@ -112,7 +112,7 @@ designed to generate perfect avatars for you.
               <div className="flex flex-col space-y-2 text-[#2B292F]">
                 <p className="font-semibold text-xl">Resources</p>
                 <p className="text-sm">
-                  <a href="/Review">Reviews</a>
+                  <a href="/">Reviews</a>
                 </p>
                 <p className="text-sm">
                   <a href="/ApiPage">API integration</a>

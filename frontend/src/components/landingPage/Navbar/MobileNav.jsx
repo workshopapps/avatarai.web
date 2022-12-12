@@ -44,7 +44,7 @@ const MobileNav = ({ navClose }) => {
           >
             <Link to="/Pricing">Pricing</Link>
           </li>
-          <li
+          {/* <li
             onClick={navClose}
             className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple"
           >
@@ -55,7 +55,7 @@ const MobileNav = ({ navClose }) => {
             className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple"
           >
             <Link to="/FAQ">FAQs</Link>
-          </li>
+          </li> */}
         </ul>
         <div className=" w-full flex flex-col items-start justify-start gap-y-5">
           <Button
