@@ -63,7 +63,7 @@ const navItems = [
 		title: 'Settings',
 		icon: Icon5,
 		activeIcon: Icon1Active,
-		link: '#',
+		link: '/setting',
 		pathname: 'setting',
 		id: 5,
 	},

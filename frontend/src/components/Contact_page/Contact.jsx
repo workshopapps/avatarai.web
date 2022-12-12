@@ -135,7 +135,6 @@ const Contact = () => {
               document
                 .getElementById("contact-form")
                 .scrollIntoView({ behavior: "smooth" });
-              console.log("scroll");
             }}
           >
             Send A Message
