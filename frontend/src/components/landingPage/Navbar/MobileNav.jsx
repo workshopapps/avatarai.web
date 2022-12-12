@@ -12,7 +12,7 @@ const MobileNav = ({ navClose }) => {
       id="cbk-mobile-nav"
     >
       <nav className="flex relative flex-col justify-center  items-start gap-y-10 lg:hidden px-10 pb-10 z-30">
-        <div className=" mt-5 flex justify-center w-full gap-5">
+        <div className=" mt-5 flex justify-between w-full gap-5">
           <Link to="/">
             <img src={logo} alt="" />
           </Link>
