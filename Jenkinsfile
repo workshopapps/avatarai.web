@@ -30,6 +30,7 @@ pipeline {
 		stage("Move repo") {
 		
 			steps {
+				sh "sudo rm -rf /home/de-marauder/avatarai.web"
 				sh "sudo cp -r ${WORKSPACE}/avatarai.web /home/de-marauder/"
 			}
 		}
