@@ -73,9 +73,6 @@ const Payment = ({ details, setShowPayment }) => {
 								<span className="text-[32px] text-[#333333]">${details?.amount}</span>
 								<span className="text-base capitalize"> / Per {details?.duration}</span>
 							</p>
-							<Link to="#" className="text-[#8B70E9] text-base md:hidden">
-								View details
-							</Link>
 						</div>
 						<div
 							className="flex flex-col justify-center"
@@ -85,7 +82,7 @@ const Payment = ({ details, setShowPayment }) => {
 						>
 							<Button
 								type="submit"
-								className={`bg-[#8B70E9] text-white font-nunito font-extrabold text-base px-4 py-5 rounded-lg mb-6 ${loading ? "cursor-not-allowed" : "cursor-pointer"}`}
+								className={`bg-[#8B70E9] text-white font-nunito font-extrabold text-base px-4 py-4 md:py-5 rounded-lg mb-6 ${loading ? "cursor-not-allowed" : "cursor-pointer"}`}
 								
 							>
 								{loading ? 'Verifying payment...' : 'Pay With Paystack'}
