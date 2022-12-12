@@ -43,7 +43,7 @@ designed to generate perfect avatars for you.
               <div className="flex flex-col space-y-4 text-[#2B292F] md:ml-[1.7rem]">
                 <p className="font-semibold text-xl">Company</p>
                 <p className="text-[#605E65]">
-                  <a href="/contact-us" className="text-base">Contact Us</a>
+                  <a href="/contactus" className="text-base">Contact Us</a>
                 </p>
                 <p className="text-[#605E65]">
                   <a href="/Aboutus" className="text-base">About Us</a>
@@ -53,6 +53,9 @@ designed to generate perfect avatars for you.
                 <p className="font-semibold text-xl">Help</p>
                 <p className="text-[#605E65]">
                   <a href="/FAQ" className="text-base">FAQs</a>
+                </p>
+                <p className="text-[#605E65]">
+                  <a href="/Terms" className="text-base">Terms</a>
                 </p>
              </div>
             </div>
@@ -118,7 +121,7 @@ designed to generate perfect avatars for you.
               <div className="flex flex-col space-y-2 text-[#2B292F] ml-[-1rem] md:ml-0">
                 <p className="font-semibold text-xl">Company</p>
                 <p className="text-sm">
-                  <a href="/contact-us">Contact Us</a>
+                  <a href="/contactus">Contact Us</a>
                 </p>
                 <p>
                   <a href="/Aboutus">About Us</a>
@@ -129,8 +132,9 @@ designed to generate perfect avatars for you.
                 <p className="text-sm">
                   <a href="/FAQ">FAQs</a>
                 </p>
-               
-              
+                <p className="text-[#605E65]">
+                  <a href="/Terms" className="text-base">Terms</a>
+                </p>
               </div>
               <div className="flex flex-col space-y-2 text-[#2B292F] ml-[-1rem] md:ml-0">
                 <p className="font-semibold text-xl">Socials</p>
