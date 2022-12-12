@@ -163,7 +163,7 @@ export default function SignUp_first() {
 			</div>
 			<div className="house_opt">
 				<div className="nav_opt">
-					<Link to="/LandingPage">
+					<Link to="/">
 						<img
 							className="logo_opt"
 							src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670070847/logo_dpfx4a.png"

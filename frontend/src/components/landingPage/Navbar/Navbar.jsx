@@ -75,18 +75,21 @@ const Navbar = () => {
 				</ul>
 				<div className="space-x-6 hidden lg:block">
 					{auth.token === null ? (
+						<Link to="/login" className='w-full'>
 						<Button className=" border-[#8B70E9] text-[#8B70E9] bg-white  cbk-login-btn ">
-							<Link to="/login"> Log in</Link>
+							 Log in
 						</Button>
+						</Link>
 					) : (
 						<span onClick={handleLogout}>
 							<Button className=" border-[#8B70E9] text-[#8B70E9] bg-white  cbk-login-btn ">Logout</Button>
 						</span>
 					)}
-
+                    <Link to="/signup">
 					<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn ">
-						<Link to="/signup"> Sign up </Link>
+						 Sign up 
 					</Button>
+					</Link>
 				</div>
 			</nav>
 			{navToggle && <MobileNav navClose={navClose} />}
