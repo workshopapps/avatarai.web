@@ -50,8 +50,8 @@ const Payment = ({ details, setShowPayment }) => {
 
 	return (
 		<>
-			<div className="max-w-[1240px] mx-auto font-nunito mt-[27px] md:mt-[80px] px-5 pb-10">
-				<div onClick={() => setShowPayment(false)} className="cursor-pointer mb-5 font-bold text-base">
+			<div className="max-w-[1240px] mx-auto font-nunito mt-[40px] px-5 pb-10 bg-white">
+				<div onClick={() => setShowPayment(false)} className="cursor-pointer mb-10 font-bold text-base">
 					{'< Back'}
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-[#595959]">
@@ -73,9 +73,6 @@ const Payment = ({ details, setShowPayment }) => {
 								<span className="text-[32px] text-[#333333]">${details?.amount}</span>
 								<span className="text-base capitalize"> / Per {details?.duration}</span>
 							</p>
-							<Link to="#" className="text-[#8B70E9] text-base md:hidden">
-								View details
-							</Link>
 						</div>
 						<div
 							className="flex flex-col justify-center"
@@ -85,7 +82,7 @@ const Payment = ({ details, setShowPayment }) => {
 						>
 							<Button
 								type="submit"
-								className={`bg-[#8B70E9] text-white font-nunito font-extrabold text-base px-4 py-5 rounded-lg mb-6 ${loading ? "cursor-not-allowed" : "cursor-pointer"}`}
+								className={`bg-[#8B70E9] text-white font-nunito font-extrabold text-base px-4 py-4 md:py-5 rounded-lg mb-6 ${loading ? "cursor-not-allowed" : "cursor-pointer"}`}
 								
 							>
 								{loading ? 'Verifying payment...' : 'Pay With Paystack'}
