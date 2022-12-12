@@ -27,7 +27,7 @@ from email.mime.text import MIMEText
 # Define Avatar route instance
 photo_router = APIRouter()
 
-S3_BUCKET_NAME = "hngtest"
+S3_BUCKET_NAME = "dreambooth-ajsn"
 
 client = boto3.client(
     's3',
@@ -93,7 +93,10 @@ async def add_photo(files: list[UploadFile] = File(...), email: str = Form(defau
 
      #The mail addresses and password
 
-    msg = 'Subject: It takes aproximatly 2 hours to to .'
+    msg = """Your Images have been Successfully Uploaded to Our dreambooth Server.It takes approximately 2 hours to train and generate the Avatar images. Just chill and wait for an email woth your images.
+    The Process: Upload Images -> Train DreamBooth With Images -> Generate Avatar Images -> Send Email
+    Thank You For Using ZUVATAR
+    """
     sender_address = os.environ.get('EMAIL')
     sender_pass = os.environ.get('PASSWORD')
     receiver_address = photo['email']
@@ -101,7 +104,7 @@ async def add_photo(files: list[UploadFile] = File(...), email: str = Form(defau
     message = MIMEMultipart()
     message['From'] = sender_address
     message['To'] = receiver_address
-    message['Subject'] = 'Password Recovery'   #The subject line
+    message['Subject'] = 'Images Successfully Uploaded For Training'   #The subject line
     #The body and the attachments for the mail
     message.attach(MIMEText(msg, 'plain'))
     #Create SMTP session for sending the mail
@@ -115,11 +118,11 @@ async def add_photo(files: list[UploadFile] = File(...), email: str = Form(defau
 
 
     ##############################################################
-    #Temporary fix to manually train the model prnding dreambooth
+    #Temporary fix to manually train the model pending dreambooth payment
     ##############################################################
 
 
-    msg = 'Hi! We have a new upload.'
+    msg = f'Hi! We have a new upload from {email}.'
 
     #The mail addresses and password
     sender_address = os.environ.get('EMAIL')

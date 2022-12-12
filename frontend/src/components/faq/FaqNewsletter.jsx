@@ -61,7 +61,7 @@ subscribe(emailField)
         method: "POST",
       
           body:JSON.stringify({
-            "email":[userEmail]
+            "email":userEmail
           }),
         
         headers: {
