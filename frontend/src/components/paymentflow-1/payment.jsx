@@ -50,8 +50,8 @@ const Payment = ({ details, setShowPayment }) => {
 
 	return (
 		<>
-			<div className="max-w-[1240px] mx-auto font-nunito mt-[27px] md:mt-[80px] px-5 pb-10">
-				<div onClick={() => setShowPayment(false)} className="cursor-pointer mb-5 font-bold text-base">
+			<div className="max-w-[1240px] mx-auto font-nunito mt-[40px] px-5 pb-10 bg-white">
+				<div onClick={() => setShowPayment(false)} className="cursor-pointer mb-10 font-bold text-base">
 					{'< Back'}
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-[#595959]">
