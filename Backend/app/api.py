@@ -4,6 +4,7 @@ from server.routes.photo_upload_api import photo_router
 from server.routes.retrieve_user_avatars_api import user_avatars_router
 from server.routes.user_api import user_router
 from server.routes.avatars import avatar_router
+from server.routes.payment import payment
 
 
 # import sentry_sdk
@@ -74,4 +75,5 @@ async def trigger_error():
 app.include_router(photo_router, tags=["User Photos"])
 app.include_router(avatar_router, tags=["Avatars"])
 app.include_router(user_avatars_router)
-app.include_router(user_router)
+app.include_router(user_router, tags=["User Info"])
+app.include_router(payment, tags= ["Payment"])
