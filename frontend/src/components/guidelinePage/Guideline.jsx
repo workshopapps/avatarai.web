@@ -4,7 +4,7 @@ import "./style.css";
 import Cover from "./images/home.png";
 import Frame1 from "./images/fr.png";
 import FaqNewsletter from "../faq/FaqNewsletter.jsx";
-import Footer from "../Footerpage/Footer.jsx";
+import Foooter from "../footer/Foooter";
 import Button from "../landingPage/Button/Button";
 
 const GuidelinePage = () => {
@@ -19,24 +19,29 @@ const GuidelinePage = () => {
             enables you to upload your own photos and create AI-generated
             avatars of yourself.
           </p>
-          <img src={Cover} alt="home-cover-photo" />
+          <img
+            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670939118/home_11zon_hgpgxb.jpg"
+            alt="home-cover-photo"
+          />
         </div>
         <div className="guide-middle">
           <h2>How Does Zuvatar Work?</h2>
           <p>
-            Creating your own avatars on Zuvatar is relatively easy and only takes
-            a few minutes.
+            Creating your own avatars on Zuvatar is relatively easy and only
+            takes a few minutes.
           </p>
           <div className="cards">
-            <img src={Frame1} alt="frame1" />
+            <img
+              src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670939119/fr_11zon_wu5yav.jpg"
+              alt="frame1"
+            />
             <Button>Create Avatar</Button>
           </div>
         </div>
       </div>
       <FaqNewsletter />
-      <div className="footer">
-        <Footer />
-      </div>
+
+      <Foooter />
     </div>
   );
 };

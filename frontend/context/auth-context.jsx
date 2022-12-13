@@ -56,11 +56,15 @@ const AuthProvider = ({ children }) => {
 
 	useEffect(() => {
 		const locToken = localStorage.getItem('zvt_token');
-
+try {
 		if (locToken) {
-			setToken(JSON.parse(locToken));
-			getUser();
-		}
+      setToken(JSON.parse(locToken));
+      getUser();
+    }
+} catch (error) {
+	
+}
+	
 	}, [token]);
 
 	useEffect(() => {

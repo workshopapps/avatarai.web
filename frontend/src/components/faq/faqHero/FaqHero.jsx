@@ -32,7 +32,7 @@ const FaqHero = () => {
     <section
       className={style.heroContainer}
       style={{
-        backgroundImage: `url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670062331/herobg_yytctl.png")`,
+        backgroundImage: `url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670938519/herobg_yytctl_11zon_suhusa.jpg")`,
       }}
     >
       <div className={style.centered}>
@@ -42,7 +42,7 @@ const FaqHero = () => {
           <div
             className={style.searchIcon}
             style={{
-              backgroundImage: `url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670062331/searchIcon_nivpev.png")`,
+              backgroundImage: `url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670938518/searchIcon_nivpev_11zon_o5tvff.jpg")`,
             }}
           ></div>
           <input
