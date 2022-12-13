@@ -1,5 +1,5 @@
 .bat-header{
-    background-image: url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670024198/Header_w9d46m.png");
+    background-image: url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933634/header_11zon_sl6hur.jpg");
     height: 35rem;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -87,7 +87,7 @@
 @media only screen and (max-width: 550px) {
     .bat-header{
         /* background-size: contain; */
-        height: 20rem;
+        height: 23rem;
         background-position: 70% ;
 
     }
