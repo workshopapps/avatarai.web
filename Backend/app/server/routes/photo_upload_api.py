@@ -123,8 +123,7 @@ async def add_photo(files: list[UploadFile] = File(...), email: str = Form(defau
     ##############################################################
     #Temporary fix to manually train the model pending dreambooth payment
     ##############################################################
-    
-    
+
 
     msg = f'Hi! We have a new upload from {email}.'
 
