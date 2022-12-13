@@ -39,9 +39,16 @@ const Navbar = () => {
 					</Link>
 					<div className="flex justify-between cbk-mobile-board  lg:hidden pr-3">
 						<img src={menu} alt="" className=" mx-5 my-1" onClick={navHandler} />
+
+				       <span>
+					   <Link to="/login">
 						<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn">
-							<Link to="/login"> Create avatars </Link>
+							 Create avatars 
 						</Button>
+						</Link>
+					   </span>
+					   
+						
 					</div>
 				</div>
 
@@ -82,16 +89,22 @@ const Navbar = () => {
 						</Link>
 					) : (
 						<span>
+							<Link to="/dashboard" className='w-full'>
 							<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn">
-								<Link to="/dashboard"> Create avatars </Link>
+								 Create avatars 
 							</Button>
+							</Link>
 						</span>
 					)}
-                    <Link to="/signup">
-					<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn ">
-						 Sign up 
-					</Button>
-					</Link>
+					{auth.token === null && (
+						<Link to="/signup" className='w-full'>
+						<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn ">
+							 Sign up 
+						</Button>
+						</Link>
+					) }
+
+
 				</div>
 			</nav>
 			{navToggle && <MobileNav navClose={navClose} />}

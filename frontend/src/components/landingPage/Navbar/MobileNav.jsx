@@ -86,12 +86,14 @@ const MobileNav = ({ navClose }) => {
 						</span>
 					)}
 
-       
-          <Link to="/Signup" className=" w-full">
-          <Button className="text-white bg-[#8B70E9] cbk-mobile-login-btn">
-             Sign up 
-          </Button>
-          </Link>
+{auth.token === null ? (
+  <Link to="/Signup" className=" w-full">
+  <Button className="text-white bg-[#8B70E9] cbk-mobile-login-btn">
+     Sign up 
+  </Button>
+  </Link>
+) :""}
+          
         </div>
       </nav>
     </div>
