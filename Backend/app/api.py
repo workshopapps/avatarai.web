@@ -35,7 +35,7 @@ sentry_sdk.init(
 )
 
 # 👇 FastAPI INSTANCE
-app = FastAPI(root_path="/")
+app = FastAPI(root_path="/api/v1")
 
 ##################################
 
