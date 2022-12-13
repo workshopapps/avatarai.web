@@ -48,7 +48,7 @@ const MobileNav = ({ navClose }) => {
             onClick={navClose}
             className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple"
           >
-            <Link to="/contact-us">Contact Us</Link>
+            <Link to="/contactus">Contact Us</Link>
           </li>
           <li
             onClick={navClose}
