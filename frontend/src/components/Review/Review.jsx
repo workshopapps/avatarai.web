@@ -6,6 +6,9 @@ import emptyStar from "./assets/emptyStar.png";
 import goldStar from "./assets/goldStar.png";
 import { useEffect, useState, useRef } from "react";
 import Button from "../landingPage/Button/Button";
+import Navbar from "../landingPage/Navbar/Navbar";
+import Foooter from '../footer/Foooter';
+
 
 export default function Review() {
   const [rating, setRating] = useState(0);
@@ -39,6 +42,8 @@ export default function Review() {
   const arr = ["", "", "", "", ""];
 
   return (
+    <>
+      <Navbar/>
     <div className={styles.review}
     style={{
       'overflow':  `${showPopup?'hidden':'auto'}`
@@ -127,6 +132,8 @@ export default function Review() {
         </div>
       </div>
     </div>
+    <Foooter/>
+    </>
   );
 }
 
