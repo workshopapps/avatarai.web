@@ -87,7 +87,7 @@
 @media only screen and (max-width: 550px) {
     .bat-header{
         /* background-size: contain; */
-        height: 25rem;
+        height: 23rem;
         background-position: 70% ;
 
     }
