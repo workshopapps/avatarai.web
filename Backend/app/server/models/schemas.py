@@ -98,7 +98,8 @@ class User(BaseModel):
     email: str = Field(...)
     password: str = Field(...)
     verified: bool
-    
+    paid:bool
+    free_trial: bool
     class Config:
         allow_population_by_field_name = True
         arbitrary_types_allowed = True
@@ -110,7 +111,9 @@ class User(BaseModel):
                 "last_name": "Doe",
                 "email":"johndoe@gmail.com",
                 "password": "I_can't_think_of_a_password",
-                "verified" : False
+                "verified" : False,
+                "paid":False,
+                "free_trial": True
             }
         }
 
@@ -228,5 +231,24 @@ class ContactForm(BaseModel):
                 "last_name": "Doe",
                 "email":"johndoe@gmail.com",
                 "message": "Input your message here.",
+            }
+        }
+
+class Payment(BaseModel):
+    id: PyObjectId = Field(default_factory=PyObjectId, alias="_id")
+    trans_ref:str
+    email: EmailStr
+    #is_deleted:bool
+
+
+    class Config:
+        allow_population_by_field_name = True
+        arbitrary_types_allowed = True
+        json_encoders = {ObjectId: str}
+
+        schema_extra = {
+            'example': {               
+                "trans_ref":"nms6uvr1pl",
+                "email": "johndoe@gmail.com",
             }
         }

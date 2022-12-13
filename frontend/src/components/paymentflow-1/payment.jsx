@@ -1,42 +1,61 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData, useLocation } from 'react-router-dom';
 import Illus from './images/payment-illus.svg';
-import { useForm } from 'react-hook-form';
-import Navbar from '../landingPage/Navbar/Navbar';
 import Button from '../landingPage/Button/Button';
-import Foooter from '../footer/Foooter';
+import axios from 'axios';
+import { useAuth } from '../../../context/auth-context';
+import { usePaystackPayment } from 'react-paystack';
+import Swal from 'sweetalert2';
 
 const Payment = ({ details, setShowPayment }) => {
+	const { user } = useAuth();
 	const [loading, setLoading] = useState(false);
-	const location = useLocation();
-	const {
-		register,
-		handleSubmit,
-		reset,
-		formState: { errors },
-	} = useForm();
+	const [modal, setModal] = useState(false);
+	const [config, setConfig] = useState({
+		name: user?.first_name,
+		email: user?.email,
+		amount: Number(details.amount) * 650 * 100,
+		currency: 'NGN',
+		publicKey: import.meta.env.VITE_PAYSTACK_PK,
+	});
 
-	const onSubmit = (data) => {
-		console.log(data, 'payment');
+	const url = `${import.meta.env.VITE_API_URL}/verify-payment`;
+	const verifyPayment = async (reference) => {
+		setLoading(true);
+		const data = { reference };
+		await axios
+			.post(url, data)
+			.then((response) => {
+				console.log(response, 'response');
+				Swal.fire('Payment verified successfully', '', 'success');
+				setLoading(false);
+			})
+			.catch((e) => {
+				setLoading(false);
+				Swal.fire('Payment could not be verified', '', 'error');
+				const err = e?.response?.data?.detail;
+				console.log(err);
+			});
 	};
+
+	const onSuccess = (data) => {
+		verifyPayment(data.reference);
+	};
+
+	const onClose = () => {
+		console.log('closed');
+	};
+
+	const initializePayment = usePaystackPayment(config);
 
 	return (
 		<>
-			<div className="max-w-[1240px] mx-auto font-nunito mt-[27px] md:mt-[80px] px-5 pb-10">
-				<div onClick={() => setShowPayment(false)} className="cursor-pointer mb-5">Back</div>
+			<div className="max-w-[1240px] mx-auto font-nunito mt-[40px] px-5 pb-10 bg-white">
+				<div onClick={() => setShowPayment(false)} className="cursor-pointer mb-10 font-bold text-base">
+					{'< Back'}
+				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-5 text-[#595959]">
 					<div className="col-span-1 md:max-w-[407px]">
-						<div className="mb-10 max-w-fit mx-auto md:mx-0 ">
-							<h1 className="font-bold text-base mb-[5px]">{details?.title}</h1>
-							<p className="">
-								<span className="text-[32px] text-[#333333]">${details?.amount}</span>
-								<span className="text-base capitalize"> / Per {details?.duration}</span>
-							</p>
-							<Link to="#" className="text-[#8B70E9] text-base md:hidden">
-								View details
-							</Link>
-						</div>
-
 						<div className="mb-10 hidden md:block">
 							<img src={Illus} alt="illustration" />
 						</div>
@@ -47,113 +66,32 @@ const Payment = ({ details, setShowPayment }) => {
 					</div>
 
 					{/* Payment form */}
-					<div className="col-span-1 text-[#333333]">
-						<form onSubmit={handleSubmit(onSubmit)}>
-							<h1 className="md:font-bold text-base mb-[24px]">Enter payment details</h1>
-							<div>
-								<div className="mb-[24px]">
-									<label htmlFor="email" className="md:font-bold text-base">
-										Email
-									</label>
-									<input
-										type="text"
-										name="email"
-										placeholder="johndoe@gmail.com"
-										className={`border ${
-											errors.email && 'border-red-600'
-										} border-[#403E46] py-3 px-4 rounded-[4px] placeholder-[#808080] text-base font-medium w-full`}
-										{...register('email', {
-											required: true,
-											pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
-										})}
-									/>
-									{errors.email && <span className="text-xs text-red-600">Please enter a valid email address</span>}
-								</div>
-
-								<div className="mb-[24px]">
-									<label htmlFor="cardNumber" className="md:font-bold text-base">
-										Card Number
-									</label>
-									<input
-										type="number"
-										name="cardNumber"
-										placeholder="1234 1234 1234 1234"
-										className={`border ${
-											errors.cardNumber && 'border-red-600'
-										} border-[#403E46] py-3 px-4 rounded-[4px] placeholder-[#808080] text-base font-medium w-full`}
-										{...register('cardNumber', {
-											required: true,
-										})}
-									/>
-									{errors.cardNumber && <span className="text-xs text-red-600">Card number is required</span>}
-								</div>
-
-								<div className="grid grid-cols-2 gap-3">
-									<div className="mb-[24px] col-span-1">
-										<label htmlFor="expDate" className="md:font-bold text-base">
-											Expiration Date
-										</label>
-										<input
-											type="month"
-											name="expDate"
-											placeholder="MM/YY"
-											className={`border ${
-												errors.expDate && 'border-red-600'
-											} border-[#403E46] py-3 px-4 rounded-[4px] placeholder-[#808080] text-base font-medium w-full`}
-											{...register('expDate', {
-												required: true,
-											})}
-										/>
-										{errors.expDate && <span className="text-xs text-red-600">Expiration date is required</span>}
-									</div>
-
-									<div className="mb-[24px] col-span-1">
-										<label htmlFor="cvv" className="md:font-bold text-base">
-											CVV
-										</label>
-										<input
-											type="number"
-											name="cvv"
-											maxLength={3}
-											placeholder="123"
-											className={`border ${
-												errors.cvv && 'border-red-600'
-											} border-[#403E46] py-3 px-4 rounded-[4px] placeholder-[#808080] text-base font-medium w-full`}
-											{...register('cvv', {
-												required: true,
-											})}
-										/>
-										{errors.cvv && <span className="text-xs text-red-600">CVV is required</span>}
-									</div>
-								</div>
-								<div className="mb-10">
-									<label htmlFor="saveDetails" className="text-[#919191] text-base md:font-bold flex items-center">
-										<input
-											type="checkbox"
-											name="saveDetails"
-											className="mr-4 w-4 h-4"
-											{...register('saveDetails', {
-												required: false,
-											})}
-										/>
-										<span>Save card details</span>
-									</label>
-								</div>
-
-								<div>
-									<Button
-										type="submit"
-										className="bg-[#8B70E9] text-white font-nunito font-bold text-sm p-4 rounded-[4px] mb-6 w-full"
-									>
-										{loading ? 'Loading...' : 'Subscribe'}
-									</Button>
-									<p className="text-center text-[#262626] md:font-bold text-xs md:text-base">
-										By confirming your subscription, you allow Generated Media, Inc. to charge your card for this
-										payment and future payments in accordance with their terms. You can always cancel your subscription.
-									</p>
-								</div>
-							</div>
-						</form>
+					<div className="col-span-1 text-[#333333] flex flex-col justify-center items-center">
+						<div className="mb-10 max-w-fit mx-auto md:mx-0 ">
+							<h1 className="font-bold text-base mb-[5px]">{details?.title}</h1>
+							<p className="">
+								<span className="text-[32px] text-[#333333]">${details?.amount}</span>
+								<span className="text-base capitalize"> / Per {details?.duration}</span>
+							</p>
+						</div>
+						<div
+							className="flex flex-col justify-center"
+							onClick={() => {
+								initializePayment(onSuccess, onClose);
+							}}
+						>
+							<Button
+								type="submit"
+								className={`bg-[#8B70E9] text-white font-nunito font-extrabold text-base px-4 py-4 md:py-5 rounded-lg mb-6 ${loading ? "cursor-not-allowed" : "cursor-pointer"}`}
+								
+							>
+								{loading ? 'Verifying payment...' : 'Pay With Paystack'}
+							</Button>
+							<p className="text-center text-[#262626] md:font-bold text-xs md:text-base">
+								By confirming your subscription, you allow Zuvatar, Inc. to charge your card for this payment in
+								accordance with their terms. You can always cancel your subscription.
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>

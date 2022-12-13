@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 import Button from '../landingPage/Button/Button.jsx';
 import three from './line.png';
 import Content from '../Desktop_3/Content';
+import { useAuth } from '../../../context/auth-context';
 
 const ImageUpload = ({ setStep, step, photoUser }) => {
 	const [selectedImages, setSelectedImages] = useState([]);
@@ -22,6 +23,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 	const [showAlertLink, setShowAlertLink] = useState(false);
 	const [preview, setPreview] = useState(false);
 	const [show, setShow] = useState(true);
+	const { user } = useAuth();
 
 	const handleFile = (e) => {
 		let file = e.target.files;
@@ -41,13 +43,13 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 
 	const sendImages = async () => {
 		setGenAvt(true);
-		console.log(imageToUpload, 'imagetoupload');
-		const user = JSON.parse(localStorage.getItem('userData'));
+		console.log(user.email, "email");
+
 		const formData = new FormData();
 		imageToUpload.forEach((image) => {
 			formData.append('files', image);
 		});
-		formData.append('email', user.email);
+		formData.append('email', user?.email);
 		formData.append('photo_class', photoUser);
 
 		await axios

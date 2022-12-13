@@ -29,21 +29,23 @@ function Pricing() {
 		}
 	}, [details]);
 	return (
-		<section className="price-top">
+		<>
 			<Navbar />
-			<div className="overflow-x-hidden">
-				{!showPayment ? (
-					<>
-						<Pricetop />
-						<TotalPriceCards setShowPayment={setShowPayment} setDetails={setDetails} />
-					</>
-				) : (
-					<Payment details={details} setShowPayment={setShowPayment} />
-				)}
-			</div>
-			<FaqNewsletter />
-			<Foooter />
-		</section>
+			<section className="">
+				<div className="overflow-x-hidden">
+					{!showPayment ? (
+						<div className='pricing-top'>
+							<Pricetop />
+							<TotalPriceCards setShowPayment={setShowPayment} setDetails={setDetails} />
+							<FaqNewsletter />
+							<Foooter />
+						</div>
+					) : (
+						<Payment details={details} setShowPayment={setShowPayment} />
+					)}
+				</div>
+			</section>
+		</>
 	);
 }
 

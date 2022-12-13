@@ -6,7 +6,7 @@
   --bg-color: rgba(207, 214, 255, 1);
   --text: #848484;
   --line: rgba(123, 97, 255, 0.2);
-  --hr: rgba(143, 111, 254, 1);
+  --hr: #8F6FFE;
   --popular: rgba(247, 247, 247, 1);
   --btn: rgba(139, 112, 233, 1);
 }
@@ -18,11 +18,11 @@
 }
 
 .vnc_price {
-  background-color: var(--bg-color);
+  background-color: #DEE2E64D;
 }
 
 .vnc_btn1 {
-  background-color: #170c3c !important;
+  background-color: #8B70E9 !important;
 }
 
 .price-top {
@@ -39,7 +39,7 @@
 }
 
 .vnc_hr {
-  border: 1px solid var(--hr);
+  border: .0065px solid var(--hr);
 }
 
 .vnc_popular {
