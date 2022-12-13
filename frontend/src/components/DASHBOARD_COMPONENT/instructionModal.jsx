@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ArrowDown from "./img/arrowdown.svg";
 import "./instruct.css";
+import ArrowUp from "./img/ArrowUp.svg";
 
 const InstructionModal = () => {
   const [modal, showModal] = useState(true);
@@ -13,7 +14,7 @@ const InstructionModal = () => {
         <p className="text-[#000] text-sm md:text-[20px] font-bold">
           Read upload instructions
         </p>
-        <img src={ArrowDown} alt="arrow-down" />
+        <img src={`${modal ? ArrowDown : ArrowUp}`} alt="arrow-down" />
       </div>
 
       <div

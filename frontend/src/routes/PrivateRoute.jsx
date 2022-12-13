@@ -1,14 +1,8 @@
 import { useAuth } from '../../context/auth-context';
-import { Navigate, useLocation } from 'react-router-dom';
+import { Navigate, useLocation, Outlet } from 'react-router-dom';
 
-export const PrivateRoute = ({ children }) => {
-	const { user, token, setToken } = useAuth();
-	const location = useLocation();
-	console.log(token);
+export const PrivateRoute = () => {
+	const { user, token } = useAuth();
 
-	if (token === null) {
-		return <Navigate to="/login" />;
-	}
-
-	return children;
+	return token ? <Outlet /> : <Navigate to="/login" />;
 };

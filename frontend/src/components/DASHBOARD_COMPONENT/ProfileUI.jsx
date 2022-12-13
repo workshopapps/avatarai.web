@@ -1,31 +1,31 @@
 import { useAuth } from '../../../context/auth-context';
 import { useNavigate } from 'react-router-dom';
-import Avatar from './img/avatar.svg';
+import Avatar from '../../assets/images/avatar.png';
 import LogoutIcon from './img/Logout.svg';
 
 
 const ProfileUI = () => {
-	const { logout } = useAuth();
+	const { logout, user } = useAuth();
 	const navigate = useNavigate();
-	console.log(location.pathname);
 	const handleLogout = () => {
 		logout();
 		navigate('/');
 	};
-	const user = JSON.parse(localStorage.getItem("userData"));
-	console.log(user)
 	
 	return (
 		<div className="flex items-center justify-between border-t border-[#F4F5F6] pt-4 px-5">
 			<div className="flex items-center gap-3 ">
-				<img src={Avatar} alt="avatar" />
+				<div className="bg-[#8B70E94D] w-[30px] h-[30px] rounded-full overflow-hidden">
+					<img src={Avatar} alt="avatar" className="w-full h-full" />
+				</div>
+
 				<p className="flex flex-col">
-					<span className="text-[#0D0F11] font-medium text-sm">{user?.Firstname}</span>
+					<span className="text-[#0D0F11] font-medium text-sm">{user?.first_name}</span>
 					<span className="text-[#AFB6B6] text-[10px]">{user?.email}</span>
 				</p>
 			</div>
 			<div>
-				<img src={LogoutIcon} alt="logout" onClick={handleLogout} className="cursor-pointer" />
+				<img src={LogoutIcon} title="Logout" alt="logout" onClick={handleLogout} className="cursor-pointer" />
 			</div>
 		</div>
 	);

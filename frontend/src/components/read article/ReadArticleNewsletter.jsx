@@ -1,8 +1,11 @@
+import { Link } from "react-router-dom";
 const ReadArticleNewsletter = () => {
   return (
     <section className="flex flex-col md:flex-row md:items-center md:justify-around gap-[24px] bg-[#F9F9FB] py-[40px] md:py-[48px] px-[24px]">
       <div className="flex flex-col gap-[24px]">
+        <Link to="/">
         <img src="/tapart.svg" height={`40px`} width={`40px`} />
+        </Link>
         <div className="flex flex-col gap-[8px]">
           <p className="text-[#201F23] font-jakarta font-bold">
             Subscribe to our newsletter for info for new avatar scenes, blogs

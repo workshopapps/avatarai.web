@@ -14,7 +14,7 @@ import ErrorSuccessCard from '../utils/ErrorSuccessCard';
 const Login = () => {
 	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();
-	const { login, setToken, token } = useAuth();
+	const {token, setUser, setToken } = useAuth();
 	const [errorStatus, setErrorStatus] = useState({
 		error: null,
 		message: '',
@@ -70,16 +70,13 @@ const Login = () => {
 				//Get token and save to local storage
 				const token = response?.data?.access_token;
 				localStorage.setItem('zvt_token', JSON.stringify(token));
+
 				const user = response?.data?.userData;
 				localStorage.setItem('zvt_user', JSON.stringify(user));
 
-				//Get userData and save in local Storage
-				const userData = response?.data?.userData;
-				localStorage.setItem('userData', JSON.stringify(userData));
-
 				//save token to state
 				setToken(token);
-				login(user);
+				setUser(user);
 
 				setErrorStatus({ error: false, message: 'Login successful' });
 			})
@@ -92,14 +89,13 @@ const Login = () => {
 	};
 
 	useEffect(() => {
-		const getUser = localStorage.getItem('zvt_token');
-		if (getUser) {
-			navigate('/dashboard');
+		if (token) {
+			navigate('/dashboard', { replace: true });
 		}
 	}, [token]);
 
 	return (
-		<div className="h-screen object-scale-down flex items-center justify-center">
+		<div className="min-h-screen object-scale-down flex items-center justify-center">
 			<div className="flex gap-16 p-6 w-full justify-center max-w-[1440px]">
 				<div className="hidden lg:flex flex-col rounded-2xl items-center bg-[#6c6191] justify-center w-full max-w-[535px] px-14 py-32">
 					<div className="flex flex-col gap-4 w-full">
@@ -127,7 +123,9 @@ const Login = () => {
 				</div>
 				<div className="flex flex-col w-full items-center max-w-lg py-2">
 					<div className="logo w-10 h-10">
+						<Link to="/">
 						<img src="/tapart.svg" />
+						</Link>
 					</div>
 					<div className="h-[10%] lg:h-12"></div>
 					<div className="flex flex-col gap-4 lg:gap-10 w-full">
@@ -181,7 +179,7 @@ const Login = () => {
 							></input>
 							<div
 								onClick={handleVisibility}
-								className="h-5 w-5 absolute lg:top-[53px] top-[42px] right-14 cursor-pointer"
+								className="h-5 w-5 absolute lg:top-[53px] top-[42px] right-[1.1rem] md:right-[1.5rem] cursor-pointer "
 							>
 								<img src={passwordVisibility ? '/view.png' : '/hide.png'} />
 							</div>
