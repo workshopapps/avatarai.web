@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import logo from "../../../assets/images/tapart.png";
 import close from "../../../assets/images/close.png";
-import  {useAuth } from "../../../../context/auth-context"
 import "./nav.css";
 import { useAuth } from "../../../../context/auth-context";
 
