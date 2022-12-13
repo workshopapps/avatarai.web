@@ -12,15 +12,15 @@ const Cta = () => {
       </p>
       <div className="img-bat">
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670025105/71_jhvd30.png"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933622/71_jhvd30_11zon_ar09jk.jpg"
           alt=""
         />
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670025105/72_bdfh5z.png"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933592/72_bdfh5z_11zon_kp1din.jpg"
           alt=""
         />
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670025105/73_vav6w6.png"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933574/73_vav6w6_11zon_sfwgp0.jpg"
           alt=""
         />
       </div>
