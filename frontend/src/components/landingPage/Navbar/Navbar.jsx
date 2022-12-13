@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { NavLink,Link,useLocation } from 'react-router-dom';
 import logo from '../../../assets/images/tapart.png';
 import menu from '../../../assets/images/menu.png';
 import Button from '../Button/Button';
@@ -14,7 +14,7 @@ const Navbar = () => {
 	const [navToggle, setNavToggle] = useState(false);
 	const auth = useAuth();
 	const navigate = useNavigate();
-
+	const location  = useLocation();
 	const navHandler = () => {
 		setNavToggle((navToggle) => !navToggle);
 	};
@@ -47,22 +47,22 @@ const Navbar = () => {
 
 				<ul className="lg:flex justify-between items-center gap-2  lg:gap-5 hidden cursor-pointer w-1/2 cbk-links">
 					<li className="p-2  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
-						<Link to="/" 
-						className={ page === pages.Home ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" }
+						<NavLink to="/" 
+						className={location.pathname === '/' ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" } end
 						
-						> Home</Link>
+						> Home</NavLink>
 					</li>
 					<li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
-						<Link to="/aboutus" 
-						className={ page === pages.AboutUs ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" }
-						>About Us</Link>
+						<NavLink to="/aboutus" 
+						className={location.pathname === '/aboutus' ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" } 
+						>About Us</NavLink>
 					</li>
 					<li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
-						<Link to="/pricing" 
-						className={ page === pages.Pricing ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" }
-						>Pricing</Link>
+						<NavLink to="/pricing" 
+						className={ location.pathname === '/pricing' ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" } 
+						>Pricing</NavLink>
 					</li>
-					<li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
+					{/* <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
 						<Link to="/contactus" 
 						className={ page === pages.ContactUs ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" }
 						>Contact Us</Link>
@@ -71,7 +71,7 @@ const Navbar = () => {
 						<Link to="/faq" 
 						className={ page === pages.Faqs ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" }
 						>FAQs</Link>
-					</li>
+					</li> */}
 				</ul>
 				<div className="space-x-6 hidden lg:block">
 					{auth.token === null ? (
@@ -81,8 +81,10 @@ const Navbar = () => {
 						</Button>
 						</Link>
 					) : (
-						<span onClick={handleLogout}>
-							<Button className=" border-[#8B70E9] text-[#8B70E9] bg-white  cbk-login-btn ">Logout</Button>
+						<span>
+							<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn">
+								<Link to="/dashboard"> Create avatars </Link>
+							</Button>
 						</span>
 					)}
                     <Link to="/signup">

@@ -2,6 +2,8 @@ import React from 'react'
 import './Terms.css'
 import Terms from './Term2.png'
 import Navbar from "../landingPage/Navbar/Navbar";
+import Foooter from '../footer/Foooter';
+
 
  const TermsPage = () => {
   return (
@@ -132,6 +134,8 @@ You may get in touch with us directly at Contact@Zuvatar.com (if available) if y
 
 
         </main>
+        <Foooter /> 
+
   </div>
   )
 }

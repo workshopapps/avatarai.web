@@ -12,6 +12,10 @@
     /* background-color: green; */
     /* z-index: 9999; */
 }
+.cbk-links{
+    justify-content: space-around !important;
+    width: 30% !important;
+}
 #cbk-mobile-nav{
     z-index: 99999;
     position: fixed !important;
@@ -37,7 +41,7 @@
         margin-right: 2rem;
     }
     .cbk-links{
-        width: 60% !important;
+        width: 40% !important;
     }
 }
 @media screen and (max-width: 600px) {
