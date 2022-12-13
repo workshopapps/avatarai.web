@@ -1,20 +1,18 @@
 import React, { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { NavLink,Link,useLocation } from 'react-router-dom';
+import { NavLink, Link, useLocation } from 'react-router-dom';
 import logo from '../../../assets/images/tapart.png';
 import menu from '../../../assets/images/menu.png';
 import Button from '../Button/Button';
 import MobileNav from './MobileNav';
 import './nav.css';
-import { useContext } from 'react';
-import { NavContext, pages } from '../../../../context/nav-context';
 import { useAuth } from '../../../../context/auth-context';
 
 const Navbar = () => {
 	const [navToggle, setNavToggle] = useState(false);
 	const auth = useAuth();
 	const navigate = useNavigate();
-	const location  = useLocation();
+	const location = useLocation();
 	const navHandler = () => {
 		setNavToggle((navToggle) => !navToggle);
 	};
@@ -22,14 +20,6 @@ const Navbar = () => {
 		setNavToggle(false);
 	};
 
-	const handleLogout = () => {
-		auth.logout();
-		navigate('/');
-		console.log('log');
-	};
-
-	const {page} = useContext(NavContext);
-	
 	return (
 		<Fragment>
 			<nav className="flex justify-between items-center max-w-[100%]  lg:px-16   py-5 cbk-ds-nav">
@@ -47,20 +37,26 @@ const Navbar = () => {
 
 				<ul className="lg:flex justify-between items-center gap-2  lg:gap-5 hidden cursor-pointer w-1/2 cbk-links">
 					<li className="p-2  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
-						<NavLink to="/" 
-						className={location.pathname === '/' ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" } end
-						
-						> Home</NavLink>
+						<NavLink to="/" className={location.pathname === '/' ? 'text-[#8B70E9]' : 'hover:text-[#8B70E9]'} end>
+							{' '}
+							Home
+						</NavLink>
 					</li>
 					<li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
-						<NavLink to="/aboutus" 
-						className={location.pathname === '/aboutus' ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" } 
-						>About Us</NavLink>
+						<NavLink
+							to="/aboutus"
+							className={location.pathname === '/aboutus' ? 'text-[#8B70E9]' : 'hover:text-[#8B70E9]'}
+						>
+							About Us
+						</NavLink>
 					</li>
 					<li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple clamp">
-						<NavLink to="/pricing" 
-						className={ location.pathname === '/pricing' ? "text-[#8B70E9]" :"hover:text-[#8B70E9]" } 
-						>Pricing</NavLink>
+						<NavLink
+							to="/pricing"
+							className={location.pathname === '/pricing' ? 'text-[#8B70E9]' : 'hover:text-[#8B70E9]'}
+						>
+							Pricing
+						</NavLink>
 					</li>
 					{/* <li className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple">
 						<Link to="/contactus" 
@@ -75,23 +71,21 @@ const Navbar = () => {
 				</ul>
 				<div className="space-x-6 hidden lg:block">
 					{auth.token === null ? (
-						<Button className=" border-[#8B70E9] text-[#8B70E9] bg-white  cbk-login-btn ">
-							<Link to="/login"> Log in</Link>
-						</Button>
+						<>
+							<Link to="/login">
+								<Button className=" border-[#8B70E9] text-[#8B70E9] bg-white  cbk-login-btn ">Log in</Button>
+							</Link>
+							<Link to="/signup">
+								<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn ">Sign up</Button>
+							</Link>
+						</>
 					) : (
 						<span>
-							<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn">
-								<Link to="/dashboard"> Create avatars </Link>
-							</Button>
+							<Link to="/dashboard">
+								<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn">Create avatars</Button>
+							</Link>
 						</span>
 					)}
-					{auth.token === null && (
-						<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn ">
-							<Link to="/signup"> Sign up </Link>
-						</Button>
-					) }
-
-
 				</div>
 			</nav>
 			{navToggle && <MobileNav navClose={navClose} />}

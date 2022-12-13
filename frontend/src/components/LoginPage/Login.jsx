@@ -95,7 +95,7 @@ const Login = () => {
 	}, [token]);
 
 	return (
-		<div className="h-screen object-scale-down flex items-center justify-center">
+		<div className="min-h-screen object-scale-down flex items-center justify-center">
 			<div className="flex gap-16 p-6 w-full justify-center max-w-[1440px]">
 				<div className="hidden lg:flex flex-col rounded-2xl items-center bg-[#6c6191] justify-center w-full max-w-[535px] px-14 py-32">
 					<div className="flex flex-col gap-4 w-full">
