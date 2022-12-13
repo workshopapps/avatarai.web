@@ -12,15 +12,15 @@ function TotalPriceCards({ setShowPayment, setDetails }) {
 	return (
 		<div>
 			<PriceButton toggle={toggle} myToggler={myToggler} />
-			<div className=" relative mt-10 mb-10 ">
+			<div className=" relative mt-5 md:mt-10 mb-10 ">
 				<div className="absolute lg:block hidden z-10 text-vnc_btn  -top-3 left-0 right-0 text-center">
-					<p className="vnc_popular p-2 uppercase text-[#4D3899] font-bold rounded-lg w-fit mx-auto">Most Popular</p>
+					<p className="vnc_popular p-2 uppercase text-[#8B70E9] font-bold rounded-lg w-fit mx-auto">Most Popular</p>
 				</div>
 				<div className="flex vnc_cap align-top justify-center items-top px-4 mt-4 gap-1 lg:gap-3">
 					<PriceCardOne
 						title="Basic Plan"
 						amount={toggle ? '13.45' : `${(13.45 * 7.5).toFixed(2)}`}
-						background="#170c3c"
+						background="#8B70E9"
 						text="white"
 						space="5rem"
 						duration={toggle ? 'month' : 'year'}
@@ -35,8 +35,8 @@ function TotalPriceCards({ setShowPayment, setDetails }) {
 						top="1.5rem"
 						background="white"
 						duration={toggle ? 'month' : 'year'}
-						text="#170c3c"
-						bg="#170c3c"
+						text="#8B70E9"
+						bg="#8B70E9"
 						font="white"
 						setShowPayment={setShowPayment}
 						setDetails={setDetails}
@@ -44,7 +44,7 @@ function TotalPriceCards({ setShowPayment, setDetails }) {
 					<PriceCardThree
 						title="Premium Plan"
 						amount={toggle ? '49.45' : `${(49.45 * 7.5).toFixed(2)}`}
-						background="#170c3c"
+						background="#8B70E9"
 						text="white"
 						duration={toggle ? 'month' : 'year'}
 						space="5rem"

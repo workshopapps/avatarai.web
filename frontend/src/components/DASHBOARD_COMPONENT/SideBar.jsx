@@ -59,14 +59,14 @@ const navItems = [
 	// 	pathname: 'support',
 	// 	id: 4,
 	// },
-	{
-		title: 'Settings',
-		icon: Icon5,
-		activeIcon: Icon1Active,
-		link: '#',
-		pathname: 'setting',
-		id: 5,
-	},
+	// {
+	// 	title: 'Settings',
+	// 	icon: Icon5,
+	// 	activeIcon: Icon1Active,
+	// 	link: '#',
+	// 	pathname: 'setting',
+	// 	id: 5,
+	// },
 
 ];
 
