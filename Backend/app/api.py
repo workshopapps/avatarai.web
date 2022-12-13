@@ -35,7 +35,7 @@ sentry_sdk.init(
 )
 
 # 👇 FastAPI INSTANCE
-app = FastAPI(root_path="/api/v1")
+app = FastAPI(root_path="/")
 
 ##################################
 
@@ -60,7 +60,7 @@ app.add_middleware(
 # =================================================================
  
 
-@app.get('/app')
+@app.get('/')
 async def start():
     return {"Message":"Welcome to Zuvatar AI"}
 
