@@ -86,7 +86,7 @@ subscribe(emailField)
 
   return (
     <section className="bg-[#F9F9FB]">
-      <div className="flex flex-col md:flex-row md:items-center justify-between  bg-[#F9F9FB] w-[80%] md:[90%] m-auto py-[3.5rem]">
+      <div className="flex flex-col md:flex-row md:items-center justify-between  bg-[#F9F9FB] px-[4rem] md:[90%] m-auto py-[3.5rem]">
         <div className="flex-[100%] md:flex-[45%]">
           <div className="flex flex-col gap-[24px] w-[100%] md:w-[100%]">
             <Link to="/">
@@ -120,11 +120,11 @@ subscribe(emailField)
 
             <div
               id="big-div"
-              className="border border-[#403E46] flex items-center md:gap-4 gap-1 justify-between rounded-[16px] p-[5px] h-[52px] w-full max-w-[512px] bg-white"
+              className=" flex items-center md:gap-4 gap-1 justify-between rounded-[5px] p-[5px] h-[52px] w-full max-w-[512px] bg-white"
             >
               <div
                 id="input"
-                className="h-full flex md:gap-[8px] gap-1 items-center font-nunito grow text-[#848484] rounded py-[8px] md:pl-[12px] pl-2"
+                className="border border-[#403E46] h-full flex md:gap-[8px] gap-1 items-center font-nunito grow text-[#848484] rounded py-[8px] md:pl-[12px] pl-2"
               >
                 <img src="/sms.svg" />
                 <input
@@ -140,7 +140,7 @@ subscribe(emailField)
               <button
                 id="subscribe"
                 onClick={validate}
-                className="text-white border-[#8B70E9] cursor-pointer bg-[#8B70E9] h-full relative flex items-center font-nunito rounded-[12px] px-[20px] py-[8px]"
+                className="text-white border-[#8B70E9] cursor-pointer bg-[#8B70E9] h-full relative flex items-center font-nunito rounded-[5px] px-[20px] py-[8px]"
               >
                 <span className="text-white">Subscribe</span>
               </button>

@@ -13,7 +13,7 @@ const Foooter = () => {
       <div className="hidden md:block">
       <div
       className="
-      flex    justify-between  bg-[#FFFFF] w-[80%] md:[90%] m-auto py-[3.5rem] ">
+      flex    justify-between  bg-[#FFFFF] px-[4rem] md:[90%] m-auto py-[3.5rem] ">
         <div className="flex-[45%]">
 
         <div className="text-[#201F23] w-[80%] md:w-[85%]">
@@ -62,17 +62,17 @@ designed to generate perfect avatars for you.
              </div>
             </div>
       </div>
-      <div className="flex justify-between  bg-[#FFFFF] w-[80%] md:[90%] m-auto py-[1.5rem]  bg-[#FFFFFF]">
+      <div className="flex justify-between  bg-[#FFFFF] px-[4rem] md:[90%] m-auto py-[1.5rem]  bg-[#FFFFFF]">
               <div className="flex gap-x-[5rem] text-[#2B292F]">
                 <p className="text-sm flex items-center gap-3">
                 <img src={Call} alt="/" />
                 
-                  <a href="mailto:zuvatar@gmail.com"> zuvatar@gmail.com</a>
+                  <a className="text-md" href="mailto:zuvatar@gmail.com"> zuvatar@gmail.com</a>
                 </p>
                 <p className="text-sm flex items-center gap-3">
                   
                   <img src={Mail} alt="/" />
-                  <a href="tel:+2347012345678"> +2347012345678</a>
+                  <a className="text-sm" href="tel:+2347012345678"> +2347012345678</a>
                 </p>
               </div>
               <div className="flex items-center justify-center space-x-4 text-[#000]">
