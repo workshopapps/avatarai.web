@@ -39,6 +39,8 @@ client = boto3.client(
 async def get_all_photos():#(token :Token = Depends(get_current_user)):
     all_photos = await db['avatar_pictures'].find().to_list(1000)
     #all_photos = json.loads(json_util.dumps(all_photos))
+
+
     avatar_model = []
     for photo in all_photos:
         avatar_model.append(
@@ -124,7 +126,7 @@ async def add_photo(files: list[UploadFile] = File(...), email: str = Form(defau
     
     
 
-    msg = ff'Hi! We have a new upload from {email} from {email}.'
+    msg = f'Hi! We have a new upload from {email}.'
 
     #The mail addresses and password
     sender_address = os.environ.get('EMAIL')
