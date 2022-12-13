@@ -405,14 +405,14 @@
         width: 90%;
         max-width: 900px;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         margin: 30px auto 60px;
 
     }
 
     .logo_opt{
-        width: 9%;
+        width: 25%;
         height: auto;
         margin: 0px;
         
@@ -448,9 +448,7 @@
 
     }
 
-    .logo_opt_2 {
-        /* margin-right: auto; */
-    }
+   
 }
 @media (min-width: 770px) {
     .rb_opt{

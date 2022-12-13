@@ -29,9 +29,16 @@ const Navbar = () => {
 					</Link>
 					<div className="flex justify-between cbk-mobile-board  lg:hidden pr-3">
 						<img src={menu} alt="" className=" mx-5 my-1" onClick={navHandler} />
+
+				       <span>
+					   <Link to="/login">
 						<Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn">
-							<Link to="/login"> Create avatars </Link>
+							 Create avatars 
 						</Button>
+						</Link>
+					   </span>
+					   
+						
 					</div>
 				</div>
 

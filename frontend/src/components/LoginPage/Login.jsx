@@ -123,7 +123,9 @@ const Login = () => {
 				</div>
 				<div className="flex flex-col w-full items-center max-w-lg py-2">
 					<div className="logo w-10 h-10">
+						<Link to="/">
 						<img src="/tapart.svg" />
+						</Link>
 					</div>
 					<div className="h-[10%] lg:h-12"></div>
 					<div className="flex flex-col gap-4 lg:gap-10 w-full">
@@ -177,7 +179,7 @@ const Login = () => {
 							></input>
 							<div
 								onClick={handleVisibility}
-								className="h-5 w-5 absolute lg:top-[53px] top-[42px] right-14 cursor-pointer"
+								className="h-5 w-5 absolute lg:top-[53px] top-[42px] right-[1.1rem] md:right-[1.5rem] cursor-pointer "
 							>
 								<img src={passwordVisibility ? '/view.png' : '/hide.png'} />
 							</div>
