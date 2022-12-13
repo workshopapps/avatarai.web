@@ -20,7 +20,7 @@ import os
 #         server.sendmail(sender, receiver, message)
 
 
-def sendmail(url, email):
+async def sendmail(url, email):
 
     mail_content = '''Hello,
     This is a simple mail. There is only text, no attachments are there The mail is sent using Python SMTP library.
@@ -45,6 +45,6 @@ def sendmail(url, email):
     session.sendmail(sender_address, receiver_address, text)
     session.quit()
     
-#     print('Mail Sent')
+    print('Mail Sent')
 
 sendmail("https://hngtest.s3.amazonaws.com/man_1.jpeg", "musaadamuw@gmail.com")

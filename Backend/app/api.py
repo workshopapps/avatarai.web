@@ -60,7 +60,7 @@ app.add_middleware(
 # =================================================================
  
 
-@app.get('/app')
+@app.get('/')
 async def start():
     return {"Message":"Welcome to Zuvatar AI"}
 
