@@ -1,6 +1,4 @@
 from fastapi import APIRouter, status
-import requests
-from paystack.util import BusinessDataObject 
 from fastapi.responses import JSONResponse
 from database import db
 
