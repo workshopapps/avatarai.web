@@ -1,12 +1,15 @@
 import Logo from "./Logo";
 import NavigationFooter from "./NavigationFooter";
 import chatSideBarContent from "./chatSideBarContent";
+import { Link } from "react-router-dom";
 
 const ChatSideBar = () => {
   return (
     <div className="flex flex-col">
       <div className="h-12 mb-[70px]">
+        <Link to="/">
         <Logo />
+        </Link>
       </div>
       <div className="flex flex-col gap-3">
         {chatSideBarContent.map((content) => {

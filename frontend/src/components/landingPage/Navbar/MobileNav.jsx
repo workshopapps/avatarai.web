@@ -3,9 +3,16 @@ import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import logo from "../../../assets/images/tapart.png";
 import close from "../../../assets/images/close.png";
+import  {useAuth } from "../../../../context/auth-context"
 import "./nav.css";
 
 const MobileNav = ({ navClose }) => {
+  const auth =useAuth()
+  const handleLogout = () => {
+		auth.logout();
+		navigate('/');
+		console.log('log');
+	};
   return (
     <div
       className="bg-white w-[261px] fixed top-0 left-0 lg:hidden z-20 h-full "
@@ -58,16 +65,35 @@ const MobileNav = ({ navClose }) => {
           </li> */}
         </ul>
         <div className=" w-full flex flex-col items-start justify-start gap-y-5">
-          <Button
-            className="inline-flex justify-center items-center px-8 py-3  border border-[#8B70E9]  
-          rounded-[8px] font-semibold text-md text-[#8B70E9] bg-white transition ease-in-out duration-150 cbk-mobile-login-btn"
-          >
-            <Link to="/Login"> Log in</Link>
-          </Button>
 
-          <Button className="text-white bg-[#8B70E9] cbk-mobile-login-btn">
-            <Link to="/Signup"> Sign up </Link>
-          </Button>
+        {auth.token === null ? (
+						 <Link to="/Login" className=" w-full">
+             <button
+               className="inline-flex justify-center items-center px-8 py-3  border border-[#8B70E9]  
+             rounded-[8px] font-semibold text-md text-[#8B70E9] bg-white transition ease-in-out duration-150 cbk-mobile-login-btn"
+             >
+                Log in
+             </button>
+             </Link>
+					) : (
+						<span onClick={handleLogout} className="w-full">
+							 <button
+               className="inline-flex justify-center items-center px-8 py-3  border border-[#8B70E9]  
+             rounded-[8px] font-semibold text-md text-[#8B70E9] bg-white transition ease-in-out duration-150 cbk-mobile-login-btn"
+             >
+                Logout
+             </button>
+						</span>
+					)}
+
+{auth.token === null ? (
+  <Link to="/Signup" className=" w-full">
+  <Button className="text-white bg-[#8B70E9] cbk-mobile-login-btn">
+     Sign up 
+  </Button>
+  </Link>
+) :""}
+          
         </div>
       </nav>
     </div>
