@@ -1,3 +1,7 @@
+#root{
+    max-width: 1440px;
+    margin: auto;
+}
 .bat-header{
     background-image: url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933634/header_11zon_sl6hur.jpg");
     height: 90vh;
@@ -25,7 +29,7 @@
 }
 .bat-header-content h2 {
     font-size: 48px;
-    font-weight: 600;
+    font-weight: 700;
     z-index: 999;
     color: white;
     width: 70%;
@@ -123,7 +127,7 @@
 }
 @media only screen and (max-width: 420px) {
   .bat-header-content h2 {
-    width: 95%;
+    width: 98%;
     font-size: 24px;
   }
   .bat-header-content p {

@@ -80,14 +80,13 @@ designed to generate perfect avatars for you.
       <div className="flex justify-between  bg-[#FFFFF] px-[4rem] md:[90%] m-auto py-[1.5rem]  bg-[#FFFFFF]">
               <div className="flex gap-x-[5rem] text-[#2B292F]">
                 <p className="text-sm flex items-center gap-3">
-                <img src={Call} alt="/" />
+                <img src={Mail} alt="/" />
                 
-                  <a className="text-md" href="mailto:zuvatar@gmail.com"> zuvatar@gmail.com</a>
+                  <a className="text-md mail" href="mailto:zuvatar@gmail.com"> zuvatar@gmail.com</a>
                 </p>
                 <p className="text-sm flex items-center gap-3">
-                  
-                  <img src={Mail} alt="/" />
-                  <a className="text-sm" href="tel:+2347012345678"> +2347012345678</a>
+                    <img src={Call} alt="/" />
+                  <a className="text-md num" href="tel:+2347012345678"> +2347012345678</a>
                 </p>
               </div>
               {/* <div className="flex items-center justify-center space-x-4 text-[#000]">
@@ -154,12 +153,12 @@ designed to generate perfect avatars for you.
               <div className="flex flex-col space-y-2 text-[#2B292F] ml-[-1rem] md:ml-0">
                 <p className="font-semibold text-xl">Socials</p>
                 <p className="text-sm flex items-center gap-3">
-                <img src={Call} alt="/" />
+                <img src={Mail} alt="/" />
                   <a href="mailto:zuvatar@gmail.com">zuvatar@gmail.com</a>
                 </p>
                 <p className="text-sm flex items-center gap-3">
                   
-                  <img src={Mail} alt="/" />
+                <img src={Call} alt="/" />
                   <a href="tel:+2347012345678"> +2347012345678</a>
                 </p>
               </div>
