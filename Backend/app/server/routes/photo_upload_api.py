@@ -75,7 +75,7 @@ async def add_photo(files: list[UploadFile] = File(...), email: str = Form(defau
         count = count + 1
         file.filename = f"{photo_class}_{count}.jpeg"
         #file_folder = f"{email}/training/{file.filename}"
-        file_folder = f"{file_folder_id}/training/{file.filename}"
+        file_folder = f"{email}/training/{file_folder_id}/{file.filename}"
         image_io.seek(0)
         bucket.upload_fileobj(image_io, file_folder, ExtraArgs={"ACL": "public-read"})
         
