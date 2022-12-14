@@ -36,6 +36,7 @@ const Navbar = () => {
               src={menu}
               alt=""
               className=" mx-5 my-1"
+              id = "mtmt"
               onClick={navHandler}
             />
 
