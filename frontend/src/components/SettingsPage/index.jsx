@@ -18,7 +18,7 @@ export default function Settings() {
           <li onClick={() => setPart("Support")}>Support</li>
         </ul>
       </nav>
-      <div className="p-5">
+      <div className="border-box flex items-center">
         {part === "Account" ? (
           <Account />
         ) : part === "Preferences" ? (

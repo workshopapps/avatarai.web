@@ -102,8 +102,8 @@ function App() {
 			<Route element={<PrivateRoute />}>
 				<Route path="/dashboard" element={<DesktopEye />} />
 				<Route path="/profile" element={<Profile2 />} />
-				<Route path='/setting' element={<Settings/>}/>
 			</Route>
+				<Route path='/setting' element={<Settings/>}/>
 
 			<Route path="*" element={<Four404 />} />
 		</Routes>
