@@ -109,11 +109,12 @@
 .vnc-text {
     text-align: center;
     padding: 2rem 0;
+    font-weight: 600;
 }
 
 .vnc-text h2 {
     font-weight: 600;
-    font-size: clamp(1rem, 4vw, 2rem);
+    font-size: clamp(1.2rem, 4vw, 2rem);
 }
 
 .vnc-text p {
