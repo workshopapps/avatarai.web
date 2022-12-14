@@ -12,11 +12,11 @@ const Header = () => {
           Create your own <span>AI-generated </span>avatars
         </h2>
         <p>
-          Create Profile pictures, Online gaming display pictures, Pet potraits
+          Create profile pictures, online gaming display pictures, pet potraits
           and much more on the go.
         </p>
         <Link to="/login">
-        <Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn bat-btn">
+        <Button className="text-white border-[#8B70E9] bg-[#8B70E9]  bat-btn">
            Generate Avatars
         </Button>
         </Link>

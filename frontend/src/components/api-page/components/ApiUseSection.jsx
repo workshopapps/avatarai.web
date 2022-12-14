@@ -28,7 +28,7 @@ const useCases = [
 ];
 
 const ApiUseSection = () => {
-	return (
+  return (
     <div className="w-full py-20">
       <div className="max-w-[1240px] mx-auto px-5">
         <div className="flex flex-col md:flex-row gap-5 md:justify-between">
@@ -48,7 +48,7 @@ const ApiUseSection = () => {
           <div className="max-w-[423px]">
             <div className="mb-[24px]">
               <img
-                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670063482/pencil_bp8kbq.png"
+                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670980017/pencil_bp8kbq_11zon_mhjpdl.webp"
                 alt="pencil"
                 className="mb-[6px]"
               />
@@ -62,7 +62,7 @@ const ApiUseSection = () => {
             </div>
             <div className=" mb-[24px]">
               <img
-                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670063482/pencil_bp8kbq.png"
+                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670980017/pencil_bp8kbq_11zon_mhjpdl.webp"
                 alt="pencil"
                 className="mb-[6px]"
               />
@@ -76,7 +76,7 @@ const ApiUseSection = () => {
             </div>
             <div className="">
               <img
-                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670063482/pencil_bp8kbq.png"
+                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670980017/pencil_bp8kbq_11zon_mhjpdl.webp"
                 alt="pencil"
                 className="mb-[6px]"
               />
@@ -93,7 +93,7 @@ const ApiUseSection = () => {
 
           <div className="max-w-[780px]">
             <img
-              src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670063241/style-demo_pukosw.png"
+              src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670980017/style-demo_pukosw_11zon_octrzq.webp"
               alt="Style demo"
               className=""
             />

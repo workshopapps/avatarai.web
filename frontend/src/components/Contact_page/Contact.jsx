@@ -57,8 +57,8 @@ const Contact = () => {
     }
 
     postMessage({
-      firstname: document.getElementById("firstname").value,
-      lastname: document.getElementById("lastname").value,
+      first_name: document.getElementById("firstname").value,
+      last_name: document.getElementById("lastname").value,
       email: document.getElementById("email").value,
       message: document.getElementById("message").value,
     });
@@ -86,7 +86,7 @@ const Contact = () => {
         setStatusImg(Success);
         setStatus("Success !");
         setMessage(
-          "Your message was successfully sent, Thanks for contacting us and watchout for our response"
+          "Your message was successfully sent, Thanks for contacting us and watch out for our response"
         );
         setStateColor("green");
         setLoading(null);
@@ -120,7 +120,7 @@ const Contact = () => {
         <div className="overlay"></div>
         <img
           className="contact-img"
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670938078/barner_kl4dyj_11zon_yu97ed.jpg"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670938078/barner_kl4dyj_11zon_yu97ed.webp"
         />
         <div className="barner-text">
           <h1 className="text-white font-semibold text-2xl mb-5">
@@ -129,16 +129,17 @@ const Contact = () => {
           <p className="text-white font-semibold text-5xl mb-5">
             How Can We Help You ?
           </p>
-          <button
-            className="text-white bg-violet-500 p-3 rounded-md"
-            onClick={() => {
-              document
-                .getElementById("contact-form")
-                .scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            Send A Message
-          </button>
+          {/*<button*/}
+          {/*  className="text-white bg-violet-500 p-3 rounded-md"*/}
+          {/*  onClick={() => {*/}
+          {/*    document*/}
+          {/*      .getElementById("contact-form")*/}
+          {/*      .scrollIntoView({ behavior: "smooth" });*/}
+          {/*    console.log("scroll");*/}
+          {/*  }}*/}
+          {/*>*/}
+          {/*  Send A Message*/}
+          {/*</button>*/}
         </div>
       </div>
       <div className="flex max-[1000px]:block">
@@ -210,7 +211,7 @@ const Contact = () => {
         </form>
         <img
           className="w-1/2 contact-img max-[1000px]:w-3/4"
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670938076/illus_ubfd58_11zon_qphrjh.jpg"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670938076/illus_ubfd58_11zon_qphrjh.webp"
         />
       </div>
       {/*  <div className="contact-overlay" id={overlay} onClick={() => {setOverlay('overlay-hidden')}}>

@@ -13,7 +13,7 @@ const Section3 = () => {
             illustrations into your app or website.
           </p>
           <img
-            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670063242/code_um7xfs.png"
+            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670980392/code_um7xfs_11zon_jrx4eh.webp"
             alt=""
           />
           <div className="flex justify-center">
@@ -40,19 +40,19 @@ const Section3 = () => {
           <div className="grid grid-cols-12 gap-3 md:h-[542px]">
             <div className="col-span-12 md:col-span-6 flex items-center gap-3 h-full md:mr-3 mb-10 md:mb-0">
               <img
-                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670063483/img1_ozgpo7.png"
+                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670980392/img1_ozgpo7_11zon_dktnl1.webp"
                 className="h-full w-1/2"
                 alt=""
               />
               <img
-                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670063483/img2_wkk8is.png"
+                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670980392/img2_wkk8is_11zon_qnkgdj.webp"
                 className="h-full w-1/2"
                 alt=""
               />
             </div>
             <div className="col-span-12 md:col-span-6 h-full relative rounded-lg w-full">
               <img
-                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670063241/purple-pattern_al89aw.png"
+                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670980392/purple-pattern_al89aw_11zon_zq2cd8.webp"
                 className="md:h-full w-full rounded-lg"
                 alt="purple background"
               />

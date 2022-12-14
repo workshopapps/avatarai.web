@@ -12,13 +12,13 @@ const ContactUs = () => {
 					<br />
 					Our team is happy to assist you
 				</h1>
-				<p className="mb-[16px] md:mb-[64px] text-[#C6B4FE] text-xs md:text-[24px] leading-[16px] md:leading-[33px] font-medium">
+				<p className="mb-[16px] md:mb-[64px] text-[#d0d0d0] text-xs md:text-[24px] leading-[16px] md:leading-[33px] font-medium ">
 					Ask about Zuvatar products, pricing, implementation or anything else. Our highly trained reps are standing by,
 					ready to help
 				</p>
 
-				<Button className="px-[26px] py-3 md:py-[24px] outline-none normal-case border-none text-sm md:text-[28px] font-medium rounded-lg bg-[#FFFFFF] text-[#8B70E9]">
-					<Link to="/contact-us">Contact Us</Link>
+				<Button className="px-[26px] py-3 md:py-[24px] outline-none normal-case border-none text-sm md:text-[28px] rounded-lg bg-[#FFFFFF] text-[#8B70E9]">
+					<Link to="/contact-us" className='font-semibold'>Contact Us</Link>
 				</Button>
 			</div>
 			<div className="w-full flex items-end justify-end">

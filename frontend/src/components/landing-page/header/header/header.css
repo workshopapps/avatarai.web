@@ -1,9 +1,9 @@
 .bat-header{
     background-image: url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933634/header_11zon_sl6hur.jpg");
-    height: 35rem;
+    height: 90vh;
     background-repeat: no-repeat;
     background-attachment: scroll;
-    background-position: 100% ;
+    background-position:center ;
     background-size: cover;
     text-align: center;
     color: white;
@@ -12,7 +12,7 @@
 }
 .bat-header-overlay{
     background-color: rgba(0, 0, 0, 0.2);
-    height: 35rem;
+    height: 90vh;
     width: 100%;
     position: absolute;
     top: 0%;
@@ -21,55 +21,56 @@
     position: relative;
     z-index: 99;
     color: white;
-    padding: 10rem 0;
+    padding: 15rem 0;
 }
 .bat-header-content h2 {
-    font-size: 60px;
+    font-size: 48px;
     font-weight: 600;
     z-index: 999;
     color: white;
-    width: 50%;
+    width: 70%;
     line-height: 1;
     margin: 0 auto;
 }
 .bat-header-content p {
-    width: 30%;
-    font-size: 20px;
+    width: 50%;
+    font-size: 24px;
     margin: 0 auto;
     z-index: 999;
     margin-top: 1rem;
     color: white;
 
 }
-.bat-header-content span{
-    color: #8B70E9;
-    z-index: 999;
-    /* font-size: 60px; */
+.bat-header-content span {
+  color: #8b70e9;
+  z-index: 999;
+  /* font-size: 60px; */
 }
-.bat-link{
-    background-color: white;
+.bat-link {
+  background-color: white;
 }
 .bat-btn{
     background-color: #8B70E9;
     color: white;
-    padding: 0.5rem 1rem;
+    padding: 1rem 2rem !important;
     margin: 2.5rem 0;
+    font-size: 20px;
 }
 
 @media only screen and (max-width: 1200px) {
-    .bat-header-content h2 {
-        font-size: 54px;
-    }
+  .bat-header-content h2 {
+    font-size: 54px;
+  }
 }
 @media only screen and (max-width: 1024px) {
-    .bat-header-content h2 {
-        width: 70%;
-        font-size: 44px;
-    }
-    .bat-header-content p {
-        width: 50%;
-        font-size: 18px;
-    }    
+  .bat-header-content h2 {
+    width: 70%;
+    font-size: 44px;
+  }
+  .bat-header-content p {
+    width: 50%;
+    font-size: 18px;
+  }
 }
 
 @media only screen and (max-width: 756px) {
@@ -81,12 +82,22 @@
         width: 60%;
         font-size: 16px;
 
-    }    
+    }
+    .bat-header{
+        height: 25rem;
+        background-position: 70% ;
+
+    }  
+    .bat-header-overlay{
+        height: 25rem;
+    } 
+    .bat-header-content{
+        padding: 5rem 0;
+    }  
 
 }
 @media only screen and (max-width: 550px) {
     .bat-header{
-        /* background-size: contain; */
         height: 23rem;
         background-position: 70% ;
 
@@ -96,19 +107,26 @@
         font-size: 13px;
     }    
     .bat-header-overlay{
-        height: 20rem;
+        height: 23rem;
     } 
     .bat-header-content{
-        padding: 3rem 0;
+        padding: 5rem 0;
     }
+    .bat-btn{
+        background-color: #8B70E9;
+        color: white;
+        padding: 1rem 1.5rem !important;
+        margin: 2.5rem 0;
+        font-size: 16px;
+    }
+    
 }
 @media only screen and (max-width: 420px) {
-    .bat-header-content h2 {
-        width: 95%;
-        font-size: 24px;
-    }
-    .bat-header-content p {
-        width: 90%;
-    }    
-
+  .bat-header-content h2 {
+    width: 95%;
+    font-size: 24px;
+  }
+  .bat-header-content p {
+    width: 90%;
+  }
 }
