@@ -61,7 +61,7 @@ const FrameEye = ({ setStep, setPhotoUser, photoUser }) => {
 							className={`vnc-selection cursor-pointer ${e.user === photoUser && 'active'}`}
 						>
 							<p>{e.user}</p>
-							<img className="vnc-icon-image" src={e.icon} alt="" />
+							<img className="w-[3rem] md:w-auto" src={e.icon} alt="" />
 						</div>
 					))}
 				</div>
