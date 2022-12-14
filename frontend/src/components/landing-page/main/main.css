@@ -50,9 +50,28 @@
         width: 30px;
     }
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 600px) {
+    .main-ony{
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        place-items: center;
+        gap: 5%;
+        margin: 1rem 0;
+        padding: 0 2rem;
+    }
     .group img{
         width: 20px;
+    }
+    #one{
+        display: none;
+    }
+    .main2-ony{
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        place-items: center;
+        gap: 5%;
+        margin: 1rem 0;
+        padding: 0 2rem;
     }
 }
 @media only screen and (min-width: 2000px) {

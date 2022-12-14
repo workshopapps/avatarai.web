@@ -82,12 +82,22 @@
         width: 60%;
         font-size: 16px;
 
-    }    
+    }
+    .bat-header{
+        height: 25rem;
+        background-position: 70% ;
+
+    }  
+    .bat-header-overlay{
+        height: 25rem;
+    } 
+    .bat-header-content{
+        padding: 5rem 0;
+    }  
 
 }
 @media only screen and (max-width: 550px) {
     .bat-header{
-        /* background-size: contain; */
         height: 23rem;
         background-position: 70% ;
 
@@ -97,10 +107,10 @@
         font-size: 13px;
     }    
     .bat-header-overlay{
-        height: 20rem;
+        height: 23rem;
     } 
     .bat-header-content{
-        padding: 3rem 0;
+        padding: 5rem 0;
     }
 }
 @media only screen and (max-width: 420px) {

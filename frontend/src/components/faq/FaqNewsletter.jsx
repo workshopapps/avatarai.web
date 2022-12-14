@@ -86,7 +86,7 @@ subscribe(emailField)
 
   return (
     <section className="bg-[#F9F9FB]">
-      <div className="flex flex-col md:flex-row md:items-center justify-between  bg-[#F9F9FB] px-[4rem] md:[90%] m-auto py-[3.5rem]">
+      <div className="flex flex-col md:flex-row md:items-center justify-between  bg-[#F9F9FB] md:px-[4rem] px-[1.5rem] md:[90%] m-auto py-[3.5rem]">
         <div className="flex-[100%] md:flex-[45%]">
           <div className="flex flex-col gap-[24px] w-[100%] md:w-[100%]">
             <Link to="/">
@@ -124,7 +124,7 @@ subscribe(emailField)
             >
               <div
                 id="input"
-                className="border border-[#403E46] h-full flex md:gap-[8px] gap-1 items-center font-nunito grow text-[#848484] rounded py-[8px] md:pl-[12px] pl-2"
+                className="border border-[#403E46] h-full flex justify-between md:gap-[8px] gap-1 items-center font-nunito grow text-[#848484] rounded py-[8px] md:pl-[12px] pl-2"
               >
                 <img src="/sms.svg" />
                 <input
@@ -142,7 +142,7 @@ subscribe(emailField)
                 onClick={validate}
                 className="text-white border-[#8B70E9] cursor-pointer bg-[#8B70E9] h-full relative flex items-center font-nunito rounded-[5px] px-[20px] py-[8px]"
               >
-                <span className="text-white">Subscribe</span>
+                Subscribe
               </button>
             </div>
             <p className="text-[#AFB6B6] text-sm">

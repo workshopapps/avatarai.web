@@ -35,9 +35,21 @@
 }
 @media only screen and (max-width: 800px) {
     .be{
-        font-size: 24px;
+        font-size: 28px;
+    }
+    .any-sect p{
+        width: 80%;
     }
 }
+@media only screen and (max-width: 580px) {
+    .be{
+        font-size: 22px;
+    }
+    .any-sect p{
+        width: 80%;
+    }
+}
+
 @media only screen and (max-width: 500px) {
     /* .be{
         font-size: 16px;

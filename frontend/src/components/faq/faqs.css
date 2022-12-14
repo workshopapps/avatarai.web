@@ -34,3 +34,8 @@
         font-size: 14px;
     }
 }
+@media(max-width: 310px){
+    #input{
+        font-size: 10px;
+    }
+}
