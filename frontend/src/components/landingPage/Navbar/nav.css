@@ -7,6 +7,7 @@
 }
 .cbk-ds-nav{
     width: 100vw;
+    /* width: 70%; */
     /* position: fixed;
     height: 5rem; */
     /* background-color: green; */
@@ -34,23 +35,33 @@
     width: fit-content;
     height: fit-content;
 }
+
+
 @media screen and (max-width: 1198px) {
     .cbk-login-btn{
         padding: 10px !important;
         /* margin-right: -5px !important; */
-        margin-right: 2rem;
+        /* margin-right: 2rem; */
     }
     .cbk-links{
         width: 40% !important;
     }
 }
-@media screen and (max-width: 600px) {
+
+@media (max-width: 1025px) {
+    .cbk-login-btn {
+        margin-right: 2.5rem;
+    }
+}
+@media screen and (max-width: 768px) {
     .cbk-login-btn{
        
         margin-right: 1rem;
     }
    
 }
+
+
 @keyframes nav{
     0%{
         left: -200px;
