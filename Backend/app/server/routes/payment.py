@@ -1,14 +1,14 @@
 from fastapi import APIRouter, status
-import requests
-from paystack.util import BusinessDataObject 
+
 from fastapi.responses import JSONResponse
 from database import db
 
 
 from pypaystack import Transaction
 
+
 import os
-from requests.auth import HTTPBasicAuth
+
 from server.models.schemas import Payment
 import json
 from bson import json_util

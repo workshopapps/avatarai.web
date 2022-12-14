@@ -83,12 +83,13 @@
   }
 } */
 
-.vnc-main {
+
+/* .vnc-main {
     display: grid;
     place-content: center;
     padding: 1rem;
     width: 100%;
-}
+} */
 
 .vnc-icon-image {
     min-width: 4rem

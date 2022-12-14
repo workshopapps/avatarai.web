@@ -7,57 +7,57 @@ const Main = () => {
       <div className="main-ony">
         <img
           id="one"
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670024426/part1_mfftwt.png"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933615/part1_mfftwt_11zon_qvwmyy.webp"
           alt=""
         />
         <img
           id="one"
           src="
-        https://res.cloudinary.com/dzqaqbrng/image/upload/v1670024423/cv_i1rtxl.png"
+        https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933620/cv_i1rtxl_11zon_llhyss.webp"
           alt=""
         />
         <img
           src="
-        https://res.cloudinary.com/dzqaqbrng/image/upload/v1670024427/part3_aaawsf.png"
+     https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933613/part3_aaawsf_11zon_mvyibr.webp"
           alt=""
         />
         <img
           id="one"
           src="
-        https://res.cloudinary.com/dzqaqbrng/image/upload/v1670024427/part4_tygqcu.png"
+        https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933620/part4_tygqcu_11zon_bars9c.webp"
           alt=""
         />
         <img
           id="one"
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670024427/part5_t0ahcw.png"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933582/part5_t0ahcw_11zon_dvfk0w.webp"
           alt=""
         />
       </div>
       <div className="group">
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670024423/Group_kryqhu.png"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933575/Group_kryqhu_11zon_xrvugj.webp"
           alt=""
         />
       </div>
       <div className="main2-ony">
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670024425/mbb1_oyrt5a.png"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933608/mbb1_oyrt5a_11zon_fmsap8.webp"
           alt=""
         />
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670024425/mbb2_jrl8wx.png"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933594/mbb2_jrl8wx_11zon_rpm1yk.webp"
           alt=""
         />
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670024426/mbb3_rf2lfz.png"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933577/mbb3_rf2lfz_11zon_nof6fw.webp"
           alt=""
         />
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670024426/mbb4_yp1cx2.png"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933608/mbb4_yp1cx2_11zon_rd0ehx.webp"
           alt=""
         />
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670024426/mbb5_isvgod.png"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933563/mbb5_isvgod_11zon_vgpdos.webp"
           alt=""
         />
       </div>

@@ -1,5 +1,5 @@
-import React from 'react'
-import './cta.css'
+import React from "react";
+import "./cta.css";
 
 const Cta = () => {
   return (
@@ -12,20 +12,20 @@ const Cta = () => {
       </p>
       <div className="img-bat">
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670025105/71_jhvd30.png"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933622/71_jhvd30_11zon_ar09jk.webp"
           alt=""
         />
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670025105/72_bdfh5z.png"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933592/72_bdfh5z_11zon_kp1din.webp"
           alt=""
         />
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670025105/73_vav6w6.png"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933574/73_vav6w6_11zon_sfwgp0.webp"
           alt=""
         />
       </div>
     </div>
   );
-}
+};
 
-export default Cta
+export default Cta;
