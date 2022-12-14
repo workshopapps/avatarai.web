@@ -12,7 +12,7 @@ const FaqGetInTouch = () => {
           Still have questions?
         </h3>
       </div>
-      <Link to="/contact-us" className="flex items-center w-full">
+      <Link to="/contactus" className="flex items-center w-full">
         <Button className="cursor-pointer text-white m-auto font-semibold flex items-center justify-center h-[48px] w-[100%] md:w-[150px] ld:w-[150px] bg-[#8B70E9] rounded">
           <p data-testid="button" className="text-white text-[16px]">
             Contact Us
