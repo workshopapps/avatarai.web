@@ -73,17 +73,17 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 			});
 	};
 
-  const imageCheck = () => {
-    if (imageToUpload.length < 10 || imageToUpload.length > 20) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Please upload a minimum of 10 images and maximum of 20 images.',
-      });
-    } else {
-      sendImages();
-    }
-  };
+	const imageCheck = () => {
+		if (imageToUpload.length < 10 || imageToUpload.length > 20) {
+			Swal.fire({
+				icon: 'error',
+				title: 'Oops...',
+				text: 'Please upload a minimum of 10 images and maximum of 20 images.',
+			});
+		} else {
+			sendImages();
+		}
+	};
 
 	const checkSize = () => {
 		setSize(window.innerWidth);
@@ -113,9 +113,9 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 		<div className="w-full h-full relative overflow-x-hidden">
 			{!showAlertLink && !preview && (
 				<div style={{ display: show ? 'block' : 'none' }} className="aso-dd2-content-container">
-					<div className="aso-dd2-top w-full">
-						<div className="link absolute" onClick={() => setStep(step - 1)}>
-							<div className="previous-page ">
+					<div className="flex items-center w-full mt-4 mb-8 md:my-10">
+						<div className="absolute" onClick={() => setStep(step - 1)}>
+							<div className="">
 								{size < 760 ? (
 									<img src={arrowRightMobile} alt="share icon" />
 								) : (
@@ -143,9 +143,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 								{/* {labelText} */}
 							</label>
 						</div>
-						<Button type="button" className="aso-dd2-btn">
-							Upload
-						</Button>
+					{/* <Button type="button" className="bg-[#8B70E9] w-100 w-lg-120 text-white" children="Upload" /> */}
 					</form>
 				</div>
 			)}
@@ -162,9 +160,9 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 						<GeneratingAvatar />
 					) : (
 						<div className="vic_content">
-							<div className="aso-dd2-top w-full">
+							<div className="flex items-center w-full mt-4 mb-8 md:my-10">
 								<div className="absolute" onClick={() => setStep(step - 1)}>
-									<div className="previous-page">
+									<div className="">
 										{size < 760 ? (
 											<img src={arrowRightMobile} alt="share icon" />
 										) : (
