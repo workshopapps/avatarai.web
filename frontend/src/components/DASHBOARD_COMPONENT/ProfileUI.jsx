@@ -13,7 +13,7 @@ const ProfileUI = () => {
 	};
 	
 	return (
-		<div className="flex items-center justify-between border-t border-[#F4F5F6] pt-4 px-5">
+		<div className="flex items-center justify-between border-t border-box border-[#F4F5F6] pt-4 px-3">
 			<div className="flex items-center gap-3 ">
 				<div className="bg-[#8B70E94D] w-[30px] h-[30px] rounded-full overflow-hidden">
 					<img src={Avatar} alt="avatar" className="w-full h-full" />
@@ -21,7 +21,7 @@ const ProfileUI = () => {
 
 				<p className="flex flex-col">
 					<span className="text-[#0D0F11] font-medium text-sm">{user?.first_name}</span>
-					<span className="text-[#AFB6B6] text-[10px]">{user?.email}</span>
+					<span className="text-[#0d0f11] text-sm ">{user?.email}</span>
 				</p>
 			</div>
 			<div>
