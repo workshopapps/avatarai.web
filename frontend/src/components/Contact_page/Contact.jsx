@@ -57,8 +57,8 @@ const Contact = () => {
     }
 
     postMessage({
-      firstname: document.getElementById("firstname").value,
-      lastname: document.getElementById("lastname").value,
+      first_name: document.getElementById("firstname").value,
+      last_name: document.getElementById("lastname").value,
       email: document.getElementById("email").value,
       message: document.getElementById("message").value,
     });
@@ -86,7 +86,7 @@ const Contact = () => {
         setStatusImg(Success);
         setStatus("Success !");
         setMessage(
-          "Your message was successfully sent, Thanks for contacting us and watchout for our response"
+          "Your message was successfully sent, Thanks for contacting us and watch out for our response"
         );
         setStateColor("green");
         setLoading(null);
@@ -129,17 +129,17 @@ const Contact = () => {
           <p className="text-white font-semibold text-5xl mb-5">
             How Can We Help You ?
           </p>
-          <button
-            className="text-white bg-violet-500 p-3 rounded-md"
-            onClick={() => {
-              document
-                .getElementById("contact-form")
-                .scrollIntoView({ behavior: "smooth" });
-              console.log("scroll");
-            }}
-          >
-            Send A Message
-          </button>
+          {/*<button*/}
+          {/*  className="text-white bg-violet-500 p-3 rounded-md"*/}
+          {/*  onClick={() => {*/}
+          {/*    document*/}
+          {/*      .getElementById("contact-form")*/}
+          {/*      .scrollIntoView({ behavior: "smooth" });*/}
+          {/*    console.log("scroll");*/}
+          {/*  }}*/}
+          {/*>*/}
+          {/*  Send A Message*/}
+          {/*</button>*/}
         </div>
       </div>
       <div className="flex max-[1000px]:block">

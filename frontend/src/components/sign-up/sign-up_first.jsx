@@ -117,12 +117,16 @@ export default function SignUp_first() {
 		let email_ = item.email;
 		let password_ = item.password;
 		let checkVerified = false;
+		let checkPaid = false;
+		let checkFreeTrial = true;
 		let items = {
 			first_name: firstname,
 			last_name: lastname,
 			email: email_,
 			password: password_,
 			verified: checkVerified,
+			paid: checkPaid,
+			free_trial: checkFreeTrial,
 		};
 
 		console.log('items', item);
