@@ -114,7 +114,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 			{!showAlertLink && !preview && (
 				<div style={{ display: show ? 'block' : 'none' }} className="aso-dd2-content-container">
 					<div className="flex items-center w-full mt-4 mb-8 md:my-10">
-						<div className="absolute" onClick={() => setStep(step - 1)}>
+						<div className="absolute cursor-pointer" onClick={() => setStep(step - 1)}>
 							<div className="">
 								{size < 760 ? (
 									<img src={arrowRightMobile} alt="share icon" />
@@ -143,7 +143,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 								{/* {labelText} */}
 							</label>
 						</div>
-					{/* <Button type="button" className="bg-[#8B70E9] w-100 w-lg-120 text-white" children="Upload" /> */}
+						{/* <Button type="button" className="bg-[#8B70E9] w-100 w-lg-120 text-white" children="Upload" /> */}
 					</form>
 				</div>
 			)}
@@ -160,8 +160,8 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 						<GeneratingAvatar />
 					) : (
 						<div className="vic_content">
-							<div className="flex items-center w-full mt-4 mb-8 md:my-10">
-								<div className="absolute" onClick={() => setStep(step - 1)}>
+							<div className="flex items-center w-full mt-4 mb-5 md:mt-10">
+								<div className="absolute cursor-pointer" onClick={() => setStep(step - 1)}>
 									<div className="">
 										{size < 760 ? (
 											<img src={arrowRightMobile} alt="share icon" />
@@ -177,11 +177,11 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 									<img src={PurpleLine} alt="" className="w-[50px] md:w-[120px] md:h-[5px] " />
 								</div>
 							</div>
-							<h3>Preview your Images</h3>
+							<h3 className=''>Preview your Images</h3>
 
 							{/* <div className="vic_img_and_direction"> */}
 							{/* <img src={left} className="vic_left" /> */}
-							<div className="vic_image_preview_div">
+							<div className="vic_image_preview_div mt-5 md:mt-0">
 								{selectedImages &&
 									selectedImages.map((image, index) => {
 										return (
@@ -238,7 +238,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 							{/* </div> */}
 							<div className="vic_div_div w-full">
 								<div className="vic_link w-full" onClick={imageCheck}>
-									<Button className="bg-[#8B70E9] w-100 w-lg-120 text-white" children="Generate Avatar" />
+									<Button className="bg-[#8B70E9] px-10 font-bold text-base text-white" children="Generate Avatar" />
 								</div>
 							</div>
 						</div>
