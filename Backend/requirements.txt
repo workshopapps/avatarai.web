@@ -1,3 +1,4 @@
+aiofiles==22.1.0
 aiosmtplib==1.1.7
 anyio==3.6.2
 appdirs==1.4.4
@@ -82,8 +83,8 @@ typed-ast==1.5.4
 typing_extensions==4.4.0
 uritemplate==4.1.1
 urllib3==1.26.12
+uuid==1.30
 uvicorn==0.19.0
 uvloop==0.17.0
 watchfiles==0.18.1
 websockets==10.4
-

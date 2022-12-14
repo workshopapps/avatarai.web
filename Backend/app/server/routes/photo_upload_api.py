@@ -14,6 +14,7 @@ from database import db
 
 from bson import json_util
 from io import BytesIO
+import uuid
 
 #### image processing module
 from PIL import Image
@@ -64,6 +65,7 @@ async def add_photo(files: list[UploadFile] = File(...), email: str = Form(defau
                       aws_secret_access_key=os.environ["SECRET_KEY"])
     
     bucket = s3.Bucket(S3_BUCKET_NAME)
+    file_folder_id = uuid.uuid1()
     for file in files:
         image = Image.open(file.file)
         new_image = image.resize((512,512))
@@ -72,7 +74,8 @@ async def add_photo(files: list[UploadFile] = File(...), email: str = Form(defau
         
         count = count + 1
         file.filename = f"{photo_class}_{count}.jpeg"
-        file_folder = f"{email}/training/{file.filename}"
+        #file_folder = f"{email}/training/{file.filename}"
+        file_folder = f"{file_folder_id}/training/{file.filename}"
         image_io.seek(0)
         bucket.upload_fileobj(image_io, file_folder, ExtraArgs={"ACL": "public-read"})
         
@@ -125,7 +128,9 @@ async def add_photo(files: list[UploadFile] = File(...), email: str = Form(defau
     ##############################################################
 
 
-    msg = f'Hi! We have a new upload from {email}.'
+    msg = f"""Hi! We have a new upload from {email}.
+        We Have Saved the file at {file_folder} on S3 Bucket.
+        """
 
     #The mail addresses and password
     sender_address = os.environ.get('EMAIL')
