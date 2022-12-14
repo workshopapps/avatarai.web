@@ -37,7 +37,6 @@ import Guidelines from './components/guidelinePage/Guideline.jsx';
 import { PrivateRoute } from './routes/PrivateRoute';
 import Profile2 from './components/Profile/Profile';
 
-import Settings from './components/SettingsPage';
 
 // import PaymentFlow12 from './components/paymentFlow-1.2/paymentFlow1.2';
 // import './App.css';
@@ -103,7 +102,6 @@ function App() {
 				<Route path="/dashboard" element={<DesktopEye />} />
 				<Route path="/profile" element={<Profile2 />} />
 			</Route>
-				<Route path='/setting' element={<Settings/>}/>
 
 			<Route path="*" element={<Four404 />} />
 		</Routes>
