@@ -20,7 +20,7 @@ const GuidelinePage = () => {
             avatars of yourself.
           </p>
           <img
-            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670939118/home_11zon_hgpgxb.jpg"
+            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670939118/home_11zon_hgpgxb.webp"
             alt="home-cover-photo"
           />
         </div>
@@ -32,7 +32,7 @@ const GuidelinePage = () => {
           </p>
           <div className="cards">
             <img
-              src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670939119/fr_11zon_wu5yav.jpg"
+              src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670939119/fr_11zon_wu5yav.webp"
               alt="frame1"
             />
             <Button>Create Avatar</Button>

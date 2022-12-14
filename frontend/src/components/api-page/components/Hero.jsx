@@ -5,7 +5,7 @@ const Hero = () => {
     <div className="w-full">
       <div
         style={{
-          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670063236/hero_auuo2t.png")`,
+          background: `linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670979772/hero_auuo2t_11zon_uggjng.webp")`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
           backgroundSize: "cover",
