@@ -220,7 +220,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
                 //   selectedImages.length >= 5 &&
                 //   selectedImages.length <= 20 &&
                   selectedImages.map((image, index) => {
-					if (selectedImages.length < 5 || selectedImages.length > 20 )
+					if (selectedImages.length < 10 || selectedImages.length > 20 )
 					{
 						return <Error /> }
 						// showErrorModal ? (
