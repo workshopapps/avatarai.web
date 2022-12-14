@@ -22,7 +22,7 @@ const Navbar = () => {
 
 	return (
     <Fragment>
-      <nav className="flex justify-between items-center max-w-[100%]  lg:px-16   py-5 cbk-ds-nav">
+      <nav className="flex justify-between items-center max-w-[100%]  lg:px-20   py-5 cbk-ds-nav">
         <div>
           <Link to="/">
             <img
