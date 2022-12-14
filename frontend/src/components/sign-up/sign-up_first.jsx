@@ -42,6 +42,8 @@ export default function SignUp_first() {
 	const navigate = useNavigate();
 
 	const [loading, setLoading] = useState(false);
+	const [emailError, setEmailError] = useState(false)
+	const [noEmailError, setNoEmailError] = useState(false)
 	const [show_s, setShow_s] = useState(true);
 	const [show_s_, setShow_s_] = useState(true);
 
@@ -74,6 +76,7 @@ export default function SignUp_first() {
 			const stateObj = { ...prev, [name]: '' };
 
 			switch (name) {
+				
 				case 'password':
 					if (!value) {
 						stateObj[name] = 'Please enter Password.';
@@ -152,6 +155,14 @@ export default function SignUp_first() {
 
 	const handleSubmit = (event) => {
 		event.preventDefault();
+		
+		if ( !new RegExp( /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(email)) {
+			setEmailError(true);
+			return
+		} else {
+			setEmailError(false)
+			setNoEmailError(false)
+		}
 		if (error.confirmPassword === '') {
 			signUp();
 		}
@@ -247,9 +258,11 @@ export default function SignUp_first() {
 								onChange={(e) => setEmail(e.target.value)}
 								type="email"
 								name="email"
-								required
+								
 								className={`border border-[#121212] py-3 px-4 rounded-md placeholder-[#808080] text-sm lg:text-xl font-nunito font-medium w-full`}
 							/>
+							{emailError? <p className='ml-1 text-red-400 text-[1rem] md:text-[1.2rem]'>please input a valid email</p>: ""}
+							
 						</div>
 						<div className="flex flex-col">
 							<label htmlFor="email" className="text-black font-nunito font-medium text-sm lg:text-xl">

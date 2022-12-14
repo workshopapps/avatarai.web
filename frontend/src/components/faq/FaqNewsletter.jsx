@@ -87,15 +87,15 @@ subscribe(emailField)
   return (
     <section>
       <div className="section-footer">
-        <div className="part1">
+        <div className="part1 mb-[1rem] md:mb-2rem lg:mb-auto">
           <div className="logo">
             <Link to="/">
               <img src="/tapart.svg" height={`40px`} width={`40px`} />
             </Link>
           </div>
           <div className="text">
-            <p className='sub'>Subscribe to our newsletter for info for new avatar scenes,blogs and updates</p>
-            <p id='class3'>Are you looking to stay up to date with the latest news and trends? Subscribe to our page to get the latest updates on the topics that matter to you!</p>
+            <p className='sub text-[1.1rem] md:text-[1.3rem] mb-[0.5rem]'>Subscribe to our newsletter for info for new avatar scenes,blogs and updates</p>
+            <p id='class3' className='text-[0.9rem] md:text-[1.1rem]'>Are you looking to stay up to date with the latest news and trends? Subscribe to our page to get the latest updates on the topics that matter to you!</p>
           </div>
         </div>
         <div className="part2">
