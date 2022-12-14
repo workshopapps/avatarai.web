@@ -2,13 +2,13 @@ import style from "./faqHero.module.css";
 import { useState, useEffect } from "react";
 import Button from "../../landingPage/Button/Button";
 
-const getInnerWidth = () => { 
+const getInnerWidth = () => {
   const { innerWidth } = window;
   return innerWidth;
 };
 
 const FaqHero = () => {
-  const [searchText, setSearchText] = useState('');
+  const [searchText, setSearchText] = useState("");
   const [innerWidth, setInnerWidth] = useState(getInnerWidth());
 
   useEffect(() => {
@@ -24,15 +24,15 @@ const FaqHero = () => {
   }, []);
 
   const onSubmit = (e) => {
-    e.preventDefault()
-    setSearchText('')
-  }
+    e.preventDefault();
+    setSearchText("");
+  };
 
   return (
     <section
       className={style.heroContainer}
       style={{
-        backgroundImage: `url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670938519/herobg_yytctl_11zon_suhusa.jpg")`,
+        backgroundImage: `url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670938519/herobg_yytctl_11zon_suhusa.webp")`,
       }}
     >
       <div className={style.centered}>
@@ -42,7 +42,7 @@ const FaqHero = () => {
           <div
             className={style.searchIcon}
             style={{
-              backgroundImage: `url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670938518/searchIcon_nivpev_11zon_o5tvff.jpg")`,
+              backgroundImage: `url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670938518/searchIcon_nivpev_11zon_o5tvff.webp")`,
             }}
           ></div>
           <input

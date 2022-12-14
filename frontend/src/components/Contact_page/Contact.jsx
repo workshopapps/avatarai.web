@@ -120,7 +120,7 @@ const Contact = () => {
         <div className="overlay"></div>
         <img
           className="contact-img"
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670938078/barner_kl4dyj_11zon_yu97ed.jpg"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670938078/barner_kl4dyj_11zon_yu97ed.webp"
         />
         <div className="barner-text">
           <h1 className="text-white font-semibold text-2xl mb-5">
@@ -211,7 +211,7 @@ const Contact = () => {
         </form>
         <img
           className="w-1/2 contact-img max-[1000px]:w-3/4"
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670938076/illus_ubfd58_11zon_qphrjh.jpg"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670938076/illus_ubfd58_11zon_qphrjh.webp"
         />
       </div>
       {/*  <div className="contact-overlay" id={overlay} onClick={() => {setOverlay('overlay-hidden')}}>

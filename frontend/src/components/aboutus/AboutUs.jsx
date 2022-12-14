@@ -1,23 +1,22 @@
-import TeamMemberCard from './TeamMemberCard';
-import './aboutUs.css';
-import Navbar from '../landingPage/Navbar/Navbar';
-import { TEAM } from './data';
+import TeamMemberCard from "./TeamMemberCard";
+import "./aboutUs.css";
+import Navbar from "../landingPage/Navbar/Navbar";
+import { TEAM } from "./data";
 // import Footer from "../Footerpage/Footer";
-import Foooter from '../footer/Foooter';
-import ContactUs from './ContactUs';
-import FaqNewsletter from '../faq/FaqNewsletter';
-import { useContext } from 'react';
-import { useEffect } from 'react';
-import { NavContext, pages } from '../../../context/nav-context';
+import Foooter from "../footer/Foooter";
+import ContactUs from "./ContactUs";
+import FaqNewsletter from "../faq/FaqNewsletter";
+import { useContext } from "react";
+import { useEffect } from "react";
+import { NavContext, pages } from "../../../context/nav-context";
 const AboutUs = () => {
-	
-    const {setPage} = useContext(NavContext)
-   
-     useEffect(()=>{
-      setPage(pages.AboutUs)
-     },[])
+  const { setPage } = useContext(NavContext);
 
-	return (
+  useEffect(() => {
+    setPage(pages.AboutUs);
+  }, []);
+
+  return (
     <>
       <Navbar />
       <div id="dja_main text-[#333333]">
@@ -25,7 +24,7 @@ const AboutUs = () => {
           <div className="dja_container">
             <div className="dja_banner_img">
               <img
-                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933626/aboutBg_cfvrvy_11zon_zcye8p.jpg"
+                src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933626/aboutBg_cfvrvy_11zon_zcye8p.webp"
                 alt="AvatarAI"
               />
             </div>
@@ -79,7 +78,7 @@ const AboutUs = () => {
 
         <div className="w-full">
           <img
-            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670935004/image1_woebre_11zon_wjvsqf.jpg"
+            src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670935004/image1_woebre_11zon_wjvsqf.webp"
             alt="Large banner max-h-[1080px]"
             className="w-full"
           />
