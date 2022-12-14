@@ -131,7 +131,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 						</div>
 					</div>
 
-					<h1>Upload your Pictures</h1>
+					<h1 className='text-[24px]'>Upload your Pictures</h1>
 					<p className="aso-dd2-p">You can upload files like PNG, JPG, WEBP are supported</p>
 					<form action="" className="aso-dd2-form">
 						<div className="aso-dd2-input">
@@ -177,7 +177,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 									<img src={PurpleLine} alt="" className="w-[50px] md:w-[120px] md:h-[5px] " />
 								</div>
 							</div>
-							<h3 className=''>Preview your Images</h3>
+							<h3 className='text-[20px]'>Preview your Images</h3>
 
 							{/* <div className="vic_img_and_direction"> */}
 							{/* <img src={left} className="vic_left" /> */}
