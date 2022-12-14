@@ -57,8 +57,8 @@ const Contact = () => {
     }
 
     postMessage({
-      firstname: document.getElementById("first_name").value,
-      lastname: document.getElementById("last_name").value,
+      first_name: document.getElementById("firstname").value,
+      last_name: document.getElementById("lastname").value,
       email: document.getElementById("email").value,
       message: document.getElementById("message").value,
     });
@@ -86,7 +86,7 @@ const Contact = () => {
         setStatusImg(Success);
         setStatus("Success !");
         setMessage(
-          "Your message was successfully sent, Thanks for contacting us and watchout for our response"
+          "Your message was successfully sent, Thanks for contacting us and watch out for our response"
         );
         setStateColor("green");
         setLoading(null);
