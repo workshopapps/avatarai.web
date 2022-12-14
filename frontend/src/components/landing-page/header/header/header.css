@@ -41,13 +41,13 @@
     color: white;
 
 }
-.bat-header-content span{
-    color: #8B70E9;
-    z-index: 999;
-    /* font-size: 60px; */
+.bat-header-content span {
+  color: #8b70e9;
+  z-index: 999;
+  /* font-size: 60px; */
 }
-.bat-link{
-    background-color: white;
+.bat-link {
+  background-color: white;
 }
 .bat-btn{
     background-color: #8B70E9;
@@ -58,19 +58,19 @@
 }
 
 @media only screen and (max-width: 1200px) {
-    .bat-header-content h2 {
-        font-size: 54px;
-    }
+  .bat-header-content h2 {
+    font-size: 54px;
+  }
 }
 @media only screen and (max-width: 1024px) {
-    .bat-header-content h2 {
-        width: 70%;
-        font-size: 44px;
-    }
-    .bat-header-content p {
-        width: 50%;
-        font-size: 18px;
-    }    
+  .bat-header-content h2 {
+    width: 70%;
+    font-size: 44px;
+  }
+  .bat-header-content p {
+    width: 50%;
+    font-size: 18px;
+  }
 }
 
 @media only screen and (max-width: 756px) {
@@ -114,12 +114,11 @@
     }
 }
 @media only screen and (max-width: 420px) {
-    .bat-header-content h2 {
-        width: 95%;
-        font-size: 24px;
-    }
-    .bat-header-content p {
-        width: 90%;
-    }    
-
+  .bat-header-content h2 {
+    width: 95%;
+    font-size: 24px;
+  }
+  .bat-header-content p {
+    width: 90%;
+  }
 }

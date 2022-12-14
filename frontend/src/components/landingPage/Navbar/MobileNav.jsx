@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import close from "../../../assets/images/close.png";
+import tapart from "../../../assets/images/tapart.svg";
 import "./nav.css";
 import { useAuth } from "../../../../context/auth-context";
 
@@ -16,7 +17,7 @@ const MobileNav = ({ navClose }) => {
         <div className=" mt-5 flex justify-between w-full gap-5">
           <Link to="/">
             <img
-              src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670939922/tapart_11zon_hfechi.jpg"
+              src={tapart}
               alt=""
             />
           </Link>

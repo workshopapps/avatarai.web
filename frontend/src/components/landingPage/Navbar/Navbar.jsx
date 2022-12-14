@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NavLink, Link, useLocation } from 'react-router-dom';
-import menu from '../../../assets/images/menu.png';
+import menu from '../../../assets/images/menu.svg';
+import tapart from "../../../assets/images/tapart.svg";
 import Button from '../Button/Button';
 import MobileNav from './MobileNav';
 import './nav.css';
@@ -25,7 +26,7 @@ const Navbar = () => {
         <div>
           <Link to="/">
             <img
-              src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670939922/tapart_11zon_hfechi.jpg"
+              src={tapart}
               alt=""
               className="w-10 hidden lg:block"
             />

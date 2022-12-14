@@ -7,33 +7,33 @@ const Main = () => {
       <div className="main-ony">
         <img
           id="one"
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933615/part1_mfftwt_11zon_qvwmyy.jpg"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933615/part1_mfftwt_11zon_qvwmyy.webp"
           alt=""
         />
         <img
           src="
-        https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933620/cv_i1rtxl_11zon_llhyss.jpg"
+        https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933620/cv_i1rtxl_11zon_llhyss.webp"
           alt=""
         />
         <img
           src="
-     https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933613/part3_aaawsf_11zon_mvyibr.jpg"
+     https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933613/part3_aaawsf_11zon_mvyibr.webp"
           alt=""
         />
         <img
           src="
-        https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933620/part4_tygqcu_11zon_bars9c.jpg"
+        https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933620/part4_tygqcu_11zon_bars9c.webp"
           alt=""
         />
         <img
           id="one"
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933582/part5_t0ahcw_11zon_dvfk0w.jpg"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933582/part5_t0ahcw_11zon_dvfk0w.webp"
           alt=""
         />
       </div>
       <div className="group">
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933575/Group_kryqhu_11zon_xrvugj.jpg"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933575/Group_kryqhu_11zon_xrvugj.webp"
           alt=""
         />
       </div>
@@ -44,7 +44,7 @@ const Main = () => {
           alt=""
         />
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933594/mbb2_jrl8wx_11zon_rpm1yk.jpg"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933594/mbb2_jrl8wx_11zon_rpm1yk.webp"
           alt=""
         />
         <img        
@@ -52,7 +52,7 @@ const Main = () => {
           alt=""
         />
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933608/mbb4_yp1cx2_11zon_rd0ehx.jpg"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933608/mbb4_yp1cx2_11zon_rd0ehx.webp"
           alt=""
         />
         <img
