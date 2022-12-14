@@ -1,9 +1,9 @@
 import React from "react";
-import Facebook from "./Images/brandfacebook.png";
-import Instagram from "./Images/igvec2.png";
-import Twitter from "./Images/Path.png";
-import call from "./Images/call.png";
-import mail from "./Images/mail.png";
+import Facebook from "./Images/brand-facebook.svg";
+import Instagram from "./Images/brand-instagram.svg";
+import Twitter from "./Images/brand-twitter.svg";
+import call from "./Images/phone.svg";
+import mail from "./Images/mail.svg";
 import "./footer.css";
 
 export default function Footer() {
