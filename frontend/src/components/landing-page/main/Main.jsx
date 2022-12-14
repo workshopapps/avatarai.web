@@ -11,7 +11,6 @@ const Main = () => {
           alt=""
         />
         <img
-          id="one"
           src="
         https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933620/cv_i1rtxl_11zon_llhyss.webp"
           alt=""
@@ -22,7 +21,6 @@ const Main = () => {
           alt=""
         />
         <img
-          id="one"
           src="
         https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933620/part4_tygqcu_11zon_bars9c.webp"
           alt=""
@@ -41,15 +39,16 @@ const Main = () => {
       </div>
       <div className="main2-ony">
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933608/mbb1_oyrt5a_11zon_fmsap8.webp"
+          id="one"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933608/mbb1_oyrt5a_11zon_fmsap8.jpg"
           alt=""
         />
         <img
           src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933594/mbb2_jrl8wx_11zon_rpm1yk.webp"
           alt=""
         />
-        <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933577/mbb3_rf2lfz_11zon_nof6fw.webp"
+        <img        
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933577/mbb3_rf2lfz_11zon_nof6fw.jpg"
           alt=""
         />
         <img
@@ -57,7 +56,8 @@ const Main = () => {
           alt=""
         />
         <img
-          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933563/mbb5_isvgod_11zon_vgpdos.webp"
+          id="one"
+          src="https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933563/mbb5_isvgod_11zon_vgpdos.jpg"
           alt=""
         />
       </div>

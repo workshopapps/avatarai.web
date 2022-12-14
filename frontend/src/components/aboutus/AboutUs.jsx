@@ -30,7 +30,8 @@ const AboutUs = () => {
             </div>
             <div id="banner_title">
               <h1 className="font-bold text-[24px] md:text-[72px]">
-                About <span className="text-[#8B70E9]">Us</span>
+                About Us
+                {/* <span className="text-[#8B70E9]">Us</span> */}
               </h1>
             </div>
           </div>
@@ -54,7 +55,7 @@ const AboutUs = () => {
                   “
                 </span>
                 <span className="text-[10px] lg:text-[24px] font-normal">
-                  Having known that AI Art has been a thing for years, the team
+                  Having known that AI art has been a thing for years, the team
                   thought "maybe we can create a software that can generate
                   avatars of people in different environments.
                 </span>

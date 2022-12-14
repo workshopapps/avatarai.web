@@ -19,10 +19,13 @@ const Payment = ({ details, setShowPayment }) => {
 		publicKey: import.meta.env.VITE_PAYSTACK_PK,
 	});
 
-	const url = `${import.meta.env.VITE_API_URL}/verify-payment`;
+	const url = `${import.meta.env.VITE_API_URL}/verify_transaction`;
 	const verifyPayment = async (reference) => {
 		setLoading(true);
-		const data = { reference };
+		const data = {
+			trans_ref: reference,
+			email: user?.email,
+		};
 		await axios
 			.post(url, data)
 			.then((response) => {
