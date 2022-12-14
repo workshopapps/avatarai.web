@@ -57,8 +57,8 @@ const Contact = () => {
     }
 
     postMessage({
-      firstname: document.getElementById("firstname").value,
-      lastname: document.getElementById("lastname").value,
+      firstname: document.getElementById("first_name").value,
+      lastname: document.getElementById("last_name").value,
       email: document.getElementById("email").value,
       message: document.getElementById("message").value,
     });
