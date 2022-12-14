@@ -47,4 +47,4 @@ async def sendmail(url, email):
     
     print('Mail Sent')
 
-sendmail("https://hngtest.s3.amazonaws.com/man_1.jpeg", "musaadamuw@gmail.com")
+# sendmail("https://hngtest.s3.amazonaws.com/man_1.jpeg", "musaadamuw@gmail.com")
