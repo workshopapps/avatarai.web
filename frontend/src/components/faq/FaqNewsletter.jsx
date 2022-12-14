@@ -107,7 +107,7 @@ subscribe(emailField)
             </div>
           </div>
         </div>
-        <div className=" lg:flex-[20%] md:flex-[0%]"></div>
+        <div className=" lg:flex-[40%] md:flex-[0%]"></div>
         <div className="flex-[100%] md:flex-[55%]">
           <div className="flex flex-col gap-[16px] w-[100%]   md:ml-[1.7rem]  pt-[2rem]">
             {errorInFormInput ? (
@@ -126,7 +126,7 @@ subscribe(emailField)
                 id="input"
                 className="border border-[#403E46] h-full flex justify-between md:gap-[8px] gap-1 items-center font-nunito grow text-[#848484] rounded py-[8px] md:pl-[12px] pl-2"
               >
-                <img src="/sms.svg" />
+                <img className='pl-1' src="/sms.svg" />
                 <input
                   type={`text`}
                   className="grow outline-none"
@@ -140,7 +140,7 @@ subscribe(emailField)
               <button
                 id="subscribe"
                 onClick={validate}
-                className="text-white border-[#8B70E9] cursor-pointer bg-[#8B70E9] h-full relative flex items-center font-nunito rounded-[5px] px-[20px] py-[8px]"
+                className="text-white border-[#8B70E9] cursor-pointer  bg-[#8B70E9] h-full relative flex items-center font-nunito rounded-[5px] px-[20px] py-[8px]"
               >
                 Subscribe
               </button>

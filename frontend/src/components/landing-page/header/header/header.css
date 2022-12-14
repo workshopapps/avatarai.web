@@ -112,6 +112,14 @@
     .bat-header-content{
         padding: 5rem 0;
     }
+    .bat-btn{
+        background-color: #8B70E9;
+        color: white;
+        padding: 1rem 1.5rem !important;
+        margin: 2.5rem 0;
+        font-size: 16px;
+    }
+    
 }
 @media only screen and (max-width: 420px) {
   .bat-header-content h2 {

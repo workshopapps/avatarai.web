@@ -17,20 +17,20 @@ const Foooter = () => {
         <div className="flex-[45%]">
 
         <div className="text-[#201F23] w-[80%] md:w-[85%]">
-              <h1 className="font-bold">Zuvatar</h1>
-              <p className="font-medium mt-3 max-w-[508px]">
-               Zuvatar is a webapp for creating Artificial
-Intelligent Avatars. Our trained models are
+              <h1 className="font-bold text-xl">Zuvatar</h1>
+              <p className="font-medium mt-3 text-[#605E65] max-w-[508px]">
+               Zuvatar is a webapp for creating artificial
+intelligent avatars. Our trained models are
 designed to generate perfect avatars for you.
 
               </p>
             </div>
         </div>
-        <div className="lg:flex-[20%] md:flex-[0%]"></div>
-            <div className="flex-[55%]">
+        <div className="lg:flex-[15%] md:flex-[0%]"></div>
+            <div className="flex-[40%]">
              <div className=" ">
 
-            <div className="flex">
+            <div className="flex justify-between">
               <div className="flex flex-col space-y-4 text-[#2B292F] md:ml-[1.7rem]">
                 <p className="font-semibold text-xl">Resources</p>
                 <p className="text-[#605E65]">
@@ -58,6 +58,21 @@ designed to generate perfect avatars for you.
                   <a href="/Terms" className="text-base">Terms</a>
                 </p>
              </div>
+             <div className="flex flex-col space-y-4 text-[#2B292F] md:ml-[1.7rem] lg:w-auto w-[6rem]">
+                <p className="font-semibold text-xl">Socials</p>
+                <p className="text-[#605E65] flex gap-3 items-center">
+                {/* <img src={Insta} alt="insta" className="text-[#000]" /> */}
+                  <a href="/FAQ" className="text-base">Instagram</a>
+                </p>
+                <p className="text-[#605E65] gap-3 items-center flex">
+                {/* <img src={Twitter} alt="twitter" /> */}
+                  <a href="/Terms" className="text-base">Twitter</a>
+                </p>
+                <p className="text-[#605E65] gap-3 items-center flex" >
+                {/* <img src={Facebook} alt="facebook" /> */}
+                  <a href="/Terms" className="text-base">Facebook</a>
+                </p>
+             </div>
             </div>
              </div>
             </div>
@@ -75,11 +90,11 @@ designed to generate perfect avatars for you.
                   <a className="text-sm" href="tel:+2347012345678"> +2347012345678</a>
                 </p>
               </div>
-              <div className="flex items-center justify-center space-x-4 text-[#000]">
+              {/* <div className="flex items-center justify-center space-x-4 text-[#000]">
                 <img src={Insta} alt="insta" className="text-[#000]" />
                 <img src={Twitter} alt="twitter" />
                 <img src={Facebook} alt="facebook" />
-              </div>
+              </div> */}
             </div>
         <div className="w-full text-center bg-[#8B70E9] flex items-center justify-center gap-2 py-3 ">
           <div>

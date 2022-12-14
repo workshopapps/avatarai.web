@@ -43,10 +43,13 @@
 }
 @media only screen and (max-width: 580px) {
     .be{
-        font-size: 22px;
+        font-size: 24px;
     }
     .any-sect p{
         width: 80%;
+    }
+    .any-sect{
+        margin: 3rem 0;;
     }
 }
 
@@ -56,6 +59,6 @@
     } */
     .any-sect p{
         width: 95%;
-        font-size: 16px;
+        font-size: 12px;
     }
 }
