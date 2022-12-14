@@ -6,16 +6,16 @@
 }
 
 .be{
-    color: black;
-    font-size: 40px;
+    color: #3a3a3a;
+    font-size: 48px;
     font-weight: 800;
     text-align: center;
 }
 .any-sect p{
-    width: 50%;
+    width: 70%;
     font-weight: 500;
     margin: 0 auto;
-    font-size: 20px;
+    font-size: 24px;
 }
 .button-bat{
     background-color: #8B70E9;
@@ -35,15 +35,30 @@
 }
 @media only screen and (max-width: 800px) {
     .be{
-        font-size: 24px;
+        font-size: 28px;
+    }
+    .any-sect p{
+        width: 80%;
     }
 }
+@media only screen and (max-width: 580px) {
+    .be{
+        font-size: 24px;
+    }
+    .any-sect p{
+        width: 80%;
+    }
+    .any-sect{
+        margin: 3rem 0;;
+    }
+}
+
 @media only screen and (max-width: 500px) {
     /* .be{
         font-size: 16px;
     } */
     .any-sect p{
         width: 95%;
-        font-size: 16px;
+        font-size: 12px;
     }
 }
