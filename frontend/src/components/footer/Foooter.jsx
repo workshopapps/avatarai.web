@@ -1,10 +1,10 @@
 import React from "react";
-import Mail from "./Images/call.png";
-import Call from "./Images/mail.png";
-import Facebook from "./Images/brandfacebook.png";
-import Twitter from "./Images/Path.png";
-import Insta from "./Images/brandi.png";
-import Copy from "./Images/copyright.png";
+import Facebook from "./Images/brand-facebook.svg";
+import Insta from "./Images/brand-instagram.svg";
+import Twitter from "./Images/brand-twitter.svg";
+import Call from "./Images/phone.svg";
+import Mail from "./Images/mail.svg";
+import Copy from "./Images/copyright.svg";
 
 const Foooter = () => {
   return (
