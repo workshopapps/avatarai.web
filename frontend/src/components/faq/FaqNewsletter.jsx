@@ -108,8 +108,8 @@ subscribe(emailField)
           </div>
         </div>
         <div className=" lg:flex-[40%] md:flex-[0%]"></div>
-        <div className="flex-[100%] md:flex-[55%]">
-          <div className="flex flex-col gap-[16px] w-[100%]   md:ml-[1.7rem]  pt-[2rem]">
+        <div className="flex-[100%] ">
+          <div className="flex flex-col gap-[16px] w-[100%]   pt-[2rem]">
             {errorInFormInput ? (
               <h2 className="text-red-500 font-semibold ml-3">
                 ⚠ Please input a valid email address
@@ -145,8 +145,8 @@ subscribe(emailField)
                 Subscribe
               </button>
             </div>
-            <p className="text-[#AFB6B6] text-sm">
-              By subscribing you agree to accept newsletter and Emails from us.
+            <p className="text-[#AFB6B6] text-sm px-2">
+              By subscribing you agree to accept newsletters and emails from us.
             </p>
           </div>
         </div>
