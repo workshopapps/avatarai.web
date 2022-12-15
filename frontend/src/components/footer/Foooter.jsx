@@ -6,7 +6,7 @@ import Call from './Images/phone.svg';
 import Mail from './Images/mail.svg';
 import Copy from './Images/copyright.svg';
 import { Link } from 'react-router-dom';
-
+/* na by force ooooo */
 const Foooter = () => {
   return (
     <section>
