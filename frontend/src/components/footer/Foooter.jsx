@@ -34,43 +34,43 @@ const Foooter = () => {
               <div className="flex flex-col space-y-4 text-[#2B292F] lg:ml-[1.7rem] md:ml-[0.6rem]">
                 <p className="font-semibold text-xl">Resources</p>
                 <p className="text-[#605E65]">
-                  <a href="/" className="text-base">Reviews</a>
+                  <a href="/" className="text-base hover:text-[#8b70e9]">Reviews</a>
                 </p>
                 <p className="text-[#605E65]">
-                  <a href="/ApiPage" className="text-base">API integration</a>
+                  <a href="/ApiPage" className="text-base hover:text-[#8b70e9]">API integration</a>
                 </p>
              </div>
               <div className="flex flex-col space-y-4 text-[#2B292F] lg:ml-[1.7rem] md:ml-[0.6rem]">
                 <p className="font-semibold text-xl">Company</p>
                 <p className="text-[#605E65]">
-                  <a href="/contactus" className="text-base">Contact Us</a>
+                  <a href="/contactus" className="text-base hover:text-[#8b70e9]">Contact Us</a>
                 </p>
                 <p className="text-[#605E65]">
-                  <a href="/Aboutus" className="text-base">About Us</a>
+                  <a href="/Aboutus" className="text-base hover:text-[#8b70e9]">About Us</a>
                 </p>
               </div>
               <div className="flex flex-col space-y-4 text-[#2B292F] lg:ml-[1.7rem] md:ml-[1rem] lg:w-auto w-[6rem]">
                 <p className="font-semibold text-xl">Help</p>
                 <p className="text-[#605E65]">
-                  <a href="/FAQ" className="text-base">FAQs</a>
+                  <a href="/FAQ" className="text-base hover:text-[#8b70e9]">FAQs</a>
                 </p>
                 <p className="text-[#605E65]">
-                  <a href="/Terms" className="text-base">Terms</a>
+                  <a href="/Terms" className="text-base hover:text-[#8b70e9]">Terms</a>
                 </p>
              </div>
              <div className="flex flex-col space-y-4 text-[#2B292F] lg:ml-[1.7rem] md:ml-[0.6rem] lg:w-auto w-[6rem]">
                 <p className="font-semibold text-xl">Socials</p>
                 <p className="text-[#605E65] flex gap-3 items-center">
                 {/* <img src={Insta} alt="insta" className="text-[#000]" /> */}
-                  <a href="/FAQ" className="text-base">Instagram</a>
+                  <a href="/FAQ" className="text-base hover:text-[#8b70e9]">Instagram</a>
                 </p>
                 <p className="text-[#605E65] gap-3 items-center flex">
                 {/* <img src={Twitter} alt="twitter" /> */}
-                  <a href="/Terms" className="text-base">Twitter</a>
+                  <a href="/Terms" className="text-base hover:text-[#8b70e9] ">Twitter</a>
                 </p>
                 <p className="text-[#605E65] gap-3 items-center flex" >
                 {/* <img src={Facebook} alt="facebook" /> */}
-                  <a href="/Terms" className="text-base">Facebook</a>
+                  <a href="/Terms" className="text-base hover:text-[#8b70e9]">Facebook</a>
                 </p>
              </div>
             </div>
