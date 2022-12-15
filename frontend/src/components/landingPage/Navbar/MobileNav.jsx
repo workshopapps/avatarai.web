@@ -64,8 +64,8 @@ const MobileNav = ({ navClose }) => {
         </ul>
         <div className=" w-full flex flex-col items-start justify-start gap-y-5"></div>
         {auth.token === null ? (
-          <>
-            <Link to="/Login" className="w-full mb-[-1rem]">
+          <div className="flex flex-col gap-3 w-[100%]">
+            <Link to="/Login">
               <Button
                 className="inline-flex justify-center items-center px-8 py-1  border border-[#8B70E9]  
           rounded-[8px] font-semibold text-md text-[#8B70E9] bg-white transition ease-in-out duration-150 cbk-mobile-login-btn"
@@ -78,7 +78,7 @@ const MobileNav = ({ navClose }) => {
                 Sign up
               </Button>
             </Link>
-          </>
+          </div>
         ) : (
           <span>
             <Link to="/dashboard">
