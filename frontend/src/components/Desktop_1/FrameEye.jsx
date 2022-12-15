@@ -40,21 +40,6 @@ const FrameEye = ({ setStep, setPhotoUser, photoUser }) => {
 		},
 	]);
 
-	const [toggle, setToggle] = useState(false);
-	const [work, setWork] = useState(true);
-
-	const change = (e) => {
-		if (e) {
-			setWork((work) => {
-				false;
-			});
-		} else {
-			setWork((work) => {
-				true;
-			});
-		}
-	};
-
 	return (
 		<div className="vnc-main overflow-x-hidden">
 			<div className="mt-4 md:mt-10 md:mb-5 flex items-center justify-center gap-3 w-full">
@@ -65,38 +50,27 @@ const FrameEye = ({ setStep, setPhotoUser, photoUser }) => {
 			<div className="vnc-text">
 				<h2 className="text-nunito font-bold">You are a ...</h2>
 			</div>
-			<form action="" method="post">
+			<form>
 				<div className="grid grid-cols-3 gap-3 md:grid-cols-6 ">
 					{list.map((e, index) => (
 						<div
 							onClick={() => {
-								setToggle(e);
 								setPhotoUser(e.user);
-								change(e);
-								console.log(index);
 							}}
 							key={index}
 							className={`vnc-selection cursor-pointer ${e.user === photoUser && 'active'}`}
 						>
 							<p>{e.user}</p>
-							<img className="vnc-icon-image" src={e.icon} alt="" />
+							<img className="w-[3rem] md:w-auto" src={e.icon} alt="" />
 						</div>
 					))}
 				</div>
 
 				<div className="w-full flex items-center justify-center mt-16 md:mt-20" onClick={() => setStep(2)}>
-					{/* <input
-						className="input_btn"
-						disabled={work}
-						type="button"
-						value="Proceed"
-						onClick={() => setStep(2)}
-						//onClick={localStorage.setItem("personality", JSON.stringify(personality))}
-					/> */}
 					<button
 						type="button"
-						disabled={work}
-						className="bg-[#8B70E9] w-100 w-lg-120 text-white inline-flex justify-center items-center px-8 py-3 border  rounded-[8px] font-semibold text-md transition ease-in-out duration-150"
+						disabled={!photoUser}
+						className="bg-[#8B70E9] text-white inline-flex justify-center items-center px-10 py-3 border  rounded-[8px] font-bold text-base transition ease-in-out duration-150"
 					>
 						Proceed
 					</button>

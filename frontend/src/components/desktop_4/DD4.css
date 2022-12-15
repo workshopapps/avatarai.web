@@ -86,7 +86,7 @@
 }
 .vic_content h3 {
     color: #1C1C1C;
-    font-size: clamp(1em, 3vw, 2em);
+    font-size: clamp(20px, 3vw, 2em);
     font-weight: 600;
     margin: 0.5em;
 }
