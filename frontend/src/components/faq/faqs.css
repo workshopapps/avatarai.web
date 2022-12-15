@@ -15,7 +15,6 @@
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
-    padding: 4rem;
 }
 .input2{
     margin: 3px;
@@ -67,9 +66,6 @@
     #faqs{
         font-size: 18px;
     }
-    #subscribe{
-        /* font-size: 0.7px; */
-    }
     .section-footer{
         gap: 2%;
     }
@@ -86,7 +82,7 @@
 }
 .part1{
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
     flex-direction: column;
 }
 .sub{
