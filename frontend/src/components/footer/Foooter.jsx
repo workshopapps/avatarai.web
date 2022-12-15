@@ -22,10 +22,10 @@ const Foooter = () => {
 							</p>
 						</div>
 					</div>
-					<div className="flex-[40%]">
+					<div className="flex-[45%]">
 						<div className="">
 							<div className="flex justify-between text-[#605E65]">
-								<div className="flex flex-col space-y-4 md:ml-[1.7rem]">
+								<div className="flex flex-col space-y-4">
 									<p className="font-semibold text-base text-[#201F23]">Resources</p>
 									<p className="">
 										<Link to="/" className="text-base">

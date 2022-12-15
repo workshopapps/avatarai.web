@@ -1,117 +1,108 @@
-import './faqs.css'
+import './faqs.css';
 //import SuccessModal from './successModal';
 //import ErrorModal from './faqHero/errorModal';
 import Modal from '../modal/modal';
-import green from './images/green.png'
-import red from './images/red.png'
+import green from './images/green.png';
+import red from './images/red.png';
 
 import { useState } from 'react';
-import {Link} from "react-router-dom";
-
-
+import { Link } from 'react-router-dom';
 
 const FaqNewsletter = () => {
-const [emailField, setEmailField] = useState("")
-const [errorInFormInput, setErrorInFormInput] = useState(false)
-const [showErrorModal, setshowErrorModal] = useState(false)
-const [showSuccessModal, setShowSuccessModal] = useState(false)
+	const [emailField, setEmailField] = useState('');
+	const [errorInFormInput, setErrorInFormInput] = useState(false);
+	const [showErrorModal, setshowErrorModal] = useState(false);
+	const [showSuccessModal, setShowSuccessModal] = useState(false);
 
-const closeModal =()=>{
-  setTimeout(() => {
-    setShowSuccessModal(false)
-    setshowErrorModal(false)
-  }, 3600);
- 
-}
-const closeModalNow =()=>{
-  
-    setShowSuccessModal(false)
-    setshowErrorModal(false)
- 
- 
-}
+	const closeModal = () => {
+		setTimeout(() => {
+			setShowSuccessModal(false);
+			setshowErrorModal(false);
+		}, 3600);
+	};
+	const closeModalNow = () => {
+		setShowSuccessModal(false);
+		setshowErrorModal(false);
+	};
 
+	const resetFormField = () => {
+		setEmailField('');
+	};
+	const clicked = (e) => {
+		const { value } = e.target;
+		setEmailField(value);
+	};
+	const validate = () => {
+		if (
+			!new RegExp(
+				/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+			).test(emailField)
+		) {
+			setErrorInFormInput(true);
+		} else {
+			resetFormField();
+			setErrorInFormInput(false);
+			subscribe(emailField);
+		}
+	};
 
-const resetFormField =()=>{
-  setEmailField("")
-}
-  const clicked =(e)=>{
-    const {value} = e.target;
-    setEmailField(value)
-  }
-const validate=()=>{
+	const subscribe = async (userEmail) => {
+		try {
+			const response = await fetch('https://zuvatar.hng.tech/api/v1/newsletter', {
+				method: 'POST',
 
-  if(
-    !new RegExp( /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(emailField)
-){
- setErrorInFormInput(true)
-}else{
-  resetFormField()
-  setErrorInFormInput(false)
-subscribe(emailField)
-}
+				body: JSON.stringify({
+					email: userEmail,
+				}),
 
-  
-}
-   
-    
-  const subscribe = async(userEmail)=>{
-    try {
-      const response = await fetch("https://zuvatar.hng.tech/api/v1/newsletter", {
-        method: "POST",
-      
-          body:JSON.stringify({
-            "email":userEmail
-          }),
-        
-        headers: {
-          "Content-Type": "application/json"
-        }
-       })
-       console.log(response, "from najib")
-       if(response.status === 200){
-       setShowSuccessModal(true)
-      closeModal()
-       }else{
-        setshowErrorModal(true)
-        closeModal()
-       }
-    } catch (error) {
-      
-      setshowErrorModal(true)
-      closeModal()
-    }
-  
-  }
+				headers: {
+					'Content-Type': 'application/json',
+				},
+			});
+			console.log(response, 'from najib');
+			if (response.status === 200) {
+				setShowSuccessModal(true);
+				closeModal();
+			} else {
+				setshowErrorModal(true);
+				closeModal();
+			}
+		} catch (error) {
+			setshowErrorModal(true);
+			closeModal();
+		}
+	};
 
-  return (
+	return (
 		<section>
-			<div className="section-footer px-5 md:px-[4rem] py-[2rem] max-w-[1400px] mx-auto">
-				<div className="part1">
-					<div className="logo">
-						<Link to="/">
-							<img src="/tapart.svg" height={`40px`} width={`40px`} />
-						</Link>
-					</div>
-					<div className="text">
-						<p className="class3 text-[#201F23] text-base md:text-[20px] font-bold mb-1">
-							Subscribe to our newsletter for info for new avatar scenes, blogs and updates
-						</p>
-						<p id="" className="text-[#605E65] text-sm md:text-base">
-							Are you looking to stay up to date with the latest news and trends? Subscribe to our page to get the
-							latest updates on the topics that matter to you!
-						</p>
+			<div className="md:flex flex-row justify-between items-center px-5 md:px-[4rem] py-[2rem] max-w-[1400px] mx-auto">
+				<div className="md:flex-[40%]">
+					<div className="part1 md:w-[80%]">
+						<div className="logo">
+							<Link to="/">
+								<img src="/tapart.svg" height={`40px`} width={`40px`} />
+							</Link>
+						</div>
+						<div className="text">
+							<p className="class3 text-[#201F23] text-base md:text-[20px] font-bold mb-1">
+								Subscribe to our newsletter for info on new avatar scenes, blogs and updates
+							</p>
+							<p id="" className="text-[#605E65] text-sm md:text-base">
+								Are you looking to stay up to date with the latest news and trends? Subscribe to our page to get the
+								latest updates on the topics that matter to you!
+							</p>
+						</div>
 					</div>
 				</div>
-				<div className="part2 md:pt-[1.2rem]">
-					<div className="error">
-						{errorInFormInput ? (
-							<h2 className="text-red-500 font-semibold ml-3">⚠ Please input a valid email address</h2>
-						) : (
-							''
-						)}
-					</div>
+				<div className=" md:flex-[40%]">
 					<div className="big-div">
+						<div className="">
+							{errorInFormInput ? (
+								<span className="text-red-500 text-sm ml-3">⚠ Please input a valid email address</span>
+							) : (
+								''
+							)}
+						</div>
 						<div className="w-full flex mb-2 relative">
 							<img className="absolute top-[11px] pl-3" src="/sms.svg" />
 							<input

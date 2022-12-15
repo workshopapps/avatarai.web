@@ -23,13 +23,13 @@ const Navbar = () => {
 	return (
 		<Fragment>
 			<div className='w-full'>
-				<nav className="flex justify-between items-center max-w-[1400px] mx-auto md:px-[4rem] py-5">
-					<div className="">
+				<nav className="flex justify-between items-center w-full max-w-[1400px] mx-auto lg:px-[4rem] py-5">
+					<div className="w-full lg:w-auto">
 						<Link to="/">
 							<img src={tapart} alt="" className="w-10 hidden lg:block" />
 						</Link>
-						<div className="flex justify-between items-center cbk-mobile-board px-5 lg:hidden">
-							<img src={menu} alt="" className="" id="" onClick={navHandler} />
+						<div className="flex justify-between items-center w-full px-5 lg:hidden">
+							<img src={menu} alt="" className="w-8" id="" onClick={navHandler} />
 
 							<span>
 								<Link to="/login">
