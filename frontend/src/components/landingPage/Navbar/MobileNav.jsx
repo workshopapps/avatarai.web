@@ -30,24 +30,24 @@ const MobileNav = ({ navClose }) => {
             />
           </div>
         </div>
-        <ul className=" flex flex-col justify-between items-start gap-5 cursor-pointer ">
+        <ul className=" flex flex-col justify-between items-start gap-5 cursor-pointer  mb-[-3rem]">
           <li
             onClick={navClose}
-            className="p-2  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple"
+            className="px-2 py-1  border-b-white border-b hover:border-opacity-100 hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple"
           >
-            <Link to="/"> Home</Link>
+            <Link to="/" className="text-[1rem]"> Home</Link>
           </li>
           <li
             onClick={navClose}
-            className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple"
+            className="px-2 py-1  border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple"
           >
-            <Link to="/Aboutus">About Us</Link>
+            <Link to="/Aboutus" className="text-[1rem]">About Us</Link>
           </li>
           <li
             onClick={navClose}
-            className="p-2 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple"
+            className="px-2 py-1 border-b-white border-b hover:text-purple hover:border-b-purple active:border-b-purple active:text-purple"
           >
-            <Link to="/Pricing">Pricing</Link>
+            <Link to="/Pricing" className="text-[1rem]">Pricing</Link>
           </li>
           {/* <li
             onClick={navClose}
@@ -67,13 +67,13 @@ const MobileNav = ({ navClose }) => {
           <div className="flex flex-col gap-3 w-[100%]">
             <Link to="/Login">
               <Button
-                className="inline-flex justify-center items-center px-8 py-3  border border-[#8B70E9]  
+                className="inline-flex justify-center items-center px-8 py-1  border border-[#8B70E9]  
           rounded-[8px] font-semibold text-md text-[#8B70E9] bg-white transition ease-in-out duration-150 cbk-mobile-login-btn"
               >
                 Log in
               </Button>
             </Link>
-            <Link to="/Signup">
+            <Link to="/Signup" className="w-full">
               <Button className="text-white bg-[#8B70E9] cbk-mobile-login-btn">
                 Sign up
               </Button>
