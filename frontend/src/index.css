@@ -9,3 +9,7 @@
     box-sizing: border-box;
     font-family: 'Nunito';
 }
+#root{
+    max-width: 1440px;
+    margin: auto;
+}
