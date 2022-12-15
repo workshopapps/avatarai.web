@@ -18,11 +18,21 @@ const InstructionModal = () => {
       </div>
 
       <div
-        className={`flex items-center p-5 my-5 gap-5 bg-[#fff] ${
+        className={`flex flex-col p-5 my-5 gap-5 bg-[#fff] ${
           modal ? "hide" : ""
         }`}
       >
         <p>Image Size should be 512 x 512px </p>
+        <p>Photos with different expressions</p>
+        <p>Look into the camera and also away</p>
+        <p>No other people in your photos</p>
+        <p>Photos at different time of the day</p>
+        <p>If it is a couple photo, make sure every photo has both of you in it</p>
+        <p>No duplicate photos</p>
+        <p>No black and white photos</p>
+        <p>No photo shoots</p>
+        <p>Not only selfies</p>
+        <p>No nudes</p>
         {/* <div>
           <p className="text-sm my-1.5">✅ No other people in your photos</p>
           <p className="text-sm my-1.5">✅ Photos with different expression</p>
