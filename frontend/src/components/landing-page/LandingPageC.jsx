@@ -70,30 +70,26 @@ function LandingPageC() {
     setPage(pages.Home)
    },[])
   return (
-    <div>
-        <Navbar />
-        <Header />
-        <Any/>
-        <Main />
-        <CTA />
-        {/* <Benefits /> */}
-        {/* <Social />
+		<div>
+			<Navbar />
+			<Header />
+			<div className='max-w-[1400px] mx-auto'>
+				<Any />
+				<Main />
+				<CTA />
+				{/* <Benefits /> */}
+				{/* <Social />
         <Learn/>
         <Top/>
         <Final/> */}
-        <QuestionSection />
-        {isCookiesReady
-        ?(cookiesShowing ? <Cookies offCookies={offCookies}></Cookies> : "")
-        
-        :
-        ""
-        }
-       
-        
-        <FaqNewsletter />
-        <Foooter /> 
-    </div>
-  )
+				<QuestionSection />
+				{isCookiesReady ? cookiesShowing ? <Cookies offCookies={offCookies}></Cookies> : '' : ''}
+			</div>
+
+			<FaqNewsletter />
+			<Foooter />
+		</div>
+	);
 }
 
 export default LandingPageC
