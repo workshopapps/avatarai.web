@@ -108,7 +108,7 @@ const Benefits = () => {
           </div>
         </div>
 
-        <Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn viewBtn">
+        <Button className="text-white border-[#8B70E9] bg-[#8B70E9] cbk-login-btn viewBtn mt-[1.5rem]">
           <Link to="/FAQ"> View All </Link>
         </Button>
       </div>
