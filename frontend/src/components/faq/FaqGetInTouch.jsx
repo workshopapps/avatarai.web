@@ -7,7 +7,7 @@ const FaqGetInTouch = () => {
       <div className="flex flex-col items-center">
         <h3
           data-testid="h3"
-          className="font-medium text-[26px] md:text-[32px] ld:text-[32px] font-[700] text-center"
+          className="font-medium text-[26px] md:text-[32px] ld:text-[32px] text-center"
         >
           Still have questions?
         </h3>

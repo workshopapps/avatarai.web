@@ -52,18 +52,18 @@
     }
 }
 
-@media (max-width: 1025px) {
+/* @media (max-width: 1025px) {
     .cbk-login-btn {
         margin-right: 2.5rem;
     }
-}
-@media screen and (max-width: 768px) {
+} */
+/* @media screen and (max-width: 768px) {
     .cbk-login-btn{
        
         margin-right: 1rem;
     }
    
-}
+} */
 
 
 @keyframes nav{

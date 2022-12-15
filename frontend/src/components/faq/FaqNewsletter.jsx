@@ -1,14 +1,12 @@
-import './faqs.css'
+import './faqs.css';
 //import SuccessModal from './successModal';
 //import ErrorModal from './faqHero/errorModal';
 import Modal from '../modal/modal';
-import green from './images/green.png'
-import red from './images/red.png'
+import green from './images/green.png';
+import red from './images/red.png';
 
 import { useState } from 'react';
-import {Link} from "react-router-dom";
-
-
+import { Link } from 'react-router-dom';
 
 const FaqNewsletter = () => {
 const [emailField, setEmailField] = useState("")
