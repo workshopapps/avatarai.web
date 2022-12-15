@@ -18,34 +18,32 @@ const InstructionModal = () => {
       </div>
 
       <div
-        className={`flex items-center p-5 my-5 gap-5 bg-[#fff] ${
+        className={`flex items-start justify-around p-5 my-5 gap-10 bg-[#fff] ${
           modal ? "hide" : ""
         }`}
       >
-        <p>Image Size should be 512 x 512px </p>
-        {/* <div>
-          <p className="text-sm my-1.5">✅ No other people in your photos</p>
-          <p className="text-sm my-1.5">✅ Photos with different expression</p>
-          <p className="text-sm my-1.5">
-            ✅ Photos in different locations, backgrounds and angles
+        <div className="text-md my-1.5">
+          <p>1. No other people in your photos</p>
+          <p className="my-1.5">2. Photos with different expression</p>
+          <p className="my-1.5">
+            3. Photos in different locations, backgrounds and angles
           </p>
-          <p className="text-sm my-1.5">✅ Only images - 512x512px</p>
-          <p className="text-sm my-1.5">✅ Photos at different times of day</p>
-          <p className="text-sm my-1.5">
-            ✅ Look into the camera and also away
+          <p className="my-1.5">4. Only images - 512x512px</p>
+          <p className="my-1.5">
+            5. Look into the camera and also away
           </p>
-          <p className="text-sm my-1.5">
-            ✅ If couple, make sure EVERY photo has BOTH of you in it
+          <p className="my-1.5">
+            6. If couple, make sure EVERY photo has BOTH of you in it
           </p>
-        </div> */}
-        {/* <div>
-          <p className="text-sm my-1.5">❌ No duplicate photos</p>
-          <p className="text-sm my-1.5">❌ No black and white photos</p>
-          <p className="text-sm my-1.5">❌ No photo shoots</p>
-          <p className="text-sm my-1.5">❌ Not only selfies</p>
-          <p className="text-sm my-1.5">❌ No children</p>
-          <p className="text-sm my-1.5">❌ No nudes</p>
-        </div> */}
+        </div>
+        <div className="text-md">
+          <p className="my-1.5">1. No duplicate photos</p>
+          <p className="my-1.5">2. No black and white photos</p>
+          <p className="my-1.5">3. No photo shoots</p>
+          <p className="my-1.5">4. Not only selfies</p>
+          <p className="my-1.5">5. No children</p>
+          <p className="my-1.5">6. No nudes</p>
+        </div>
       </div>
     </>
   );
