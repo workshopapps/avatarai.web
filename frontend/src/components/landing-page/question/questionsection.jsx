@@ -7,7 +7,7 @@ import './faqs.css'
 const QuestionSection = () => {
   return (
     <section className="font-nunito flex flex-col items-center px-[24px] py-[40px] gap-[0px]">
-             <h2 className="be">Frequently asked questions</h2>
+             <h2 className="be mb-5">Frequently asked questions</h2>
 
       {/* Expandable cards Section */}
       <div className="w-[87.73%]  max-w-[1036px] md:shadow-2xl md:rounded flex flex-col md:gap-[24px] md:p-[48px]" >

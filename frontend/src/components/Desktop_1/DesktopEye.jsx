@@ -21,7 +21,7 @@ const DesktopEye = () => {
 	return (
 		<div>
 			<Dashboardlayout title={`Hello ${user?.first_name}`} text="Start generating cool avatars.">
-				<InstructionModal />
+
 				{step === 1 && <FrameEye setStep={setStep} step={step} setPhotoUser={setPhotoUser} photoUser={photoUser} />}
 				{step === 2 && <ImageUpload setStep={setStep} step={step} photoUser={photoUser} />}
 				{step === 3 && <AvatarSuccess setStep={setStep} step={step} />}
