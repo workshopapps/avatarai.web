@@ -31,7 +31,7 @@ from email.mime.text import MIMEText
 # Define Avatar route instance
 photo_router = APIRouter()
 
-S3_BUCKET_NAME = "hngtest"#"dreambooth-ajsn"
+S3_BUCKET_NAME = "dreambooth-ajsn" #"hngtest"
 
 client = boto3.client(
     's3',
