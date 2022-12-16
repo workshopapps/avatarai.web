@@ -18,7 +18,7 @@ const ContactUs = () => {
 				</p>
 
 				<Button className="px-[26px] py-3 md:py-[24px] outline-none normal-case border-none text-sm md:text-[28px] rounded-lg bg-[#FFFFFF] text-[#8B70E9]">
-					<Link to="/contact-us" className='font-semibold'>Contact Us</Link>
+					<Link to="/contactus" className='font-semibold'>Contact Us</Link>
 				</Button>
 			</div>
 			<div className="w-full flex items-end justify-end">

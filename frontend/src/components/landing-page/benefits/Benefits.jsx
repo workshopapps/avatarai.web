@@ -13,7 +13,7 @@ const Benefits = () => {
     <section id="benefits" class="section4">
       <div class="part4">
         <h2 className="be">Frequently asked questions</h2>
-        <div class="faqs">
+        <div class="faqs mb-10">
           <div className={`faq ${one && 'bad'}`}>
             <div class="head">
               <h3>How will I get the avatars generated?</h3>

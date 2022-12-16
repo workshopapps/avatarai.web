@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { SideBar } from './SideBar';
 import { TopNav } from './TopNav';
-import {useAuth} from "../../../context/auth-context";
-
-
+import { useAuth } from '../../../context/auth-context';
+import InstructionModal from './instructionModal';
+import { useLocation } from 'react-router-dom';
 
 const Dashboardlayout = ({ children, title, text }) => {
 	const [show, setShow] = useState(false);
 	const [profile, setProfile] = useState(false);
-  const user = useAuth()
-  console.log(user, "from najjiv")
-
+	const user = useAuth();
+	console.log(user, 'from najjiv');
+	const location = useLocation();
 
 	return (
 		<>
@@ -27,7 +27,13 @@ const Dashboardlayout = ({ children, title, text }) => {
 								profile={profile}
 								setProfile={setProfile}
 							/>
-							<div className="w-full">{children}</div>
+							{location.pathname === '/dashboard' && (
+								<div>
+									<InstructionModal />
+								</div>
+							)}
+
+							<div className="w-full max-w-[1240px] mx-auto">{children}</div>
 						</div>
 					</div>
 				</div>

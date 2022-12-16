@@ -7,7 +7,7 @@ import Dashboardtranslate from './dashboardtranslate';
 export const TopNav = ({ title, text, show, setShow }) => {
 
   return (
-		<div className="mb-[60px] z-0">
+		<div className="mb-[20px] md:mb-[40px] z-0">
 			<nav className="">
 				<div className="flex items-center justify-between mb-[40px] py-5 xl:py-0 fixed top-0 xl:relative w-full xl:mb-0 bg-[#FFFFFF] lg:bg-[#FAFAFA]">
 					<div className="">

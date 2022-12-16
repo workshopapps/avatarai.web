@@ -5,6 +5,10 @@
 .cbk-mobile-login-btn{
     width: 100%;
 }
+#mtmt{
+    margin-left: 1rem;
+    margin-right: 1.25rem;
+}
 .cbk-ds-nav{
     width: 100vw;
     /* width: 70%; */
@@ -28,8 +32,8 @@
     width: 100vw !important;
 }
 .cbk-mobile-board img{
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
 }
 .cbk-mobile-board button{
     width: fit-content;
@@ -48,18 +52,18 @@
     }
 }
 
-@media (max-width: 1025px) {
+/* @media (max-width: 1025px) {
     .cbk-login-btn {
         margin-right: 2.5rem;
     }
-}
-@media screen and (max-width: 768px) {
+} */
+/* @media screen and (max-width: 768px) {
     .cbk-login-btn{
        
         margin-right: 1rem;
     }
    
-}
+} */
 
 
 @keyframes nav{

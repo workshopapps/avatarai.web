@@ -1,18 +1,115 @@
 
-#subscribe{
+/* #subscribe{
     padding: 1rem;
-    /* margin-left: 10px; */
-}
+} */
 #plus{
     cursor: pointer;
 }
+#input-faq{
+    font-size: 6px !important;
+}
+.section-footer{
+    display: grid;
+    grid-template-columns: 45% 50%;
+    gap: 5%;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+.input2{
+    margin: 3px;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    /* padding:1rem; */
+    /* padding: 0.5rem; */
+    padding-left: 5px;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.sad{
+    outline: none;
+    font-size: 1.3rem;
+}
+#subscribe{
+    margin: 3px;
+    border-radius: 5px;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    background-color: #8B70E9;
+    color: white;
+}
+.small-div{
+    display: grid;
+    grid-template-columns: 65% 35%;
+
+}
+@media(max-width: 1050px){
+    .section-footer{
+        grid-template-columns: 45% 50%;
+        gap: 5%;
+    }
+    .sad{
+        font-size: 1rem;
+    }
+}
+@media(max-width: 900px){
+    .section-footer{
+        grid-template-columns: 100%;
+    }
+}
 @media(max-width: 800px){
+    .section-footer{
+        padding: 1.5rem;
+    }
     #faqs{
         font-size: 18px;
     }
+    .section-footer{
+        gap: 2%;
+    }
+    .input2{
+        padding: 0.5rem 0;
+    }
+    .big-div{
+        margin-top: 1rem;
+    }
+}
+.section-width{
+    max-width: 1440px;
+    margin: auto;
+}
+.part1{
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+}
+.sub{
+    font-weight: 800;
+    
+}
+.mail{
+    font-size: 1rem !important;
 
 }
-
+.num{
+    font-size: 1rem !important;
+}
+@media(max-width: 500px){
+    .section-footer{
+        padding: 1.5rem;
+    }
+    .sad{
+        font-size: 0.8rem;
+    }
+    #class3{
+        display: none;
+    }
+    #big-div{
+        margin-top: 1rem;
+    }
+}
 @media(max-width: 400px){
     #big-div{
         display: grid;
@@ -20,7 +117,7 @@
         justify-content: space-between;
     }
     #subscribe{
-        font-size: 0.8rem;
+        font-size: 0.5rem;
         text-align: center;
         padding: 0;
         display: inline;
@@ -30,6 +127,7 @@
         padding: 0;
         font-size: 12px;
     }
+   
     #faqs{
         font-size: 14px;
     }

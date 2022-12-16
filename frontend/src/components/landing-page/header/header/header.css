@@ -1,3 +1,7 @@
+/* #root{
+    max-width: 1440px;
+    margin: auto;
+} */
 .bat-header{
     background-image: url("https://res.cloudinary.com/dzqaqbrng/image/upload/v1670933634/header_11zon_sl6hur.jpg");
     height: 90vh;
@@ -9,6 +13,10 @@
     color: white;
     z-index: 9;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .bat-header-overlay{
     background-color: rgba(0, 0, 0, 0.2);
@@ -21,19 +29,17 @@
     position: relative;
     z-index: 99;
     color: white;
-    padding: 15rem 0;
+    ;
 }
 .bat-header-content h2 {
     font-size: 48px;
-    font-weight: 600;
+    font-weight: 700;
     z-index: 999;
     color: white;
-    width: 70%;
     line-height: 1;
     margin: 0 auto;
 }
 .bat-header-content p {
-    width: 50%;
     font-size: 24px;
     margin: 0 auto;
     z-index: 999;
@@ -123,7 +129,7 @@
 }
 @media only screen and (max-width: 420px) {
   .bat-header-content h2 {
-    width: 95%;
+    width: 98%;
     font-size: 24px;
   }
   .bat-header-content p {
