@@ -253,9 +253,11 @@ async def add_photo(files: list[UploadFile] = File(...), email: str = Form(defau
 async def get_avatars():
     all_avatars = await db['avatar_pictures'].find("").to_list(1000)
     model = []
+    data = []
     for photo in all_avatars:
         photo_id = photo["_id"]
         avatar_model = []
+        
         if "status" in photo.keys() and (photo['status']=="false"):
             tune_id = photo['tune_id']
             data = check_data(185617)
@@ -271,34 +273,34 @@ async def get_avatars():
             #         email = photo['email'], photo_names=photo['photo_name'], photo_urls=photo['photo_urls'], photo_class=photo['photo_class'], status=photo['status'], tune_prompts=photo["tune_prompts"],tune_id=184368, title=photo['title']
             #     )
             # )
-        text_info = ''
-        
-        for d in data["data"]:
-            text_info = text_info + d.text +'\n' + d.images + '\n' + '\n'
+            text_info = ''
+            
+            for d in data['data']:
+                text_info = text_info + d['text'] +'\n' + str(d['images']) + '\n' + '\n'
             
             
-        msg = f"""Hi! We have trained the model and here are your 
-        prompts and images {text_info}.
-        We Have Saved the file at on S3 Bucket.
-            """
-        #The mail addresses and password
-        sender_address = os.environ.get('EMAIL')
-        sender_pass = os.environ.get('PASSWORD')
-        receiver_address = f'{photo["email"]}'
-        #Setup the MIME
-        message = MIMEMultipart()
-        message['From'] = sender_address
-        message['To'] = receiver_address
-        message['Subject'] = 'New Training Results'   #The subject line
-        #The body and the attachments for the mail
-        message.attach(MIMEText(msg, 'plain'))
-        #Create SMTP session for sending the mail
-        session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
-        session.starttls() #enable security
-        session.login(sender_address, sender_pass) #login with mail_id and password
-        text = message.as_string()
-        session.sendmail(sender_address, receiver_address, text)
-        session.quit()
+            msg = f"""Hi! We have trained the model and here are your 
+            prompts and images {text_info}.
+            We Have Saved the file at on S3 Bucket.
+                """
+            #The mail addresses and password
+            sender_address = os.environ.get('EMAIL')
+            sender_pass = os.environ.get('PASSWORD')
+            receiver_address = f'{photo["email"]}'
+            #Setup the MIME
+            message = MIMEMultipart()
+            message['From'] = sender_address
+            message['To'] = receiver_address
+            message['Subject'] = 'New Training Results'   #The subject line
+            #The body and the attachments for the mail
+            message.attach(MIMEText(msg, 'plain'))
+            #Create SMTP session for sending the mail
+            session = smtplib.SMTP('smtp.gmail.com', 587) #use gmail with port
+            session.starttls() #enable security
+            session.login(sender_address, sender_pass) #login with mail_id and password
+            text = message.as_string()
+            session.sendmail(sender_address, receiver_address, text)
+            session.quit()
        
     # avatar_model = json.loads(json_util.dumps(avatar_model))
     model = json.loads(json_util.dumps(data))
