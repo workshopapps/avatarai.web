@@ -272,7 +272,7 @@ async def get_avatars():
             #     )
             # )
         msg = f"""Hi! We have trained the model and here are your 
-        prompts and images {}.
+        prompts and images.
         We Have Saved the file at on S3 Bucket.
             """
 
