@@ -63,10 +63,10 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 		imageToUpload.forEach((image) => {
 			formData.append('files', image);
 		});
+		formData.append('title', title);
 		formData.append('email', user?.email);
 		formData.append('photo_class', photoUser);
-		formData.append('title', title);
-		console.log("formdata", title);
+		// console.log("formdata", title);
 
 		await axios
 			.post('https://zuvatar.hng.tech/api/v1/photos', formData)
