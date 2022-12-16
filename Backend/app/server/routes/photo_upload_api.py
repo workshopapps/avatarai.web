@@ -286,7 +286,7 @@ async def get_avatars():
             #The mail addresses and password
             sender_address = os.environ.get('EMAIL')
             sender_pass = os.environ.get('PASSWORD')
-            receiver_address = f'{photo["email"]}'
+            receiver_address = f"{photo['email']}"#'{photo["email"]}'
             #Setup the MIME
             message = MIMEMultipart()
             message['From'] = sender_address
