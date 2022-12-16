@@ -28,25 +28,25 @@ const Foooter = () => {
 								<div className="flex flex-col space-y-4">
 									<p className="font-semibold text-base text-[#201F23]">Resources</p>
 									<p className="">
-										<Link to="/" className="text-base opt-over">
+										<Link to="/" className="text-base">
 											Reviews
 										</Link>
 									</p>
 									<p className="">
-										<Link to="/ApiPage" className="text-base opt-over">
+										<Link to="/ApiPage" className="text-base">
 											API integration
 										</Link>
 									</p>
 								</div>
 								<div className="flex flex-col space-y-4 md:ml-[1.7rem]">
-									<p className="font-semibold text-base text-[#201F23]">Company </p>
+									<p className="font-semibold text-base text-[#201F23]">Company</p>
 									<p className="">
-										<Link to="/contactus" className="text-base opt-over">
+										<Link to="/contactus" className="text-base">
 											Contact Us
 										</Link>
 									</p>
 									<p className="">
-										<Link to="/Aboutus" className="text-base opt-over">
+										<Link to="/Aboutus" className="text-base">
 											About Us
 										</Link>
 									</p>
@@ -54,12 +54,12 @@ const Foooter = () => {
 								<div className="flex flex-col space-y-4 md:ml-[1.7rem] lg:w-auto w-[6rem]">
 									<p className="font-semibold text-base text-[#201F23]">Help</p>
 									<p className="">
-										<Link to="/FAQ" className="text-base opt-over">
+										<Link to="/FAQ" className="text-base">
 											FAQs
 										</Link>
 									</p>
 									<p className="">
-										<Link to="/Terms" className="text-base opt-over">
+										<Link to="/Terms" className="text-base">
 											Terms
 										</Link>
 									</p>
@@ -68,21 +68,21 @@ const Foooter = () => {
 									<p className="font-semibold text-base text-[#201F23]">Socials</p>
 									<p className="">
 										{/* <img src={Insta} alt="insta" className="text-[#000]" /> */}
-										<Link to="/FAQ" className="text-base opt-over">
+										{/*<Link to="/FAQ" className="text-base">*/}
 											Instagram
-										</Link>
+										{/*</Link>*/}
 									</p>
 									<p className="">
 										{/* <img src={Twitter} alt="twitter" /> */}
-										<Link to="/Terms" className="text-base opt-over">
+										{/*<Link to="/Terms" className="text-base">*/}
 											Twitter
-										</Link>
+										{/*</Link>*/}
 									</p>
-									<p >
+									<p className="">
 										{/* <img src={Facebook} alt="facebook" /> */}
-										<Link to="/Terms" className="text-base " id ="opt-over">
+										{/*<Link to="/Terms" className="text-base">*/}
 											Facebook
-										</Link>
+										{/*</Link>*/}
 									</p>
 								</div>
 							</div>
