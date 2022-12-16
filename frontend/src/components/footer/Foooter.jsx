@@ -68,21 +68,21 @@ const Foooter = () => {
 									<p className="font-semibold text-base text-[#201F23]">Socials</p>
 									<p className="">
 										{/* <img src={Insta} alt="insta" className="text-[#000]" /> */}
-										<Link to="/FAQ" className="text-base">
+										{/*<Link to="/FAQ" className="text-base">*/}
 											Instagram
-										</Link>
+										{/*</Link>*/}
 									</p>
 									<p className="">
 										{/* <img src={Twitter} alt="twitter" /> */}
-										<Link to="/Terms" className="text-base">
+										{/*<Link to="/Terms" className="text-base">*/}
 											Twitter
-										</Link>
+										{/*</Link>*/}
 									</p>
 									<p className="">
 										{/* <img src={Facebook} alt="facebook" /> */}
-										<Link to="/Terms" className="text-base">
+										{/*<Link to="/Terms" className="text-base">*/}
 											Facebook
-										</Link>
+										{/*</Link>*/}
 									</p>
 								</div>
 							</div>
