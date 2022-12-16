@@ -14,7 +14,12 @@
     align-items: center;
     overflow-x: hidden;
 }
-
+#av_title{
+    width: 50%;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    border-color: #8b70e9;
+}
 .vic_dash_inner_div {
     /* change this with to accommodate the navbar */
     width: 90%;

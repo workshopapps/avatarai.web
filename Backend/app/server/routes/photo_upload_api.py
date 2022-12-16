@@ -31,7 +31,7 @@ from email.mime.text import MIMEText
 # Define Avatar route instance
 photo_router = APIRouter()
 
-S3_BUCKET_NAME = "dreambooth-ajsn" #"hngtest"
+S3_BUCKET_NAME = "dreambooth-ajsn"#"hngtest"
 
 client = boto3.client(
     's3',
@@ -271,11 +271,16 @@ async def get_avatars():
             #         email = photo['email'], photo_names=photo['photo_name'], photo_urls=photo['photo_urls'], photo_class=photo['photo_class'], status=photo['status'], tune_prompts=photo["tune_prompts"],tune_id=184368, title=photo['title']
             #     )
             # )
+        text_info = ''
+        
+        for d in data["data"]:
+            text_info = text_info + d.text +'\n' + d.images + '\n' + '\n'
+            
+            
         msg = f"""Hi! We have trained the model and here are your 
-        prompts and images.
+        prompts and images {text_info}.
         We Have Saved the file at on S3 Bucket.
             """
-
         #The mail addresses and password
         sender_address = os.environ.get('EMAIL')
         sender_pass = os.environ.get('PASSWORD')
