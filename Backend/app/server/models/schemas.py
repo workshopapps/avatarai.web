@@ -30,9 +30,18 @@ class AvatarModel(BaseModel):
     photo_names: list = Field(...)
     photo_urls: list = Field(...)
     photo_class: str = Field(...)
+    status: str = 'false'
+    tune_prompts: list = []
+    tune_id: int = Field(...)
+    title: str = Field(...)
+    
     # is_deleted : bool
     # created_at: datetime | None = None
     # updated_at: datetime | None = None
+    # status: False
+    # title: str = Field(...) Grumpy cats, 
+    # tune_id: int = Field(...)
+    # tune_prompts: list = Field(...)
 
     class Config:
         allow_population_by_field_name = True

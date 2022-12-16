@@ -290,10 +290,10 @@ async def login(login : OAuth2PasswordRequestForm = Depends()):
 
 
 
-CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID') or None
-CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET') or None
-if CLIENT_ID is None or CLIENT_SECRET is None:
-    raise BaseException('Missing env variables')
+# CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID') or None
+# CLIENT_SECRET = os.environ.get('GOOGLE_CLIENT_SECRET') or None
+# if CLIENT_ID is None or CLIENT_SECRET is None:
+#     raise BaseException('Missing env variables')
 
 
 
