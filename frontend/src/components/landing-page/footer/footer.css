@@ -6,6 +6,9 @@
     background: #F9F9FB;
     padding: 2rem 0;
 }
+#opt-over:hover{
+    color: #8b70e9;
+}
 .footer__item-ony{
     display: flex;
     flex-direction: column;

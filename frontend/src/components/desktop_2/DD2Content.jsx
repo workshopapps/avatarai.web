@@ -17,6 +17,7 @@ import { useAuth } from '../../../context/auth-context';
 import Error from './../faq/faqHero/errorModal';
 import Swal from 'sweetalert2';
 
+
 const ImageUpload = ({ setStep, step, photoUser }) => {
 	const [selectedImages, setSelectedImages] = useState([]);
 	const [imageToUpload, setImageToUpload] = useState([]);
@@ -48,6 +49,12 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 		setShowAlertLink(!showAlertLink);
 	};
 
+	const [title, setTitle] = useState('');
+	const handleTitle = event =>{
+		setTitle(event.target.value);
+		console.log('value is:', event.target.value);
+	}
+
 	const sendImages = async () => {
 		setGenAvt(true);
 		console.log(user.email, 'email');
@@ -56,8 +63,10 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 		imageToUpload.forEach((image) => {
 			formData.append('files', image);
 		});
+		formData.append('title', title);
 		formData.append('email', user?.email);
 		formData.append('photo_class', photoUser);
+		// console.log("formdata", title);
 
 		await axios
 			.post('https://zuvatar.hng.tech/api/v1/photos', formData)
@@ -74,11 +83,11 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 	};
 
 	const imageCheck = () => {
-		if (imageToUpload.length < 10 || imageToUpload.length > 20) {
+		if (imageToUpload.length < 10 || imageToUpload.length > 20 || title==="") {
 			Swal.fire({
 				icon: 'error',
 				title: 'Oops...',
-				text: 'Please upload a minimum of 10 images and maximum of 20 images.',
+				text: 'Please update avatar title and upload a minimum of 10 images and maximum of 20 images.',
 			});
 		} else {
 			sendImages();
@@ -130,7 +139,7 @@ const ImageUpload = ({ setStep, step, photoUser }) => {
 							<img src={GrayLine} alt="" className="w-[50px] md:w-[120px] md:h-[5px]" />
 						</div>
 					</div>
-
+					<input defaultValue={title} onChange={handleTitle} id ="av_title" className={`border border-[#121212] py-3 px-4 rounded-md placeholder-[#808080] text-sm lg:text-xl font-nunito font-medium w-full`} placeholder="Avatar Title" type="text" name = "title"/>
 					<h1 className='text-[24px]'>Upload your Pictures</h1>
 					<p className="aso-dd2-p">You can upload files like PNG, JPG, WEBP are supported</p>
 					<form action="" className="aso-dd2-form">
