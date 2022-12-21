@@ -4,6 +4,7 @@ import json
 from io import BytesIO
 from zipfile import ZipFile
 from botocore.exceptions import ClientError   
+import requests
 
 s3_resource = boto3.resource("s3",
                         aws_access_key_id=os.environ["ACCESS_KEY"],
@@ -47,3 +48,27 @@ def get_avatars(email, bucket_name):
         avatars.append(key)
     
     return {"Avatars": avatars}
+  
+def save_image_to_temp(filename,img_url):
+    """Receives filename and image url and downloads the image to the temp folder"""
+
+    response = requests.get(img_url)
+    if response.status_code:
+        fp = open(f'temp/{filename}', 'wb')
+        fp.write(response.content)
+        fp.close()
+
+def empty_temp_folder():
+    """ Clear all files from the temp folder """
+
+    import os, shutil
+    folder = 'temp/'
+    for filename in os.listdir(folder):
+        file_path = os.path.join(folder, filename)
+        try:
+            if os.path.isfile(file_path) or os.path.islink(file_path):
+                os.unlink(file_path)
+            elif os.path.isdir(file_path):
+                shutil.rmtree(file_path)
+        except Exception as e:
+            print('Failed to delete %s. Reason: %s' % (file_path, e))
